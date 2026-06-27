@@ -7,21 +7,21 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
   <style>
     :root {
-      --navy:        #0d2b45;
-      --navy-light:  #1a3f62;
-      --navy-dark:   #081c2e;
-      --green:       #2d6a4f;
-      --green-light: #40916c;
-      --red:         #c1121f;
-      --red-light:   #e63946;
-      --black:       #0a0a0a;
-      --grey-dark:   #2b2b2b;
-      --grey:        #6c757d;
-      --grey-light:  #adb5bd;
-      --text:        #f0f0f0;
-      --surface:     #111c27;
-      --surface-2:   #162233;
-      --border:      #1f3347;
+      --navy:        #3a1f54;
+      --navy-light:  #57306f;
+      --navy-dark:   #25143a;
+      --green:       #d98a5b;
+      --green-light: #f0a878;
+      --red:         #ff5d7e;
+      --red-light:   #ff819b;
+      --black:       #18101f;
+      --grey-dark:   #2e2335;
+      --grey:        #9d8aa8;
+      --grey-light:  #cdbdd6;
+      --text:        #f6eef3;
+      --surface:     #211628;
+      --surface-2:   #2b1d34;
+      --border:      #3d2a4a;
       --font: 'Inter', system-ui, -apple-system, sans-serif;
     }
 
@@ -43,46 +43,79 @@
     /* ─── Hero ──────────────────────────────────── */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 55%, var(--black) 100%);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 48px 24px;
+      padding: 72px 24px 56px;
       position: relative;
+      isolation: isolate;
       overflow: hidden;
     }
     .hero::before {
       content: '';
       position: absolute;
-      top: -40%; right: -20%;
+      top: -25%; right: -10%;
       width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(193,18,31,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255,93,126,0.16) 0%, transparent 70%);
+      z-index: -1;
       pointer-events: none;
     }
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -30%; left: -20%;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(45,106,79,0.15) 0%, transparent 70%);
+      bottom: -25%; left: -15%;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(217,138,91,0.14) 0%, transparent 70%);
+      z-index: -1;
       pointer-events: none;
     }
-    .hero-emoji { font-size: 3rem; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
+    .hero-inner {
+      width: 100%;
+      max-width: 1080px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 48px;
+    }
+    .hero-text { text-align: left; }
+    .hero-emoji { font-size: 2.4rem; margin-bottom: 18px; animation: float 3s ease-in-out infinite; }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50%       { transform: translateY(-8px); }
     }
     .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
       font-weight: 800;
       letter-spacing: -1px;
       line-height: 1.1;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
     .hero h1 span { color: var(--red-light); }
-    .hero-sub { font-size: 1.15rem; color: var(--grey-light); max-width: 480px; margin-bottom: 36px; }
+    .hero-sub { font-size: 1.1rem; color: var(--grey-light); max-width: 460px; margin-bottom: 32px; }
+    .hero-media {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      gap: 12px;
+      height: min(72vh, 540px);
+    }
+    .hero-media img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+    .hero-media img:first-child { grid-row: span 2; object-position: center 16%; }
+    @media (max-width: 820px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 28px; }
+      .hero-text { text-align: center; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-media { height: 320px; max-width: 460px; width: 100%; margin: 0 auto; }
+      .hero-scroll { display: none; }
+    }
     .hero-cta {
       display: inline-block;
       background: var(--red);
@@ -102,15 +135,14 @@
 
     /* ─── Photo mosaic strip ───────────────────── */
     .mosaic-strip {
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      position: relative;
       width: 100%;
-      height: 140px;
+      height: 500px;
       overflow: hidden;
-      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-      pointer-events: none;
+      border-radius: 12px;
+      margin-top: 24px;
+      mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
     }
     .mosaic-track {
       display: flex;
@@ -126,11 +158,11 @@
       100% { transform: translateX(-50%); }
     }
     .mosaic-strip img {
-      height: 120px;
+      height: 100%;
       width: auto;
-      border-radius: 8px;
+      border-radius: 10px;
       object-fit: cover;
-      opacity: 0.75;
+      opacity: 0.85;
       flex-shrink: 0;
       border: 1px solid rgba(255,255,255,0.08);
     }
@@ -180,24 +212,43 @@
       margin-bottom: 20px;
     }
     .tag-navy  { background: var(--navy);      color: var(--grey-light); }
-    .tag-green { background: var(--green);     color: #c8f0dc; }
+    .tag-green { background: var(--green);     color: #2a1530; }
     .tag-red   { background: var(--red);       color: #ffdde0; }
     .tag-grey  { background: var(--grey-dark); color: var(--grey-light); }
 
     h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; line-height: 1.2; margin-bottom: 24px; }
     p  { color: var(--grey-light); margin-bottom: 14px; }
 
-    /* ─── Intro Card ────────────────────────────── */
-    .intro-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
-    .intro-card p { color: var(--grey-light); }
-    .warning-item { display: flex; gap: 10px; align-items: flex-start; color: var(--grey-light); font-size: 0.92rem; margin-top: 10px; }
-    .warning-item::before { content: '⚠️'; flex-shrink: 0; }
-
-    /* ─── Basics ────────────────────────────────── */
-    .basics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
-    .basic-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
-    .basic-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); margin-bottom: 4px; }
-    .basic-value { font-size: 1rem; font-weight: 500; color: var(--text); }
+    /* ─── Profile (intro + basics combined) ─────── */
+    #about .container { max-width: 920px; }
+    .profile-layout { display: grid; grid-template-columns: 1fr 0.8fr; gap: 32px; align-items: start; }
+    .profile-name { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
+    .profile-tagline { color: var(--green-light); font-weight: 600; font-size: 0.95rem; margin-bottom: 18px; }
+    .profile-intro p { color: var(--grey-light); }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 9px 16px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .chip-icon { font-size: 1.05rem; line-height: 1; }
+    .chip-k { color: var(--grey); font-weight: 600; }
+    .chip a { color: var(--red-light); }
+    .profile-photo { position: sticky; top: 80px; }
+    .profile-photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 18%; border-radius: 16px; border: 1px solid var(--border); display: block; }
+    @media (max-width: 700px) {
+      .profile-layout { grid-template-columns: 1fr; }
+      .profile-photo { position: static; order: -1; }
+      .profile-photo img { aspect-ratio: 4 / 3; max-height: 420px; }
+      .fact-row.cols-2, .fact-row.cols-3 { grid-template-columns: 1fr 1fr; }
+    }
 
     /* ─── Photo Gallery ─────────────────────────── */
     .photo-flow { column-count: 3; column-gap: 10px; }
@@ -361,78 +412,26 @@
 
 <!-- Hero -->
 <div class="hero">
-  <div class="hero-emoji">🎮❤️🎮</div>
-  <h1>Alec's <span>Dating</span><br>Application</h1>
-  <p class="hero-sub">Loveable nerd, looking for his player 2.<br>An intro into what having me as your boyfriend could look like!</p>
-  <a href="#what-is-this" class="hero-cta">Start the Application ↓</a>
-  <div class="hero-scroll">scroll to explore ↓</div>
-  <div class="mosaic-strip">
-    <div class="mosaic-track">
-      <!-- set 1 -->
-      <img src="photos/_extracted/01-cover/headshot of alec.png" alt="Alec">
-      <img src="photos/_extracted/03-basics/alec at an onsen in japan.jpg" alt="Alec Japan onsen">
-      <img src="photos/_extracted/03-basics/alec at midsummer.png" alt="Alec midsummer">
-      <img src="photos/_extracted/03-basics/alec dress as mad scienst for halloweeen.png" alt="Alec Halloween">
-      <img src="photos/_extracted/03-basics/alec eating out.png" alt="Alec eating out">
-      <img src="photos/_extracted/03-basics/alec holding a pineapple.png" alt="Alec pineapple">
-      <img src="photos/_extracted/03-basics/alec in a garden.jpg" alt="Alec in garden">
-      <img src="photos/_extracted/03-basics/alec with fire spinning staff.png" alt="Alec fire spinning">
-      <img src="photos/_extracted/03-basics/alec with his family dog monty.png" alt="Alec with Monty">
-      <img src="photos/_extracted/04-moments/alec at graduation.png" alt="Alec graduation">
-      <img src="photos/_extracted/04-moments/alec completing a 10k run.png" alt="Alec 10k">
-      <img src="photos/_extracted/04-moments/alec sky diving.png" alt="Alec skydiving">
-      <img src="photos/_extracted/04-moments/alec with david tenant.png" alt="Alec with David Tennant">
-      <img src="photos/_extracted/04-moments/alec on top of mt katumba in bali.png" alt="Alec Bali">
-      <img src="photos/_extracted/13-hobbies/alec led poi spinning light trails.png" alt="Alec poi">
-      <img src="photos/_extracted/13-hobbies/alec gaming setup triple monitors.png" alt="Alec gaming">
-      <img src="photos/_extracted/13-hobbies/alec desk with gameboy orchid lego.png" alt="Alec desk">
-      <img src="photos/_extracted/13-hobbies/alec crochet snorlax.png" alt="Alec crochet">
-      <img src="photos/_extracted/15-places-been/alec times square new york.png" alt="Alec NYC">
-      <img src="photos/_extracted/15-places-been/alec flower crown midsommar sweden.png" alt="Alec Sweden">
-      <img src="photos/_extracted/15-places-been/alec kimono torii gate japan.jpg" alt="Alec Japan">
-      <img src="photos/_extracted/15-places-been/alec big buddha phuket selfie.png" alt="Alec Thailand">
-      <img src="photos/_extracted/15-places-been/alec hobbiton sign new zealand.png" alt="Alec NZ">
-      <img src="photos/_extracted/15-places-been/alec giant beer stein prague.png" alt="Alec Prague">
-      <img src="photos/_extracted/15-places-been/alec whitehaven beach australia lookout.png" alt="Alec Australia">
-      <img src="photos/_extracted/15-places-been/alec swimming tropical river pool.png" alt="Alec swimming">
-      <img src="photos/_extracted/15-places-been/alec chernobyl ferris wheel pripyat.png" alt="Alec Chernobyl">
-      <!-- set 2 (duplicate for seamless loop) -->
-      <img src="photos/_extracted/01-cover/headshot of alec.png" alt="Alec">
-      <img src="photos/_extracted/03-basics/alec at an onsen in japan.jpg" alt="Alec Japan onsen">
-      <img src="photos/_extracted/03-basics/alec at midsummer.png" alt="Alec midsummer">
-      <img src="photos/_extracted/03-basics/alec dress as mad scienst for halloweeen.png" alt="Alec Halloween">
-      <img src="photos/_extracted/03-basics/alec eating out.png" alt="Alec eating out">
-      <img src="photos/_extracted/03-basics/alec holding a pineapple.png" alt="Alec pineapple">
-      <img src="photos/_extracted/03-basics/alec in a garden.jpg" alt="Alec in garden">
-      <img src="photos/_extracted/03-basics/alec with fire spinning staff.png" alt="Alec fire spinning">
-      <img src="photos/_extracted/03-basics/alec with his family dog monty.png" alt="Alec with Monty">
-      <img src="photos/_extracted/04-moments/alec at graduation.png" alt="Alec graduation">
-      <img src="photos/_extracted/04-moments/alec completing a 10k run.png" alt="Alec 10k">
-      <img src="photos/_extracted/04-moments/alec sky diving.png" alt="Alec skydiving">
-      <img src="photos/_extracted/04-moments/alec with david tenant.png" alt="Alec with David Tennant">
-      <img src="photos/_extracted/04-moments/alec on top of mt katumba in bali.png" alt="Alec Bali">
-      <img src="photos/_extracted/13-hobbies/alec led poi spinning light trails.png" alt="Alec poi">
-      <img src="photos/_extracted/13-hobbies/alec gaming setup triple monitors.png" alt="Alec gaming">
-      <img src="photos/_extracted/13-hobbies/alec desk with gameboy orchid lego.png" alt="Alec desk">
-      <img src="photos/_extracted/13-hobbies/alec crochet snorlax.png" alt="Alec crochet">
-      <img src="photos/_extracted/15-places-been/alec times square new york.png" alt="Alec NYC">
-      <img src="photos/_extracted/15-places-been/alec flower crown midsommar sweden.png" alt="Alec Sweden">
-      <img src="photos/_extracted/15-places-been/alec kimono torii gate japan.jpg" alt="Alec Japan">
-      <img src="photos/_extracted/15-places-been/alec big buddha phuket selfie.png" alt="Alec Thailand">
-      <img src="photos/_extracted/15-places-been/alec hobbiton sign new zealand.png" alt="Alec NZ">
-      <img src="photos/_extracted/15-places-been/alec giant beer stein prague.png" alt="Alec Prague">
-      <img src="photos/_extracted/15-places-been/alec whitehaven beach australia lookout.png" alt="Alec Australia">
-      <img src="photos/_extracted/15-places-been/alec swimming tropical river pool.png" alt="Alec swimming">
-      <img src="photos/_extracted/15-places-been/alec chernobyl ferris wheel pripyat.png" alt="Alec Chernobyl">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-emoji">🎮❤️🎮</div>
+      <h1>Alec's <span>Dating</span> Application</h1>
+      <p class="hero-sub">Loveable nerd, looking for his player 2. An intro into what having me as your boyfriend could look like!</p>
+      <a href="#about" class="hero-cta">Come Find Out More ↓</a>
+    </div>
+    <div class="hero-media">
+      <img src="img/coverphoto/index.png" alt="Alec Doran-Twyford">
+      <img src="img/alec/alec kimono torii gate japan.jpg" alt="Alec in Japan">
+      <img src="img/alec/alec on top of mt katumba in bali.png" alt="Alec in Bali">
     </div>
   </div>
+  <div class="hero-scroll">scroll to explore ↓</div>
 </div>
 
 <!-- Nav -->
 <nav>
   <div class="nav-inner">
-    <a href="#what-is-this">Intro</a>
-    <a href="#basics">Basics</a>
+    <a href="#about">About Me</a>
     <a href="#photos">Photos</a>
     <a href="#moments">Moments</a>
     <a href="#boyfriend-mode">Boyfriend Mode</a>
@@ -460,78 +459,46 @@
 
 <main>
 
-<!-- What is this? -->
-<section id="what-is-this">
+<!-- About: who I am + the basics -->
+<section id="about">
   <div class="container">
-    <div class="section-tag tag-navy">📋 What is this?</div>
-    <h2>A Slightly Chaotic<br>Introduction</h2>
-    <div class="intro-card">
-      <p>This is a Slide Deck (I know so businessy) I originally created for myself, as a reminder of who I am and what I love.</p>
-      <p>I then realised it could be a fun way to skip some of the small talk and give you a real sense of who I am from the start.</p>
-      <div class="warning-item">This document can be rough in places and you might spot a few spelling errors. (Dyslexia card 🃏)</div>
-      <div class="warning-item">This approach does remove some of the mystery so if you'd rather let things unfold naturally, I'd suggest not going beyond the "How to get in touch" section.</div>
-      <div class="warning-item" style="border-top: 1px solid var(--border); margin-top: 16px; padding-top: 16px;">I hope you enjoy this presentation! If you do, I'd love to hear from you — I'm ready to plan our first date! Contact details are further into the slides.</div>
-    </div>
-  </div>
-</section>
+    <div class="section-tag tag-navy">📋 Who Am I?</div>
+    <div class="profile-layout">
+      <div class="profile-intro">
+        <div class="profile-name">Alec Doran-Twyford</div>
+        <div class="profile-tagline">Loveable nerd · Software Engineer · Welwyn Garden City</div>
+        <p>Hi, I'm Alec! This little site started as a slide deck I made for myself — a reminder of who I am and what I love. I then realised it could be a fun way to skip some of the small talk and give you a real sense of me from the start.</p>
+        <p>So here's the honest (and slightly chaotic) introduction: the facts, the photos, and the bits that make me, me. If you like what you see, my contact details are a bit further down.</p>
 
-<!-- The Basics -->
-<section id="basics">
-  <div class="container">
-    <div class="section-tag tag-navy">🪪 The Basics</div>
-    <h2>Who Am I?</h2>
-    <div class="basics-grid">
-      <div class="basic-item">
-        <div class="basic-label">Name</div>
-        <div class="basic-value">Alec Doran-Twyford</div>
+        <div class="fact-grid">
+          <div class="fact-row cols-3">
+            <div class="fact"><span class="fact-icon">🚹</span><div><div class="fact-label">Gender</div><div class="fact-value">Male</div></div></div>
+            <div class="fact"><span class="fact-icon">🗣️</span><div><div class="fact-label">Pronouns</div><div class="fact-value">He / Him / They / Them</div></div></div>
+            <div class="fact"><span class="fact-icon">❤️</span><div><div class="fact-label">Orientation</div><div class="fact-value">Straight</div></div></div>
+          </div>
+          <div class="fact-row cols-2">
+            <div class="fact"><span class="fact-icon">🎂</span><div><div class="fact-label">Age</div><div class="fact-value">35</div></div></div>
+            <div class="fact"><span class="fact-icon">♉</span><div><div class="fact-label">Birthday</div><div class="fact-value">19 May · Taurus</div></div></div>
+          </div>
+          <div class="fact-row cols-2">
+            <div class="fact"><span class="fact-icon">💼</span><div><div class="fact-label">Profession</div><div class="fact-value">Software Engineer</div></div></div>
+            <div class="fact"><span class="fact-icon">🎓</span><div><div class="fact-label">Education</div><div class="fact-value">BSc Computer Science</div></div></div>
+          </div>
+          <div class="fact-row cols-2">
+            <div class="fact"><span class="fact-icon">🌍</span><div><div class="fact-label">Nationality</div><div class="fact-value">British / New Zealander</div></div></div>
+            <div class="fact"><span class="fact-icon">📍</span><div><div class="fact-label">Living in</div><div class="fact-value">Welwyn Garden City</div></div></div>
+          </div>
+          <div class="fact-row cols-3">
+            <div class="fact"><span class="fact-icon">📏</span><div><div class="fact-label">Height</div><div class="fact-value">~5'8"</div></div></div>
+            <div class="fact"><span class="fact-icon">🖤</span><div><div class="fact-label">Favourite Colour</div><div class="fact-value">Black</div></div></div>
+            <div class="fact"><span class="fact-icon">🌱</span><div><div class="fact-label">Politics</div><div class="fact-value">Liberal Left (Green Party)</div></div></div>
+          </div>
+        </div>
+
       </div>
-      <div class="basic-item">
-        <div class="basic-label">Pronouns</div>
-        <div class="basic-value">He / Him / They / Them</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Gender</div>
-        <div class="basic-value">Male</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Orientation</div>
-        <div class="basic-value">Straight</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Age</div>
-        <div class="basic-value">35</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Birthday</div>
-        <div class="basic-value">19 May · Taurus ♉</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Height</div>
-        <div class="basic-value">~5'8" (height may vary)</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Living in</div>
-        <div class="basic-value">Welwyn Garden City</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Favourite Colour</div>
-        <div class="basic-value">Black 🖤</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Profession</div>
-        <div class="basic-value">Software Engineer</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Nationality</div>
-        <div class="basic-value">British / New Zealander 🇬🇧🇳🇿</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Political</div>
-        <div class="basic-value">Liberal Left (Green Party) 🌱</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Socials</div>
-        <div class="basic-value"><a href="https://linktr.ee/Alectronic" target="_blank" rel="noopener">linktr.ee/Alectronic</a></div>
+
+      <div class="profile-photo">
+        <img src="img/coverphoto/index.png" alt="Alec Doran-Twyford">
       </div>
     </div>
   </div>
@@ -543,11 +510,129 @@
     <div class="section-tag tag-navy">📸 Photos</div>
     <h2>A Few Faces of Alec</h2>
     <p style="color: var(--grey-light); margin-bottom: 28px;">Some snapshots from the life. Yes, I am the one in most of them.</p>
-    <!-- Add photos to photos/gallery/ and add <img> tags below -->
-    <div class="photo-flow">
-      <!-- <img src="photos/gallery/photo-1.jpg" alt=""> -->
-      <!-- <img src="photos/gallery/photo-2.jpg" alt=""> -->
-      <!-- <img src="photos/gallery/photo-3.jpg" alt=""> -->
+    <div class="mosaic-strip">
+      <div class="mosaic-track">
+        <!-- set 1: all photos from img/alec/ -->
+        <img src="img/alec/headshot of alec.png" alt="Alec" loading="lazy">
+        <img src="img/alec/12113302_10156183592705523_7547664735086229015_o.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/2023-01-07.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/20250725_131048.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/22789204_10208214247754266_2491765902020554549_n.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/A PHOTOS  058.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/IMG_20180614_170205.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20210506_114649559.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20210530_151845165.PORTRAIT.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20240518_222450007.RAW-01.COVER.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20240518_222526981.RAW-01.COVER.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20240518_222540602.RAW-01.COVER.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20240525_084631053.PORTRAIT.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20250511_122657237.RAW-01.COVER.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20251007_203516750.RAW-01.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20251108_173509277.PORTRAIT~3.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20251122_102535623.PORTRAIT~2.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20251128_071312852.PORTRAIT.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20251204_052610096.PORTRAIT.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20260501_151845261.PORTRAIT.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20260501_151852179.PORTRAIT.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20260502_084552947.PORTRAIT.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20260513_074618468.RAW-01.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20260514_052228361.PORTRAIT.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20260516_092119437.RAW-01.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20260522_014927602.PORTRAIT.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/PXL_20260522_065826955.RAW-01.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/alec at an onsen in japan.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/alec at graduation.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec at midsummer.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec at pokemon kanto with pokemon plushies.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/alec big buddha phuket selfie.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec chernobyl ferris wheel pripyat.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec cloapsed at the gym.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec collapsed at gym photo.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec completing a 10k run.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec dress as mad scienst for halloweeen.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec eating out.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec feeding load of backpackers.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec flower crown midsommar sweden.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec gaming setup triple monitors.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec giant beer stein prague.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec hobbiton sign new zealand.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec holding a pineapple.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec in a bikini as a dare.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec in a garden.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/alec kimono torii gate japan.jpg" alt="Alec" loading="lazy">
+        <img src="img/alec/alec led poi spinning light trails.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec on top of mt katumba in bali.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec pratciing shibari.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec setting of on his backpacking advanture.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec sky diving.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec swimming tropical river pool.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec times square new york.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec whitehaven beach australia lookout.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec with david tenant.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec with fire spinning staff.png" alt="Alec" loading="lazy">
+        <img src="img/alec/alec with his family dog monty.png" alt="Alec" loading="lazy">
+        <img src="img/alec/orig_26560_135502364759fdd46cca81a.jpg" alt="Alec" loading="lazy">
+        <!-- set 2: duplicate for seamless loop -->
+        <img src="img/alec/headshot of alec.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/12113302_10156183592705523_7547664735086229015_o.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/2023-01-07.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/20250725_131048.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/22789204_10208214247754266_2491765902020554549_n.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/A PHOTOS  058.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/IMG_20180614_170205.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20210506_114649559.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20210530_151845165.PORTRAIT.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20240518_222450007.RAW-01.COVER.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20240518_222526981.RAW-01.COVER.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20240518_222540602.RAW-01.COVER.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20240525_084631053.PORTRAIT.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20250511_122657237.RAW-01.COVER.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20251007_203516750.RAW-01.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20251108_173509277.PORTRAIT~3.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20251122_102535623.PORTRAIT~2.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20251128_071312852.PORTRAIT.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20251204_052610096.PORTRAIT.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20260501_151845261.PORTRAIT.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20260501_151852179.PORTRAIT.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20260502_084552947.PORTRAIT.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20260513_074618468.RAW-01.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20260514_052228361.PORTRAIT.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20260516_092119437.RAW-01.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20260522_014927602.PORTRAIT.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/PXL_20260522_065826955.RAW-01.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec at an onsen in japan.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec at graduation.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec at midsummer.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec at pokemon kanto with pokemon plushies.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec big buddha phuket selfie.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec chernobyl ferris wheel pripyat.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec cloapsed at the gym.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec collapsed at gym photo.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec completing a 10k run.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec dress as mad scienst for halloweeen.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec eating out.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec feeding load of backpackers.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec flower crown midsommar sweden.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec gaming setup triple monitors.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec giant beer stein prague.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec hobbiton sign new zealand.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec holding a pineapple.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec in a bikini as a dare.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec in a garden.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec kimono torii gate japan.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec led poi spinning light trails.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec on top of mt katumba in bali.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec pratciing shibari.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec setting of on his backpacking advanture.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec sky diving.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec swimming tropical river pool.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec times square new york.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec whitehaven beach australia lookout.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec with david tenant.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec with fire spinning staff.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/alec with his family dog monty.png" alt="Alec" loading="lazy" aria-hidden="true">
+        <img src="img/alec/orig_26560_135502364759fdd46cca81a.jpg" alt="Alec" loading="lazy" aria-hidden="true">
+      </div>
     </div>
   </div>
 </section>
@@ -705,6 +790,7 @@
         <a class="contact-btn" href="https://www.linkedin.com/in/alectronic0/" target="_blank" rel="noopener">in LinkedIn</a>
         <a class="contact-btn" href="https://discordapp.com/users/689441309567746070" target="_blank" rel="noopener">🎮 Discord</a>
         <a class="contact-btn" href="https://t.me/alectronic0" target="_blank" rel="noopener">✈ Telegram</a>
+        <a class="contact-btn" href="https://linktr.ee/Alectronic" target="_blank" rel="noopener">🔗 Linktree</a>
       </div>
     </div>
   </div>
