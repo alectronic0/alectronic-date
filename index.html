@@ -4,24 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alec's Dating Application 🎮❤️</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
   <style>
     :root {
-      --navy:   #0d2b45;
-      --navy-light: #1a3f62;
-      --navy-dark: #081c2e;
-      --green:  #2d6a4f;
+      --navy:        #0d2b45;
+      --navy-light:  #1a3f62;
+      --navy-dark:   #081c2e;
+      --green:       #2d6a4f;
       --green-light: #40916c;
-      --red:    #c1121f;
-      --red-light: #e63946;
-      --black:  #0a0a0a;
-      --grey-dark: #2b2b2b;
-      --grey:   #6c757d;
-      --grey-light: #adb5bd;
-      --grey-faint: #dee2e6;
-      --text:   #f0f0f0;
-      --surface: #111c27;
-      --surface-2: #162233;
-      --border: #1f3347;
+      --red:         #c1121f;
+      --red-light:   #e63946;
+      --black:       #0a0a0a;
+      --grey-dark:   #2b2b2b;
+      --grey:        #6c757d;
+      --grey-light:  #adb5bd;
+      --text:        #f0f0f0;
+      --surface:     #111c27;
+      --surface-2:   #162233;
+      --border:      #1f3347;
       --font: 'Inter', system-ui, -apple-system, sans-serif;
     }
 
@@ -53,40 +53,27 @@
       position: relative;
       overflow: hidden;
     }
-
     .hero::before {
       content: '';
       position: absolute;
-      top: -40%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
+      top: -40%; right: -20%;
+      width: 600px; height: 600px;
       background: radial-gradient(circle, rgba(193,18,31,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
-
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -30%;
-      left: -20%;
-      width: 500px;
-      height: 500px;
+      bottom: -30%; left: -20%;
+      width: 500px; height: 500px;
       background: radial-gradient(circle, rgba(45,106,79,0.15) 0%, transparent 70%);
       pointer-events: none;
     }
-
-    .hero-emoji {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      animation: float 3s ease-in-out infinite;
-    }
-
+    .hero-emoji { font-size: 3rem; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      50%       { transform: translateY(-8px); }
     }
-
     .hero h1 {
       font-size: clamp(2.4rem, 6vw, 4rem);
       font-weight: 800;
@@ -94,16 +81,8 @@
       line-height: 1.1;
       margin-bottom: 16px;
     }
-
     .hero h1 span { color: var(--red-light); }
-
-    .hero-sub {
-      font-size: 1.15rem;
-      color: var(--grey-light);
-      max-width: 480px;
-      margin-bottom: 36px;
-    }
-
+    .hero-sub { font-size: 1.15rem; color: var(--grey-light); max-width: 480px; margin-bottom: 36px; }
     .hero-cta {
       display: inline-block;
       background: var(--red);
@@ -114,25 +93,46 @@
       font-size: 1rem;
       transition: background 0.2s, transform 0.15s;
     }
-
-    .hero-cta:hover {
-      background: var(--red-light);
-      transform: translateY(-2px);
-      text-decoration: none;
-      color: white;
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 32px;
-      font-size: 0.8rem;
-      color: var(--grey);
-      animation: bounce 2s infinite;
-    }
-
+    .hero-cta:hover { background: var(--red-light); transform: translateY(-2px); text-decoration: none; color: white; }
+    .hero-scroll { position: absolute; bottom: 32px; font-size: 0.8rem; color: var(--grey); animation: bounce 2s infinite; }
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(4px); }
+      50%       { transform: translateY(4px); }
+    }
+
+    /* ─── Photo mosaic strip ───────────────────── */
+    .mosaic-strip {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 140px;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      pointer-events: none;
+    }
+    .mosaic-track {
+      display: flex;
+      gap: 8px;
+      width: max-content;
+      animation: marquee 40s linear infinite;
+      height: 100%;
+      align-items: flex-end;
+    }
+    .mosaic-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .mosaic-strip img {
+      height: 120px;
+      width: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      opacity: 0.75;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     /* ─── Nav ───────────────────────────────────── */
@@ -140,11 +140,10 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(10, 10, 10, 0.9);
+      background: rgba(10, 10, 10, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-
     .nav-inner {
       max-width: 900px;
       margin: 0 auto;
@@ -153,9 +152,7 @@
       scrollbar-width: none;
       padding: 0 16px;
     }
-
     .nav-inner::-webkit-scrollbar { display: none; }
-
     nav a {
       font-size: 0.82rem;
       font-weight: 500;
@@ -165,25 +162,11 @@
       border-bottom: 2px solid transparent;
       transition: color 0.15s, border-color 0.15s;
     }
+    nav a:hover, nav a.active { color: var(--text); text-decoration: none; border-bottom-color: var(--red); }
 
-    nav a:hover {
-      color: var(--text);
-      text-decoration: none;
-      border-bottom-color: var(--red);
-    }
-
-    /* ─── Sections ──────────────────────────────── */
-    .container {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    section {
-      padding: 72px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
+    /* ─── Layout ────────────────────────────────── */
+    .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 72px 0; border-bottom: 1px solid var(--border); }
     section:last-of-type { border-bottom: none; }
 
     .section-tag {
@@ -196,414 +179,179 @@
       border-radius: 4px;
       margin-bottom: 20px;
     }
-
-    .tag-navy  { background: var(--navy);   color: var(--grey-light); }
-    .tag-green { background: var(--green);  color: #c8f0dc; }
-    .tag-red   { background: var(--red);    color: #ffdde0; }
+    .tag-navy  { background: var(--navy);      color: var(--grey-light); }
+    .tag-green { background: var(--green);     color: #c8f0dc; }
+    .tag-red   { background: var(--red);       color: #ffdde0; }
     .tag-grey  { background: var(--grey-dark); color: var(--grey-light); }
 
-    h2 {
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 24px;
-    }
+    h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; line-height: 1.2; margin-bottom: 24px; }
+    p  { color: var(--grey-light); margin-bottom: 14px; }
 
-    p { color: var(--grey-light); margin-bottom: 14px; }
-
-    /* ─── What Is This ──────────────────────────── */
-    .intro-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-    }
-
+    /* ─── Intro Card ────────────────────────────── */
+    .intro-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
     .intro-card p { color: var(--grey-light); }
-
-    .warning-item {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      color: var(--grey-light);
-      font-size: 0.92rem;
-      margin-top: 10px;
-    }
-
+    .warning-item { display: flex; gap: 10px; align-items: flex-start; color: var(--grey-light); font-size: 0.92rem; margin-top: 10px; }
     .warning-item::before { content: '⚠️'; flex-shrink: 0; }
 
     /* ─── Basics ────────────────────────────────── */
-    .basics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 12px;
-    }
+    .basics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+    .basic-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+    .basic-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); margin-bottom: 4px; }
+    .basic-value { font-size: 1rem; font-weight: 500; color: var(--text); }
 
-    .basic-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px;
+    /* ─── Photo Gallery ─────────────────────────── */
+    .photo-flow { column-count: 3; column-gap: 10px; }
+    .photo-flow img {
+      width: 100%; display: block; margin-bottom: 10px;
+      border-radius: 8px; border: 1px solid var(--border);
+      break-inside: avoid; cursor: zoom-in;
+      transition: transform 0.2s, border-color 0.2s;
     }
+    .photo-flow img:hover { transform: scale(1.02); border-color: var(--grey); }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 999; justify-content: center; align-items: center; cursor: zoom-out; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 8px; object-fit: contain; }
+    .lightbox-close { position: absolute; top: 20px; right: 28px; font-size: 2rem; color: var(--grey-light); cursor: pointer; }
+    @media (max-width: 700px) { .photo-flow { column-count: 2; } }
+    @media (max-width: 400px) { .photo-flow { column-count: 1; } }
 
-    .basic-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 4px;
-    }
-
-    .basic-value {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    /* ─── Notable Moments ───────────────────────── */
-    .moments-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
+    /* ─── Moments ───────────────────────────────── */
+    .moments-list { display: flex; flex-direction: column; gap: 8px; }
     .moment {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px 16px;
-      font-size: 0.95rem;
-      color: var(--text);
+      display: flex; align-items: center; gap: 12px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 14px 16px;
+      font-size: 0.95rem; color: var(--text);
       transition: border-color 0.15s;
     }
-
     .moment:hover { border-color: var(--green-light); }
     .moment-icon { font-size: 1.2rem; flex-shrink: 0; }
 
     /* ─── Boyfriend Mode ────────────────────────── */
-    .bf-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 10px;
-    }
-
+    .bf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
     .bf-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px;
-      font-size: 0.9rem;
-      color: var(--grey-light);
+      display: flex; align-items: flex-start; gap: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 14px;
+      font-size: 0.9rem; color: var(--grey-light);
     }
-
     .bf-item-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
 
     /* ─── Looking For ───────────────────────────── */
-    .looking-cols {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .looking-group h3 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--green-light);
-      margin-bottom: 12px;
-    }
-
-    .looking-group ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .looking-group li {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.92rem;
-      color: var(--grey-light);
-    }
-
-    .looking-group li::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      flex-shrink: 0;
-    }
+    .looking-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .looking-group h3 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green-light); margin-bottom: 12px; }
+    .looking-group ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .looking-group li { display: flex; align-items: center; gap: 8px; font-size: 0.92rem; color: var(--grey-light); }
+    .looking-group li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
 
     /* ─── Date Options ──────────────────────────── */
-    .date-categories {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .date-category h3 {
-      font-size: 0.82rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--grey);
-      margin-bottom: 10px;
-    }
-
-    .date-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
+    .date-categories { display: flex; flex-direction: column; gap: 24px; }
+    .date-category h3 { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey); margin-bottom: 10px; }
+    .date-pills { display: flex; flex-wrap: wrap; gap: 8px; }
     .date-pill {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      padding: 6px 16px;
-      font-size: 0.88rem;
-      color: var(--grey-light);
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 50px; padding: 6px 16px;
+      font-size: 0.88rem; color: var(--grey-light);
       transition: border-color 0.15s, color 0.15s;
     }
-
-    .date-pill:hover {
-      border-color: var(--navy-light);
-      color: var(--text);
-    }
+    .date-pill:hover { border-color: var(--navy-light); color: var(--text); }
 
     /* ─── Contact ───────────────────────────────── */
-    .contact-section {
-      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
-      border-radius: 16px;
-      padding: 40px;
-      text-align: center;
-    }
-
+    .contact-section { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); border-radius: 16px; padding: 40px; text-align: center; }
     .contact-section h2 { margin-bottom: 8px; }
-    .contact-section p { max-width: 480px; margin: 0 auto 28px; }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-    }
-
+    .contact-section p  { max-width: 480px; margin: 0 auto 28px; }
+    .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
     .contact-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text);
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px 20px;
+      font-size: 0.9rem; font-weight: 500; color: var(--text);
       transition: border-color 0.15s, background 0.15s;
     }
+    .contact-btn:hover { background: var(--navy-light); border-color: var(--grey); text-decoration: none; color: white; }
+    .contact-btn.primary { background: var(--red); border-color: var(--red); color: white; }
+    .contact-btn.primary:hover { background: var(--red-light); border-color: var(--red-light); }
 
-    .contact-btn:hover {
-      background: var(--navy-light);
-      border-color: var(--grey);
-      text-decoration: none;
-      color: white;
-    }
-
-    .contact-btn.primary {
-      background: var(--red);
-      border-color: var(--red);
-      color: white;
-    }
-
-    .contact-btn.primary:hover {
-      background: var(--red-light);
-      border-color: var(--red-light);
-    }
-
-    /* ─── Warning Divider ───────────────────────── */
-    .warning-banner {
-      background: linear-gradient(90deg, var(--grey-dark), #3a2020, var(--grey-dark));
-      border: 1px solid #4a2020;
-      border-radius: 12px;
-      padding: 28px 32px;
-      text-align: center;
-    }
-
+    /* ─── Warning Banner ────────────────────────── */
+    .warning-banner { background: linear-gradient(90deg, var(--grey-dark), #3a2020, var(--grey-dark)); border: 1px solid #4a2020; border-radius: 12px; padding: 28px 32px; text-align: center; }
     .warning-banner .w-emoji { font-size: 2rem; margin-bottom: 12px; }
-
-    .warning-banner h2 {
-      font-size: 1.4rem;
-      color: #ffb3b3;
-      margin-bottom: 8px;
-    }
-
+    .warning-banner h2 { font-size: 1.4rem; color: #ffb3b3; margin-bottom: 8px; }
     .warning-banner p { color: var(--grey-light); max-width: 480px; margin: 0 auto; }
-
-    .warning-items-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
-
-    .warning-tag {
-      background: rgba(193,18,31,0.2);
-      border: 1px solid rgba(193,18,31,0.4);
-      border-radius: 50px;
-      padding: 4px 14px;
-      font-size: 0.82rem;
-      color: #ffb3b3;
-    }
+    .warning-items-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .warning-tag { background: rgba(193,18,31,0.2); border: 1px solid rgba(193,18,31,0.4); border-radius: 50px; padding: 4px 14px; font-size: 0.82rem; color: #ffb3b3; }
 
     /* ─── Personality ───────────────────────────── */
-    .personality-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .personality-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
-    }
-
-    .personality-card .p-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .personality-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .personality-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+    .personality-card .p-icon  { font-size: 1.5rem; margin-bottom: 8px; }
     .personality-card .p-title { font-weight: 600; margin-bottom: 4px; }
-    .personality-card .p-desc { font-size: 0.85rem; color: var(--grey-light); }
-
-    .love-languages {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .love-lang {
-      background: var(--navy);
-      border: 1px solid var(--navy-light);
-      border-radius: 8px;
-      padding: 14px 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-align: center;
-    }
-
-    .love-lang-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--grey);
-      margin-bottom: 4px;
-    }
+    .personality-card .p-desc  { font-size: 0.85rem; color: var(--grey-light); }
+    .love-languages { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .love-lang { background: var(--navy); border: 1px solid var(--navy-light); border-radius: 8px; padding: 14px 20px; font-size: 0.9rem; font-weight: 500; text-align: center; }
+    .love-lang-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey); margin-bottom: 4px; }
 
     /* ─── Warning Label ─────────────────────────── */
-    .warning-label-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .wl-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 18px;
-    }
-
-    .wl-card .wl-icon { font-size: 1.3rem; margin-bottom: 8px; }
-    .wl-card .wl-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; }
-    .wl-card .wl-desc { font-size: 0.82rem; color: var(--grey-light); }
+    .wl-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .wl-group { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+    .wl-group-title { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey); margin-bottom: 12px; }
+    .wl-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .wl-list li { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--grey-light); }
+    .wl-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+    .wl-note { background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 16px; font-size: 0.88rem; color: var(--grey-light); }
 
     /* ─── Hobbies ───────────────────────────────── */
-    .hobby-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
-    }
+    .hobby-cats { display: flex; flex-direction: column; gap: 20px; }
+    .hobby-cat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+    .hobby-cat-title { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey); margin-bottom: 10px; }
+    .hobby-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hobby-pill { background: var(--surface-2); border: 1px solid var(--border); border-radius: 50px; padding: 5px 14px; font-size: 0.86rem; color: var(--grey-light); }
+    .hobby-pill.note { border-color: var(--navy-light); color: var(--grey); font-size: 0.78rem; }
 
-    .hobby-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 18px;
-      transition: border-color 0.15s;
-    }
+    /* ─── Generic list card ─────────────────────── */
+    .list-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+    .list-card ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .list-card li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.92rem; color: var(--grey-light); }
+    .list-card li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 9px; }
+    .list-card h3 { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey); margin-bottom: 10px; margin-top: 16px; }
+    .list-card h3:first-child { margin-top: 0; }
 
-    .hobby-card:hover { border-color: var(--green-light); }
+    /* ─── Two-col cards ─────────────────────────── */
+    .two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-    .hobby-icon { font-size: 1.6rem; margin-bottom: 8px; }
-    .hobby-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
-    .hobby-detail { font-size: 0.82rem; color: var(--grey-light); }
+    /* ─── Travel grid ───────────────────────────── */
+    .places-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+    .place-item { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: 0.9rem; color: var(--text); }
+    .place-detail { font-size: 0.78rem; color: var(--grey); margin-top: 2px; }
 
-    /* ─── Future Goals ──────────────────────────── */
-    .goals-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    /* ─── Tags / pills ──────────────────────────── */
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 50px; padding: 5px 14px; font-size: 0.86rem; color: var(--grey-light); }
+    .tag-item.love { border-color: var(--green); }
+    .tag-item.hate { border-color: var(--red); color: #ffb3b3; }
 
-    .goal-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px 20px;
-    }
-
+    /* ─── Goals ─────────────────────────────────── */
+    .goals-list { display: flex; flex-direction: column; gap: 10px; }
+    .goal-item { display: flex; align-items: flex-start; gap: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; }
     .goal-icon { font-size: 1.3rem; flex-shrink: 0; }
     .goal-text { font-size: 0.92rem; color: var(--grey-light); }
     .goal-text strong { color: var(--text); display: block; margin-bottom: 2px; }
 
+    /* ─── Outro ─────────────────────────────────── */
+    .outro { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); border-radius: 16px; padding: 48px 32px; text-align: center; }
+    .outro h2 { margin-bottom: 12px; }
+    .outro p  { max-width: 480px; margin: 0 auto 12px; }
+    .outro-emoji { font-size: 2.5rem; margin-top: 24px; letter-spacing: 4px; }
+
     /* ─── Footer ────────────────────────────────── */
-    footer {
-      background: var(--navy-dark);
-      border-top: 1px solid var(--border);
-      padding: 48px 24px;
-      text-align: center;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .footer-links a {
-      font-size: 0.85rem;
-      color: var(--grey);
-    }
-
+    footer { background: var(--navy-dark); border-top: 1px solid var(--border); padding: 48px 24px; text-align: center; }
+    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; }
+    .footer-links a { font-size: 0.85rem; color: var(--grey); }
     .footer-links a:hover { color: var(--text); text-decoration: none; }
-
-    .footer-note {
-      font-size: 0.78rem;
-      color: var(--grey);
-    }
+    .footer-note { font-size: 0.78rem; color: var(--grey); }
 
     /* ─── Responsive ────────────────────────────── */
     @media (max-width: 600px) {
-      .looking-cols { grid-template-columns: 1fr; }
-      .warning-label-grid { grid-template-columns: 1fr; }
+      .looking-cols, .wl-cols, .two-cols { grid-template-columns: 1fr; }
       .contact-section { padding: 28px 20px; }
       section { padding: 48px 0; }
     }
@@ -618,6 +366,66 @@
   <p class="hero-sub">Loveable nerd, looking for his player 2.<br>An intro into what having me as your boyfriend could look like!</p>
   <a href="#what-is-this" class="hero-cta">Start the Application ↓</a>
   <div class="hero-scroll">scroll to explore ↓</div>
+  <div class="mosaic-strip">
+    <div class="mosaic-track">
+      <!-- set 1 -->
+      <img src="photos/_extracted/01-cover/headshot of alec.png" alt="Alec">
+      <img src="photos/_extracted/03-basics/alec at an onsen in japan.jpg" alt="Alec Japan onsen">
+      <img src="photos/_extracted/03-basics/alec at midsummer.png" alt="Alec midsummer">
+      <img src="photos/_extracted/03-basics/alec dress as mad scienst for halloweeen.png" alt="Alec Halloween">
+      <img src="photos/_extracted/03-basics/alec eating out.png" alt="Alec eating out">
+      <img src="photos/_extracted/03-basics/alec holding a pineapple.png" alt="Alec pineapple">
+      <img src="photos/_extracted/03-basics/alec in a garden.jpg" alt="Alec in garden">
+      <img src="photos/_extracted/03-basics/alec with fire spinning staff.png" alt="Alec fire spinning">
+      <img src="photos/_extracted/03-basics/alec with his family dog monty.png" alt="Alec with Monty">
+      <img src="photos/_extracted/04-moments/alec at graduation.png" alt="Alec graduation">
+      <img src="photos/_extracted/04-moments/alec completing a 10k run.png" alt="Alec 10k">
+      <img src="photos/_extracted/04-moments/alec sky diving.png" alt="Alec skydiving">
+      <img src="photos/_extracted/04-moments/alec with david tenant.png" alt="Alec with David Tennant">
+      <img src="photos/_extracted/04-moments/alec on top of mt katumba in bali.png" alt="Alec Bali">
+      <img src="photos/_extracted/13-hobbies/alec led poi spinning light trails.png" alt="Alec poi">
+      <img src="photos/_extracted/13-hobbies/alec gaming setup triple monitors.png" alt="Alec gaming">
+      <img src="photos/_extracted/13-hobbies/alec desk with gameboy orchid lego.png" alt="Alec desk">
+      <img src="photos/_extracted/13-hobbies/alec crochet snorlax.png" alt="Alec crochet">
+      <img src="photos/_extracted/15-places-been/alec times square new york.png" alt="Alec NYC">
+      <img src="photos/_extracted/15-places-been/alec flower crown midsommar sweden.png" alt="Alec Sweden">
+      <img src="photos/_extracted/15-places-been/alec kimono torii gate japan.jpg" alt="Alec Japan">
+      <img src="photos/_extracted/15-places-been/alec big buddha phuket selfie.png" alt="Alec Thailand">
+      <img src="photos/_extracted/15-places-been/alec hobbiton sign new zealand.png" alt="Alec NZ">
+      <img src="photos/_extracted/15-places-been/alec giant beer stein prague.png" alt="Alec Prague">
+      <img src="photos/_extracted/15-places-been/alec whitehaven beach australia lookout.png" alt="Alec Australia">
+      <img src="photos/_extracted/15-places-been/alec swimming tropical river pool.png" alt="Alec swimming">
+      <img src="photos/_extracted/15-places-been/alec chernobyl ferris wheel pripyat.png" alt="Alec Chernobyl">
+      <!-- set 2 (duplicate for seamless loop) -->
+      <img src="photos/_extracted/01-cover/headshot of alec.png" alt="Alec">
+      <img src="photos/_extracted/03-basics/alec at an onsen in japan.jpg" alt="Alec Japan onsen">
+      <img src="photos/_extracted/03-basics/alec at midsummer.png" alt="Alec midsummer">
+      <img src="photos/_extracted/03-basics/alec dress as mad scienst for halloweeen.png" alt="Alec Halloween">
+      <img src="photos/_extracted/03-basics/alec eating out.png" alt="Alec eating out">
+      <img src="photos/_extracted/03-basics/alec holding a pineapple.png" alt="Alec pineapple">
+      <img src="photos/_extracted/03-basics/alec in a garden.jpg" alt="Alec in garden">
+      <img src="photos/_extracted/03-basics/alec with fire spinning staff.png" alt="Alec fire spinning">
+      <img src="photos/_extracted/03-basics/alec with his family dog monty.png" alt="Alec with Monty">
+      <img src="photos/_extracted/04-moments/alec at graduation.png" alt="Alec graduation">
+      <img src="photos/_extracted/04-moments/alec completing a 10k run.png" alt="Alec 10k">
+      <img src="photos/_extracted/04-moments/alec sky diving.png" alt="Alec skydiving">
+      <img src="photos/_extracted/04-moments/alec with david tenant.png" alt="Alec with David Tennant">
+      <img src="photos/_extracted/04-moments/alec on top of mt katumba in bali.png" alt="Alec Bali">
+      <img src="photos/_extracted/13-hobbies/alec led poi spinning light trails.png" alt="Alec poi">
+      <img src="photos/_extracted/13-hobbies/alec gaming setup triple monitors.png" alt="Alec gaming">
+      <img src="photos/_extracted/13-hobbies/alec desk with gameboy orchid lego.png" alt="Alec desk">
+      <img src="photos/_extracted/13-hobbies/alec crochet snorlax.png" alt="Alec crochet">
+      <img src="photos/_extracted/15-places-been/alec times square new york.png" alt="Alec NYC">
+      <img src="photos/_extracted/15-places-been/alec flower crown midsommar sweden.png" alt="Alec Sweden">
+      <img src="photos/_extracted/15-places-been/alec kimono torii gate japan.jpg" alt="Alec Japan">
+      <img src="photos/_extracted/15-places-been/alec big buddha phuket selfie.png" alt="Alec Thailand">
+      <img src="photos/_extracted/15-places-been/alec hobbiton sign new zealand.png" alt="Alec NZ">
+      <img src="photos/_extracted/15-places-been/alec giant beer stein prague.png" alt="Alec Prague">
+      <img src="photos/_extracted/15-places-been/alec whitehaven beach australia lookout.png" alt="Alec Australia">
+      <img src="photos/_extracted/15-places-been/alec swimming tropical river pool.png" alt="Alec swimming">
+      <img src="photos/_extracted/15-places-been/alec chernobyl ferris wheel pripyat.png" alt="Alec Chernobyl">
+    </div>
+  </div>
 </div>
 
 <!-- Nav -->
@@ -625,13 +433,27 @@
   <div class="nav-inner">
     <a href="#what-is-this">Intro</a>
     <a href="#basics">Basics</a>
+    <a href="#photos">Photos</a>
     <a href="#moments">Moments</a>
     <a href="#boyfriend-mode">Boyfriend Mode</a>
     <a href="#looking-for">Looking For</a>
     <a href="#dates">Date Ideas</a>
     <a href="#contact">Contact</a>
     <a href="#personality">Personality</a>
+    <a href="#warning-label">Warning Label</a>
     <a href="#hobbies">Hobbies</a>
+    <a href="#bucket-list">Bucket List</a>
+    <a href="#places-been">Places Been</a>
+    <a href="#places-want">Places To Visit</a>
+    <a href="#movies">Movies & TV</a>
+    <a href="#games">Video Games</a>
+    <a href="#food">Food</a>
+    <a href="#music">Music</a>
+    <a href="#books">Books</a>
+    <a href="#podcasts">Podcasts</a>
+    <a href="#sports">Sports</a>
+    <a href="#politics">Politics</a>
+    <a href="#dislikes">Dislikes</a>
     <a href="#goals">Goals</a>
   </div>
 </nav>
@@ -644,10 +466,11 @@
     <div class="section-tag tag-navy">📋 What is this?</div>
     <h2>A Slightly Chaotic<br>Introduction</h2>
     <div class="intro-card">
-      <p>I originally created this as a reminder to myself of who I am and what I love. Then I realised it could be a fun way to skip some of the small talk and give you a real sense of who I am from the start.</p>
-      <div class="warning-item">This document can be rough in places — you might spot a few spelling errors. (Dyslexia card 🃏)</div>
-      <div class="warning-item">This approach does remove some of the mystery. If you'd rather let things unfold naturally, I'd suggest stopping at the <strong>Contact</strong> section.</div>
-      <div class="warning-item" style="border-top: 1px solid var(--border); margin-top: 16px; padding-top: 16px;">If you enjoy this, I'd love to hear from you — I'm ready to plan our first date!</div>
+      <p>This is a Slide Deck (I know so businessy) I originally created for myself, as a reminder of who I am and what I love.</p>
+      <p>I then realised it could be a fun way to skip some of the small talk and give you a real sense of who I am from the start.</p>
+      <div class="warning-item">This document can be rough in places and you might spot a few spelling errors. (Dyslexia card 🃏)</div>
+      <div class="warning-item">This approach does remove some of the mystery so if you'd rather let things unfold naturally, I'd suggest not going beyond the "How to get in touch" section.</div>
+      <div class="warning-item" style="border-top: 1px solid var(--border); margin-top: 16px; padding-top: 16px;">I hope you enjoy this presentation! If you do, I'd love to hear from you — I'm ready to plan our first date! Contact details are further into the slides.</div>
     </div>
   </div>
 </section>
@@ -667,24 +490,28 @@
         <div class="basic-value">He / Him / They / Them</div>
       </div>
       <div class="basic-item">
+        <div class="basic-label">Gender</div>
+        <div class="basic-value">Male</div>
+      </div>
+      <div class="basic-item">
+        <div class="basic-label">Orientation</div>
+        <div class="basic-value">Straight</div>
+      </div>
+      <div class="basic-item">
+        <div class="basic-label">Age</div>
+        <div class="basic-value">35</div>
+      </div>
+      <div class="basic-item">
         <div class="basic-label">Birthday</div>
-        <div class="basic-value">19 May 1991 · Taurus ♉</div>
+        <div class="basic-value">19 May · Taurus ♉</div>
       </div>
       <div class="basic-item">
         <div class="basic-label">Height</div>
-        <div class="basic-value">~5'7"–5'8" (height may vary)</div>
+        <div class="basic-value">~5'8" (height may vary)</div>
       </div>
       <div class="basic-item">
-        <div class="basic-label">Weight</div>
-        <div class="basic-value">404: Not Found…</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Based in</div>
-        <div class="basic-value">Welwyn Garden City, UK</div>
-      </div>
-      <div class="basic-item">
-        <div class="basic-label">Nationality</div>
-        <div class="basic-value">British / New Zealander 🇬🇧🇳🇿</div>
+        <div class="basic-label">Living in</div>
+        <div class="basic-value">Welwyn Garden City</div>
       </div>
       <div class="basic-item">
         <div class="basic-label">Favourite Colour</div>
@@ -695,12 +522,12 @@
         <div class="basic-value">Software Engineer</div>
       </div>
       <div class="basic-item">
-        <div class="basic-label">Politics</div>
-        <div class="basic-value">Liberal Left · Green Party 🌱</div>
+        <div class="basic-label">Nationality</div>
+        <div class="basic-value">British / New Zealander 🇬🇧🇳🇿</div>
       </div>
       <div class="basic-item">
-        <div class="basic-label">Religion</div>
-        <div class="basic-value">None</div>
+        <div class="basic-label">Political</div>
+        <div class="basic-value">Liberal Left (Green Party) 🌱</div>
       </div>
       <div class="basic-item">
         <div class="basic-label">Socials</div>
@@ -710,25 +537,41 @@
   </div>
 </section>
 
+<!-- Photos -->
+<section id="photos">
+  <div class="container">
+    <div class="section-tag tag-navy">📸 Photos</div>
+    <h2>A Few Faces of Alec</h2>
+    <p style="color: var(--grey-light); margin-bottom: 28px;">Some snapshots from the life. Yes, I am the one in most of them.</p>
+    <!-- Add photos to photos/gallery/ and add <img> tags below -->
+    <div class="photo-flow">
+      <!-- <img src="photos/gallery/photo-1.jpg" alt=""> -->
+      <!-- <img src="photos/gallery/photo-2.jpg" alt=""> -->
+      <!-- <img src="photos/gallery/photo-3.jpg" alt=""> -->
+    </div>
+  </div>
+</section>
+
 <!-- Notable Moments -->
 <section id="moments">
   <div class="container">
-    <div class="section-tag tag-green">🏆 Notable Moments</div>
+    <div class="section-tag tag-green">🏆 Notable Moments in Life</div>
     <h2>A Life Well Lived<br>(So Far)</h2>
     <div class="moments-list">
-      <div class="moment"><span class="moment-icon">🎓</span> Got a First at University</div>
-      <div class="moment"><span class="moment-icon">🚶</span> Drunk-walked home from London — 23.5km</div>
+      <div class="moment"><span class="moment-icon">🎓</span> Got a 1st @ University</div>
+      <div class="moment"><span class="moment-icon">🚶</span> Drunk walked home from London (23.5km)</div>
       <div class="moment"><span class="moment-icon">⭐</span> Met David Tennant</div>
-      <div class="moment"><span class="moment-icon">🎒</span> Backpacked for 2 years</div>
-      <div class="moment"><span class="moment-icon">📍</span> Awarded Most Enthusiastic Google City Expert (now Google Local Guides)</div>
+      <div class="moment"><span class="moment-icon">🎒</span> Backpacked (2yr)</div>
+      <div class="moment"><span class="moment-icon">📍</span> Award most enthusiastic Google City Expert (Now known as Google Local Guides)</div>
       <div class="moment"><span class="moment-icon">👨‍🍳</span> Cooked for 30 backpackers</div>
-      <div class="moment"><span class="moment-icon">👙</span> Wore a bikini at surf camp on Valentine's Day as a dare</div>
+      <div class="moment"><span class="moment-icon">👙</span> Wore a bikini at surf camp on Valentine Day as a dare</div>
       <div class="moment"><span class="moment-icon">🏃</span> Ran a 10KM</div>
       <div class="moment"><span class="moment-icon">🌋</span> Climbed a Volcano</div>
       <div class="moment"><span class="moment-icon">🏠</span> Bought a house</div>
       <div class="moment"><span class="moment-icon">🪂</span> Skydived</div>
-      <div class="moment"><span class="moment-icon">🇯🇵</span> Month-long solo adventure to Japan</div>
-      <div class="moment"><span class="moment-icon">👶</span> Became an Uncle × 4 (2 official nephews, 2 unofficial nieces)</div>
+      <div class="moment"><span class="moment-icon">👶</span> Became an Uncle (2 official nephews and 2 unofficial nieces to my friends)</div>
+      <div class="moment"><span class="moment-icon">🇯🇵</span> Month long solo adventure to Japan!</div>
+      <div class="moment"><span class="moment-icon">🔒</span> Censored (Honestly this makes this look even worse)</div>
     </div>
   </div>
 </section>
@@ -738,51 +581,52 @@
   <div class="container">
     <div class="section-tag tag-red">❤️ Boyfriend Mode</div>
     <h2>What Dating Me<br>Could Look Like</h2>
+    <p>This is what me as a boyfriend could look like:</p>
     <div class="bf-grid">
-      <div class="bf-item"><span class="bf-item-icon">🤗</span> Always supportive and caring — through the good and bad times</div>
-      <div class="bf-item"><span class="bf-item-icon">☕</span> Always getting your coffee order right</div>
-      <div class="bf-item"><span class="bf-item-icon">🍫</span> Will always have your preferred snack on hand</div>
-      <div class="bf-item"><span class="bf-item-icon">👑</span> Full passenger princess treatment</div>
-      <div class="bf-item"><span class="bf-item-icon">🍰</span> Bringing sweet treats back from London</div>
-      <div class="bf-item"><span class="bf-item-icon">🤍</span> Great hugs, forehead kisses &amp; massages</div>
+      <div class="bf-item"><span class="bf-item-icon">🤗</span> Always supportive and caring — being there through the good and bad times</div>
+      <div class="bf-item"><span class="bf-item-icon">☕</span> Always getting your coffee order &amp; having your preferred snack on hand</div>
+      <div class="bf-item"><span class="bf-item-icon">📸</span> Personal photographer</div>
+      <div class="bf-item"><span class="bf-item-icon">👑</span> Passenger princess treatment</div>
+      <div class="bf-item"><span class="bf-item-icon">🤍</span> Giving great hugs, forehead kisses and massages</div>
       <div class="bf-item"><span class="bf-item-icon">💬</span> Good morning / Good night texts</div>
       <div class="bf-item"><span class="bf-item-icon">🎁</span> Making or buying cute gifts</div>
       <div class="bf-item"><span class="bf-item-icon">💐</span> Sending your favourite flowers randomly</div>
-      <div class="bf-item"><span class="bf-item-icon">🐸</span> Pebbling you with 100s of memes</div>
-      <div class="bf-item"><span class="bf-item-icon">📅</span> Organising cute dates (and adding them to Google Calendar)</div>
-      <div class="bf-item"><span class="bf-item-icon">📊</span> Keeping docs / spreadsheets of important plans</div>
-      <div class="bf-item"><span class="bf-item-icon">📸</span> Personal photographer</div>
+      <div class="bf-item"><span class="bf-item-icon">🐸</span> Pebbling you with 100's of memes!</div>
+      <div class="bf-item"><span class="bf-item-icon">📅</span> Organising cute dates (adding them to Google Calendar)</div>
+      <div class="bf-item"><span class="bf-item-icon">📊</span> Keeping docs or spreadsheets about important information and plans</div>
     </div>
   </div>
 </section>
 
-<!-- What I'm Looking For -->
+<!-- Looking For -->
 <section id="looking-for">
   <div class="container">
-    <div class="section-tag tag-green">❤️ Looking For</div>
+    <div class="section-tag tag-green">❤️ What I am Looking For</div>
     <h2>My Ideal Match</h2>
     <div class="looking-cols">
       <div class="looking-group">
         <h3>Adventures Together</h3>
         <ul>
-          <li>Travelling the world</li>
-          <li>Finding amazing food spots</li>
-          <li>Fun activities &amp; day trips</li>
+          <li>Someone who is open to my interests</li>
+          <li>Enjoys going on adventures</li>
+          <li>Traveling</li>
+          <li>Find amazing food places</li>
+          <li>Doing fun activities</li>
           <li>Going for walks</li>
-          <li>Cosy days at home</li>
-          <li>Cooking &amp; baking</li>
-          <li>Playing video games</li>
-          <li>Watching films &amp; TV</li>
+          <li>Enjoys cosy days at home</li>
+          <li>Cooking / Baking</li>
+          <li>Playing Video Games</li>
+          <li>Watching TV / Movies</li>
+          <li>Do fun activities at home</li>
         </ul>
       </div>
       <div class="looking-group">
-        <h3>Shared Values</h3>
+        <h3>Values</h3>
         <ul>
-          <li>Clear &amp; open communication</li>
-          <li>Pushing each other to be our best</li>
-          <li>Willing to work through hard times</li>
-          <li>Quality time &amp; mutual affection</li>
-          <li>Open to my (chaotic) interests</li>
+          <li>Clear and open communication</li>
+          <li>Wants to push each other to be our best selves</li>
+          <li>Willing to work through the hard times</li>
+          <li>Quality time and mutual affection</li>
         </ul>
       </div>
     </div>
@@ -792,14 +636,14 @@
 <!-- Date Options -->
 <section id="dates">
   <div class="container">
-    <div class="section-tag tag-navy">❤️ First Date Ideas</div>
+    <div class="section-tag tag-navy">❤️ Date Options</div>
     <h2>Pick Your Adventure</h2>
-    <p>Let me know your rough location and what you'd be up for — I'll organise a time and place!</p>
+    <p>Here are a few possible activities we could do for a 1st Date! Let me know your rough location and what you'd be up for trying and I will work to organise a time and a place!</p>
     <div class="date-categories">
       <div class="date-category">
-        <h3>🍕 Foodie &amp; Market</h3>
+        <h3>🍕 Foodie &amp; Market Activities</h3>
         <div class="date-pills">
-          <span class="date-pill">Coffee &amp; Walk</span>
+          <span class="date-pill">Coffee and Walk</span>
           <span class="date-pill">Pastry Adventure</span>
           <span class="date-pill">Flower Market</span>
           <span class="date-pill">Food Market</span>
@@ -808,7 +652,7 @@
         </div>
       </div>
       <div class="date-category">
-        <h3>⚡ Active</h3>
+        <h3>⚡ Active Activities</h3>
         <div class="date-pills">
           <span class="date-pill">Arcade</span>
           <span class="date-pill">Axe Throwing</span>
@@ -817,7 +661,7 @@
         </div>
       </div>
       <div class="date-category">
-        <h3>🧠 Intellectual</h3>
+        <h3>🧠 Intellectual Activities</h3>
         <div class="date-pills">
           <span class="date-pill">Museum</span>
           <span class="date-pill">Art Gallery</span>
@@ -827,7 +671,7 @@
         </div>
       </div>
       <div class="date-category">
-        <h3>🎨 Creative</h3>
+        <h3>🎨 Creative Activity</h3>
         <div class="date-pills">
           <span class="date-pill">Pottery</span>
           <span class="date-pill">Paint &amp; Sip</span>
@@ -835,7 +679,7 @@
         </div>
       </div>
       <div class="date-category">
-        <h3>🎮 Discord &amp; Games</h3>
+        <h3>🎮 Discord &amp; Video Games</h3>
         <div class="date-pills">
           <span class="date-pill">Peak</span>
           <span class="date-pill">It Takes Two</span>
@@ -851,44 +695,36 @@
 <section id="contact">
   <div class="container">
     <div class="contact-section">
-      <div class="section-tag tag-navy">💬 Get In Touch</div>
+      <div class="section-tag tag-navy">💬 How to get in touch</div>
       <h2>Shoot Your Shot</h2>
-      <p>I prefer not to share my number upfront — but reach out via any of these and I'll get back to you!</p>
+      <p>I prefer not to share my phone number upfront. However if you contact me via one of the below links you'll be able to get a hold of me:</p>
       <div class="contact-links">
-        <a class="contact-btn primary" href="mailto:date.alec@alectronic.co.uk?subject=RE%3A%20Alec%20Dating%20Application">
-          ✉ Email Me
-        </a>
-        <a class="contact-btn" href="https://www.instagram.com/alectronic0/" target="_blank" rel="noopener">
-          📸 Instagram
-        </a>
-        <a class="contact-btn" href="https://www.linkedin.com/in/alectronic0/" target="_blank" rel="noopener">
-          in LinkedIn
-        </a>
-        <a class="contact-btn" href="https://discordapp.com/users/689441309567746070" target="_blank" rel="noopener">
-          🎮 Discord
-        </a>
-        <a class="contact-btn" href="https://t.me/alectronic0" target="_blank" rel="noopener">
-          ✈ Telegram
-        </a>
+        <a class="contact-btn primary" href="mailto:date.alec@alectronic.co.uk?subject=RE%3A%20Alec%20Dating%20Application">✉ Email</a>
+        <a class="contact-btn" href="https://bit.ly/hangoutalec" target="_blank" rel="noopener">☕ Hangout</a>
+        <a class="contact-btn" href="https://www.instagram.com/alectronic0/" target="_blank" rel="noopener">📸 Instagram</a>
+        <a class="contact-btn" href="https://www.linkedin.com/in/alectronic0/" target="_blank" rel="noopener">in LinkedIn</a>
+        <a class="contact-btn" href="https://discordapp.com/users/689441309567746070" target="_blank" rel="noopener">🎮 Discord</a>
+        <a class="contact-btn" href="https://t.me/alectronic0" target="_blank" rel="noopener">✈ Telegram</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Warning Divider -->
+<!-- Spoiler Warning -->
 <section>
   <div class="container">
     <div class="warning-banner">
       <div class="w-emoji">⚠️</div>
-      <h2>Spoiler Territory Ahead</h2>
-      <p>Beyond this point we get into the deep stuff. If you'd rather discover this in person, <strong>now's the time to look away!</strong></p>
+      <h2>Warning!!! ⚠️</h2>
+      <p>Beyond this point we get into my:</p>
       <div class="warning-items-row">
         <span class="warning-tag">Personality</span>
-        <span class="warning-tag">Honest Flaws</span>
+        <span class="warning-tag">Good, Bad and Ugly Sides of me</span>
         <span class="warning-tag">Hobbies &amp; Interests</span>
         <span class="warning-tag">Likes &amp; Dislikes</span>
         <span class="warning-tag">Future Goals</span>
       </div>
+      <p style="margin-top: 16px;">If you'd like to find this out in person please look away now!</p>
     </div>
   </div>
 </section>
@@ -898,8 +734,14 @@
   <div class="container">
     <div class="section-tag tag-navy">🧠 My Personality</div>
     <h2>How I Tick</h2>
-    <p>I'm not perfect but I always try to do the right thing. I would say I'm introverted — but I'm very sociable with the right people.</p>
+    <p>I am not perfect but I will always do my best to do the right thing!</p>
+    <p>I would say I am introverted, however I am sociable with the right people!</p>
     <div class="personality-cards">
+      <div class="personality-card">
+        <div class="p-icon">🧠</div>
+        <div class="p-title">MBTI: INTJ-T / INFJ-T</div>
+        <div class="p-desc">Introverted but sociable with the right people.</div>
+      </div>
       <div class="personality-card">
         <div class="p-icon">🤝</div>
         <div class="p-title">Community-Minded</div>
@@ -915,13 +757,8 @@
         <div class="p-title">Organised Chaos</div>
         <div class="p-desc">I love keeping spreadsheets, docs, and Google Calendar events for everything — including dates.</div>
       </div>
-      <div class="personality-card">
-        <div class="p-icon">💡</div>
-        <div class="p-title">Curious &amp; Creative</div>
-        <div class="p-desc">I'm constantly thinking about new ideas, projects, and ways to make things better — for people I care about.</div>
-      </div>
     </div>
-    <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey); margin-bottom: 12px; margin-top: 32px;">Love Languages</h3>
+    <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey); margin-bottom: 12px; margin-top: 32px;">My Main Love Languages</h3>
     <div class="love-languages">
       <div class="love-lang">
         <div class="love-lang-label">Primary</div>
@@ -936,81 +773,471 @@
 </section>
 
 <!-- Warning Label -->
-<section>
+<section id="warning-label">
   <div class="container">
     <div class="section-tag tag-grey">⚠️ My Warning Label</div>
     <h2>Nobody's Perfect —<br>Here's My Label</h2>
-    <p>I believe in honesty up front. These are things worth knowing before we get too deep in.</p>
-    <div class="warning-label-grid">
-      <div class="wl-card">
-        <div class="wl-icon">🧠</div>
-        <div class="wl-title">Dyslexic</div>
-        <div class="wl-desc">Spelling errors happen. I know, I've built an entire presentation to prove it.</div>
+    <p>I think it's important to be upfront about these things so here are my warning labels:</p>
+    <div class="wl-cols">
+      <div class="wl-group">
+        <div class="wl-group-title">Physical Health</div>
+        <ul class="wl-list">
+          <li>Overweight</li>
+          <li>High blood pressure</li>
+          <li>Diabetes</li>
+        </ul>
+        <div class="wl-note">I am working on getting into shape — since March 2025 I've been working with a personal trainer and have lost ~10kg with my goal to get to about 70–80kg eventually.</div>
       </div>
-      <div class="wl-card">
-        <div class="wl-icon">🐢</div>
-        <div class="wl-title">Slow to respond sometimes</div>
-        <div class="wl-desc">I get deep in a task and forget to check my phone. Patience appreciated!</div>
-      </div>
-      <div class="wl-card">
-        <div class="wl-icon">📊</div>
-        <div class="wl-title">Over-organiser</div>
-        <div class="wl-desc">I will make a spreadsheet for our holiday. I might make one for the first date.</div>
-      </div>
-      <div class="wl-card">
-        <div class="wl-icon">🌊</div>
-        <div class="wl-title">Introvert Recharge</div>
-        <div class="wl-desc">I love socialising but I need solo time to recharge. It's not you, it's just how I'm wired.</div>
+      <div class="wl-group">
+        <div class="wl-group-title">Mental &amp; Emotional Health</div>
+        <ul class="wl-list">
+          <li>Dyslexia</li>
+          <li>Depression</li>
+          <li>Undiagnosed AuDHD</li>
+          <li>Anxious Attached</li>
+          <li>Overthinker</li>
+          <li>People pleaser</li>
+          <li>Feeling a bit too much</li>
+        </ul>
+        <div class="wl-note">I have taken time to go to therapy in the past and am currently looking into starting again. I am very well aware of my particular triggers &amp; trauma and have worked hard to process most of this. I find having consistent, open and honest communication helps with a lot of my mental and emotional state.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Hobbies -->
+<!-- Hobbies & Interests -->
 <section id="hobbies">
   <div class="container">
-    <div class="section-tag tag-green">🎯 Hobbies &amp; Interests</div>
+    <div class="section-tag tag-green">✨ My Hobbies &amp; Interests</div>
     <h2>Things That Light Me Up</h2>
-    <div class="hobby-grid">
-      <div class="hobby-card">
-        <div class="hobby-icon">🎮</div>
-        <div class="hobby-name">Video Games</div>
-        <div class="hobby-detail">Co-op fan. Portal 2, It Takes Two, Split Fiction. Always down for a gaming session.</div>
+    <div class="hobby-cats">
+      <div class="hobby-cat">
+        <div class="hobby-cat-title">🍜 Food</div>
+        <div class="hobby-pills">
+          <span class="hobby-pill">Cooking</span>
+          <span class="hobby-pill">Baking</span>
+          <span class="hobby-pill">Eating out</span>
+          <span class="hobby-pill">Tea</span>
+        </div>
       </div>
-      <div class="hobby-card">
-        <div class="hobby-icon">🍜</div>
-        <div class="hobby-name">Food &amp; Cooking</div>
-        <div class="hobby-detail">Passionate about food. Love finding hidden gem restaurants and cooking for people.</div>
+      <div class="hobby-cat">
+        <div class="hobby-cat-title">🎨 Creative</div>
+        <div class="hobby-pills">
+          <span class="hobby-pill">DIY</span>
+          <span class="hobby-pill">Lego</span>
+          <span class="hobby-pill">Crochet / Knitting</span>
+          <span class="hobby-pill">Photography</span>
+          <span class="hobby-pill">Crafts</span>
+          <span class="hobby-pill">Pottery</span>
+          <span class="hobby-pill">Shibari</span>
+          <span class="hobby-pill note">I get it can be kinda kinky but it's also a creative &amp; meditative outlet for me</span>
+        </div>
       </div>
-      <div class="hobby-card">
-        <div class="hobby-icon">✈️</div>
-        <div class="hobby-name">Travelling</div>
-        <div class="hobby-detail">Backpacked for 2 years. Climbed a volcano. Solo trip to Japan. Always planning the next one.</div>
+      <div class="hobby-cat">
+        <div class="hobby-cat-title">📺 Media</div>
+        <div class="hobby-pills">
+          <span class="hobby-pill">Anime &amp; Manga</span>
+          <span class="hobby-pill">Marvel</span>
+          <span class="hobby-pill">Fantasy &amp; Sci-fi</span>
+          <span class="hobby-pill">Comedy</span>
+        </div>
       </div>
-      <div class="hobby-card">
-        <div class="hobby-icon">📸</div>
-        <div class="hobby-name">Photography</div>
-        <div class="hobby-detail">Self-appointed personal photographer for people I care about.</div>
+      <div class="hobby-cat">
+        <div class="hobby-cat-title">🎮 Fun &amp; Games</div>
+        <div class="hobby-pills">
+          <span class="hobby-pill">Video Games</span>
+          <span class="hobby-pill">Pool / Snooker</span>
+          <span class="hobby-pill">Board Games</span>
+          <span class="hobby-pill">D&amp;D</span>
+        </div>
       </div>
-      <div class="hobby-card">
-        <div class="hobby-icon">🤝</div>
-        <div class="hobby-name">Community Building</div>
-        <div class="hobby-detail">Active in online communities. Currently organising UK meetups for a Discord community I love.</div>
+      <div class="hobby-cat">
+        <div class="hobby-cat-title">📚 Educational</div>
+        <div class="hobby-pills">
+          <span class="hobby-pill">Technology &amp; Science</span>
+          <span class="hobby-pill">History</span>
+          <span class="hobby-pill">Mythology</span>
+          <span class="hobby-pill">Etymology</span>
+          <span class="hobby-pill">Random facts</span>
+          <span class="hobby-pill">Maps</span>
+          <span class="hobby-pill">Stargazing</span>
+        </div>
       </div>
-      <div class="hobby-card">
-        <div class="hobby-icon">💻</div>
-        <div class="hobby-name">Tech &amp; Building</div>
-        <div class="hobby-detail">Software engineer by trade and curiosity. Always tinkering with something.</div>
+      <div class="hobby-cat">
+        <div class="hobby-cat-title">🏃 Active</div>
+        <div class="hobby-pills">
+          <span class="hobby-pill">Hiking / Countryside walks</span>
+          <span class="hobby-pill">Archery</span>
+          <span class="hobby-pill">Cycling</span>
+          <span class="hobby-pill">Fire Spinning</span>
+        </div>
       </div>
-      <div class="hobby-card">
-        <div class="hobby-icon">🌱</div>
-        <div class="hobby-name">Volunteering</div>
-        <div class="hobby-detail">Care deeply about the environment, mental health, DEI, and food insecurity causes.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Bucket List -->
+<section id="bucket-list">
+  <div class="container">
+    <div class="section-tag tag-green">✨ Things I'd Like to Try or Do</div>
+    <h2>The Bucket List</h2>
+    <p>I am always up for trying new experiences but here are a few things I'd like to try or do more:</p>
+    <div class="two-cols">
+      <div class="list-card">
+        <h3>✈️ Travel More</h3>
+        <ul>
+          <li>Campervan</li>
+          <li>Interrail</li>
+          <li>City breaks</li>
+          <li>Glamping</li>
+          <li>Camping</li>
+        </ul>
+        <h3>🎭 Experiences</h3>
+        <ul>
+          <li>LARP / Ren faire / Fantasy ball</li>
+          <li>Go see a Play @ The Globe</li>
+          <li>Rock Climbing / Bouldering</li>
+          <li>Go to a flower field (Lavender / Tulips)</li>
+          <li>Learn First Aid (Mental / Physical)</li>
+          <li>Learn to ride a Moped</li>
+          <li>Dance Classes</li>
+          <li>Cooking Classes</li>
+          <li>Go to the Lego House in Denmark</li>
+          <li>Eat at more Michelin restaurants</li>
+          <li>Do volunteer work</li>
+        </ul>
       </div>
-      <div class="hobby-card">
-        <div class="hobby-icon">🎭</div>
-        <div class="hobby-name">Pop Culture</div>
-        <div class="hobby-detail">Will not shut up about good TV, sci-fi, and the occasional chaotic meme deep-dive.</div>
+      <div class="list-card">
+        <h3>🎨 Creative Activities</h3>
+        <ul>
+          <li>Glass blowing</li>
+          <li>Blacksmithing / Forge</li>
+          <li>Terrarium making</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Places I've Been -->
+<section id="places-been">
+  <div class="container">
+    <div class="section-tag tag-navy">📍 Places I've Been</div>
+    <h2>Stamps in the Passport</h2>
+    <div class="places-grid">
+      <div class="place-item">🇬🇷 Greece<div class="place-detail">Zakynthos &amp; Malia</div></div>
+      <div class="place-item">🇦🇺 Australia<div class="place-detail">Sydney &amp; East coast</div></div>
+      <div class="place-item">🇳🇿 New Zealand</div>
+      <div class="place-item">🇩🇪 Germany<div class="place-detail">Berlin &amp; Munich</div></div>
+      <div class="place-item">🇵🇱 Poland<div class="place-detail">Warsaw &amp; Krakow</div></div>
+      <div class="place-item">🇪🇸 Spain<div class="place-detail">Barcelona</div></div>
+      <div class="place-item">🇳🇱 Netherlands<div class="place-detail">Amsterdam</div></div>
+      <div class="place-item">🇸🇪 Sweden</div>
+      <div class="place-item">🇹🇭 Thailand</div>
+      <div class="place-item">🇺🇦 Ukraine</div>
+      <div class="place-item">🇨🇿 Czech Republic<div class="place-detail">Prague</div></div>
+      <div class="place-item">🇨🇾 Cyprus</div>
+      <div class="place-item">🇮🇩 Indonesia<div class="place-detail">Bali</div></div>
+      <div class="place-item">🇫🇷 France<div class="place-detail">Lille</div></div>
+      <div class="place-item">🇺🇸 USA<div class="place-detail">NYC</div></div>
+      <div class="place-item">🇲🇻 Maldives</div>
+      <div class="place-item">🇯🇵 Japan</div>
+    </div>
+  </div>
+</section>
+
+<!-- Places I Want to Visit -->
+<section id="places-want">
+  <div class="container">
+    <div class="section-tag tag-navy">🗺️ Places I Want to Visit</div>
+    <h2>Next on the List</h2>
+    <div class="places-grid">
+      <div class="place-item">🇮🇹 Italy<div class="place-detail">Roman history, Italian food</div></div>
+      <div class="place-item">🇷🇺 Russia<div class="place-detail">Trans-Siberian Railway</div></div>
+      <div class="place-item">🇵🇪 Peru<div class="place-detail">Machu Picchu</div></div>
+      <div class="place-item">🇲🇽 Mexico<div class="place-detail">Day of the Dead</div></div>
+      <div class="place-item">🇮🇳 India<div class="place-detail">The many festivals</div></div>
+      <div class="place-item">🇺🇸 USA<div class="place-detail">Southern BBQ, Route 66, National Parks</div></div>
+      <div class="place-item">🌌 Nordic Countries<div class="place-detail">Northern lights</div></div>
+      <div class="place-item">🇬🇧 UK<div class="place-detail">Seen surprisingly little of it</div></div>
+      <div class="place-item">🌍 The rest of the world<div class="place-detail">Honestly there is so much food, history &amp; culture — I want to see it all!</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Movies & TV -->
+<section id="movies">
+  <div class="container">
+    <div class="section-tag tag-navy">🎬 Movie &amp; TV</div>
+    <h2>What I'm Watching</h2>
+    <p>Not sure how to describe my Movie and TV taste but I am fairly flexible to what I'm watching and really interested to learn what you like!</p>
+    <div class="two-cols">
+      <div class="list-card">
+        <h3>❤️ Love</h3>
+        <div class="tag-row" style="margin-top: 8px;">
+          <span class="tag-item love">Comedy</span>
+          <span class="tag-item love">Action</span>
+          <span class="tag-item love">Adventure</span>
+          <span class="tag-item love">Drama</span>
+          <span class="tag-item love">Romance</span>
+          <span class="tag-item love">Sci-fi</span>
+          <span class="tag-item love">Supernatural</span>
+          <span class="tag-item love">Fantasy</span>
+          <span class="tag-item love">Animation</span>
+          <span class="tag-item love">Anime</span>
+          <span class="tag-item love">Detective Procedurals</span>
+        </div>
+      </div>
+      <div class="list-card">
+        <h3>🚫 Hate</h3>
+        <div class="tag-row" style="margin-top: 8px;">
+          <span class="tag-item hate">Horror</span>
+        </div>
+        <div style="margin-top: 20px;">
+          <a href="https://letterboxd.com/alectronic0/" target="_blank" rel="noopener" style="font-size: 0.88rem;">🎬 letterboxd.com/alectronic0</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Games -->
+<section id="games">
+  <div class="container">
+    <div class="section-tag tag-navy">🎮 Video Games</div>
+    <h2>Player One, Ready</h2>
+    <p>Video games are an important part of my life and I am looking for someone who I can share this interest with!</p>
+    <div class="two-cols">
+      <div class="list-card">
+        <h3>About Me</h3>
+        <ul>
+          <li>My favourite game series is The Legend of Zelda</li>
+          <li>I play on PC &amp; Nintendo consoles</li>
+          <li>I enjoy listening to video game music</li>
+          <li>I love learning more about game development, glitches and speedruns</li>
+        </ul>
+      </div>
+      <div class="list-card">
+        <h3>Favourite Genres</h3>
+        <div class="tag-row" style="margin-top: 8px;">
+          <span class="tag-item">Metroidvania</span>
+          <span class="tag-item">Platformer</span>
+          <span class="tag-item">Puzzle</span>
+          <span class="tag-item">Strategy / RTS</span>
+          <span class="tag-item">Cosy</span>
+          <span class="tag-item">Shooters</span>
+          <span class="tag-item">City Builders</span>
+          <span class="tag-item">Adventure</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Food -->
+<section id="food">
+  <div class="container">
+    <div class="section-tag tag-green">🍽️ Food Tastes</div>
+    <h2>The Way to My Heart</h2>
+    <p>I love food and am always looking for the best food in London and around the world. My favourite cuisines are Asian (mainly Japanese) &amp; Mexican. I love street food to Michelin star restaurants. I love finding new snacks at the supermarkets.</p>
+    <div class="list-card">
+      <h3>❤️ Love</h3>
+      <div class="tag-row" style="margin-top: 8px;">
+        <span class="tag-item love">Rack of BBQ Ribs</span>
+        <span class="tag-item love">Full English Breakfast</span>
+        <span class="tag-item love">Breakfast Sandwich</span>
+        <span class="tag-item love">Burger (bacon, cheese, gherkin, burger sauce)</span>
+        <span class="tag-item love">Bao Bun</span>
+        <span class="tag-item love">Banh Mi</span>
+        <span class="tag-item love">Sunday Roast (chicken or pork mainly)</span>
+        <span class="tag-item love">Matcha &amp; Various Tea</span>
+        <span class="tag-item love">Tacos</span>
+        <span class="tag-item love">Pastry &amp; Sweet treats</span>
+        <span class="tag-item love">Sour sweets</span>
+        <span class="tag-item love">Tonkatsu</span>
+        <span class="tag-item love">Sushi</span>
+        <span class="tag-item love">Ramen</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Music -->
+<section id="music">
+  <div class="container">
+    <div class="section-tag tag-navy">🎵 Music</div>
+    <h2>What's on My Playlist</h2>
+    <p>My music taste is very eclectic and is not something I usually share with people as it can be very unique. I mainly listen to video game &amp; anime music, although it can range from metal, rock, rap, pop, lofi, j-pop, j-rock.</p>
+    <div class="two-cols">
+      <div class="list-card">
+        <h3>I've Been To</h3>
+        <ul>
+          <li>4 video game orchestras</li>
+          <li>2 day festivals</li>
+          <li>3 live performances of a friend who is an opera singer / musician</li>
+        </ul>
+      </div>
+      <div class="list-card">
+        <h3>Venues</h3>
+        <ul>
+          <li>I am not much for loud crowded music venues — although I am open to trying it once or twice</li>
+          <li>It would be cool to go to a festival one of these days (like Glastonbury)</li>
+        </ul>
+        <div style="margin-top: 16px;">
+          <a href="https://open.spotify.com/user/alec_game" target="_blank" rel="noopener" style="font-size: 0.88rem;">🎵 Spotify: alec_game</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Books -->
+<section id="books">
+  <div class="container">
+    <div class="section-tag tag-navy">📚 Books</div>
+    <h2>On My Shelf</h2>
+    <p>I am not much of a reader — currently slowly working through the ACOTAR Series. If you are a big book reader I will do my best to read your favourite books when I have time! Roald Dahl is my favourite childhood author.</p>
+    <div class="list-card">
+      <h3>Genres I Like</h3>
+      <div class="tag-row" style="margin-top: 8px;">
+        <span class="tag-item">Fantasy</span>
+        <span class="tag-item">Mythology</span>
+        <span class="tag-item">Non-Fiction</span>
+        <span class="tag-item">Self-help</span>
+        <span class="tag-item">Computer books</span>
+        <span class="tag-item">Manga</span>
+        <span class="tag-item">Cook books</span>
+      </div>
+      <div style="margin-top: 16px;">
+        <a href="https://goodreads.com/alectronic0" target="_blank" rel="noopener" style="font-size: 0.88rem;">📚 goodreads.com/alectronic0</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Podcasts -->
+<section id="podcasts">
+  <div class="container">
+    <div class="section-tag tag-navy">🎙️ Podcasts</div>
+    <h2>Long Journey Listening</h2>
+    <p>On long car journeys I'll sometimes listen to a few podcasts:</p>
+    <div class="goals-list">
+      <div class="goal-item">
+        <div class="goal-icon">🎙️</div>
+        <div class="goal-text"><strong>Trash Taste</strong>Food, travel, anime, YouTube, nerds, life</div>
+      </div>
+      <div class="goal-item">
+        <div class="goal-icon">🎙️</div>
+        <div class="goal-text"><strong>Diary of a CEO</strong>Interviews with interesting people</div>
+      </div>
+      <div class="goal-item">
+        <div class="goal-icon">🎙️</div>
+        <div class="goal-text"><strong>Jillian on Love</strong>Relationship and dating</div>
+      </div>
+      <div class="goal-item">
+        <div class="goal-icon">🎙️</div>
+        <div class="goal-text"><strong>Lateral</strong>Facts quiz show</div>
+      </div>
+      <div class="goal-item">
+        <div class="goal-icon">🎙️</div>
+        <div class="goal-text"><strong>Sweet &amp; Sour</strong>Nerdy ladies talking about life</div>
+      </div>
+    </div>
+    <p style="margin-top: 16px; font-size: 0.88rem;">There is definitely more I'd like to get into…</p>
+  </div>
+</section>
+
+<!-- Sports -->
+<section id="sports">
+  <div class="container">
+    <div class="section-tag tag-navy">⚽ Sports</div>
+    <h2>Mostly a Spectator</h2>
+    <p>I am not really a sporty person for the most part, however I do try my best to keep fit when I can by cycling, going for long walks or going to the gym. I also enjoy doing on occasions: Bouldering, Archery, Basketball.</p>
+    <p>Although I don't watch sports I support the following teams (mainly due to my friends or family):</p>
+    <div class="two-cols">
+      <div class="list-card">
+        <h3>Teams I Support</h3>
+        <ul>
+          <li>⚽ Football — Local: Arsenal · National: England</li>
+          <li>🏉 Rugby — Local: Saracens · National: All Blacks or England</li>
+          <li>🏎️ F1 — McLaren</li>
+        </ul>
+      </div>
+      <div class="list-card">
+        <h3>Activities I Enjoy</h3>
+        <ul>
+          <li>Bouldering</li>
+          <li>Archery</li>
+          <li>Basketball</li>
+          <li>Cycling</li>
+          <li>Long walks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Politics & Religion -->
+<section id="politics">
+  <div class="container">
+    <div class="section-tag tag-grey">🏛️ Political &amp; Religious Views</div>
+    <h2>Where I Stand</h2>
+    <p>I am Liberal Left (Green Party at present). My main thing is supporting the poorest people so we can all be more equal. My general philosophy is <strong style="color: var(--text);">"Try not to be a dick!"</strong></p>
+    <div class="two-cols">
+      <div class="list-card">
+        <h3>Policy Views</h3>
+        <ul>
+          <li>Simpler tax rules and removing tax loopholes</li>
+          <li>Nationalise utilities and transport (Energy, Internet, Trains, Water, Healthcare, Education)</li>
+        </ul>
+        <h3>Support of</h3>
+        <ul>
+          <li>Human Rights</li>
+          <li>LGBTQIA+ (including Trans Rights)</li>
+          <li>Disability &amp; Neurodivergent</li>
+          <li>Race Equality (Black Lives, Stop Asian Hate, etc.)</li>
+          <li>Gender Equality</li>
+          <li>Reproductive Rights</li>
+          <li>Environment</li>
+        </ul>
+      </div>
+      <div class="list-card">
+        <h3>Religion</h3>
+        <ul>
+          <li>I was raised Christian, however I choose not to have a belief system and rely on just being as good and kind as best I can</li>
+          <li>I try to respect other people's beliefs as much as possible and where possible educate myself on them</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dislikes -->
+<section id="dislikes">
+  <div class="container">
+    <div class="section-tag tag-grey">🤢 Things I Dislike</div>
+    <h2>Fair Warning</h2>
+    <p>These are things I will try to avoid — not to say I cannot deal with these but I won't be seeking these out:</p>
+    <div class="goals-list">
+      <div class="goal-item">
+        <div class="goal-icon">🧅</div>
+        <div class="goal-text"><strong>Food: Onion &amp; Sweetcorn</strong>Getting better about onion but I won't be seeking it out.</div>
+      </div>
+      <div class="goal-item">
+        <div class="goal-icon">🔊</div>
+        <div class="goal-text"><strong>Loud noises</strong>It makes it hard to hear myself. I will usually be wearing my noise cancelling headphones if I can.</div>
+      </div>
+      <div class="goal-item">
+        <div class="goal-icon">👥</div>
+        <div class="goal-text"><strong>Crowds for a long time</strong>I can handle moving through crowds but standing around in a crowded place — I don't like.</div>
+      </div>
+      <div class="goal-item">
+        <div class="goal-icon">😤</div>
+        <div class="goal-text"><strong>Yelling</strong>It's a big trigger.</div>
+      </div>
+      <div class="goal-item">
+        <div class="goal-icon">🎢</div>
+        <div class="goal-text"><strong>Theme parks / Rollercoasters</strong>I never got into them when I was young and my anxiety freaks me out before going on them (not to say I've not enjoyed them when I've done them).</div>
       </div>
     </div>
   </div>
@@ -1021,40 +1248,78 @@
   <div class="container">
     <div class="section-tag tag-red">🚀 Future Goals</div>
     <h2>Where I'm Headed</h2>
-    <div class="goals-list">
-      <div class="goal-item">
-        <div class="goal-icon">💻</div>
-        <div class="goal-text">
-          <strong>Keep building great things</strong>
-          Continue growing as a senior engineer — building products that genuinely make people's lives better.
-        </div>
+    <p>I have succeeded in my main life goals at this point: got a good job, got a house, got good friends. I am still working on: health, and finding my life partner.</p>
+    <div class="two-cols">
+      <div class="list-card">
+        <h3>🏡 Dream Home</h3>
+        <ul>
+          <li>Nice big house in the countryside (but near a train station)</li>
+          <li>Big kitchen</li>
+          <li>Games room</li>
+          <li>Living room with good cinema system</li>
+          <li>Library</li>
+          <li>Home office</li>
+          <li>Several bedrooms for guests and children</li>
+          <li>Nice garden for growing fruit &amp; veg</li>
+          <li>Hopefully near a canal</li>
+        </ul>
       </div>
-      <div class="goal-item">
-        <div class="goal-icon">🌍</div>
-        <div class="goal-text">
-          <strong>More adventures</strong>
-          More countries, more food, more experiences. The bucket list never stops growing.
-        </div>
+      <div class="list-card">
+        <h3>👨‍👩‍👧‍👦 Family</h3>
+        <ul>
+          <li>1–3 kids (70–80% sure I want them with the right person)</li>
+          <li>1–2 dogs (open to a cat but need at least one dog)</li>
+          <li>Marriage — I'd like to get married but am not in a rush. Happy to get the document signed when we're sure, then do a big wedding when we can afford to (5–10yr anniversary)</li>
+        </ul>
+        <h3>🌍 Other Possibilities</h3>
+        <ul>
+          <li>Becoming a digital nomad</li>
+          <li>Moving to New Zealand for a few years</li>
+        </ul>
       </div>
-      <div class="goal-item">
-        <div class="goal-icon">🏠</div>
-        <div class="goal-text">
-          <strong>Build a home together</strong>
-          Already own a house — now I want to fill it with someone worth making memories with.
-        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Outro -->
+<section>
+  <div class="container">
+    <div class="outro">
+      <h2>Thank You for Getting This Far!</h2>
+      <p>If you've liked what you've seen please reach out — I am looking forward to hearing from you and organising a fun date with you!</p>
+      <div class="contact-links" style="justify-content: center; margin-top: 20px;">
+        <a class="contact-btn primary" href="mailto:date.alec@alectronic.co.uk?subject=RE%3A%20Alec%20Dating%20Application">✉ Email Me</a>
+        <a class="contact-btn" href="https://www.instagram.com/alectronic0/" target="_blank" rel="noopener">📸 Instagram</a>
+        <a class="contact-btn" href="https://discordapp.com/users/689441309567746070" target="_blank" rel="noopener">🎮 Discord</a>
+        <a class="contact-btn" href="https://t.me/alectronic0" target="_blank" rel="noopener">✈ Telegram</a>
       </div>
-      <div class="goal-item">
-        <div class="goal-icon">🤝</div>
-        <div class="goal-text">
-          <strong>Give back more</strong>
-          More volunteering, more community work, more showing up for the causes that matter.
-        </div>
+      <div class="outro-emoji">❤️ 🐸 🎮 ❤️</div>
+    </div>
+  </div>
+</section>
+
+<!-- Bonus: Plants & Animals -->
+<section id="bonus">
+  <div class="container">
+    <div class="section-tag tag-grey">🌺 Bonus Round</div>
+    <h2>A Few More Random Things</h2>
+    <div class="two-cols">
+      <div class="list-card">
+        <h3>🌺 Plants &amp; Flowers</h3>
+        <p style="font-size: 0.88rem; margin-top: 8px;">Not much to say here really — just certain plants and flowers I think are pretty.</p>
+        <!-- Add photos to photos/plants/ if you have some -->
       </div>
-      <div class="goal-item">
-        <div class="goal-icon">❤️</div>
-        <div class="goal-text">
-          <strong>Find my player 2</strong>
-          Someone to do all of the above with. Someone who gets me — chaos, spreadsheets and all.
+      <div class="list-card">
+        <h3>🐶 Favourite Animals &amp; Creatures</h3>
+        <div class="tag-row" style="margin-top: 8px;">
+          <span class="tag-item">🐕 Dogs</span>
+          <span class="tag-item">🦉 Barn Owl</span>
+          <span class="tag-item">🐼 Red Panda</span>
+          <span class="tag-item">🐢 Tortoise</span>
+          <span class="tag-item">🐺 Wolf</span>
+          <span class="tag-item">🐉 Dragon</span>
+          <span class="tag-item">🔥 Phoenix</span>
+          <span class="tag-item">Cerberus</span>
         </div>
       </div>
     </div>
@@ -1077,6 +1342,55 @@
     <div class="footer-note">Alec Doran-Twyford · Welwyn Garden City · he/him/they/them</div>
   </div>
 </footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox">
+  <span class="lightbox-close" aria-label="Close">×</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  const sections = document.querySelectorAll('section[id]');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((a) => a.classList.remove('active'));
+          const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+          if (active) {
+            active.classList.add('active');
+            active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
+        }
+      });
+    },
+    { rootMargin: '-40% 0px -55% 0px' }
+  );
+
+  sections.forEach((s) => observer.observe(s));
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('.photo-flow img').forEach((img) => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  lightbox.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
 
 </body>
 </html>
