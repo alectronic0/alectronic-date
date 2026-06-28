@@ -26,6 +26,31 @@
   const img = (src, alt, attrs = '') =>
     `<img src="${esc(src)}" alt="${esc(alt || '')}" loading="lazy" ${attrs}>`;
 
+  // Resolve a favicon for a URL's domain. Uses Google's favicon service so
+  // every external service gets a crisp icon without hardcoding each one.
+  const faviconFor = (url) => {
+    try {
+      const host = new URL(url).hostname; // '' for mailto: etc.
+      return host ? `https://www.google.com/s2/favicons?domain=${host}&sz=64` : '';
+    } catch (e) {
+      return '';
+    }
+  };
+
+  // A white SVG placeholder showing the alt text — used when an image is
+  // missing, so gaps are visible (and fillable) rather than blank.
+  const placeholderSvg = (text) => {
+    const label = esc(text || 'Image coming soon');
+    const svg =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300">' +
+      '<rect width="100%" height="100%" fill="#ffffff"/>' +
+      '<text x="50%" y="50%" font-family="Poppins, system-ui, sans-serif" font-size="16" ' +
+      'fill="#777" text-anchor="middle" dominant-baseline="middle">' +
+      label +
+      '</text></svg>';
+    return 'data:image/svg+xml,' + encodeURIComponent(svg);
+  };
+
   // A tag can be a plain string or { label, variant }
   const tagHtml = (t) => {
     const label = typeof t === 'string' ? t : t.label;
@@ -41,8 +66,12 @@
 
     note: (b) => `<div class="${esc(b.variant || 'growth-note')}">${esc(b.text)}</div>`,
 
+    // External link as a favicon chip ("🟢 Check out my Spotify →").
+    // `icon` may be an explicit favicon URL; otherwise it's derived from the domain.
     link: (b) =>
-      `<a class="inline-link" href="${esc(b.href)}" target="_blank" rel="noopener">${esc(b.label)} →</a>`,
+      `<a class="link-chip" href="${esc(b.href)}" target="_blank" rel="noopener"><img class="link-chip-favicon" src="${esc(
+        b.icon || faviconFor(b.href)
+      )}" alt="" loading="lazy">${esc(b.label)} →</a>`,
 
     tagRow: (b) => `<div class="tag-row">${b.tags.map(tagHtml).join('')}</div>`,
 
@@ -234,19 +263,29 @@
     setText('[data-profile="tagline"]', p.tagline);
     setHtml('[data-profile="intro"]', p.intro.map((t) => `<p>${esc(t)}</p>`).join(''));
     setHtml('[data-profile="photo"]', img(p.photo.src, p.photo.alt, 'data-zoom'));
-    setHtml(
-      '[data-profile="facts"]',
-      p.facts
-        .map(
-          (f) =>
-            `<div class="fact${f.wide ? ' wide' : ''}"><span class="fact-icon">${esc(
-              f.icon
-            )}</span><div><div class="fact-label">${esc(f.label)}</div><div class="fact-value">${esc(
-              f.value
-            )}</div></div></div>`
-        )
-        .join('')
-    );
+    setHtml('[data-profile="facts"]', p.facts.map(factHtml).join(''));
+  }
+
+  // A fact value may be: a plain string, an array (one line each),
+  // and/or carry an `href` to render the value as a link.
+  function factValue(f) {
+    const linkify = (text) =>
+      f.href
+        ? `<a class="fact-link" href="${esc(f.href)}" target="_blank" rel="noopener">${esc(text)}</a>`
+        : esc(text);
+
+    if (Array.isArray(f.value)) {
+      return `<div class="fact-value fact-multiline">${f.value
+        .map((v) => `<div>${linkify(String(v).trim())}</div>`)
+        .join('')}</div>`;
+    }
+    return `<div class="fact-value">${linkify(f.value)}</div>`;
+  }
+
+  function factHtml(f) {
+    return `<div class="fact${f.wide ? ' wide' : ''}"><span class="fact-icon">${esc(
+      f.icon
+    )}</span><div><div class="fact-label">${esc(f.label)}</div>${factValue(f)}</div></div>`;
   }
 
   function renderFaces() {
@@ -258,13 +297,31 @@
     setHtml('[data-faces="track"]', once + twice);
   }
 
-  function renderContact() {
-    if (!C || !C.contact) return;
+  // Shared "let's connect" card — used by both #contact and #outro. Same
+  // component, different title/text. A card with no `links` reuses
+  // contact.links so the buttons stay a single source of truth.
+  function renderConnectCard(data, sel) {
+    if (!data) return;
+    // Prefer the site favicon; fall back to the emoji `icon` when no domain
+    // favicon exists (e.g. the mailto: Email button).
+    const iconHtml = (l) => {
+      const fav = l.favicon || faviconFor(l.href);
+      return fav
+        ? `<img class="contact-favicon" src="${esc(fav)}" alt="" loading="lazy">`
+        : `<span class="contact-emoji">${esc(l.icon || '')}</span>`;
+    };
     const linkHtml = (l) =>
       `<a class="contact-btn${l.primary ? ' primary' : ''}" href="${esc(l.href)}"${
         l.href.startsWith('mailto:') ? '' : ' target="_blank" rel="noopener"'
-      }>${esc(l.icon)} ${esc(l.label)}</a>`;
-    setHtml('[data-contact="links"]', C.contact.links.map(linkHtml).join(''));
+      }>${iconHtml(l)} ${esc(l.label)}</a>`;
+
+    const links = data.links && data.links.length ? data.links : (C.contact ? C.contact.links : []);
+    const html =
+      (data.tag ? `<div class="section-tag tag-purple">${esc(data.tag)}</div>` : '') +
+      `<h2>${esc(data.heading)}</h2>` +
+      `<p class="lead">${esc(data.lead)}</p>` +
+      `<div class="contact-links">${links.map(linkHtml).join('')}</div>`;
+    setHtml(sel, html);
   }
 
   /* ============================================================
@@ -335,17 +392,42 @@
     });
   }
 
+  // Swap any image that fails to load for a white placeholder showing its alt
+  // text. Registered before render (capture phase, since error doesn't bubble)
+  // so it also catches images injected by the renderers.
+  function initImageFallback() {
+    document.addEventListener(
+      'error',
+      (e) => {
+        const el = e.target;
+        if (!el || el.tagName !== 'IMG') return;
+        if (el.dataset.fallback) return; // guard against loops
+        el.dataset.fallback = '1';
+        // Favicons are decorative — just hide a broken one rather than show a box.
+        if (el.classList.contains('link-chip-favicon') || el.classList.contains('contact-favicon')) {
+          el.style.display = 'none';
+          return;
+        }
+        el.classList.add('img-missing');
+        el.src = placeholderSvg(el.alt);
+      },
+      true
+    );
+  }
+
   /* ── boot ── */
   function boot() {
     if (!C) {
       console.error('content.js did not load — window.CONTENT is undefined.');
       return;
     }
+    initImageFallback();
     renderHero();
     renderProfile();
     renderFaces();
     renderSections();
-    renderContact();
+    renderConnectCard(C.contact, '[data-connect="contact"]');
+    renderConnectCard(C.outro, '[data-connect="outro"]');
 
     initScrollSpy();
     initAccordion();
