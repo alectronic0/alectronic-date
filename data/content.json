@@ -12,7 +12,7 @@
       "content": {
         "name": "Alec Doran-Twyford",
         "tagline": "Loveable nerd · Software Engineer · Welwyn Garden City",
-        "intro": "Hi, I'm Alec! This little site started as a slide deck I made for myself — a reminder of who I am and what I love.",
+        "intro": "Hi, I'm Alec! This little site started as a slide deck I made for myself — a reminder of who I am and what I love. I then realised it could be a fun way to skip some of the small talk and give you a real sense of me from the start. So here's the honest (and slightly chaotic) introduction: the facts, the photos, and the bits that make me, me. If you like what you see, my contact details are just a little further down.",
         "facts": [
           { "icon": "🚹", "label": "Gender", "value": "Male" },
           { "icon": "❤️", "label": "Orientation", "value": "Straight" },
@@ -35,13 +35,45 @@
       "title": "Movies & TV",
       "icon": "🎬",
       "content": {
-        "intro": "I'm fairly flexible with what I watch and genuinely keen to learn what you love.",
+        "intro": "I'm fairly flexible with what I watch and genuinely keen to learn what you love. A few of my comfort-watches:",
         "items": [
           { "title": "Spirited Away", "genres": ["Animation", "Fantasy"], "image": "img/movies-tv/spirited away ghibli movie poster.png" },
           { "title": "Howl's Moving Castle", "genres": ["Animation", "Fantasy", "Romance"], "image": "img/movies-tv/howls moving castle ghibli poster.png" },
-          { "title": "Avatar: The Last Airbender", "genres": ["Animation", "Adventure", "Fantasy"], "image": "img/movies-tv/avatar the last airbender poster.png" }
+          { "title": "Avatar: The Last Airbender", "genres": ["Animation", "Adventure", "Fantasy"], "image": "img/movies-tv/avatar the last airbender poster.png" },
+          { "title": "Fullmetal Alchemist: Brotherhood", "genres": ["Anime", "Drama", "Adventure"], "image": "img/movies-tv/fullmetal alchemist brotherhood poster.png" },
+          { "title": "Frieren", "genres": ["Anime", "Fantasy", "Adventure"], "image": "img/movies-tv/frieren beyond journeys end anime poster.png" },
+          { "title": "Delicious in Dungeon", "genres": ["Anime", "Adventure", "Comedy"], "image": "img/movies-tv/delicious in dungeon anime poster.png" },
+          { "title": "Food Wars", "genres": ["Anime", "Comedy", "Drama"], "image": "img/movies-tv/food wars shokugeki no soma anime poster.png" },
+          { "title": "Into the Spider-Verse", "genres": ["Animation", "Action", "Adventure"], "image": "img/movies-tv/spider-man into the spider-verse poster.png" },
+          { "title": "Scott Pilgrim vs the World", "genres": ["Action", "Comedy", "Romance"], "image": "img/movies-tv/scott pilgrim vs the world poster.png" },
+          { "title": "Iron Man", "genres": ["Action", "Sci-Fi", "Adventure"], "image": "img/movies-tv/iron man movie poster.png" },
+          { "title": "Agents of S.H.I.E.L.D.", "genres": ["Action", "Adventure", "Sci-Fi"], "image": "img/movies-tv/marvel agents of shield poster.png" },
+          { "title": "Kingsman", "genres": ["Action", "Comedy", "Spy"], "image": "img/movies-tv/kingsman the secret service poster.png" },
+          { "title": "Hot Fuzz", "genres": ["Comedy", "Action"], "image": "img/movies-tv/hot fuzz movie poster.png" },
+          { "title": "Airplane!", "genres": ["Comedy"], "image": "img/movies-tv/airplane comedy movie poster.png" },
+          { "title": "The Hitchhiker's Guide to the Galaxy", "genres": ["Comedy", "Sci-Fi"], "image": "img/movies-tv/hitchhikers guide to the galaxy poster.png" },
+          { "title": "Doctor Who", "genres": ["Sci-Fi", "Adventure", "Drama"], "image": "img/movies-tv/doctor who poster.png" },
+          { "title": "Sherlock", "genres": ["Drama", "Mystery", "Crime"], "image": "img/movies-tv/sherlock poster.png" },
+          { "title": "The Office (UK)", "genres": ["Comedy", "Drama"], "image": "img/movies-tv/the office uk poster.png" },
+          { "title": "The Good Place", "genres": ["Comedy", "Drama", "Fantasy"], "image": "img/movies-tv/the good place poster.png" },
+          { "title": "Brooklyn Nine-Nine", "genres": ["Comedy", "Crime", "Drama"], "image": "img/movies-tv/brooklyn nine-nine poster.png" },
+          { "title": "The Crown", "genres": ["Drama", "Biography", "History"], "image": "img/movies-tv/the crown poster.png" },
+          { "title": "Stranger Things", "genres": ["Drama", "Fantasy", "Horror", "Mystery"], "image": "img/movies-tv/stranger things poster.png" },
+          { "title": "The Mandalorian", "genres": ["Action", "Adventure", "Sci-Fi"], "image": "img/movies-tv/the mandalorian poster.png" },
+          { "title": "Loki", "genres": ["Action", "Adventure", "Fantasy"], "image": "img/movies-tv/loki poster.png" },
+          { "title": "Arcane", "genres": ["Animation", "Action", "Adventure"], "image": "img/movies-tv/arcane league of legends poster.png" },
+          { "title": "Avatar: The Last Airbender (2009)", "genres": ["Action", "Adventure", "Fantasy"], "image": "img/movies-tv/avatar the last airbender 2009 poster.png" },
+          { "title": "Inception", "genres": ["Action", "Sci-Fi", "Thriller"], "image": "img/movies-tv/inception poster.png" },
+          { "title": "Interstellar", "genres": ["Adventure", "Drama", "Sci-Fi"], "image": "img/movies-tv/interstellar poster.png" },
+          { "title": "The Matrix", "genres": ["Action", "Sci-Fi"], "image": "img/movies-tv/the matrix poster.png" },
+          { "title": "Blade Runner 2049", "genres": ["Action", "Drama", "Sci-Fi"], "image": "img/movies-tv/blade runner 2049 poster.png" },
+          { "title": "Cyberpunk: Edgerunners", "genres": ["Animation", "Action", "Sci-Fi"], "image": "img/movies-tv/cyberpunk edgerunners poster.png" },
+          { "title": "Ghost in the Shell", "genres": ["Animation", "Action", "Sci-Fi"], "image": "img/movies-tv/ghost in the shell poster.png" },
+          { "title": "Demon Slayer", "genres": ["Animation", "Action", "Adventure"], "image": "img/movies-tv/demon slayer poster.png" },
+          { "title": "Jujutsu Kaisen", "genres": ["Animation", "Action", "Fantasy"], "image": "img/movies-tv/jujutsu kaisen poster.png" },
+          { "title": "Attack on Titan", "genres": ["Animation", "Action", "Drama"], "image": "img/movies-tv/attack on titan poster.png" }
         ],
-        "genres": ["Animation", "Fantasy", "Romance", "Adventure", "Action", "Comedy", "Drama", "Sci-Fi"],
+        "genres": ["Action", "Adventure", "Animation", "Anime", "Biography", "Comedy", "Crime", "Drama", "Fantasy", "History", "Horror", "Mystery", "Romance", "Sci-Fi", "Spy", "Thriller"],
         "externalLink": {
           "text": "Letterboxd",
           "url": "https://letterboxd.com/alectronic0/",
@@ -51,24 +83,76 @@
       }
     },
     {
+      "id": "video-games",
+      "type": "filterable-grid",
+      "title": "Video Games",
+      "icon": "🎮",
+      "content": {
+        "intro": "I'm a gamer at heart — starting with Nintendo, now across all platforms. Here's what I love:",
+        "items": [
+          { "title": "The Legend of Zelda: Ocarina of Time", "genres": ["Adventure", "Action"], "image": "img/video-games/zelda ocarina of time cover.png" },
+          { "title": "The Legend of Zelda: Breath of the Wild", "genres": ["Adventure", "Action", "Open World"], "image": "img/video-games/zelda breath of wild cover.png" },
+          { "title": "Super Mario 64", "genres": ["Platformer", "Adventure"], "image": "img/video-games/super mario 64 cover.png" },
+          { "title": "Hollow Knight", "genres": ["Adventure", "Action", "Indie"], "image": "img/video-games/hollow knight cover.png" },
+          { "title": "Cuphead", "genres": ["Action", "Indie"], "image": "img/video-games/cuphead cover.png" },
+          { "title": "Celeste", "genres": ["Platformer", "Indie"], "image": "img/video-games/celeste cover.png" },
+          { "title": "Hades", "genres": ["Action", "Indie", "Roguelike"], "image": "img/video-games/hades cover.png" },
+          { "title": "Stardew Valley", "genres": ["Simulation", "Indie", "RPG"], "image": "img/video-games/stardew valley cover.png" },
+          { "title": "Portal 2", "genres": ["Puzzle", "Action"], "image": "img/video-games/portal 2 cover.png" },
+          { "title": "Half-Life 2", "genres": ["Action", "Sci-Fi"], "image": "img/video-games/half-life 2 cover.png" },
+          { "title": "The Witcher 3", "genres": ["RPG", "Action", "Adventure"], "image": "img/video-games/the witcher 3 cover.png" },
+          { "title": "Cyberpunk 2077", "genres": ["RPG", "Action", "Sci-Fi"], "image": "img/video-games/cyberpunk 2077 cover.png" },
+          { "title": "Elden Ring", "genres": ["RPG", "Action", "Dark Souls-like"], "image": "img/video-games/elden ring cover.png" },
+          { "title": "Dark Souls III", "genres": ["RPG", "Action", "Dark Souls-like"], "image": "img/video-games/dark souls 3 cover.png" },
+          { "title": "Disco Elysium", "genres": ["RPG", "Adventure", "Detective"], "image": "img/video-games/disco elysium cover.png" },
+          { "title": "Baldur's Gate 3", "genres": ["RPG", "Adventure"], "image": "img/video-games/baldurs gate 3 cover.png" },
+          { "title": "Divinity: Original Sin 2", "genres": ["RPG", "Adventure"], "image": "img/video-games/divinity original sin 2 cover.png" },
+          { "title": "The Outer Worlds", "genres": ["RPG", "Action", "Sci-Fi"], "image": "img/video-games/the outer worlds cover.png" },
+          { "title": "Fallout: New Vegas", "genres": ["RPG", "Action", "Sci-Fi"], "image": "img/video-games/fallout new vegas cover.png" },
+          { "title": "Minecraft", "genres": ["Sandbox", "Survival", "Creative"], "image": "img/video-games/minecraft cover.png" },
+          { "title": "Terraria", "genres": ["Sandbox", "Adventure", "Action"], "image": "img/video-games/terraria cover.png" },
+          { "title": "Factorio", "genres": ["Simulation", "Strategy", "Indie"], "image": "img/video-games/factorio cover.png" },
+          { "title": "Cities: Skylines", "genres": ["Simulation", "Strategy"], "image": "img/video-games/cities skylines cover.png" },
+          { "title": "Fire Emblem: Three Houses", "genres": ["Strategy", "RPG", "Tactical"], "image": "img/video-games/fire emblem three houses cover.png" },
+          { "title": "Persona 5", "genres": ["RPG", "JRPG", "Adventure"], "image": "img/video-games/persona 5 cover.png" },
+          { "title": "Fire Emblem: Awakening", "genres": ["Strategy", "RPG", "Tactical"], "image": "img/video-games/fire emblem awakening cover.png" },
+          { "title": "Pokemon Legends: Arceus", "genres": ["RPG", "Action", "Adventure"], "image": "img/video-games/pokemon legends arceus cover.png" },
+          { "title": "Splatoon 3", "genres": ["Action", "Shooter", "Multiplayer"], "image": "img/video-games/splatoon 3 cover.png" },
+          { "title": "Animal Crossing: New Horizons", "genres": ["Simulation", "Life Simulation"], "image": "img/video-games/animal crossing new horizons cover.png" },
+          { "title": "Unpacking", "genres": ["Puzzle", "Indie", "Adventure"], "image": "img/video-games/unpacking cover.png" }
+        ],
+        "genres": ["Action", "Adventure", "Dark Souls-like", "Detective", "JRPG", "Indie", "Life Simulation", "Multiplayer", "Open World", "Platformer", "Puzzle", "Roguelike", "RPG", "Sandbox", "Sci-Fi", "Shooter", "Simulation", "Strategy", "Survival", "Tactical"],
+        "externalLink": {
+          "text": "Steam",
+          "url": "https://steamcommunity.com/id/alectronic0",
+          "icon": "fab fa-steam",
+          "color": "#1B2838"
+        }
+      }
+    },
+    {
       "id": "books",
       "type": "grouped-grid",
       "title": "Books",
       "icon": "📚",
       "content": {
-        "intro": "Reading is one of my great loves.",
+        "intro": "I'm not a huge reader — currently working through the ACOTAR series — but if you love books I'll happily read your favourites.",
         "groups": [
           {
             "title": "📚 Love / Have",
             "items": [
-              { "title": "Howl's Moving Castle", "genre": "Fantasy", "image": "img/books/howls-moving-castle.jpg" },
-              { "title": "The Night Circus", "genre": "Fantasy", "image": "img/books/the-night-circus.jpg" }
+              { "title": "A Court of Thorns and Roses", "image": "img/books/a court of rose and thorn.jpg" },
+              { "title": "Legend and Lattes", "image": "img/books/legend and lattes book.jpg" },
+              { "title": "The Baby Dragon Cafe", "image": "img/books/the baby dragon cafe.jpg" },
+              { "title": "Apprentice to the Villain", "image": "img/books/apperentice to the villan.jpg" }
             ]
           },
           {
             "title": "👀 TBR / Would Like to Read",
             "items": [
-              { "title": "Six of Crows", "genre": "Fantasy", "image": "img/books/six-of-crows.jpg" }
+              { "title": "Can't Spell Treason Without Tea", "image": "img/books/cant spell teason without tea.jpg" },
+              { "title": "Artemis Fowl", "image": "img/books/artemis fowl book.jpg" },
+              { "title": "Eragon", "image": "img/books/ergaon.jpg" }
             ]
           }
         ],
@@ -78,6 +162,41 @@
           "icon": "fas fa-book",
           "color": "#372C24"
         }
+      }
+    },
+    {
+      "id": "music",
+      "type": "simple-grid",
+      "title": "Music",
+      "icon": "🎵",
+      "content": {
+        "intro": "My taste is very eclectic — mostly video game & anime music, but ranging through metal, rock, rap, pop, lofi, j-pop and j-rock. I'm not big on loud, crowded venues, but I'd love to do a festival like Glastonbury one day.",
+        "externalLink": {
+          "text": "Spotify",
+          "url": "https://open.spotify.com/user/alec_game",
+          "icon": "fab fa-spotify",
+          "color": "#1DB954"
+        }
+      }
+    },
+    {
+      "id": "podcasts",
+      "type": "simple-grid",
+      "title": "Podcasts",
+      "icon": "🎙️",
+      "content": {
+        "intro": "On long car journeys I'll dip into a few of these — a mix of nerdy, thoughtful and dating-curious.",
+        "externalLink": null
+      }
+    },
+    {
+      "id": "sports",
+      "type": "simple-grid",
+      "title": "Sports",
+      "icon": "⚽",
+      "content": {
+        "intro": "Not really a sporty person, but I keep fit with cycling, long walks and the occasional gym session.",
+        "externalLink": null
       }
     },
     {

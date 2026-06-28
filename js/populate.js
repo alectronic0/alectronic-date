@@ -65,6 +65,9 @@ class ContentRenderer {
       case 'button-grid':
         html += this.renderButtonGrid(section.content);
         break;
+      case 'simple-grid':
+        html += this.renderSimpleGrid(section.content);
+        break;
       default:
         console.warn(`Unknown section type: ${section.type}`);
     }
@@ -191,6 +194,13 @@ class ContentRenderer {
 
     html += '</div>';
     return html;
+  }
+
+  /**
+   * Render simple grid (music, podcasts, sports - just intro)
+   */
+  renderSimpleGrid(content) {
+    return '';
   }
 
   /**
