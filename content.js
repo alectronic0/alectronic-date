@@ -605,10 +605,16 @@ window.CONTENT = {
                             caption: "Campervan road trips, Interrailing across Europe and spontaneous city breaks."
                         },
                         {
-                            src: "img/bucket-list/dance and cooking class.png",
+                            src: "img/bucket-list/dance class.png",
                             icon: "💃",
-                            title: "Dance & Cooking Classes",
-                            caption: "Learning to move — and to cook something new."
+                            title: "Dance Classes",
+                            caption: "Learning to move."
+                        },
+                        {
+                            src: "img/bucket-list/cooking class.png",
+                            icon: "🍳",
+                            title: "Cooking Classes",
+                            caption: " to cook something new."
                         },
                         {
                             src: "img/bucket-list/volunteer work.png",
