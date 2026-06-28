@@ -523,7 +523,7 @@ class ContentPopulator {
   }
 
   /**
-   * Populate Contact section
+   * Populate Contact section with platform icons
    */
   populateContact() {
     const contactContainer = document.querySelector('[data-section="contact"]');
@@ -531,11 +531,10 @@ class ContentPopulator {
 
     let html = '<div class="contact-buttons">';
     this.data.contact.channels.forEach(channel => {
-      if (channel.link.startsWith('mailto:')) {
-        html += `<a href="${channel.link}" class="contact-btn">${channel.emoji} ${channel.name}</a>`;
-      } else {
-        html += `<a href="${channel.link}" target="_blank" rel="noopener" class="contact-btn">${channel.emoji} ${channel.name}</a>`;
-      }
+      const isMailto = channel.link.startsWith('mailto:');
+      const target = isMailto ? '' : 'target="_blank" rel="noopener"';
+      const style = channel.color ? `style="color: ${channel.color}"` : '';
+      html += `<a href="${channel.link}" ${target} class="contact-btn" title="${channel.name}" ${style}><i class="${channel.icon}"></i> <span>${channel.name}</span></a>`;
     });
     html += '</div>';
 

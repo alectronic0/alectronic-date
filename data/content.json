@@ -37,7 +37,6 @@
       { "icon": "🌱", "label": "Politics", "value": "Liberal Left (Green Party)" }
     ]
   },
-
   "alecPhotos": {
     "title": "A Few Faces of Alec",
     "subtitle": "Snapshots From the Life",
@@ -80,7 +79,6 @@
       { "src": "img/alec/PXL_20260501_151845261.PORTRAIT.jpg", "alt": "Alec" }
     ]
   },
-
   "deepDive": {
     "moviesTV": {
       "emoji": "🎬",
@@ -128,7 +126,6 @@
       "dislikedGenres": ["Horror"],
       "link": "https://letterboxd.com/alectronic0/"
     },
-
     "videoGames": {
       "emoji": "🎮",
       "title": "Video Games",
@@ -167,7 +164,6 @@
       ],
       "genres": ["Metroidvania", "Platformer", "Puzzle", "Strategy / RTS", "Cosy", "Shooters", "City Builders", "Adventure"]
     },
-
     "books": {
       "emoji": "📚",
       "title": "Books",
@@ -193,7 +189,6 @@
       "genres": ["Fantasy", "Mythology", "Non-Fiction", "Self-help", "Computer books", "Manga", "Cookbooks"],
       "link": "https://goodreads.com/alectronic0"
     },
-
     "podcasts": {
       "emoji": "🎙️",
       "title": "Podcasts",
@@ -217,7 +212,6 @@
         { "title": "TLDR News", "description": "Daily news summary and analysis", "logo": "img/podcasts/tldr news.webp" }
       ]
     },
-
     "music": {
       "emoji": "🎵",
       "title": "Music",
@@ -241,7 +235,6 @@
       "genres": ["Video Game Music", "Anime Music", "Metal", "Rock", "Rap", "Pop", "Lofi", "J-Pop", "J-Rock"],
       "spotifyLink": "https://open.spotify.com/user/alec_game"
     },
-
     "sports": {
       "emoji": "⚽",
       "title": "Sports",
@@ -261,7 +254,6 @@
         { "name": "Gym", "emoji": "💪", "image": "img/sports/bicep curl.png" }
       ]
     },
-
     "placesVisited": {
       "emoji": "✈️",
       "title": "Places I've Been",
@@ -280,7 +272,6 @@
       ],
       "alsoVisited": ["🇬🇷 Greece", "🇪🇸 Spain", "🇫🇷 France", "🇺🇸 USA · NYC", "🇲🇻 Maldives", "🇯🇵 Japan", "🇮🇩 Indonesia · Bali"]
     },
-
     "placesToVisit": {
       "emoji": "🗺️",
       "title": "Places I Want to Visit",
@@ -301,7 +292,6 @@
         { "icon": "📖", "title": "Poolside Reading", "description": "Relaxing by a pool with a good book", "image": "img/places-want/poolside reading sunglasses book.png" }
       ]
     },
-
     "gentleDislikes": {
       "emoji": "🙅",
       "title": "Gentle Dislikes",
@@ -316,17 +306,17 @@
       ]
     }
   },
-
   "contact": {
     "emoji": "💌",
     "title": "Contact",
     "intro": "Let's connect:",
     "channels": [
-      { "name": "Email", "emoji": "📧", "link": "mailto:alec.game1@gmail.com", "url": "alec.game1@gmail.com" },
-      { "name": "Instagram", "emoji": "📷", "link": "https://instagram.com/alectronic0" },
-      { "name": "LinkedIn", "emoji": "💼", "link": "https://linkedin.com/in/alectronic0" },
-      { "name": "Discord", "emoji": "🎮", "link": "discord://..." },
-      { "name": "Telegram", "emoji": "✈️", "link": "https://t.me/alectronic0" }
+      { "name": "Email", "icon": "fas fa-envelope", "color": "#0078D4", "link": "mailto:alec.game1@gmail.com" },
+      { "name": "Instagram", "icon": "fab fa-instagram", "color": "#E1306C", "link": "https://instagram.com/alectronic0" },
+      { "name": "LinkedIn", "icon": "fab fa-linkedin", "color": "#0A66C2", "link": "https://linkedin.com/in/alectronic0" },
+      { "name": "Spotify", "icon": "fab fa-spotify", "color": "#1DB954", "link": "https://open.spotify.com/user/alec_game" },
+      { "name": "Discord", "icon": "fab fa-discord", "color": "#5865F2", "link": "https://discord.com/users/689441309567746070" },
+      { "name": "Telegram", "icon": "fab fa-telegram", "color": "#0088cc", "link": "https://t.me/alectronic0" }
     ]
   }
 }
