@@ -25,7 +25,11 @@ The idea is to give someone a genuine sense of me before we even meet, so conver
 
 All site copy is in [`content.md`](content.md) — edit there first, then update `index.html` to match.
 
-Photos go in `img/` subfolders (named by section, e.g. `img/basics/`, `img/moments/`). The gallery section (`#photos`) expects images added manually to the `<div class="photo-flow">` in `index.html`.
+Styling lives in [`css/styles.css`](css/styles.css) and interactions in [`js/main.js`](js/main.js);
+both are linked from `index.html` (no inline `<style>`/`<script>`).
+
+Photos go in `img/` subfolders (named by section, e.g. `img/food/`, `img/moments/`). Each
+deep-dive section pulls images from its matching folder; the `#photos` marquee uses `img/alec/`.
 
 > **Privacy note:** strip GPS/location metadata from any new photo before adding it to `img/` — that folder is served publicly.
 
@@ -43,8 +47,8 @@ Photos go in `img/` subfolders (named by section, e.g. `img/basics/`, `img/momen
 │   ├── moments/
 │   ├── other/       # Raw / uncategorised source photos
 │   └── ...
-├── css/             # Stylesheets (if split out)
-├── js/              # Scripts (if split out)
+├── css/styles.css   # All styling (warm-dark theme, cards, grids, accordion)
+├── js/main.js       # Scroll-spy nav, accordion, lightbox
 ├── CNAME            # Custom domain config for GitHub Pages
 └── .nojekyll        # Disables Jekyll so img/ folders are served correctly
 ```

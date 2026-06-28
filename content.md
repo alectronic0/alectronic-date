@@ -172,27 +172,23 @@ If you'd like to find this out in person please look away now!
 
 ---
 
-## Warning Label
+## Radical Transparency (Areas of Active Growth)
 
-I think it's important to be upfront about these things so here are my warning labels:
+> Reframed from "Warning Label" — softer, positive-first heading per the redesign. I think it's
+> important to be upfront and self-aware. None of this defines me; it's the honest stuff I'm
+> actively working on.
 
-### Physical Health
-- Overweight
-- High blood pressure
-- Diabetes
+### Physical Health — On the Up
+- Since March 2025 I've worked with a personal trainer and lost ~10kg (goal: a healthy 70–80kg)
+- Managing high blood pressure & diabetes — and steadily improving
 
-> I am working on getting into shape — since March 2025 I've been working with a personal trainer and have lost ~10kg with my goal to get to about 70–80kg eventually.
+### Mind & Emotions — Self-Aware
+- Dyslexia, depression, anxious attachment & (undiagnosed) AuDHD
+- An overthinker and recovering people-pleaser who feels things deeply
+- I've done therapy before and am looking to start again
 
-### Mental & Emotional Health
-- Dyslexia
-- Depression
-- Undiagnosed AuDHD
-- Anxious Attached
-- Overthinker
-- People pleaser
-- Feeling a bit too much
-
-> I have taken time to go to therapy in the past and am currently looking into starting again. I am very well aware of my particular triggers & trauma and have worked hard to process most of this. I find having consistent, open and honest communication helps with a lot of my mental and emotional state.
+> I know my triggers and have worked hard to process most of my history. Consistent, open and
+> honest communication is what keeps me steady — and it's the thing I value most in a partner.
 
 ---
 
