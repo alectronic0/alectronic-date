@@ -3,8 +3,15 @@
    Scroll-spy nav · accessible accordion · lightbox
    ============================================================ */
 
+let scrollSpyInitialized = false;
+let accordionInitialized = false;
+let lightboxInitialized = false;
+
 /* ── Scroll-spy: highlight active nav link ── */
 function initializeScrollSpy() {
+  if (scrollSpyInitialized) return;
+  scrollSpyInitialized = true;
+
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
   const sections = document.querySelectorAll('section[id]');
 
@@ -32,60 +39,63 @@ function initializeScrollSpy() {
    Cards render open by default (no-JS friendly); JS collapses them
    on load and wires up accessible toggle buttons. */
 function initializeAccordion() {
+  if (accordionInitialized) return;
+  accordionInitialized = true;
+
   const accItems = document.querySelectorAll('.acc-item');
   accItems.forEach((item) => {
     const header = item.querySelector('.acc-header');
     if (!header) return;
 
-    // Collapse all by default once JS is available.
+    // Collapse all by default once JS is available
     item.classList.remove('open');
     header.setAttribute('aria-expanded', 'false');
 
-    // Remove existing listeners to prevent duplication
-    const newHeader = header.cloneNode(true);
-    header.parentNode.replaceChild(newHeader, header);
-
-    newHeader.addEventListener('click', () => {
-      const isOpen = item.classList.toggle('open');
-      newHeader.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
+    // Only add listener if not already present
+    if (!header._listenerAttached) {
+      header.addEventListener('click', () => {
+        const isOpen = item.classList.toggle('open');
+        header.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      header._listenerAttached = true;
+    }
   });
 }
 
 /* ── Lightbox for every gallery / zoomable image ── */
 function initializeLightbox() {
+  if (lightboxInitialized) return;
+  lightboxInitialized = true;
+
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
 
-  if (lightbox && lightboxImg) {
-    document.querySelectorAll('[data-zoom], .mosaic-strip img, .poster-grid img, .photo-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .moments-photos img, .dislike-image, .photo-modal-item img').forEach((img) => {
-      // Remove existing listeners to prevent duplication
-      const newImg = img.cloneNode(true);
-      img.parentNode.replaceChild(newImg, img);
+  if (!lightbox || !lightboxImg) return;
 
-      newImg.addEventListener('click', (e) => {
-        e.stopPropagation();
-        lightboxImg.src = newImg.currentSrc || newImg.src;
-        lightboxImg.alt = newImg.alt;
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
-    });
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  };
 
-    const closeLightbox = () => {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-    };
+  // Attach listeners to lightbox itself
+  lightbox.addEventListener('click', closeLightbox);
 
-    // Remove existing close listener
-    const newLightbox = lightbox.cloneNode(true);
-    lightbox.parentNode.replaceChild(newLightbox, lightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
 
-    newLightbox.addEventListener('click', closeLightbox);
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
-    });
-  }
+  // Attach listeners to all image types
+  const imageSelectors = '[data-zoom], .mosaic-strip img, .poster-grid img, .photo-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .moments-photos img, .dislike-image, .photo-modal-img';
+
+  document.addEventListener('click', (e) => {
+    const img = e.target.closest(imageSelectors);
+    if (img && e.target.tagName === 'IMG') {
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
 }
 
 // Initialize on page load

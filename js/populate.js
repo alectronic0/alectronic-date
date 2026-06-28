@@ -142,10 +142,13 @@ class ContentPopulator {
     const photos = this.data?.alecPhotos?.allPhotos || [];
     const modal = document.createElement('div');
     modal.className = 'photo-modal';
+
+    const closeModal = () => modal.remove();
+
     modal.innerHTML = `
-      <div class="photo-modal-overlay" onclick="this.closest('.photo-modal').remove()"></div>
+      <div class="photo-modal-overlay"></div>
       <div class="photo-modal-content">
-        <button class="photo-modal-close" onclick="this.closest('.photo-modal').remove()">✕</button>
+        <button class="photo-modal-close">✕</button>
         <div class="photo-modal-grid">
           ${photos.map((photo, idx) => `
             <div class="photo-modal-item" data-idx="${idx}">
@@ -156,15 +159,21 @@ class ContentPopulator {
         </div>
       </div>
     `;
+
     document.body.appendChild(modal);
 
-    // Add lightbox listeners to modal images
-    modal.querySelectorAll('.photo-modal-img').forEach(img => {
-      img.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (window.initializeLightbox) window.initializeLightbox();
-      });
-    });
+    // Add close handlers
+    modal.querySelector('.photo-modal-overlay').addEventListener('click', closeModal);
+    modal.querySelector('.photo-modal-close').addEventListener('click', closeModal);
+
+    // Close on Escape key
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+        document.removeEventListener('keydown', handleEscape);
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
   }
 
   /**

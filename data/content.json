@@ -26,7 +26,7 @@
     "facts": [
       { "icon": "🚹", "label": "Gender", "value": "Male" },
       { "icon": "❤️", "label": "Orientation", "value": "Straight" },
-      { "icon": "🗣️", "label": "Pronouns", "values": ["HE", "HIM", "THEY", "THEM"], "multiLine": true },
+      { "icon": "🗣️", "label": "Pronouns", "values": ["HE/ HIM", "THEY / THEM"], "multiLine": true },
       { "icon": "🎂", "label": "Age", "value": "35 · 19 May (Taurus)" },
       { "icon": "💼", "label": "Profession", "value": "Software Engineer" },
       { "icon": "🎓", "label": "Education", "value": "BSc Computer Science" },
