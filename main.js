@@ -128,11 +128,14 @@
             `<div class="places-grid">${b.cards
                 .map(
                     (c) =>
-                        `<div class="place-card">${img(c.src, c.title)}<div class="place-card-body"><strong>${
+                        `<div class="place-card">${img(c.src, c.title)}
+<a href="${esc(c.href)}" target="_blank"><div class="place-card-body">
+<strong>${
                             c.icon ? esc(c.icon) + ' ' : ''
                         }${esc(c.title)}</strong>${
                             c.caption ? `<div class="place-detail">${esc(c.caption)}</div>` : ''
-                        }</div></div>`
+                        }</div>
+</div></a>`
                 )
                 .join('')}</div>`,
 
@@ -266,8 +269,8 @@
     const headingLink = (anchor, label) =>
         anchor
             ? ` <span class="deep-link" role="button" tabindex="0" data-anchor="${esc(anchor)}" aria-label="Copy link to ${esc(
-                  label || 'this section'
-              )}" title="Copy link to this section">🔗</span>`
+                label || 'this section'
+            )}" title="Copy link to this section">🔗</span>`
             : '';
 
     // A section header (tag + heading + lead) — only the parts that exist. Lets
