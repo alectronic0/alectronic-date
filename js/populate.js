@@ -11,9 +11,15 @@ class ContentPopulator {
 
   async init() {
     try {
-      const response = await fetch('./data/content.json');
-      if (!response.ok) throw new Error('Failed to load content.json');
-      this.data = await response.json();
+      // Use CONTENT_DATA from data.js (works with file:// protocol)
+      // Falls back to fetch if CONTENT_DATA not available
+      if (typeof CONTENT_DATA !== 'undefined') {
+        this.data = CONTENT_DATA;
+      } else {
+        const response = await fetch('./data/content.json');
+        if (!response.ok) throw new Error('Failed to load content.json');
+        this.data = await response.json();
+      }
 
       // Populate sections in order
       this.populateProfile();
