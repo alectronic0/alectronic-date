@@ -99,7 +99,7 @@
             `<div class="poster-grid">${b.posters
                 .map(
                     (p) =>
-                        `<figure class="poster">${img(p.image, p.title)}<figcaption>${esc(p.title)}</figcaption></figure>`
+                        `<figure class="poster">${img(p.src, p.title)}<figcaption>${esc(p.title)}</figcaption></figure>`
                 )
                 .join('')}</div>`,
 
@@ -108,7 +108,7 @@
             `<div class="places-grid">${b.cards
                 .map(
                     (c) =>
-                        `<div class="place-card">${img(c.image, c.title)}<div class="place-card-body"><strong>${
+                        `<div class="place-card">${img(c.src, c.title)}<div class="place-card-body"><strong>${
                             c.icon ? esc(c.icon) + ' ' : ''
                         }${esc(c.title)}</strong>${
                             c.caption ? `<div class="place-detail">${esc(c.caption)}</div>` : ''
@@ -121,7 +121,7 @@
             `<div class="places-grid">${b.cards
                 .map(
                     (c) =>
-                        `<div class="place-card">${img(c.image, c.name)}<div class="place-card-body"><strong>${esc(
+                        `<div class="place-card">${img(c.src, c.name)}<div class="place-card-body"><strong>${esc(
                             c.country
                         )} ${esc(c.name)}</strong><div class="place-detail">${esc(c.detail)}</div></div></div>`
                 )
@@ -132,7 +132,7 @@
             `<div class="feature-grid">${b.features
                 .map(
                     (f) =>
-                        `<div class="feature">${img(f.image, f.alt)}<div class="feature-body"><span class="feature-icon">${esc(
+                        `<div class="feature">${img(f.src, f.alt)}<div class="feature-body"><span class="feature-icon">${esc(
                             f.icon
                         )}</span><span class="feature-text">${esc(f.text)}</span></div></div>`
                 )
@@ -142,7 +142,7 @@
             `<div class="date-menu">${b.cards
                 .map(
                     (c) =>
-                        `<div class="date-card">${img(c.image, c.alt)}<div class="date-card-body"><h3>${esc(
+                        `<div class="date-card">${img(c.src, c.alt)}<div class="date-card-body"><h3>${esc(
                             c.title
                         )}</h3><div class="date-pills">${c.pills
                             .map((p) => `<span class="pill">${esc(p)}</span>`)
@@ -209,7 +209,7 @@
             `<div class="logo-grid">${b.tiles
                 .map(
                     (t) =>
-                        `<div class="logo-tile">${img(t.image, t.label)}<span>${esc(t.label)}</span></div>`
+                        `<div class="logo-tile">${img(t.src, t.label)}<span>${esc(t.label)}</span></div>`
                 )
                 .join('')}</div>`,
 

@@ -131,73 +131,73 @@ window.CONTENT = {
                     type: "cardGrid",
                     cards: [
                         {
-                            image: "img/moments/alec at graduation.png",
+                            src: "img/moments/alec at graduation.png",
                             icon: "🎓",
                             title: "Got a 1st @ University",
                             caption: "BSc Computer Science, top marks."
                         },
                         {
-                            image: "img/moments/google map showing the drunken walk home from london.png",
+                            src: "img/moments/google map showing the drunken walk home from london.png",
                             icon: "🚶",
                             title: "Walked home from London",
                             caption: "23.5km, drunk, on a dare to myself."
                         },
                         {
-                            image: "img/moments/alec with david tenant.png",
+                            src: "img/moments/alec with david tenant.png",
                             icon: "⭐",
                             title: "Met David Tennant",
                             caption: "Yes, the Doctor. Very lovely in person."
                         },
                         {
-                            image: "img/moments/alec setting of on his backpacking advanture.png",
+                            src: "img/moments/alec setting of on his backpacking advanture.png",
                             icon: "🎒",
                             title: "Backpacked for 2 years",
                             caption: "Around the world, one hostel at a time."
                         },
                         {
-                            image: "img/moments/alec in a bikini as a dare.png",
+                            src: "img/moments/alec in a bikini as a dare.png",
                             icon: "👙",
                             title: "Bikini on Valentine's Day",
                             caption: "A surf-camp dare I fully committed to."
                         },
                         {
-                            image: "img/moments/alec sky diving.jpg",
+                            src: "img/moments/alec sky diving.jpg",
                             icon: "🪂",
                             title: "Skydived",
                             caption: "Jumped out of a perfectly good plane."
                         },
                         {
-                            image: "img/moments/alec feeding load of backpackers.png",
+                            src: "img/moments/alec feeding load of backpackers.png",
                             icon: "👨‍🍳",
                             title: "Cooked for 30 backpackers",
                             caption: "One big pot, one happy hostel."
                         },
                         {
-                            image: "img/moments/trophie of most entuastic google city expert (now google local guides).png",
+                            src: "img/moments/trophie of most entuastic google city expert (now google local guides).png",
                             icon: "📍",
                             title: "Most Enthusiastic City Expert",
                             caption: "Google's award — now Local Guides."
                         },
                         {
-                            image: "img/alec/alec completing a 10k run.png",
+                            src: "img/alec/alec completing a 10k run.png",
                             icon: "🏃",
                             title: "Ran a 10km",
                             caption: "Crossed the line, legs intact."
                         },
                         {
-                            image: "img/moments/alec holding keys of his home.png",
+                            src: "img/moments/alec holding keys of his home.png",
                             icon: "🏠",
                             title: "Bought a house",
                             caption: "Keys in hand, properly grown up."
                         },
                         {
-                            image: "img/alec/alec on top of mt katumba in bali.png",
+                            src: "img/alec/alec on top of mt katumba in bali.png",
                             icon: "🌋",
                             title: "Climbed a volcano",
                             caption: "Sunrise from the top of Mt Batur, Bali."
                         },
                         {
-                            image: "img/alec/alec kimono torii gate japan.jpg",
+                            src: "img/alec/alec kimono torii gate japan.jpg",
                             icon: "🇯🇵",
                             title: "A month solo in Japan",
                             caption: "Temples, ramen and a lot of walking."
@@ -216,49 +216,49 @@ window.CONTENT = {
                     type: "featureGrid",
                     features: [
                         {
-                            image: "img/boyfriend-mode/a couple hugging.png",
+                            src: "img/boyfriend-mode/a couple hugging.png",
                             alt: "A couple hugging",
                             icon: "🤗",
                             text: "Always supportive and caring — there through the good and bad times, with great hugs, forehead kisses and massages."
                         },
                         {
-                            image: "img/boyfriend-mode/boyfirend driving his passanger princess.png",
+                            src: "img/boyfriend-mode/boyfirend driving his passanger princess.png",
                             alt: "Driving",
                             icon: "👑",
                             text: "Full passenger-princess treatment whenever we're on the road."
                         },
                         {
-                            image: "img/boyfriend-mode/person writing a google doc about his girl friend.png",
+                            src: "img/boyfriend-mode/person writing a google doc about his girl friend.png",
                             alt: "Writing a doc",
                             icon: "📊",
                             text: "Keeping docs & spreadsheets of the things that matter to you and our plans."
                         },
                         {
-                            image: "img/boyfriend-mode/cartoon of a person sharing tiktok memes.png",
+                            src: "img/boyfriend-mode/cartoon of a person sharing tiktok memes.png",
                             alt: "Sharing memes",
                             icon: "😂",
                             text: "Pebbling you with hundreds of perfectly curated memes."
                         },
                         {
-                            image: "img/boyfriend-mode/a google calander invite for cute date.png",
+                            src: "img/boyfriend-mode/a google calander invite for cute date.png",
                             alt: "A calendar invite for a date",
                             icon: "📅",
                             text: "Organising cute dates (and yes, adding them to Google Calendar)."
                         },
                         {
-                            image: "img/boyfriend-mode/person getting coffee from a shop.png",
+                            src: "img/boyfriend-mode/person getting coffee from a shop.png",
                             alt: "Getting coffee",
                             icon: "☕",
                             text: "Always knowing your coffee order & keeping your favourite snack on hand."
                         },
                         {
-                            image: "img/boyfriend-mode/person taking photo.png",
+                            src: "img/boyfriend-mode/person taking photo.png",
                             alt: "Taking a photo",
                             icon: "📸",
                             text: "Your personal photographer — making sure you always look great."
                         },
                         {
-                            image: "img/boyfriend-mode/person suprising someone with flowers.png",
+                            src: "img/boyfriend-mode/person suprising someone with flowers.png",
                             alt: "Surprise flowers",
                             icon: "💐",
                             text: "Random flowers and cute little gifts, just because."
@@ -317,37 +317,37 @@ window.CONTENT = {
                     type: "featureGrid",
                     features: [
                         {
-                            image: "img/looking-for/couple cooking.png",
+                            src: "img/looking-for/couple cooking.png",
                             alt: "A couple cooking",
                             icon: "🍳",
                             text: "Cooking and baking together on a cosy evening."
                         },
                         {
-                            image: "img/looking-for/couple playing video games.png",
+                            src: "img/looking-for/couple playing video games.png",
                             alt: "A couple gaming",
                             icon: "🎮",
                             text: "Co-op games and friendly rivalry on the sofa."
                         },
                         {
-                            image: "img/looking-for/couple going exploring nature.png",
+                            src: "img/looking-for/couple going exploring nature.png",
                             alt: "A couple exploring nature",
                             icon: "🌿",
                             text: "Adventures, travel and finding amazing food places."
                         },
                         {
-                            image: "img/looking-for/couple watching movie togehter.png",
+                            src: "img/looking-for/couple watching movie togehter.png",
                             alt: "A couple watching a movie",
                             icon: "🍿",
                             text: "Lazy days at home with a film and good company."
                         },
                         {
-                            image: "img/looking-for/couple enjoying tea on the couch.png",
+                            src: "img/looking-for/couple enjoying tea on the couch.png",
                             alt: "A couple enjoying tea",
                             icon: "🫖",
                             text: "Slow mornings, tea, and easy quiet time together."
                         },
                         {
-                            image: "img/looking-for/couple at the gym working out.png",
+                            src: "img/looking-for/couple at the gym working out.png",
                             alt: "A couple at the gym",
                             icon: "💪",
                             text: "Cheering each other on to be our best selves."
@@ -366,37 +366,37 @@ window.CONTENT = {
                     type: "dateCards",
                     cards: [
                         {
-                            image: "img/dates/flower market.png",
+                            src: "img/dates/flower market.png",
                             alt: "A flower market",
                             title: "🍕 Foodie & Market",
                             pills: ["Pastry Adventure", "Flower Market", "Food Market"]
                         },
                         {
-                            image: "img/dates/flower market.png",
+                            src: "img/dates/flower market.png",
                             alt: "Calm Adventure",
                             title: "Chill mode",
                             pills: ["Coffee & Walk", "Nature walk", "Bookstore Tour", "Canal Walk"]
                         },
                         {
-                            image: "img/dates/couple on date aex throwing.png",
+                            src: "img/dates/couple on date aex throwing.png",
                             alt: "Axe throwing date",
                             title: "⚡ Active",
                             pills: ["Arcade", "Axe Throwing", "Mini Golf", "Virtual Clay Pigeon"]
                         },
                         {
-                            image: "img/dates/museum gallery.png",
+                            src: "img/dates/museum gallery.png",
                             alt: "A museum gallery",
                             title: "🧠 Intellectual",
                             pills: ["Museum", "Art Gallery", "Aquarium / Zoo", "Planetarium", "Exhibition"]
                         },
                         {
-                            image: "img/dates/couple date pottery class.png",
+                            src: "img/dates/couple date pottery class.png",
                             alt: "A pottery class date",
                             title: "🎨 Creative",
                             pills: ["Pottery", "Kintsugi", "Terrarium making", "Cooking Class", "Paining"]
                         },
                         {
-                            image: "img/dates/couple playing video games.png",
+                            src: "img/dates/couple playing video games.png",
                             alt: "Playing video games together",
                             title: "🎮 Video Game Session!",
                             pills: ["Peak", "It Takes Two", "Split Fiction", "Portal 2", "Chat of Discord"]
@@ -560,73 +560,73 @@ window.CONTENT = {
                             country: "🇳🇿",
                             name: "New Zealand",
                             detail: "Hobbiton",
-                            image: "img/places-been/alec hobbiton sign new zealand.png"
+                            src: "img/places-been/alec hobbiton sign new zealand.png"
                         },
                         {
                             country: "🇦🇺",
                             name: "Australia",
                             detail: "Sydney & East Coast",
-                            image: "img/places-been/sydney opera house at night.png"
+                            src: "img/places-been/sydney opera house at night.png"
                         },
                         {
                             country: "🇹🇭",
                             name: "Thailand",
                             detail: "Phuket",
-                            image: "img/places-been/alec big buddha phuket selfie.png"
+                            src: "img/places-been/alec big buddha phuket selfie.png"
                         },
                         {
                             country: "🇩🇪",
                             name: "Germany",
                             detail: "Berlin & Munich",
-                            image: "img/places-been/bavarian beer garden munich.png"
+                            src: "img/places-been/bavarian beer garden munich.png"
                         },
                         {
                             country: "🇨🇿",
                             name: "Czechia",
                             detail: "Prague",
-                            image: "img/places-been/alec giant beer stein germany.png"
+                            src: "img/places-been/alec giant beer stein germany.png"
                         },
                         {
                             country: "🇳🇱",
                             name: "Netherlands",
                             detail: "Amsterdam",
-                            image: "img/places-been/amsterdam canal street view.png"
+                            src: "img/places-been/amsterdam canal street view.png"
                         },
                         {
                             country: "🇨🇾",
                             name: "Cyprus",
                             detail: "Aphrodite's Rock",
-                            image: "img/places-been/aphrodites rock beach cyprus.png"
+                            src: "img/places-been/aphrodites rock beach cyprus.png"
                         },
                         {
                             country: "🇸🇪",
                             name: "Sweden",
                             detail: "Midsommar",
-                            image: "img/places-been/alec flower crown midsommar sweden.png"
+                            src: "img/places-been/alec flower crown midsommar sweden.png"
                         },
                         {
                             country: "🇺🇦",
                             name: "Ukraine",
                             detail: "Pripyat",
-                            image: "img/places-been/alec chernobyl ferris wheel pripyat.png"
+                            src: "img/places-been/alec chernobyl ferris wheel pripyat.png"
                         },
                         {
                             country: "🇵🇱",
                             name: "Poland",
                             detail: "Warsaw & Krakow",
-                            image: "img/places-been/warsaw aerial city view.png"
+                            src: "img/places-been/warsaw aerial city view.png"
                         },
                         {
                             country: "🇵🇱",
                             name: "Warsaw",
                             detail: "Palace of Culture",
-                            image: "img/places-been/palace of culture science warsaw.png"
+                            src: "img/places-been/palace of culture science warsaw.png"
                         },
                         {
                             country: "🎄",
                             name: "Christmas Markets",
                             detail: "Across Europe",
-                            image: "img/places-been/christmas market night aerial view.png"
+                            src: "img/places-been/christmas market night aerial view.png"
                         }
                     ]
                 },
@@ -643,55 +643,55 @@ window.CONTENT = {
                             country: "🇮🇹",
                             name: "Italy",
                             detail: "Roman history & Italian food",
-                            image: "img/places-want/colosseum rome italy.png"
+                            src: "img/places-want/colosseum rome italy.png"
                         },
                         {
                             country: "🇵🇪",
                             name: "Peru",
                             detail: "Machu Picchu",
-                            image: "img/places-want/machu picchu peru ruins.png"
+                            src: "img/places-want/machu picchu peru ruins.png"
                         },
                         {
                             country: "🇲🇽",
                             name: "Mexico",
                             detail: "Day of the Dead",
-                            image: "img/places-want/day of the dead mexico candles ofrenda.png"
+                            src: "img/places-want/day of the dead mexico candles ofrenda.png"
                         },
                         {
                             country: "🇮🇳",
                             name: "India",
                             detail: "The many festivals",
-                            image: "img/places-want/holi festival colour india.png"
+                            src: "img/places-want/holi festival colour india.png"
                         },
                         {
                             country: "🇺🇸",
                             name: "USA",
                             detail: "Southern BBQ, Route 66, parks",
-                            image: "img/places-want/texas bbq brisket ribs platter.png"
+                            src: "img/places-want/texas bbq brisket ribs platter.png"
                         },
                         {
                             country: "🌌",
                             name: "Nordics",
                             detail: "Northern lights",
-                            image: "img/places-want/northern lights aurora norway.png"
+                            src: "img/places-want/northern lights aurora norway.png"
                         },
                         {
                             country: "🇬🇧",
                             name: "UK",
                             detail: "Seen surprisingly little of it",
-                            image: "img/places-want/cotswolds village england.png"
+                            src: "img/places-want/cotswolds village england.png"
                         },
                         {
                             country: "🥾",
                             name: "Patagonia",
                             detail: "Torres del Paine",
-                            image: "img/places-want/patagonia hiking torres del paine.png"
+                            src: "img/places-want/patagonia hiking torres del paine.png"
                         },
                         {
                             country: "🏔️",
                             name: "Snowy place",
                             detail: "Snow & mountains",
-                            image: "img/places-want/alpine ski chalet snow pool.png"
+                            src: "img/places-want/alpine ski chalet snow pool.png"
                         }
                     ]
                 },
@@ -700,11 +700,11 @@ window.CONTENT = {
                     type: "placeCards",
                     cards: [
                         {
-                            image: "img/places-want/italian nonna homemade pasta cooking.png",
+                            src: "img/places-want/italian nonna homemade pasta cooking.png",
                             alt: "Homemade pasta in Italy"
                         },
-                        {image: "img/places-want/family feast communal dining table.png", alt: "A communal feast"},
-                        {image: "img/places-want/poolside reading sunglasses book.png", alt: "Reading poolside"}
+                        {src: "img/places-want/family feast communal dining table.png", alt: "A communal feast"},
+                        {src: "img/places-want/poolside reading sunglasses book.png", alt: "Reading poolside"}
                     ]
                 },
                 {
@@ -732,59 +732,59 @@ window.CONTENT = {
                 {
                     type: "posterGrid",
                     posters: [
-                        {title: "Spirited Away", image: "img/movies-tv/spirited away ghibli movie poster.png"},
-                        {title: "Howl's Moving Castle", image: "img/movies-tv/howls moving castle ghibli poster.png"},
+                        {title: "Spirited Away", src: "img/movies-tv/spirited away ghibli movie poster.png"},
+                        {title: "Howl's Moving Castle", src: "img/movies-tv/howls moving castle ghibli poster.png"},
                         {
                             title: "Avatar: The Last Airbender",
-                            image: "img/movies-tv/avatar the last airbender poster.png"
+                            src: "img/movies-tv/avatar the last airbender poster.png"
                         },
                         {
                             title: "Fullmetal Alchemist: Brotherhood",
-                            image: "img/movies-tv/fullmetal alchemist brotherhood poster.png"
+                            src: "img/movies-tv/fullmetal alchemist brotherhood poster.png"
                         },
-                        {title: "Frieren", image: "img/movies-tv/frieren beyond journeys end anime poster.png"},
-                        {title: "Delicious in Dungeon", image: "img/movies-tv/delicious in dungeon anime poster.png"},
-                        {title: "Food Wars", image: "img/movies-tv/food wars shokugeki no soma anime poster.png"},
+                        {title: "Frieren", src: "img/movies-tv/frieren beyond journeys end anime poster.png"},
+                        {title: "Delicious in Dungeon", src: "img/movies-tv/delicious in dungeon anime poster.png"},
+                        {title: "Food Wars", src: "img/movies-tv/food wars shokugeki no soma anime poster.png"},
                         {
                             title: "Into the Spider-Verse",
-                            image: "img/movies-tv/spider-man into the spider-verse poster.png"
+                            src: "img/movies-tv/spider-man into the spider-verse poster.png"
                         },
                         {
                             title: "Scott Pilgrim vs the World",
-                            image: "img/movies-tv/scott pilgrim vs the world poster.png"
+                            src: "img/movies-tv/scott pilgrim vs the world poster.png"
                         },
-                        {title: "Iron Man", image: "img/movies-tv/iron man movie poster.png"},
-                        {title: "Agents of S.H.I.E.L.D.", image: "img/movies-tv/marvel agents of shield poster.png"},
-                        {title: "Kingsman", image: "img/movies-tv/kingsman the secret service poster.png"},
-                        {title: "Hot Fuzz", image: "img/movies-tv/hot fuzz movie poster.png"},
-                        {title: "Airplane!", image: "img/movies-tv/airplane comedy movie poster.png"},
+                        {title: "Iron Man", src: "img/movies-tv/iron man movie poster.png"},
+                        {title: "Agents of S.H.I.E.L.D.", src: "img/movies-tv/marvel agents of shield poster.png"},
+                        {title: "Kingsman", src: "img/movies-tv/kingsman the secret service poster.png"},
+                        {title: "Hot Fuzz", src: "img/movies-tv/hot fuzz movie poster.png"},
+                        {title: "Airplane!", src: "img/movies-tv/airplane comedy movie poster.png"},
                         {
                             title: "The Hitchhiker's Guide to the Galaxy",
-                            image: "img/movies-tv/hitchhikers guide to the galaxy poster.png"
+                            src: "img/movies-tv/hitchhikers guide to the galaxy poster.png"
                         },
-                        {title: "A Knight's Tale", image: "img/movies-tv/a knights tale movie poster.png"},
-                        {title: "Mulan", image: "img/movies-tv/mulan disney movie poster.png"},
-                        {title: "Chef", image: "img/movies-tv/chef movie poster.png"},
-                        {title: "Hitch", image: "img/movies-tv/hitch movie poster.png"},
-                        {title: "The Proposal", image: "img/movies-tv/the proposal movie poster.png"},
-                        {title: "Miss Congeniality", image: "img/movies-tv/miss congeniality movie poster.png"},
+                        {title: "A Knight's Tale", src: "img/movies-tv/a knights tale movie poster.png"},
+                        {title: "Mulan", src: "img/movies-tv/mulan disney movie poster.png"},
+                        {title: "Chef", src: "img/movies-tv/chef movie poster.png"},
+                        {title: "Hitch", src: "img/movies-tv/hitch movie poster.png"},
+                        {title: "The Proposal", src: "img/movies-tv/the proposal movie poster.png"},
+                        {title: "Miss Congeniality", src: "img/movies-tv/miss congeniality movie poster.png"},
                         {
                             title: "10 Things I Hate About You",
-                            image: "img/movies-tv/10 things i hate about you poster.png"
+                            src: "img/movies-tv/10 things i hate about you poster.png"
                         },
-                        {title: "Brooklyn Nine-Nine", image: "img/movies-tv/brooklyn nine-nine tv show poster.png"},
-                        {title: "Community", image: "img/movies-tv/community tv show poster.png"},
-                        {title: "Friends", image: "img/movies-tv/friends tv show cast poster.png"},
-                        {title: "Suits", image: "img/movies-tv/suits tv show complete series.png"},
-                        {title: "Bones", image: "img/movies-tv/bones tv show poster.png"},
-                        {title: "Castle", image: "img/movies-tv/castle tv show poster.png"},
-                        {title: "Charmed", image: "img/movies-tv/charmed tv show poster.png"},
-                        {title: "Eureka", image: "img/movies-tv/eureka tv show poster.png"},
-                        {title: "Fringe", image: "img/movies-tv/fringe tv show poster.png"},
-                        {title: "Warehouse 13", image: "img/movies-tv/warehouse 13 tv show poster.png"},
-                        {title: "Stargate", image: "img/movies-tv/stargate sg1 atlantis universe posters.png"},
-                        {title: "Star Trek: Lower Decks", image: "img/movies-tv/star trek lower decks poster.png"},
-                        {title: "The Expanse", image: "img/movies-tv/the expanse amazon prime poster.png"}
+                        {title: "Brooklyn Nine-Nine", src: "img/movies-tv/brooklyn nine-nine tv show poster.png"},
+                        {title: "Community", src: "img/movies-tv/community tv show poster.png"},
+                        {title: "Friends", src: "img/movies-tv/friends tv show cast poster.png"},
+                        {title: "Suits", src: "img/movies-tv/suits tv show complete series.png"},
+                        {title: "Bones", src: "img/movies-tv/bones tv show poster.png"},
+                        {title: "Castle", src: "img/movies-tv/castle tv show poster.png"},
+                        {title: "Charmed", src: "img/movies-tv/charmed tv show poster.png"},
+                        {title: "Eureka", src: "img/movies-tv/eureka tv show poster.png"},
+                        {title: "Fringe", src: "img/movies-tv/fringe tv show poster.png"},
+                        {title: "Warehouse 13", src: "img/movies-tv/warehouse 13 tv show poster.png"},
+                        {title: "Stargate", src: "img/movies-tv/stargate sg1 atlantis universe posters.png"},
+                        {title: "Star Trek: Lower Decks", src: "img/movies-tv/star trek lower decks poster.png"},
+                        {title: "The Expanse", src: "img/movies-tv/the expanse amazon prime poster.png"}
                     ]
                 }
             ]
@@ -805,38 +805,38 @@ window.CONTENT = {
                 {
                     type: "posterGrid",
                     posters: [
-                        {title: "Zelda: Ocarina of Time", image: "img/video-games/zelda ocarina of time cover.jpg"},
-                        {title: "Hollow Knight", image: "img/video-games/hollow knight game cover.jpg"},
-                        {title: "Hollow Knight: Silksong", image: "img/video-games/silksong.jpg"},
-                        {title: "Celeste", image: "img/video-games/celete.jpg"},
-                        {title: "Hades", image: "img/video-games/hades.jpg"},
+                        {title: "Zelda: Ocarina of Time", src: "img/video-games/zelda ocarina of time cover.jpg"},
+                        {title: "Hollow Knight", src: "img/video-games/hollow knight game cover.jpg"},
+                        {title: "Hollow Knight: Silksong", src: "img/video-games/silksong.jpg"},
+                        {title: "Celeste", src: "img/video-games/celete.jpg"},
+                        {title: "Hades", src: "img/video-games/hades.jpg"},
                         {
                             title: "Ori and the Blind Forest",
-                            image: "img/video-games/ori and the blind forest cover.jpg"
+                            src: "img/video-games/ori and the blind forest cover.jpg"
                         },
-                        {title: "Tunic", image: "img/video-games/tunic game cover.jpg"},
-                        {title: "Death's Door", image: "img/video-games/death door.jpg"},
-                        {title: "Metroid Prime", image: "img/video-games/metroid prime cover.jpg"},
-                        {title: "Octopath Traveler", image: "img/video-games/octopath traveler cover.jpg"},
-                        {title: "Final Fantasy VI", image: "img/video-games/final fantasy vi cover.jpg"},
-                        {title: "Cult of the Lamb", image: "img/video-games/cult of the lamb cover.jpg"},
-                        {title: "Deep Rock Galactic", image: "img/video-games/deep rock galactic cover.jpg"},
-                        {title: "Risk of Rain 2", image: "img/video-games/risk of rain 2 cover.jpg"},
-                        {title: "Valheim", image: "img/video-games/valheim game cover.jpg"},
-                        {title: "Frostpunk", image: "img/video-games/frostpunk game cover.jpg"},
-                        {title: "Age of Mythology Retold", image: "img/video-games/age of mythology retold cover.jpg"},
-                        {title: "It Takes Two", image: "img/video-games/it takes two game cover.jpg"},
-                        {title: "Split Fiction", image: "img/video-games/split fiction game cover.jpg"},
-                        {title: "Portal 2", image: "img/video-games/portal 2 cover.jpg"},
-                        {title: "Peak", image: "img/video-games/Peak.jpg"},
-                        {title: "Overwatch 2", image: "img/video-games/overwatch.jpg"},
-                        {title: "Captain Toad", image: "img/video-games/captain toad treasure tracker cover.jpg"},
-                        {title: "Super Mario Bros", image: "img/video-games/super mario bros nes box art.jpg"},
-                        {title: "Pokemon Red", image: "img/video-games/pokemon red gameboy cover.jpg"},
-                        {title: "Minecraft", image: "img/video-games/minecraft.jpg"},
-                        {title: "Tetris", image: "img/video-games/tetris game logo.jpg"},
-                        {title: "Call of Duty", image: "img/video-games/call of duty.jpg"},
-                        {title: "Mina the Hollower", image: "img/video-games/Mina_the_Hollower_cover_art.jpg"}
+                        {title: "Tunic", src: "img/video-games/tunic game cover.jpg"},
+                        {title: "Death's Door", src: "img/video-games/death door.jpg"},
+                        {title: "Metroid Prime", src: "img/video-games/metroid prime cover.jpg"},
+                        {title: "Octopath Traveler", src: "img/video-games/octopath traveler cover.jpg"},
+                        {title: "Final Fantasy VI", src: "img/video-games/final fantasy vi cover.jpg"},
+                        {title: "Cult of the Lamb", src: "img/video-games/cult of the lamb cover.jpg"},
+                        {title: "Deep Rock Galactic", src: "img/video-games/deep rock galactic cover.jpg"},
+                        {title: "Risk of Rain 2", src: "img/video-games/risk of rain 2 cover.jpg"},
+                        {title: "Valheim", src: "img/video-games/valheim game cover.jpg"},
+                        {title: "Frostpunk", src: "img/video-games/frostpunk game cover.jpg"},
+                        {title: "Age of Mythology Retold", src: "img/video-games/age of mythology retold cover.jpg"},
+                        {title: "It Takes Two", src: "img/video-games/it takes two game cover.jpg"},
+                        {title: "Split Fiction", src: "img/video-games/split fiction game cover.jpg"},
+                        {title: "Portal 2", src: "img/video-games/portal 2 cover.jpg"},
+                        {title: "Peak", src: "img/video-games/Peak.jpg"},
+                        {title: "Overwatch 2", src: "img/video-games/overwatch.jpg"},
+                        {title: "Captain Toad", src: "img/video-games/captain toad treasure tracker cover.jpg"},
+                        {title: "Super Mario Bros", src: "img/video-games/super mario bros nes box art.jpg"},
+                        {title: "Pokemon Red", src: "img/video-games/pokemon red gameboy cover.jpg"},
+                        {title: "Minecraft", src: "img/video-games/minecraft.jpg"},
+                        {title: "Tetris", src: "img/video-games/tetris game logo.jpg"},
+                        {title: "Call of Duty", src: "img/video-games/call of duty.jpg"},
+                        {title: "Mina the Hollower", src: "img/video-games/Mina_the_Hollower_cover_art.jpg"}
                     ]
                 },
             ]
@@ -908,20 +908,26 @@ window.CONTENT = {
                 {
                     type: "photoGrid",
                     images: [
-                        {src: "img/food/roast chicken sunday dinner.png", alt: "Sunday roast"},
+                        {src: "img/food/roast chicken Sunday dinner.png", alt: "Sunday roast"},
                         {src: "img/food/cookies.png", alt: "Cookies"},
                         {src: "img/food/banoffeepie.png", alt: "Banoffee pie"},
                         {src: "img/food/Banna bread.png", alt: "Banna bread"},
                         {src: "img/food/bread.png", alt: "Sour dough"},
                         {src: "img/food/lamb curry.png", alt: "Lamb Curry"},
                         {src: "img/food/carbonara.png", alt: "Carbonara"},
-                        {src: "", alt: "Butter Chicken"},
                     ]
                 },
-                {type: "heading", text: "Also on "},
+                {type: "heading", text: "My chef specialties (without Images)"},
                 {
                     type: "tagRow",
-                    tags: ["Butter Chicken", ]
+                    tags: [
+                        "Butter Chicken Curry",
+                        "Lasagne",
+                        "Mac & Cheese",
+                        "Chilli con Carne",
+                        "Karaage ",
+                        "Fajita ",
+                    ]
                 },
             ]
         },
@@ -946,13 +952,12 @@ window.CONTENT = {
                 {
                     type: "photoGrid",
                     images: [
+                        {src: "img/music/sydney operahouse music concert.png", alt: "Concert at Sydney Opera House"},
                         {src: "img/music/zelda concert.png", alt: "A Zelda concert"},
                         {src: "img/music/london viedo game ocetra.png", alt: "A video game orchestra"},
-                        {src: "img/music/sydney operahouse music concert.png", alt: "Concert at Sydney Opera House"},
-                        {src: "img/music/future music festival 2013.png", alt: "Future Music Festival 2013"},
+                        {src: "img/music/my friend singing more.png", alt: "My friend performing"},
                         {src: "img/music/wirless festival 2009.png", alt: "Wireless Festival 2009"},
-                        {src: "img/music/my friend sining.png", alt: "My friend singing"},
-                        {src: "img/music/my friend singing more.png", alt: "My friend performing"}
+                        {src: "img/music/future music festival 2013.png", alt: "Future Music Festival 2013"},
                     ]
                 },
             ]
@@ -962,42 +967,42 @@ window.CONTENT = {
             blocks: [
                 {
                     type: "paragraph",
-                    text: "I'm not a huge reader — currently working through the ACOTAR series — but if you love books I'll happily read your favourites. Roald Dahl is my favourite childhood author."
+                    text: "I'm not a huge reader — but if you love books I'll happily read your favourites. Roald Dahl is my favourite childhood author."
                 },
                 {type: "link", href: "https://goodreads.com/alectronic0", label: "Check out my Goodreads"},
                 {type: "heading", text: "On My Shelf"},
                 {
                     type: "posterGrid",
                     posters: [
-                        {title: "Roald Dahl Collection", image: "img/books/illisration from roah dalh books.png"},
-                        {title: "Eragon", image: "img/books/ergaon.jpg"},
-                        {title: "Artemis Fowl", image: "img/books/artemis fowl book.jpg"},
-                        {title: "Fullmetal Alchemist", image: "img/books/full metal alchmiest book.png"},
-                        {title: "Spy x Family", image: "img/books/spyxfamily.jpg"},
+                        {title: "Roald Dahl Collection", src: "img/books/illisration from roah dalh books.png"},
+                        {title: "Eragon", src: "img/books/ergaon.jpg"},
+                        {title: "Artemis Fowl", src: "img/books/artemis fowl book.jpg"},
+                        {title: "Fullmetal Alchemist", src: "img/books/full metal alchmiest book.png"},
+                        {title: "Spy x Family", src: "img/books/spyxfamily.jpg"},
                         {
                             title: "Computer Organization and Design",
-                            image: "img/books/computer orgnisation and desing book.png"
+                            src: "img/books/computer orgnisation and desing book.png"
                         },
-                        {title: "Mythos by Stephen Fry", image: "img/books/mythos.png"},
-                        {title: "Dessert Person", image: "img/books/dessert person.jpg"},
+                        {title: "Mythos by Stephen Fry", src: "img/books/mythos.png"},
+                        {title: "Dessert Person", src: "img/books/dessert person.jpg"},
                         {
                             title: "The Subtle Art of Not Giving a F*ck",
-                            image: "img/books/the subtle art of not giving a fuck.jpg"
+                            src: "img/books/the subtle art of not giving a fuck.jpg"
                         },
-                        {title: "A Court of Thorns and Roses", image: "img/books/a court of rose and thorn.jpg"}
+                        {title: "A Court of Thorns and Roses", src: "img/books/a court of rose and thorn.jpg"}
                     ]
                 },
                 {type: "heading", text: "To Be Read"},
                 {
                     type: "posterGrid",
                     posters: [
-                        {title: "The Baby Dragon Cafe", image: "img/books/the baby dragon cafe.png"},
-                        {title: "Legends & Lattes", image: "img/books/legend and lattes book.jpg"},
+                        {title: "The Baby Dragon Cafe", src: "img/books/the baby dragon cafe.png"},
+                        {title: "Legends & Lattes", src: "img/books/legend and lattes book.jpg"},
                         {
                             title: "Can't Spell Treason Without Tea",
-                            image: "img/books/cant spell teason without tea.png"
+                            src: "img/books/cant spell teason without tea.png"
                         },
-                        {title: "Apprentice to the Villain", image: "img/books/apperentice to the villan.png"}
+                        {title: "Apprentice to the Villain", src: "img/books/apperentice to the villan.png"}
                     ]
                 }
             ]
@@ -1028,14 +1033,29 @@ window.CONTENT = {
                             logo: "img/podcasts/lateral.webp"
                         },
                         {
+                            title: "The Rest Is Science",
+                            description: "Science communication and research",
+                            logo: "img/podcasts/the rest is science.webp"
+                        },
+                        {
+                            title: "Sweet & Sour",
+                            description: "",
+                            logo: "img/podcasts/sweet and sour podcast.webp"
+                        },
+                        {
                             title: "Jillian on Love",
                             description: "Relationship and dating advice",
                             logo: "img/podcasts/jillian love.webp"
                         },
                         {
-                            title: "Sweet & Sour",
-                            description: "Asian perspectives on life and culture",
-                            logo: "img/podcasts/sweet and sour podcast.webp"
+                            title: "Luv Bites by Dr Tara",
+                            description: "Love and relationships with Dr Tara Marshall",
+                            logo: "img/podcasts/luv bites by dr tara.webp"
+                        },
+                        {
+                            title: "The Sabrina Zohar Show",
+                            description: "Conversations about relationships and self",
+                            logo: "img/podcasts/sabrina zohar show.webp"
                         },
                         {
                             title: "Critical Role",
@@ -1063,29 +1083,14 @@ window.CONTENT = {
                             logo: "img/podcasts/kit and krysta podcast.webp"
                         },
                         {
-                            title: "Luv Bites by Dr Tara",
-                            description: "Love and relationships with Dr Tara Marshall",
-                            logo: "img/podcasts/luv bites by dr tara.webp"
-                        },
-                        {
-                            title: "The Sabrina Zohar Show",
-                            description: "Conversations about relationships and self",
-                            logo: "img/podcasts/sabrina zohar show.webp"
-                        },
-                        {
-                            title: "TED Talks Daily",
-                            description: "Short TED talks on various topics",
-                            logo: "img/podcasts/ted talk daily.webp"
-                        },
-                        {
                             title: "The AIAS Game Maker's Notebook",
                             description: "Video game development and design",
                             logo: "img/podcasts/game makers notebook.webp"
                         },
                         {
-                            title: "The Rest Is Science",
-                            description: "Science communication and research",
-                            logo: "img/podcasts/the rest is science.webp"
+                            title: "TED Talks Daily",
+                            description: "Short TED talks on various topics",
+                            logo: "img/podcasts/ted talk daily.webp"
                         },
                         {
                             title: "TLDR News",
@@ -1107,22 +1112,22 @@ window.CONTENT = {
                 {
                     type: "logoGrid",
                     tiles: [
-                        {image: "img/sports/arsenal logo.png", label: "Arsenal"},
-                        {image: "img/sports/england 3 loin logo.png", label: "England"},
-                        {image: "img/sports/saracens logo.png", label: "Saracens"},
-                        {image: "img/sports/all black rugby.png", label: "All Blacks"},
-                        {image: "img/sports/mclaren logo.png", label: "McLaren F1"},
+                        {src: "img/sports/arsenal logo.png", label: "Arsenal"},
+                        {src: "img/sports/england 3 loin logo.png", label: "England"},
+                        {src: "img/sports/saracens logo.png", label: "Saracens"},
+                        {src: "img/sports/all black rugby.png", label: "All Blacks"},
+                        {src: "img/sports/mclaren logo.png", label: "McLaren F1"},
                     ]
                 },
                 {type: "heading", text: "Active I enjoy doing!"},
                 {
                     type: "logoGrid",
                     tiles: [
-                        {image: "img/sports/archery.png", label: "Archery"},
-                        {image: "img/sports/rock climbing.png", label: "Bouldering"},
-                        {image: "img/sports/basketball.png", label: "Basketball"},
-                        {image: "img/sports/cycling.png", label: "Cycling"},
-                        {image: "img/sports/bicep curl.png", label: "Gym"}
+                        {src: "img/sports/archery.png", label: "Archery"},
+                        {src: "img/sports/rock climbing.png", label: "Bouldering"},
+                        {src: "img/sports/basketball.png", label: "Basketball"},
+                        {src: "img/sports/cycling.png", label: "Cycling"},
+                        {src: "img/sports/bicep curl.png", label: "Gym"}
                     ]
                 },
 
@@ -1174,38 +1179,38 @@ window.CONTENT = {
                     type: "cardGrid",
                     cards: [
                         {
-                            image: "img/dislikes/onions.png",
+                            src: "img/dislikes/onions.png",
                             icon: "🧅",
                             title: "Onion & sweetcorn",
                             caption: "Getting better with onion, but won't be ordering it."
                         },
                         {
-                            image: "img/dislikes/person covering ear from loud noises.png",
+                            src: "img/dislikes/person covering ear from loud noises.png",
                             icon: "🔊",
                             title: "Loud noises",
                             caption: "Makes it hard to hear myself — noise-cancelling headphones to the rescue."
                         },
                         {
-                            image: "img/dislikes/large crowd.png",
+                            src: "img/dislikes/large crowd.png",
                             icon: "👥",
                             title: "Standing in crowds",
                             caption: "Moving through is fine; lingering in a packed place, less so."
                         },
                         {
-                            image: "img/dislikes/people aruguing and yelling.png",
+                            src: "img/dislikes/people aruguing and yelling.png",
                             icon: "😤",
                             title: "Yelling",
                             caption: "A big trigger for me."
                         },
                         {
-                            image: "img/dislikes/roller coaster.png",
+                            src: "img/dislikes/roller coaster.png",
                             icon: "🎢",
                             title: "Rollercoasters",
                             caption: "The anticipation sets off my anxiety (though I've enjoyed them once on)."
                         },
                         {
-                            image: "☀️",
-                            icon: "",
+                            src: "",
+                            icon: "☀️",
                             title: "Super hot weather",
                             caption: "Tbh who really like melting in the sun...doesn't mean I don't like topical holidays just let me chill in the shade"
                         }
@@ -1226,13 +1231,25 @@ window.CONTENT = {
                         {
                             groups: [{
                                 title: "🏡 Dream Home",
-                                items: ["Big house in the countryside (but near a train station)", "Big kitchen, games room, library & home office", "Living room with a proper cinema system", "Spare bedrooms for guests and children", "A garden for growing fruit & veg — ideally near a canal"]
+                                items: [
+                                    "Big house in the countryside",
+                                    "near a train station and canal",
+                                    "Big kitchen, games room, library & home office",
+                                    "Living room with a proper cinema system",
+                                    "Several Spare bedrooms for guests and children",
+                                    "A garden for growing fruit & veg"
+                                ]
                             }]
                         },
                         {
                             groups: [{
                                 title: "👨‍👩‍👧‍👦 Family & Beyond",
-                                items: ["1–3 kids (70–80% sure, with the right person)", "1–2 dogs (open to a cat, but need at least one dog)", "Marriage — no rush; sign the papers when we're sure, big wedding later", "Maybe: digital nomad life, or a few years in New Zealand"]
+                                items: [
+                                    "1–3 kids (70–80% sure, with the right person)",
+                                    "1–2 dogs (open to a cat, but need at least one dog)",
+                                    "Marriage — no rush; sign the papers when we're sure, big wedding later",
+                                    "Maybe: digital nomad life, or a few years in New Zealand"
+                                ]
                             }]
                         }
                     ]
@@ -1294,10 +1311,6 @@ window.CONTENT = {
                         {src: "img/animals/Triceratops.png", alt: "Triceratops"},
                         {src: "img/animals/Ankylosaurus.png", alt: "Ankylosaurus"}
                     ]
-                },
-                {
-                    type: "tagRow",
-                    tags: ["🐕 Dogs", "🦉 Barn Owl", "🐼 Red Panda", "🐢 Tortoise", "🐺 Wolf", "🐉 Dragon", "🔥 Phoenix", "🐶 Cerberus"]
                 }
             ]
         }
