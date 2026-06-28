@@ -202,7 +202,6 @@ p { color: var(--muted); margin-bottom: 14px; }
 @media (max-width: 760px) {
   .profile-layout { grid-template-columns: 1fr; }
   .profile-photo { position: static; order: -1; }
-  .profile-photo img { aspect-ratio: 4 / 3; max-height: 440px; }
 }
 
 /* ─── Photo marquee strip ───────────────────── */

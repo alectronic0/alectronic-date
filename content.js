@@ -444,14 +444,14 @@ window.CONTENT = {
                 {
                     type: "photoGrid",
                     images: [
-                        {src: "img/warning-label/therapy session illustration.png", alt: "Therapy session"},
-                        {src: "img/warning-label/person happy with hearts.png", alt: "Feeling happy"},
                         {src: "img/warning-label/blood pressure check medical.png", alt: "Blood pressure check"},
                         {src: "img/warning-label/blood glucose test diabetes.png", alt: "Blood glucose test"},
-                        {src: "img/warning-label/person anxious worried.png", alt: "Feeling anxious"},
+                        {src: "img/warning-label/therapy session illustration.png", alt: "Therapy session"},
                         {src: "img/warning-label/person with depression symptoms.png", alt: "Living with depression"},
+                        {src: "img/warning-label/person happy with hearts.png", alt: "Feeling happy"},
+                        {src: "img/warning-label/judge with gavel illustration.png", alt: "Self-aware"},
                         {src: "img/warning-label/person multitasking chaotic.png", alt: "Organised chaos"},
-                        {src: "img/warning-label/judge with gavel illustration.png", alt: "Self-aware"}
+                        {src: "img/warning-label/person anxious worried.png", alt: "Feeling anxious"}
                     ]
                 }
             ]
@@ -464,10 +464,7 @@ window.CONTENT = {
                 {type: "heading", text: "🎨 Creative"},
                 {
                     type: "tagRow",
-                    tags: ["DIY", "Lego", "Crochet / Knitting", "Photography", "Crafts", "Pottery", "Shibari", {
-                        label: "kinda kinky, but also a creative & meditative outlet for me",
-                        variant: "note"
-                    }]
+                    tags: ["DIY", "Lego", "Crochet / Knitting", "Photography", "Crafts", "Pottery", "Shibari"]
                 },
                 {type: "heading", text: "📺 Media"},
                 {type: "tagRow", tags: ["Anime & Manga", "Marvel", "Fantasy & Sci-fi", "Comedy"]},
@@ -479,7 +476,7 @@ window.CONTENT = {
                     tags: ["Technology & Science", "History", "Mythology", "Etymology", "Random facts", "Maps", "Stargazing"]
                 },
                 {type: "heading", text: "🏃 Active"},
-                {type: "tagRow", tags: ["Hiking / Countryside walks", "Archery", "Cycling", "Fire Spinning"]},
+                {type: "tagRow", tags: ["Countryside walks", "Archery", "Cycling", "Fire Spinning"]},
                 {type: "heading", text: "In Pictures"},
                 {
                     type: "photoGrid",
@@ -505,7 +502,6 @@ window.CONTENT = {
                         {src: "img/hobbies/Landscape 005.jpg", alt: "A landscape photo I took"},
                         {src: "img/hobbies/20131222_205929.JPG", alt: "A hobby moment"},
                         {src: "img/hobbies/alec with fire spinning staff.png", alt: "Alec fire spinning"},
-                        {src: "img/hobbies/IMG_20240528_172753_305.jpg", alt: "A hobby moment"},
                         {src: "img/hobbies/IMG_20240528_173146_931.jpg", alt: "A hobby moment"},
                         {src: "img/hobbies/PXL_20231209_170333969_exported_1702148485759.jpg", alt: "A hobby moment"}
                     ]
@@ -724,6 +720,15 @@ window.CONTENT = {
                     type: "paragraph",
                     text: "I'm fairly flexible with what I watch and genuinely keen to learn what you love. A few of my comfort-watches:"
                 },
+                {type: "link", href: "https://letterboxd.com/alectronic0/", label: "Check out my Letterboxd"},
+                {type: "heading", text: "Genres I Love"},
+                {
+                    type: "tagRow",
+                    tags: ["Comedy", "Action", "Adventure", "Drama", "Romance", "Sci-Fi", "Supernatural", "Fantasy", "Animation", "Anime", "Detective Procedurals", {
+                        label: "Horror — not for me",
+                        variant: "hate"
+                    }]
+                },
                 {
                     type: "posterGrid",
                     posters: [
@@ -781,16 +786,7 @@ window.CONTENT = {
                         {title: "Star Trek: Lower Decks", image: "img/movies-tv/star trek lower decks poster.png"},
                         {title: "The Expanse", image: "img/movies-tv/the expanse amazon prime poster.png"}
                     ]
-                },
-                {type: "heading", text: "Genres I Love"},
-                {
-                    type: "tagRow",
-                    tags: ["Comedy", "Action", "Adventure", "Drama", "Romance", "Sci-Fi", "Supernatural", "Fantasy", "Animation", "Anime", "Detective Procedurals", {
-                        label: "Horror — not for me",
-                        variant: "hate"
-                    }]
-                },
-                {type: "link", href: "https://letterboxd.com/alectronic0/", label: "Check out my Letterboxd"}
+                }
             ]
         },
 
@@ -919,9 +915,10 @@ window.CONTENT = {
                         {src: "img/food/bread.png", alt: "Sour dough"},
                         {src: "img/food/lamb curry.png", alt: "Lamb Curry"},
                         {src: "img/food/carbonara.png", alt: "Carbonara"},
+                        {src: "", alt: "Butter Chicken"},
                     ]
                 },
-                {type: "heading", text: "Also on"},
+                {type: "heading", text: "Also on "},
                 {
                     type: "tagRow",
                     tags: ["Butter Chicken", ]
@@ -934,6 +931,16 @@ window.CONTENT = {
                 {
                     type: "paragraph",
                     text: "My taste is very eclectic — mostly video game & anime music, but ranging through metal, rock, rap, pop, lofi, j-pop and j-rock. I'm not big on loud, crowded venues, but I'd love to do a festival like Glastonbury one day."
+                },
+                {
+                    type: "link",
+                    href: "https://open.spotify.com/user/alec_game",
+                    label: "Check out my Spotify"
+                },
+                {type: "heading", text: "Genres on Rotation"},
+                {
+                    type: "tagRow",
+                    tags: ["Video Game Music", "Anime Music", "Metal", "Rock", "Rap", "Pop", "Lofi", "J-Pop", "J-Rock"]
                 },
                 {type: "heading", text: "Concerts & Live Music"},
                 {
@@ -948,16 +955,6 @@ window.CONTENT = {
                         {src: "img/music/my friend singing more.png", alt: "My friend performing"}
                     ]
                 },
-                {type: "heading", text: "Genres on Rotation"},
-                {
-                    type: "tagRow",
-                    tags: ["Video Game Music", "Anime Music", "Metal", "Rock", "Rap", "Pop", "Lofi", "J-Pop", "J-Rock"]
-                },
-                {
-                    type: "link",
-                    href: "https://open.spotify.com/user/alec_game",
-                    label: "Check out my Spotify"
-                }
             ]
         },
 
@@ -967,6 +964,7 @@ window.CONTENT = {
                     type: "paragraph",
                     text: "I'm not a huge reader — currently working through the ACOTAR series — but if you love books I'll happily read your favourites. Roald Dahl is my favourite childhood author."
                 },
+                {type: "link", href: "https://goodreads.com/alectronic0", label: "Check out my Goodreads"},
                 {type: "heading", text: "On My Shelf"},
                 {
                     type: "posterGrid",
@@ -1001,8 +999,7 @@ window.CONTENT = {
                         },
                         {title: "Apprentice to the Villain", image: "img/books/apperentice to the villan.png"}
                     ]
-                },
-                {type: "link", href: "https://goodreads.com/alectronic0", label: "Check out my Goodreads"}
+                }
             ]
         },
 
@@ -1062,7 +1059,7 @@ window.CONTENT = {
                         },
                         {
                             title: "Kit & Krysta",
-                            description: "Dating and relationship advice",
+                            description: "Nintendo theme podcast",
                             logo: "img/podcasts/kit and krysta podcast.webp"
                         },
                         {
@@ -1106,6 +1103,7 @@ window.CONTENT = {
                     type: "paragraph",
                     text: "Not really a sporty person, but I keep fit with cycling, long walks and the gym — and dabble in bouldering, archery and basketball. I don't really watch sport, but I support a few teams (mostly thanks to friends & family)."
                 },
+                {type: "heading", text: "Teams I support"},
                 {
                     type: "logoGrid",
                     tiles: [
@@ -1114,13 +1112,20 @@ window.CONTENT = {
                         {image: "img/sports/saracens logo.png", label: "Saracens"},
                         {image: "img/sports/all black rugby.png", label: "All Blacks"},
                         {image: "img/sports/mclaren logo.png", label: "McLaren F1"},
+                    ]
+                },
+                {type: "heading", text: "Active I enjoy doing!"},
+                {
+                    type: "logoGrid",
+                    tiles: [
                         {image: "img/sports/archery.png", label: "Archery"},
                         {image: "img/sports/rock climbing.png", label: "Bouldering"},
                         {image: "img/sports/basketball.png", label: "Basketball"},
                         {image: "img/sports/cycling.png", label: "Cycling"},
                         {image: "img/sports/bicep curl.png", label: "Gym"}
                     ]
-                }
+                },
+
             ]
         },
 
@@ -1197,6 +1202,12 @@ window.CONTENT = {
                             icon: "🎢",
                             title: "Rollercoasters",
                             caption: "The anticipation sets off my anxiety (though I've enjoyed them once on)."
+                        },
+                        {
+                            image: "☀️",
+                            icon: "",
+                            title: "Super hot weather",
+                            caption: "Tbh who really like melting in the sun...doesn't mean I don't like topical holidays just let me chill in the shade"
                         }
                     ]
                 }
