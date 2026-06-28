@@ -34,12 +34,12 @@ window.CONTENT = {
         tagline: "Loveable nerd, looking for his player 2. No swiping required.",
         cta: "Come find out more ↓",
         images: [
-            {src: "img/coverphoto/index.png", alt: "Alec Doran-Twyford"},
+            {src: "img/alec/2.jpg", alt: "Alec Doran-Twyford"},
             {
-                src: "img/alec/PXL_20251128_071312852.PORTRAIT.jpg",
+                src: "img/alec/7.jpg",
                 alt: "Alec smiling"
             },
-            {src: "img/alec/PXL_20260514_052228361.PORTRAIT.jpg", alt: "Alec portrait"}
+            {src: "img/alec/4.jpg", alt: "Alec portrait"}
         ]
     },
     profile: {
@@ -50,7 +50,7 @@ window.CONTENT = {
             "Hi, I'm Alec! This little site started as a slide deck I made for myself — a reminder of who I am and what I love. I then realised it could be a fun way to skip some of the small talk and give you a real sense of me from the start.",
             "So here's the honest (and slightly chaotic) introduction: the facts, the photos, and the bits that make me, me. If you like what you see, my contact details are just a little further down."
         ],
-        photo: {src: "img/coverphoto/index.png", alt: "Alec Doran-Twyford"},
+        photo: {src: "img/alec/1.jpg", alt: "Alec Doran-Twyford"},
         facts: [
             {icon: "🚹", label: "Gender", value: "Male"},
             {icon: "❤️", label: "Orientation", value: "Straight"},
@@ -107,62 +107,29 @@ window.CONTENT = {
         heading: "Snapshots of my Life",
         lead: "Yes, I'm the one in most of them. Tap any photo to enlarge.",
         photos: [
-            {src: "img/alec/headshot of alec.png", alt: "Alec"},
-            {
-                src: "img/alec/PXL_20251128_071312852.PORTRAIT.jpg",
-                alt: "Alec"
-            },
-            {src: "img/alec/PXL_20260514_052228361.PORTRAIT.jpg", alt: "Alec"},
-            {
-                src: "img/alec/PXL_20260522_014927602.PORTRAIT.jpg",
-                alt: "Alec"
-            },
-            {src: "img/alec/alec kimono torii gate japan.jpg", alt: "Alec in Japan"},
-            {
-                src: "img/alec/PXL_20240525_084631053.PORTRAIT.jpg",
-                alt: "Alec"
-            },
-            {src: "img/alec/alec times square new york.png", alt: "Alec in New York"},
-            {
-                src: "img/alec/fire spining.jpg",
-                alt: "Alec fire spinning"
-            },
-            {src: "img/alec/PXL_20251007_203516750.RAW-01.jpg", alt: "Alec"},
-            {
-                src: "img/alec/PXL_20260502_084552947.PORTRAIT.jpg",
-                alt: "Alec"
-            },
-            {
-                src: "img/alec/alec at pokemon kanto with pokemon plushies.jpg",
-                alt: "Alec with Pokemon plushies"
-            },
-            {src: "img/alec/alec flower crown midsommar sweden.png", alt: "Alec at Midsommar"},
-            {
-                src: "img/alec/onsen.jpg",
-                alt: "Alec at an onsen"
-            },
-            {src: "img/alec/alec big buddha phuket selfie.png", alt: "Alec in Phuket"},
-            {
-                src: "img/alec/alec dress as mad scienst for halloweeen.png",
-                alt: "Alec dressed as a mad scientist"
-            },
-            {src: "img/alec/alec with his family dog monty.png", alt: "Alec with his dog Monty"},
-            {
-                src: "img/alec/alec eating out.png",
-                alt: "Alec eating out"
-            },
-            {src: "img/alec/alec holding a pineapple.png", alt: "Alec holding a pineapple"},
-            {
-                src: "img/alec/alec swimming tropical river pool.png",
-                alt: "Alec swimming"
-            },
-            {src: "img/alec/alec setting of on his backpacking advanture.png", alt: "Alec backpacking"},
-            {
-                src: "img/alec/alec feeding load of backpackers.png",
-                alt: "Alec cooking for backpackers"
-            },
-            {src: "img/alec/alec in a garden.jpg", alt: "Alec in a garden"},
-            {src: "img/alec/PXL_20260501_151845261.PORTRAIT.jpg", alt: "Alec"}
+            {src: "img/alec/1.jpg"},
+            {src: "img/alec/2.jpg"},
+            {src: "img/alec/3.jpg"},
+            {src: "img/alec/4.jpg"},
+            {src: "img/alec/6.jpg"},
+            {src: "img/alec/7.jpg"},
+            {src: "img/alec/8.jpg"},
+            {src: "img/alec/9.jpg"},
+            {src: "img/alec/10.jpg"},
+            {src: "img/alec/11.jpg"},
+            {src: "img/alec/12.jpg"},
+            {src: "img/alec/13.jpg"},
+            {src: "img/alec/14.jpg"},
+            {src: "img/alec/15.jpg"},
+            {src: "img/alec/16.jpg"},
+            {src: "img/alec/17.jpg"},
+            {src: "img/alec/18.jpg"},
+            {src: "img/alec/19.jpg"},
+            {src: "img/alec/20.jpg"},
+            {src: "img/alec/21.jpg"},
+            {src: "img/alec/22.png"},
+            {src: "img/alec/23.png"},
+            {src: "img/alec/24.png"},
         ]
     },
 
@@ -1499,7 +1466,7 @@ window.CONTENT = {
                             caption: "The anticipation sets off my anxiety (though I've enjoyed them once on)."
                         },
                         {
-                            src: "",
+                            src: "img/dislikes/hot.png",
                             icon: "☀️",
                             title: "Super hot weather",
                             caption: "Tbh, who really likes melting in the sun? Doesn't mean I don't like tropical holidays — just let me chill in the shade."

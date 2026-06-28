@@ -129,13 +129,16 @@
                 .map(
                     (c) =>
                         `<div class="place-card">${img(c.src, c.title)}
-<a href="${esc(c.href)}" target="_blank"><div class="place-card-body">
+<!--<a href="${esc(c.href)}" target="_blank">-->
+<div class="place-card-body">
 <strong>${
                             c.icon ? esc(c.icon) + ' ' : ''
                         }${esc(c.title)}</strong>${
                             c.caption ? `<div class="place-detail">${esc(c.caption)}</div>` : ''
                         }</div>
-</div></a>`
+</div>
+<!--</a>-->
+`
                 )
                 .join('')}</div>`,
 
