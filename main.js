@@ -297,23 +297,29 @@
     setHtml('[data-faces="track"]', once + twice);
   }
 
+  // A link's icon: prefer the site favicon, fall back to the emoji `icon` when
+  // no domain favicon exists (e.g. the mailto: Email link). `cls` lets each
+  // context (button vs footer) size its own favicon.
+  const linkIcon = (l, cls) => {
+    const fav = l.favicon || faviconFor(l.href);
+    return fav
+      ? `<img class="${cls}" src="${esc(fav)}" alt="" loading="lazy">`
+      : `<span class="contact-emoji">${esc(l.icon || '')}</span>`;
+  };
+
+  // Open external links in a new tab; keep mailto in place.
+  const linkTarget = (href) =>
+    href.startsWith('mailto:') ? '' : ' target="_blank" rel="noopener"';
+
   // Shared "let's connect" card — used by both #contact and #outro. Same
   // component, different title/text. A card with no `links` reuses
   // contact.links so the buttons stay a single source of truth.
   function renderConnectCard(data, sel) {
     if (!data) return;
-    // Prefer the site favicon; fall back to the emoji `icon` when no domain
-    // favicon exists (e.g. the mailto: Email button).
-    const iconHtml = (l) => {
-      const fav = l.favicon || faviconFor(l.href);
-      return fav
-        ? `<img class="contact-favicon" src="${esc(fav)}" alt="" loading="lazy">`
-        : `<span class="contact-emoji">${esc(l.icon || '')}</span>`;
-    };
     const linkHtml = (l) =>
-      `<a class="contact-btn${l.primary ? ' primary' : ''}" href="${esc(l.href)}"${
-        l.href.startsWith('mailto:') ? '' : ' target="_blank" rel="noopener"'
-      }>${iconHtml(l)} ${esc(l.label)}</a>`;
+      `<a class="contact-btn${l.primary ? ' primary' : ''}" href="${esc(l.href)}"${linkTarget(
+        l.href
+      )}>${linkIcon(l, 'contact-favicon')} ${esc(l.label)}</a>`;
 
     const links = data.links && data.links.length ? data.links : (C.contact ? C.contact.links : []);
     const html =
@@ -322,6 +328,16 @@
       `<p class="lead">${esc(data.lead)}</p>` +
       `<div class="contact-links">${links.map(linkHtml).join('')}</div>`;
     setHtml(sel, html);
+  }
+
+  // Footer links — same contact.links data, lighter text-link styling.
+  function renderFooterLinks() {
+    if (!C || !C.contact) return;
+    const linkHtml = (l) =>
+      `<a href="${esc(l.href)}"${linkTarget(l.href)}>${linkIcon(l, 'footer-favicon')}<span>${esc(
+        l.label
+      )}</span></a>`;
+    setHtml('[data-footer="links"]', C.contact.links.map(linkHtml).join(''));
   }
 
   /* ============================================================

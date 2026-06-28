@@ -66,6 +66,26 @@ window.CONTENT = {
             {icon: "🌱", label: "Politics", value: "Liberal / Left"},
         ]
     },
+    contact: {
+        tag: "💬 How to Get in Touch",
+        heading: "Shoot Your Shot",
+        lead: "I prefer not to share my phone number upfront — but reach me through any of these and you'll get a hold of me.",
+        links: [
+            {
+                label: "Email",
+                icon: "✉",
+                href: "mailto:date.alec@alectronic.co.uk?subject=RE%3A%20Alec%20Dating%20Application",
+                primary: true
+            },
+            {
+                label: "Linktree",
+                href: "https://linktr.ee/Alectronic",
+            },
+            {label: "Instagram", href: "https://www.instagram.com/alectronic0/"},
+            {label: "LinkedIn", href: "https://www.linkedin.com/in/alectronic0/"},
+            {label: "Telegram", href: "https://t.me/alectronic0"}
+        ]
+    },
 
     /* ── Faces marquee ── */
     faces: {
@@ -135,7 +155,7 @@ window.CONTENT = {
                             caption: "Around the world, one hostel at a time."
                         },
                         {
-                            image: "img/moments/alec in a bikini as a dare.jpg",
+                            image: "img/moments/alec in a bikini as a dare.png",
                             icon: "👙",
                             title: "Bikini on Valentine's Day",
                             caption: "A surf-camp dare I fully committed to."
@@ -226,12 +246,6 @@ window.CONTENT = {
                             text: "Organising cute dates (and yes, adding them to Google Calendar)."
                         },
                         {
-                            image: "img/boyfriend-mode/person recing morning text message.png",
-                            alt: "A morning text",
-                            icon: "💬",
-                            text: "Good morning & good night texts, every day."
-                        },
-                        {
                             image: "img/boyfriend-mode/person getting coffee from a shop.png",
                             alt: "Getting coffee",
                             icon: "☕",
@@ -259,6 +273,46 @@ window.CONTENT = {
             heading: "An Invitation, Not a Checklist",
             lead: "I have a full, happy life — I'm just hoping to share it. Here's the kind of \"us\" I'm dreaming about.",
             blocks: [
+                {
+                    type: "valueCols",
+                    columns: [
+                        {
+                            title: "Enjoys Going on Adventures",
+                            items: [
+                                "Travelling & Exploring new cultures",
+                                "Hunting down amazing food places",
+                                "Trying out new actives & Experiences",
+                                "Going for walks in nature",
+                            ]
+                        },
+                        {
+                            title: "Enjoys Cosy days at home",
+                            items: [
+                                "Cooking/baking",
+                                "Playing Video games",
+                                "Watching TV/Movies",
+                                "Dancing in the kitchen",
+                                "Doing fun activities at home",
+                            ]
+                        },
+                        {
+                            title: "Values",
+                            items: [
+                                "Clear and open communication",
+                                "Pushing each other to be our best selves",
+                                "Willingness to work through the hard times",
+                                "Quality time and mutual affection",
+                            ]
+                        },
+                        {
+                            title: "One last thing...",
+                            items: [
+                                "Someone open to my interests...",
+                                "and excited to share theirs"
+                            ]
+                        },
+                    ]
+                },
                 {
                     type: "featureGrid",
                     features: [
@@ -299,19 +353,6 @@ window.CONTENT = {
                             text: "Cheering each other on to be our best selves."
                         }
                     ]
-                },
-                {
-                    type: "valueCols",
-                    columns: [
-                        {
-                            title: "Adventures Together",
-                            items: ["Someone open to my interests (and excited to share theirs)", "Travelling & going on adventures", "Hunting down amazing food places", "Walks, fun activities, and cosy days in", "Cooking, baking, games, films — together"]
-                        },
-                        {
-                            title: "What I Value",
-                            items: ["Clear and open communication", "Pushing each other to be our best selves", "Willingness to work through the hard times", "Quality time and mutual affection"]
-                        }
-                    ]
                 }
             ]
         },
@@ -328,7 +369,13 @@ window.CONTENT = {
                             image: "img/dates/flower market.png",
                             alt: "A flower market",
                             title: "🍕 Foodie & Market",
-                            pills: ["Coffee & Walk", "Pastry Adventure", "Flower Market", "Food Market", "Bookstore Tour"]
+                            pills: ["Pastry Adventure", "Flower Market", "Food Market"]
+                        },
+                        {
+                            image: "img/dates/flower market.png",
+                            alt: "Calm Adventure",
+                            title: "Chill mode",
+                            pills: ["Coffee & Walk", "Nature walk", "Bookstore Tour", "Canal Walk"]
                         },
                         {
                             image: "img/dates/couple on date aex throwing.png",
@@ -340,19 +387,19 @@ window.CONTENT = {
                             image: "img/dates/museum gallery.png",
                             alt: "A museum gallery",
                             title: "🧠 Intellectual",
-                            pills: ["Museum", "Art Gallery", "Aquarium", "Planetarium", "Zoo", "Bookstore"]
+                            pills: ["Museum", "Art Gallery", "Aquarium / Zoo", "Planetarium", "Exhibition"]
                         },
                         {
                             image: "img/dates/couple date pottery class.png",
                             alt: "A pottery class date",
                             title: "🎨 Creative",
-                            pills: ["Pottery", "Paint & Sip", "Kintsugi", "Terrarium making", "Cooking Class"]
+                            pills: ["Pottery", "Kintsugi", "Terrarium making", "Cooking Class", "Paining"]
                         },
                         {
                             image: "img/dates/couple playing video games.png",
                             alt: "Playing video games together",
                             title: "🎮 Video Game Session!",
-                            pills: ["Peak", "It Takes Two", "Split Fiction", "Portal 2"]
+                            pills: ["Peak", "It Takes Two", "Split Fiction", "Portal 2", "Chat of Discord"]
                         }
                     ]
                 }
@@ -360,55 +407,6 @@ window.CONTENT = {
         },
 
         /* ───────── Deep dive (accordion) ───────── */
-
-        personality: {
-            blocks: [
-                {
-                    type: "paragraph",
-                    text: "I'm not perfect, but I'll always do my best to do the right thing. I'd call myself introverted — though I'm very sociable with the right people."
-                },
-                {
-                    type: "personaCards",
-                    cards: [
-                        {
-                            icon: "🧠",
-                            title: "MBTI: INTJ-T / INFJ-T",
-                            desc: "Introverted, but sociable with the right people."
-                        },
-                        {
-                            icon: "🤝",
-                            title: "Community-Minded",
-                            desc: "I check in on people, make sure everyone feels seen, and genuinely care about those around me."
-                        },
-                        {
-                            icon: "😄",
-                            title: "Naturally Witty",
-                            desc: "A habit of making people laugh — quick with a quip, slow with a filter."
-                        },
-                        {
-                            icon: "🗂️",
-                            title: "Organised Chaos",
-                            desc: "Spreadsheets, docs and Google Calendar events for everything — including dates."
-                        },
-                        {
-                            icon: "😈",
-                            title: "Hidden cheeky side",
-                            desc: "let just say I will keep you both entertain and on your toes 😉"
-                        }
-                    ]
-                },
-                {type: "heading", text: "My Main Love Languages"},
-                {
-                    type: "loveLangs",
-                    langs: [{tier: "Primary", label: "Physical Touch"}, {tier: "Primary", label: "Quality Time"}]
-                },
-                {type: "heading", text: "A Little Moodboard of My Vibe"},
-                {
-                    type: "photoGrid",
-                    images: []
-                }
-            ]
-        },
 
         transparency: {
             blocks: [
@@ -854,35 +852,6 @@ window.CONTENT = {
                     type: "paragraph",
                     text: "I'm always chasing the best food in London and around the world — favourites are Asian (mostly Japanese) & Mexican, from street food to Michelin stars."
                 },
-                {
-                    type: "photoGrid",
-                    images: [
-                        {src: "img/food/tonkotsu ramen bowl.png", alt: "Tonkotsu ramen"},
-                        {src: "img/food/bao buns fries tray.png", alt: "Bao buns"},
-                        {src: "img/food/bahn mi.png", alt: "Banh mi"},
-                        {src: "img/food/street tacos.png", alt: "Street tacos"},
-                        {src: "img/food/japanese fried chicken moss plating.png", alt: "Japanese fried chicken"},
-                        {src: "img/food/korean fried chicken wings.png", alt: "Korean fried chicken"},
-                        {src: "img/food/seared tuna tataki sesame.png", alt: "Tuna tataki"},
-                        {src: "img/food/beef tataki fine dining.png", alt: "Beef tataki"},
-                        {src: "img/food/bacon cheeseburger brioche.png", alt: "Bacon cheeseburger"},
-                        {src: "img/food/smash double cheeseburger.png", alt: "Smash burger"},
-                        {src: "img/food/smash burger with fries.png", alt: "Smash burger with fries"},
-                        {src: "img/food/full english breakfast cafe.png", alt: "Full English breakfast"},
-                        {src: "img/food/roast chicken sunday dinner.png", alt: "Sunday roast"},
-                        {src: "img/food/duck wellington kale fine dining.png", alt: "Duck Wellington"},
-                        {src: "img/food/scallop fine dining starter.png", alt: "Scallop starter"},
-                        {src: "img/food/fine dining beef mango puree.png", alt: "Fine dining beef"},
-                        {src: "img/food/tempura green beans romesco.png", alt: "Tempura green beans"},
-                        {src: "img/food/matcha soft serve ice cream cone.png", alt: "Matcha soft serve"},
-                        {src: "img/food/chocolate fondant ice cream dessert.png", alt: "Chocolate fondant"},
-                        {src: "img/food/decorative croissants pastry box.png", alt: "Pastry box"},
-                        {src: "img/food/taco desert.png", alt: "Taco dessert"},
-                        {src: "img/food/meal prep chicken rice takeaway.png", alt: "Meal prep"},
-                        {src: "img/food/cafe food.png", alt: "Cafe food"},
-                        {src: "img/food/fancy meal.png", alt: "A fancy meal"}
-                    ]
-                },
                 {type: "heading", text: "Top of the Menu"},
                 {
                     type: "tagRow", tags: [
@@ -901,10 +870,62 @@ window.CONTENT = {
                         {label: "Matcha & Tea", variant: "love"}, {
                             label: "Pastries",
                             variant: "love"
-                        }, {label: "Sour sweets", variant: "love"},
+                        }, {label: "Sour sweets", variant: "love"}
+                    ]
+                },
+                {type: "heading", text: "In the bin"},
+                {
+                    type: "tagRow", tags: [
                         {label: "Onion", variant: "hate"}, {label: "Sweetcorn", variant: "hate"}
                     ]
-                }
+                },
+                {type: "heading", text: "Food I've eaten"},
+                {
+                    type: "photoGrid",
+                    images: [
+                        {src: "img/food/tonkotsu ramen bowl.png", alt: "Tonkotsu ramen"},
+                        {src: "img/food/bao buns fries tray.png", alt: "Bao buns"},
+                        {src: "img/food/bahn mi.png", alt: "Banh mi"},
+                        {src: "img/food/street tacos.png", alt: "Street tacos"},
+                        {src: "img/food/japanese fried chicken moss plating.png", alt: "Japanese fried chicken"},
+                        {src: "img/food/korean fried chicken wings.png", alt: "Korean fried chicken"},
+                        {src: "img/food/seared tuna tataki sesame.png", alt: "Tuna tataki"},
+                        {src: "img/food/beef tataki fine dining.png", alt: "Beef tataki"},
+                        {src: "img/food/bacon cheeseburger brioche.png", alt: "Bacon cheeseburger"},
+                        {src: "img/food/smash double cheeseburger.png", alt: "Smash burger"},
+                        {src: "img/food/smash burger with fries.png", alt: "Smash burger with fries"},
+                        {src: "img/food/full english breakfast cafe.png", alt: "Full English breakfast"},
+                        {src: "img/food/duck wellington kale fine dining.png", alt: "Duck Wellington"},
+                        {src: "img/food/scallop fine dining starter.png", alt: "Scallop starter"},
+                        {src: "img/food/fine dining beef mango puree.png", alt: "Fine dining beef"},
+                        {src: "img/food/tempura green beans romesco.png", alt: "Tempura green beans"},
+                        {src: "img/food/matcha soft serve ice cream cone.png", alt: "Matcha soft serve"},
+                        {src: "img/food/chocolate fondant ice cream dessert.png", alt: "Chocolate fondant"},
+                        {src: "img/food/decorative croissants pastry box.png", alt: "Pastry box"},
+                        {src: "img/food/taco desert.png", alt: "Taco dessert"},
+                        {src: "img/food/meal prep chicken rice takeaway.png", alt: "Meal prep"},
+                        {src: "img/food/cafe food.png", alt: "Cafe food"},
+                        {src: "img/food/fancy meal.png", alt: "A fancy meal"}
+                    ]
+                },
+                {type: "heading", text: "Food I've made"},
+                {
+                    type: "photoGrid",
+                    images: [
+                        {src: "img/food/roast chicken sunday dinner.png", alt: "Sunday roast"},
+                        {src: "img/food/cookies.png", alt: "Cookies"},
+                        {src: "img/food/banoffeepie.png", alt: "Banoffee pie"},
+                        {src: "img/food/Banna bread.png", alt: "Banna bread"},
+                        {src: "img/food/bread.png", alt: "Sour dough"},
+                        {src: "img/food/lamb curry.png", alt: "Lamb Curry"},
+                        {src: "img/food/carbonara.png", alt: "Carbonara"},
+                    ]
+                },
+                {type: "heading", text: "Also on"},
+                {
+                    type: "tagRow",
+                    tags: ["Butter Chicken", ]
+                },
             ]
         },
 
@@ -1271,28 +1292,6 @@ window.CONTENT = {
         }
     },
 
-    contact: {
-        tag: "💬 How to Get in Touch",
-        heading: "Shoot Your Shot",
-        lead: "I prefer not to share my phone number upfront — but reach me through any of these and you'll get a hold of me.",
-        links: [
-            {
-                label: "Email",
-                icon: "✉",
-                href: "mailto:date.alec@alectronic.co.uk?subject=RE%3A%20Alec%20Dating%20Application",
-                primary: true
-            },
-            {
-                label: "Hangout",
-                icon: "☕",
-                href: "https://calendar.google.com/calendar/appointments/AcZssZ2NpuoQwj23j5VcRlDEDWYDmjTbUjFEs09RiBc="
-            },
-            {label: "Instagram", icon: "📸", href: "https://www.instagram.com/alectronic0/"},
-            {label: "LinkedIn", icon: "in", href: "https://www.linkedin.com/in/alectronic0/"},
-            {label: "Telegram", icon: "✈", href: "https://t.me/alectronic0"},
-            {label: "Linktree", icon: "🔗", href: "https://linktr.ee/Alectronic"}
-        ]
-    },
 
     // Renders with the same component as `contact` — just a different title and
     // text. With no `links` of its own it reuses contact.links (single source).

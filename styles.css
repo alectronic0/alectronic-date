@@ -248,7 +248,7 @@ p { color: var(--muted); margin-bottom: 14px; }
 .feature-icon { font-size: 1.25rem; flex-shrink: 0; }
 .feature-text { font-size: 0.9rem; color: var(--muted); }
 
-.value-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.value-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; margin-bottom: 16px; }
 .value-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
 .value-card h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-light); margin-bottom: 12px; }
 .value-card ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
