@@ -67,7 +67,7 @@
       <div class="warning-banner">
         <div class="w-emoji">🚧</div>
         <h2>Work in progress</h2>
-        <p>This site is still a work in progress so apologize for...</p>
+        <p>This site is still a work in progress, so apologies in advance for any rough edges.</p>
         <div class="warning-tags">
           <span>🐛 Bugs</span><span>👾 Glitches</span><span>✍️ Typos</span><span>⁉️ Missing Info</span>
         </div>
@@ -78,9 +78,7 @@
 <!-- ════════════════ FACES (photo strip) ════════════════ -->
 <section id="photos">
   <div class="container">
-    <div class="section-tag tag-purple">📸 A Few Faces of Alec</div>
-    <h2>Snapshots of my Life</h2>
-    <p class="lead">Yes, I'm the one in most of them. Tap any photo to enlarge.</p>
+    <div data-faces="header"></div>
     <div class="mosaic-strip">
       <div class="mosaic-track" data-faces="track"></div>
     </div>
@@ -89,42 +87,22 @@
 
 <!-- ════════════════ MOMENTS ════════════════ -->
 <section id="moments">
-  <div class="container">
-    <div class="section-tag tag-gold">🏆 Notable Moments</div>
-    <h2>A Life Well Lived (So Far)</h2>
-    <p class="lead">A few of the milestones, mishaps and adventures so far — tap any to enlarge.</p>
-    <div data-section="moments"></div>
-  </div>
+  <div class="container" data-section="moments"></div>
 </section>
 
 <!-- ════════════════ WHAT I CAN BE ════════════════ -->
 <section id="boyfriend-mode">
-  <div class="container">
-    <div class="section-tag tag-rose">❤️ What I Can Be</div>
-    <h2>What Dating Me Could Look Like</h2>
-    <p class="lead">A peek at "boyfriend mode" — the little things I love doing for the person I'm with.</p>
-    <div data-section="boyfriendMode"></div>
-  </div>
+  <div class="container" data-section="boyfriendMode"></div>
 </section>
 
 <!-- ════════════════ LOOKING FOR ════════════════ -->
 <section id="looking-for">
-  <div class="container">
-    <div class="section-tag tag-gold">✨ What I'm Looking For</div>
-    <h2>An Invitation, Not a Checklist</h2>
-    <p class="lead">I have a full, happy life — I'm just hoping to share it. Here's the kind of "us" I'm dreaming about.</p>
-    <div data-section="lookingFor"></div>
-  </div>
+  <div class="container" data-section="lookingFor"></div>
 </section>
 
 <!-- ════════════════ DATE IDEAS ════════════════ -->
 <section id="dates">
-  <div class="container">
-    <div class="section-tag tag-purple">🗺️ Date Ideas</div>
-    <h2>Choose Our First Adventure</h2>
-    <p class="lead">Tell me your rough location and what you'd be up for trying — I'll sort out a time and a place.</p>
-    <div data-section="dates"></div>
-  </div>
+  <div class="container" data-section="dates"></div>
 </section>
 
 <!-- ════════════════ CONTACT ════════════════ -->
@@ -155,87 +133,12 @@
   <div class="container">
     <div class="deep-intro">
       <div class="section-tag tag-rose">🔬 The Deep Dive</div>
-      <h2>Everything Else About Me</h2>
+      <h2>Everything Else About Me <span class="deep-link" role="button" tabindex="0" data-anchor="deep-dive" aria-label="Copy link to The Deep Dive" title="Copy link to this section">🔗</span></h2>
       <p class="lead" style="margin-left:auto;margin-right:auto;">Tap any card to open it. Skim what catches your eye, or read the lot — your call.</p>
     </div>
 
-    <div class="accordion">
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🌱</span><span class="acc-title">Radical Transparency <span class="acc-hint">— areas of active growth</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="transparency"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">✨</span><span class="acc-title">Hobbies &amp; Interests <span class="acc-hint">— things that light me up</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="hobbies"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🎯</span><span class="acc-title">Bucket List <span class="acc-hint">— things I'd love to try</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="bucketList"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">✈️</span><span class="acc-title">Places — Been &amp; Want to Go <span class="acc-hint">— stamps &amp; wishlist</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="places"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🎬</span><span class="acc-title">Movies &amp; TV <span class="acc-hint">— what I'm watching</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="moviesTV"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🎮</span><span class="acc-title">Video Games <span class="acc-hint">— player one, ready</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="videoGames"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🍽️</span><span class="acc-title">Food <span class="acc-hint">— the way to my heart</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="food"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🎵</span><span class="acc-title">Music <span class="acc-hint">— what's on my playlist</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="music"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">📚</span><span class="acc-title">Books <span class="acc-hint">— on my shelf</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="books"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🎙️</span><span class="acc-title">Podcasts <span class="acc-hint">— long-journey listening</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="podcasts"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">⚽</span><span class="acc-title">Sports <span class="acc-hint">— mostly a spectator</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="sports"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🏛️</span><span class="acc-title">Politics &amp; Religion <span class="acc-hint">— where I stand</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="politics"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🙅</span><span class="acc-title">Gentle Dislikes <span class="acc-hint">— a preference for calm</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="dislikes"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🚀</span><span class="acc-title">Future Goals <span class="acc-hint">— where I'm headed</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="goals"></div></div></div>
-      </article>
-
-      <article class="acc-item">
-        <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🌺</span><span class="acc-title">Bonus: Plants &amp; Creatures <span class="acc-hint">— a few favourites</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="plantsAnimals"></div></div></div>
-      </article>
-
-    </div>
+    <!-- Cards are built from CONTENT.accordion by main.js (renderAccordion). -->
+    <div class="accordion"></div>
   </div>
 </section>
 
@@ -251,14 +154,7 @@
 <footer>
   <div class="container">
     <div style="font-size:2rem;margin-bottom:16px;">🎮❤️🎮</div>
-    <div class="footer-links">
-      <a href="mailto:date.alec@alectronic.co.uk?subject=RE%3A%20Alec%20Dating%20Application">Email</a>
-      <a href="https://www.instagram.com/alectronic0/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.linkedin.com/in/alectronic0/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://discordapp.com/users/689441309567746070" target="_blank" rel="noopener">Discord</a>
-      <a href="https://t.me/alectronic0" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://linktr.ee/Alectronic" target="_blank" rel="noopener">Linktree</a>
-    </div>
+    <div class="footer-links" data-footer="links"></div>
     <div class="footer-note">Alec Doran-Twyford · Welwyn Garden City · he/him/they/them</div>
   </div>
 </footer>

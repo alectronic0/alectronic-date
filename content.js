@@ -90,7 +90,7 @@ window.CONTENT = {
     /* ── Faces marquee ── */
     faces: {
         tag: "📸 A Few Faces of Alec",
-        heading: "Snapshots From the Life",
+        heading: "Snapshots of my Life",
         lead: "Yes, I'm the one in most of them. Tap any photo to enlarge.",
         photos: [
             {src: "img/alec/headshot of alec.png", alt: "Alec"},
@@ -119,6 +119,29 @@ window.CONTENT = {
         ]
     },
 
+    /* ── Deep-dive accordion ──
+       Order + header for each collapsible card. `key` matches a
+       sections[key] below AND becomes the card's element id, so a URL
+       like …#food opens that card. Reorder this array to reorder the
+       accordion — no HTML edits needed. */
+    accordion: [
+        {key: "transparency", emoji: "🌱", title: "Radical Transparency", hint: "— areas of active growth"},
+        {key: "hobbies", emoji: "✨", title: "Hobbies & Interests", hint: "— things that light me up"},
+        {key: "bucketList", emoji: "🎯", title: "Bucket List", hint: "— things I'd love to try"},
+        {key: "places", emoji: "✈️", title: "Places — Been & Want to Go", hint: "— stamps & wishlist"},
+        {key: "moviesTV", emoji: "🎬", title: "Movies & TV", hint: "— what I'm watching"},
+        {key: "videoGames", emoji: "🎮", title: "Video Games", hint: "— player one, ready"},
+        {key: "food", emoji: "🍽️", title: "Food", hint: "— the way to my heart"},
+        {key: "music", emoji: "🎵", title: "Music", hint: "— what's on my playlist"},
+        {key: "books", emoji: "📚", title: "Books", hint: "— on my shelf"},
+        {key: "podcasts", emoji: "🎙️", title: "Podcasts", hint: "— long-journey listening"},
+        {key: "sports", emoji: "⚽", title: "Sports", hint: "— mostly a spectator"},
+        {key: "politics", emoji: "🏛️", title: "Politics & Religion", hint: "— where I stand"},
+        {key: "dislikes", emoji: "🙅", title: "Gentle Dislikes", hint: "— a preference for calm"},
+        {key: "goals", emoji: "🚀", title: "Future Goals", hint: "— where I'm headed"},
+        {key: "plantsAnimals", emoji: "🌺", title: "Bonus: Plants & Creatures", hint: "— a few favourites"}
+    ],
+
     /* ── Mid-page sections (each = blocks[]) ── */
     sections: {
 
@@ -126,6 +149,7 @@ window.CONTENT = {
             tag: "🏆 Notable Moments",
             tagClass: "tag-gold",
             heading: "A Life Well Lived (So Far)",
+            lead: "A few of the milestones, mishaps and adventures so far — tap any to enlarge.",
             blocks: [
                 {
                     type: "cardGrid",
@@ -281,7 +305,7 @@ window.CONTENT = {
                             items: [
                                 "Travelling & Exploring new cultures",
                                 "Hunting down amazing food places",
-                                "Trying out new actives & Experiences",
+                                "Trying out new activities & experiences",
                                 "Going for walks in nature",
                             ]
                         },
@@ -372,7 +396,7 @@ window.CONTENT = {
                             pills: ["Pastry Adventure", "Flower Market", "Food Market"]
                         },
                         {
-                            src: "img/dates/flower market.png",
+                            src: "img/dates/couple date bookstore.png",
                             alt: "Calm Adventure",
                             title: "Chill mode",
                             pills: ["Coffee & Walk", "Nature walk", "Bookstore Tour", "Canal Walk"]
@@ -384,7 +408,7 @@ window.CONTENT = {
                             pills: ["Arcade", "Axe Throwing", "Mini Golf", "Virtual Clay Pigeon"]
                         },
                         {
-                            src: "img/dates/museum gallery.png",
+                            src: "img/dates/couple date at a gallery.png",
                             alt: "A museum gallery",
                             title: "🧠 Intellectual",
                             pills: ["Museum", "Art Gallery", "Aquarium / Zoo", "Planetarium", "Exhibition"]
@@ -393,7 +417,7 @@ window.CONTENT = {
                             src: "img/dates/couple date pottery class.png",
                             alt: "A pottery class date",
                             title: "🎨 Creative",
-                            pills: ["Pottery", "Kintsugi", "Terrarium making", "Cooking Class", "Paining"]
+                            pills: ["Pottery", "Kintsugi", "Terrarium making", "Cooking Class", "Painting"]
                         },
                         {
                             src: "img/dates/couple playing video games.png",
@@ -431,7 +455,7 @@ window.CONTENT = {
                             items: [
                                 "Dyslexia, depression, anxious attachment & (undiagnosed) AuDHD",
                                 "An overthinker and a recovering people-pleaser who feels things deeply",
-                                "I've done therapy couple times before and I am better or it!"
+                                "I've done therapy a couple of times before and I'm better for it!"
                             ]
                         }
                     ]
@@ -512,39 +536,98 @@ window.CONTENT = {
         bucketList: {
             blocks: [
                 {
-                    type: "listCols",
-                    columns: [
+                    type: "cardGrid",
+                    cards: [
                         {
-                            groups: [{
-                                title: "✈️ Travel More",
-                                items: ["Campervan", "Interrail", "City breaks", "Glamping & camping"]
-                            }, {
-                                title: "🎭 Experiences",
-                                items: ["LARP / Ren faire / Fantasy ball", "A play at The Globe", "Rock climbing / bouldering", "A flower field (lavender / tulips)", "Learn first aid (mental & physical)", "Learn to ride a moped", "Dance & cooking classes", "The Lego House in Denmark", "More Michelin restaurants", "Volunteer work"]
-                            }]
+                            src: "img/bucket-list/camping under starry sky.png",
+                            icon: "⛺",
+                            title: "Glamping & Camping",
+                            caption: "Cosy nights out under the stars."
                         },
                         {
-                            groups: [{
-                                title: "🎨 Creative",
-                                items: ["Glass blowing", "Blacksmithing / forge", "Terrarium making"]
-                            }]
+                            src: "img/bucket-list/medieval renaissance fair.png",
+                            icon: "🎭",
+                            title: "LARP & Ren Faire",
+                            caption: "Dressing up and living the fantasy for a day."
+                        },
+                        {
+                            src: "img/bucket-list/image125.png",
+                            icon: "👑",
+                            title: "A Fantasy Ball",
+                            caption: "A masquerade in full costume."
+                        },
+                        {
+                            src: "img/bucket-list/shakespeares globe theatre.png",
+                            icon: "🎬",
+                            title: "A Play at The Globe",
+                            caption: "Shakespeare the way it was meant to be seen."
+                        },
+                        {
+                            src: "img/bucket-list/indoor climbing wall.png",
+                            icon: "🧗",
+                            title: "Rock Climbing / Bouldering",
+                            caption: "Up the wall, one hold at a time."
+                        },
+                        {
+                            src: "img/bucket-list/lavender field provence.png",
+                            icon: "🌷",
+                            title: "A Flower Field",
+                            caption: "Lavender or tulips in full bloom."
+                        },
+                        {
+                            src: "img/bucket-list/cpr first aid training.png",
+                            icon: "🩹",
+                            title: "Learn First Aid",
+                            caption: "Mental & physical — handy things to know."
+                        },
+                        {
+                            src: "img/bucket-list/couple on vespas italy.png",
+                            icon: "🛵",
+                            title: "Learn to Ride a Moped",
+                            caption: "Vespa dreams, ideally in Italy."
+                        },
+                        {
+                            src: "img/bucket-list/michelin star logo.png",
+                            icon: "⭐",
+                            title: "More Michelin Restaurants",
+                            caption: "Chasing down those little stars."
+                        },
+                        {
+                            src: "img/bucket-list/blacksmith.png",
+                            icon: "🔨",
+                            title: "Blacksmithing / Forge",
+                            caption: "Hammering raw metal into something."
+                        },
+                        {
+                            src: "img/bucket-list/travel more.png",
+                            icon: "✈️",
+                            title: "Travel More",
+                            caption: "Campervan road trips, Interrailing across Europe and spontaneous city breaks."
+                        },
+                        {
+                            src: "img/bucket-list/dance and cooking class.png",
+                            icon: "💃",
+                            title: "Dance & Cooking Classes",
+                            caption: "Learning to move — and to cook something new."
+                        },
+                        {
+                            src: "img/bucket-list/volunteer work.png",
+                            icon: "🤝",
+                            title: "Volunteer Work",
+                            caption: "Giving some time back to a good cause."
+                        },
+                        {
+                            src: "img/bucket-list/glass blowing.png",
+                            icon: "🔥",
+                            title: "Glass Blowing",
+                            caption: "Shaping molten glass into something pretty."
+                        },
+                        {
+                            src: "img/bucket-list/terrarium making.png",
+                            icon: "🌿",
+                            title: "Terrarium Making",
+                            caption: "A tiny living world under glass."
                         }
-                    ]
-                },
-                {type: "heading", text: "In Pictures"},
-                {
-                    type: "photoGrid",
-                    images: [
-                        {src: "img/bucket-list/camping under starry sky.png", alt: "Camping under the stars"},
-                        {src: "img/bucket-list/couple on vespas italy.png", alt: "Vespas in Italy"},
-                        {src: "img/bucket-list/lavender field provence.png", alt: "A lavender field"},
-                        {src: "img/bucket-list/medieval renaissance fair.png", alt: "A renaissance fair"},
-                        {src: "img/bucket-list/shakespeares globe theatre.png", alt: "Shakespeare's Globe"},
-                        {src: "img/bucket-list/indoor climbing wall.png", alt: "An indoor climbing wall"},
-                        {src: "img/bucket-list/cpr first aid training.png", alt: "First aid training"},
-                        {src: "img/bucket-list/michelin star logo.png", alt: "Michelin star"},
-                        {src: "img/bucket-list/blacksmith.png", alt: "Blacksmithing"},
-                        {src: "img/bucket-list/image125.png", alt: "A bucket-list idea"}
                     ]
                 }
             ]
@@ -557,22 +640,16 @@ window.CONTENT = {
                     type: "placeCards",
                     cards: [
                         {
-                            country: "🇳🇿",
-                            name: "New Zealand",
-                            detail: "Hobbiton",
-                            src: "img/places-been/alec hobbiton sign new zealand.png"
-                        },
-                        {
                             country: "🇦🇺",
                             name: "Australia",
                             detail: "Sydney & East Coast",
                             src: "img/places-been/sydney opera house at night.png"
                         },
                         {
-                            country: "🇹🇭",
-                            name: "Thailand",
-                            detail: "Phuket",
-                            src: "img/places-been/alec big buddha phuket selfie.png"
+                            country: "🇳🇿",
+                            name: "New Zealand",
+                            detail: "Hobbiton",
+                            src: "img/places-been/alec hobbiton sign new zealand.png"
                         },
                         {
                             country: "🇩🇪",
@@ -581,10 +658,10 @@ window.CONTENT = {
                             src: "img/places-been/bavarian beer garden munich.png"
                         },
                         {
-                            country: "🇨🇿",
-                            name: "Czechia",
-                            detail: "Prague",
-                            src: "img/places-been/alec giant beer stein germany.png"
+                            country: "🇵🇱",
+                            name: "Poland",
+                            detail: "Enjoying too much vodka...Never again...",
+                            src: "img/places-been/palace of culture science warsaw.png"
                         },
                         {
                             country: "🇳🇱",
@@ -593,47 +670,59 @@ window.CONTENT = {
                             src: "img/places-been/amsterdam canal street view.png"
                         },
                         {
-                            country: "🇨🇾",
-                            name: "Cyprus",
-                            detail: "Aphrodite's Rock",
-                            src: "img/places-been/aphrodites rock beach cyprus.png"
-                        },
-                        {
                             country: "🇸🇪",
                             name: "Sweden",
-                            detail: "Midsommar",
-                            src: "img/places-been/alec flower crown midsommar sweden.png"
+                            detail: "Celebrating Midsummer",
+                            src: "img/places-been/alec at midsummer.png"
+                        },
+                        {
+                            country: "🇹🇭",
+                            name: "Thailand",
+                            detail: "Phuket",
+                            src: "img/places-been/alec big buddha phuket selfie.png"
                         },
                         {
                             country: "🇺🇦",
                             name: "Ukraine",
-                            detail: "Pripyat",
+                            detail: "Kyiv, Chernobyl, Odesa",
                             src: "img/places-been/alec chernobyl ferris wheel pripyat.png"
                         },
                         {
-                            country: "🇵🇱",
-                            name: "Poland",
-                            detail: "Warsaw & Krakow",
-                            src: "img/places-been/warsaw aerial city view.png"
+                            country: "🇨🇿",
+                            name: "Czechia",
+                            detail: "Prague",
+                            src: "img/places-been/Prague.png"
                         },
                         {
-                            country: "🇵🇱",
-                            name: "Warsaw",
-                            detail: "Palace of Culture",
-                            src: "img/places-been/palace of culture science warsaw.png"
+                            country: "🇮🇩",
+                            name: "Indonesia",
+                            detail: "Bali",
+                            src: "img/alec/alec on top of mt katumba in bali.png"
                         },
                         {
-                            country: "🎄",
-                            name: "Christmas Markets",
-                            detail: "Across Europe",
-                            src: "img/places-been/christmas market night aerial view.png"
+                            country: "🇺🇸",
+                            name: "USA · NYC",
+                            detail: "Concrete jungle where dreams are made of",
+                            src: "img/alec/alec times square new york.png"
+                        },
+                        {
+                            country: "🇲🇻",
+                            name: "Maldives",
+                            detail: "",
+                            src: "img/alec/PXL_20251128_071312852.PORTRAIT.jpg"
+                        },
+                        {
+                            country: "🇯🇵",
+                            name: "Japan",
+                            detail: "Tea, Food, Anime, Nintendo, Pokemon, Pokemon, Pokemon...",
+                            src: "img/alec/alec kimono torii gate japan.jpg"
                         }
                     ]
                 },
                 {type: "heading", text: "Also Stamped My Passport In"},
                 {
                     type: "tagRow",
-                    tags: ["🇬🇷 Greece", "🇪🇸 Spain", "🇫🇷 France", "🇺🇸 USA · NYC", "🇲🇻 Maldives", "🇯🇵 Japan", "🇮🇩 Indonesia · Bali"]
+                    tags: ["🇬🇷 Greece", "🇪🇸 Spain", "🇫🇷 France", "🇨🇾 Cyprus"]
                 },
                 {type: "heading", text: "🗺️ Where I Want to Go Next"},
                 {
@@ -675,24 +764,19 @@ window.CONTENT = {
                             detail: "Northern lights",
                             src: "img/places-want/northern lights aurora norway.png"
                         },
+
+                        {
+                            country: "🇩🇰",
+                            name: "Denmark",
+                            detail: "The LEGO House in Billund",
+                            src: "img/places-want/lego house.png"
+                        },
                         {
                             country: "🇬🇧",
                             name: "UK",
                             detail: "Seen surprisingly little of it",
                             src: "img/places-want/cotswolds village england.png"
                         },
-                        {
-                            country: "🥾",
-                            name: "Patagonia",
-                            detail: "Torres del Paine",
-                            src: "img/places-want/patagonia hiking torres del paine.png"
-                        },
-                        {
-                            country: "🏔️",
-                            name: "Snowy place",
-                            detail: "Snow & mountains",
-                            src: "img/places-want/alpine ski chalet snow pool.png"
-                        }
                     ]
                 },
                 {type: "heading", text: "Daydreaming Of…"},
@@ -701,10 +785,11 @@ window.CONTENT = {
                     cards: [
                         {
                             src: "img/places-want/italian nonna homemade pasta cooking.png",
-                            alt: "Homemade pasta in Italy"
+                            detail: "Homemade pasta in Italy by a Nonna"
                         },
-                        {src: "img/places-want/family feast communal dining table.png", alt: "A communal feast"},
-                        {src: "img/places-want/poolside reading sunglasses book.png", alt: "Reading poolside"}
+                        {src: "img/places-want/family feast communal dining table.png", detail: "Enjoy Cultures food"},
+                        {src: "img/places-want/poolside reading sunglasses book.png", detail: "Relaxing poolside"},
+                        {src: "img/places-want/alpine ski chalet snow pool.png", detail: "Relaxing in a Snowy place"},
                     ]
                 },
                 {
@@ -911,7 +996,7 @@ window.CONTENT = {
                         {src: "img/food/roast chicken Sunday dinner.png", alt: "Sunday roast"},
                         {src: "img/food/cookies.png", alt: "Cookies"},
                         {src: "img/food/banoffeepie.png", alt: "Banoffee pie"},
-                        {src: "img/food/Banna bread.png", alt: "Banna bread"},
+                        {src: "img/food/Banna bread.png", alt: "Banana bread"},
                         {src: "img/food/bread.png", alt: "Sour dough"},
                         {src: "img/food/lamb curry.png", alt: "Lamb Curry"},
                         {src: "img/food/carbonara.png", alt: "Carbonara"},
@@ -925,8 +1010,8 @@ window.CONTENT = {
                         "Lasagne",
                         "Mac & Cheese",
                         "Chilli con Carne",
-                        "Karaage ",
-                        "Fajita ",
+                        "Karaage",
+                        "Fajitas",
                     ]
                 },
             ]
@@ -1112,14 +1197,14 @@ window.CONTENT = {
                 {
                     type: "logoGrid",
                     tiles: [
-                        {src: "img/sports/arsenal logo.png", label: "Arsenal"},
-                        {src: "img/sports/england 3 loin logo.png", label: "England"},
-                        {src: "img/sports/saracens logo.png", label: "Saracens"},
-                        {src: "img/sports/all black rugby.png", label: "All Blacks"},
                         {src: "img/sports/mclaren logo.png", label: "McLaren F1"},
+                        {src: "img/sports/all black rugby.png", label: "All Blacks"},
+                        {src: "img/sports/england 3 loin logo.png", label: "England"},
+                        {src: "img/sports/arsenal logo.png", label: "Arsenal"},
+                        {src: "img/sports/saracens logo.png", label: "Saracens"},
                     ]
                 },
-                {type: "heading", text: "Active I enjoy doing!"},
+                {type: "heading", text: "Activities I enjoy doing!"},
                 {
                     type: "logoGrid",
                     tiles: [
@@ -1212,7 +1297,7 @@ window.CONTENT = {
                             src: "",
                             icon: "☀️",
                             title: "Super hot weather",
-                            caption: "Tbh who really like melting in the sun...doesn't mean I don't like topical holidays just let me chill in the shade"
+                            caption: "Tbh, who really likes melting in the sun? Doesn't mean I don't like tropical holidays — just let me chill in the shade."
                         }
                     ]
                 }
@@ -1236,7 +1321,7 @@ window.CONTENT = {
                                     "near a train station and canal",
                                     "Big kitchen, games room, library & home office",
                                     "Living room with a proper cinema system",
-                                    "Several Spare bedrooms for guests and children",
+                                    "Several spare bedrooms for guests and children",
                                     "A garden for growing fruit & veg"
                                 ]
                             }]

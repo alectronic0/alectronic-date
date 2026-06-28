@@ -234,7 +234,9 @@ p { color: var(--muted); margin-bottom: 14px; }
 .moments-photos img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); cursor: zoom-in; width: 100%; }
 
 /* ─── Feature rows (text + image) — Boyfriend Mode / Looking For ─── */
-.feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+/* "An Invitation, Not a Checklist" reads better at 3-up than 4-up on desktop */
+#looking-for .feature-grid { grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); }
 .feature {
   display: flex; flex-direction: column;
   background: var(--surface); border: 1px solid var(--border);
@@ -326,6 +328,31 @@ p { color: var(--muted); margin-bottom: 14px; }
 .acc-item.open .acc-chevron { transform: rotate(180deg); }
 .acc-header:hover { background: var(--surface-2); }
 
+/* 🔗 copy-deep-link button on each accordion header */
+.acc-link {
+  flex-shrink: 0; font-size: 0.95rem; line-height: 1;
+  color: var(--muted-2); opacity: 0.5;
+  cursor: pointer; user-select: none;
+  padding: 4px; border-radius: 8px;
+  transition: opacity 0.2s, transform 0.2s, background 0.2s;
+}
+.acc-link:hover { opacity: 1; transform: scale(1.15); background: var(--surface-3); }
+.acc-link:focus-visible { opacity: 1; outline: 2px solid var(--accent); outline-offset: 2px; }
+.acc-link.copied { opacity: 1; color: var(--accent); }
+
+/* 🔗 copy-deep-link chip next to section <h2> headings */
+.deep-link {
+  display: inline-block; vertical-align: middle;
+  font-size: 0.85rem; line-height: 1;
+  color: var(--muted-2); opacity: 0.4;
+  cursor: pointer; user-select: none;
+  padding: 4px; border-radius: 8px;
+  transition: opacity 0.2s, transform 0.2s, background 0.2s;
+}
+.deep-link:hover { opacity: 1; transform: scale(1.15); background: var(--surface-3); }
+.deep-link:focus-visible { opacity: 1; outline: 2px solid var(--accent); outline-offset: 2px; }
+.deep-link.copied { opacity: 1; color: var(--accent); }
+
 .acc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.32s ease; }
 .acc-item.open .acc-body { grid-template-rows: 1fr; }
 .acc-body-inner { overflow: hidden; }
@@ -362,6 +389,19 @@ p { color: var(--muted); margin-bottom: 14px; }
 .tag-item.love { border-color: var(--mint); color: var(--mint); }
 .tag-item.hate { border-color: var(--rose); color: var(--rose-light); }
 .tag-item.note { border-style: dashed; color: var(--muted-2); font-size: 0.78rem; }
+
+/* Flag images (replace flag emoji, which Windows Chrome can't render) */
+.flag {
+  display: inline-block; width: 1.25em; height: auto;
+  vertical-align: -0.18em; border-radius: 2px;
+  background: transparent; /* override global `img { background: white }` */
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+/* Beat `.place-card img { width:100% }` when the image is an inline flag */
+.place-card .flag {
+  width: 1.25em; height: auto; aspect-ratio: auto;
+  object-fit: initial; cursor: default;
+}
 
 /* ─── Generic list / two-col ────────────────── */
 .two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -428,8 +468,9 @@ img.img-missing { object-fit: contain !important; background: #fff; }
 /* ─── Footer ────────────────────────────────── */
 footer { background: var(--aubergine); border-top: 1px solid var(--border); padding: 48px 24px; text-align: center; }
 .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; }
-.footer-links a { font-size: 0.85rem; color: var(--muted-2); }
+.footer-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--muted-2); }
 .footer-links a:hover { color: var(--text); }
+.footer-favicon { width: 15px; height: 15px; border-radius: 3px; flex-shrink: 0; background: transparent; }
 .footer-note { font-size: 0.78rem; color: var(--muted-2); }
 
 /* ─── Lightbox ──────────────────────────────── */
@@ -443,7 +484,7 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
 @media (max-width: 680px) {
   .fact-grid { grid-template-columns: 1fr; }
   .fact.wide { grid-column: span 1; }
-  .feature-grid, .value-cols, .two-cols { grid-template-columns: 1fr; }
+  .value-cols, .two-cols { grid-template-columns: 1fr; }
   .contact-section { padding: 28px 20px; }
   .acc-content { padding: 4px 16px 22px; }
   .acc-header { padding: 16px; }

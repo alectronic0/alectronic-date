@@ -67,11 +67,31 @@
         return 'data:image/svg+xml,' + encodeURIComponent(svg);
     };
 
+    // Windows Chrome has no flag-emoji font, so 🇬🇷 shows as "GR". Swap a
+    // leading flag emoji (two regional-indicator chars) for a real flag image
+    // from flagcdn.com. Any other text (including non-flag emoji like 🎄) is
+    // returned esc()'d and unchanged, so this is safe to run on every label.
+    const flagify = (text) => {
+        const s = String(text == null ? '' : text);
+        const m = s.match(/^([\u{1F1E6}-\u{1F1FF}]{2})\s*/u);
+        if (!m) return esc(s);
+        const cc = [...m[1]]
+            .map((ch) => String.fromCharCode(ch.codePointAt(0) - 0x1f1e6 + 65))
+            .join('')
+            .toLowerCase();
+        const rest = esc(s.slice(m[0].length));
+        return (
+            `<img class="flag" src="https://flagcdn.com/24x18/${cc}.png" ` +
+            `srcset="https://flagcdn.com/48x36/${cc}.png 2x" width="24" height="18" alt="" loading="lazy">` +
+            (rest ? ' ' + rest : '')
+        );
+    };
+
     // A tag can be a plain string or { label, variant }
     const tagHtml = (t) => {
         const label = typeof t === 'string' ? t : t.label;
         const variant = typeof t === 'string' ? '' : (t.variant || '');
-        return `<span class="tag-item ${variant}">${esc(label)}</span>`;
+        return `<span class="tag-item ${variant}">${flagify(label)}</span>`;
     };
 
     /* ── block renderers (each returns an HTML string) ── */
@@ -121,7 +141,7 @@
             `<div class="places-grid">${b.cards
                 .map(
                     (c) =>
-                        `<div class="place-card">${img(c.src, c.name)}<div class="place-card-body"><strong>${esc(
+                        `<div class="place-card">${img(c.src, c.name)}<div class="place-card-body"><strong>${flagify(
                             c.country
                         )} ${esc(c.name)}</strong><div class="place-detail">${esc(c.detail)}</div></div></div>`
                 )
@@ -241,15 +261,66 @@
 
     /* ── section-level renderers ── */
 
-    // Every [data-section="key"] gets CONTENT.sections[key].blocks rendered into it.
+    // A 🔗 copy-deep-link chip that targets the element id `anchor` (e.g. #dates).
+    // Wired up by initDeepLinks(). Returns '' when there's no anchor to point at.
+    const headingLink = (anchor, label) =>
+        anchor
+            ? ` <span class="deep-link" role="button" tabindex="0" data-anchor="${esc(anchor)}" aria-label="Copy link to ${esc(
+                  label || 'this section'
+              )}" title="Copy link to this section">🔗</span>`
+            : '';
+
+    // A section header (tag + heading + lead) — only the parts that exist. Lets
+    // the headings live in content.js so they can be edited/reordered as data.
+    // Deep-dive accordion sections carry none of these, so they render nothing.
+    // `anchor` is the enclosing section's id, used for the 🔗 deep link.
+    function sectionHeaderHtml(s, anchor) {
+        let h = '';
+        if (s.tag) h += `<div class="section-tag ${esc(s.tagClass || 'tag-purple')}">${esc(s.tag)}</div>`;
+        if (s.heading) h += `<h2>${esc(s.heading)}${headingLink(anchor, s.heading)}</h2>`;
+        if (s.lead) h += `<p class="lead">${esc(s.lead)}</p>`;
+        return h;
+    }
+
+    // Every [data-section="key"] gets the section header + blocks rendered into it.
     function renderSections() {
         if (!C || !C.sections) return;
         document.querySelectorAll('[data-section]').forEach((el) => {
             const key = el.getAttribute('data-section');
             const section = C.sections[key];
             if (!section) return; // some data-sections (hero/contact) are handled separately
-            el.innerHTML = renderBlocks(section.blocks);
+            const host = el.closest('[id]'); // the enclosing <section> / <article>
+            el.innerHTML = sectionHeaderHtml(section, host ? host.id : '') + renderBlocks(section.blocks);
         });
+    }
+
+    // Build the deep-dive accordion shell from CONTENT.accordion. Each card gets
+    // id=key so a URL hash (…#food) can open it; its body is a data-section
+    // container that renderSections() fills afterwards.
+    function renderAccordion() {
+        if (!C || !C.accordion) return;
+        const wrap = document.querySelector('.accordion');
+        if (!wrap) return;
+        wrap.innerHTML = C.accordion
+            .map(
+                (a) =>
+                    `<article class="acc-item" id="${esc(a.key)}">` +
+                    '<button class="acc-header" aria-expanded="false">' +
+                    `<span class="acc-emoji">${esc(a.emoji)}</span>` +
+                    `<span class="acc-title">${esc(a.title)}${
+                        a.hint ? ` <span class="acc-hint">${esc(a.hint)}</span>` : ''
+                    }</span>` +
+                    `<span class="acc-link" role="button" tabindex="0" aria-label="Copy link to ${esc(
+                        a.title
+                    )}" title="Copy link to this section">🔗</span>` +
+                    '<span class="acc-chevron">▾</span>' +
+                    '</button>' +
+                    `<div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="${esc(
+                        a.key
+                    )}"></div></div></div>` +
+                    '</article>'
+            )
+            .join('');
     }
 
     function setText(sel, value) {
@@ -276,7 +347,7 @@
     function renderProfile() {
         if (!C || !C.profile) return;
         const p = C.profile;
-        setText('[data-profile="name"]', p.name);
+        setHtml('[data-profile="name"]', esc(p.name) + headingLink('about', p.name));
         setText('[data-profile="tagline"]', p.tagline);
         setHtml('[data-profile="intro"]', p.intro.map((t) => `<p>${esc(t)}</p>`).join(''));
         setHtml('[data-profile="photo"]', img(p.photo.src, p.photo.alt, 'data-zoom'));
@@ -307,6 +378,7 @@
 
     function renderFaces() {
         if (!C || !C.faces) return;
+        setHtml('[data-faces="header"]', sectionHeaderHtml(C.faces, 'photos'));
         const photos = C.faces.photos;
         // Duplicate the set so the marquee can loop seamlessly (track animates -50%).
         const once = photos.map((p) => img(p.src, p.alt)).join('');
@@ -339,9 +411,11 @@
             )}>${linkIcon(l, 'contact-favicon')} ${esc(l.label)}</a>`;
 
         const links = data.links && data.links.length ? data.links : (C.contact ? C.contact.links : []);
+        const host = document.querySelector(sel);
+        const anchor = host ? (host.closest('[id]') || {}).id || '' : '';
         const html =
             (data.tag ? `<div class="section-tag tag-purple">${esc(data.tag)}</div>` : '') +
-            `<h2>${esc(data.heading)}</h2>` +
+            `<h2>${esc(data.heading)}${headingLink(anchor, data.heading)}</h2>` +
             `<p class="lead">${esc(data.lead)}</p>` +
             `<div class="contact-links">${links.map(linkHtml).join('')}</div>`;
         setHtml(sel, html);
@@ -382,18 +456,115 @@
         sections.forEach((s) => observer.observe(s));
     }
 
+    // Full deep-link URL for a card id, base-relative so it works on file:// too.
+    const linkFor = (id) => location.href.split('#')[0] + (id ? '#' + id : '');
+
+    function openItem(item) {
+        if (!item) return;
+        item.classList.add('open');
+        const header = item.querySelector('.acc-header');
+        if (header) header.setAttribute('aria-expanded', 'true');
+    }
+
+    // Copy text to the clipboard, with a tiny ✓ flash on the 🔗 button. Falls
+    // back to a hidden textarea for non-secure contexts (e.g. file://).
+    function copyLink(url, el) {
+        const flash = () => {
+            el.classList.add('copied');
+            el.textContent = '✓';
+            setTimeout(() => {
+                el.textContent = '🔗';
+                el.classList.remove('copied');
+            }, 1200);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(flash, () => fallbackCopy(url, flash));
+        } else {
+            fallbackCopy(url, flash);
+        }
+    }
+
+    function fallbackCopy(text, done) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+            document.execCommand('copy');
+            if (done) done();
+        } catch (e) {
+            /* clipboard unavailable — silently skip */
+        }
+        document.body.removeChild(ta);
+    }
+
     function initAccordion() {
         document.querySelectorAll('.acc-item').forEach((item) => {
             const header = item.querySelector('.acc-header');
             if (!header) return;
             item.classList.remove('open');
             header.setAttribute('aria-expanded', 'false');
-            if (header._listenerAttached) return;
-            header.addEventListener('click', () => {
-                const isOpen = item.classList.toggle('open');
-                header.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+            if (!header._listenerAttached) {
+                header.addEventListener('click', () => {
+                    const isOpen = item.classList.toggle('open');
+                    header.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    // Reflect the open card in the URL so a refresh returns here.
+                    if (isOpen && item.id) history.replaceState(null, '', '#' + item.id);
+                });
+                header._listenerAttached = true;
+            }
+
+            // 🔗 button: open the card, point the URL at it, copy the deep link.
+            const link = item.querySelector('.acc-link');
+            if (link && !link._listenerAttached) {
+                const activate = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation(); // don't toggle the card underneath
+                    openItem(item);
+                    if (item.id) history.replaceState(null, '', '#' + item.id);
+                    copyLink(linkFor(item.id), link);
+                };
+                link.addEventListener('click', activate);
+                link.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') activate(e);
+                });
+                link._listenerAttached = true;
+            }
+        });
+    }
+
+    // Open (and scroll to) the accordion card named in the URL hash, e.g. …#food.
+    // Runs on load and on hashchange (e.g. clicking a #food anchor elsewhere).
+    function openFromHash() {
+        const id = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+        if (!id) return;
+        const item = document.getElementById(id);
+        if (!item || !item.classList.contains('acc-item')) return;
+        openItem(item);
+        requestAnimationFrame(() => item.scrollIntoView({behavior: 'smooth', block: 'start'}));
+    }
+
+    // Section-heading 🔗 chips: point the URL at the section's id and copy the
+    // deep link. Native browser scrolling handles the jump on the next load.
+    function initDeepLinks() {
+        document.querySelectorAll('.deep-link').forEach((link) => {
+            if (link._listenerAttached) return;
+            const activate = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const id = link.getAttribute('data-anchor');
+                if (id) history.replaceState(null, '', '#' + id);
+                copyLink(linkFor(id), link);
+            };
+            link.addEventListener('click', activate);
+            link.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') activate(e);
             });
-            header._listenerAttached = true;
+            link._listenerAttached = true;
         });
     }
 
@@ -418,6 +589,7 @@
         document.addEventListener('click', (e) => {
             const img = e.target.closest(selectors);
             if (!img || e.target.tagName !== 'IMG') return;
+            if (img.classList.contains('flag')) return; // tiny inline flags aren't zoomable
             lightboxImg.src = img.currentSrc || img.src;
             lightboxImg.alt = img.alt;
             lightbox.classList.add('open');
@@ -436,8 +608,13 @@
                 if (!el || el.tagName !== 'IMG') return;
                 if (el.dataset.fallback) return; // guard against loops
                 el.dataset.fallback = '1';
-                // Favicons are decorative — just hide a broken one rather than show a box.
-                if (el.classList.contains('link-chip-favicon') || el.classList.contains('contact-favicon')) {
+                // Favicons & flags are decorative — just hide a broken one rather than show a box.
+                if (
+                    el.classList.contains('link-chip-favicon') ||
+                    el.classList.contains('contact-favicon') ||
+                    el.classList.contains('footer-favicon') ||
+                    el.classList.contains('flag')
+                ) {
                     el.style.display = 'none';
                     return;
                 }
@@ -458,13 +635,19 @@
         renderHero();
         renderProfile();
         renderFaces();
+        renderAccordion();
         renderSections();
         renderConnectCard(C.contact, '[data-connect="contact"]');
         renderConnectCard(C.outro, '[data-connect="outro"]');
+        renderFooterLinks();
 
         initScrollSpy();
         initAccordion();
+        initDeepLinks();
         initLightbox();
+
+        openFromHash();
+        window.addEventListener('hashchange', openFromHash);
     }
 
     if (document.readyState === 'loading') {
