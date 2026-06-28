@@ -209,6 +209,11 @@ class ContentPopulator {
     });
     html += `</div>`;
 
+    // Add Letterboxd link
+    if (this.data.deepDive.moviesTV.link) {
+      html += `<p style="margin-top: 20px; text-align: center;"><a href="${this.data.deepDive.moviesTV.link}" target="_blank" rel="noopener" class="contact-btn" style="color: #4495DC; display: inline-flex;"><i class="fas fa-film"></i> <span>Letterboxd</span></a></p>`;
+    }
+
     section.innerHTML = html;
 
     // Add genre filter event listeners
@@ -282,6 +287,11 @@ class ContentPopulator {
       </div>
     `;
 
+    // Add Goodreads link
+    if (books.link) {
+      html += `<p style="margin-top: 20px; text-align: center;"><a href="${books.link}" target="_blank" rel="noopener" class="contact-btn" style="color: #372C24; display: inline-flex;"><i class="fas fa-book"></i> <span>Goodreads</span></a></p>`;
+    }
+
     section.innerHTML = html;
   }
 
@@ -348,8 +358,8 @@ class ContentPopulator {
       html += `</div>`;
     }
 
-    // Spotify link
-    html += `<p><a class="inline-link" href="${music.spotifyLink}" target="_blank">🎵 Spotify: alec_game</a></p>`;
+    // Spotify link with icon
+    html += `<p style="margin-top: 20px; text-align: center;"><a href="${music.spotifyLink}" target="_blank" rel="noopener" class="contact-btn" style="color: #1DB954; display: inline-flex;"><i class="fab fa-spotify"></i> <span>Listen on Spotify</span></a></p>`;
     section.innerHTML = html;
   }
 

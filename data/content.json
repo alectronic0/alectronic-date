@@ -169,22 +169,23 @@
       "title": "Books",
       "intro": "I'm not a huge reader — currently working through the ACOTAR series — but if you love books I'll happily read your favourites. Roald Dahl is my favourite childhood author.",
       "love": [
-        { "title": "A Court of Thorns and Roses", "genre": ["Fantasy", "Romance"], "image": "img/books/a court of rose and thorn.png" },
-        { "title": "Legends & Lattes", "genre": ["Fantasy", "Romance"], "image": "img/books/legend and lattes book.png" },
-        { "title": "The Baby Dragon Cafe", "genre": ["Fantasy"], "image": "img/books/the baby dragon cafe.png" },
-        { "title": "Apprentice to the Villain", "genre": ["Fantasy", "Romance"], "image": "img/books/apperentice to the villan.png" },
-        { "title": "Can't Spell Treason Without Tea", "genre": ["Fantasy"], "image": "img/books/cant spell teason without tea.png" },
-        { "title": "Artemis Fowl", "genre": ["Adventure", "Fantasy"], "image": "img/books/artemis fowl book.png" },
+        { "title": "Roald Dahl Collection", "genre": ["Fiction", "Children's"], "image": "img/books/illisration from roah dalh books.png" },
         { "title": "Eragon", "genre": ["Fantasy", "Adventure"], "image": "img/books/ergaon book.png" },
+        { "title": "Artemis Fowl", "genre": ["Adventure", "Fantasy"], "image": "img/books/artemis fowl book.png" },
         { "title": "Fullmetal Alchemist", "genre": ["Manga", "Fantasy"], "image": "img/books/full metal alchmiest book.png" },
         { "title": "Spy x Family", "genre": ["Manga", "Comedy"], "image": "img/books/skyxfamily.png" },
+        { "title": "Computer Organization and Design", "genre": ["Computer books", "Non-Fiction"], "image": "img/books/computer orgnisation and desing book.png" },
         { "title": "Mythos by Stephen Fry", "genre": ["Mythology", "Non-Fiction"], "image": "img/books/steven fry mythos.png" },
-        { "title": "Roald Dahl Collection", "genre": ["Fiction", "Children's"], "image": "img/books/illisration from roah dalh books.png" },
-        { "title": "Dessert Person", "genre": ["Cookbooks"], "image": "img/books/dessert person.png" }
+        { "title": "Dessert Person", "genre": ["Cookbooks"], "image": "img/books/dessert person.png" },
+        { "title": "The Subtle Art of Not Giving a F*ck", "genre": ["Self-help"], "image": "img/books/the subtle art of not giving a fuck.png" },
+        { "title": "A Court of Thorns and Roses", "genre": ["Fantasy", "Romance"], "image": "img/books/a court of rose and thorn.png" }
+
       ],
       "tbr": [
-        { "title": "Computer Organization and Design", "genre": ["Computer books", "Non-Fiction"], "image": "img/books/computer orgnisation and desing book.png" },
-        { "title": "The Subtle Art of Not Giving a F*ck", "genre": ["Self-help"], "image": "img/books/the subtle art of not giving a fuck.png" }
+        { "title": "The Baby Dragon Cafe", "genre": ["Fantasy"], "image": "img/books/the baby dragon cafe.png" },
+        { "title": "Legends & Lattes", "genre": ["Fantasy", "Romance"], "image": "img/books/legend and lattes book.png" },
+        { "title": "Can't Spell Treason Without Tea", "genre": ["Fantasy"], "image": "img/books/cant spell teason without tea.png" },
+        { "title": "Apprentice to the Villain", "genre": ["Fantasy", "Romance"], "image": "img/books/apperentice to the villan.png" }
       ],
       "genres": ["Fantasy", "Mythology", "Non-Fiction", "Self-help", "Computer books", "Manga", "Cookbooks"],
       "link": "https://goodreads.com/alectronic0"
