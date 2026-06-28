@@ -112,8 +112,8 @@ window.CONTENT = {
             {src: "img/alec/alec eating out.png", alt: "Alec eating out"},
             {src: "img/alec/alec holding a pineapple.png", alt: "Alec holding a pineapple"},
             {src: "img/alec/alec swimming tropical river pool.png", alt: "Alec swimming"},
-            {src: "img/moments/alec setting of on his backpacking advanture.png", alt: "Alec backpacking"},
-            {src: "img/moments/alec feeding load of backpackers.png", alt: "Alec cooking for backpackers"},
+            {src: "img/alec/alec setting of on his backpacking advanture.png", alt: "Alec backpacking"},
+            {src: "img/alec/alec feeding load of backpackers.png", alt: "Alec cooking for backpackers"},
             {src: "img/alec/alec in a garden.jpg", alt: "Alec in a garden"},
             {src: "img/alec/PXL_20260501_151845261.PORTRAIT.jpg", alt: "Alec"}
         ]
@@ -203,7 +203,7 @@ window.CONTENT = {
                             caption: "Google's award — now Local Guides."
                         },
                         {
-                            src: "img/alec/alec completing a 10k run.png",
+                            src: "img/moments/alec completing a 10k run.png",
                             icon: "🏃",
                             title: "Ran a 10km",
                             caption: "Crossed the line, legs intact."
@@ -215,13 +215,13 @@ window.CONTENT = {
                             caption: "Keys in hand, properly grown up."
                         },
                         {
-                            src: "img/alec/alec on top of mt katumba in bali.png",
+                            src: "img/moments/alec on top of mt katumba in bali.png",
                             icon: "🌋",
                             title: "Climbed a volcano",
                             caption: "Sunrise from the top of Mt Batur, Bali."
                         },
                         {
-                            src: "img/alec/alec kimono torii gate japan.jpg",
+                            src: "img/moments/alec kimono torii gate japan.jpg",
                             icon: "🇯🇵",
                             title: "A month solo in Japan",
                             caption: "Temples, ramen and a lot of walking."
@@ -697,25 +697,25 @@ window.CONTENT = {
                             country: "🇮🇩",
                             name: "Indonesia",
                             detail: "Bali",
-                            src: "img/alec/alec on top of mt katumba in bali.png"
+                            src: "img/places-been/alec on top of mt katumba in bali.png"
                         },
                         {
                             country: "🇺🇸",
                             name: "USA · NYC",
                             detail: "Concrete jungle where dreams are made of",
-                            src: "img/alec/alec times square new york.png"
+                            src: "img/places-been/alec times square new york.png"
                         },
                         {
                             country: "🇲🇻",
                             name: "Maldives",
                             detail: "",
-                            src: "img/alec/PXL_20251128_071312852.PORTRAIT.jpg"
+                            src: "img/places-been/PXL_20251128_071312852.PORTRAIT.jpg"
                         },
                         {
                             country: "🇯🇵",
                             name: "Japan",
                             detail: "Tea, Food, Anime, Nintendo, Pokemon, Pokemon, Pokemon...",
-                            src: "img/alec/alec kimono torii gate japan.jpg"
+                            src: "img/places-been/alec kimono torii gate japan.jpg"
                         }
                     ]
                 },
