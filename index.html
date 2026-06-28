@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -18,17 +18,13 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-emoji">🎮❤️🎮</div>
-      <h1>Alec's <span>Dating</span> Application</h1>
-      <p class="hero-sub">A visual introduction to what having me as your boyfriend could look like.</p>
-      <p class="hero-tagline">Loveable nerd, looking for his player 2. No swiping required.</p>
-      <a href="#about" class="hero-cta">Come find out more ↓</a>
+      <div class="hero-emoji" data-hero="emoji"></div>
+      <h1 data-hero="headline"></h1>
+      <p class="hero-sub" data-hero="sub"></p>
+      <p class="hero-tagline" data-hero="tagline"></p>
+      <a href="#about" class="hero-cta" data-hero="cta"></a>
     </div>
-    <div class="hero-media">
-      <img src="img/coverphoto/index.png" alt="Alec Doran-Twyford">
-      <img src="img/alec/PXL_20251128_071312852.PORTRAIT.jpg" alt="Alec smiling">
-      <img src="img/alec/PXL_20260514_052228361.PORTRAIT.jpg" alt="Alec portrait">
-    </div>
+    <div class="hero-media" data-hero="media"></div>
   </div>
   <div class="hero-scroll">scroll to explore ↓</div>
 </header>
@@ -55,29 +51,12 @@
     <div class="section-tag tag-purple">📋 Who I Am</div>
     <div class="profile-layout">
       <div class="profile-intro">
-        <div class="profile-name">Alec Doran-Twyford</div>
-        <div class="profile-tagline">Loveable nerd · Software Engineer · Welwyn Garden City</div>
-        <p>Hi, I'm Alec! This little site started as a slide deck I made for myself — a reminder of who I am and what I love. I then realised it could be a fun way to skip some of the small talk and give you a real sense of me from the start.</p>
-        <p>So here's the honest (and slightly chaotic) introduction: the facts, the photos, and the bits that make me, me. If you like what you see, my contact details are just a little further down.</p>
-
-        <div class="fact-grid">
-          <div class="fact"><span class="fact-icon">🚹</span><div><div class="fact-label">Gender</div><div class="fact-value">Male</div></div></div>
-          <div class="fact"><span class="fact-icon">❤️</span><div><div class="fact-label">Orientation</div><div class="fact-value">Straight</div></div></div>
-          <div class="fact"><span class="fact-icon">🗣️</span><div><div class="fact-label">Pronouns</div><div class="fact-value">He / Him / They / Them</div></div></div>
-          <div class="fact"><span class="fact-icon">🎂</span><div><div class="fact-label">Age</div><div class="fact-value">35 · 19 May (Taurus)</div></div></div>
-          <div class="fact"><span class="fact-icon">💼</span><div><div class="fact-label">Profession</div><div class="fact-value">Software Engineer</div></div></div>
-          <div class="fact"><span class="fact-icon">🎓</span><div><div class="fact-label">Education</div><div class="fact-value">BSc Computer Science</div></div></div>
-          <div class="fact"><span class="fact-icon">🌍</span><div><div class="fact-label">Nationality</div><div class="fact-value">British / New Zealander</div></div></div>
-          <div class="fact"><span class="fact-icon">📍</span><div><div class="fact-label">Living in</div><div class="fact-value">Welwyn Garden City</div></div></div>
-          <div class="fact"><span class="fact-icon">📏</span><div><div class="fact-label">Height</div><div class="fact-value">~5'8"</div></div></div>
-          <div class="fact"><span class="fact-icon">🖤</span><div><div class="fact-label">Favourite Colour</div><div class="fact-value">Black</div></div></div>
-          <div class="fact wide"><span class="fact-icon">🌱</span><div><div class="fact-label">Politics</div><div class="fact-value">Liberal Left (Green Party)</div></div></div>
-        </div>
+        <div class="profile-name" data-profile="name"></div>
+        <div class="profile-tagline" data-profile="tagline"></div>
+        <div data-profile="intro"></div>
+        <div class="fact-grid" data-profile="facts"></div>
       </div>
-
-      <div class="profile-photo">
-        <img src="img/coverphoto/index.png" alt="Alec Doran-Twyford" data-zoom>
-      </div>
+      <div class="profile-photo" data-profile="photo"></div>
     </div>
   </div>
 </section>
@@ -89,69 +68,7 @@
     <h2>Snapshots From the Life</h2>
     <p class="lead">Yes, I'm the one in most of them. Tap any photo to enlarge.</p>
     <div class="mosaic-strip">
-      <div class="mosaic-track">
-        <img src="img/alec/headshot of alec.png" alt="Alec" loading="lazy">
-        <img src="img/alec/PXL_20251128_071312852.PORTRAIT.jpg" alt="Alec" loading="lazy">
-        <img src="img/alec/PXL_20260514_052228361.PORTRAIT.jpg" alt="Alec" loading="lazy">
-        <img src="img/alec/PXL_20260522_014927602.PORTRAIT.jpg" alt="Alec" loading="lazy">
-        <img src="img/alec/alec kimono torii gate japan.jpg" alt="Alec in Japan" loading="lazy">
-        <img src="img/alec/alec on top of mt katumba in bali.png" alt="Alec in Bali" loading="lazy">
-        <img src="img/alec/alec at graduation.png" alt="Alec at graduation" loading="lazy">
-        <img src="img/alec/alec with david tenant.png" alt="Alec with David Tennant" loading="lazy">
-        <img src="img/alec/alec sky diving.png" alt="Alec skydiving" loading="lazy">
-        <img src="img/alec/alec completing a 10k run.png" alt="Alec after a 10k" loading="lazy">
-        <img src="img/alec/alec hobbiton sign new zealand.png" alt="Alec at Hobbiton" loading="lazy">
-        <img src="img/alec/alec whitehaven beach australia lookout.png" alt="Alec in Australia" loading="lazy">
-        <img src="img/alec/alec times square new york.png" alt="Alec in New York" loading="lazy">
-        <img src="img/alec/alec giant beer stein prague.png" alt="Alec in Prague" loading="lazy">
-        <img src="img/alec/alec with fire spinning staff.png" alt="Alec fire spinning" loading="lazy">
-        <img src="img/alec/alec led poi spinning light trails.png" alt="Alec poi spinning" loading="lazy">
-        <img src="img/alec/alec gaming setup triple monitors.png" alt="Alec's gaming setup" loading="lazy">
-        <img src="img/alec/alec at pokemon kanto with pokemon plushies.jpg" alt="Alec with Pokemon plushies" loading="lazy">
-        <img src="img/alec/alec flower crown midsommar sweden.png" alt="Alec at Midsommar" loading="lazy">
-        <img src="img/alec/alec at an onsen in japan.jpg" alt="Alec at an onsen" loading="lazy">
-        <img src="img/alec/alec big buddha phuket selfie.png" alt="Alec in Phuket" loading="lazy">
-        <img src="img/alec/alec dress as mad scienst for halloweeen.png" alt="Alec dressed as a mad scientist" loading="lazy">
-        <img src="img/alec/alec with his family dog monty.png" alt="Alec with his dog Monty" loading="lazy">
-        <img src="img/alec/alec eating out.png" alt="Alec eating out" loading="lazy">
-        <img src="img/alec/alec holding a pineapple.png" alt="Alec holding a pineapple" loading="lazy">
-        <img src="img/alec/alec swimming tropical river pool.png" alt="Alec swimming" loading="lazy">
-        <img src="img/alec/alec setting of on his backpacking advanture.png" alt="Alec backpacking" loading="lazy">
-        <img src="img/alec/alec feeding load of backpackers.png" alt="Alec cooking for backpackers" loading="lazy">
-        <img src="img/alec/alec in a garden.jpg" alt="Alec in a garden" loading="lazy">
-        <img src="img/alec/PXL_20260501_151845261.PORTRAIT.jpg" alt="Alec" loading="lazy">
-        <!-- duplicate set for seamless loop -->
-        <img src="img/alec/headshot of alec.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/PXL_20251128_071312852.PORTRAIT.jpg" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/PXL_20260514_052228361.PORTRAIT.jpg" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/PXL_20260522_014927602.PORTRAIT.jpg" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec kimono torii gate japan.jpg" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec on top of mt katumba in bali.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec at graduation.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec with david tenant.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec sky diving.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec completing a 10k run.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec hobbiton sign new zealand.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec whitehaven beach australia lookout.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec times square new york.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec giant beer stein prague.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec with fire spinning staff.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec led poi spinning light trails.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec gaming setup triple monitors.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec at pokemon kanto with pokemon plushies.jpg" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec flower crown midsommar sweden.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec at an onsen in japan.jpg" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec big buddha phuket selfie.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec dress as mad scienst for halloweeen.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec with his family dog monty.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec eating out.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec holding a pineapple.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec swimming tropical river pool.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec setting of on his backpacking advanture.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec feeding load of backpackers.png" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/alec in a garden.jpg" alt="" loading="lazy" aria-hidden="true">
-        <img src="img/alec/PXL_20260501_151845261.PORTRAIT.jpg" alt="" loading="lazy" aria-hidden="true">
-      </div>
+      <div class="mosaic-track" data-faces="track"></div>
     </div>
   </div>
 </section>
@@ -161,28 +78,8 @@
   <div class="container">
     <div class="section-tag tag-gold">🏆 Notable Moments</div>
     <h2>A Life Well Lived (So Far)</h2>
-    <div class="moments-grid">
-      <div class="moment"><span class="moment-icon">🎓</span> Got a 1st @ University</div>
-      <div class="moment"><span class="moment-icon">🚶</span> Drunk walked home from London (23.5km)</div>
-      <div class="moment"><span class="moment-icon">⭐</span> Met David Tennant</div>
-      <div class="moment"><span class="moment-icon">🎒</span> Backpacked for 2 years</div>
-      <div class="moment"><span class="moment-icon">📍</span> Most enthusiastic Google City Expert (now Local Guides)</div>
-      <div class="moment"><span class="moment-icon">👨‍🍳</span> Cooked for 30 backpackers</div>
-      <div class="moment"><span class="moment-icon">👙</span> Wore a bikini at surf camp on Valentine's Day as a dare</div>
-      <div class="moment"><span class="moment-icon">🏃</span> Ran a 10km</div>
-      <div class="moment"><span class="moment-icon">🌋</span> Climbed a volcano</div>
-      <div class="moment"><span class="moment-icon">🏠</span> Bought a house</div>
-      <div class="moment"><span class="moment-icon">🪂</span> Skydived</div>
-      <div class="moment"><span class="moment-icon">👶</span> Became an uncle (2 nephews + 2 honorary nieces)</div>
-      <div class="moment"><span class="moment-icon">🇯🇵</span> Month-long solo adventure to Japan</div>
-      <div class="moment"><span class="moment-icon">🔒</span> Censored (honestly this makes it look worse)</div>
-    </div>
-    <div class="moments-photos">
-      <img src="img/moments/alec holding keys of his home.png" alt="Alec holding the keys to his home" loading="lazy">
-      <img src="img/moments/google map showing the drunken walk home from london.png" alt="Map of the drunken walk home from London" loading="lazy">
-      <img src="img/moments/trophie of most entuastic google city expert (now google local guides).png" alt="Google City Expert trophy" loading="lazy">
-      <img src="img/moments/2023-01-07 (2).jpg" alt="A notable moment" loading="lazy">
-    </div>
+    <p class="lead">A few of the milestones, mishaps and adventures so far — tap any to enlarge.</p>
+    <div data-section="moments"></div>
   </div>
 </section>
 
@@ -192,44 +89,7 @@
     <div class="section-tag tag-rose">❤️ What I Can Be</div>
     <h2>What Dating Me Could Look Like</h2>
     <p class="lead">A peek at "boyfriend mode" — the little things I love doing for the person I'm with.</p>
-    <div class="feature-grid">
-      <div class="feature">
-        <img src="img/boyfriend-mode/a couple hugging.png" alt="A couple hugging" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">🤗</span><span class="feature-text">Always supportive and caring — there through the good and bad times, with great hugs, forehead kisses and massages.</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/boyfriend-mode/person getting coffee from a shop.png" alt="Getting coffee" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">☕</span><span class="feature-text">Always knowing your coffee order &amp; keeping your favourite snack on hand.</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/boyfriend-mode/person taking photo.png" alt="Taking a photo" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">📸</span><span class="feature-text">Your personal photographer — making sure you always look great.</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/boyfriend-mode/boyfirend driving his passanger princess.png" alt="Driving" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">👑</span><span class="feature-text">Full passenger-princess treatment whenever we're on the road.</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/boyfriend-mode/person recing morning text message.png" alt="A morning text" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">💬</span><span class="feature-text">Good morning &amp; good night texts, every day.</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/boyfriend-mode/person suprising someone with flowers.png" alt="Surprise flowers" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">💐</span><span class="feature-text">Random flowers and cute little gifts, just because.</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/boyfriend-mode/cartoon of a person sharing tiktok memes.png" alt="Sharing memes" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">😂</span><span class="feature-text">Pebbling you with hundreds of perfectly curated memes.</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/boyfriend-mode/a google calander invite for cute date.png" alt="A calendar invite for a date" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">📅</span><span class="feature-text">Organising cute dates (and yes, adding them to Google Calendar).</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/boyfriend-mode/person writing a google doc about his girl friend.png" alt="Writing a doc" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">📊</span><span class="feature-text">Keeping docs &amp; spreadsheets of the things that matter to you and our plans.</span></div>
-      </div>
-    </div>
+    <div data-section="boyfriendMode"></div>
   </div>
 </section>
 
@@ -239,53 +99,7 @@
     <div class="section-tag tag-gold">✨ What I'm Looking For</div>
     <h2>An Invitation, Not a Checklist</h2>
     <p class="lead">I have a full, happy life — I'm just hoping to share it. Here's the kind of "us" I'm dreaming about.</p>
-    <div class="feature-grid">
-      <div class="feature">
-        <img src="img/looking-for/couple cooking.png" alt="A couple cooking" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">🍳</span><span class="feature-text">Cooking and baking together on a cosy evening.</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/looking-for/couple playing video games.png" alt="A couple gaming" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">🎮</span><span class="feature-text">Co-op games and friendly rivalry on the sofa.</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/looking-for/couple going exploring nature.png" alt="A couple exploring nature" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">🌿</span><span class="feature-text">Adventures, travel and finding amazing food places.</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/looking-for/couple watching movie togehter.png" alt="A couple watching a movie" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">🍿</span><span class="feature-text">Lazy days at home with a film and good company.</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/looking-for/couple enjoying tea on the couch.png" alt="A couple enjoying tea" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">🫖</span><span class="feature-text">Slow mornings, tea, and easy quiet time together.</span></div>
-      </div>
-      <div class="feature">
-        <img src="img/looking-for/couple at the gym working out.png" alt="A couple at the gym" loading="lazy">
-        <div class="feature-body"><span class="feature-icon">💪</span><span class="feature-text">Cheering each other on to be our best selves.</span></div>
-      </div>
-    </div>
-    <div class="value-cols">
-      <div class="value-card">
-        <h3>Adventures Together</h3>
-        <ul>
-          <li>Someone open to my interests (and excited to share theirs)</li>
-          <li>Travelling &amp; going on adventures</li>
-          <li>Hunting down amazing food places</li>
-          <li>Walks, fun activities, and cosy days in</li>
-          <li>Cooking, baking, games, films — together</li>
-        </ul>
-      </div>
-      <div class="value-card">
-        <h3>What I Value</h3>
-        <ul>
-          <li>Clear and open communication</li>
-          <li>Pushing each other to be our best selves</li>
-          <li>Willingness to work through the hard times</li>
-          <li>Quality time and mutual affection</li>
-        </ul>
-      </div>
-    </div>
+    <div data-section="lookingFor"></div>
   </div>
 </section>
 
@@ -295,68 +109,7 @@
     <div class="section-tag tag-purple">🗺️ Date Ideas</div>
     <h2>Choose Our First Adventure</h2>
     <p class="lead">Tell me your rough location and what you'd be up for trying — I'll sort out a time and a place.</p>
-    <div class="date-menu">
-      <div class="date-card">
-        <img src="img/dates/flower market.png" alt="A flower market" loading="lazy">
-        <div class="date-card-body">
-          <h3>🍕 Foodie &amp; Market</h3>
-          <div class="date-pills">
-            <span class="pill">Coffee &amp; Walk</span><span class="pill">Pastry Adventure</span>
-            <span class="pill">Flower Market</span><span class="pill">Food Market</span>
-            <span class="pill">Bookstore Tour</span><span class="pill">Cooking Class</span>
-          </div>
-        </div>
-      </div>
-      <div class="date-card">
-        <img src="img/dates/couple on date aex throwing.png" alt="Axe throwing date" loading="lazy">
-        <div class="date-card-body">
-          <h3>⚡ Active</h3>
-          <div class="date-pills">
-            <span class="pill">Arcade</span><span class="pill">Axe Throwing</span>
-            <span class="pill">Mini Golf</span><span class="pill">Virtual Clay Pigeon</span>
-          </div>
-        </div>
-      </div>
-      <div class="date-card">
-        <img src="img/dates/museum gallery.png" alt="A museum gallery" loading="lazy">
-        <div class="date-card-body">
-          <h3>🧠 Intellectual</h3>
-          <div class="date-pills">
-            <span class="pill">Museum</span><span class="pill">Art Gallery</span>
-            <span class="pill">Aquarium</span><span class="pill">Planetarium</span><span class="pill">Zoo</span>
-          </div>
-        </div>
-      </div>
-      <div class="date-card">
-        <img src="img/dates/couple date pottery class.png" alt="A pottery class date" loading="lazy">
-        <div class="date-card-body">
-          <h3>🎨 Creative</h3>
-          <div class="date-pills">
-            <span class="pill">Pottery</span><span class="pill">Paint &amp; Sip</span><span class="pill">Kintsugi</span>
-          </div>
-        </div>
-      </div>
-      <div class="date-card">
-        <img src="img/dates/couple playing video games.png" alt="Playing video games together" loading="lazy">
-        <div class="date-card-body">
-          <h3>🎮 Discord &amp; Video Games</h3>
-          <div class="date-pills">
-            <span class="pill">Peak</span><span class="pill">It Takes Two</span>
-            <span class="pill">Split Fiction</span><span class="pill">Portal 2</span>
-          </div>
-        </div>
-      </div>
-      <div class="date-card">
-        <img src="img/dates/couple date bookstore.png" alt="A bookstore date" loading="lazy">
-        <div class="date-card-body">
-          <h3>📚 Slow &amp; Sweet</h3>
-          <div class="date-pills">
-            <span class="pill">Bookstore</span><span class="pill">Gallery</span>
-            <span class="pill">Mini Golf</span><span class="pill">Arcade</span><span class="pill">Zoo</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div data-section="dates"></div>
   </div>
 </section>
 
@@ -367,15 +120,7 @@
       <div class="section-tag tag-purple">💬 How to Get in Touch</div>
       <h2>Shoot Your Shot</h2>
       <p class="lead">I prefer not to share my phone number upfront — but reach me through any of these and you'll get a hold of me.</p>
-      <div class="contact-links" data-section="contact">
-        <a class="contact-btn primary" href="mailto:date.alec@alectronic.co.uk?subject=RE%3A%20Alec%20Dating%20Application">✉ Email</a>
-        <a class="contact-btn" href="https://calendar.google.com/calendar/appointments/AcZssZ2NpuoQwj23j5VcRlDEDWYDmjTbUjFEs09RiBc=" target="_blank" rel="noopener">☕ Hangout</a>
-        <a class="contact-btn" href="https://www.instagram.com/alectronic0/" target="_blank" rel="noopener">📸 Instagram</a>
-        <a class="contact-btn" href="https://www.linkedin.com/in/alectronic0/" target="_blank" rel="noopener">in LinkedIn</a>
-        <a class="contact-btn" href="https://discordapp.com/users/689441309567746070" target="_blank" rel="noopener">🎮 Discord</a>
-        <a class="contact-btn" href="https://t.me/alectronic0" target="_blank" rel="noopener">✈ Telegram</a>
-        <a class="contact-btn" href="https://linktr.ee/Alectronic" target="_blank" rel="noopener">🔗 Linktree</a>
-      </div>
+      <div class="contact-links" data-contact="links"></div>
     </div>
   </div>
 </section>
@@ -407,450 +152,89 @@
 
     <div class="accordion">
 
-      <!-- Personality -->
       <article class="acc-item open">
         <button class="acc-header" aria-expanded="true"><span class="acc-emoji">🧠</span><span class="acc-title">Personality <span class="acc-hint">— how I tick</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content">
-          <p>I'm not perfect, but I'll always do my best to do the right thing. I'd call myself introverted — though I'm very sociable with the right people.</p>
-          <div class="persona-cards">
-            <div class="persona-card"><div class="p-icon">🧠</div><div class="p-title">MBTI: INTJ-T / INFJ-T</div><div class="p-desc">Introverted, but sociable with the right people.</div></div>
-            <div class="persona-card"><div class="p-icon">🤝</div><div class="p-title">Community-Minded</div><div class="p-desc">I check in on people, make sure everyone feels seen, and genuinely care about those around me.</div></div>
-            <div class="persona-card"><div class="p-icon">😄</div><div class="p-title">Naturally Witty</div><div class="p-desc">A habit of making people laugh — quick with a quip, slow with a filter.</div></div>
-            <div class="persona-card"><div class="p-icon">🗂️</div><div class="p-title">Organised Chaos</div><div class="p-desc">Spreadsheets, docs and Google Calendar events for everything — including dates.</div></div>
-          </div>
-          <h3>My Main Love Languages</h3>
-          <div class="love-langs">
-            <div class="love-lang"><small>Primary</small>Physical Touch</div>
-            <div class="love-lang"><small>Primary</small>Quality Time</div>
-          </div>
-          <h3>A Little Moodboard of My Vibe</h3>
-          <div class="photo-grid">
-            <img src="img/personality/personality wordcloud wooclap.png" alt="Personality word cloud" loading="lazy">
-            <img src="img/my-vibe/8bit link from legend of zelda.png" alt="8-bit Link" loading="lazy">
-            <img src="img/my-vibe/black mage final fantsy.png" alt="Black Mage" loading="lazy">
-            <img src="img/my-vibe/critial roll playing d and d.png" alt="Playing D&amp;D" loading="lazy">
-            <img src="img/my-vibe/crochet.png" alt="Crochet" loading="lazy">
-            <img src="img/my-vibe/couple cooking.png" alt="Cooking" loading="lazy">
-            <img src="img/my-vibe/couple watching tv.png" alt="Watching TV" loading="lazy">
-            <img src="img/my-vibe/city night life.png" alt="City nightlife" loading="lazy">
-            <img src="img/my-vibe/image of nature.png" alt="Nature" loading="lazy">
-            <img src="img/my-vibe/image of nature 2.png" alt="Nature" loading="lazy">
-            <img src="img/my-vibe/images of the outdoor.png" alt="The outdoors" loading="lazy">
-            <img src="img/my-vibe/imaghe of cycling.png" alt="Cycling" loading="lazy">
-            <img src="img/my-vibe/lady in a fantsy ballgown.png" alt="Fantasy ballgown" loading="lazy">
-            <img src="img/my-vibe/people playing boardgames.png" alt="Board games" loading="lazy">
-            <img src="img/my-vibe/person dressed up as a rouge.png" alt="Dressed as a rogue" loading="lazy">
-            <img src="img/my-vibe/person eating food.png" alt="Eating food" loading="lazy">
-            <img src="img/my-vibe/person outdoor with backp[ack.png" alt="Outdoors with a backpack" loading="lazy">
-            <img src="img/my-vibe/person playing video games on a computer.png" alt="Gaming on a computer" loading="lazy">
-            <img src="img/my-vibe/someone holding a cup of tea.png" alt="A cup of tea" loading="lazy">
-            <img src="img/my-vibe/someone tinkering with things.png" alt="Tinkering" loading="lazy">
-            <img src="img/my-vibe/strarry night sky.png" alt="Starry night sky" loading="lazy">
-            <img src="img/my-vibe/table full of food.png" alt="A table full of food" loading="lazy">
-            <img src="img/my-vibe/tons of computer screens.png" alt="Lots of computer screens" loading="lazy">
-            <img src="img/my-vibe/two people playing video games.png" alt="Two people gaming" loading="lazy">
-          </div>
-        </div></div></div>
+        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="personality"></div></div></div>
       </article>
 
-      <!-- Radical Transparency (softened warning label) -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🌱</span><span class="acc-title">Radical Transparency <span class="acc-hint">— areas of active growth</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content">
-          <div class="growth-banner">I think it's important to be upfront and self-aware. None of this defines me — it's just the honest stuff I'm actively working on, and I'd rather you know me fully.</div>
-          <div class="value-cols">
-            <div class="value-card">
-              <h3>Physical Health — On the Up</h3>
-              <ul>
-                <li>Since March 2025 I've worked with a personal trainer and lost ~10kg</li>
-                <li>Goal: reach a healthy 70–80kg</li>
-                <li>Managing high blood pressure &amp; diabetes — and steadily improving</li>
-              </ul>
-            </div>
-            <div class="value-card">
-              <h3>Mind &amp; Emotions — Self-Aware</h3>
-              <ul>
-                <li>Dyslexia, depression, anxious attachment &amp; (undiagnosed) AuDHD</li>
-                <li>An overthinker and a recovering people-pleaser who feels things deeply</li>
-                <li>I've done therapy before and am looking to start again</li>
-              </ul>
-            </div>
-          </div>
-          <div class="growth-note">I know my triggers and have worked hard to process most of my history. Consistent, open and honest communication is what keeps me steady — and it's the thing I value most in a relationship.</div>
-          <div class="photo-grid" style="margin-top:16px;">
-            <img src="img/warning-label/therapy session illustration.png" alt="Therapy session" loading="lazy">
-            <img src="img/warning-label/person happy with hearts.png" alt="Feeling happy" loading="lazy">
-            <img src="img/warning-label/blood pressure check medical.png" alt="Blood pressure check" loading="lazy">
-            <img src="img/warning-label/blood glucose test diabetes.png" alt="Blood glucose test" loading="lazy">
-            <img src="img/warning-label/person anxious worried.png" alt="Feeling anxious" loading="lazy">
-            <img src="img/warning-label/person with depression symptoms.png" alt="Living with depression" loading="lazy">
-            <img src="img/warning-label/person multitasking chaotic.png" alt="Organised chaos" loading="lazy">
-            <img src="img/warning-label/judge with gavel illustration.png" alt="Self-aware" loading="lazy">
-          </div>
-        </div></div></div>
+        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="transparency"></div></div></div>
       </article>
 
-      <!-- Hobbies -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">✨</span><span class="acc-title">Hobbies &amp; Interests <span class="acc-hint">— things that light me up</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content">
-          <h3>🍜 Food</h3>
-          <div class="tag-row"><span class="tag-item">Cooking</span><span class="tag-item">Baking</span><span class="tag-item">Eating out</span><span class="tag-item">Tea</span></div>
-          <h3>🎨 Creative</h3>
-          <div class="tag-row"><span class="tag-item">DIY</span><span class="tag-item">Lego</span><span class="tag-item">Crochet / Knitting</span><span class="tag-item">Photography</span><span class="tag-item">Crafts</span><span class="tag-item">Pottery</span><span class="tag-item">Shibari</span><span class="tag-item note">kinda kinky, but also a creative &amp; meditative outlet for me</span></div>
-          <h3>📺 Media</h3>
-          <div class="tag-row"><span class="tag-item">Anime &amp; Manga</span><span class="tag-item">Marvel</span><span class="tag-item">Fantasy &amp; Sci-fi</span><span class="tag-item">Comedy</span></div>
-          <h3>🎮 Fun &amp; Games</h3>
-          <div class="tag-row"><span class="tag-item">Video Games</span><span class="tag-item">Pool / Snooker</span><span class="tag-item">Board Games</span><span class="tag-item">D&amp;D</span></div>
-          <h3>📚 Educational</h3>
-          <div class="tag-row"><span class="tag-item">Technology &amp; Science</span><span class="tag-item">History</span><span class="tag-item">Mythology</span><span class="tag-item">Etymology</span><span class="tag-item">Random facts</span><span class="tag-item">Maps</span><span class="tag-item">Stargazing</span></div>
-          <h3>🏃 Active</h3>
-          <div class="tag-row"><span class="tag-item">Hiking / Countryside walks</span><span class="tag-item">Archery</span><span class="tag-item">Cycling</span><span class="tag-item">Fire Spinning</span></div>
-          <h3>In Pictures</h3>
-          <div class="photo-grid">
-            <img src="img/hobbies/alec ceramic pot made.png" alt="A ceramic pot I made" loading="lazy">
-            <img src="img/hobbies/alec crochet snorlax.png" alt="A crocheted Snorlax" loading="lazy">
-            <img src="img/hobbies/alec desk with gameboy orchid lego.png" alt="My desk with Game Boy, orchid and Lego" loading="lazy">
-            <img src="img/hobbies/lego imperial star destroyer built.png" alt="A built Lego Star Destroyer" loading="lazy">
-            <img src="img/hobbies/knitting in progress.png" alt="Knitting in progress" loading="lazy">
-            <img src="img/hobbies/homemade chocolate chip cookies.png" alt="Homemade cookies" loading="lazy">
-            <img src="img/hobbies/t2 tea collection.png" alt="My tea collection" loading="lazy">
-            <img src="img/hobbies/board game collection in bag.png" alt="Board game collection" loading="lazy">
-            <img src="img/hobbies/d20 dice dnd.png" alt="D&amp;D dice" loading="lazy">
-            <img src="img/hobbies/archery target with arrows.png" alt="Archery target" loading="lazy">
-            <img src="img/hobbies/mountain bike on path.png" alt="Mountain biking" loading="lazy">
-            <img src="img/hobbies/autumn walk with dachshund dog.png" alt="An autumn walk with a dog" loading="lazy">
-            <img src="img/hobbies/nes cartridge retro games.png" alt="Retro NES games" loading="lazy">
-            <img src="img/hobbies/st pauls cathedral london.png" alt="St Paul's Cathedral" loading="lazy">
-            <img src="img/hobbies/shibari rope bondage legs.png" alt="Shibari rope work" loading="lazy">
-            <img src="img/hobbies/Landscape 005.jpg" alt="A landscape photo I took" loading="lazy">
-            <img src="img/hobbies/20131222_205929.JPG" alt="A hobby moment" loading="lazy">
-            <img src="img/hobbies/IMG_20201209_201603_988.jpg" alt="A hobby moment" loading="lazy">
-            <img src="img/hobbies/IMG_20231221_214109_547.webp" alt="A hobby moment" loading="lazy">
-            <img src="img/hobbies/IMG_20240528_172753_305.jpg" alt="A hobby moment" loading="lazy">
-            <img src="img/hobbies/IMG_20240528_173146_931.jpg" alt="A hobby moment" loading="lazy">
-            <img src="img/hobbies/PXL_20231209_170333969_exported_1702148485759.jpg" alt="A hobby moment" loading="lazy">
-          </div>
-        </div></div></div>
+        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="hobbies"></div></div></div>
       </article>
 
-      <!-- Bucket List -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🎯</span><span class="acc-title">Bucket List <span class="acc-hint">— things I'd love to try</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content">
-          <div class="two-cols">
-            <div class="list-block">
-              <h3>✈️ Travel More</h3>
-              <ul><li>Campervan</li><li>Interrail</li><li>City breaks</li><li>Glamping &amp; camping</li></ul>
-              <h3>🎭 Experiences</h3>
-              <ul><li>LARP / Ren faire / Fantasy ball</li><li>A play at The Globe</li><li>Rock climbing / bouldering</li><li>A flower field (lavender / tulips)</li><li>Learn first aid (mental &amp; physical)</li><li>Learn to ride a moped</li><li>Dance &amp; cooking classes</li><li>The Lego House in Denmark</li><li>More Michelin restaurants</li><li>Volunteer work</li></ul>
-            </div>
-            <div class="list-block">
-              <h3>🎨 Creative</h3>
-              <ul><li>Glass blowing</li><li>Blacksmithing / forge</li><li>Terrarium making</li></ul>
-            </div>
-          </div>
-          <h3>In Pictures</h3>
-          <div class="photo-grid">
-            <img src="img/bucket-list/camping under starry sky.png" alt="Camping under the stars" loading="lazy">
-            <img src="img/bucket-list/couple on vespas italy.png" alt="Vespas in Italy" loading="lazy">
-            <img src="img/bucket-list/lavender field provence.png" alt="A lavender field" loading="lazy">
-            <img src="img/bucket-list/medieval renaissance fair.png" alt="A renaissance fair" loading="lazy">
-            <img src="img/bucket-list/shakespeares globe theatre.png" alt="Shakespeare's Globe" loading="lazy">
-            <img src="img/bucket-list/indoor climbing wall.png" alt="An indoor climbing wall" loading="lazy">
-            <img src="img/bucket-list/cpr first aid training.png" alt="First aid training" loading="lazy">
-            <img src="img/bucket-list/michelin star logo.png" alt="Michelin star" loading="lazy">
-            <img src="img/bucket-list/image110.png" alt="A bucket-list idea" loading="lazy">
-            <img src="img/bucket-list/image125.png" alt="A bucket-list idea" loading="lazy">
-          </div>
-        </div></div></div>
+        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="bucketList"></div></div></div>
       </article>
 
-      <!-- Places I've Been -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">✈️</span><span class="acc-title">Places I've Been <span class="acc-hint">— stamps in the passport</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="placesVisited">
-          <div class="places-grid">
-            <div class="place-card"><img src="img/places-been/alec hobbiton sign new zealand.png" alt="Hobbiton, New Zealand" loading="lazy"><div class="place-card-body"><strong>🇳🇿 New Zealand</strong><div class="place-detail">Hobbiton</div></div></div>
-            <div class="place-card"><img src="img/places-been/sydney opera house at night.png" alt="Sydney" loading="lazy"><div class="place-card-body"><strong>🇦🇺 Australia</strong><div class="place-detail">Sydney &amp; East Coast</div></div></div>
-            <div class="place-card"><img src="img/places-been/alec big buddha phuket selfie.png" alt="Phuket, Thailand" loading="lazy"><div class="place-card-body"><strong>🇹🇭 Thailand</strong><div class="place-detail">Phuket</div></div></div>
-            <div class="place-card"><img src="img/places-been/bavarian beer garden munich.png" alt="Munich, Germany" loading="lazy"><div class="place-card-body"><strong>🇩🇪 Germany</strong><div class="place-detail">Berlin &amp; Munich</div></div></div>
-            <div class="place-card"><img src="img/places-been/alec giant beer stein prague.png" alt="Prague, Czechia" loading="lazy"><div class="place-card-body"><strong>🇨🇿 Czechia</strong><div class="place-detail">Prague</div></div></div>
-            <div class="place-card"><img src="img/places-been/amsterdam canal street view.png" alt="Amsterdam" loading="lazy"><div class="place-card-body"><strong>🇳🇱 Netherlands</strong><div class="place-detail">Amsterdam</div></div></div>
-            <div class="place-card"><img src="img/places-been/aphrodites rock beach cyprus.png" alt="Cyprus" loading="lazy"><div class="place-card-body"><strong>🇨🇾 Cyprus</strong><div class="place-detail">Aphrodite's Rock</div></div></div>
-            <div class="place-card"><img src="img/places-been/alec flower crown midsommar sweden.png" alt="Sweden" loading="lazy"><div class="place-card-body"><strong>🇸🇪 Sweden</strong><div class="place-detail">Midsommar</div></div></div>
-            <div class="place-card"><img src="img/places-been/alec chernobyl ferris wheel pripyat.png" alt="Pripyat, Ukraine" loading="lazy"><div class="place-card-body"><strong>🇺🇦 Ukraine</strong><div class="place-detail">Pripyat</div></div></div>
-            <div class="place-card"><img src="img/places-been/warsaw aerial city view.png" alt="Warsaw, Poland" loading="lazy"><div class="place-card-body"><strong>🇵🇱 Poland</strong><div class="place-detail">Warsaw &amp; Krakow</div></div></div>
-            <div class="place-card"><img src="img/places-been/palace of culture science warsaw.png" alt="Palace of Culture, Warsaw" loading="lazy"><div class="place-card-body"><strong>🇵🇱 Warsaw</strong><div class="place-detail">Palace of Culture</div></div></div>
-            <div class="place-card"><img src="img/places-been/christmas market night aerial view.png" alt="A European Christmas market" loading="lazy"><div class="place-card-body"><strong>🎄 Christmas Markets</strong><div class="place-detail">Across Europe</div></div></div>
-          </div>
-          <h3>Also Stamped My Passport In</h3>
-          <div class="tag-row">
-            <span class="tag-item">🇬🇷 Greece</span><span class="tag-item">🇪🇸 Spain</span><span class="tag-item">🇫🇷 France</span>
-            <span class="tag-item">🇺🇸 USA · NYC</span><span class="tag-item">🇲🇻 Maldives</span><span class="tag-item">🇯🇵 Japan</span><span class="tag-item">🇮🇩 Indonesia · Bali</span>
-          </div>
-        </div></div></div>
+        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="placesVisited"></div></div></div>
       </article>
 
-      <!-- Places I Want to Visit -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🗺️</span><span class="acc-title">Places I Want to Visit <span class="acc-hint">— next on the list</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="placesToVisit">
-          <div class="places-grid">
-            <div class="place-card"><img src="img/places-want/colosseum rome italy.png" alt="The Colosseum, Italy" loading="lazy"><div class="place-card-body"><strong>🇮🇹 Italy</strong><div class="place-detail">Roman history &amp; Italian food</div></div></div>
-            <div class="place-card"><img src="img/places-want/machu picchu peru ruins.png" alt="Machu Picchu, Peru" loading="lazy"><div class="place-card-body"><strong>🇵🇪 Peru</strong><div class="place-detail">Machu Picchu</div></div></div>
-            <div class="place-card"><img src="img/places-want/day of the dead mexico candles ofrenda.png" alt="Day of the Dead, Mexico" loading="lazy"><div class="place-card-body"><strong>🇲🇽 Mexico</strong><div class="place-detail">Day of the Dead</div></div></div>
-            <div class="place-card"><img src="img/places-want/holi festival colour india.png" alt="Holi festival, India" loading="lazy"><div class="place-card-body"><strong>🇮🇳 India</strong><div class="place-detail">The many festivals</div></div></div>
-            <div class="place-card"><img src="img/places-want/texas bbq brisket ribs platter.png" alt="Texas BBQ" loading="lazy"><div class="place-card-body"><strong>🇺🇸 USA</strong><div class="place-detail">Southern BBQ, Route 66, parks</div></div></div>
-            <div class="place-card"><img src="img/places-want/northern lights aurora norway.png" alt="Northern lights" loading="lazy"><div class="place-card-body"><strong>🌌 Nordics</strong><div class="place-detail">Northern lights</div></div></div>
-            <div class="place-card"><img src="img/places-want/cotswolds village england.png" alt="The Cotswolds" loading="lazy"><div class="place-card-body"><strong>🇬🇧 UK</strong><div class="place-detail">Seen surprisingly little of it</div></div></div>
-            <div class="place-card"><img src="img/places-want/patagonia hiking torres del paine.png" alt="Patagonia" loading="lazy"><div class="place-card-body"><strong>🥾 Patagonia</strong><div class="place-detail">Torres del Paine</div></div></div>
-            <div class="place-card"><img src="img/places-want/alpine ski chalet snow pool.png" alt="Alpine chalet" loading="lazy"><div class="place-card-body"><strong>🏔️ The Alps</strong><div class="place-detail">Snow &amp; mountains</div></div></div>
-          </div>
-          <h3>Daydreaming Of…</h3>
-          <div class="photo-grid">
-            <img src="img/places-want/italian nonna homemade pasta cooking.png" alt="Homemade pasta in Italy" loading="lazy">
-            <img src="img/places-want/family feast communal dining table.png" alt="A communal feast" loading="lazy">
-            <img src="img/places-want/poolside reading sunglasses book.png" alt="Reading poolside" loading="lazy">
-          </div>
-          <p style="margin-top:14px;">…and honestly, the rest of the world too — there's so much food, history and culture I want to see it all.</p>
-        </div></div></div>
+        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="placesToVisit"></div></div></div>
       </article>
 
-      <!-- Movies & TV -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🎬</span><span class="acc-title">Movies &amp; TV <span class="acc-hint">— what I'm watching</span></span><span class="acc-chevron">▾</span></button>
         <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="moviesTV"></div></div></div>
       </article>
 
-      <!-- Video Games -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🎮</span><span class="acc-title">Video Games <span class="acc-hint">— player one, ready</span></span><span class="acc-chevron">▾</span></button>
         <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="videoGames"></div></div></div>
       </article>
 
-      <!-- Food -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🍽️</span><span class="acc-title">Food <span class="acc-hint">— the way to my heart</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content">
-          <p>I'm always chasing the best food in London and around the world — favourites are Asian (mostly Japanese) &amp; Mexican, from street food to Michelin stars.</p>
-          <div class="photo-grid">
-            <img src="img/food/tonkotsu ramen bowl.png" alt="Tonkotsu ramen" loading="lazy">
-            <img src="img/food/bao buns fries tray.png" alt="Bao buns" loading="lazy">
-            <img src="img/food/bahn mi.png" alt="Banh mi" loading="lazy">
-            <img src="img/food/street tacos.png" alt="Street tacos" loading="lazy">
-            <img src="img/food/japanese fried chicken moss plating.png" alt="Japanese fried chicken" loading="lazy">
-            <img src="img/food/korean fried chicken wings.png" alt="Korean fried chicken" loading="lazy">
-            <img src="img/food/seared tuna tataki sesame.png" alt="Tuna tataki" loading="lazy">
-            <img src="img/food/beef tataki fine dining.png" alt="Beef tataki" loading="lazy">
-            <img src="img/food/bacon cheeseburger brioche.png" alt="Bacon cheeseburger" loading="lazy">
-            <img src="img/food/smash double cheeseburger.png" alt="Smash burger" loading="lazy">
-            <img src="img/food/smash burger with fries.png" alt="Smash burger with fries" loading="lazy">
-            <img src="img/food/full english breakfast cafe.png" alt="Full English breakfast" loading="lazy">
-            <img src="img/food/roast chicken sunday dinner.png" alt="Sunday roast" loading="lazy">
-            <img src="img/food/duck wellington kale fine dining.png" alt="Duck Wellington" loading="lazy">
-            <img src="img/food/scallop fine dining starter.png" alt="Scallop starter" loading="lazy">
-            <img src="img/food/fine dining beef mango puree.png" alt="Fine dining beef" loading="lazy">
-            <img src="img/food/tempura green beans romesco.png" alt="Tempura green beans" loading="lazy">
-            <img src="img/food/matcha soft serve ice cream cone.png" alt="Matcha soft serve" loading="lazy">
-            <img src="img/food/chocolate fondant ice cream dessert.png" alt="Chocolate fondant" loading="lazy">
-            <img src="img/food/decorative croissants pastry box.png" alt="Pastry box" loading="lazy">
-            <img src="img/food/taco desert.png" alt="Taco dessert" loading="lazy">
-            <img src="img/food/meal prep chicken rice takeaway.png" alt="Meal prep" loading="lazy">
-            <img src="img/food/cafe food.png" alt="Cafe food" loading="lazy">
-            <img src="img/food/fancy meal.png" alt="A fancy meal" loading="lazy">
-          </div>
-          <h3>Top of the Menu</h3>
-          <div class="tag-row">
-            <span class="tag-item love">Tonkatsu</span><span class="tag-item love">Sushi</span><span class="tag-item love">Ramen</span>
-            <span class="tag-item love">Bao Bun</span><span class="tag-item love">Banh Mi</span><span class="tag-item love">Tacos</span>
-            <span class="tag-item love">BBQ Ribs</span><span class="tag-item love">Full English</span><span class="tag-item love">Sunday Roast</span>
-            <span class="tag-item love">Matcha &amp; Tea</span><span class="tag-item love">Pastries</span><span class="tag-item love">Sour sweets</span>
-            <span class="tag-item hate">Onion</span><span class="tag-item hate">Sweetcorn</span>
-          </div>
-        </div></div></div>
+        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="food"></div></div></div>
       </article>
 
-      <!-- Music -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🎵</span><span class="acc-title">Music <span class="acc-hint">— what's on my playlist</span></span><span class="acc-chevron">▾</span></button>
         <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="music"></div></div></div>
       </article>
 
-      <!-- Books -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">📚</span><span class="acc-title">Books <span class="acc-hint">— on my shelf</span></span><span class="acc-chevron">▾</span></button>
         <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="books"></div></div></div>
       </article>
 
-      <!-- Podcasts -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🎙️</span><span class="acc-title">Podcasts <span class="acc-hint">— long-journey listening</span></span><span class="acc-chevron">▾</span></button>
         <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="podcasts"></div></div></div>
       </article>
 
-      <!-- Sports -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">⚽</span><span class="acc-title">Sports <span class="acc-hint">— mostly a spectator</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="sports">
-          <p>Not really a sporty person, but I keep fit with cycling, long walks and the gym — and dabble in bouldering, archery and basketball. I don't really watch sport, but I support a few teams (mostly thanks to friends &amp; family).</p>
-          <div class="logo-grid">
-            <div class="logo-tile"><img src="img/sports/arsenal logo.png" alt="Arsenal" loading="lazy"><span>Arsenal</span></div>
-            <div class="logo-tile"><img src="img/sports/england 3 loin logo.png" alt="England" loading="lazy"><span>England</span></div>
-            <div class="logo-tile"><img src="img/sports/saracens logo.png" alt="Saracens" loading="lazy"><span>Saracens</span></div>
-            <div class="logo-tile"><img src="img/sports/all black rugby.png" alt="All Blacks" loading="lazy"><span>All Blacks</span></div>
-            <div class="logo-tile"><img src="img/sports/mclaren logo.png" alt="McLaren" loading="lazy"><span>McLaren F1</span></div>
-            <div class="logo-tile"><img src="img/sports/archery.png" alt="Archery" loading="lazy"><span>Archery</span></div>
-            <div class="logo-tile"><img src="img/sports/rock climbing.png" alt="Rock climbing" loading="lazy"><span>Bouldering</span></div>
-            <div class="logo-tile"><img src="img/sports/basketball.png" alt="Basketball" loading="lazy"><span>Basketball</span></div>
-            <div class="logo-tile"><img src="img/sports/cycling.png" alt="Cycling" loading="lazy"><span>Cycling</span></div>
-            <div class="logo-tile"><img src="img/sports/bicep curl.png" alt="Gym" loading="lazy"><span>Gym</span></div>
-          </div>
-        </div></div></div>
+        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="sports"></div></div></div>
       </article>
 
-      <!-- Politics & Religion -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🏛️</span><span class="acc-title">Politics &amp; Religion <span class="acc-hint">— where I stand</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content">
-          <p>I'm Liberal Left (Green Party at present). My main thing is supporting the poorest so we can all be more equal. My general philosophy: <strong style="color:var(--text);">"Try not to be a dick!"</strong></p>
-          <div class="two-cols">
-            <div class="list-block">
-              <h3>Policy &amp; Support</h3>
-              <ul>
-                <li>Simpler tax rules &amp; closing loopholes</li>
-                <li>Nationalising utilities &amp; transport</li>
-                <li>Human rights &amp; LGBTQIA+ (incl. Trans rights)</li>
-                <li>Disability &amp; neurodivergent equality</li>
-                <li>Race &amp; gender equality, reproductive rights</li>
-                <li>The environment</li>
-              </ul>
-            </div>
-            <div class="list-block">
-              <h3>Religion</h3>
-              <ul>
-                <li>Raised Christian; I now choose not to hold a belief system and just try to be as good and kind as I can</li>
-                <li>I respect others' beliefs and try to educate myself on them</li>
-              </ul>
-            </div>
-          </div>
-          <div class="photo-grid" style="margin-top:16px;">
-            <img src="img/politics/human right sign.png" alt="Human rights" loading="lazy">
-            <img src="img/politics/pride flag.png" alt="Pride flag" loading="lazy">
-            <img src="img/politics/solar punk image.png" alt="Solarpunk" loading="lazy">
-            <img src="img/politics/alan turing.png" alt="Alan Turing" loading="lazy">
-          </div>
-        </div></div></div>
+        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="politics"></div></div></div>
       </article>
 
-      <!-- Dislikes -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🙅</span><span class="acc-title">Gentle Dislikes <span class="acc-hint">— a preference for calm</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="gentleDislikes">
-          <p>I can handle these — I just won't go seeking them out. Mostly it adds up to a preference for calm, intimate settings.</p>
-          <div class="detail-list">
-            <div class="detail-item"><span class="detail-icon">🧅</span><div class="detail-text"><strong>Onion &amp; sweetcorn</strong>Getting better with onion, but won't be ordering it.</div></div>
-            <div class="detail-item"><span class="detail-icon">🔊</span><div class="detail-text"><strong>Loud noises</strong>Makes it hard to hear myself — noise-cancelling headphones to the rescue.</div></div>
-            <div class="detail-item"><span class="detail-icon">👥</span><div class="detail-text"><strong>Standing in crowds</strong>Moving through is fine; lingering in a packed place, less so.</div></div>
-            <div class="detail-item"><span class="detail-icon">😤</span><div class="detail-text"><strong>Yelling</strong>A big trigger for me.</div></div>
-            <div class="detail-item"><span class="detail-icon">🎢</span><div class="detail-text"><strong>Rollercoasters</strong>Never got into them; the anticipation sets off my anxiety (though I've enjoyed them once on).</div></div>
-          </div>
-          <div class="photo-grid" style="margin-top:16px;">
-            <img src="img/dislikes/onions.png" alt="Onions" loading="lazy">
-            <img src="img/dislikes/sweet corn.png" alt="Sweetcorn" loading="lazy">
-            <img src="img/dislikes/person covering ear from loud noises.png" alt="Loud noises" loading="lazy">
-            <img src="img/dislikes/large crowd.png" alt="A large crowd" loading="lazy">
-            <img src="img/dislikes/people aruguing and yelling.png" alt="Yelling" loading="lazy">
-            <img src="img/dislikes/roller coaster.png" alt="A rollercoaster" loading="lazy">
-          </div>
-        </div></div></div>
+        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="dislikes"></div></div></div>
       </article>
 
-      <!-- Future Goals -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🚀</span><span class="acc-title">Future Goals <span class="acc-hint">— where I'm headed</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content">
-          <p>I've hit my main milestones — good job, a house, great friends. Still working on my health, and finding my life partner.</p>
-          <div class="two-cols">
-            <div class="list-block">
-              <h3>🏡 Dream Home</h3>
-              <ul>
-                <li>Big house in the countryside (but near a train station)</li>
-                <li>Big kitchen, games room, library &amp; home office</li>
-                <li>Living room with a proper cinema system</li>
-                <li>Spare bedrooms for guests and children</li>
-                <li>A garden for growing fruit &amp; veg — ideally near a canal</li>
-              </ul>
-            </div>
-            <div class="list-block">
-              <h3>👨‍👩‍👧‍👦 Family &amp; Beyond</h3>
-              <ul>
-                <li>1–3 kids (70–80% sure, with the right person)</li>
-                <li>1–2 dogs (open to a cat, but need at least one dog)</li>
-                <li>Marriage — no rush; sign the papers when we're sure, big wedding later</li>
-                <li>Maybe: digital nomad life, or a few years in New Zealand</li>
-              </ul>
-            </div>
-          </div>
-          <h3>The Daydream, in Pictures</h3>
-          <div class="photo-grid">
-            <img src="img/goals/kitchen.png" alt="A dream kitchen" loading="lazy">
-            <img src="img/goals/kitchen 2.png" alt="A dream kitchen" loading="lazy">
-            <img src="img/goals/living room home cinema.png" alt="A home cinema" loading="lazy">
-            <img src="img/goals/reading nook.png" alt="A reading nook" loading="lazy">
-            <img src="img/goals/courtyard.png" alt="A courtyard" loading="lazy">
-            <img src="img/goals/garden planters.png" alt="Garden planters" loading="lazy">
-            <img src="img/goals/canal walkway.png" alt="A canal walkway" loading="lazy">
-            <img src="img/goals/couple gaming computer setup.png" alt="A couple's gaming setup" loading="lazy">
-            <img src="img/goals/coding on a computer digital nomad.png" alt="Digital nomad life" loading="lazy">
-            <img src="img/goals/family with children.png" alt="A family with children" loading="lazy">
-            <img src="img/goals/wedding fantsy.png" alt="A fantasy wedding" loading="lazy">
-            <img src="img/goals/dog.png" alt="A dog" loading="lazy">
-            <img src="img/goals/dogs.png" alt="Dogs" loading="lazy">
-            <img src="img/goals/dog 2.png" alt="A dog" loading="lazy">
-          </div>
-        </div></div></div>
+        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="goals"></div></div></div>
       </article>
 
-      <!-- Bonus: Plants & Animals -->
       <article class="acc-item">
         <button class="acc-header" aria-expanded="false"><span class="acc-emoji">🌺</span><span class="acc-title">Bonus: Plants &amp; Creatures <span class="acc-hint">— a few favourites</span></span><span class="acc-chevron">▾</span></button>
-        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content">
-          <h3>🌸 Plants &amp; Flowers I Find Pretty</h3>
-          <div class="photo-grid">
-            <img src="img/plants/sakura.png" alt="Sakura" loading="lazy">
-            <img src="img/plants/tulips.png" alt="Tulips" loading="lazy">
-            <img src="img/plants/lavanda.png" alt="Lavender" loading="lazy">
-            <img src="img/plants/roses.png" alt="Roses" loading="lazy">
-            <img src="img/plants/bluebeels.png" alt="Bluebells" loading="lazy">
-            <img src="img/plants/Freesia .png" alt="Freesia" loading="lazy">
-            <img src="img/plants/Plumeria.png" alt="Plumeria" loading="lazy">
-            <img src="img/plants/lilyflower.png" alt="Lily" loading="lazy">
-            <img src="img/plants/orchid.png" alt="Orchid" loading="lazy">
-            <img src="img/plants/bonsai.png" alt="Bonsai" loading="lazy">
-            <img src="img/plants/fern.png" alt="Fern" loading="lazy">
-            <img src="img/plants/oak.png" alt="Oak" loading="lazy">
-            <img src="img/plants/willow tree.png" alt="Willow tree" loading="lazy">
-          </div>
-          <h3>🐉 Favourite Animals &amp; Creatures</h3>
-          <div class="photo-grid">
-            <img src="img/animals/barn owl.png" alt="Barn owl" loading="lazy">
-            <img src="img/animals/red panada.png" alt="Red panda" loading="lazy">
-            <img src="img/animals/tortise.png" alt="Tortoise" loading="lazy">
-            <img src="img/animals/wolf.png" alt="Wolf" loading="lazy">
-            <img src="img/animals/toothless the dragon.png" alt="A dragon" loading="lazy">
-            <img src="img/animals/phoniex.png" alt="A phoenix" loading="lazy">
-            <img src="img/animals/cerburs.png" alt="Cerberus" loading="lazy">
-            <img src="img/animals/loch ness monster.png" alt="The Loch Ness Monster" loading="lazy">
-            <img src="img/animals/Triceratops.png" alt="Triceratops" loading="lazy">
-            <img src="img/animals/Ankylosaurus.png" alt="Ankylosaurus" loading="lazy">
-          </div>
-          <div class="tag-row" style="margin-top:14px;">
-            <span class="tag-item">🐕 Dogs</span><span class="tag-item">🦉 Barn Owl</span><span class="tag-item">🐼 Red Panda</span>
-            <span class="tag-item">🐢 Tortoise</span><span class="tag-item">🐺 Wolf</span><span class="tag-item">🐉 Dragon</span>
-            <span class="tag-item">🔥 Phoenix</span><span class="tag-item">🐶 Cerberus</span>
-          </div>
-        </div></div></div>
+        <div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="plantsAnimals"></div></div></div>
       </article>
 
     </div>
@@ -897,8 +281,7 @@
   <img id="lightbox-img" src="" alt="">
 </div>
 
-<script src="js/populate.js" defer></script>
-<script src="js/main.js" defer></script>
-
+<script src="content.js"></script>
+<script src="main.js" defer></script>
 </body>
 </html>
