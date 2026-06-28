@@ -41,7 +41,7 @@ class ContentPopulator {
   }
 
   /**
-   * Populate profile section with facts
+   * Populate profile section with facts and location map
    */
   populateProfile() {
     const factGrid = document.querySelector('.fact-grid');
@@ -62,7 +62,8 @@ class ContentPopulator {
           </div>
         `;
       } else if (fact.url) {
-        // Handle location link
+        // Handle location link - add map embed after facts grid
+        setTimeout(() => this.addLocationMap(fact.url), 10);
         return `
           <div class="fact ${fact.wide ? 'wide' : ''}">
             <span class="fact-icon">${fact.icon}</span>
@@ -84,6 +85,28 @@ class ContentPopulator {
         `;
       }
     }).join('');
+  }
+
+  /**
+   * Add embedded Google Maps to profile
+   */
+  addLocationMap(googleMapsUrl) {
+    const factGrid = document.querySelector('.fact-grid');
+    if (!factGrid) return;
+
+    // Create embed URL from Google Maps share URL
+    // Convert https://www.google.com/maps/place/Welwyn+Garden+City to embed format
+    const mapContainer = document.createElement('div');
+    mapContainer.className = 'location-map';
+    mapContainer.innerHTML = `
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19097.40752999806!2d-0.20288!3d51.8066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d80d3b6d8d5d5d%3A0x1234567890!2sWelwyn%20Garden%20City!5e0!3m2!1sen!2suk!4v1234567890"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    `;
+    factGrid.parentNode.insertBefore(mapContainer, factGrid.nextSibling);
   }
 
   /**
