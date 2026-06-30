@@ -374,45 +374,49 @@ window.CONTENT = {
             tag: "✨ What I'm Looking For",
             tagClass: "tag-gold",
             heading: "An Invitation, Not a Checklist",
-            lead: "I have a full, happy life — I'm just hoping to share it. Here's the kind of \"us\" I'm dreaming about.",
+            lead: "I have a full, happy life, and I'm just hoping to share it. Here's the kind of \"us\" I'm dreaming about.",
             blocks: [
+                {
+                    type: "paragraph",
+                    text: "Two things matter most to me. First, someone who's just as up for an adventure as they are for a quiet day at home. Second, someone happy to share the stuff I love (gaming and nerd culture, mostly) and to pull me into their own quirky world too. Everything below is a bit of what I picture us doing together."
+                },
                 {
                     type: "featureGrid", features: [
                         {
                             src: "img/looking-for/couple-going-exploring-nature.png",
                             alt: "A couple exploring nature",
                             icon: "🌿",
-                            text: "Equal parts up for adventure — travel, new cultures, hunting down amazing food — and happy to just wander somewhere green."
+                            text: "Up for an adventure. Travelling, trying new cultures, hunting down good food, or just a long walk somewhere green."
                         },
                         {
                             src: "img/looking-for/couple-watching-movie-togehter.png",
                             alt: "A couple watching a movie",
                             icon: "🍿",
-                            text: "…and just as happy with a lazy day in: a film, the sofa, nowhere we need to be."
+                            text: "Just as happy with a lazy day in. A good film, the sofa, and nowhere we need to be."
                         },
                         {
                             src: "img/looking-for/couple-playing-video-games.png",
                             alt: "A couple gaming",
                             icon: "🎮",
-                            text: "Pulling each other into our worlds — gaming and nerd culture for me, whatever quirky thing lights you up for you. Co-op, friendly rivalry, no judgement."
+                            text: "Sharing what we're into. Gaming and nerd culture for me, whatever you're into for you. A bit of co-op, a bit of friendly rivalry, no judgement either way."
                         },
                         {
                             src: "img/looking-for/couple-cooking.png",
                             alt: "A couple cooking",
                             icon: "🍳",
-                            text: "Cooking and baking together — flour everywhere, music on, an evening that's about nothing but each other."
+                            text: "Cooking and baking together, with flour everywhere and music on. The sort of evening that's about nothing but each other."
                         },
                         {
                             src: "img/looking-for/couple-enjoying-tea-on-the-couch.png",
                             alt: "A couple enjoying tea",
                             icon: "🫖",
-                            text: "The kind of talk where you can say anything — open, honest, no walls."
+                            text: "Easy, honest conversation. The kind where you can say anything and there are no walls up."
                         },
                         {
                             src: "img/looking-for/couple-at-the-gym-working-out.png",
                             alt: "A couple at the gym",
                             icon: "💪",
-                            text: "Cheering each other on to be our best selves — and choosing each other through the hard bits too."
+                            text: "Cheering each other on to be our best selves, and sticking together through the harder bits too."
                         }
                     ]
                 }
