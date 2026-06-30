@@ -437,6 +437,75 @@
         setHtml('[data-footer="links"]', C.contact.links.map(linkHtml).join(''));
     }
 
+    // The canonical, hash-free URL to share. Falls back to the live domain when
+    // the page is opened from disk (file://) so share links are never broken.
+    const shareUrl = () => {
+        const here = location.href.split('#')[0];
+        return /^https?:/.test(here) ? here : 'https://date.alectronic.co/';
+    };
+
+    // Turn a share `type` + the page url/text into a service share link.
+    // `copy` and `native` have no URL — they're handled by initShare().
+    function buildShareUrl(type, url, text) {
+        const u = encodeURIComponent(url);
+        const t = encodeURIComponent(text);
+        const tu = encodeURIComponent(text + ' ' + url);
+        switch (type) {
+            case 'email':
+                return `mailto:?subject=${t}&body=${tu}`;
+            case 'whatsapp':
+                return `https://wa.me/?text=${tu}`;
+            case 'twitter':
+                return `https://twitter.com/intent/tweet?text=${t}&url=${u}`;
+            case 'facebook':
+                return `https://www.facebook.com/sharer/sharer.php?u=${u}`;
+            case 'linkedin':
+                return `https://www.linkedin.com/sharing/share-offsite/?url=${u}`;
+            case 'telegram':
+                return `https://t.me/share/url?url=${u}&text=${t}`;
+            case 'reddit':
+                return `https://www.reddit.com/submit?url=${u}&title=${t}`;
+            default:
+                return '';
+        }
+    }
+
+    // "Not your vibe? Share with a friend" card — share buttons for each option
+    // in CONTENT.share. Copy/native are buttons; the rest are real share links.
+    function renderShare() {
+        if (!C || !C.share) return;
+        const s = C.share;
+        const url = shareUrl();
+        const text = s.text || '';
+
+        const icon = (o) => `<i class="${esc(o.icon || '')}" aria-hidden="true"></i>`;
+        const optionHtml = (o) => {
+            if (o.type === 'copy') {
+                return `<button type="button" class="share-btn share-${esc(o.type)}" data-copy="${esc(
+                    url
+                )}">${icon(o)}<span>${esc(o.label)}</span></button>`;
+            }
+            const href = buildShareUrl(o.type, url, text);
+            const target = o.type === 'email' ? '' : ' target="_blank" rel="noopener"';
+            return `<a class="share-btn share-${esc(o.type)}" href="${esc(
+                href
+            )}"${target}>${icon(o)}<span>${esc(o.label)}</span></a>`;
+        };
+
+        // A prominent "Share…" button using the device's native share sheet —
+        // only shown when the browser supports it (mostly mobile). initShare wires it.
+        const nativeBtn = navigator.share
+            ? `<button type="button" class="share-btn share-native primary"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i><span>Share…</span></button>`
+            : '';
+
+        const html =
+            (s.tag ? `<div class="section-tag tag-rose">${esc(s.tag)}</div>` : '') +
+            `<h2>${esc(s.heading)}</h2>` +
+            `<p class="lead">${esc(s.lead)}</p>` +
+            `<div class="share-links">${nativeBtn}${s.options.map(optionHtml).join('')}</div>`;
+        setHtml('[data-share="share"]', html);
+    }
+
     /* ============================================================
        Interactions (run AFTER render so the DOM exists)
        ============================================================ */
@@ -574,6 +643,44 @@
         });
     }
 
+    // Share card: wire the native "Share…" button and the "Copy link" button.
+    function initShare() {
+        const native = document.querySelector('.share-native');
+        if (native && navigator.share && !native._listenerAttached) {
+            native.addEventListener('click', () => {
+                const s = C.share || {};
+                navigator
+                    .share({title: document.title, text: s.text || '', url: shareUrl()})
+                    .catch(() => {}); // user cancelled or unsupported — ignore
+            });
+            native._listenerAttached = true;
+        }
+
+        document.querySelectorAll('.share-btn[data-copy]').forEach((btn) => {
+            if (btn._listenerAttached) return;
+            const span = btn.querySelector('span');
+            btn.addEventListener('click', () => {
+                const done = () => {
+                    if (!span) return;
+                    const original = span.textContent;
+                    btn.classList.add('copied');
+                    span.textContent = 'Copied!';
+                    setTimeout(() => {
+                        span.textContent = original;
+                        btn.classList.remove('copied');
+                    }, 1200);
+                };
+                const url = btn.getAttribute('data-copy');
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(url).then(done, () => fallbackCopy(url, done));
+                } else {
+                    fallbackCopy(url, done);
+                }
+            });
+            btn._listenerAttached = true;
+        });
+    }
+
     function initLightbox() {
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
@@ -644,12 +751,14 @@
         renderAccordion();
         renderSections();
         renderConnectCard(C.contact, '[data-connect="contact"]');
+        renderShare();
         renderConnectCard(C.outro, '[data-connect="outro"]');
         renderFooterLinks();
 
         initScrollSpy();
         initAccordion();
         initDeepLinks();
+        initShare();
         initLightbox();
 
         openFromHash();
