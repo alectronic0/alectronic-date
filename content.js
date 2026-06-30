@@ -596,38 +596,38 @@ window.CONTENT = {
                     type: "interestCards", cards: [
                         {
                             icon: "🎨", title: "Making things",
-                            body: "I'm happiest making something with my hands — I've crocheted a Snorlax, thrown my own pottery, and there's almost always a knitting project on the go. Lego and general DIY scratch the same itch; give me a rainy weekend and a project and I'm sorted.",
+                            body: "I'm always itching to build something with my hands — I've crocheted a Snorlax, thrown my own pottery, and I'm forever dabbling with different yarns and rope (shibari included). Lego and general DIY scratch the same itch.",
                             images: [
                                 {src: "img/hobbies/alec-crochet-snorlax.png", alt: "A Snorlax I crocheted"},
                                 {src: "img/hobbies/alec-ceramic-pot-made.png", alt: "A ceramic pot I threw"},
                                 {src: "img/hobbies/knitting-in-progress.png", alt: "A knitting project in progress"},
                                 {src: "img/hobbies/lego-imperial-star-destroyer-built.png", alt: "A Lego Imperial Star Destroyer I built"}
                             ],
-                            tags: ["Crochet / Knitting", "Pottery", "Lego", "DIY", "Crafts", "Shibari"]
+                            tags: ["Crochet & Yarn", "Rope / Shibari", "Pottery", "Lego", "DIY", "Crafts"]
                         },
                         {
                             icon: "📷", title: "Photography",
-                            body: "I carry a camera most places. I'm drawn to landscapes, moody skies and big architecture — anything that makes me stop and actually look. Half the fun is the walk to find the shot.",
+                            body: "Photography threads through nearly everything else I do — nature, food, landscapes, my shibari art, fire and LED poi after dark, the stars, and my friends. I shoot on a Google Pixel 10 Pro (edited in Snapseed) and fly a DJI drone; I've got a Polaroid I'm still figuring out, and I'm dreaming of a proper camera — or even a telescope rig for night shots.",
                             images: [
                                 {src: "img/hobbies/landscape-005.jpg", alt: "A landscape photo I took"},
                                 {src: "img/hobbies/st-pauls-cathedral-london.png", alt: "St Paul's Cathedral, London"}
                             ],
-                            tags: ["Landscapes", "Architecture", "Street"]
+                            tags: ["Pixel 10 Pro", "Snapseed", "DJI Drone", "Nature", "Landscapes", "Night & Astro"]
                         },
                         {
                             icon: "🎮", title: "Fun & Games",
-                            body: "My triple-monitor setup is my happy place, but I've got a soft spot for the classics too — original NES carts and a Game Boy still in rotation. Off-screen it's board game nights, D&D campaigns and the odd frame of pool.",
+                            body: "My home-office battle station is ready to work hard and play hard, no matter the day — and I've still got a soft spot for the classics, with original NES carts and a Game Boy in rotation. Off-screen it's board game nights and D&D campaigns.",
                             images: [
                                 {src: "img/hobbies/alec-gaming-setup-triple-monitors.png", alt: "My triple-monitor gaming desk"},
                                 {src: "img/hobbies/nes-cartridge-retro-games.png", alt: "Retro NES cartridges"},
                                 {src: "img/hobbies/board-game-collection-in-bag.png", alt: "My board game collection"},
                                 {src: "img/hobbies/d20-dice-dnd.png", alt: "D&D dice"}
                             ],
-                            tags: ["Video Games", "Retro / Vintage", "Board Games", "D&D", "Pool / Snooker"]
+                            tags: ["Video Games", "Board Games", "D&D"]
                         },
                         {
                             icon: "🍜", title: "Food",
-                            body: "Cooking and baking are how I switch off — fresh cookies out the oven, a proper brew from an embarrassingly large tea collection, and I'm always up for eating out and chasing the next great meal.",
+                            body: "I love experimenting in the kitchen to make something delicious from time to time — fresh cookies out the oven, a proper brew from an embarrassingly large tea collection — and I'm always on the adventure for my next best meal.",
                             images: [
                                 {src: "img/hobbies/homemade-chocolate-chip-cookies.png", alt: "Homemade chocolate chip cookies"},
                                 {src: "img/hobbies/t2-tea-collection.png", alt: "My tea collection"}
@@ -636,7 +636,7 @@ window.CONTENT = {
                         },
                         {
                             icon: "🏃", title: "Active",
-                            body: "Outdoorsy stuff that doesn't feel like a workout — long countryside walks (ideally with a dog), getting out on the bike, archery, and the showy one: spinning fire and LED poi after dark.",
+                            body: "Outdoorsy stuff that doesn't feel like a workout — long countryside walks (ideally with a dog), getting out on the bike, archery, and the showy one: spinning fire poi and an LED staff after dark.",
                             images: [
                                 {src: "img/hobbies/autumn-walk-with-dachshund-dog.png", alt: "An autumn countryside walk with a dachshund"},
                                 {src: "img/hobbies/mountain-bike-on-path.png", alt: "My mountain bike out on a path"},
@@ -644,7 +644,7 @@ window.CONTENT = {
                                 {src: "img/hobbies/alec-with-fire-spinning-staff.png", alt: "Me spinning a fire staff"},
                                 {src: "img/hobbies/alec-led-poi-spinning-light-trails.png", alt: "LED poi light trails at night"}
                             ],
-                            tags: ["Countryside walks", "Cycling", "Archery", "Fire Spinning"]
+                            tags: ["Countryside walks", "Cycling", "Archery", "Fire & LED Poi"]
                         },
                         {
                             icon: "📚", title: "Curious & Learning",
