@@ -549,67 +549,62 @@ window.CONTENT = {
 
         hobbies: {
             blocks: [
-                {type: "heading", text: "🍜 Food"},
                 {
-                    type: "tagRow", tags: [
-                        "Cooking",
-                        "Baking",
-                        "Eating out",
-                        "Tea"
-                    ]
-                },
-                {type: "heading", text: "🎨 Creative"},
-                {
-                    type: "tagRow", tags: [
-                        "DIY",
-                        "Lego",
-                        "Crochet / Knitting",
-                        "Photography",
-                        "Crafts",
-                        "Pottery",
-                        "Shibari"
-                    ]
-                },
-                {type: "heading", text: "📺 Media"},
-                {
-                    type: "tagRow", tags: [
-                        "Anime & Manga",
-                        "Marvel",
-                        "Fantasy & Sci-fi",
-                        "Comedy"
-                    ]
-                },
-                {
-                    type: "heading",
-                    text: "🎮 Fun & Games"
-                },
-                {
-                    type: "tagRow", tags: [
-                        "Video Games",
-                        "Pool / Snooker",
-                        "Board Games",
-                        "D&D"
-                    ]
-                },
-                {type: "heading", text: "📚 Educational"},
-                {
-                    type: "tagRow", tags: [
-                        "Technology & Science",
-                        "History",
-                        "Mythology",
-                        "Etymology",
-                        "Random facts",
-                        "Maps",
-                        "Stargazing"
-                    ]
-                },
-                {type: "heading", text: "🏃 Active"},
-                {
-                    type: "tagRow", tags: [
-                        "Countryside walks",
-                        "Archery",
-                        "Cycling",
-                        "Fire Spinning"
+                    type: "hobbyCards", cards: [
+                        {
+                            icon: "🍜", title: "Food", tags: [
+                                "Cooking",
+                                "Baking",
+                                "Eating out",
+                                "Tea"
+                            ]
+                        },
+                        {
+                            icon: "🎨", title: "Creative", tags: [
+                                "DIY",
+                                "Lego",
+                                "Crochet / Knitting",
+                                "Photography",
+                                "Crafts",
+                                "Pottery",
+                                "Shibari"
+                            ]
+                        },
+                        {
+                            icon: "📺", title: "Media", tags: [
+                                "Anime & Manga",
+                                "Marvel",
+                                "Fantasy & Sci-fi",
+                                "Comedy"
+                            ]
+                        },
+                        {
+                            icon: "🎮", title: "Fun & Games", tags: [
+                                "Video Games",
+                                "Pool / Snooker",
+                                "Board Games",
+                                "D&D"
+                            ]
+                        },
+                        {
+                            icon: "📚", title: "Educational", tags: [
+                                "Technology & Science",
+                                "History",
+                                "Mythology",
+                                "Etymology",
+                                "Random facts",
+                                "Maps",
+                                "Stargazing"
+                            ]
+                        },
+                        {
+                            icon: "🏃", title: "Active", tags: [
+                                "Countryside walks",
+                                "Archery",
+                                "Cycling",
+                                "Fire Spinning"
+                            ]
+                        }
                     ]
                 },
                 {

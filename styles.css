@@ -422,6 +422,13 @@ p { color: var(--muted); margin-bottom: 14px; }
 .tag-item.hate { border-color: var(--rose); color: var(--rose-light); }
 .tag-item.note { border-style: dashed; color: var(--muted-2); font-size: 0.78rem; }
 
+/* Hobby / interest category cards */
+.hobby-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.hobby-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+.hobby-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.hobby-card-icon { font-size: 1.5rem; line-height: 1; }
+.hobby-card-title { font-weight: 600; font-size: 0.95rem; color: var(--text); }
+
 /* Flag images (replace flag emoji, which Windows Chrome can't render) */
 .flag {
   display: inline-block; width: 1.25em; height: auto;

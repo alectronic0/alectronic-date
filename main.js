@@ -111,6 +111,23 @@
 
         tagRow: (b) => `<div class="tag-row">${b.tags.map(tagHtml).join('')}</div>`,
 
+        // Interest categories as cards — an icon + title header over a row of
+        // tag pills. Lets the Hobbies section read as cards while keeping every
+        // tag (the categories just become the card the tags live in).
+        hobbyCards: (b) =>
+            `<div class="hobby-cards">${b.cards
+                .map(
+                    (c) =>
+                        `<div class="hobby-card"><div class="hobby-card-head"><span class="hobby-card-icon">${esc(
+                            c.icon
+                        )}</span><span class="hobby-card-title">${esc(
+                            c.title
+                        )}</span></div><div class="tag-row">${(c.tags || [])
+                            .map(tagHtml)
+                            .join('')}</div></div>`
+                )
+                .join('')}</div>`,
+
         photoGrid: (b) =>
             `<div class="photo-grid">${b.images.map((i) => img(i.src, i.alt)).join('')}</div>`,
 
