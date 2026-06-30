@@ -24,7 +24,7 @@
             .replace(/"/g, '&quot;');
 
     // Derive readable alt text from a descriptive filename when none is given
-    // (e.g. "img/moments/alec at graduation.png" -> "alec at graduation").
+    // (e.g. "img/moments/alec-at-graduation.png" -> "Alec at graduation").
     // Numeric-only names (the faces marquee) fall back to a generic label.
     const altFromSrc = (src) => {
         const base = String(src == null ? '' : src)
@@ -32,7 +32,8 @@
             .replace(/\.[a-z0-9]+$/i, '')
             .replace(/[-_]+/g, ' ')
             .trim();
-        return (!base || /^\d+$/.test(base)) ? 'Alec Doran-Twyford' : base;
+        if (!base || /^\d+$/.test(base)) return 'Alec Doran-Twyford';
+        return base.charAt(0).toUpperCase() + base.slice(1);
     };
 
     const img = (src, alt, attrs = '') =>
