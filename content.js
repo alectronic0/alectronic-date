@@ -406,7 +406,7 @@ window.CONTENT = {
                             src: "img/looking-for/couple-enjoying-tea-on-the-couch.png",
                             alt: "A couple enjoying tea",
                             icon: "🫖",
-                            text: "Slow mornings, tea, and the kind of quiet where you can say anything — open, honest, easy."
+                            text: "Tea in hand and the kind of talk where you can say anything — open, honest, no walls."
                         },
                         {
                             src: "img/looking-for/couple-at-the-gym-working-out.png",
