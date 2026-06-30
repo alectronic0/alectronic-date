@@ -378,7 +378,7 @@ window.CONTENT = {
             blocks: [
                 {
                     type: "paragraph",
-                    text: "Two things matter most to me. First, someone who's just as up for an adventure as they are for a quiet day at home. Second, someone happy to share the stuff I love (gaming and nerd culture, mostly) and to pull me into their own quirky world too. Everything below is a bit of what I picture us doing together."
+                    html: "Two things matter most to me. <strong>First,</strong> someone who's just as up for an adventure as they are for a quiet day at home. <strong>Second,</strong> someone happy to share the stuff I love (gaming and nerd culture, mostly) and to pull me into their own quirky world too. Everything below is a bit of what I picture us getting up to together."
                 },
                 {
                     type: "featureGrid", features: [
@@ -386,37 +386,37 @@ window.CONTENT = {
                             src: "img/looking-for/couple-going-exploring-nature.png",
                             alt: "A couple exploring nature",
                             icon: "🌿",
-                            text: "Up for an adventure. Travelling, trying new cultures, hunting down good food, or just a long walk somewhere green."
+                            text: "New places, new food, and taking the long way round just to see what's there."
                         },
                         {
                             src: "img/looking-for/couple-watching-movie-togehter.png",
                             alt: "A couple watching a movie",
                             icon: "🍿",
-                            text: "Just as happy with a lazy day in. A good film, the sofa, and nowhere we need to be."
+                            text: "Or a slow one in. A film on, the sofa, and nowhere we need to be."
                         },
                         {
                             src: "img/looking-for/couple-playing-video-games.png",
                             alt: "A couple gaming",
                             icon: "🎮",
-                            text: "Sharing what we're into. Gaming and nerd culture for me, whatever you're into for you. A bit of co-op, a bit of friendly rivalry, no judgement either way."
+                            text: "Controllers out, both of us a little too competitive to call it a night."
                         },
                         {
                             src: "img/looking-for/couple-cooking.png",
                             alt: "A couple cooking",
                             icon: "🍳",
-                            text: "Cooking and baking together, with flour everywhere and music on. The sort of evening that's about nothing but each other."
+                            text: "Flour everywhere, music on, and dinner taking twice as long because we keep getting distracted."
                         },
                         {
                             src: "img/looking-for/couple-enjoying-tea-on-the-couch.png",
                             alt: "A couple enjoying tea",
                             icon: "🫖",
-                            text: "Easy, honest conversation. The kind where you can say anything and there are no walls up."
+                            text: "The easy kind of talk, where nothing's off limits and there are no walls up."
                         },
                         {
                             src: "img/looking-for/couple-at-the-gym-working-out.png",
                             alt: "A couple at the gym",
                             icon: "💪",
-                            text: "Cheering each other on to be our best selves, and sticking together through the harder bits too."
+                            text: "In each other's corner, on the good days and the harder ones too."
                         }
                     ]
                 }
