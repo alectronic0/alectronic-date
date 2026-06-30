@@ -85,6 +85,7 @@ window.CONTENT = {
         tag: "💬 How to Get in Touch",
         heading: "Shoot Your Shot",
         lead: "I prefer not to share my phone number upfront — but reach me through any of these and you'll get a hold of me.",
+        note: "⚔️ It's dangerous to go alone! Take this:",
         links: [
             {
                 label: "Email", icon: "gmail", href: "mailto:date.alec@alectronic.co.uk?subject=RE%3A%20Alec%20Dating%20Application", primary: true
@@ -108,8 +109,8 @@ window.CONTENT = {
        message prefilled where a service supports it. */
     share: {
         tag: "🍄 Not Your Vibe?",
-        heading: "My Princess Is in Another Castle?",
-        lead: "No hard feelings if I'm not your type — maybe I'm someone else's player 2. Send this their way:",
+        heading: "Not the Princess You're Looking For?",
+        lead: "Maybe she's in another castle 🏰 — no hard feelings if I'm not your type. Send this to someone who might be:",
         text: "Check out Alec's dating application 🎮❤️",
         options: [
             {label: "Email", icon: "gmail", type: "email"},

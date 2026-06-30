@@ -324,6 +324,40 @@ p { color: var(--muted); margin-bottom: 14px; }
 .share-reddit:hover   { border-color: #ff4500; }
 .share-email:hover    { border-color: var(--accent-light); }
 
+/* Zelda flavour line above the contact buttons */
+.contact-note {
+  margin: 0 auto 18px; max-width: 520px;
+  font-weight: 600; color: var(--gold); font-size: 0.95rem;
+}
+
+/* ─── Konami code easter egg ────────────────── */
+.konami-toast {
+  position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 24px);
+  z-index: 1000; pointer-events: none;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: linear-gradient(135deg, var(--accent), #5a2a8a);
+  color: #fff; text-align: center;
+  padding: 18px 28px; border-radius: 14px;
+  border: 1px solid var(--accent-light);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  opacity: 0; transition: opacity 0.35s, transform 0.35s;
+}
+.konami-toast.show { opacity: 1; transform: translate(-50%, 0); }
+.konami-toast strong { font-size: 1.1rem; }
+.konami-1up {
+  font-weight: 800; letter-spacing: 0.08em; font-size: 0.78rem;
+  color: #9bff9b; text-shadow: 0 0 8px rgba(120, 255, 120, 0.6);
+}
+.konami-sub { font-size: 0.82rem; color: #f3e3ff; }
+.konami-heart {
+  position: fixed; top: -40px; z-index: 1000; pointer-events: none;
+  font-size: 1.6rem; animation: konami-fall 2.4s linear forwards;
+}
+@keyframes konami-fall {
+  0%   { transform: translateY(0) rotate(0); opacity: 1; }
+  100% { transform: translateY(105vh) rotate(220deg); opacity: 0; }
+}
+
 /* ─── Warning divider ───────────────────────── */
 .warning-banner {
   background: linear-gradient(90deg, var(--surface), #3a1f2a, var(--surface));

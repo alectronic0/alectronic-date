@@ -436,6 +436,7 @@
             (data.tag ? `<div class="section-tag tag-purple">${esc(data.tag)}</div>` : '') +
             `<h2>${esc(data.heading)}${headingLink(anchor, data.heading)}</h2>` +
             `<p class="lead">${esc(data.lead)}</p>` +
+            (data.note ? `<p class="contact-note">${esc(data.note)}</p>` : '') +
             `<div class="contact-links">${links.map(linkHtml).join('')}</div>`;
         setHtml(sel, html);
     }
@@ -697,6 +698,52 @@
         });
     }
 
+    // Konami code easter egg: ↑ ↑ ↓ ↓ ← → ← → B A reveals a hidden 1-UP toast
+    // — "It's a secret to everybody." A nod to Zelda + every cheat-code childhood.
+    function initKonami() {
+        const seq = [
+            'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+            'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'
+        ];
+        let pos = 0;
+        document.addEventListener('keydown', (e) => {
+            const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+            pos = key === seq[pos] ? pos + 1 : (key === seq[0] ? 1 : 0);
+            if (pos === seq.length) {
+                pos = 0;
+                revealSecret();
+            }
+        });
+    }
+
+    // The 1-UP reveal — a celebratory toast + a shower of hearts. Self-removing,
+    // and guarded so spamming the code doesn't stack duplicates.
+    function revealSecret() {
+        if (document.querySelector('.konami-toast')) return;
+        const toast = document.createElement('div');
+        toast.className = 'konami-toast';
+        toast.innerHTML =
+            '<span class="konami-1up">1-UP!</span>' +
+            "<strong>It's a secret to everybody.</strong>" +
+            '<span class="konami-sub">🍄 +30 lives · you found the cheat code 🎮</span>';
+        document.body.appendChild(toast);
+
+        for (let i = 0; i < 14; i++) {
+            const h = document.createElement('div');
+            h.className = 'konami-heart';
+            h.textContent = ['❤️', '🍄', '⭐', '🎮'][i % 4];
+            h.style.left = Math.random() * 100 + 'vw';
+            h.style.animationDelay = Math.random() * 0.6 + 's';
+            document.body.appendChild(h);
+            setTimeout(() => h.remove(), 2600);
+        }
+        requestAnimationFrame(() => toast.classList.add('show'));
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 400);
+        }, 4200);
+    }
+
     function initLightbox() {
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
@@ -776,6 +823,7 @@
         initDeepLinks();
         initShare();
         initLightbox();
+        initKonami();
 
         openFromHash();
         window.addEventListener('hashchange', openFromHash);
