@@ -359,7 +359,11 @@ p { color: var(--muted); margin-bottom: 14px; }
 }
 .prompt-shuffle i, .prompt-answer i { font-size: 1.05em; }
 .prompt-shuffle:hover { background: var(--surface-3); border-color: var(--gold); color: #fff; transform: translateY(-2px); }
-.prompt-answer:hover { background: var(--surface-3); border-color: var(--accent-light); color: #fff; transform: translateY(-2px); }
+.prompt-answer {
+  background: var(--accent); border-color: var(--accent); color: #fff;
+  box-shadow: 0 6px 18px rgba(153, 78, 168, 0.4);
+}
+.prompt-answer:hover { background: #ab5cba; border-color: #ab5cba; color: #fff; transform: translateY(-2px); }
 
 /* ─── Warning divider ───────────────────────── */
 .warning-banner {

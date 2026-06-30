@@ -455,15 +455,18 @@
                 l.href
             )}>${linkIcon(l, 'contact-favicon')} ${esc(l.label)}</a>`;
 
-        const links = data.links && data.links.length ? data.links : (C.contact ? C.contact.links : []);
-        const host = document.querySelector(sel);
-        const anchor = host ? (host.closest('[id]') || {}).id || '' : '';
         // The contact card carries the ice-breaker prompts between its lead and
         // links; renderPrompts() fills this mount afterwards.
-        const promptsMount =
-            sel === '[data-connect="contact"]' && C.prompts
-                ? '<div class="prompt-block" data-prompts="root"></div>'
-                : '';
+        const withPrompts = sel === '[data-connect="contact"]' && C.prompts;
+        const promptsMount = withPrompts ? '<div class="prompt-block" data-prompts="root"></div>' : '';
+
+        let links = data.links && data.links.length ? data.links : (C.contact ? C.contact.links : []);
+        // The prompts' "Email me your answers" button is the email path on this
+        // card, so drop the duplicate Email button here (kept in #outro/footer).
+        if (withPrompts) links = links.filter((l) => !/^mailto:/i.test(l.href || ''));
+
+        const host = document.querySelector(sel);
+        const anchor = host ? (host.closest('[id]') || {}).id || '' : '';
         const html =
             (data.tag ? `<div class="section-tag tag-purple">${esc(data.tag)}</div>` : '') +
             `<h2>${esc(data.heading)}${headingLink(anchor, data.heading)}</h2>` +
@@ -613,8 +616,8 @@
             `<div class="prompt-actions">` +
             `<button type="button" class="prompt-shuffle"><i class="fa-solid fa-shuffle" aria-hidden="true"></i>` +
             `<span>${esc(p.shuffleLabel || 'Shuffle')}</span></button>` +
-            `<a class="prompt-answer" href="#"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>` +
-            `<span>${esc(p.answerLabel || 'Send me your answers')}</span></a>` +
+            `<a class="prompt-answer" href="#"><i class="fa-solid fa-envelope" aria-hidden="true"></i>` +
+            `<span>${esc(p.answerLabel || 'Email me your answers')}</span></a>` +
             `</div>`;
         setHtml('[data-prompts="root"]', html);
         drawPrompts();

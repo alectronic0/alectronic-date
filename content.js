@@ -134,7 +134,7 @@ window.CONTENT = {
         intro: "Not sure how to break the ice? Here are a few things I'd love you to answer — pick the ones that spark something and bring them my way. 🃏",
         count: 3,
         shuffleLabel: "Shuffle the deck",
-        answerLabel: "Send me your answers",
+        answerLabel: "Email me your answers",
         email: "date.alec@alectronic.co.uk",
         emailSubject: "My answers to Alec's questions 🎮❤️",
         emailIntro: "Hi Alec! Here are my answers to a few of your questions:",
