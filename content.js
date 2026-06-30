@@ -377,71 +377,42 @@ window.CONTENT = {
             lead: "I have a full, happy life — I'm just hoping to share it. Here's the kind of \"us\" I'm dreaming about.",
             blocks: [
                 {
-                    type: "valueCols", columns: [
-                        {
-                            title: "Enjoys Going on Adventures",
-                            items: [
-                                "Travelling & Exploring new cultures",
-                                "Hunting down amazing food places",
-                                "Trying out new activities & experiences",
-                                "Going for walks in nature",
-                            ]
-                        },
-                        {
-                            title: "Enjoys Cosy days at home",
-                            items: [
-                                "Cooking/baking",
-                                "Playing Video games",
-                                "Watching TV/Movies",
-                                "Dancing in the kitchen",
-                                "Doing fun activities at home",
-                            ]
-                        },
-                        {
-                            title: "Values",
-                            items: [
-                                "Clear and open communication",
-                                "Pushing each other to be our best selves",
-                                "Willingness to work through the hard times",
-                                "Quality time and mutual affection",
-                            ]
-                        },
-                        {
-                            title: "One last thing...", items: [
-                                "Someone open to my interests...",
-                                "and excited to share theirs"
-                            ]
-                        },
-                    ]
-                },
-                {
                     type: "featureGrid", features: [
-                        {
-                            src: "img/looking-for/couple-cooking.png", alt: "A couple cooking", icon: "🍳", text: "Cooking and baking together on a cosy evening."
-                        },
-                        {
-                            src: "img/looking-for/couple-playing-video-games.png", alt: "A couple gaming", icon: "🎮", text: "Co-op games and friendly rivalry on the sofa."
-                        },
                         {
                             src: "img/looking-for/couple-going-exploring-nature.png",
                             alt: "A couple exploring nature",
                             icon: "🌿",
-                            text: "Adventures, travel and finding amazing food places."
+                            text: "Equal parts up for adventure — travel, new cultures, hunting down amazing food — and happy to just wander somewhere green."
                         },
                         {
                             src: "img/looking-for/couple-watching-movie-togehter.png",
                             alt: "A couple watching a movie",
                             icon: "🍿",
-                            text: "Lazy days at home with a film and good company."
+                            text: "…and just as happy with a lazy day in: a film, the sofa, nowhere we need to be."
+                        },
+                        {
+                            src: "img/looking-for/couple-playing-video-games.png",
+                            alt: "A couple gaming",
+                            icon: "🎮",
+                            text: "Pulling each other into our worlds — gaming and nerd culture for me, whatever quirky thing lights you up for you. Co-op, friendly rivalry, no judgement."
+                        },
+                        {
+                            src: "img/looking-for/couple-cooking.png",
+                            alt: "A couple cooking",
+                            icon: "🍳",
+                            text: "Cooking and baking together — flour everywhere, music on, an evening that's about nothing but each other."
                         },
                         {
                             src: "img/looking-for/couple-enjoying-tea-on-the-couch.png",
                             alt: "A couple enjoying tea",
                             icon: "🫖",
-                            text: "Slow mornings, tea, and easy quiet time together."
+                            text: "Slow mornings, tea, and the kind of quiet where you can say anything — open, honest, easy."
                         },
                         {
-                            src: "img/looking-for/couple-at-the-gym-working-out.png", alt: "A couple at the gym", icon: "💪", text: "Cheering each other on to be our best selves."
+                            src: "img/looking-for/couple-at-the-gym-working-out.png",
+                            alt: "A couple at the gym",
+                            icon: "💪",
+                            text: "Cheering each other on to be our best selves — and choosing each other through the hard bits too."
                         }
                     ]
                 }
