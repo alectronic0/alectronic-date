@@ -114,13 +114,13 @@ window.CONTENT = {
         text: "Check out Alec's dating application 🎮❤️",
         options: [
             {label: "Email", icon: "gmail", type: "email"},
-            {label: "WhatsApp", icon: "fa-brands fa-whatsapp", type: "whatsapp"},
-            {label: "X", icon: "fa-brands fa-x-twitter", type: "twitter"},
-            {label: "Facebook", icon: "fa-brands fa-facebook-f", type: "facebook"},
-            {label: "LinkedIn", icon: "fa-brands fa-linkedin-in", type: "linkedin"},
-            {label: "Telegram", icon: "fa-brands fa-telegram", type: "telegram"},
-            {label: "Reddit", icon: "fa-brands fa-reddit-alien", type: "reddit"},
-            {label: "Copy link", icon: "fa-solid fa-link", type: "copy"}
+            {label: "WhatsApp", icon: "whatsapp", type: "whatsapp"},
+            {label: "X", icon: "x", type: "twitter"},
+            {label: "Facebook", icon: "facebook", type: "facebook"},
+            {label: "LinkedIn", icon: "linkedin", type: "linkedin"},
+            {label: "Telegram", icon: "telegram", type: "telegram"},
+            {label: "Reddit", icon: "reddit", type: "reddit"},
+            {label: "Copy link", icon: "link", type: "copy"}
         ]
     },
 
