@@ -31,7 +31,7 @@ window.CONTENT = {
         emoji: "🎮❤️🎮",
         headline: "Alec's <span>Dating</span> Application",
         subheading: "A visual introduction to what having me as your boyfriend could look like.",
-        tagline: "Loveable nerd, looking for his player 2. No swiping required.",
+        tagline: "Loveable nerd, looking for his player 2. No swiping required — just a scroll.",
         cta: "Come find out more ↓",
         images: [
             {src: "img/alec/2.jpg", alt: "Alec Doran-Twyford"},
