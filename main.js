@@ -23,8 +23,20 @@
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;');
 
+    // Derive readable alt text from a descriptive filename when none is given
+    // (e.g. "img/moments/alec at graduation.png" -> "alec at graduation").
+    // Numeric-only names (the faces marquee) fall back to a generic label.
+    const altFromSrc = (src) => {
+        const base = String(src == null ? '' : src)
+            .split('/').pop()
+            .replace(/\.[a-z0-9]+$/i, '')
+            .replace(/[-_]+/g, ' ')
+            .trim();
+        return (!base || /^\d+$/.test(base)) ? 'Alec Doran-Twyford' : base;
+    };
+
     const img = (src, alt, attrs = '') =>
-        `<img src="${esc(src)}" alt="${esc(alt || '')}" loading="lazy" ${attrs}>`;
+        `<img src="${esc(src)}" alt="${esc(alt || altFromSrc(src))}" loading="lazy" ${attrs}>`;
 
     // The official multicolour Gmail logo as inline SVG. FontAwesome's free set
     // only ships a generic envelope, so we use the real brand mark for Email
@@ -106,6 +118,15 @@
     // leading flag emoji (two regional-indicator chars) for a real flag image
     // from flagcdn.com. Any other text (including non-flag emoji like 🎄) is
     // returned esc()'d and unchanged, so this is safe to run on every label.
+    // Two-letter region code -> English country name (e.g. "au" -> "Australia"),
+    // used for flag alt text. Falls back to the upper-cased code if unsupported.
+    let regionNames;
+    try { regionNames = new Intl.DisplayNames(['en'], { type: 'region' }); } catch (e) { /* noop */ }
+    const countryName = (cc) => {
+        try { return (regionNames && regionNames.of(cc.toUpperCase())) || cc.toUpperCase(); }
+        catch (e) { return cc.toUpperCase(); }
+    };
+
     const flagify = (text) => {
         const s = String(text == null ? '' : text);
         const m = s.match(/^([\u{1F1E6}-\u{1F1FF}]{2})\s*/u);
@@ -117,7 +138,8 @@
         const rest = esc(s.slice(m[0].length));
         return (
             `<img class="flag" src="https://flagcdn.com/24x18/${cc}.png" ` +
-            `srcset="https://flagcdn.com/48x36/${cc}.png 2x" width="24" height="18" alt="" loading="lazy">` +
+            `srcset="https://flagcdn.com/48x36/${cc}.png 2x" width="24" height="18" ` +
+            `alt="${esc(countryName(cc))} flag" loading="lazy">` +
             (rest ? ' ' + rest : '')
         );
     };
@@ -142,7 +164,7 @@
         link: (b) =>
             `<a class="link-chip" href="${esc(b.href)}" target="_blank" rel="noopener"><img class="link-chip-favicon" src="${esc(
                 b.icon || faviconFor(b.href)
-            )}" alt="" loading="lazy">${esc(b.label)} →</a>`,
+            )}" alt="${esc(b.label)} logo" loading="lazy">${esc(b.label)} →</a>`,
 
         tagRow: (b) => `<div class="tag-row">${b.tags.map(tagHtml).join('')}</div>`,
 
@@ -460,7 +482,7 @@
         if (l.icon === 'gmail') return gmailLogo(cls);
         const fav = l.favicon || faviconFor(l.href);
         return fav
-            ? `<img class="${cls}" src="${esc(fav)}" alt="" loading="lazy">`
+            ? `<img class="${cls}" src="${esc(fav)}" alt="${esc(l.label || '')} logo" loading="lazy">`
             : `<span class="contact-emoji">${esc(l.icon || '')}</span>`;
     };
 
