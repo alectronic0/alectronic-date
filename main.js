@@ -23,8 +23,21 @@
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;');
 
+    // Derive readable alt text from a descriptive filename when none is given
+    // (e.g. "img/moments/alec-at-graduation.png" -> "Alec at graduation").
+    // Numeric-only names (the faces marquee) fall back to a generic label.
+    const altFromSrc = (src) => {
+        const base = String(src == null ? '' : src)
+            .split('/').pop()
+            .replace(/\.[a-z0-9]+$/i, '')
+            .replace(/[-_]+/g, ' ')
+            .trim();
+        if (!base || /^\d+$/.test(base)) return 'Alec Doran-Twyford';
+        return base.charAt(0).toUpperCase() + base.slice(1);
+    };
+
     const img = (src, alt, attrs = '') =>
-        `<img src="${esc(src)}" alt="${esc(alt || '')}" loading="lazy" ${attrs}>`;
+        `<img src="${esc(src)}" alt="${esc(alt || altFromSrc(src))}" loading="lazy" ${attrs}>`;
 
     // The official multicolour Gmail logo as inline SVG. FontAwesome's free set
     // only ships a generic envelope, so we use the real brand mark for Email
@@ -37,6 +50,29 @@
         '<path fill="#ea4335" d="M72 74V48l24 18 24-18v26L96 92"/>' +
         '<path fill="#c5221f" d="M52 55.5V59l20 15V48l-2-1.5c-7.42-5.55-18-.27-18 9"/>' +
         '</svg>';
+
+    // Official brand logos for the share buttons — single-path marks (Simple
+    // Icons) in their real brand colours, inline so they're crisp, need no
+    // extra request, and never fall back to a generic FontAwesome glyph. `x`
+    // and `link` use light/currentColor so they read on the dark buttons.
+    const BRAND_ICONS = {
+        whatsapp: ['#25D366', 'M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.582 0 11.94-5.359 11.944-11.893a11.821 11.821 0 00-3.487-8.413z'],
+        facebook: ['#1877F2', 'M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z'],
+        linkedin: ['#0A66C2', 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'],
+        telegram: ['#26A5E4', 'M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z'],
+        reddit: ['#FF4500', 'M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 1.066.638 1.986 1.552 2.402-.04.26-.064.522-.064.787 0 3.999 4.659 7.249 10.385 7.249s10.386-3.25 10.386-7.249c0-.256-.022-.509-.06-.758.943-.403 1.602-1.34 1.602-2.43zM7.276 14.515c0-.911.71-1.652 1.583-1.652.873 0 1.583.741 1.583 1.652s-.71 1.651-1.583 1.651-1.583-.74-1.583-1.651zm9.434 3.65c-1.118 1.118-3.255 1.205-3.881 1.205-.625 0-2.762-.087-3.879-1.205a.424.424 0 0 1 0-.601.422.422 0 0 1 .599 0c.704.705 2.207.95 3.28.95 1.075 0 2.578-.245 3.282-.95a.42.42 0 0 1 .599 0 .425.425 0 0 1 0 .601zm-.327-1.998c-.873 0-1.583-.741-1.583-1.652s.71-1.652 1.583-1.652.583.741 1.583 1.652-.71 1.652-1.583 1.652z'],
+        link: ['currentColor', 'M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z'],
+        share: ['currentColor', 'M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z'],
+    };
+
+    // Render a share-button glyph: the Gmail logo, a brand logo, or nothing.
+    const shareIcon = (key, cls) => {
+        if (key === 'gmail') return gmailLogo(cls);
+        const b = BRAND_ICONS[key];
+        return b
+            ? `<svg class="${cls}" viewBox="0 0 24 24" fill="${b[0]}" aria-hidden="true" focusable="false"><path d="${b[1]}"/></svg>`
+            : '';
+    };
 
     // Resolve a favicon for a URL's domain. Uses Google's favicon service so
     // every external service gets a crisp icon without hardcoding each one.
@@ -83,6 +119,15 @@
     // leading flag emoji (two regional-indicator chars) for a real flag image
     // from flagcdn.com. Any other text (including non-flag emoji like 🎄) is
     // returned esc()'d and unchanged, so this is safe to run on every label.
+    // Two-letter region code -> English country name (e.g. "au" -> "Australia"),
+    // used for flag alt text. Falls back to the upper-cased code if unsupported.
+    let regionNames;
+    try { regionNames = new Intl.DisplayNames(['en'], { type: 'region' }); } catch (e) { /* noop */ }
+    const countryName = (cc) => {
+        try { return (regionNames && regionNames.of(cc.toUpperCase())) || cc.toUpperCase(); }
+        catch (e) { return cc.toUpperCase(); }
+    };
+
     const flagify = (text) => {
         const s = String(text == null ? '' : text);
         const m = s.match(/^([\u{1F1E6}-\u{1F1FF}]{2})\s*/u);
@@ -94,7 +139,8 @@
         const rest = esc(s.slice(m[0].length));
         return (
             `<img class="flag" src="https://flagcdn.com/24x18/${cc}.png" ` +
-            `srcset="https://flagcdn.com/48x36/${cc}.png 2x" width="24" height="18" alt="" loading="lazy">` +
+            `srcset="https://flagcdn.com/48x36/${cc}.png 2x" width="24" height="18" ` +
+            `alt="${esc(countryName(cc))} flag" loading="lazy">` +
             (rest ? ' ' + rest : '')
         );
     };
@@ -119,7 +165,7 @@
         link: (b) =>
             `<a class="link-chip" href="${esc(b.href)}" target="_blank" rel="noopener"><img class="link-chip-favicon" src="${esc(
                 b.icon || faviconFor(b.href)
-            )}" alt="" loading="lazy">${esc(b.label)} →</a>`,
+            )}" alt="${esc(b.label)} logo" loading="lazy">${esc(b.label)} →</a>`,
 
         tagRow: (b) => `<div class="tag-row">${b.tags.map(tagHtml).join('')}</div>`,
 
@@ -437,7 +483,7 @@
         if (l.icon === 'gmail') return gmailLogo(cls);
         const fav = l.favicon || faviconFor(l.href);
         return fav
-            ? `<img class="${cls}" src="${esc(fav)}" alt="" loading="lazy">`
+            ? `<img class="${cls}" src="${esc(fav)}" alt="${esc(l.label || '')} logo" loading="lazy">`
             : `<span class="contact-emoji">${esc(l.icon || '')}</span>`;
     };
 
@@ -471,6 +517,7 @@
             (data.tag ? `<div class="section-tag tag-purple">${esc(data.tag)}</div>` : '') +
             `<h2>${esc(data.heading)}${headingLink(anchor, data.heading)}</h2>` +
             `<p class="lead">${esc(data.lead)}</p>` +
+            (data.note ? `<p class="contact-note">${esc(data.note)}</p>` : '') +
             promptsMount +
             `<div class="contact-links">${links.map(linkHtml).join('')}</div>`;
         setHtml(sel, html);
@@ -504,8 +551,6 @@
                 return `mailto:?subject=${t}&body=${tu}`;
             case 'whatsapp':
                 return `https://wa.me/?text=${tu}`;
-            case 'twitter':
-                return `https://twitter.com/intent/tweet?text=${t}&url=${u}`;
             case 'facebook':
                 return `https://www.facebook.com/sharer/sharer.php?u=${u}`;
             case 'linkedin':
@@ -527,10 +572,7 @@
         const url = shareUrl();
         const text = s.text || '';
 
-        const icon = (o) =>
-            o.icon === 'gmail'
-                ? gmailLogo('share-logo')
-                : `<i class="${esc(o.icon || '')}" aria-hidden="true"></i>`;
+        const icon = (o) => shareIcon(o.icon, 'share-logo');
         const optionHtml = (o) => {
             if (o.type === 'copy') {
                 return `<button type="button" class="share-btn share-${esc(o.type)}" data-copy="${esc(
@@ -547,7 +589,10 @@
         // A prominent "Share…" button using the device's native share sheet —
         // only shown when the browser supports it (mostly mobile). initShare wires it.
         const nativeBtn = navigator.share
-            ? `<button type="button" class="share-btn share-native primary"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i><span>Share…</span></button>`
+            ? `<button type="button" class="share-btn share-native primary">${shareIcon(
+                'share',
+                'share-logo'
+            )}<span>Share…</span></button>`
             : '';
 
         const html =
@@ -805,6 +850,52 @@
         });
     }
 
+    // Konami code easter egg: ↑ ↑ ↓ ↓ ← → ← → B A reveals a hidden 1-UP toast
+    // — "It's a secret to everybody." A nod to Zelda + every cheat-code childhood.
+    function initKonami() {
+        const seq = [
+            'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+            'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'
+        ];
+        let pos = 0;
+        document.addEventListener('keydown', (e) => {
+            const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+            pos = key === seq[pos] ? pos + 1 : (key === seq[0] ? 1 : 0);
+            if (pos === seq.length) {
+                pos = 0;
+                revealSecret();
+            }
+        });
+    }
+
+    // The 1-UP reveal — a celebratory toast + a shower of hearts. Self-removing,
+    // and guarded so spamming the code doesn't stack duplicates.
+    function revealSecret() {
+        if (document.querySelector('.konami-toast')) return;
+        const toast = document.createElement('div');
+        toast.className = 'konami-toast';
+        toast.innerHTML =
+            '<span class="konami-1up">1-UP!</span>' +
+            "<strong>It's a secret to everybody.</strong>" +
+            '<span class="konami-sub">🍄 +30 lives · you found the cheat code 🎮</span>';
+        document.body.appendChild(toast);
+
+        for (let i = 0; i < 14; i++) {
+            const h = document.createElement('div');
+            h.className = 'konami-heart';
+            h.textContent = ['❤️', '🍄', '⭐', '🎮'][i % 4];
+            h.style.left = Math.random() * 100 + 'vw';
+            h.style.animationDelay = Math.random() * 0.6 + 's';
+            document.body.appendChild(h);
+            setTimeout(() => h.remove(), 2600);
+        }
+        requestAnimationFrame(() => toast.classList.add('show'));
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 400);
+        }, 4200);
+    }
+
     function initLightbox() {
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
@@ -886,6 +977,7 @@
         initShare();
         initPrompts();
         initLightbox();
+        initKonami();
 
         openFromHash();
         window.addEventListener('hashchange', openFromHash);
