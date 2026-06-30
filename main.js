@@ -123,6 +123,32 @@
 
         tagRow: (b) => `<div class="tag-row">${b.tags.map(tagHtml).join('')}</div>`,
 
+        // Interest "story" cards — an icon + title, a short "why I like it"
+        // paragraph, an optional strip of personal photos, and tag pills. Every
+        // field but icon/title is optional, so a card can be photo-rich or just
+        // text + tags.
+        interestCards: (b) =>
+            `<div class="interest-cards">${b.cards
+                .map(
+                    (c) =>
+                        `<div class="interest-card"><div class="interest-card-head"><span class="interest-card-icon">${esc(
+                            c.icon
+                        )}</span><span class="interest-card-title">${esc(c.title)}</span></div>${
+                            c.body ? `<p class="interest-card-body">${esc(c.body)}</p>` : ''
+                        }${
+                            c.images && c.images.length
+                                ? `<div class="interest-card-photos">${c.images
+                                      .map((i) => img(i.src, i.alt))
+                                      .join('')}</div>`
+                                : ''
+                        }${
+                            c.tags && c.tags.length
+                                ? `<div class="tag-row">${c.tags.map(tagHtml).join('')}</div>`
+                                : ''
+                        }</div>`
+                )
+                .join('')}</div>`,
+
         photoGrid: (b) =>
             `<div class="photo-grid">${b.images.map((i) => img(i.src, i.alt)).join('')}</div>`,
 
@@ -712,7 +738,7 @@
         });
 
         const selectors =
-            '[data-zoom], .mosaic-strip img, .poster-grid img, .photo-grid img, .feature img, .date-card img, .place-card img, .logo-tile img';
+            '[data-zoom], .mosaic-strip img, .poster-grid img, .photo-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img';
 
         // Delegated so it covers images injected after load.
         document.addEventListener('click', (e) => {
