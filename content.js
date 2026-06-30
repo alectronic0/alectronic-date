@@ -107,8 +107,8 @@ window.CONTENT = {
        current page; `copy` and `native` are handled specially. `text` is the
        message prefilled where a service supports it. */
     share: {
-        tag: "🔁 Not Your Vibe?",
-        heading: "Share Me With a Friend",
+        tag: "🍄 Not Your Vibe?",
+        heading: "My Princess Is in Another Castle?",
         lead: "No hard feelings if I'm not your type — maybe I'm someone else's player 2. Send this their way:",
         text: "Check out Alec's dating application 🎮❤️",
         options: [
