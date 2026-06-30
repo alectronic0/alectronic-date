@@ -499,7 +499,7 @@ p { color: var(--muted); margin-bottom: 14px; }
 .tag-item.note { border-style: dashed; color: var(--muted-2); font-size: 0.78rem; }
 
 /* Hobby / interest "story" cards — icon + title, a why paragraph, photos, tags */
-.interest-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.interest-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; align-items: start; }
 .interest-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
 .interest-card-head { display: flex; align-items: center; gap: 10px; }
 .interest-card-icon { font-size: 1.5rem; line-height: 1; }
@@ -508,6 +508,12 @@ p { color: var(--muted); margin-bottom: 14px; }
 .interest-card-photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; }
 .interest-card-photos img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); cursor: zoom-in; transition: transform 0.15s; }
 .interest-card-photos img:hover { transform: scale(1.03); }
+/* Photoless card: tidy icon + one-line list instead of a wall of pills */
+.interest-card-list { display: flex; flex-direction: column; gap: 9px; }
+.interest-card-list-item { display: flex; align-items: flex-start; gap: 11px; }
+.interest-card-list-item .ic-icon { font-size: 1.15rem; line-height: 1.35; flex-shrink: 0; }
+.interest-card-list-item .ic-text { font-size: 0.86rem; color: var(--muted); line-height: 1.4; }
+.interest-card-list-item .ic-text strong { color: var(--text); font-weight: 600; }
 @media (max-width: 560px) { .interest-cards { grid-template-columns: 1fr; } }
 
 /* Flag images (replace flag emoji, which Windows Chrome can't render) */

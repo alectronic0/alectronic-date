@@ -648,13 +648,16 @@ window.CONTENT = {
                         },
                         {
                             icon: "📚", title: "Curious & Learning",
-                            body: "I love learning something new for no reason at all — history, mythology, where words come from, maps, and a clear night for stargazing. I will absolutely derail a conversation to share a random fact.",
-                            tags: ["Technology & Science", "History", "Mythology", "Etymology", "Random facts", "Maps", "Stargazing"]
-                        },
-                        {
-                            icon: "📺", title: "Watching",
-                            body: "Wind-down mode: anime and manga, the whole Marvel run, anything fantasy or sci-fi, and comedy to round it off.",
-                            tags: ["Anime & Manga", "Marvel", "Fantasy & Sci-fi", "Comedy"]
+                            body: "I love learning something new for no reason at all, and I'll happily derail a conversation to share whatever rabbit hole I've fallen down lately.",
+                            details: [
+                                {icon: "🔬", label: "Technology & Science", note: "how things actually work under the hood"},
+                                {icon: "🏛️", label: "History", note: "ancient civilisations and odd turning points"},
+                                {icon: "🐉", label: "Mythology", note: "the gods, monsters and stories behind it all"},
+                                {icon: "🔤", label: "Etymology", note: "where words secretly come from"},
+                                {icon: "🗺️", label: "Maps & Geography", note: "borders, places and the why behind them"},
+                                {icon: "🌌", label: "Stargazing", note: "a clear night and something to point at"},
+                                {icon: "🤯", label: "Random facts", note: "the kind nobody asked for"}
+                            ]
                         }
                     ]
                 }

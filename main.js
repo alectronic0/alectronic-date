@@ -188,6 +188,19 @@
                                       .join('')}</div>`
                                 : ''
                         }${
+                            c.details && c.details.length
+                                ? `<div class="interest-card-list">${c.details
+                                      .map(
+                                          (d) =>
+                                              `<div class="interest-card-list-item"><span class="ic-icon">${esc(
+                                                  d.icon
+                                              )}</span><span class="ic-text"><strong>${esc(
+                                                  d.label
+                                              )}</strong>${d.note ? ` — ${esc(d.note)}` : ''}</span></div>`
+                                      )
+                                      .join('')}</div>`
+                                : ''
+                        }${
                             c.tags && c.tags.length
                                 ? `<div class="tag-row">${c.tags.map(tagHtml).join('')}</div>`
                                 : ''
