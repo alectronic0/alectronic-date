@@ -123,6 +123,45 @@ window.CONTENT = {
         ]
     },
 
+    /* ── Prompt cards (ice-breaker questions) ──
+       A deck of questions Alec loves to ask. main.js (renderPrompts) draws
+       `count` of them at random on each page load and re-rolls when the
+       shuffle button is tapped. The "answer" button builds a mailto to
+       `email` with the questions currently on screen pre-filled in the body,
+       so a match can reply straight away. Add to `questions` to grow the deck —
+       no code changes needed. */
+    prompts: {
+        intro: "Not sure how to break the ice? Here are a few things I'd love you to answer — pick the ones that spark something and bring them my way. 🃏",
+        count: 3,
+        shuffleLabel: "Shuffle the deck",
+        answerLabel: "Email me your answers",
+        email: "date.alec@alectronic.co.uk",
+        emailSubject: "My answers to Alec's questions 🎮❤️",
+        emailIntro: "Hi Alec! Here are my answers to a few of your questions:",
+        questions: [
+            "What are your top three favourite countries — and what made them special?",
+            "If you had to pick a favourite god or goddess, who would it be and why?",
+            "What's your favourite food or cuisine?",
+            "Favourite TV show or video game right now?",
+            "What did you want to be when you grew up?",
+            "What do you do for work — and do you genuinely enjoy it?",
+            "Where's the next place you'd love to travel to?",
+            "What's a hobby or interest you could talk about for hours?",
+            "Tea or coffee — and how do you take it?",
+            "What's the best meal you've ever had?",
+            "Cats, dogs, or something more exotic?",
+            "What does your perfect lazy Sunday look like?",
+            "What's a song or artist you always come back to?",
+            "Are you more of a night owl or an early bird?",
+            "What's something you're quietly proud of?",
+            "What's still left on your bucket list?",
+            "Beach holiday or city adventure?",
+            "What's a film or book that genuinely changed how you see things?",
+            "If money were no object, how would you spend your days?",
+            "What's your go-to comfort food after a rough day?"
+        ]
+    },
+
     /* ── Faces marquee ── */
     faces: {
         tag: "📸 A Few Faces of Alec",

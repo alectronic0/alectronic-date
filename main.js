@@ -501,7 +501,16 @@
                 l.href
             )}>${linkIcon(l, 'contact-favicon')} ${esc(l.label)}</a>`;
 
-        const links = data.links && data.links.length ? data.links : (C.contact ? C.contact.links : []);
+        // The contact card carries the ice-breaker prompts between its lead and
+        // links; renderPrompts() fills this mount afterwards.
+        const withPrompts = sel === '[data-connect="contact"]' && C.prompts;
+        const promptsMount = withPrompts ? '<div class="prompt-block" data-prompts="root"></div>' : '';
+
+        let links = data.links && data.links.length ? data.links : (C.contact ? C.contact.links : []);
+        // The prompts' "Email me your answers" button is the email path on this
+        // card, so drop the duplicate Email button here (kept in #outro/footer).
+        if (withPrompts) links = links.filter((l) => !/^mailto:/i.test(l.href || ''));
+
         const host = document.querySelector(sel);
         const anchor = host ? (host.closest('[id]') || {}).id || '' : '';
         const html =
@@ -509,6 +518,7 @@
             `<h2>${esc(data.heading)}${headingLink(anchor, data.heading)}</h2>` +
             `<p class="lead">${esc(data.lead)}</p>` +
             (data.note ? `<p class="contact-note">${esc(data.note)}</p>` : '') +
+            promptsMount +
             `<div class="contact-links">${links.map(linkHtml).join('')}</div>`;
         setHtml(sel, html);
     }
@@ -591,6 +601,78 @@
             `<p class="lead">${esc(s.lead)}</p>` +
             `<div class="share-links">${nativeBtn}${s.options.map(optionHtml).join('')}</div>`;
         setHtml('[data-share="share"]', html);
+    }
+
+    /* ── Prompt cards (ice-breaker questions) ──
+       Draw a few of Alec's go-to questions at random from CONTENT.prompts and
+       offer to mail the answers back. Re-rolled by the 🎲 shuffle button. */
+
+    // Fisher–Yates shuffle, then take the first `n` — `n` distinct random items.
+    const sample = (arr, n) => {
+        const pool = arr.slice();
+        for (let i = pool.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        return pool.slice(0, Math.max(0, Math.min(n, pool.length)));
+    };
+
+    // The email to reach Alec — explicit in content, else taken from the first
+    // mailto: in the contact links so it stays a single source of truth.
+    const promptEmail = (p) => {
+        if (p.email) return p.email;
+        const links = (C.contact && C.contact.links) || [];
+        const m = links.find((l) => /^mailto:/i.test(l.href || ''));
+        return m ? m.href.replace(/^mailto:/i, '').split('?')[0] : '';
+    };
+
+    // A mailto: whose body lists the given questions with room to answer.
+    const promptMailto = (p, questions) => {
+        const intro = p.emailIntro ? p.emailIntro + '\n\n' : '';
+        const body = intro + questions.map((q, i) => `${i + 1}. ${q}\n\n\n`).join('');
+        const subject = encodeURIComponent(p.emailSubject || document.title);
+        return `mailto:${promptEmail(p)}?subject=${subject}&body=${encodeURIComponent(body)}`;
+    };
+
+    // Pick a fresh set of questions and sync the "answer" button's mailto to them.
+    function drawPrompts() {
+        if (!C || !C.prompts) return;
+        const p = C.prompts;
+        const picks = sample(p.questions || [], p.count || 3);
+        const cards = picks
+            .map(
+                (q, i) =>
+                    `<li class="prompt-card"><span class="prompt-num">${i + 1}</span>` +
+                    `<span class="prompt-q">${esc(q)}</span></li>`
+            )
+            .join('');
+        setHtml('[data-prompts="cards"]', cards);
+        const answer = document.querySelector('.prompt-answer');
+        if (answer) answer.setAttribute('href', promptMailto(p, picks));
+    }
+
+    function renderPrompts() {
+        if (!C || !C.prompts) return;
+        const p = C.prompts;
+        if (!document.querySelector('[data-prompts="root"]')) return; // no mount → nothing to do
+        const html =
+            (p.intro ? `<p class="prompt-intro">${esc(p.intro)}</p>` : '') +
+            `<ol class="prompt-cards" data-prompts="cards"></ol>` +
+            `<div class="prompt-actions">` +
+            `<button type="button" class="prompt-shuffle"><i class="fa-solid fa-shuffle" aria-hidden="true"></i>` +
+            `<span>${esc(p.shuffleLabel || 'Shuffle')}</span></button>` +
+            `<a class="prompt-answer" href="#"><i class="fa-solid fa-envelope" aria-hidden="true"></i>` +
+            `<span>${esc(p.answerLabel || 'Email me your answers')}</span></a>` +
+            `</div>`;
+        setHtml('[data-prompts="root"]', html);
+        drawPrompts();
+    }
+
+    function initPrompts() {
+        const btn = document.querySelector('.prompt-shuffle');
+        if (!btn || btn._listenerAttached) return;
+        btn.addEventListener('click', drawPrompts);
+        btn._listenerAttached = true;
     }
 
     /* ============================================================
@@ -884,6 +966,7 @@
         renderAccordion();
         renderSections();
         renderConnectCard(C.contact, '[data-connect="contact"]');
+        renderPrompts();
         renderShare();
         renderConnectCard(C.outro, '[data-connect="outro"]');
         renderFooterLinks();
@@ -892,6 +975,7 @@
         initAccordion();
         initDeepLinks();
         initShare();
+        initPrompts();
         initLightbox();
         initKonami();
 
