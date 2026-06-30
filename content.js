@@ -612,7 +612,7 @@ window.CONTENT = {
                                 {src: "img/hobbies/landscape-005.jpg", alt: "A landscape photo I took"},
                                 {src: "img/hobbies/st-pauls-cathedral-london.png", alt: "St Paul's Cathedral, London"}
                             ],
-                            tags: ["Pixel 10 Pro", "Snapseed", "DJI Drone", "Nature", "Landscapes", "Night & Astro"]
+                            tags: ["Nature", "Landscapes", "Food", "Aerial", "Night & Astro", "Portraits"]
                         },
                         {
                             icon: "🎮", title: "Fun & Games",
@@ -623,7 +623,7 @@ window.CONTENT = {
                                 {src: "img/hobbies/board-game-collection-in-bag.png", alt: "My board game collection"},
                                 {src: "img/hobbies/d20-dice-dnd.png", alt: "D&D dice"}
                             ],
-                            tags: ["Video Games", "Board Games", "D&D"]
+                            tags: ["Video Games", "Board Games", "D&D", "Pool / Snooker"]
                         },
                         {
                             icon: "🍜", title: "Food",
@@ -636,15 +636,15 @@ window.CONTENT = {
                         },
                         {
                             icon: "🏃", title: "Active",
-                            body: "Outdoorsy stuff that doesn't feel like a workout — long countryside walks (ideally with a dog), getting out on the bike, archery, and the showy one: spinning fire poi and an LED staff after dark.",
+                            body: "Outdoorsy stuff that doesn't feel like a workout — long countryside walks (ideally with a dog), getting out on the bike, archery, and the showy one: spinning fire and LED staffs after dark.",
                             images: [
                                 {src: "img/hobbies/autumn-walk-with-dachshund-dog.png", alt: "An autumn countryside walk with a dachshund"},
                                 {src: "img/hobbies/mountain-bike-on-path.png", alt: "My mountain bike out on a path"},
                                 {src: "img/hobbies/archery-target-with-arrows.png", alt: "An archery target with my arrows"},
                                 {src: "img/hobbies/alec-with-fire-spinning-staff.png", alt: "Me spinning a fire staff"},
-                                {src: "img/hobbies/alec-led-poi-spinning-light-trails.png", alt: "LED poi light trails at night"}
+                                {src: "img/hobbies/alec-led-poi-spinning-light-trails.png", alt: "LED staff light trails at night"}
                             ],
-                            tags: ["Countryside walks", "Cycling", "Archery", "Fire & LED Poi"]
+                            tags: ["Countryside walks", "Cycling", "Archery", "Fire & LED Staff"]
                         },
                         {
                             icon: "📚", title: "Curious & Learning",
