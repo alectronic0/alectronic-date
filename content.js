@@ -85,6 +85,7 @@ window.CONTENT = {
         tag: "💬 How to Get in Touch",
         heading: "Shoot Your Shot",
         lead: "I prefer not to share my phone number upfront — but reach me through any of these and you'll get a hold of me.",
+        note: "⚔️ It's dangerous to go alone! Take this:",
         links: [
             {
                 label: "Email", icon: "gmail", href: "mailto:date.alec@alectronic.co.uk?subject=RE%3A%20Alec%20Dating%20Application", primary: true
@@ -107,19 +108,18 @@ window.CONTENT = {
        current page; `copy` and `native` are handled specially. `text` is the
        message prefilled where a service supports it. */
     share: {
-        tag: "🔁 Not Your Vibe?",
-        heading: "Share Me With a Friend",
-        lead: "No hard feelings if I'm not your type — maybe I'm someone else's player 2. Send this their way:",
+        tag: "🍄 Not Your Vibe?",
+        heading: "Maybe My Princess Is in Another Castle 🏰",
+        lead: "No hard feelings if I'm not the one for you — but maybe you know someone who is. Send this their way:",
         text: "Check out Alec's dating application 🎮❤️",
         options: [
             {label: "Email", icon: "gmail", type: "email"},
-            {label: "WhatsApp", icon: "fa-brands fa-whatsapp", type: "whatsapp"},
-            {label: "X", icon: "fa-brands fa-x-twitter", type: "twitter"},
-            {label: "Facebook", icon: "fa-brands fa-facebook-f", type: "facebook"},
-            {label: "LinkedIn", icon: "fa-brands fa-linkedin-in", type: "linkedin"},
-            {label: "Telegram", icon: "fa-brands fa-telegram", type: "telegram"},
-            {label: "Reddit", icon: "fa-brands fa-reddit-alien", type: "reddit"},
-            {label: "Copy link", icon: "fa-solid fa-link", type: "copy"}
+            {label: "WhatsApp", icon: "whatsapp", type: "whatsapp"},
+            {label: "Facebook", icon: "facebook", type: "facebook"},
+            {label: "LinkedIn", icon: "linkedin", type: "linkedin"},
+            {label: "Telegram", icon: "telegram", type: "telegram"},
+            {label: "Reddit", icon: "reddit", type: "reddit"},
+            {label: "Copy link", icon: "link", type: "copy"}
         ]
     },
 
