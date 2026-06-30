@@ -101,6 +101,28 @@ window.CONTENT = {
         ]
     },
 
+    /* ── Share ──
+       Pass-it-on block shown under the contact card. Each option names a
+       `type` that main.js (buildShareUrl) turns into a share link for the
+       current page; `copy` and `native` are handled specially. `text` is the
+       message prefilled where a service supports it. */
+    share: {
+        tag: "🔁 Not Your Vibe?",
+        heading: "Share Me With a Friend",
+        lead: "No hard feelings if I'm not your type — maybe I'm someone else's player 2. Send this their way:",
+        text: "Check out Alec's dating application 🎮❤️",
+        options: [
+            {label: "Email", icon: "fa-solid fa-envelope", type: "email"},
+            {label: "WhatsApp", icon: "fa-brands fa-whatsapp", type: "whatsapp"},
+            {label: "X", icon: "fa-brands fa-x-twitter", type: "twitter"},
+            {label: "Facebook", icon: "fa-brands fa-facebook-f", type: "facebook"},
+            {label: "LinkedIn", icon: "fa-brands fa-linkedin-in", type: "linkedin"},
+            {label: "Telegram", icon: "fa-brands fa-telegram", type: "telegram"},
+            {label: "Reddit", icon: "fa-brands fa-reddit-alien", type: "reddit"},
+            {label: "Copy link", icon: "fa-solid fa-link", type: "copy"}
+        ]
+    },
+
     /* ── Faces marquee ── */
     faces: {
         tag: "📸 A Few Faces of Alec",
