@@ -131,9 +131,7 @@ window.CONTENT = {
        so a match can reply straight away. Add to `questions` to grow the deck —
        no code changes needed. */
     prompts: {
-        tag: "🃏 Break the Ice",
-        heading: "A Few of My Favourite Questions",
-        lead: "Some of the things I always love asking. Here are a few at random — answer the ones that spark something and send them my way when you say hi. Tap the shuffle for a fresh set.",
+        intro: "Not sure how to break the ice? Here are a few things I'd love you to answer — pick the ones that spark something and bring them my way. 🃏",
         count: 3,
         shuffleLabel: "Shuffle the deck",
         answerLabel: "Send me your answers",

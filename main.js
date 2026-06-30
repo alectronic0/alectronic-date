@@ -458,10 +458,17 @@
         const links = data.links && data.links.length ? data.links : (C.contact ? C.contact.links : []);
         const host = document.querySelector(sel);
         const anchor = host ? (host.closest('[id]') || {}).id || '' : '';
+        // The contact card carries the ice-breaker prompts between its lead and
+        // links; renderPrompts() fills this mount afterwards.
+        const promptsMount =
+            sel === '[data-connect="contact"]' && C.prompts
+                ? '<div class="prompt-block" data-prompts="root"></div>'
+                : '';
         const html =
             (data.tag ? `<div class="section-tag tag-purple">${esc(data.tag)}</div>` : '') +
             `<h2>${esc(data.heading)}${headingLink(anchor, data.heading)}</h2>` +
             `<p class="lead">${esc(data.lead)}</p>` +
+            promptsMount +
             `<div class="contact-links">${links.map(linkHtml).join('')}</div>`;
         setHtml(sel, html);
     }
@@ -599,12 +606,9 @@
     function renderPrompts() {
         if (!C || !C.prompts) return;
         const p = C.prompts;
-        const host = document.querySelector('[data-prompts="root"]');
-        const anchor = host ? (host.closest('[id]') || {}).id || '' : '';
+        if (!document.querySelector('[data-prompts="root"]')) return; // no mount → nothing to do
         const html =
-            (p.tag ? `<div class="section-tag tag-gold">${esc(p.tag)}</div>` : '') +
-            `<h2>${esc(p.heading)}${headingLink(anchor, p.heading)}</h2>` +
-            `<p class="lead">${esc(p.lead)}</p>` +
+            (p.intro ? `<p class="prompt-intro">${esc(p.intro)}</p>` : '') +
             `<ol class="prompt-cards" data-prompts="cards"></ol>` +
             `<div class="prompt-actions">` +
             `<button type="button" class="prompt-shuffle"><i class="fa-solid fa-shuffle" aria-hidden="true"></i>` +
@@ -867,8 +871,8 @@
         renderFaces();
         renderAccordion();
         renderSections();
-        renderPrompts();
         renderConnectCard(C.contact, '[data-connect="contact"]');
+        renderPrompts();
         renderShare();
         renderConnectCard(C.outro, '[data-connect="outro"]');
         renderFooterLinks();
