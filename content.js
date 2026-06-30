@@ -109,13 +109,12 @@ window.CONTENT = {
        message prefilled where a service supports it. */
     share: {
         tag: "🍄 Not Your Vibe?",
-        heading: "Not the Princess You're Looking For?",
-        lead: "Maybe she's in another castle 🏰 — no hard feelings if I'm not your type. Send this to someone who might be:",
+        heading: "Maybe My Princess Is in Another Castle 🏰",
+        lead: "No hard feelings if I'm not the one for you — but maybe you know someone who is. Send this their way:",
         text: "Check out Alec's dating application 🎮❤️",
         options: [
             {label: "Email", icon: "gmail", type: "email"},
             {label: "WhatsApp", icon: "whatsapp", type: "whatsapp"},
-            {label: "X", icon: "x", type: "twitter"},
             {label: "Facebook", icon: "facebook", type: "facebook"},
             {label: "LinkedIn", icon: "linkedin", type: "linkedin"},
             {label: "Telegram", icon: "telegram", type: "telegram"},
