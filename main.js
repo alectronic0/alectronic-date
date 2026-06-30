@@ -111,20 +111,29 @@
 
         tagRow: (b) => `<div class="tag-row">${b.tags.map(tagHtml).join('')}</div>`,
 
-        // Interest categories as cards — an icon + title header over a row of
-        // tag pills. Lets the Hobbies section read as cards while keeping every
-        // tag (the categories just become the card the tags live in).
-        hobbyCards: (b) =>
-            `<div class="hobby-cards">${b.cards
+        // Interest "story" cards — an icon + title, a short "why I like it"
+        // paragraph, an optional strip of personal photos, and tag pills. Every
+        // field but icon/title is optional, so a card can be photo-rich or just
+        // text + tags.
+        interestCards: (b) =>
+            `<div class="interest-cards">${b.cards
                 .map(
                     (c) =>
-                        `<div class="hobby-card"><div class="hobby-card-head"><span class="hobby-card-icon">${esc(
+                        `<div class="interest-card"><div class="interest-card-head"><span class="interest-card-icon">${esc(
                             c.icon
-                        )}</span><span class="hobby-card-title">${esc(
-                            c.title
-                        )}</span></div><div class="tag-row">${(c.tags || [])
-                            .map(tagHtml)
-                            .join('')}</div></div>`
+                        )}</span><span class="interest-card-title">${esc(c.title)}</span></div>${
+                            c.body ? `<p class="interest-card-body">${esc(c.body)}</p>` : ''
+                        }${
+                            c.images && c.images.length
+                                ? `<div class="interest-card-photos">${c.images
+                                      .map((i) => img(i.src, i.alt))
+                                      .join('')}</div>`
+                                : ''
+                        }${
+                            c.tags && c.tags.length
+                                ? `<div class="tag-row">${c.tags.map(tagHtml).join('')}</div>`
+                                : ''
+                        }</div>`
                 )
                 .join('')}</div>`,
 
@@ -713,7 +722,7 @@
         });
 
         const selectors =
-            '[data-zoom], .mosaic-strip img, .poster-grid img, .photo-grid img, .feature img, .date-card img, .place-card img, .logo-tile img';
+            '[data-zoom], .mosaic-strip img, .poster-grid img, .photo-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img';
 
         // Delegated so it covers images injected after load.
         document.addEventListener('click', (e) => {

@@ -550,119 +550,73 @@ window.CONTENT = {
         hobbies: {
             blocks: [
                 {
-                    type: "hobbyCards", cards: [
+                    type: "paragraph",
+                    text: "A bit of everything, honestly — making things, learning things, and getting outdoors. Here's what I actually spend my free time on, and why."
+                },
+                {
+                    type: "interestCards", cards: [
                         {
-                            icon: "🍜", title: "Food", tags: [
-                                "Cooking",
-                                "Baking",
-                                "Eating out",
-                                "Tea"
-                            ]
+                            icon: "🎨", title: "Making things",
+                            body: "I'm happiest making something with my hands — I've crocheted a Snorlax, thrown my own pottery, and there's almost always a knitting project on the go. Lego and general DIY scratch the same itch; give me a rainy weekend and a project and I'm sorted.",
+                            images: [
+                                {src: "img/hobbies/alec crochet snorlax.png", alt: "A Snorlax I crocheted"},
+                                {src: "img/hobbies/alec ceramic pot made.png", alt: "A ceramic pot I threw"},
+                                {src: "img/hobbies/knitting in progress.png", alt: "A knitting project in progress"},
+                                {src: "img/hobbies/lego imperial star destroyer built.png", alt: "A Lego Imperial Star Destroyer I built"}
+                            ],
+                            tags: ["Crochet / Knitting", "Pottery", "Lego", "DIY", "Crafts", "Shibari"]
                         },
                         {
-                            icon: "🎨", title: "Creative", tags: [
-                                "DIY",
-                                "Lego",
-                                "Crochet / Knitting",
-                                "Photography",
-                                "Crafts",
-                                "Pottery",
-                                "Shibari"
-                            ]
+                            icon: "📷", title: "Photography",
+                            body: "I carry a camera most places. I'm drawn to landscapes, moody skies and big architecture — anything that makes me stop and actually look. Half the fun is the walk to find the shot.",
+                            images: [
+                                {src: "img/hobbies/Landscape 005.jpg", alt: "A landscape photo I took"},
+                                {src: "img/hobbies/st pauls cathedral london.png", alt: "St Paul's Cathedral, London"}
+                            ],
+                            tags: ["Landscapes", "Architecture", "Street"]
                         },
                         {
-                            icon: "📺", title: "Media", tags: [
-                                "Anime & Manga",
-                                "Marvel",
-                                "Fantasy & Sci-fi",
-                                "Comedy"
-                            ]
+                            icon: "🎮", title: "Fun & Games",
+                            body: "My triple-monitor setup is my happy place, but I've got a soft spot for the classics too — original NES carts and a Game Boy still in rotation. Off-screen it's board game nights, D&D campaigns and the odd frame of pool.",
+                            images: [
+                                {src: "img/hobbies/alec gaming setup triple monitors.png", alt: "My triple-monitor gaming desk"},
+                                {src: "img/hobbies/nes cartridge retro games.png", alt: "Retro NES cartridges"},
+                                {src: "img/hobbies/board game collection in bag.png", alt: "My board game collection"},
+                                {src: "img/hobbies/d20 dice dnd.png", alt: "D&D dice"}
+                            ],
+                            tags: ["Video Games", "Retro / Vintage", "Board Games", "D&D", "Pool / Snooker"]
                         },
                         {
-                            icon: "🎮", title: "Fun & Games", tags: [
-                                "Video Games",
-                                "Pool / Snooker",
-                                "Board Games",
-                                "D&D"
-                            ]
+                            icon: "🍜", title: "Food",
+                            body: "Cooking and baking are how I switch off — fresh cookies out the oven, a proper brew from an embarrassingly large tea collection, and I'm always up for eating out and chasing the next great meal.",
+                            images: [
+                                {src: "img/hobbies/homemade chocolate chip cookies.png", alt: "Homemade chocolate chip cookies"},
+                                {src: "img/hobbies/t2 tea collection.png", alt: "My tea collection"}
+                            ],
+                            tags: ["Cooking", "Baking", "Eating out", "Tea"]
                         },
                         {
-                            icon: "📚", title: "Educational", tags: [
-                                "Technology & Science",
-                                "History",
-                                "Mythology",
-                                "Etymology",
-                                "Random facts",
-                                "Maps",
-                                "Stargazing"
-                            ]
+                            icon: "🏃", title: "Active",
+                            body: "Outdoorsy stuff that doesn't feel like a workout — long countryside walks (ideally with a dog), getting out on the bike, archery, and the showy one: spinning fire and LED poi after dark.",
+                            images: [
+                                {src: "img/hobbies/autumn walk with dachshund dog.png", alt: "An autumn countryside walk with a dachshund"},
+                                {src: "img/hobbies/mountain bike on path.png", alt: "My mountain bike out on a path"},
+                                {src: "img/hobbies/archery target with arrows.png", alt: "An archery target with my arrows"},
+                                {src: "img/hobbies/alec with fire spinning staff.png", alt: "Me spinning a fire staff"},
+                                {src: "img/hobbies/alec led poi spinning light trails.png", alt: "LED poi light trails at night"}
+                            ],
+                            tags: ["Countryside walks", "Cycling", "Archery", "Fire Spinning"]
                         },
                         {
-                            icon: "🏃", title: "Active", tags: [
-                                "Countryside walks",
-                                "Archery",
-                                "Cycling",
-                                "Fire Spinning"
-                            ]
+                            icon: "📚", title: "Curious & Learning",
+                            body: "I love learning something new for no reason at all — history, mythology, where words come from, maps, and a clear night for stargazing. I will absolutely derail a conversation to share a random fact.",
+                            tags: ["Technology & Science", "History", "Mythology", "Etymology", "Random facts", "Maps", "Stargazing"]
+                        },
+                        {
+                            icon: "📺", title: "Watching",
+                            body: "Wind-down mode: anime and manga, the whole Marvel run, anything fantasy or sci-fi, and comedy to round it off.",
+                            tags: ["Anime & Manga", "Marvel", "Fantasy & Sci-fi", "Comedy"]
                         }
-                    ]
-                },
-                {
-                    type: "heading",
-                    text: "In Pictures"
-                },
-                {
-                    type: "photoGrid",
-                    images: [
-                        {src: "img/hobbies/alec ceramic pot made.png", alt: "A ceramic pot I made"},
-                        {
-                            src: "img/hobbies/alec crochet snorlax.png",
-                            alt: "A crocheted Snorlax"
-                        },
-                        {
-                            src: "img/hobbies/alec desk with gameboy orchid lego.png", alt: "My desk with Game Boy, orchid and Lego"
-                        },
-                        {src: "img/hobbies/lego imperial star destroyer built.png", alt: "A built Lego Star Destroyer"},
-                        {
-                            src: "img/hobbies/knitting in progress.png",
-                            alt: "Knitting in progress"
-                        },
-                        {src: "img/hobbies/homemade chocolate chip cookies.png", alt: "Homemade cookies"},
-                        {
-                            src: "img/hobbies/t2 tea collection.png",
-                            alt: "My tea collection"
-                        },
-                        {src: "img/hobbies/board game collection in bag.png", alt: "Board game collection"},
-                        {
-                            src: "img/hobbies/d20 dice dnd.png",
-                            alt: "D&D dice"
-                        },
-                        {src: "img/hobbies/archery target with arrows.png", alt: "Archery target"},
-                        {
-                            src: "img/hobbies/mountain bike on path.png",
-                            alt: "Mountain biking"
-                        },
-                        {src: "img/hobbies/autumn walk with dachshund dog.png", alt: "An autumn walk with a dog"},
-                        {
-                            src: "img/hobbies/nes cartridge retro games.png",
-                            alt: "Retro NES games"
-                        },
-                        {src: "img/hobbies/st pauls cathedral london.png", alt: "St Paul's Cathedral"},
-                        {
-                            src: "img/hobbies/shibari rope bondage legs.png",
-                            alt: "Shibari rope work"
-                        },
-                        {src: "img/hobbies/Landscape 005.jpg", alt: "A landscape photo I took"},
-                        {
-                            src: "img/hobbies/20131222_205929.JPG",
-                            alt: "A hobby moment"
-                        },
-                        {src: "img/hobbies/alec with fire spinning staff.png", alt: "Alec fire spinning"},
-                        {
-                            src: "img/hobbies/IMG_20240528_173146_931.jpg",
-                            alt: "A hobby moment"
-                        },
-                        {src: "img/hobbies/PXL_20231209_170333969_exported_1702148485759.jpg", alt: "A hobby moment"}
                     ]
                 }
             ]
