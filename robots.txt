@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://date.alectronic.co/sitemap.xml
