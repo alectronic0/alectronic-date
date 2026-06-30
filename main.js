@@ -26,6 +26,18 @@
     const img = (src, alt, attrs = '') =>
         `<img src="${esc(src)}" alt="${esc(alt || '')}" loading="lazy" ${attrs}>`;
 
+    // The official multicolour Gmail logo as inline SVG. FontAwesome's free set
+    // only ships a generic envelope, so we use the real brand mark for Email
+    // links. `cls` sizes it to match whatever icon sits beside it.
+    const gmailLogo = (cls) =>
+        `<svg class="${cls}" viewBox="52 42 88 66" aria-hidden="true" focusable="false">` +
+        '<path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>' +
+        '<path fill="#34a853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/>' +
+        '<path fill="#fbbc04" d="M120 64v10l20-15v-3.5c0-9.27-10.58-14.55-18-9l-2 1.5"/>' +
+        '<path fill="#ea4335" d="M72 74V48l24 18 24-18v26L96 92"/>' +
+        '<path fill="#c5221f" d="M52 55.5V59l20 15V48l-2-1.5c-7.42-5.55-18-.27-18 9"/>' +
+        '</svg>';
+
     // Resolve a favicon for a URL's domain. Uses Google's favicon service so
     // every external service gets a crisp icon without hardcoding each one.
     const faviconFor = (url) => {
@@ -396,6 +408,7 @@
     // no domain favicon exists (e.g. the mailto: Email link). `cls` lets each
     // context (button vs footer) size its own favicon.
     const linkIcon = (l, cls) => {
+        if (l.icon === 'gmail') return gmailLogo(cls);
         const fav = l.favicon || faviconFor(l.href);
         return fav
             ? `<img class="${cls}" src="${esc(fav)}" alt="" loading="lazy">`
@@ -478,7 +491,10 @@
         const url = shareUrl();
         const text = s.text || '';
 
-        const icon = (o) => `<i class="${esc(o.icon || '')}" aria-hidden="true"></i>`;
+        const icon = (o) =>
+            o.icon === 'gmail'
+                ? gmailLogo('share-logo')
+                : `<i class="${esc(o.icon || '')}" aria-hidden="true"></i>`;
         const optionHtml = (o) => {
             if (o.type === 'copy') {
                 return `<button type="button" class="share-btn share-${esc(o.type)}" data-copy="${esc(

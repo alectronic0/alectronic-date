@@ -310,6 +310,7 @@ p { color: var(--muted); margin-bottom: 14px; }
   transition: border-color 0.15s, background 0.15s, transform 0.15s, color 0.15s;
 }
 .share-btn i { font-size: 1.15em; }
+.share-btn .share-logo { width: 1.15em; height: 1.15em; flex-shrink: 0; }
 .share-btn:hover { background: var(--surface-3); color: #fff; transform: translateY(-2px); }
 .share-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 6px 18px rgba(153, 78, 168, 0.4); }
 .share-btn.primary:hover { background: #ab5cba; }

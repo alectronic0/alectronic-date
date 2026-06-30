@@ -87,7 +87,7 @@ window.CONTENT = {
         lead: "I prefer not to share my phone number upfront — but reach me through any of these and you'll get a hold of me.",
         links: [
             {
-                label: "Email", icon: "✉", href: "mailto:date.alec@alectronic.co.uk?subject=RE%3A%20Alec%20Dating%20Application", primary: true
+                label: "Email", icon: "gmail", href: "mailto:date.alec@alectronic.co.uk?subject=RE%3A%20Alec%20Dating%20Application", primary: true
             },
             {
                 label: "Linktree", href: "https://linktr.ee/Alectronic",
@@ -112,7 +112,7 @@ window.CONTENT = {
         lead: "No hard feelings if I'm not your type — maybe I'm someone else's player 2. Send this their way:",
         text: "Check out Alec's dating application 🎮❤️",
         options: [
-            {label: "Email", icon: "fa-solid fa-envelope", type: "email"},
+            {label: "Email", icon: "gmail", type: "email"},
             {label: "WhatsApp", icon: "fa-brands fa-whatsapp", type: "whatsapp"},
             {label: "X", icon: "fa-brands fa-x-twitter", type: "twitter"},
             {label: "Facebook", icon: "fa-brands fa-facebook-f", type: "facebook"},
