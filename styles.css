@@ -184,7 +184,9 @@ p { color: var(--muted); margin-bottom: 14px; }
 .profile-tagline { color: var(--gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 18px; }
 .profile-photo { position: sticky; top: 84px; }
 .profile-photo img {
-  width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 18%;
+  /* height: auto overrides the image's width/height attributes (added for
+     CLS elsewhere) so aspect-ratio is what actually sizes it here. */
+  width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 18%;
   border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow);
 }
 
@@ -247,7 +249,9 @@ p { color: var(--muted); margin-bottom: 14px; }
   gap: 10px; max-width: 1120px; margin: 0 auto;
 }
 .gallery-grid img {
-  width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px;
+  /* height: auto overrides the images' width/height attributes (added for CLS
+     elsewhere) so aspect-ratio is what actually sizes these tiles. */
+  width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 10px;
   cursor: zoom-in; border: 1px solid rgba(255, 255, 255, 0.08);
   transition: transform 0.15s, border-color 0.15s;
 }
