@@ -36,8 +36,17 @@
         return base.charAt(0).toUpperCase() + base.slice(1);
     };
 
-    const img = (src, alt, attrs = '') =>
-        `<img src="${esc(src)}" alt="${esc(alt || altFromSrc(src))}" loading="lazy" ${attrs}>`;
+    // `opts.w`/`opts.h` render width/height attributes so the browser can
+    // reserve the image's box before it loads (avoids layout shift).
+    // `opts.eager` skips loading="lazy" and `opts.priority` adds
+    // fetchpriority="high" — used for the hero image, which is the LCP
+    // element and shouldn't be deprioritised or discovered late.
+    const img = (src, alt, attrs = '', opts = {}) => {
+        const dims = opts.w && opts.h ? `width="${opts.w}" height="${opts.h}" ` : '';
+        const loading = opts.eager ? '' : 'loading="lazy" ';
+        const priority = opts.priority ? 'fetchpriority="high" ' : '';
+        return `<img src="${esc(src)}" alt="${esc(alt || altFromSrc(src))}" ${dims}${loading}${priority}${attrs}>`;
+    };
 
     // The official multicolour Gmail logo as inline SVG. FontAwesome's free set
     // only ships a generic envelope, so we use the real brand mark for Email
@@ -444,7 +453,14 @@
         setText('[data-hero="sub"]', h.subheading);
         setText('[data-hero="tagline"]', h.tagline);
         setText('[data-hero="cta"]', h.cta);
-        setHtml('[data-hero="media"]', h.images.map((i) => img(i.src, i.alt)).join(''));
+        // All three are visible without scrolling, so none should be lazy;
+        // the first is the LCP element and gets fetchpriority="high" too.
+        setHtml(
+            '[data-hero="media"]',
+            h.images
+                .map((i, idx) => img(i.src, i.alt, '', { w: i.w, h: i.h, eager: true, priority: idx === 0 }))
+                .join('')
+        );
     }
 
     function renderProfile() {
@@ -453,7 +469,7 @@
         setHtml('[data-profile="name"]', esc(p.name) + headingLink('about', p.name));
         setText('[data-profile="tagline"]', p.tagline);
         setHtml('[data-profile="intro"]', p.intro.map((t) => `<p>${esc(t)}</p>`).join(''));
-        setHtml('[data-profile="photo"]', img(p.photo.src, p.photo.alt, 'data-zoom'));
+        setHtml('[data-profile="photo"]', img(p.photo.src, p.photo.alt, 'data-zoom', { w: p.photo.w, h: p.photo.h }));
         setHtml('[data-profile="facts"]', p.facts.map(factHtml).join(''));
     }
 
@@ -489,8 +505,10 @@
         setHtml('[data-faces="header"]', sectionHeaderHtml(C.faces, 'photos') + expandBtn);
         const photos = C.faces.photos;
         // Duplicate the set so the marquee can loop seamlessly (track animates -50%).
-        const once = photos.map((p) => img(p.src, p.alt)).join('');
-        const twice = photos.map((p) => img(p.src, '', 'aria-hidden="true"')).join('');
+        const once = photos.map((p) => img(p.src, p.alt, '', { w: p.w, h: p.h })).join('');
+        const twice = photos
+            .map((p) => img(p.src, '', 'aria-hidden="true"', { w: p.w, h: p.h }))
+            .join('');
         setHtml('[data-faces="track"]', once + twice);
         // The expanded gallery shows the full set once, in a static grid.
         setHtml('[data-gallery="grid"]', once);
@@ -680,9 +698,9 @@
             (p.intro ? `<p class="prompt-intro">${esc(p.intro)}</p>` : '') +
             `<ol class="prompt-cards" data-prompts="cards"></ol>` +
             `<div class="prompt-actions">` +
-            `<button type="button" class="prompt-shuffle"><i class="fa-solid fa-shuffle" aria-hidden="true"></i>` +
+            `<button type="button" class="prompt-shuffle"><i class="prompt-icon" aria-hidden="true">🔀</i>` +
             `<span>${esc(p.shuffleLabel || 'Shuffle')}</span></button>` +
-            `<a class="prompt-answer" href="#"><i class="fa-solid fa-envelope" aria-hidden="true"></i>` +
+            `<a class="prompt-answer" href="#"><i class="prompt-icon" aria-hidden="true">✉️</i>` +
             `<span>${esc(p.answerLabel || 'Email me your answers')}</span></a>` +
             `</div>`;
         setHtml('[data-prompts="root"]', html);

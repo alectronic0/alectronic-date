@@ -33,13 +33,15 @@ window.CONTENT = {
         subheading: "A visual introduction to what having me as your boyfriend could look like.",
         tagline: "Loveable nerd, looking for his player 2. No swiping required — just a scroll.",
         cta: "Come find out more ↓",
+        // First image is the LCP element — rendered eager + high priority (see main.js renderHero).
         images: [
-            {src: "img/alec/2.jpg", alt: "Alec Doran-Twyford"},
+            {src: "img/alec/2.webp", alt: "Alec Doran-Twyford", w: 900, h: 1200},
             {
-                src: "img/alec/7.jpg",
-                alt: "Alec smiling"
+                src: "img/alec/7.webp",
+                alt: "Alec smiling",
+                w: 900, h: 1200
             },
-            {src: "img/alec/4.jpg", alt: "Alec portrait"}
+            {src: "img/alec/4.webp", alt: "Alec portrait", w: 903, h: 1200}
         ]
     },
     profile: {
@@ -50,7 +52,7 @@ window.CONTENT = {
             "Hi, I'm Alec! This little site started as a slide deck I made for myself — a reminder of who I am and what I love. I then realised it could be a fun way to skip some of the small talk and give you a real sense of me from the start.",
             "So here's the honest (and slightly chaotic) introduction: the facts, the photos, and the bits that make me, me. If you like what you see, my contact details are just a little further down."
         ],
-        photo: {src: "img/alec/1.jpg", alt: "Alec Doran-Twyford"},
+        photo: {src: "img/alec/1.webp", alt: "Alec Doran-Twyford", w: 900, h: 1200},
         facts: [
             {icon: "🚹", label: "Gender", value: "Male"},
             {icon: "❤️", label: "Orientation", value: "Straight"},
@@ -167,30 +169,33 @@ window.CONTENT = {
         tag: "📸 A Few Faces of Alec",
         heading: "Snapshots of my Life",
         lead: "Yes, I'm the one in most of them. Tap any photo to enlarge.",
+        // w/h are the actual encoded pixel dimensions of each file, passed through
+        // to the <img> width/height attributes so the browser can reserve the
+        // right box before the image loads (avoids layout shift in the marquee).
         photos: [
-            {src: "img/alec/1.jpg"},
-            {src: "img/alec/2.jpg"},
-            {src: "img/alec/3.jpg"},
-            {src: "img/alec/4.jpg"},
-            {src: "img/alec/6.jpg"},
-            {src: "img/alec/7.jpg"},
-            {src: "img/alec/8.jpg"},
-            {src: "img/alec/9.jpg"},
-            {src: "img/alec/10.jpg"},
-            {src: "img/alec/11.jpg"},
-            {src: "img/alec/12.jpg"},
-            {src: "img/alec/13.jpg"},
-            {src: "img/alec/14.jpg"},
-            {src: "img/alec/15.jpg"},
-            {src: "img/alec/16.jpg"},
-            {src: "img/alec/17.jpg"},
-            {src: "img/alec/18.jpg"},
-            {src: "img/alec/19.jpg"},
-            {src: "img/alec/20.jpg"},
-            {src: "img/alec/21.jpg"},
-            {src: "img/alec/22.png"},
-            {src: "img/alec/23.png"},
-            {src: "img/alec/24.png"},
+            {src: "img/alec/1.webp", w: 900, h: 1200},
+            {src: "img/alec/2.webp", w: 900, h: 1200},
+            {src: "img/alec/3.webp", w: 903, h: 1200},
+            {src: "img/alec/4.webp", w: 903, h: 1200},
+            {src: "img/alec/6.webp", w: 900, h: 1200},
+            {src: "img/alec/7.webp", w: 900, h: 1200},
+            {src: "img/alec/8.webp", w: 903, h: 1200},
+            {src: "img/alec/9.webp", w: 903, h: 1200},
+            {src: "img/alec/10.webp", w: 900, h: 1200},
+            {src: "img/alec/11.webp", w: 1200, h: 1200},
+            {src: "img/alec/12.webp", w: 900, h: 1200},
+            {src: "img/alec/13.webp", w: 900, h: 1200},
+            {src: "img/alec/14.webp", w: 900, h: 1200},
+            {src: "img/alec/15.webp", w: 903, h: 1200},
+            {src: "img/alec/16.webp", w: 900, h: 1200},
+            {src: "img/alec/17.webp", w: 900, h: 1200},
+            {src: "img/alec/18.webp", w: 745, h: 744},
+            {src: "img/alec/19.webp", w: 900, h: 1200},
+            {src: "img/alec/20.webp", w: 1080, h: 1080},
+            {src: "img/alec/21.webp", w: 1200, h: 900},
+            {src: "img/alec/22.webp", w: 684, h: 911},
+            {src: "img/alec/23.webp", w: 683, h: 911},
+            {src: "img/alec/24.webp", w: 683, h: 911},
         ]
     },
 
@@ -264,49 +269,49 @@ window.CONTENT = {
                 {
                     type: "cardGrid", cards: [
                         {
-                            src: "img/moments/alec-at-graduation.png", icon: "🎓", title: "Got a 1st @ University", caption: "BSc Computer Science, top marks."
+                            src: "img/moments/alec-at-graduation.webp", icon: "🎓", title: "Got a 1st @ University", caption: "BSc Computer Science, top marks."
                         },
                         {
-                            src: "img/moments/google-map-showing-the-drunken-walk-home-from-london.png",
+                            src: "img/moments/google-map-showing-the-drunken-walk-home-from-london.webp",
                             icon: "🚶",
                             title: "Walked home from London",
                             caption: "23.5km, drunk, on a dare to myself."
                         },
                         {
-                            src: "img/moments/alec-with-david-tenant.png", icon: "⭐", title: "Met David Tennant", caption: "Yes, the Doctor. Very lovely in person."
+                            src: "img/moments/alec-with-david-tenant.webp", icon: "⭐", title: "Met David Tennant", caption: "Yes, the Doctor. Very lovely in person."
                         },
                         {
-                            src: "img/moments/alec-setting-of-on-his-backpacking-advanture.png",
+                            src: "img/moments/alec-setting-of-on-his-backpacking-advanture.webp",
                             icon: "🎒",
                             title: "Backpacked for 2 years",
                             caption: "Around the world, one hostel at a time."
                         },
                         {
-                            src: "img/moments/alec-in-a-bikini-as-a-dare.png", icon: "👙", title: "Bikini on Valentine's Day", caption: "A surf-camp dare I fully committed to."
+                            src: "img/moments/alec-in-a-bikini-as-a-dare.webp", icon: "👙", title: "Bikini on Valentine's Day", caption: "A surf-camp dare I fully committed to."
                         },
                         {
-                            src: "img/moments/alec-sky-diving.jpg", icon: "🪂", title: "Skydived", caption: "Jumped out of a perfectly good plane."
+                            src: "img/moments/alec-sky-diving.webp", icon: "🪂", title: "Skydived", caption: "Jumped out of a perfectly good plane."
                         },
                         {
-                            src: "img/moments/alec-feeding-load-of-backpackers.png", icon: "👨‍🍳", title: "Cooked for 30 backpackers", caption: "One big pot, one happy hostel."
+                            src: "img/moments/alec-feeding-load-of-backpackers.webp", icon: "👨‍🍳", title: "Cooked for 30 backpackers", caption: "One big pot, one happy hostel."
                         },
                         {
-                            src: "img/moments/trophie-of-most-entuastic-google-city-expert-now-google-local-guides.png",
+                            src: "img/moments/trophie-of-most-entuastic-google-city-expert-now-google-local-guides.webp",
                             icon: "📍",
                             title: "Most Enthusiastic City Expert",
                             caption: "Google's award — now Local Guides."
                         },
                         {
-                            src: "img/moments/alec-completing-a-10k-run.png", icon: "🏃", title: "Ran a 10km", caption: "Crossed the line, legs intact."
+                            src: "img/moments/alec-completing-a-10k-run.webp", icon: "🏃", title: "Ran a 10km", caption: "Crossed the line, legs intact."
                         },
                         {
-                            src: "img/moments/alec-holding-keys-of-his-home.png", icon: "🏠", title: "Bought a house", caption: "Keys in hand, properly grown up."
+                            src: "img/moments/alec-holding-keys-of-his-home.webp", icon: "🏠", title: "Bought a house", caption: "Keys in hand, properly grown up."
                         },
                         {
-                            src: "img/moments/alec-on-top-of-mt-katumba-in-bali.png", icon: "🌋", title: "Climbed a volcano", caption: "Sunrise from the top of Mt Batur, Bali."
+                            src: "img/moments/alec-on-top-of-mt-katumba-in-bali.webp", icon: "🌋", title: "Climbed a volcano", caption: "Sunrise from the top of Mt Batur, Bali."
                         },
                         {
-                            src: "img/moments/alec-kimono-torii-gate-japan.jpg", icon: "🇯🇵", title: "A month solo in Japan", caption: "Temples, ramen and a lot of walking."
+                            src: "img/moments/alec-kimono-torii-gate-japan.webp", icon: "🇯🇵", title: "A month solo in Japan", caption: "Temples, ramen and a lot of walking."
                         }
                     ]
                 }
