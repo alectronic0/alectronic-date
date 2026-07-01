@@ -374,74 +374,49 @@ window.CONTENT = {
             tag: "✨ What I'm Looking For",
             tagClass: "tag-gold",
             heading: "An Invitation, Not a Checklist",
-            lead: "I have a full, happy life — I'm just hoping to share it. Here's the kind of \"us\" I'm dreaming about.",
+            lead: "I have a full, happy life, and I'm just hoping to share it. Here's the kind of \"us\" I'm dreaming about.",
             blocks: [
                 {
-                    type: "valueCols", columns: [
-                        {
-                            title: "Enjoys Going on Adventures",
-                            items: [
-                                "Travelling & Exploring new cultures",
-                                "Hunting down amazing food places",
-                                "Trying out new activities & experiences",
-                                "Going for walks in nature",
-                            ]
-                        },
-                        {
-                            title: "Enjoys Cosy days at home",
-                            items: [
-                                "Cooking/baking",
-                                "Playing Video games",
-                                "Watching TV/Movies",
-                                "Dancing in the kitchen",
-                                "Doing fun activities at home",
-                            ]
-                        },
-                        {
-                            title: "Values",
-                            items: [
-                                "Clear and open communication",
-                                "Pushing each other to be our best selves",
-                                "Willingness to work through the hard times",
-                                "Quality time and mutual affection",
-                            ]
-                        },
-                        {
-                            title: "One last thing...", items: [
-                                "Someone open to my interests...",
-                                "and excited to share theirs"
-                            ]
-                        },
-                    ]
+                    type: "paragraph",
+                    html: "Two things matter most to me. <strong>First,</strong> someone who's just as up for an adventure as they are for a quiet day at home. <strong>Second,</strong> someone happy to share the stuff I love (gaming and nerd culture, mostly) and to pull me into their own quirky world too. Everything below is a bit of what I picture us getting up to together."
                 },
                 {
                     type: "featureGrid", features: [
                         {
-                            src: "img/looking-for/couple-cooking.png", alt: "A couple cooking", icon: "🍳", text: "Cooking and baking together on a cosy evening."
-                        },
-                        {
-                            src: "img/looking-for/couple-playing-video-games.png", alt: "A couple gaming", icon: "🎮", text: "Co-op games and friendly rivalry on the sofa."
-                        },
-                        {
                             src: "img/looking-for/couple-going-exploring-nature.png",
                             alt: "A couple exploring nature",
                             icon: "🌿",
-                            text: "Adventures, travel and finding amazing food places."
+                            text: "New places, new food, and taking the long way round just to see what's there."
                         },
                         {
                             src: "img/looking-for/couple-watching-movie-togehter.png",
                             alt: "A couple watching a movie",
                             icon: "🍿",
-                            text: "Lazy days at home with a film and good company."
+                            text: "Or a slow one in. A film on, the sofa, and nowhere we need to be."
+                        },
+                        {
+                            src: "img/looking-for/couple-playing-video-games.png",
+                            alt: "A couple gaming",
+                            icon: "🎮",
+                            text: "Controllers out, both of us a little too competitive to call it a night."
+                        },
+                        {
+                            src: "img/looking-for/couple-cooking.png",
+                            alt: "A couple cooking",
+                            icon: "🍳",
+                            text: "Flour everywhere, music on, and dinner taking twice as long because we keep getting distracted."
                         },
                         {
                             src: "img/looking-for/couple-enjoying-tea-on-the-couch.png",
                             alt: "A couple enjoying tea",
                             icon: "🫖",
-                            text: "Slow mornings, tea, and easy quiet time together."
+                            text: "The easy kind of talk, where nothing's off limits and there are no walls up."
                         },
                         {
-                            src: "img/looking-for/couple-at-the-gym-working-out.png", alt: "A couple at the gym", icon: "💪", text: "Cheering each other on to be our best selves."
+                            src: "img/looking-for/couple-at-the-gym-working-out.png",
+                            alt: "A couple at the gym",
+                            icon: "💪",
+                            text: "Cheering each other on to be our best selves, and there for each other through the harder days too."
                         }
                     ]
                 }
