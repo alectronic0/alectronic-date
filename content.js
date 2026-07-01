@@ -416,7 +416,7 @@ window.CONTENT = {
                             src: "img/looking-for/couple-at-the-gym-working-out.png",
                             alt: "A couple at the gym",
                             icon: "💪",
-                            text: "In each other's corner, on the good days and the harder ones too."
+                            text: "Cheering each other on to be our best selves, and there for each other through the harder days too."
                         }
                     ]
                 }
