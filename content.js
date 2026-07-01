@@ -19,6 +19,10 @@
    posterGrid, cardGrid, featureGrid, valueCols, listCols,
    personaCards, loveLangs, daydreamCards, podcastCards, logoGrid,
    detailList, link.
+
+   ── Auto-computed facts ──
+   A `profile.facts` entry can carry `dob` (YYYY-MM-DD) instead of `value` —
+   main.js computes age from it at render time, so it's never stale.
    ============================================================ */
 
 window.CONTENT = {
@@ -31,7 +35,7 @@ window.CONTENT = {
         emoji: "🎮❤️🎮",
         headline: "Alec's <span>Dating</span> Application",
         subheading: "A visual introduction to what having me as your boyfriend could look like.",
-        tagline: "Loveable nerd, looking for his player 2. No swiping required — just a scroll.",
+        tagline: "Looking for my nerdy other half — the Player 2 to my Player 1. No swiping required... ok there's a bit of scrolling.",
         cta: "Come find out more ↓",
         // First image is the LCP element — rendered eager + high priority (see main.js renderHero).
         images: [
@@ -64,7 +68,7 @@ window.CONTENT = {
                     " They / Them"
                 ]
             },
-            {icon: "🎂", label: "Age", value: "35 · 19 May (Taurus)"},
+            {icon: "🎂", label: "Age", value: null, dob: "1991-05-19"},
             {icon: "💼", label: "Profession", value: "Software Engineer"},
             {
                 icon: "🎓",
@@ -82,6 +86,9 @@ window.CONTENT = {
             },
             {icon: "📏", label: "Height", value: "~5'8\""},
             {icon: "🌱", label: "Politics", value: "Liberal / Left"},
+            {icon: "🚭", label: "Smoking", value: "Non-smoker (dealbreaker if you smoke)"},
+            {icon: "🍷", label: "Drinking", value: "Social drinker"},
+            {icon: "👶", label: "Kids", value: "None currently"},
         ]
     }, contact: {
         tag: "💬 How to Get in Touch",
@@ -260,6 +267,42 @@ window.CONTENT = {
     /* ── Mid-page sections (each = blocks[]) ── */
     sections: {
 
+        characterSheet: {
+            tag: "🧾 Character Sheet",
+            blocks: [
+                {
+                    type: "personaCards",
+                    cards: [
+                        {
+                            icon: "🧠",
+                            title: "INTJ-T",
+                            desc: "The Architect — strategic, introspective, a little turbulent. Tested Apr 2025."
+                        },
+                        {
+                            icon: "♉",
+                            title: "Taurus",
+                            desc: "Stubborn, loyal, and yes — I do like my comforts."
+                        },
+                        {
+                            icon: "🎲",
+                            title: "Chaotic Good",
+                            desc: "Mostly plans everything. Occasionally throws the plan out for a good story."
+                        }
+                    ]
+                },
+                {
+                    type: "loveLangs",
+                    langs: [
+                        {tier: "1st", label: "Physical Touch"},
+                        {tier: "2nd", label: "Quality Time"},
+                        {tier: "3rd", label: "Acts of Service"},
+                        {tier: "3rd", label: "Gift Giving"},
+                        {tier: "4th", label: "Words of Affirmation"}
+                    ]
+                }
+            ]
+        },
+
         moments: {
             tag: "🏆 Notable Moments",
             tagClass: "tag-gold",
@@ -381,6 +424,11 @@ window.CONTENT = {
             heading: "An Invitation, Not a Checklist",
             lead: "I have a full, happy life, and I'm just hoping to share it. Here's the kind of \"us\" I'm dreaming about.",
             blocks: [
+                {
+                    type: "note",
+                    variant: "growth-note",
+                    text: "To be upfront: I'm looking for something serious and long-term. Monogamy is my first principle — but more than anything, I'm looking for someone I can be genuinely committed to and build a life with. A couple of practical things: I'm not looking for long-distance, and smoking is a dealbreaker for me. Your religion (or lack of one) genuinely isn't the issue for me — but food is a big part of my life, so it'd be tough if that meant we couldn't easily eat out together or if it created real friction over how we'd raise kids one day. I'd also want a partner whose politics broadly line up with mine (Liberal Left)."
+                },
                 {
                     type: "paragraph",
                     html: "Two things matter most to me. <strong>First,</strong> someone who's just as up for an adventure as they are for a quiet day at home. <strong>Second,</strong> someone happy to share the stuff I love (gaming and nerd culture, mostly) and to pull me into their own quirky world too. Everything below is a bit of what I picture us getting up to together."
@@ -1498,6 +1546,7 @@ window.CONTENT = {
                                     items: [
                                         "1–3 kids (70–80% sure, with the right person)",
                                         "1–2 dogs (open to a cat, but need at least one dog)",
+                                        "No pets currently — solo life means a dog wouldn't get the attention it deserves right now, but it's high on the list for when that changes",
                                         "Marriage — no rush; sign the papers when we're sure, big wedding later",
                                         "Maybe: digital nomad life, or a few years in New Zealand"
                                     ]

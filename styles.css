@@ -584,6 +584,10 @@ p { color: var(--muted); margin-bottom: 14px; }
 .growth-banner { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 12px; padding: 16px 18px; margin-bottom: 18px; font-size: 0.92rem; color: var(--text); }
 .growth-note { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 15px; margin-top: 12px; font-size: 0.88rem; color: var(--muted); }
 
+/* Character Sheet (persona cards + love languages) */
+.character-sheet { margin-top: 28px; }
+.character-sheet .love-langs { margin-top: 16px; }
+
 /* Personality cards */
 .persona-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
 .persona-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
