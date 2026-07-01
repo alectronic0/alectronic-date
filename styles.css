@@ -220,6 +220,39 @@ p { color: var(--muted); margin-bottom: 14px; }
 }
 .mosaic-strip img:hover { opacity: 1; }
 
+/* "View all photos" button under the faces header */
+.faces-expand {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 14px; padding: 9px 18px;
+  background: var(--accent-soft); color: var(--text);
+  border: 1px solid var(--border); border-radius: 999px;
+  font: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.faces-expand:hover { background: rgba(153, 78, 168, 0.28); border-color: var(--accent-light); }
+.faces-expand span { font-size: 1.05rem; }
+
+/* Expanded photo gallery overlay */
+.gallery { display: none; position: fixed; inset: 0; background: rgba(10, 4, 9, 0.97); z-index: 998; overflow-y: auto; padding: 24px; }
+.gallery.open { display: block; }
+.gallery-head {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1120px; margin: 0 auto 18px; padding-top: 4px;
+}
+.gallery-head h3 { margin: 0; font-size: 1.35rem; }
+.gallery-close { background: none; border: none; color: var(--muted); font-size: 2.2rem; line-height: 1; cursor: pointer; padding: 0 6px; }
+.gallery-close:hover { color: #fff; }
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px; max-width: 1120px; margin: 0 auto;
+}
+.gallery-grid img {
+  width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px;
+  cursor: zoom-in; border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.15s, border-color 0.15s;
+}
+.gallery-grid img:hover { transform: scale(1.02); border-color: var(--accent-light); }
+
 /* ─── Moments ───────────────────────────────── */
 .moments-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
 .moment {

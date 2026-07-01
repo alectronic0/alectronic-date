@@ -481,12 +481,20 @@
 
     function renderFaces() {
         if (!C || !C.faces) return;
-        setHtml('[data-faces="header"]', sectionHeaderHtml(C.faces, 'photos'));
+        // A "view all" button lets people open the full grid instead of waiting
+        // for the marquee to scroll each photo into view (see initGallery).
+        const expandBtn =
+            '<button class="faces-expand" type="button" data-faces="expand" aria-haspopup="dialog">' +
+            '<span aria-hidden="true">⤢</span> View all photos</button>';
+        setHtml('[data-faces="header"]', sectionHeaderHtml(C.faces, 'photos') + expandBtn);
         const photos = C.faces.photos;
         // Duplicate the set so the marquee can loop seamlessly (track animates -50%).
         const once = photos.map((p) => img(p.src, p.alt)).join('');
         const twice = photos.map((p) => img(p.src, '', 'aria-hidden="true"')).join('');
         setHtml('[data-faces="track"]', once + twice);
+        // The expanded gallery shows the full set once, in a static grid.
+        setHtml('[data-gallery="grid"]', once);
+        setText('[data-gallery="title"]', C.faces.heading || 'Photos');
     }
 
     // A link's icon: prefer the site favicon, fall back to the emoji `icon` when
@@ -916,7 +924,9 @@
 
         const close = () => {
             lightbox.classList.remove('open');
-            document.body.style.overflow = '';
+            // The gallery may still be open beneath the lightbox — keep the page
+            // locked in that case so the background doesn't start scrolling.
+            document.body.style.overflow = document.querySelector('.gallery.open') ? 'hidden' : '';
         };
         lightbox.addEventListener('click', close);
         document.addEventListener('keydown', (e) => {
@@ -924,7 +934,7 @@
         });
 
         const selectors =
-            '[data-zoom], .mosaic-strip img, .poster-grid img, .photo-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img';
+            '[data-zoom], .mosaic-strip img, .gallery-grid img, .poster-grid img, .photo-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img';
 
         // Delegated so it covers images injected after load.
         document.addEventListener('click', (e) => {
@@ -936,6 +946,43 @@
             lightbox.classList.add('open');
             document.body.style.overflow = 'hidden';
         });
+    }
+
+    // The "view all photos" gallery: a full-screen grid of every face photo so
+    // people can browse the whole set at once instead of waiting on the marquee.
+    // Tapping a photo still opens the lightbox (delegated in initLightbox).
+    function initGallery() {
+        const gallery = document.getElementById('gallery');
+        if (!gallery) return;
+
+        const open = () => {
+            gallery.classList.add('open');
+            gallery.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            gallery.scrollTop = 0;
+        };
+        const close = () => {
+            gallery.classList.remove('open');
+            gallery.setAttribute('aria-hidden', 'true');
+            // Don't unlock the page if the lightbox is still up over the gallery.
+            document.body.style.overflow = document.querySelector('.lightbox.open') ? 'hidden' : '';
+        };
+
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('[data-faces="expand"]')) return open();
+            if (e.target.closest('.gallery-close')) return close();
+            if (e.target === gallery) close(); // click on the backdrop
+        });
+        // Capture phase so this runs before the lightbox's own (bubble-phase)
+        // Escape handler: if the lightbox is up over the gallery, let Escape close
+        // that first and leave the gallery open underneath.
+        document.addEventListener(
+            'keydown',
+            (e) => {
+                if (e.key === 'Escape' && !document.querySelector('.lightbox.open')) close();
+            },
+            true
+        );
     }
 
     // Swap any image that fails to load for a white placeholder showing its alt
@@ -990,6 +1037,7 @@
         initShare();
         initPrompts();
         initLightbox();
+        initGallery();
         initKonami();
 
         openFromHash();
