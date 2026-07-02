@@ -224,20 +224,21 @@
   </div>
 </footer>
 
-<!-- Expanded photo gallery (opened from the "View all photos" button) -->
-<div class="gallery" id="gallery" role="dialog" aria-modal="true" aria-hidden="true" aria-label="All photos of Alec">
+<!-- Expanded photo gallery (opened from the "View all photos" button).
+     Native <dialog> — focus trapping, Escape and top-layer stacking come for free. -->
+<dialog class="gallery" id="gallery" aria-label="All photos of Alec">
   <div class="gallery-head">
     <h3 data-gallery="title">Photos</h3>
     <button class="gallery-close" type="button" aria-label="Close gallery">×</button>
   </div>
   <div class="gallery-grid" data-gallery="grid"></div>
-</div>
+</dialog>
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox">
-  <span class="lightbox-close" aria-label="Close">×</span>
+<dialog class="lightbox" id="lightbox" aria-label="Photo lightbox">
+  <button class="lightbox-close" type="button" aria-label="Close">×</button>
   <img id="lightbox-img" src="" alt="Enlarged photo of Alec Doran-Twyford">
-</div>
+</dialog>
 
 <script src="content.js" defer></script>
 <script src="main.js" defer></script>

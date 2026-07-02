@@ -935,21 +935,19 @@
         }, 4200);
     }
 
+    // Both overlays are native <dialog> elements opened with showModal(), so
+    // Escape handling, focus trapping and stacking (lightbox over gallery,
+    // Escape closes the topmost first) come from the browser. The page scroll
+    // lock lives in CSS: body:has(dialog[open]) { overflow: hidden }.
     function initLightbox() {
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         if (!lightbox || !lightboxImg) return;
 
-        const close = () => {
-            lightbox.classList.remove('open');
-            // The gallery may still be open beneath the lightbox — keep the page
-            // locked in that case so the background doesn't start scrolling.
-            document.body.style.overflow = document.querySelector('.gallery.open') ? 'hidden' : '';
-        };
-        lightbox.addEventListener('click', close);
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') close();
-        });
+        // Any click — image, close button or backdrop — dismisses the lightbox.
+        lightbox.addEventListener('click', () => lightbox.close());
+        // Drop the old image once closed so it can't flash up next time.
+        lightbox.addEventListener('close', () => lightboxImg.removeAttribute('src'));
 
         const selectors =
             '[data-zoom], .mosaic-strip img, .gallery-grid img, .poster-grid img, .photo-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img';
@@ -961,8 +959,7 @@
             if (img.classList.contains('flag')) return; // tiny inline flags aren't zoomable
             lightboxImg.src = img.currentSrc || img.src;
             lightboxImg.alt = img.alt;
-            lightbox.classList.add('open');
-            document.body.style.overflow = 'hidden';
+            lightbox.showModal();
         });
     }
 
@@ -973,34 +970,15 @@
         const gallery = document.getElementById('gallery');
         if (!gallery) return;
 
-        const open = () => {
-            gallery.classList.add('open');
-            gallery.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-            gallery.scrollTop = 0;
-        };
-        const close = () => {
-            gallery.classList.remove('open');
-            gallery.setAttribute('aria-hidden', 'true');
-            // Don't unlock the page if the lightbox is still up over the gallery.
-            document.body.style.overflow = document.querySelector('.lightbox.open') ? 'hidden' : '';
-        };
-
         document.addEventListener('click', (e) => {
-            if (e.target.closest('[data-faces="expand"]')) return open();
-            if (e.target.closest('.gallery-close')) return close();
-            if (e.target === gallery) close(); // click on the backdrop
+            if (e.target.closest('[data-faces="expand"]')) {
+                gallery.showModal();
+                gallery.scrollTop = 0;
+                return;
+            }
+            if (e.target.closest('.gallery-close')) return gallery.close();
+            if (e.target === gallery) gallery.close(); // click outside the photos
         });
-        // Capture phase so this runs before the lightbox's own (bubble-phase)
-        // Escape handler: if the lightbox is up over the gallery, let Escape close
-        // that first and leave the gallery open underneath.
-        document.addEventListener(
-            'keydown',
-            (e) => {
-                if (e.key === 'Escape' && !document.querySelector('.lightbox.open')) close();
-            },
-            true
-        );
     }
 
     // Swap any image that fails to load for a white placeholder showing its alt
