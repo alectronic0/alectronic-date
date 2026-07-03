@@ -175,6 +175,7 @@ nav.open .burger-lines i:nth-child(3) { transform: translateY(-6px) rotate(-45de
   max-width: var(--maxw); margin: 0 auto;
   padding: 6px 12px 12px; border-top: 1px solid var(--border);
   max-height: calc(100vh - var(--nav-h)); overflow-y: auto;
+  overscroll-behavior: contain; /* scrolling the menu list mustn't scroll (and so dismiss) the page */
   scrollbar-width: none;
 }
 .nav-inner::-webkit-scrollbar { display: none; }

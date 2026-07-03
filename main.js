@@ -839,10 +839,17 @@
         document.addEventListener('click', (e) => {
             if (nav.classList.contains('open') && !nav.contains(e.target)) setOpen(false);
         });
+        // Scrolling the page dismisses the open menu — but only after real
+        // movement (>24px from where it was opened), so the layout shift of
+        // the fold-down itself can't instantly close it.
+        let openedAtY = 0;
+        burger.addEventListener('click', () => { openedAtY = window.scrollY; });
         window.addEventListener(
             'scroll',
             () => {
-                if (nav.classList.contains('open')) setOpen(false);
+                if (nav.classList.contains('open') && Math.abs(window.scrollY - openedAtY) > 24) {
+                    setOpen(false);
+                }
             },
             { passive: true }
         );
@@ -861,7 +868,9 @@
                     const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
                     if (!active) return;
                     active.classList.add('active');
-                    active.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});
+                    // (No scrollIntoView here: it was for the old horizontal
+                    // link row, and on the fold-down menu it scrolls the
+                    // window — which would dismiss the menu it just opened.)
                 });
             },
             {rootMargin: '-40% 0px -55% 0px'}
