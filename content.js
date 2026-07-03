@@ -219,6 +219,12 @@ window.CONTENT = {
        a `construction` block in the section). */
     accordion: [
         {
+            key: "moments",
+            emoji: "🏆",
+            title: "Notable Moments",
+            hint: "— milestones & adventures"
+        },
+        {
             key: "personality",
             emoji: "🧬",
             title: "Personality & Vibe",
@@ -287,11 +293,10 @@ window.CONTENT = {
     /* ── Mid-page sections (each = blocks[]) ── */
     sections: {
 
+        // Rendered inside its deep-dive modal, so no tag/heading here —
+        // the modal head already carries the 🏆 title.
         moments: {
-            tag: "🏆 Notable Moments",
-            tagClass: "tag-gold",
-            heading: "A Life Well Lived (So Far)",
-            lead: "A few of the milestones, mishaps and adventures so far — tap any to enlarge.",
+            lead: "A life well lived (so far) — a few of the milestones, mishaps and adventures. Tap any to enlarge.",
             blocks: [
                 {
                     type: "cardGrid", cards: [

@@ -494,24 +494,13 @@ body:has(dialog[open]) { overflow: hidden; }
   100% { transform: translateY(105vh) rotate(220deg); opacity: 0; }
 }
 
-/* ─── Ever-evolving note (folded <details> near the top) ─── */
-#evolving { padding: 28px 0; }
+/* ─── Ever-evolving note (small aside at the end of Who I Am) ─── */
 .evolving-note {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); overflow: hidden;
+  margin: 28px 0 0; padding: 13px 18px;
+  background: var(--surface); border: 1px dashed var(--border);
+  border-radius: 12px; font-size: 0.88rem; color: var(--muted);
 }
-.evolving-note summary {
-  list-style: none; cursor: pointer; user-select: none;
-  display: flex; align-items: center; gap: 10px;
-  padding: 14px 18px; min-height: 48px;
-  font-weight: 600; font-size: 0.95rem; color: var(--text);
-}
-.evolving-note summary::-webkit-details-marker { display: none; }
-.evolving-note summary:hover { background: var(--surface-2); }
-.evolving-emoji { font-size: 1.15rem; }
-.evolving-chevron { margin-left: auto; color: var(--accent-light); transition: transform 0.25s; }
-.evolving-note[open] .evolving-chevron { transform: rotate(180deg); }
-.evolving-note p { padding: 2px 18px 16px; margin: 0; font-size: 0.92rem; }
+.evolving-note strong { color: var(--gold); font-weight: 600; }
 
 /* ─── Warning divider ───────────────────────── */
 .warning-banner {
