@@ -1197,17 +1197,6 @@ window.CONTENT = {
                     height: 352,
                     title: "Alec's curated playlist"
                 },
-                {type: "heading", text: "🛋️ The Site Soundtrack"},
-                {
-                    type: "paragraph",
-                    text: "The cosy gaming-lofi mix behind the 🎧 button in the corner of the site — also here if you'd rather browse it."
-                },
-                {
-                    type: "spotify",
-                    src: "https://open.spotify.com/embed/playlist/37i9dQZF1FwX0A5pnDZILw?utm_source=generator&theme=0",
-                    height: 152,
-                    title: "Site soundtrack — cosy gaming lofi"
-                },
                 {type: "heading", text: "Genres on Rotation"},
                 {
                     type: "tagRow", tags: [
