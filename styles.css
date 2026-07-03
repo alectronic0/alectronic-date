@@ -607,6 +607,22 @@ body:has(dialog[open]) { overflow: hidden; }
 .date-modal .contact-section h2,
 .date-modal .share-section h2 { font-size: 1.3rem; }
 
+/* ─── 🔒 "Sexy photos" gag ──────────────────── */
+.deep-modal-body p:has(> .cheeky-unlock) { text-align: center; margin: 22px 0 6px; }
+.cheeky-unlock {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); border: 1px solid var(--accent);
+  border-radius: 12px; padding: 12px 22px; min-height: 48px;
+  font-family: var(--font); font-size: 0.95rem; font-weight: 600; color: #fff;
+  cursor: pointer; box-shadow: 0 6px 18px rgba(153, 78, 168, 0.4);
+  transition: background 0.2s, transform 0.15s;
+}
+.cheeky-unlock:hover { background: #ab5cba; transform: translateY(-2px); }
+.cheeky-line {
+  text-align: center; font-weight: 600; color: var(--gold);
+  max-width: 480px; margin: 0 auto 16px;
+}
+
 /* 🚧 placeholder banner for topics that aren't written yet */
 .construction-banner {
   position: relative; overflow: hidden;

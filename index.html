@@ -252,6 +252,25 @@
   </div>
 </dialog>
 
+<!-- Punchline for the 🔒 "sexy photos" gag in the Deep Dive (opened by the
+     🔓 button inside that topic's modal — see initCheekyGag in main.js).
+     Reuses the deep-modal/date-modal shell, and the same contact + share
+     cards filled by renderConnectCard + renderShare. -->
+<dialog class="deep-modal date-modal" id="cheeky-modal" aria-label="You're cheeky — I like that!">
+  <div class="deep-modal-inner">
+    <div class="deep-modal-head">
+      <span class="deep-modal-emoji" aria-hidden="true">😏</span>
+      <h3 class="deep-modal-title">You're Cheeky — I Like That!</h3>
+      <button class="deep-modal-close" type="button" aria-label="Close">×</button>
+    </div>
+    <div class="deep-modal-body">
+      <p class="cheeky-line">You're cheeky 😉 I like that! If you really do want some fun though, you should just contact me 😏</p>
+      <div class="contact-section" data-connect="cheeky-modal"></div>
+      <div class="share-section" data-share="cheeky-modal"></div>
+    </div>
+  </div>
+</dialog>
+
 <!-- Lightbox -->
 <dialog class="lightbox" id="lightbox" aria-label="Photo lightbox">
   <button class="lightbox-close" type="button" aria-label="Close">×</button>
