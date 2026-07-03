@@ -400,10 +400,13 @@
     // the headings live in content.js so they can be edited/reordered as data.
     // Deep-dive accordion sections carry none of these, so they render nothing.
     // `anchor` is the enclosing section's id, used for the 🔗 deep link.
+    // Tag + heading ride in a sticky .section-head wrapper so they stay pinned
+    // below the nav while the section scrolls; the lead scrolls away normally.
     function sectionHeaderHtml(s, anchor) {
-        let h = '';
-        if (s.tag) h += `<div class="section-tag ${esc(s.tagClass || 'tag-purple')}">${esc(s.tag)}</div>`;
-        if (s.heading) h += `<h2>${esc(s.heading)}${headingLink(anchor, s.heading)}</h2>`;
+        let head = '';
+        if (s.tag) head += `<div class="section-tag ${esc(s.tagClass || 'tag-purple')}">${esc(s.tag)}</div>`;
+        if (s.heading) head += `<h2>${esc(s.heading)}${headingLink(anchor, s.heading)}</h2>`;
+        let h = head ? `<div class="section-head">${head}</div>` : '';
         if (s.lead) h += `<p class="lead">${esc(s.lead)}</p>`;
         return h;
     }
@@ -792,15 +795,24 @@
         };
         toggle.addEventListener('click', () => setOpen(!wrap.classList.contains('open')));
         wrap.querySelector('.soundtrack-close').addEventListener('click', () => setOpen(false));
+        // Starting to scroll tucks the panel away again (the music keeps
+        // playing — the panel is hidden, never removed).
+        window.addEventListener(
+            'scroll',
+            () => {
+                if (wrap.classList.contains('open')) setOpen(false);
+            },
+            { passive: true }
+        );
     }
 
     /* ============================================================
        Interactions (run AFTER render so the DOM exists)
        ============================================================ */
 
-    // Mobile hamburger: toggles the fold-down link menu. Tapping a link,
-    // pressing Escape or tapping outside the nav all close it. On desktop
-    // the burger is hidden by CSS, so none of this fires.
+    // Hamburger nav (all screen sizes): toggles the fold-down link menu.
+    // Tapping a link, pressing Escape, tapping outside the nav or starting
+    // to scroll all close it.
     function initMobileNav() {
         const nav = document.querySelector('nav');
         const burger = document.querySelector('.nav-burger');
@@ -827,6 +839,13 @@
         document.addEventListener('click', (e) => {
             if (nav.classList.contains('open') && !nav.contains(e.target)) setOpen(false);
         });
+        window.addEventListener(
+            'scroll',
+            () => {
+                if (nav.classList.contains('open')) setOpen(false);
+            },
+            { passive: true }
+        );
     }
 
     function initScrollSpy() {
