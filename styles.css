@@ -149,6 +149,54 @@ nav a {
 nav a:hover, nav a.active { color: var(--text); border-bottom-color: var(--accent-light); }
 nav a.nav-deep { color: var(--rose-light); font-weight: 600; }
 
+/* Mobile nav bar (hamburger + "Say hi" shortcut) — hidden on desktop */
+.nav-bar { display: none; }
+@media (max-width: 680px) {
+  .nav-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px; padding: 6px 16px;
+  }
+  .nav-burger {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: none; border: none; cursor: pointer;
+    color: var(--text); font-family: var(--font);
+    font-size: 0.9rem; font-weight: 600;
+    padding: 8px 4px; min-height: 44px;
+  }
+  .burger-lines { display: inline-flex; flex-direction: column; gap: 4px; width: 20px; }
+  .burger-lines i {
+    display: block; height: 2px; border-radius: 2px;
+    background: var(--accent-light);
+    transition: transform 0.25s, opacity 0.2s;
+  }
+  nav.open .burger-lines i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  nav.open .burger-lines i:nth-child(2) { opacity: 0; }
+  nav.open .burger-lines i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .nav-contact {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--accent); color: #fff;
+    border-radius: 999px; padding: 8px 16px; min-height: 40px;
+    font-size: 0.85rem; font-weight: 600;
+    box-shadow: 0 4px 14px rgba(153, 78, 168, 0.4);
+  }
+  .nav-contact:hover { background: #ab5cba; color: #fff; }
+
+  /* The link row becomes a fold-down menu */
+  .nav-inner {
+    display: none; flex-direction: column; align-items: stretch;
+    padding: 6px 12px 12px; border-top: 1px solid var(--border);
+    max-height: calc(100vh - 64px); overflow-y: auto;
+  }
+  nav.open .nav-inner { display: flex; }
+  nav .nav-inner a {
+    padding: 13px 12px; font-size: 0.95rem; border-radius: 10px;
+    border-bottom: none; border-left: 2px solid transparent;
+  }
+  nav .nav-inner a:hover, nav .nav-inner a.active {
+    border-left-color: var(--accent-light); background: var(--surface-2);
+  }
+}
+
 /* ─── Layout primitives ─────────────────────── */
 .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
 section { padding: 76px 0; border-bottom: 1px solid var(--border); }
@@ -446,6 +494,14 @@ body:has(dialog[open]) { overflow: hidden; }
   100% { transform: translateY(105vh) rotate(220deg); opacity: 0; }
 }
 
+/* ─── Ever-evolving note (small aside at the end of Who I Am) ─── */
+.evolving-note {
+  margin: 28px 0 0; padding: 13px 18px;
+  background: var(--surface); border: 1px dashed var(--border);
+  border-radius: 12px; font-size: 0.88rem; color: var(--muted);
+}
+.evolving-note strong { color: var(--gold); font-weight: 600; }
+
 /* ─── Warning divider ───────────────────────── */
 .warning-banner {
   background: linear-gradient(90deg, var(--surface), #3a1f2a, var(--surface));
@@ -529,6 +585,13 @@ body:has(dialog[open]) { overflow: hidden; }
   color: var(--accent-light); margin: 22px 0 12px;
 }
 .deep-modal-body h3:first-child { margin-top: 0; }
+
+/* "Go on a date" modal — the contact + share cards, compacted to fit */
+.date-modal .contact-section,
+.date-modal .share-section { padding: 26px 20px; border-radius: 12px; }
+.date-modal .share-section { margin-top: 14px; }
+.date-modal .contact-section h2,
+.date-modal .share-section h2 { font-size: 1.3rem; }
 
 /* 🚧 placeholder banner for topics that aren't written yet */
 .construction-banner {

@@ -14,12 +14,11 @@ The page walks through:
 
 - **Who I Am** — the basics: profession, age, pronouns, nationality, location and more
 - **Faces** — a marquee of photos from my life
-- **Moments** — notable life highlights (got a 1st at uni, backpacked for 2 years, a month solo in Japan, skydived, climbed a volcano, bought a house…)
 - **What I Can Be** — what dating me could actually look like
 - **Looking For** — what I hope to find in a partner (an invitation, not a checklist)
 - **Date Ideas** — pick our first adventure: foodie, chill, active, intellectual, creative or a video-game session
 - **Contact** — email, Linktree, Instagram, LinkedIn and Telegram
-- **The Deep Dive** — a grid of topic buttons that pop up modals with everything else: personality & a week in the life (coming soon), radical transparency / growth, hobbies, bucket list, places, movies & TV, video games, food, music (with embedded Spotify playlists), books, podcasts, sports, politics & religion, gentle dislikes, future goals, plus favourite plants & creatures
+- **The Deep Dive** — a grid of topic buttons that pop up modals with everything else: notable moments, personality & a week in the life (coming soon), radical transparency / growth, hobbies, bucket list, places, movies & TV, video games, food, music (with embedded Spotify playlists), books, podcasts, sports, politics & religion, gentle dislikes, future goals, plus favourite plants & creatures
 
 There's also a floating 🎧 **site soundtrack** player (bottom corner) with a cosy gaming-lofi playlist to scroll to.
 
