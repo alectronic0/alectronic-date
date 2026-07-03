@@ -19,7 +19,9 @@ The page walks through:
 - **Looking For** — what I hope to find in a partner (an invitation, not a checklist)
 - **Date Ideas** — pick our first adventure: foodie, chill, active, intellectual, creative or a video-game session
 - **Contact** — email, Linktree, Instagram, LinkedIn and Telegram
-- **The Deep Dive** — an accordion of everything else: radical transparency / growth, hobbies, bucket list, places, movies & TV, video games, food, music, books, podcasts, sports, politics & religion, gentle dislikes, future goals, plus favourite plants & creatures
+- **The Deep Dive** — a grid of topic buttons that pop up modals with everything else: personality & a week in the life (coming soon), radical transparency / growth, hobbies, bucket list, places, movies & TV, video games, food, music (with embedded Spotify playlists), books, podcasts, sports, politics & religion, gentle dislikes, future goals, plus favourite plants & creatures
+
+There's also a floating 🎧 **site soundtrack** player (bottom corner) with a cosy gaming-lofi playlist to scroll to.
 
 ---
 
@@ -29,7 +31,7 @@ All site copy is the single source of truth in [`content.js`](content.js) — it
 
 Most sections are arrays of typed "blocks" (e.g. `paragraph`, `photoGrid`, `cardGrid`, `featureGrid`, `posterGrid`, `link`). To add or duplicate a section, copy a block and change its data — no HTML/JS edits needed.
 
-Styling lives in [`styles.css`](styles.css) and interactions (scroll-spy nav, accordion, lightbox) in [`main.js`](main.js); both are linked from `index.html` (no inline `<style>`/`<script>`).
+Styling lives in [`styles.css`](styles.css) and interactions (scroll-spy nav, deep-dive modals, lightbox, soundtrack player) in [`main.js`](main.js); both are linked from `index.html` (no inline `<style>`/`<script>`).
 
 Photos go in `img/` subfolders (named by section, e.g. `img/moments/`, `img/dates/`). Each deep-dive section pulls images from its matching folder; the `#photos` marquee uses `img/alec/`.
 
@@ -43,8 +45,8 @@ Photos go in `img/` subfolders (named by section, e.g. `img/moments/`, `img/date
 .
 ├── index.html       # Single-page site (shell; content is injected by main.js)
 ├── content.js       # All site content as data (window.CONTENT) — edit here first
-├── main.js          # Renders content, scroll-spy nav, accordion, lightbox
-├── styles.css       # All styling (warm-dark theme, cards, grids, accordion)
+├── main.js          # Renders content, scroll-spy nav, deep-dive modals, lightbox
+├── styles.css       # All styling (warm-dark theme, cards, grids, modals)
 ├── img/             # All photos, grouped by section name
 │   ├── alec/        # Photos of Alec (hero + faces marquee)
 │   ├── moments/
