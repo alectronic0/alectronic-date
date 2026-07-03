@@ -796,6 +796,29 @@
        Interactions (run AFTER render so the DOM exists)
        ============================================================ */
 
+    // Mobile hamburger: toggles the fold-down link menu. Tapping a link,
+    // pressing Escape or tapping outside the nav all close it. On desktop
+    // the burger is hidden by CSS, so none of this fires.
+    function initMobileNav() {
+        const nav = document.querySelector('nav');
+        const burger = document.querySelector('.nav-burger');
+        if (!nav || !burger) return;
+        const setOpen = (open) => {
+            nav.classList.toggle('open', open);
+            burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+        burger.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+        nav.querySelectorAll('.nav-inner a').forEach((a) =>
+            a.addEventListener('click', () => setOpen(false))
+        );
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') setOpen(false);
+        });
+        document.addEventListener('click', (e) => {
+            if (nav.classList.contains('open') && !nav.contains(e.target)) setOpen(false);
+        });
+    }
+
     function initScrollSpy() {
         const navLinks = document.querySelectorAll('nav a[href^="#"]');
         const sections = document.querySelectorAll('section[id]');
@@ -1100,6 +1123,7 @@
         renderFooterLinks();
         renderSoundtrack();
 
+        initMobileNav();
         initScrollSpy();
         initDeepDive();
         initDeepLinks();

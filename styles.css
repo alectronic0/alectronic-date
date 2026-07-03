@@ -149,6 +149,54 @@ nav a {
 nav a:hover, nav a.active { color: var(--text); border-bottom-color: var(--accent-light); }
 nav a.nav-deep { color: var(--rose-light); font-weight: 600; }
 
+/* Mobile nav bar (hamburger + "Say hi" shortcut) — hidden on desktop */
+.nav-bar { display: none; }
+@media (max-width: 680px) {
+  .nav-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px; padding: 6px 16px;
+  }
+  .nav-burger {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: none; border: none; cursor: pointer;
+    color: var(--text); font-family: var(--font);
+    font-size: 0.9rem; font-weight: 600;
+    padding: 8px 4px; min-height: 44px;
+  }
+  .burger-lines { display: inline-flex; flex-direction: column; gap: 4px; width: 20px; }
+  .burger-lines i {
+    display: block; height: 2px; border-radius: 2px;
+    background: var(--accent-light);
+    transition: transform 0.25s, opacity 0.2s;
+  }
+  nav.open .burger-lines i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  nav.open .burger-lines i:nth-child(2) { opacity: 0; }
+  nav.open .burger-lines i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .nav-contact {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--accent); color: #fff;
+    border-radius: 999px; padding: 8px 16px; min-height: 40px;
+    font-size: 0.85rem; font-weight: 600;
+    box-shadow: 0 4px 14px rgba(153, 78, 168, 0.4);
+  }
+  .nav-contact:hover { background: #ab5cba; color: #fff; }
+
+  /* The link row becomes a fold-down menu */
+  .nav-inner {
+    display: none; flex-direction: column; align-items: stretch;
+    padding: 6px 12px 12px; border-top: 1px solid var(--border);
+    max-height: calc(100vh - 64px); overflow-y: auto;
+  }
+  nav.open .nav-inner { display: flex; }
+  nav .nav-inner a {
+    padding: 13px 12px; font-size: 0.95rem; border-radius: 10px;
+    border-bottom: none; border-left: 2px solid transparent;
+  }
+  nav .nav-inner a:hover, nav .nav-inner a.active {
+    border-left-color: var(--accent-light); background: var(--surface-2);
+  }
+}
+
 /* ─── Layout primitives ─────────────────────── */
 .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
 section { padding: 76px 0; border-bottom: 1px solid var(--border); }
@@ -445,6 +493,25 @@ body:has(dialog[open]) { overflow: hidden; }
   0%   { transform: translateY(0) rotate(0); opacity: 1; }
   100% { transform: translateY(105vh) rotate(220deg); opacity: 0; }
 }
+
+/* ─── Ever-evolving note (folded <details> near the top) ─── */
+#evolving { padding: 28px 0; }
+.evolving-note {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+}
+.evolving-note summary {
+  list-style: none; cursor: pointer; user-select: none;
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 18px; min-height: 48px;
+  font-weight: 600; font-size: 0.95rem; color: var(--text);
+}
+.evolving-note summary::-webkit-details-marker { display: none; }
+.evolving-note summary:hover { background: var(--surface-2); }
+.evolving-emoji { font-size: 1.15rem; }
+.evolving-chevron { margin-left: auto; color: var(--accent-light); transition: transform 0.25s; }
+.evolving-note[open] .evolving-chevron { transform: rotate(180deg); }
+.evolving-note p { padding: 2px 18px 16px; margin: 0; font-size: 0.92rem; }
 
 /* ─── Warning divider ───────────────────────── */
 .warning-banner {

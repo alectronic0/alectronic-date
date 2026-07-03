@@ -93,8 +93,18 @@
 </header>
 
 <!-- ════════════════ NAV ════════════════ -->
+<!-- Desktop: the usual horizontal link row. Mobile (≤680px): the row folds
+     behind a hamburger, with an always-visible "Say hi" shortcut so the
+     contact section is one tap away from anywhere. -->
 <nav aria-label="Section navigation">
-  <div class="nav-inner">
+  <div class="nav-bar">
+    <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
+      <span class="burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="burger-label">Menu</span>
+    </button>
+    <a href="#contact" class="nav-contact">💬 Say hi</a>
+  </div>
+  <div class="nav-inner" id="nav-menu">
     <a href="#about">Who I Am</a>
     <a href="#photos">Faces</a>
     <a href="#moments">Moments</a>
@@ -124,17 +134,17 @@
   </div>
 </section>
 
-  <!-- ════════════════ WHO I AM ════════════════ -->
-  <section id="beta-test">
+  <!-- ════════════════ EVER-EVOLVING NOTE (folded) ════════════════ -->
+  <section id="evolving">
     <div class="container">
-      <div class="warning-banner">
-        <div class="w-emoji">🚧</div>
-        <h2>Work in progress</h2>
-        <p>This site is still a work in progress, so apologies in advance for any rough edges.</p>
-        <div class="warning-tags">
-          <span>🐛 Bugs</span><span>👾 Glitches</span><span>✍️ Typos</span><span>⁉️ Missing Info</span>
-        </div>
-      </div>
+      <details class="evolving-note">
+        <summary>
+          <span class="evolving-emoji" aria-hidden="true">🌱</span>
+          Like me, this site is always growing
+          <span class="evolving-chevron" aria-hidden="true">▾</span>
+        </summary>
+        <p>This website continues to grow and evolve, and — like its maker — it won't always be perfect. The odd bug, glitch or typo will sneak through. It'll keep trying anyway. 💜</p>
+      </details>
     </div>
   </section>
 
