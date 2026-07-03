@@ -28,6 +28,7 @@
   --muted-2: #9d859b;
 
   --font: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --nav-h: 57px; /* nav bar height (56px bar + 1px border) — sticky offsets key off this */
   --radius: 16px;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
@@ -54,7 +55,7 @@ img { display: block; max-width: 100%; background: white }
 
 /* ─── Hero ──────────────────────────────────── */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--nav-h)); /* the nav now sits above the hero */
   background:
     radial-gradient(circle at 78% 18%, rgba(255, 107, 138, 0.16) 0%, transparent 42%),
     radial-gradient(circle at 12% 88%, rgba(153, 78, 168, 0.20) 0%, transparent 45%),
@@ -128,79 +129,90 @@ img { display: block; max-width: 100%; background: white }
 }
 
 /* ─── Nav ───────────────────────────────────── */
+/* One slim bar on every screen size, pinned above everything: the hamburger
+   menu + the "Go on a date" pill. The section links fold down from the bar
+   when the burger is opened. */
 nav {
   position: sticky; top: 0; z-index: 100;
   background: rgba(22, 13, 20, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
-.nav-inner {
+.nav-bar {
   max-width: var(--maxw); margin: 0 auto;
-  display: flex; overflow-x: auto;
-  scrollbar-width: none; padding: 0 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; padding: 6px 16px;
+}
+.nav-burger {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: none; border: none; cursor: pointer;
+  color: var(--text); font-family: var(--font);
+  font-size: 0.9rem; font-weight: 600;
+  padding: 8px 4px; min-height: 44px;
+}
+.burger-lines { display: inline-flex; flex-direction: column; gap: 4px; width: 20px; }
+.burger-lines i {
+  display: block; height: 2px; border-radius: 2px;
+  background: var(--accent-light);
+  transition: transform 0.25s, opacity 0.2s;
+}
+nav.open .burger-lines i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+nav.open .burger-lines i:nth-child(2) { opacity: 0; }
+nav.open .burger-lines i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav-contact {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--accent); color: #fff;
+  border: none; cursor: pointer; font-family: var(--font);
+  border-radius: 999px; padding: 8px 16px; min-height: 40px;
+  font-size: 0.85rem; font-weight: 600;
+  box-shadow: 0 4px 14px rgba(153, 78, 168, 0.4);
+}
+.nav-contact:hover { background: #ab5cba; color: #fff; }
+
+/* The fold-down link menu (hidden until the burger opens it) */
+.nav-inner {
+  display: none; flex-direction: column; align-items: stretch;
+  max-width: var(--maxw); margin: 0 auto;
+  padding: 6px 12px 12px; border-top: 1px solid var(--border);
+  max-height: calc(100vh - var(--nav-h)); overflow-y: auto;
+  scrollbar-width: none;
 }
 .nav-inner::-webkit-scrollbar { display: none; }
+nav.open .nav-inner { display: flex; }
 nav a {
-  font-size: 0.82rem; font-weight: 500; color: var(--muted-2);
-  padding: 14px 15px; white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  transition: color 0.15s, border-color 0.15s;
+  font-size: 0.95rem; font-weight: 500; color: var(--muted-2);
+  padding: 13px 12px; white-space: nowrap; border-radius: 10px;
+  border-left: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
-nav a:hover, nav a.active { color: var(--text); border-bottom-color: var(--accent-light); }
+nav a:hover, nav a.active {
+  color: var(--text); border-left-color: var(--accent-light); background: var(--surface-2);
+}
 nav a.nav-deep { color: var(--rose-light); font-weight: 600; }
-
-/* Mobile nav bar (hamburger + "Say hi" shortcut) — hidden on desktop */
-.nav-bar { display: none; }
-@media (max-width: 680px) {
-  .nav-bar {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 10px; padding: 6px 16px;
-  }
-  .nav-burger {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: none; border: none; cursor: pointer;
-    color: var(--text); font-family: var(--font);
-    font-size: 0.9rem; font-weight: 600;
-    padding: 8px 4px; min-height: 44px;
-  }
-  .burger-lines { display: inline-flex; flex-direction: column; gap: 4px; width: 20px; }
-  .burger-lines i {
-    display: block; height: 2px; border-radius: 2px;
-    background: var(--accent-light);
-    transition: transform 0.25s, opacity 0.2s;
-  }
-  nav.open .burger-lines i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-  nav.open .burger-lines i:nth-child(2) { opacity: 0; }
-  nav.open .burger-lines i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-  .nav-contact {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--accent); color: #fff;
-    border-radius: 999px; padding: 8px 16px; min-height: 40px;
-    font-size: 0.85rem; font-weight: 600;
-    box-shadow: 0 4px 14px rgba(153, 78, 168, 0.4);
-  }
-  .nav-contact:hover { background: #ab5cba; color: #fff; }
-
-  /* The link row becomes a fold-down menu */
-  .nav-inner {
-    display: none; flex-direction: column; align-items: stretch;
-    padding: 6px 12px 12px; border-top: 1px solid var(--border);
-    max-height: calc(100vh - 64px); overflow-y: auto;
-  }
-  nav.open .nav-inner { display: flex; }
-  nav .nav-inner a {
-    padding: 13px 12px; font-size: 0.95rem; border-radius: 10px;
-    border-bottom: none; border-left: 2px solid transparent;
-  }
-  nav .nav-inner a:hover, nav .nav-inner a.active {
-    border-left-color: var(--accent-light); background: var(--surface-2);
-  }
-}
 
 /* ─── Layout primitives ─────────────────────── */
 .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
-section { padding: 76px 0; border-bottom: 1px solid var(--border); }
+section {
+  padding: 76px 0; border-bottom: 1px solid var(--border);
+  scroll-margin-top: var(--nav-h); /* anchor jumps land below the pinned nav */
+}
 section:last-of-type { border-bottom: none; }
+
+/* Sticky per-section header: the tag + heading stay pinned just below the
+   nav while you scroll through a section, so you always know where you are
+   (especially on mobile). The solid background hides content sliding under. */
+.section-head {
+  position: sticky; top: var(--nav-h); z-index: 60;
+  background: var(--bg);
+  padding: 10px 0 6px;
+}
+.section-head .section-tag { margin-bottom: 8px; }
+.section-head h2 { margin-bottom: 6px; }
+.section-head .profile-name { margin-bottom: 0; }
+.section-head.deep-intro { margin-bottom: 0; }
+/* Dissolve the faces-header wrapper box so its sticky .section-head scopes to
+   the whole #photos container (sticky pins only within its direct parent). */
+[data-faces="header"] { display: contents; }
 
 .section-tag {
   display: inline-block;
@@ -230,7 +242,8 @@ p { color: var(--muted); margin-bottom: 14px; }
 .profile-layout { display: grid; grid-template-columns: 1fr 0.78fr; gap: 36px; align-items: start; }
 .profile-name { font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
 .profile-tagline { color: var(--gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 18px; }
-.profile-photo { position: sticky; top: 84px; }
+/* Sticks below the section's sticky head (nav + tag + name), not just the nav */
+.profile-photo { position: sticky; top: calc(var(--nav-h) + 110px); }
 .profile-photo img {
   /* height: auto overrides the image's width/height attributes (added for
      CLS elsewhere) so aspect-ratio is what actually sizes it here. */

@@ -77,6 +77,30 @@
 </head>
 <body>
 
+<!-- ════════════════ NAV ════════════════ -->
+<!-- Always at the very top (above the hero) on every screen size: a slim bar
+     with the hamburger menu and an always-visible "Go on a date" button that
+     pops up the contact + share modal from anywhere on the page. The section
+     links fold down when the burger is opened. -->
+<nav aria-label="Section navigation">
+  <div class="nav-bar">
+    <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
+      <span class="burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="burger-label">Menu</span>
+    </button>
+    <button type="button" class="nav-contact" aria-haspopup="dialog">💘 Go on a date</button>
+  </div>
+  <div class="nav-inner" id="nav-menu">
+    <a href="#about">Who I Am</a>
+    <a href="#photos">Faces</a>
+    <a href="#boyfriend-mode">Boyfriend Mode</a>
+    <a href="#looking-for">Looking For</a>
+    <a href="#dates">Date Ideas</a>
+    <a href="#contact">Contact</a>
+    <a href="#deep-dive" class="nav-deep">Deep Dive ↓</a>
+  </div>
+</nav>
+
 <!-- ════════════════ HERO ════════════════ -->
 <header class="hero">
   <div class="hero-inner">
@@ -92,39 +116,20 @@
   <div class="hero-scroll">ok, a little scrolling required ↓</div>
 </header>
 
-<!-- ════════════════ NAV ════════════════ -->
-<!-- Desktop: the usual horizontal link row. Mobile (≤680px): the row folds
-     behind a hamburger, with an always-visible "Go on a date" button that
-     pops up the contact + share modal from anywhere on the page. -->
-<nav aria-label="Section navigation">
-  <div class="nav-bar">
-    <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
-      <span class="burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="burger-label">Menu</span>
-    </button>
-    <button type="button" class="nav-contact" aria-haspopup="dialog">💘 Go on a date</button>
-  </div>
-  <div class="nav-inner" id="nav-menu">
-    <a href="#about">Who I Am</a>
-    <a href="#photos">Faces</a>
-    <a href="#boyfriend-mode">What I Can Be</a>
-    <a href="#looking-for">Looking For</a>
-    <a href="#dates">Date Ideas</a>
-    <a href="#contact">Contact</a>
-    <a href="#deep-dive" class="nav-deep">Deep Dive ↓</a>
-  </div>
-</nav>
-
 <main>
 
 <!-- ════════════════ WHO I AM ════════════════ -->
 <section id="about">
   <div class="container">
-    <div class="section-tag tag-purple">📋 Who I Am</div>
+    <!-- Tag + name ride in the sticky section head (and sit above the photo
+         on mobile), so you always know whose profile you're scrolling. -->
+    <div class="section-head">
+      <div class="section-tag tag-purple">📋 Who I Am</div>
+      <div class="profile-name" data-profile="name"></div>
+    </div>
+    <div class="profile-tagline" data-profile="tagline"></div>
     <div class="profile-layout">
       <div class="profile-intro">
-        <div class="profile-name" data-profile="name"></div>
-        <div class="profile-tagline" data-profile="tagline"></div>
         <div data-profile="intro"></div>
         <div class="fact-grid" data-profile="facts"></div>
       </div>
@@ -186,9 +191,13 @@
 <!-- ════════════════ DEEP DIVE (topic buttons + modals) ════════════════ -->
 <section id="deep-dive">
   <div class="container">
-    <div class="deep-intro">
+    <!-- The sticky head sits directly in the container (not inside .deep-intro)
+         so it stays pinned for the whole section, topic grid included. -->
+    <div class="section-head deep-intro">
       <div class="section-tag tag-rose">🔬 The Deep Dive</div>
       <h2>Everything Else About Me <span class="deep-link" role="button" tabindex="0" data-anchor="deep-dive" aria-label="Copy link to The Deep Dive" title="Copy link to this section">🔗</span></h2>
+    </div>
+    <div class="deep-intro">
       <p class="lead" style="margin-left:auto;margin-right:auto;">Tap any topic to open it. Skim what catches your eye, or read the lot — your call.</p>
     </div>
 
