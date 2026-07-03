@@ -2,7 +2,7 @@
    Alec's Dating Application — renderer + interactions
    ------------------------------------------------------------
    Reads window.CONTENT (from content.js) and builds the page,
-   then wires up scroll-spy, the accordion and the lightbox.
+   then wires up scroll-spy, the deep-dive modals and the lightbox.
 
    Rendering is data-driven: most sections are an array of typed
    "blocks" (see content.js). Each block type has a small renderer
@@ -355,7 +355,21 @@
                             d.description
                         )}</div></div>`
                 )
-                .join('')}</div>`
+                .join('')}</div>`,
+
+        // Spotify embed (playlist / album / track). `src` is an
+        // open.spotify.com/embed/… URL; `height` follows Spotify's presets
+        // (152 = compact player, 352 = player with track list).
+        spotify: (b) =>
+            `<div class="spotify-embed"><iframe src="${esc(b.src)}" title="${esc(
+                b.title || 'Spotify player'
+            )}" width="100%" height="${Number(b.height) || 152}" frameborder="0" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>`,
+
+        // 🚧 placeholder banner for sections that aren't written yet.
+        construction: (b) =>
+            '<div class="construction-banner"><div class="c-emoji">🚧</div>' +
+            '<strong>Under Construction</strong>' +
+            `<p>${esc(b.text || 'This section is still being built — check back soon!')}</p></div>`
     };
 
     function renderBlocks(list) {
@@ -406,31 +420,53 @@
         });
     }
 
-    // Build the deep-dive accordion shell from CONTENT.accordion. Each card gets
-    // id=key so a URL hash (…#food) can open it; its body is a data-section
-    // container that renderSections() fills afterwards.
-    function renderAccordion() {
+    // Build the deep-dive topic grid + one <dialog> modal per topic from
+    // CONTENT.accordion. Each modal gets id=key so a URL hash (…#food) can
+    // open it; its body is a data-section container that renderSections()
+    // fills afterwards. Topics flagged `wip: true` get a 🚧 badge.
+    function renderDeepDive() {
         if (!C || !C.accordion) return;
-        const wrap = document.querySelector('.accordion');
-        if (!wrap) return;
-        wrap.innerHTML = C.accordion
+        const grid = document.querySelector('.deep-grid');
+        if (!grid) return;
+        grid.innerHTML = C.accordion
             .map(
                 (a) =>
-                    `<article class="acc-item" id="${esc(a.key)}">` +
-                    '<button class="acc-header" aria-expanded="false">' +
-                    `<span class="acc-emoji">${esc(a.emoji)}</span>` +
-                    `<span class="acc-title">${esc(a.title)}${
-                        a.hint ? ` <span class="acc-hint">${esc(a.hint)}</span>` : ''
-                    }</span>` +
-                    `<span class="acc-link" role="button" tabindex="0" aria-label="Copy link to ${esc(
-                        a.title
-                    )}" title="Copy link to this section">🔗</span>` +
-                    '<span class="acc-chevron">▾</span>' +
-                    '</button>' +
-                    `<div class="acc-body"><div class="acc-body-inner"><div class="acc-content" data-section="${esc(
+                    `<button class="deep-card" type="button" data-modal="${esc(
                         a.key
-                    )}"></div></div></div>` +
-                    '</article>'
+                    )}" aria-haspopup="dialog">` +
+                    (a.wip ? '<span class="deep-card-badge">🚧 WIP</span>' : '') +
+                    `<span class="deep-card-emoji" aria-hidden="true">${esc(a.emoji)}</span>` +
+                    `<span class="deep-card-title">${esc(a.title)}</span>` +
+                    (a.hint
+                        ? `<span class="deep-card-hint">${esc(String(a.hint).replace(/^—\s*/, ''))}</span>`
+                        : '') +
+                    '</button>'
+            )
+            .join('');
+
+        // Modals live directly under <body> so no section styling leaks in.
+        let host = document.getElementById('deep-modals');
+        if (!host) {
+            host = document.createElement('div');
+            host.id = 'deep-modals';
+            document.body.appendChild(host);
+        }
+        host.innerHTML = C.accordion
+            .map(
+                (a) =>
+                    `<dialog class="deep-modal" id="${esc(a.key)}" aria-label="${esc(a.title)}">` +
+                    '<div class="deep-modal-inner">' +
+                    '<div class="deep-modal-head">' +
+                    `<span class="deep-modal-emoji" aria-hidden="true">${esc(a.emoji)}</span>` +
+                    `<h3 class="deep-modal-title">${esc(a.title)}</h3>` +
+                    `<span class="deep-link" role="button" tabindex="0" data-anchor="${esc(
+                        a.key
+                    )}" aria-label="Copy link to ${esc(a.title)}" title="Copy link to this section">🔗</span>` +
+                    '<button class="deep-modal-close" type="button" aria-label="Close">×</button>' +
+                    '</div>' +
+                    `<div class="deep-modal-body" data-section="${esc(a.key)}"></div>` +
+                    '</div>' +
+                    '</dialog>'
             )
             .join('');
     }
@@ -714,6 +750,48 @@
         btn._listenerAttached = true;
     }
 
+    /* ── Floating site soundtrack (Spotify mini-player) ──
+       A fixed corner widget so visitors can put on some background music
+       while they scroll. The iframe is only injected the first time the
+       panel is opened (keeps the initial page light), and the panel is
+       hidden with CSS visibility — never removed — so the music keeps
+       playing when the panel is tucked away. */
+    function renderSoundtrack() {
+        if (!C || !C.soundtrack) return;
+        const s = C.soundtrack;
+        const wrap = document.createElement('div');
+        wrap.className = 'soundtrack';
+        wrap.innerHTML =
+            '<div class="soundtrack-panel">' +
+            `<div class="soundtrack-head"><span>${esc(s.title)}</span>` +
+            '<button class="soundtrack-close" type="button" aria-label="Hide player">×</button></div>' +
+            '<div class="soundtrack-frame"></div>' +
+            '</div>' +
+            `<button class="soundtrack-toggle" type="button" aria-expanded="false" aria-label="${esc(
+                s.label
+            )}">` +
+            `<span aria-hidden="true">🎧</span><span class="soundtrack-label">${esc(s.label)}</span>` +
+            '</button>';
+        document.body.appendChild(wrap);
+
+        const toggle = wrap.querySelector('.soundtrack-toggle');
+        const frame = wrap.querySelector('.soundtrack-frame');
+        let loaded = false;
+        const setOpen = (open) => {
+            if (open && !loaded) {
+                loaded = true;
+                frame.innerHTML =
+                    `<iframe src="${esc(s.embed)}" title="${esc(s.title)}" width="100%" height="${
+                        Number(s.height) || 152
+                    }" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
+            }
+            wrap.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+        toggle.addEventListener('click', () => setOpen(!wrap.classList.contains('open')));
+        wrap.querySelector('.soundtrack-close').addEventListener('click', () => setOpen(false));
+    }
+
     /* ============================================================
        Interactions (run AFTER render so the DOM exists)
        ============================================================ */
@@ -742,11 +820,15 @@
     // Full deep-link URL for a card id, base-relative so it works on file:// too.
     const linkFor = (id) => location.href.split('#')[0] + (id ? '#' + id : '');
 
-    function openItem(item) {
-        if (!item) return;
-        item.classList.add('open');
-        const header = item.querySelector('.acc-header');
-        if (header) header.setAttribute('aria-expanded', 'true');
+    // Open a deep-dive modal by key and reflect it in the URL so a refresh
+    // (or a shared link) returns to the same topic.
+    function openDeepModal(id) {
+        const dlg = document.getElementById(id);
+        if (!dlg || !dlg.classList.contains('deep-modal') || !dlg.showModal) return;
+        if (!dlg.open) dlg.showModal();
+        const body = dlg.querySelector('.deep-modal-body');
+        if (body) body.scrollTop = 0;
+        history.replaceState(null, '', '#' + id);
     }
 
     // Copy text to the clipboard, with a tiny ✓ flash on the 🔗 button. Falls
@@ -784,51 +866,41 @@
         document.body.removeChild(ta);
     }
 
-    function initAccordion() {
-        document.querySelectorAll('.acc-item').forEach((item) => {
-            const header = item.querySelector('.acc-header');
-            if (!header) return;
-            item.classList.remove('open');
-            header.setAttribute('aria-expanded', 'false');
+    function initDeepDive() {
+        // Topic buttons open their matching modal.
+        document.querySelectorAll('.deep-card').forEach((btn) => {
+            if (btn._listenerAttached) return;
+            btn.addEventListener('click', () => openDeepModal(btn.getAttribute('data-modal')));
+            btn._listenerAttached = true;
+        });
 
-            if (!header._listenerAttached) {
-                header.addEventListener('click', () => {
-                    const isOpen = item.classList.toggle('open');
-                    header.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                    // Reflect the open card in the URL so a refresh returns here.
-                    if (isOpen && item.id) history.replaceState(null, '', '#' + item.id);
-                });
-                header._listenerAttached = true;
-            }
-
-            // 🔗 button: open the card, point the URL at it, copy the deep link.
-            const link = item.querySelector('.acc-link');
-            if (link && !link._listenerAttached) {
-                const activate = (e) => {
-                    e.preventDefault();
-                    e.stopPropagation(); // don't toggle the card underneath
-                    openItem(item);
-                    if (item.id) history.replaceState(null, '', '#' + item.id);
-                    copyLink(linkFor(item.id), link);
-                };
-                link.addEventListener('click', activate);
-                link.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') activate(e);
-                });
-                link._listenerAttached = true;
-            }
+        document.querySelectorAll('.deep-modal').forEach((dlg) => {
+            if (dlg._listenerAttached) return;
+            // A click on the backdrop lands on the <dialog> itself (the inner
+            // wrapper covers the whole visible card), so it means "close".
+            dlg.addEventListener('click', (e) => {
+                if (e.target === dlg) dlg.close();
+            });
+            // Drop the #hash again once the modal is closed (Escape included).
+            dlg.addEventListener('close', () => {
+                if (location.hash === '#' + dlg.id) {
+                    history.replaceState(null, '', location.pathname + location.search);
+                }
+            });
+            const close = dlg.querySelector('.deep-modal-close');
+            if (close) close.addEventListener('click', () => dlg.close());
+            dlg._listenerAttached = true;
         });
     }
 
-    // Open (and scroll to) the accordion card named in the URL hash, e.g. …#food.
+    // Open the deep-dive modal named in the URL hash, e.g. …#food.
     // Runs on load and on hashchange (e.g. clicking a #food anchor elsewhere).
     function openFromHash() {
         const id = decodeURIComponent((location.hash || '').replace(/^#/, ''));
         if (!id) return;
         const item = document.getElementById(id);
-        if (!item || !item.classList.contains('acc-item')) return;
-        openItem(item);
-        requestAnimationFrame(() => item.scrollIntoView({behavior: 'smooth', block: 'start'}));
+        if (!item || !item.classList.contains('deep-modal')) return;
+        openDeepModal(id);
     }
 
     // Section-heading 🔗 chips: point the URL at the section's id and copy the
@@ -1019,16 +1091,17 @@
         renderHero();
         renderProfile();
         renderFaces();
-        renderAccordion();
+        renderDeepDive();
         renderSections();
         renderConnectCard(C.contact, '[data-connect="contact"]');
         renderPrompts();
         renderShare();
         renderConnectCard(C.outro, '[data-connect="outro"]');
         renderFooterLinks();
+        renderSoundtrack();
 
         initScrollSpy();
-        initAccordion();
+        initDeepDive();
         initDeepLinks();
         initShare();
         initPrompts();

@@ -18,7 +18,7 @@
    Block types: paragraph, heading, note, tagRow, photoGrid,
    posterGrid, cardGrid, featureGrid, valueCols, listCols,
    personaCards, loveLangs, daydreamCards, podcastCards, logoGrid,
-   detailList, link.
+   detailList, link, spotify, construction.
    ============================================================ */
 
 window.CONTENT = {
@@ -164,6 +164,18 @@ window.CONTENT = {
         ]
     },
 
+    /* ── Site soundtrack ──
+       Powers the floating 🎧 mini-player (bottom corner) so visitors can put
+       on some cosy background music while they scroll. `embed` is Spotify's
+       open.spotify.com/embed/… URL; height 152 = the compact player. */
+    soundtrack: {
+        label: "Site soundtrack",
+        title: "🎧 Cosy gaming lofi — press play & scroll",
+        embed: "https://open.spotify.com/embed/playlist/37i9dQZF1FwX0A5pnDZILw?utm_source=generator&theme=0",
+        url: "https://open.spotify.com/playlist/37i9dQZF1FwX0A5pnDZILw",
+        height: 152
+    },
+
     /* ── Faces marquee ── */
     faces: {
         tag: "📸 A Few Faces of Alec",
@@ -199,12 +211,27 @@ window.CONTENT = {
         ]
     },
 
-    /* ── Deep-dive accordion ──
-       Order + header for each collapsible card. `key` matches a
-       sections[key] below AND becomes the card's element id, so a URL
-       like …#food opens that card. Reorder this array to reorder the
-       accordion — no HTML edits needed. */
+    /* ── Deep-dive topics ──
+       Order + header for each pop-up topic. `key` matches a sections[key]
+       below AND becomes the modal's element id, so a URL like …#food opens
+       that topic. Reorder this array to reorder the button grid — no HTML
+       edits needed. `wip: true` adds a 🚧 badge to the button (pair it with
+       a `construction` block in the section). */
     accordion: [
+        {
+            key: "personality",
+            emoji: "🧬",
+            title: "Personality & Vibe",
+            hint: "— what I'm like to be around",
+            wip: true
+        },
+        {
+            key: "weekInLife",
+            emoji: "📅",
+            title: "A Week in the Life",
+            hint: "— my typical seven days",
+            wip: true
+        },
         {key: "transparency", emoji: "🌱", title: "Radical Transparency", hint: "— areas of active growth"},
         {
             key: "hobbies",
@@ -504,7 +531,25 @@ window.CONTENT = {
             ]
         },
 
-        /* ───────── Deep dive (accordion) ───────── */
+        /* ───────── Deep dive (pop-up topics) ───────── */
+
+        personality: {
+            blocks: [
+                {
+                    type: "construction",
+                    text: "I'm still writing this one — my personality type, love languages, and the general vibe I bring to a room. Check back soon!"
+                }
+            ]
+        },
+
+        weekInLife: {
+            blocks: [
+                {
+                    type: "construction",
+                    text: "A tour of a typical Alec week — work, gym, gaming nights and everything in between — is on its way."
+                }
+            ]
+        },
 
         transparency: {
             blocks: [
@@ -1140,6 +1185,28 @@ window.CONTENT = {
                 },
                 {
                     type: "link", href: "https://open.spotify.com/user/alec_game", label: "Check out my Spotify"
+                },
+                {type: "heading", text: "🎧 A Playlist I Curated for You"},
+                {
+                    type: "paragraph",
+                    text: "A hand-picked mix of songs I love — press play and get a feel for my taste."
+                },
+                {
+                    type: "spotify",
+                    src: "https://open.spotify.com/embed/playlist/3pwfF9YhpDSOJiINeLCf6o?utm_source=generator",
+                    height: 352,
+                    title: "Alec's curated playlist"
+                },
+                {type: "heading", text: "🛋️ The Site Soundtrack"},
+                {
+                    type: "paragraph",
+                    text: "The cosy gaming-lofi mix behind the 🎧 button in the corner of the site — also here if you'd rather browse it."
+                },
+                {
+                    type: "spotify",
+                    src: "https://open.spotify.com/embed/playlist/37i9dQZF1FwX0A5pnDZILw?utm_source=generator&theme=0",
+                    height: 152,
+                    title: "Site soundtrack — cosy gaming lofi"
                 },
                 {type: "heading", text: "Genres on Rotation"},
                 {
