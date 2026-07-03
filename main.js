@@ -641,7 +641,9 @@
 
     // "Not your vibe? Share with a friend" card — share buttons for each option
     // in CONTENT.share. Copy/native are buttons; the rest are real share links.
-    function renderShare() {
+    // Takes a mount selector so the same card renders both in #contact and in
+    // the "Go on a date" modal.
+    function renderShare(sel) {
         if (!C || !C.share) return;
         const s = C.share;
         const url = shareUrl();
@@ -675,7 +677,7 @@
             `<h2>${esc(s.heading)}</h2>` +
             `<p class="lead">${esc(s.lead)}</p>` +
             `<div class="share-links">${nativeBtn}${s.options.map(optionHtml).join('')}</div>`;
-        setHtml('[data-share="share"]', html);
+        setHtml(sel, html);
     }
 
     /* ── Prompt cards (ice-breaker questions) ──
@@ -811,6 +813,14 @@
         nav.querySelectorAll('.nav-inner a').forEach((a) =>
             a.addEventListener('click', () => setOpen(false))
         );
+        // "Go on a date" pill pops up the contact + share modal.
+        const dateBtn = nav.querySelector('.nav-contact');
+        if (dateBtn) {
+            dateBtn.addEventListener('click', () => {
+                setOpen(false);
+                openDeepModal('date-modal');
+            });
+        }
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') setOpen(false);
         });
@@ -946,10 +956,11 @@
         });
     }
 
-    // Share card: wire the native "Share…" button and the "Copy link" button.
+    // Share cards: wire the native "Share…" buttons and the "Copy link"
+    // buttons (both instances — the #contact card and the date modal's).
     function initShare() {
-        const native = document.querySelector('.share-native');
-        if (native && navigator.share && !native._listenerAttached) {
+        document.querySelectorAll('.share-native').forEach((native) => {
+            if (!navigator.share || native._listenerAttached) return;
             native.addEventListener('click', () => {
                 const s = C.share || {};
                 navigator
@@ -957,7 +968,7 @@
                     .catch(() => {}); // user cancelled or unsupported — ignore
             });
             native._listenerAttached = true;
-        }
+        });
 
         document.querySelectorAll('.share-btn[data-copy]').forEach((btn) => {
             if (btn._listenerAttached) return;
@@ -1118,7 +1129,10 @@
         renderSections();
         renderConnectCard(C.contact, '[data-connect="contact"]');
         renderPrompts();
-        renderShare();
+        renderShare('[data-share="share"]');
+        // The "Go on a date" modal reuses the same contact + share components.
+        renderConnectCard(C.contact, '[data-connect="date-modal"]');
+        renderShare('[data-share="date-modal"]');
         renderConnectCard(C.outro, '[data-connect="outro"]');
         renderFooterLinks();
         renderSoundtrack();

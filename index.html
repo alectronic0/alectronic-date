@@ -94,15 +94,15 @@
 
 <!-- ════════════════ NAV ════════════════ -->
 <!-- Desktop: the usual horizontal link row. Mobile (≤680px): the row folds
-     behind a hamburger, with an always-visible "Say hi" shortcut so the
-     contact section is one tap away from anywhere. -->
+     behind a hamburger, with an always-visible "Go on a date" button that
+     pops up the contact + share modal from anywhere on the page. -->
 <nav aria-label="Section navigation">
   <div class="nav-bar">
     <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
       <span class="burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
       <span class="burger-label">Menu</span>
     </button>
-    <a href="#contact" class="nav-contact">💬 Say hi</a>
+    <button type="button" class="nav-contact" aria-haspopup="dialog">💘 Go on a date</button>
   </div>
   <div class="nav-inner" id="nav-menu">
     <a href="#about">Who I Am</a>
@@ -243,6 +243,23 @@
     <button class="gallery-close" type="button" aria-label="Close gallery">×</button>
   </div>
   <div class="gallery-grid" data-gallery="grid"></div>
+</dialog>
+
+<!-- "Go on a date" modal (opened from the mobile nav pill). Reuses the
+     deep-modal shell so close/backdrop/Escape wiring comes from initDeepDive;
+     its body is filled by renderConnectCard + renderShare in main.js. -->
+<dialog class="deep-modal date-modal" id="date-modal" aria-label="Go on a date with Alec">
+  <div class="deep-modal-inner">
+    <div class="deep-modal-head">
+      <span class="deep-modal-emoji" aria-hidden="true">💘</span>
+      <h3 class="deep-modal-title">Let's Go on a Date</h3>
+      <button class="deep-modal-close" type="button" aria-label="Close">×</button>
+    </div>
+    <div class="deep-modal-body">
+      <div class="contact-section" data-connect="date-modal"></div>
+      <div class="share-section" data-share="date-modal"></div>
+    </div>
+  </div>
 </dialog>
 
 <!-- Lightbox -->

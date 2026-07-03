@@ -597,6 +597,13 @@ body:has(dialog[open]) { overflow: hidden; }
 }
 .deep-modal-body h3:first-child { margin-top: 0; }
 
+/* "Go on a date" modal — the contact + share cards, compacted to fit */
+.date-modal .contact-section,
+.date-modal .share-section { padding: 26px 20px; border-radius: 12px; }
+.date-modal .share-section { margin-top: 14px; }
+.date-modal .contact-section h2,
+.date-modal .share-section h2 { font-size: 1.3rem; }
+
 /* 🚧 placeholder banner for topics that aren't written yet */
 .construction-banner {
   position: relative; overflow: hidden;
