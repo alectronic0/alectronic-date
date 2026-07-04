@@ -287,13 +287,7 @@ window.CONTENT = {
             title: "Future Goals",
             hint: "— where I'm headed"
         },
-        {key: "plantsAnimals", emoji: "🌺", title: "Bonus: Plants & Creatures", hint: "— a few favourites"},
-        {
-            key: "sexyPhotos",
-            emoji: "🔒",
-            title: "Private Sexy Photos (Do Not Open) 🙅",
-            hint: "— do you dare? 😉😈🌶️🔥🔞"
-        }
+        {key: "plantsAnimals", emoji: "🌺", title: "Bonus: Plants & Creatures", hint: "— a few favourites"}
     ],
 
     /* ── Mid-page sections (each = blocks[]) ── */
@@ -1666,23 +1660,6 @@ window.CONTENT = {
                         {src: "img/animals/triceratops.webp", alt: "Triceratops"},
                         {src: "img/animals/ankylosaurus.webp", alt: "Ankylosaurus"}
                     ]
-                }
-            ]
-        },
-
-        // 🔒 The "sexy photos" gag — a cheeky two-step joke, nothing NSFW.
-        // The 🔓 button is wired up by initCheekyGag() in main.js: it swaps
-        // this modal for the punchline modal (#cheeky-modal in index.html),
-        // which is really just the contact + share cards.
-        sexyPhotos: {
-            blocks: [
-                {
-                    type: "paragraph",
-                    text: "😳 Seriously?! Do you really think I'd have those just lying around on my dating site…"
-                },
-                {
-                    type: "paragraph",
-                    html: '<button class="cheeky-unlock" type="button" aria-haspopup="dialog">🔓🔑 Access sexy photos 😏</button>'
                 }
             ]
         }

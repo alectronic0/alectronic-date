@@ -954,10 +954,12 @@
         });
     }
 
-    // The 🔒 "sexy photos" gag: the 🔓 button inside the locked topic's modal
-    // swaps it for the punchline modal — which is really just the contact +
-    // share cards. Delegated, since the button is rendered from content.js.
+    // The 🔒 "sexy photos" gag: the locked banner under the deep-dive grid
+    // opens the tease modal, whose 🔓 button swaps it for the punchline
+    // modal — which is really just the contact + share cards.
     function initCheekyGag() {
+        const banner = document.querySelector('.locked-banner');
+        if (banner) banner.addEventListener('click', () => openDeepModal('sexyPhotos'));
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.cheeky-unlock')) return;
             const open = e.target.closest('dialog.deep-modal');

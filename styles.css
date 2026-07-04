@@ -608,6 +608,21 @@ body:has(dialog[open]) { overflow: hidden; }
 .date-modal .share-section h2 { font-size: 1.3rem; }
 
 /* ─── 🔒 "Sexy photos" gag ──────────────────── */
+/* The locked "vault" — a standalone full-width banner under the topic grid */
+.locked-banner {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  width: 100%; margin-top: 26px; padding: 26px 20px;
+  background: var(--surface-2);
+  border: 1px dashed var(--rose); border-radius: var(--radius);
+  font-family: var(--font); color: var(--text); cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s, background 0.15s;
+}
+.locked-banner:hover { transform: translateY(-2px); border-color: var(--rose-light); background: var(--surface-3); }
+.locked-banner:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+.locked-emoji { font-size: 2rem; line-height: 1; }
+.locked-title { font-weight: 700; font-size: 1.05rem; }
+.locked-tagline { font-size: 0.85rem; color: var(--rose-light); font-weight: 600; }
+
 .deep-modal-body p:has(> .cheeky-unlock) { text-align: center; margin: 22px 0 6px; }
 .cheeky-unlock {
   display: inline-flex; align-items: center; gap: 8px;
