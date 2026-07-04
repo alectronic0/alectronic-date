@@ -220,6 +220,11 @@
         photoGrid: (b) =>
             `<div class="photo-grid">${b.images.map((i) => img(i.src, i.alt)).join('')}</div>`,
 
+        // GIFs keep their natural aspect ratio (no square cropping) — they're
+        // externally hosted (Giphy/Tenor), so no width/height attributes.
+        gifGrid: (b) =>
+            `<div class="gif-grid">${b.gifs.map((g) => img(g.src, g.alt || 'A GIF I love')).join('')}</div>`,
+
         // Movie posters / book covers / game art — 2:3 cards with a title
         posterGrid: (b) =>
             `<div class="poster-grid">${b.posters
@@ -1116,7 +1121,7 @@
         lightbox.addEventListener('close', () => lightboxImg.removeAttribute('src'));
 
         const selectors =
-            '[data-zoom], .mosaic-strip img, .gallery-grid img, .poster-grid img, .photo-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img';
+            '[data-zoom], .mosaic-strip img, .gallery-grid img, .poster-grid img, .photo-grid img, .gif-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img';
 
         // Delegated so it covers images injected after load.
         document.addEventListener('click', (e) => {

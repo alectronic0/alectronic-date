@@ -310,7 +310,8 @@ window.CONTENT = {
             title: "Future Goals",
             hint: "— where I'm headed"
         },
-        {key: "plantsAnimals", emoji: "🌺", title: "Bonus: Plants & Creatures", hint: "— a few favourites"}
+        {key: "plantsAnimals", emoji: "🌺", title: "Bonus: Plants & Creatures", hint: "— a few favourites"},
+        {key: "gifs", emoji: "🎞️", title: "GIFs I Love", hint: "— my life in looping form"}
     ],
 
     /* ── Mid-page sections (each = blocks[]) ── */
@@ -658,31 +659,6 @@ window.CONTENT = {
                     type: "note",
                     variant: "growth-note",
                     text: "I know my triggers and have worked hard to process most of my history. Consistent, open and honest communication is what keeps me steady — and it's the thing I value most in a relationship."
-                },
-                {
-                    type: "photoGrid",
-                    images: [
-                        {
-                            src: "img/warning-label/blood-pressure-check-medical.webp",
-                            alt: "Blood pressure check"
-                        },
-                        {src: "img/warning-label/blood-glucose-test-diabetes.webp", alt: "Blood glucose test"},
-                        {
-                            src: "img/warning-label/judge-with-gavel-illustration.webp",
-                            alt: "Self-aware"
-                        },
-                        {src: "img/warning-label/person-happy-with-hearts.webp", alt: "Feeling happy"},
-                        {
-                            src: "img/warning-label/person-multitasking-chaotic.webp",
-                            alt: "Organised chaos"
-                        },
-                        {src: "img/warning-label/person-anxious-worried.webp", alt: "Feeling anxious"},
-                        {
-                            src: "img/warning-label/therapy-session-illustration.webp",
-                            alt: "Therapy session"
-                        },
-                        {src: "img/warning-label/person-with-depression-symptoms.webp", alt: "Living with depression"},
-                    ]
                 }
             ]
         },
@@ -1741,6 +1717,98 @@ window.CONTENT = {
                         },
                         {src: "img/animals/triceratops.webp", alt: "Triceratops"},
                         {src: "img/animals/ankylosaurus.webp", alt: "Ankylosaurus"}
+                    ]
+                }
+            ]
+        },
+
+        // 🎞️ GIFs that sum up Alec's life — an ever-growing collection.
+        // To add one: paste its direct .gif URL as a new {src, alt} entry.
+        gifs: {
+            blocks: [
+                {
+                    type: "paragraph",
+                    text: "Some things words can't capture — my life, summed up in looping form. This collection will keep growing."
+                },
+                {
+                    type: "gifGrid",
+                    gifs: [
+                        {
+                            src: "https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyNGNldmVvMzh6emM1OXY4YXo4eGZnM21iaDBseGNzeWQ0b3E4bHY2MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/143vPc6b08locw/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyazJ3b2F0azFncXZpOGhweHY0NXJzdHl5b3hnODhsdGtzZW1jbjE2NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SRx5tBBrTQOBi/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyeGUzMHYybGE3M3M1dnpicjQza3AzcGE5YjhldmtrM3A5OHVjdzdwaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUStFKHmuFPYk/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUydTVwM2sxdXEwaW5pYzQ1d3B1OXdsc285dGtjZmZrZ21nMWhydTFvcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/maNB0qAiRVAty/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyNm93dGI2b3R2eTdwdmljdGo3aWtkMTd4aTl3dzhpa3FibTRqNGNnbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7Wcyq7KvKFNTO/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://c.tenor.com/odw9yfkRU2oAAAAC/tenor.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://c.tenor.com/kPbvjinMD_0AAAAd/tenor.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyd3JwNTNqbnNlcnpycTAzd3V2ZjB1d3Bhc2IwZ3p2bG9hZW10ZWl4ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VsLN4UlXS4oz6/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUydmJrZGl2eGdhcHZ5bHE3ZHRraDBoZzd1dmJ6dnR6NGRkdzU2azUwMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yAYZnhvY3fflS/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyMTc5cjZ5NjBjZjYzM2Z5NXAwaHV1b2Vya2pieWtiNXU1cmVkdDRyOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7eAvzJ0SBBzHy/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyY3praW44aG44NTRraGhiaGpqcXNoNGtvOTBiYnRzZnB6NDVxaXhtdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UO5elnTqo4vSg/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyc2txNDRzaWticnp4YWJpeXFzbTVoemJ3OWZrbDZsZXdmZzQ5OXZoYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9PAIhJvcQ35hdZPUir/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyZ2Jsb2NoMnpkc3I0d284cjBsOGUzeG5rMzZhZWRiYTVpZHlpNm9ybiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/31lPv5L3aIvTi/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyc3NsZXdybm53aHVmdGd3eXl5OGtkcmk2ZHFlY3ZjdGo2NWx1ZjgxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VFByXZlDHAJBkEmee4/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUycmc5NnZic2xqbDhyazJhdzk4aTQyNmgzaWkwYWp6Zmg1ODRpMHN0ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/oFeUVZfiuim9G/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUya3pqcnBwZmxzZW9uZnY3bGpyYXllYXIxbWdlYTNuZXdzYmw1NWduZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/E87jjnSCANThe/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyMmFuaG4ybHFpbGRmY2Z4bm5qYXh1dGtqaTM5NWJqYWVjbDhmZXBjaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eoFJSruUWf7qq1zNHD/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyZjkzMnRibmUwaGtlc2Y2azh3MnlzeXJoZ21hcmpkNTQ1ajF3c3k2diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SmoCFhZCi1kzu/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUycm1laTA0azJ5NmJjaHY0b2twYWgxdzF3dWxxN21uanM3MndhZDd4YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NTur7XlVDUdqM/giphy.gif",
+                            alt: "A GIF that describes my life"
+                        }
                     ]
                 }
             ]

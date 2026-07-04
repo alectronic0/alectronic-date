@@ -1,0 +1,37 @@
+# Downloads every external (Giphy/Tenor) GIF referenced by content.js into
+# img/gifs/, rewrites content.js to use the local copies, and commits the
+# result. Run it manually from the Actions tab ("Run workflow") whenever new
+# GIF links have been added — GitHub's runners can reach Giphy/Tenor, and the
+# script skips anything already mirrored.
+name: Mirror external GIFs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Download GIFs and rewrite content.js
+        run: node scripts/mirror-gifs.mjs
+
+      - name: Commit mirrored GIFs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add img/gifs content.js
+          if git diff --cached --quiet; then
+            echo "Nothing new to mirror."
+          else
+            git commit -m "Mirror external GIFs into img/gifs"
+            git push
+          fi
