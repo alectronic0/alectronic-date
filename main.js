@@ -512,26 +512,26 @@
         setHtml('[data-profile="facts"]', p.facts.map(factHtml).join(''));
     }
 
-    // A fact value may be: a plain string, an array (one line each),
+    // A fact value may be: a plain string, an array (joined with a · dot),
     // and/or carry an `href` to render the value as a link.
     function factValue(f) {
         const linkify = (text) =>
             f.href
                 ? `<a class="fact-link" href="${esc(f.href)}" target="_blank" rel="noopener">${esc(text)}</a>`
                 : esc(text);
-
-        if (Array.isArray(f.value)) {
-            return `<div class="fact-value fact-multiline">${f.value
-                .map((v) => `<div>${linkify(String(v).trim())}</div>`)
-                .join('')}</div>`;
-        }
-        return `<div class="fact-value">${linkify(f.value)}</div>`;
+        const vals = Array.isArray(f.value) ? f.value : [f.value];
+        return `<span class="fact-value">${vals
+            .map((v) => linkify(String(v).trim()))
+            .join('<span class="fact-sep" aria-hidden="true"> · </span>')}</span>`;
     }
 
+    // Each fact is a compact Bumble-style chip: icon + value. The label isn't
+    // shown (the icon carries it) but stays for screen readers, plus a title
+    // tooltip for mouse users.
     function factHtml(f) {
-        return `<div class="fact${f.wide ? ' wide' : ''}"><span class="fact-icon">${esc(
+        return `<span class="fact" title="${esc(f.label)}"><span class="fact-icon" aria-hidden="true">${esc(
             f.icon
-        )}</span><div><div class="fact-label">${esc(f.label)}</div>${factValue(f)}</div></div>`;
+        )}</span><span class="sr-only">${esc(f.label)}: </span>${factValue(f)}</span>`;
     }
 
     function renderFaces() {
