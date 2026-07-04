@@ -954,6 +954,20 @@
         });
     }
 
+    // The 🔒 "sexy photos" gag: the locked banner under the deep-dive grid
+    // opens the tease modal, whose 🔓 button swaps it for the punchline
+    // modal — which is really just the contact + share cards.
+    function initCheekyGag() {
+        const banner = document.querySelector('.locked-banner');
+        if (banner) banner.addEventListener('click', () => openDeepModal('sexyPhotos'));
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.cheeky-unlock')) return;
+            const open = e.target.closest('dialog.deep-modal');
+            if (open && open.id !== 'cheeky-modal') open.close();
+            openDeepModal('cheeky-modal');
+        });
+    }
+
     // Open the deep-dive modal named in the URL hash, e.g. …#food.
     // Runs on load and on hashchange (e.g. clicking a #food anchor elsewhere).
     function openFromHash() {
@@ -1158,9 +1172,12 @@
         renderConnectCard(C.contact, '[data-connect="contact"]');
         renderPrompts();
         renderShare('[data-share="share"]');
-        // The "Go on a date" modal reuses the same contact + share components.
+        // The "Go on a date" modal reuses the same contact + share components,
+        // and so does the punchline of the 🔒 "sexy photos" gag.
         renderConnectCard(C.contact, '[data-connect="date-modal"]');
         renderShare('[data-share="date-modal"]');
+        renderConnectCard(C.contact, '[data-connect="cheeky-modal"]');
+        renderShare('[data-share="cheeky-modal"]');
         renderConnectCard(C.outro, '[data-connect="outro"]');
         renderFooterLinks();
         renderSoundtrack();
@@ -1168,6 +1185,7 @@
         initMobileNav();
         initScrollSpy();
         initDeepDive();
+        initCheekyGag();
         initDeepLinks();
         initShare();
         initPrompts();
