@@ -64,15 +64,13 @@ window.CONTENT = {
                     " They / Them"
                 ]
             },
-            {icon: "🎂", label: "Age", value: "35 · 19 May (Taurus)"},
+            {icon: "🎂", label: "Age", value: "35 · 19 May"},
+            {icon: "♉", label: "Star sign", value: "Taurus"},
             {icon: "💼", label: "Profession", value: "Software Engineer"},
             {
                 icon: "🎓",
                 label: "Education",
-                value: [
-                    "BSc Computer Science",
-                    "University of Hertfordshire"
-                ]
+                value: "BSc Computer Science"
             },
             {
                 icon: "🌍", label: "Nationality", value: [
