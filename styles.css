@@ -704,6 +704,15 @@ body:has(dialog[open]) { overflow: hidden; }
 .poster-grid .poster { display: flex; flex-direction: column; gap: 6px; }
 .poster-grid figcaption { font-size: 0.74rem; line-height: 1.3; color: var(--muted); text-align: center; }
 
+/* GIF grid — natural aspect ratios (GIFs shouldn't be square-cropped) */
+.gif-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; align-items: start; }
+.gif-grid img {
+  width: 100%; height: auto; border-radius: 10px;
+  border: 1px solid var(--border); cursor: zoom-in;
+  background: var(--surface-2); /* override the global white img background while loading */
+}
+@media (max-width: 560px) { .gif-grid { grid-template-columns: 1fr 1fr; } }
+
 .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
 .photo-grid img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); cursor: zoom-in; transition: transform 0.15s; }
 .photo-grid img:hover { transform: scale(1.03); }
