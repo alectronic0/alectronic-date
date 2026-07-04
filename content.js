@@ -658,31 +658,6 @@ window.CONTENT = {
                     type: "note",
                     variant: "growth-note",
                     text: "I know my triggers and have worked hard to process most of my history. Consistent, open and honest communication is what keeps me steady — and it's the thing I value most in a relationship."
-                },
-                {
-                    type: "photoGrid",
-                    images: [
-                        {
-                            src: "img/warning-label/blood-pressure-check-medical.webp",
-                            alt: "Blood pressure check"
-                        },
-                        {src: "img/warning-label/blood-glucose-test-diabetes.webp", alt: "Blood glucose test"},
-                        {
-                            src: "img/warning-label/judge-with-gavel-illustration.webp",
-                            alt: "Self-aware"
-                        },
-                        {src: "img/warning-label/person-happy-with-hearts.webp", alt: "Feeling happy"},
-                        {
-                            src: "img/warning-label/person-multitasking-chaotic.webp",
-                            alt: "Organised chaos"
-                        },
-                        {src: "img/warning-label/person-anxious-worried.webp", alt: "Feeling anxious"},
-                        {
-                            src: "img/warning-label/therapy-session-illustration.webp",
-                            alt: "Therapy session"
-                        },
-                        {src: "img/warning-label/person-with-depression-symptoms.webp", alt: "Living with depression"},
-                    ]
                 }
             ]
         },
