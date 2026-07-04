@@ -512,26 +512,44 @@
         setHtml('[data-profile="facts"]', p.facts.map(factHtml).join(''));
     }
 
-    // A fact value may be: a plain string, an array (one line each),
-    // and/or carry an `href` to render the value as a link.
+    // Age auto-calculates from a fact's `dob` (YYYY-MM-DD) so it's always
+    // correct on page load — no more hand-editing the number every year.
+    function calcAge(dobStr) {
+        const dob = new Date(dobStr);
+        const today = new Date();
+        let age = today.getFullYear() - dob.getFullYear();
+        const hasHadBirthdayThisYear =
+            today.getMonth() > dob.getMonth() ||
+            (today.getMonth() === dob.getMonth() && today.getDate() >= dob.getDate());
+        if (!hasHadBirthdayThisYear) age--;
+        return age;
+    }
+
+    // A fact value may be: a plain string, an array (joined with a · dot),
+    // a `dob` (age + birthday computed at render time), and/or carry an
+    // `href` to render the value as a link.
     function factValue(f) {
         const linkify = (text) =>
             f.href
                 ? `<a class="fact-link" href="${esc(f.href)}" target="_blank" rel="noopener">${esc(text)}</a>`
                 : esc(text);
-
-        if (Array.isArray(f.value)) {
-            return `<div class="fact-value fact-multiline">${f.value
-                .map((v) => `<div>${linkify(String(v).trim())}</div>`)
-                .join('')}</div>`;
+        if (f.dob) {
+            const birthday = new Date(f.dob).toLocaleDateString('en-GB', {day: 'numeric', month: 'long'});
+            return `<span class="fact-value">${linkify(`${calcAge(f.dob)} · ${birthday}`)}</span>`;
         }
-        return `<div class="fact-value">${linkify(f.value)}</div>`;
+        const vals = Array.isArray(f.value) ? f.value : [f.value];
+        return `<span class="fact-value">${vals
+            .map((v) => linkify(String(v).trim()))
+            .join('<span class="fact-sep" aria-hidden="true"> · </span>')}</span>`;
     }
 
+    // Each fact is a compact Bumble-style chip: icon + value. The label isn't
+    // shown (the icon carries it) but stays for screen readers, plus a title
+    // tooltip for mouse users.
     function factHtml(f) {
-        return `<div class="fact${f.wide ? ' wide' : ''}"><span class="fact-icon">${esc(
+        return `<span class="fact" title="${esc(f.label)}"><span class="fact-icon" aria-hidden="true">${esc(
             f.icon
-        )}</span><div><div class="fact-label">${esc(f.label)}</div>${factValue(f)}</div></div>`;
+        )}</span><span class="sr-only">${esc(f.label)}: </span>${factValue(f)}</span>`;
     }
 
     function renderFaces() {

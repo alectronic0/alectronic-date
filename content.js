@@ -31,7 +31,7 @@ window.CONTENT = {
         emoji: "🎮❤️🎮",
         headline: "Alec's <span>Dating</span> Application",
         subheading: "A visual introduction to what having me as your boyfriend could look like.",
-        tagline: "Loveable nerd, looking for his player 2. No swiping required — just a scroll.",
+        tagline: "Looking for my nerdy other half — the Player 2 to my Player 1. No swiping required... ok there's a bit of scrolling.",
         cta: "Come find out more ↓",
         // First image is the LCP element — rendered eager + high priority (see main.js renderHero).
         images: [
@@ -64,7 +64,10 @@ window.CONTENT = {
                     " They / Them"
                 ]
             },
-            {icon: "🎂", label: "Age", value: "35 · 19 May (Taurus)"},
+            // Age auto-computes from dob at render time (see factValue in
+            // main.js), so it never goes stale.
+            {icon: "🎂", label: "Age", dob: "1991-05-19"},
+            {icon: "♉", label: "Star sign", value: "Taurus"},
             {icon: "💼", label: "Profession", value: "Software Engineer"},
             {
                 icon: "🎓",
@@ -80,8 +83,28 @@ window.CONTENT = {
             {
                 icon: "📍", label: "Living in", value: "Welwyn Garden City", href: "https://www.google.com/maps/place/Welwyn+Garden+City"
             },
+            {icon: "🏙️", label: "Hometown", value: "From London"},
             {icon: "📏", label: "Height", value: "~5'8\""},
             {icon: "🌱", label: "Politics", value: "Liberal / Left"},
+            {icon: "😌", label: "Religion", value: "Atheist"},
+            {
+                icon: "👶", label: "Kids", value: [
+                    "Want kids",
+                    "none yet"
+                ]
+            },
+            {
+                icon: "💞", label: "Looking for", value: [
+                    "Long-term",
+                    "monogamous"
+                ]
+            },
+            {
+                icon: "🍷", label: "Drinking & smoking", value: [
+                    "Drinks sometimes",
+                    "never smokes"
+                ]
+            },
         ]
     }, contact: {
         tag: "💬 How to Get in Touch",
@@ -456,6 +479,26 @@ window.CONTENT = {
                             text: "Cheering each other on to be our best selves, and there for each other through the harder days too."
                         }
                     ]
+                },
+                {
+                    type: "valueCols", columns: [
+                        {
+                            title: "⚡ We'll instantly hit it off if…",
+                            items: [
+                                "You're ready to team up as my co-op gaming partner 👾✨",
+                                "You love to info-dump about your hyperfixations 💬✨",
+                                "You want to hunt down the best food spots with me 🥪🍜"
+                            ]
+                        },
+                        {
+                            title: "💍 The honest small print",
+                            items: [
+                                "I'm after a long-term, monogamous relationship",
+                                "Kindness, openness and playfulness win me over",
+                                "A little nerdy, happy with quiet days in and fun adventures out? You'll have a loyal partner for life"
+                            ]
+                        }
+                    ]
                 }
             ]
         }, dates: {
@@ -541,8 +584,36 @@ window.CONTENT = {
         personality: {
             blocks: [
                 {
+                    type: "paragraph",
+                    text: "While I write this one up properly, here are my rapid-fire dating-app classics:"
+                },
+                {
+                    type: "detailList", items: [
+                        {
+                            icon: "🦸",
+                            title: "My real-life superpower",
+                            description: "Building incredibly organised Google Docs and spreadsheets to manage my life and all of my serial hobbies. 🛠️✨"
+                        },
+                        {
+                            icon: "🫖",
+                            title: "My perfect Sunday",
+                            description: "A completely tidy house, a proper hot cup of tea, and diving into a great video game while it rains outside. 🎮"
+                        },
+                        {
+                            icon: "🤝",
+                            title: "Together, we could…",
+                            description: "Venture out to track down incredible new food spots, try a fun new activity, or just keep it cosy at home with a co-op game or a TV series."
+                        },
+                        {
+                            icon: "💞",
+                            title: "The life-partner pitch",
+                            description: "If you're a little nerdy, enjoy quiet days at home but also fun adventures out (and finding amazing food) — you'll have a loyal partner for life!"
+                        }
+                    ]
+                },
+                {
                     type: "construction",
-                    text: "I'm still writing this one — my personality type, love languages, and the general vibe I bring to a room. Check back soon!"
+                    text: "The rest — my personality type, love languages, and the general vibe I bring to a room — is still being written. Check back soon!"
                 }
             ]
         },
@@ -1474,6 +1545,17 @@ window.CONTENT = {
                                 }
                             ]
                         }
+                    ]
+                },
+                {type: "heading", text: "🌍 Causes & Communities"},
+                {
+                    type: "tagRow",
+                    tags: [
+                        "🌿 Environmentalism",
+                        "✊ Human rights",
+                        "🏳️‍🌈🏳️‍⚧️ LGBTQIA+ Ally",
+                        "♀️ Women's rights",
+                        "🧠 Neurodiversity"
                     ]
                 },
                 {
