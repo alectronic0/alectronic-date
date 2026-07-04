@@ -31,7 +31,7 @@ window.CONTENT = {
         emoji: "🎮❤️🎮",
         headline: "Alec's <span>Dating</span> Application",
         subheading: "A visual introduction to what having me as your boyfriend could look like.",
-        tagline: "Loveable nerd, looking for his player 2. No swiping required — just a scroll.",
+        tagline: "Looking for my nerdy other half — the Player 2 to my Player 1. No swiping required... ok there's a bit of scrolling.",
         cta: "Come find out more ↓",
         // First image is the LCP element — rendered eager + high priority (see main.js renderHero).
         images: [
@@ -64,7 +64,9 @@ window.CONTENT = {
                     " They / Them"
                 ]
             },
-            {icon: "🎂", label: "Age", value: "35 · 19 May"},
+            // Age auto-computes from dob at render time (see factValue in
+            // main.js), so it never goes stale.
+            {icon: "🎂", label: "Age", dob: "1991-05-19"},
             {icon: "♉", label: "Star sign", value: "Taurus"},
             {icon: "💼", label: "Profession", value: "Software Engineer"},
             {
@@ -1548,7 +1550,13 @@ window.CONTENT = {
                 {type: "heading", text: "🌍 Causes & Communities"},
                 {
                     type: "tagRow",
-                    tags: ["🌿 Environmentalism", "✊ Human rights", "🧠 Neurodiversity"]
+                    tags: [
+                        "🌿 Environmentalism",
+                        "✊ Human rights",
+                        "🏳️‍🌈🏳️‍⚧️ LGBTQIA+ Ally",
+                        "♀️ Women's rights",
+                        "🧠 Neurodiversity"
+                    ]
                 },
                 {
                     type: "photoGrid",

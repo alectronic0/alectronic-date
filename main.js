@@ -512,13 +512,31 @@
         setHtml('[data-profile="facts"]', p.facts.map(factHtml).join(''));
     }
 
+    // Age auto-calculates from a fact's `dob` (YYYY-MM-DD) so it's always
+    // correct on page load — no more hand-editing the number every year.
+    function calcAge(dobStr) {
+        const dob = new Date(dobStr);
+        const today = new Date();
+        let age = today.getFullYear() - dob.getFullYear();
+        const hasHadBirthdayThisYear =
+            today.getMonth() > dob.getMonth() ||
+            (today.getMonth() === dob.getMonth() && today.getDate() >= dob.getDate());
+        if (!hasHadBirthdayThisYear) age--;
+        return age;
+    }
+
     // A fact value may be: a plain string, an array (joined with a · dot),
-    // and/or carry an `href` to render the value as a link.
+    // a `dob` (age + birthday computed at render time), and/or carry an
+    // `href` to render the value as a link.
     function factValue(f) {
         const linkify = (text) =>
             f.href
                 ? `<a class="fact-link" href="${esc(f.href)}" target="_blank" rel="noopener">${esc(text)}</a>`
                 : esc(text);
+        if (f.dob) {
+            const birthday = new Date(f.dob).toLocaleDateString('en-GB', {day: 'numeric', month: 'long'});
+            return `<span class="fact-value">${linkify(`${calcAge(f.dob)} · ${birthday}`)}</span>`;
+        }
         const vals = Array.isArray(f.value) ? f.value : [f.value];
         return `<span class="fact-value">${vals
             .map((v) => linkify(String(v).trim()))
