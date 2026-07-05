@@ -287,13 +287,26 @@
                 )
                 .join('')}</div>`,
 
+        // Items are plain strings (escaped) or {html} objects for trusted markup,
+        // mirroring the paragraph block's text/html split. A column can also
+        // carry an intro `text` line and a `tags` chip row instead of items.
         valueCols: (b) =>
             `<div class="value-cols">${b.columns
                 .map(
                     (col) =>
-                        `<div class="value-card"><h3>${esc(col.title)}</h3><ul>${col.items
-                            .map((i) => `<li>${esc(i)}</li>`)
-                            .join('')}</ul></div>`
+                        `<div class="value-card"><h3>${esc(col.title)}</h3>${
+                            col.text ? `<p class="value-card-text">${esc(col.text)}</p>` : ''
+                        }${
+                            col.tags && col.tags.length
+                                ? `<div class="tag-row">${col.tags.map(tagHtml).join('')}</div>`
+                                : ''
+                        }${
+                            col.items && col.items.length
+                                ? `<ul>${col.items
+                                      .map((i) => `<li>${i && i.html ? i.html : esc(i)}</li>`)
+                                      .join('')}</ul>`
+                                : ''
+                        }</div>`
                 )
                 .join('')}</div>`,
 

@@ -432,14 +432,14 @@ window.CONTENT = {
                 }
             ]
         }, lookingFor: {
-            tag: "✨ What I'm Looking For",
+            tag: "📋 Now Hiring: Player 2",
             tagClass: "tag-gold",
-            heading: "An Invitation, Not a Checklist",
-            lead: "I have a full, happy life, and I'm just hoping to share it. Here's the kind of \"us\" I'm dreaming about.",
+            heading: "Job Opening: Player 2 (Permanent Role)",
+            lead: "No previous job experience required. Just curiosity and a willingness to get excited about my hobbies and interests.",
             blocks: [
                 {
-                    type: "paragraph",
-                    html: "Two things matter most to me. <strong>First,</strong> someone who's just as up for an adventure as they are for a quiet day at home. <strong>Second,</strong> someone happy to share the stuff I love (gaming and nerd culture, mostly) and to pull me into their own quirky world too. Everything below is a bit of what I picture us getting up to together."
+                    type: "heading",
+                    text: "What The Role Involves"
                 },
                 {
                     type: "featureGrid", features: [
@@ -459,7 +459,7 @@ window.CONTENT = {
                             src: "img/looking-for/couple-playing-video-games.webp",
                             alt: "A couple gaming",
                             icon: "🎮",
-                            text: "Controllers out, both of us a little too competitive to call it a night."
+                            text: "Controller in hand, competitive or co-op. Learning to love the games I love."
                         },
                         {
                             src: "img/looking-for/couple-cooking.webp",
@@ -484,19 +484,24 @@ window.CONTENT = {
                 {
                     type: "valueCols", columns: [
                         {
-                            title: "⚡ We'll instantly hit it off if…",
-                            items: [
-                                "You're ready to team up as my co-op gaming partner 👾✨",
-                                "You love to info-dump about your hyperfixations 💬✨",
-                                "You want to hunt down the best food spots with me 🥪🍜"
+                            title: "⚡ Previous Experience",
+                            text: "Candidates with previous experience in the following are a plus (but not required). Onboarding & training is included in this role:",
+                            tags: [
+                                "🍜 Foodie",
+                                "🤓 Nerd",
+                                "🎮 Gamer girl",
+                                "📚 Fantasy book girly",
+                                "🌿 Nature girl",
+                                "🎒 Backpacker",
+                                "😈 Secret wild side"
                             ]
                         },
                         {
-                            title: "💍 The honest small print",
+                            title: "💍 The Contract",
                             items: [
-                                "I'm after a long-term, monogamous relationship",
-                                "Kindness, openness and playfulness win me over",
-                                "A little nerdy, happy with quiet days in and fun adventures out? You'll have a loyal partner for life"
+                                "Permanent, monogamous role",
+                                "Salary paid in snacks and hugs",
+                                {html: "Full benefits: see <a href=\"#boyfriend-mode\">Boyfriend Mode</a> 👆"}
                             ]
                         }
                     ]
