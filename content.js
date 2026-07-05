@@ -459,7 +459,7 @@ window.CONTENT = {
                             src: "img/looking-for/couple-playing-video-games.webp",
                             alt: "A couple gaming",
                             icon: "🎮",
-                            text: "Controller in hand or cheering from the sidelines — co-op, versus, whatever. Enjoying this one with me is the thing I'd appreciate most."
+                            text: "Controller in hand or cheering from the sidelines — co-op, versus, whatever. Enjoying video games with me is the thing I'd appreciate most."
                         },
                         {
                             src: "img/looking-for/couple-cooking.webp",
