@@ -435,11 +435,27 @@ window.CONTENT = {
             tag: "📋 Now Hiring: Player 2",
             tagClass: "tag-gold",
             heading: "Job Opening: Player 2 (Permanent Role)",
-            lead: "No experience required — just curiosity and a willingness to get excited. Foodie, nerd, gamer and/or fantasy book girl? Strong plus.",
+            lead: "No previous job experience required. Just curiosity and a willingness to get excited about my hobbies and interests.",
             blocks: [
                 {
                     type: "paragraph",
-                    text: "The role: half adventure buddy, half quiet-day-in companion. You share the stuff I love (gaming, nerd culture) and pull me into your world too. Day-to-day responsibilities below."
+                    text: "Your role: half adventurer, half homebody. Previous experience always welcome."
+                },
+                {
+                    type: "tagRow",
+                    tags: [
+                        "🍜 Foodie",
+                        "🤓 Nerd",
+                        "🎮 Gamer girl",
+                        "📚 Fantasy book girly",
+                        "🌿 Nature girl",
+                        "🎒 Backpacker",
+                        "😈 Secret wild side"
+                    ]
+                },
+                {
+                    type: "heading",
+                    text: "What The Role Involves"
                 },
                 {
                     type: "featureGrid", features: [
@@ -459,7 +475,7 @@ window.CONTENT = {
                             src: "img/looking-for/couple-playing-video-games.webp",
                             alt: "A couple gaming",
                             icon: "🎮",
-                            text: "Pick your role: co-op partner, friendly rival, or loudest cheerleader on the sofa. Sharing video games with me beats any high score."
+                            text: "Controller in hand, competitive or co-op. Learning to love the games I love."
                         },
                         {
                             src: "img/looking-for/couple-cooking.webp",
@@ -484,19 +500,11 @@ window.CONTENT = {
                 {
                     type: "valueCols", columns: [
                         {
-                            title: "⚡ Bonus points if…",
+                            title: "💍 The Contract",
                             items: [
-                                "You're up for player-2 duty (couch-cheering counts) 👾✨",
-                                "You info-dump about your hyperfixations 💬✨",
-                                "You'll hunt down the best food spots with me 🥪🍜"
-                            ]
-                        },
-                        {
-                            title: "💍 Contract terms",
-                            items: [
-                                "Long-term, monogamous, permanent role",
-                                "Kindness, openness and playfulness get you hired",
-                                {html: "Benefits package: see <a href=\"#boyfriend-mode\">Boyfriend Mode</a> 👆"}
+                                "Permanent, monogamous role",
+                                "Salary paid in snacks and hugs",
+                                {html: "Full benefits: see <a href=\"#boyfriend-mode\">Boyfriend Mode</a> 👆"}
                             ]
                         }
                     ]
