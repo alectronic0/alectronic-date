@@ -442,18 +442,6 @@ window.CONTENT = {
                     text: "Your role: half adventurer, half homebody. Previous experience always welcome."
                 },
                 {
-                    type: "tagRow",
-                    tags: [
-                        "🍜 Foodie",
-                        "🤓 Nerd",
-                        "🎮 Gamer girl",
-                        "📚 Fantasy book girly",
-                        "🌿 Nature girl",
-                        "🎒 Backpacker",
-                        "😈 Secret wild side"
-                    ]
-                },
-                {
                     type: "heading",
                     text: "What The Role Involves"
                 },
@@ -499,6 +487,19 @@ window.CONTENT = {
                 },
                 {
                     type: "valueCols", columns: [
+                        {
+                            title: "⚡ Previous Experience",
+                            text: "Candidates with previous experience are a plus (although not required):",
+                            tags: [
+                                "🍜 Foodie",
+                                "🤓 Nerd",
+                                "🎮 Gamer girl",
+                                "📚 Fantasy book girly",
+                                "🌿 Nature girl",
+                                "🎒 Backpacker",
+                                "😈 Secret wild side"
+                            ]
+                        },
                         {
                             title: "💍 The Contract",
                             items: [
