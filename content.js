@@ -439,12 +439,12 @@ window.CONTENT = {
             blocks: [
                 {
                     type: "paragraph",
-                    html: "Two things matter most to me. <strong>First,</strong> someone who's just as up for an adventure as they are for a quiet day at home. <strong>Second,</strong> someone happy to share the stuff I love (gaming and nerd culture, mostly) and to pull me into their own quirky world too. Everything below is a bit of what I picture us getting up to together."
+                    html: "Everything below is a picture of the life I'd love to share — <strong>not a checklist.</strong> You don't have to already be into any of it; being open to enjoying it (or learning it) with me is what counts. And I want the same in reverse: pull me into your world too."
                 },
                 {
                     type: "note",
                     variant: "growth-banner",
-                    text: "🎮 NOW HIRING: Player 2 (long-term, full-time) — Look, I'll be honest, this is the one part of the \"job spec\" I care about. Prior video game experience is fantastic on the CV, but it is NOT a requirement — a willingness to learn beats a maxed-out skill tree every time. Full training provided (enthusiastically, by me). No experience? No problem. Just show up with a good attitude and we'll co-op the rest. 👾"
+                    text: "🎮 NOW HIRING: Player 2 (long-term, full-time) — the one line of the \"job spec\" I really care about. Video games are a genuinely cool part of me — creative, fun, and best when shared — even if I'm not playing them constantly. Experience looks great on the CV, but it's not required: a willingness to learn beats a maxed-out skill tree, and full training is provided (enthusiastically, by me). All I really ask is that you don't judge the hobby — and that every now and then, you get excited about it with me. 👾"
                 },
                 {
                     type: "featureGrid", features: [
@@ -491,7 +491,7 @@ window.CONTENT = {
                         {
                             title: "⚡ We'll instantly hit it off if…",
                             items: [
-                                "You're ready to team up as my co-op gaming partner 👾✨",
+                                "You're up for player-2 duty — or happy cheering from the sofa while I teach you 👾✨",
                                 "You love to info-dump about your hyperfixations 💬✨",
                                 "You want to hunt down the best food spots with me 🥪🍜"
                             ]
@@ -501,7 +501,7 @@ window.CONTENT = {
                             items: [
                                 "I'm after a long-term, monogamous relationship",
                                 "Kindness, openness and playfulness win me over",
-                                "A little nerdy, happy with quiet days in and fun adventures out? You'll have a loyal partner for life"
+                                "Bring all of the above and you'll have a loyal partner for life"
                             ]
                         }
                     ]
