@@ -438,10 +438,6 @@ window.CONTENT = {
             lead: "No previous job experience required. Just curiosity and a willingness to get excited about my hobbies and interests.",
             blocks: [
                 {
-                    type: "paragraph",
-                    text: "Your role: half adventurer, half homebody. Previous experience always welcome."
-                },
-                {
                     type: "heading",
                     text: "What The Role Involves"
                 },
