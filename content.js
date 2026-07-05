@@ -432,19 +432,19 @@ window.CONTENT = {
                 }
             ]
         }, lookingFor: {
-            tag: "✨ What I'm Looking For",
+            tag: "📋 Now Hiring: Player 2",
             tagClass: "tag-gold",
-            heading: "An Invitation, Not a Checklist",
-            lead: "I have a full, happy life, and I'm just hoping to share it. Here's the kind of \"us\" I'm dreaming about.",
+            heading: "Job Opening: Player 2 (Permanent Role)",
+            lead: "No experience required — just curiosity and a willingness to get excited. Foodie, nerd, gamer and/or fantasy book girl? Strong plus.",
             blocks: [
                 {
                     type: "paragraph",
-                    html: "Everything below is a picture of the life I'd love to share — <strong>not a checklist.</strong> You don't have to already be into any of it; being open to enjoying it (or learning it) with me is what counts. And I want the same in reverse: pull me into your world too."
+                    text: "The role: half adventure buddy, half quiet-day-in companion. You share the stuff I love (gaming, nerd culture) and pull me into your world too. Day-to-day responsibilities below."
                 },
                 {
                     type: "note",
                     variant: "growth-banner",
-                    text: "🎮 NOW HIRING: Player 2 (long-term, full-time) — the one line of the \"job spec\" I really care about. Video games are a genuinely cool part of me — creative, fun, and best when shared — even if I'm not playing them constantly. Experience looks great on the CV, but it's not required: a willingness to learn beats a maxed-out skill tree, and full training is provided (enthusiastically, by me). All I really ask is that you don't judge the hobby — and that every now and then, you get excited about it with me. 👾"
+                    text: "🎮 The one line I really care about: video games are a creative, genuinely fun part of me (no, not 24/7). You don't need to play — just don't judge the hobby, and get excited with me every now and then. 👾"
                 },
                 {
                     type: "featureGrid", features: [
@@ -489,19 +489,19 @@ window.CONTENT = {
                 {
                     type: "valueCols", columns: [
                         {
-                            title: "⚡ We'll instantly hit it off if…",
+                            title: "⚡ Bonus points if…",
                             items: [
-                                "You're up for player-2 duty — or happy cheering from the sofa while I teach you 👾✨",
-                                "You love to info-dump about your hyperfixations 💬✨",
-                                "You want to hunt down the best food spots with me 🥪🍜"
+                                "You're up for player-2 duty (couch-cheering counts) 👾✨",
+                                "You info-dump about your hyperfixations 💬✨",
+                                "You'll hunt down the best food spots with me 🥪🍜"
                             ]
                         },
                         {
-                            title: "💍 The honest small print",
+                            title: "💍 Contract terms",
                             items: [
-                                "I'm after a long-term, monogamous relationship",
-                                "Kindness, openness and playfulness win me over",
-                                "Bring all of the above and you'll have a loyal partner for life"
+                                "Long-term, monogamous, permanent role",
+                                "Kindness, openness and playfulness get you hired",
+                                {html: "Benefits package: see <a href=\"#boyfriend-mode\">Boyfriend Mode</a> 👆"}
                             ]
                         }
                     ]

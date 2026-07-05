@@ -287,12 +287,14 @@
                 )
                 .join('')}</div>`,
 
+        // Items are plain strings (escaped) or {html} objects for trusted markup,
+        // mirroring the paragraph block's text/html split.
         valueCols: (b) =>
             `<div class="value-cols">${b.columns
                 .map(
                     (col) =>
                         `<div class="value-card"><h3>${esc(col.title)}</h3><ul>${col.items
-                            .map((i) => `<li>${esc(i)}</li>`)
+                            .map((i) => `<li>${i && i.html ? i.html : esc(i)}</li>`)
                             .join('')}</ul></div>`
                 )
                 .join('')}</div>`,
