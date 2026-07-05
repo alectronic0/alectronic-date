@@ -442,11 +442,6 @@ window.CONTENT = {
                     text: "The role: half adventure buddy, half quiet-day-in companion. You share the stuff I love (gaming, nerd culture) and pull me into your world too. Day-to-day responsibilities below."
                 },
                 {
-                    type: "note",
-                    variant: "growth-banner",
-                    text: "🎮 The one line I really care about: video games are a creative, genuinely fun part of me (no, not 24/7). You don't need to play — just don't judge the hobby, and get excited with me every now and then. 👾"
-                },
-                {
                     type: "featureGrid", features: [
                         {
                             src: "img/looking-for/couple-going-exploring-nature.webp",
