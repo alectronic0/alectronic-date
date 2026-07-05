@@ -485,7 +485,7 @@ window.CONTENT = {
                     type: "valueCols", columns: [
                         {
                             title: "⚡ Previous Experience",
-                            text: "Candidates with previous experience are a plus (although not required):",
+                            text: "Candidates with previous experience in the following are a plus (but not required). Onboarding & training is included in this role:",
                             tags: [
                                 "🍜 Foodie",
                                 "🤓 Nerd",
