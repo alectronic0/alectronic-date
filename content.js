@@ -625,6 +625,7 @@ window.CONTENT = {
                 },
                 {
                     type: "construction",
+                    gif: "img/gifs/xUStFKHmuFPYk.gif",
                     text: "The rest — my personality type, love languages, and the general vibe I bring to a room — is still being written. Check back soon!"
                 }
             ]
@@ -634,6 +635,7 @@ window.CONTENT = {
             blocks: [
                 {
                     type: "construction",
+                    gif: "img/gifs/xUStFKHmuFPYk.gif",
                     text: "A tour of a typical Alec week — work, gym, gaming nights and everything in between — is on its way."
                 }
             ]

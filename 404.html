@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #160d14;
+      --surface: #211420;
+      --surface-2: #2b1a29;
+      --surface-3: #371f34;
+      --border: #3e2a3c;
+      --accent: #994ea8;
+      --accent-light: #cf8fdb;
+      --rose: #ff6b8a;
+      --gold: #e6a979;
+      --text: #f7eef4;
+      --muted: #cbb6c8;
+      --radius: 16px;
+    }
+
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(153, 78, 168, 0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(255, 107, 138, 0.06) 0%, transparent 60%);
+    }
+
+    /* --- fade-in --- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- gentle float --- */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-6px); }
+    }
+
+    /* --- card --- */
+    .card {
+      width: min(460px, 92vw);
+      background: linear-gradient(
+        135deg,
+        rgba(43, 26, 41, 0.72) 0%,
+        rgba(33, 20, 32, 0.82) 100%
+      );
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+      animation: fadeIn 0.6s ease-out both;
+      box-shadow:
+        0 4px 32px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(207, 143, 219, 0.06);
+    }
+
+    /* --- GIF container --- */
+    .gif-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.75rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .gif-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* --- typography --- */
+    .title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--accent-light), var(--rose));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .message {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    /* --- button --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.75rem 1.6rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      background: linear-gradient(135deg, var(--accent), #7c3f8a);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      box-shadow: 0 2px 16px rgba(153, 78, 168, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(153, 78, 168, 0.45);
+      filter: brightness(1.08);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    /* --- footer --- */
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      opacity: 0.55;
+      animation: fadeIn 0.6s ease-out 0.3s both;
+    }
+
+    /* --- responsive --- */
+    @media (max-width: 480px) {
+      .card { padding: 1.5rem 1.25rem 1.25rem; }
+      .title { font-size: 1.25rem; }
+      .message { font-size: 0.875rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="gif-wrap">
+      <img id="gif" src="" alt="404 illustration">
+    </div>
+    <h1 class="title" id="title"></h1>
+    <p class="message" id="message"></p>
+    <a href="/" class="btn">← Take Me Home</a>
+  </div>
+  <p class="footer">You've found a page that doesn't exist on Alec's Dating Application.</p>
+
+  <script>
+    const combos = [
+      {
+        gif:     "img/gifs/xUStFKHmuFPYk.gif",
+        title:   "404 — Nothing to See Here",
+        message: "Yeah… you weren't meant to see this. Please disperse."
+      },
+      {
+        gif:     "img/gifs/SRx5tBBrTQOBi.gif",
+        title:   "404 — Lost in Space",
+        message: "I have absolutely no idea how you got here. But honestly? Same."
+      },
+      {
+        gif:     "img/gifs/9PAIhJvcQ35hdZPUir.gif",
+        title:   "404 — It's a Trap!",
+        message: "Admiral Ackbar tried to warn you. This page doesn't exist."
+      },
+      {
+        gif:     "img/gifs/E87jjnSCANThe.gif",
+        title:   "404 — What Do You Want?!",
+        message: "I don't know what you're looking for, but it's not here. Dramatic, I know."
+      },
+      {
+        gif:     "img/gifs/eoFJSruUWf7qq1zNHD.gif",
+        title:   "404 — Unauthorised Access",
+        message: "Not sure Knuckles should have approved this… because this page doesn't exist."
+      },
+      {
+        gif:     "img/gifs/SmoCFhZCi1kzu.gif",
+        title:   "404 — I'll Allow It",
+        message: "Not sure how you got here, but I'll allow it. You should probably head back though."
+      },
+      {
+        gif:     "img/gifs/NTur7XlVDUdqM.gif",
+        title:   "404 — This Is Fine",
+        message: "Everything is fine. This page is just… not here. But it's fine. Totally fine."
+      },
+      {
+        gif:     "img/gifs/maNB0qAiRVAty.gif",
+        title:   "404 — Fixing Bugs",
+        message: "Our best engineer is on it. Probably. She's definitely typing something."
+      }
+    ];
+
+    const pick = combos[Math.floor(Math.random() * combos.length)];
+    document.getElementById("gif").src     = pick.gif;
+    document.getElementById("gif").alt     = pick.title;
+    document.getElementById("title").textContent   = pick.title;
+    document.getElementById("message").textContent = pick.message;
+  </script>
+</body>
+</html>

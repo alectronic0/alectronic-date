@@ -385,7 +385,8 @@
 
         // 🚧 placeholder banner for sections that aren't written yet.
         construction: (b) =>
-            '<div class="construction-banner"><div class="c-emoji">🚧</div>' +
+            '<div class="construction-banner">' +
+            (b.gif ? `<img class="c-gif" src="${esc(b.gif)}" alt="Under construction" loading="lazy">` : '<div class="c-emoji">🚧</div>') +
             '<strong>Under Construction</strong>' +
             `<p>${esc(b.text || 'This section is still being built — check back soon!')}</p></div>`
     };
