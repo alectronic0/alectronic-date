@@ -442,6 +442,11 @@ window.CONTENT = {
                     html: "Two things matter most to me. <strong>First,</strong> someone who's just as up for an adventure as they are for a quiet day at home. <strong>Second,</strong> someone happy to share the stuff I love (gaming and nerd culture, mostly) and to pull me into their own quirky world too. Everything below is a bit of what I picture us getting up to together."
                 },
                 {
+                    type: "note",
+                    variant: "growth-banner",
+                    text: "🎮 NOW HIRING: Player 2 (long-term, full-time) — Look, I'll be honest, this is the one part of the \"job spec\" I care about. Prior video game experience is fantastic on the CV, but it is NOT a requirement — a willingness to learn beats a maxed-out skill tree every time. Full training provided (enthusiastically, by me). No experience? No problem. Just show up with a good attitude and we'll co-op the rest. 👾"
+                },
+                {
                     type: "featureGrid", features: [
                         {
                             src: "img/looking-for/couple-going-exploring-nature.webp",
