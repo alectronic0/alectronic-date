@@ -435,7 +435,7 @@ window.CONTENT = {
             tag: "📋 Now Hiring: Player 2",
             tagClass: "tag-gold",
             heading: "Job Opening: Player 2 (Permanent Role)",
-            lead: "No previous job experience required. Just curiosity and a willingness to get excited about my hobbies and interests.",
+            lead: "No previous experience required. Just curiosity, good vibes, and a willingness to get stuck in.",
             blocks: [
                 {
                     type: "heading",
@@ -447,45 +447,45 @@ window.CONTENT = {
                             src: "img/looking-for/couple-going-exploring-nature.webp",
                             alt: "A couple exploring nature",
                             icon: "🌿",
-                            text: "New places, new food, and taking the long way round just to see what's there."
+                            text: "New places, new food, new cultures — exploring the world one Google Maps pin at a time."
                         },
                         {
                             src: "img/looking-for/couple-watching-movie-together.webp",
                             alt: "A couple watching a movie",
                             icon: "🍿",
-                            text: "Or a slow one in. A film on, the sofa, and nowhere we need to be."
+                            text: "A slow one in. A film on, blankets, snacks, and absolutely nowhere we need to be."
                         },
                         {
                             src: "img/looking-for/couple-playing-video-games.webp",
                             alt: "A couple gaming",
                             icon: "🎮",
-                            text: "Controller in hand, competitive or co-op. Learning to love the games I love."
+                            text: "Controller in hand — competitive or co-op. Board games, fantasy, anime, sci-fi… I'll happily dive into your world if you'll dive into mine."
                         },
                         {
                             src: "img/looking-for/couple-cooking.webp",
                             alt: "A couple cooking",
                             icon: "🍳",
-                            text: "Flour everywhere, music on, and dinner taking twice as long because we keep getting distracted."
+                            text: "Making a mess in the kitchen, dancing to the music — I always want to be trying something new, exciting, and fun."
                         },
                         {
                             src: "img/looking-for/couple-enjoying-tea-on-the-couch.webp",
                             alt: "A couple enjoying tea",
                             icon: "🫖",
-                            text: "The easy kind of talk, where nothing's off limits and there are no walls up."
+                            text: "Each other's safe space — no conversation too difficult, no walls up, and the trust that you'll always be listened to and heard."
                         },
                         {
                             src: "img/looking-for/couple-at-the-gym-working-out.webp",
                             alt: "A couple at the gym",
                             icon: "💪",
-                            text: "Cheering each other on to be our best selves, and there for each other through the harder days too."
+                            text: "Cheering each other on to be our best selves and always being there when the going gets tough."
                         }
                     ]
                 },
                 {
                     type: "valueCols", columns: [
                         {
-                            title: "⚡ Previous Experience",
-                            text: "Candidates with previous experience in the following are a plus (but not required). Onboarding & training is included in this role:",
+                            title: "⚡ Suggested Previous Experience",
+                            text: "A plus, not a prerequisite — on-the-job experience is provided.",
                             tags: [
                                 "🍜 Foodie",
                                 "🤓 Nerd",
@@ -499,9 +499,15 @@ window.CONTENT = {
                         {
                             title: "💍 The Contract",
                             items: [
-                                "Permanent, monogamous role",
-                                "Salary paid in snacks and hugs",
-                                {html: "Full benefits: see <a href=\"#boyfriend-mode\">Boyfriend Mode</a> 👆"}
+                                "💍 Permanent, monogamous role",
+                                "🤗 Salary paid in snacks and hugs",
+                                "✈️ Paid holidays (ok, we might need to split it)",
+                                "🎁 Bonuses paid out on birthdays and special occasions",
+                                "🚗 Company car (passenger princess privileges included)",
+                                "🐾 Pet-friendly workspace",
+                                "☕ Unlimited tea allowance",
+                                "🛋️ Flexible working — sometimes the sofa, sometimes the summit of a mountain",
+                                {html: "❤️ …and so much more — see <a href=\"#boyfriend-mode\">Boyfriend Mode</a> 👆"}
                             ]
                         }
                     ]
