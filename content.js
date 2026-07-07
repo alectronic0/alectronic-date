@@ -1262,6 +1262,9 @@ window.CONTENT = {
                     height: 352,
                     title: "Alec's curated playlist"
                 },
+                {
+                    type: "link", href: "https://open.spotify.com/playlist/3pwfF9YhpDSOJiINeLCf6o", label: "Open Playlist in Spotify"
+                },
                 {type: "heading", text: "Genres on Rotation"},
                 {
                     type: "tagRow", tags: [
@@ -1404,52 +1407,52 @@ window.CONTENT = {
                 {
                     type: "podcastCards", cards: [
                         {
-                            title: "Trash Taste", description: "Anime, manga, and gaming culture", logo: "img/podcasts/trashtaste.webp"
+                            title: "Trash Taste", description: "Anime, manga, and gaming culture", logo: "img/podcasts/trashtaste.webp", url: "https://open.spotify.com/show/6i9SWtZPb30xVXWVHSKCqq"
                         },
                         {
-                            title: "Diary of a CEO", description: "Business and personal development", logo: "img/podcasts/the-diary-of-a-ceo.webp"
+                            title: "Diary of a CEO", description: "Business and personal development", logo: "img/podcasts/the-diary-of-a-ceo.webp", url: "https://open.spotify.com/show/7iQXmUT7XGuZSzAMjoNWlX"
                         },
                         {
-                            title: "Lateral", description: "Lateral thinking puzzles and problem solving", logo: "img/podcasts/lateral.webp"
+                            title: "Lateral", description: "Lateral thinking puzzles and problem solving", logo: "img/podcasts/lateral.webp", url: "https://open.spotify.com/show/1TthQOE4Fx6gBPW8l48cfN"
                         },
                         {
-                            title: "The Rest Is Science", description: "Science communication and research", logo: "img/podcasts/the-rest-is-science.webp"
+                            title: "The Rest Is Science", description: "Science communication and research", logo: "img/podcasts/the-rest-is-science.webp", url: "https://open.spotify.com/show/5oLIbjbUqQmSMVSm0qNLge"
                         },
                         {
-                            title: "Sweet & Sour", description: "", logo: "img/podcasts/sweet-and-sour-podcast.webp"
+                            title: "Sweet & Sour", description: "", logo: "img/podcasts/sweet-and-sour-podcast.webp", url: "https://open.spotify.com/show/33Q9r2UhclhpPrBRgP8saO"
                         },
                         {
-                            title: "Jillian on Love", description: "Relationship and dating advice", logo: "img/podcasts/jillian-on-love.webp"
+                            title: "Jillian on Love", description: "Relationship and dating advice", logo: "img/podcasts/jillian-on-love.webp", url: "https://open.spotify.com/show/2qy9p5oXD7keoBQQzk1e1z"
                         },
                         {
-                            title: "Luv Bites by Dr Tara", description: "Love and relationships with Dr Tara Marshall", logo: "img/podcasts/luv-bites-by-dr-tara.webp"
+                            title: "Luv Bites by Dr Tara", description: "Love and relationships with Dr Tara Marshall", logo: "img/podcasts/luv-bites-by-dr-tara.webp", url: "https://open.spotify.com/show/2SZ60RxLOyQ900l4PgJAlT"
                         },
                         {
-                            title: "The Sabrina Zohar Show", description: "Conversations about relationships and self", logo: "img/podcasts/sabrina-zohar-show.webp"
+                            title: "The Sabrina Zohar Show", description: "Conversations about relationships and self", logo: "img/podcasts/sabrina-zohar-show.webp", url: "https://open.spotify.com/show/2Dsp24A82JkYRXytiA2qRt"
                         },
                         {
-                            title: "Critical Role", description: "D&D actual play with voice actors", logo: "img/podcasts/critical-role.webp"
+                            title: "Critical Role", description: "D&D actual play with voice actors", logo: "img/podcasts/critical-role.webp", url: "https://open.spotify.com/show/7e8zPFBpW0DtgyrrPnt0xT"
                         },
                         {
-                            title: "99% Invisible", description: "Design, architecture, and hidden history", logo: "img/podcasts/99-percent-invisible.webp"
+                            title: "99% Invisible", description: "Design, architecture, and hidden history", logo: "img/podcasts/99-percent-invisible.webp", url: "https://open.spotify.com/show/2VRS1IJCTn2Nlkg33ZVfkM"
                         },
                         {
-                            title: "History of Everything", description: "Historical narratives and stories", logo: "img/podcasts/history-of-everything.webp"
+                            title: "History of Everything", description: "Historical narratives and stories", logo: "img/podcasts/history-of-everything.webp", url: "https://open.spotify.com/show/6ALnjYlFQeEOmeRwYoRlIh"
                         },
                         {
-                            title: "Waveform", description: "Tech and gadget news", logo: "img/podcasts/waveform-podcast.webp"
+                            title: "Waveform", description: "Tech and gadget news", logo: "img/podcasts/waveform-podcast.webp", url: "https://open.spotify.com/show/6o81QuW22s5m2nfcXWjucc"
                         },
                         {
-                            title: "Kit & Krysta", description: "Nintendo theme podcast", logo: "img/podcasts/kit-and-krysta-podcast.webp"
+                            title: "Kit & Krysta", description: "Nintendo theme podcast", logo: "img/podcasts/kit-and-krysta-podcast.webp", url: "https://open.spotify.com/show/1YZTXzWylFUwu2dZpNd2V8"
                         },
                         {
-                            title: "The AIAS Game Maker's Notebook", description: "Video game development and design", logo: "img/podcasts/game-makers-notebook.webp"
+                            title: "The AIAS Game Maker's Notebook", description: "Video game development and design", logo: "img/podcasts/game-makers-notebook.webp", url: "https://open.spotify.com/show/2yB9jTRog4XGCKG5bpNZUA"
                         },
                         {
-                            title: "TED Talks Daily", description: "Short TED talks on various topics", logo: "img/podcasts/ted-talk-daily.webp"
+                            title: "TED Talks Daily", description: "Short TED talks on various topics", logo: "img/podcasts/ted-talk-daily.webp", url: "https://open.spotify.com/show/1VXcH8QHkjRcTCEd88U3ti"
                         },
                         {
-                            title: "TLDR News", description: "Daily news summary and analysis", logo: "img/podcasts/tldr-news.webp"
+                            title: "TLDR News", description: "Daily news summary and analysis", logo: "img/podcasts/tldr-news.webp", url: "https://open.spotify.com/show/033A6YUYAyFIopBfV78aE2"
                         }
                     ]
                 }
@@ -1545,18 +1548,6 @@ window.CONTENT = {
                         "🏳️‍🌈🏳️‍⚧️ LGBTQIA+ Ally",
                         "♀️ Women's rights",
                         "🧠 Neurodiversity"
-                    ]
-                },
-                {
-                    type: "photoGrid",
-                    images: [
-                        {src: "img/politics/human-rights-sign.webp", alt: "Human rights"},
-                        {
-                            src: "img/politics/pride-flag.webp",
-                            alt: "Pride flag"
-                        },
-                        {src: "img/politics/solarpunk-farmhouse-airships-illustration.webp", alt: "Solarpunk"},
-                        {src: "img/politics/alan-turing.webp", alt: "Alan Turing"}
                     ]
                 }
             ]

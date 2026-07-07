@@ -239,17 +239,14 @@
             `<div class="places-grid">${b.cards
                 .map(
                     (c) =>
-                        `<div class="place-card">${img(c.src, c.title)}
-<!--<a href="${esc(c.href)}" target="_blank">-->
+                        `<${c.href ? `a href="${esc(c.href)}" target="_blank" style="text-decoration: none; color: inherit;"` : 'div'} class="place-card">${img(c.src, c.title)}
 <div class="place-card-body">
 <strong>${
                             c.icon ? esc(c.icon) + ' ' : ''
                         }${esc(c.title)}</strong>${
                             c.caption ? `<div class="place-detail">${esc(c.caption)}</div>` : ''
                         }</div>
-</div>
-<!--</a>-->
-`
+</${c.href ? 'a' : 'div'}>`
                 )
                 .join('')}</div>`,
 
@@ -347,11 +344,11 @@
             `<div class="podcast-cards">${b.cards
                 .map(
                     (c) =>
-                        `<div class="podcast-card"><img class="podcast-logo" src="${esc(c.logo)}" alt="${esc(
+                        `<a class="podcast-card" href="${esc(c.url || `https://open.spotify.com/search/${encodeURIComponent(c.title + ' podcast')}`)}" target="_blank" style="text-decoration: none; color: inherit;"><img class="podcast-logo" src="${esc(c.logo)}" alt="${esc(
                             c.title
                         )}" loading="lazy"><div><strong>${esc(c.title)}</strong><p>${esc(
                             c.description
-                        )}</p></div></div>`
+                        )}</p></div></a>`
                 )
                 .join('')}</div>`,
 
