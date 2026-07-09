@@ -38,6 +38,18 @@ Photos go in `img/` subfolders (named by section, e.g. `img/moments/`, `img/date
 
 ---
 
+## Automated Poster Generator
+
+You can automatically generate marketing materials (OG images, TikTok/IG Reels, IG Posts, and physical posters with a QR code) directly from the site's hero content.
+
+1. `cd scripts/poster`
+2. `npm install`
+3. `npm run generate`
+
+This uses Playwright to render `poster.html` and saves high-resolution JPGs into the `/outputs` folder. The print format automatically injects a scannable QR code directing people to the site.
+
+---
+
 ## Structure
 
 ```
