@@ -279,7 +279,7 @@
                         `<div class="date-card">${img(c.src, c.alt)}<div class="date-card-body"><h3>${esc(
                             c.title
                         )}</h3><div class="date-pills">${c.pills
-                            .map((p) => `<span class="pill">${esc(p)}</span>`)
+                            .map((p) => `<button type="button" class="pill date-idea-pill" data-idea="${esc(p)}">${esc(p)}</button>`)
                             .join('')}</div></div></div>`
                 )
                 .join('')}</div>`,
@@ -289,6 +289,26 @@
         // carry an intro `text` line and a `tags` chip row instead of items.
         valueCols: (b) =>
             `<div class="value-cols">${b.columns
+                .map(
+                    (col) =>
+                        `<div class="value-card"><h3>${esc(col.title)}</h3>${
+                            col.text ? `<p class="value-card-text">${esc(col.text)}</p>` : ''
+                        }${
+                            col.tags && col.tags.length
+                                ? `<div class="tag-row">${col.tags.map(tagHtml).join('')}</div>`
+                                : ''
+                        }${
+                            col.items && col.items.length
+                                ? `<ul>${col.items
+                                      .map((i) => `<li>${i.html ? i.html : esc(i)}</li>`)
+                                      .join('')}</ul>`
+                                : ''
+                        }</div>`
+                )
+                .join('')}</div>`,
+
+        valueGrid: (b) =>
+            `<div class="value-grid">${b.columns
                 .map(
                     (col) =>
                         `<div class="value-card"><h3>${esc(col.title)}</h3>${
@@ -742,27 +762,36 @@
 
     // A mailto: whose body lists the given questions with room to answer.
     const promptMailto = (p, questions) => {
+        const selectedAdventures = Array.from(document.querySelectorAll('.date-idea-pill.selected'))
+                                        .map(el => el.getAttribute('data-idea'));
+        const advIntro = selectedAdventures.length 
+            ? `P.S. For our first adventure, I'm thinking: ${selectedAdventures.join(', ')}!\n\n` 
+            : '';
         const intro = p.emailIntro ? p.emailIntro + '\n\n' : '';
-        const body = intro + questions.map((q, i) => `${i + 1}. ${q}\n\n\n`).join('');
+        const body = advIntro + intro + questions.map((q, i) => `${i + 1}. ${q}\n\n\n`).join('');
         const subject = encodeURIComponent(p.emailSubject || document.title);
         return `mailto:${promptEmail(p)}?subject=${subject}&body=${encodeURIComponent(body)}`;
     };
 
+    let currentPromptPicks = [];
+
     // Pick a fresh set of questions and sync the "answer" button's mailto to them.
-    function drawPrompts() {
+    function drawPrompts(forceShuffle = true) {
         if (!C || !C.prompts) return;
         const p = C.prompts;
-        const picks = sample(p.questions || [], p.count || 3);
-        const cards = picks
-            .map(
-                (q, i) =>
-                    `<li class="prompt-card"><span class="prompt-num">${i + 1}</span>` +
-                    `<span class="prompt-q">${esc(q)}</span></li>`
-            )
-            .join('');
-        setHtml('[data-prompts="cards"]', cards);
+        if (forceShuffle || !currentPromptPicks.length) {
+            currentPromptPicks = sample(p.questions || [], p.count || 3);
+            const cards = currentPromptPicks
+                .map(
+                    (q, i) =>
+                        `<li class="prompt-card"><span class="prompt-num">${i + 1}</span>` +
+                        `<span class="prompt-q">${esc(q)}</span></li>`
+                )
+                .join('');
+            setHtml('[data-prompts="cards"]', cards);
+        }
         const answer = document.querySelector('.prompt-answer');
-        if (answer) answer.setAttribute('href', promptMailto(p, picks));
+        if (answer) answer.setAttribute('href', promptMailto(p, currentPromptPicks));
     }
 
     function renderPrompts() {
@@ -785,8 +814,38 @@
     function initPrompts() {
         const btn = document.querySelector('.prompt-shuffle');
         if (!btn || btn._listenerAttached) return;
-        btn.addEventListener('click', drawPrompts);
+        btn.addEventListener('click', () => drawPrompts(true));
         btn._listenerAttached = true;
+    }
+
+    function initDatePills() {
+        const pills = document.querySelectorAll('.date-idea-pill');
+        if (!pills.length || pills[0]._listenerAttached) return;
+        
+        pills.forEach(p => {
+            p.addEventListener('click', () => {
+                p.classList.toggle('selected');
+                
+                // Update the prompts mailto link without shuffling
+                if (typeof drawPrompts === 'function') {
+                    drawPrompts(false); 
+                }
+                
+                // Update the main contact mailto links (footer, etc)
+                const selected = Array.from(document.querySelectorAll('.date-idea-pill.selected'))
+                              .map(el => el.getAttribute('data-idea'));
+                const advText = selected.length ? `Hi Alec! I'm ready to shoot my shot.\n\nFor our first adventure, I'd love to do: ${selected.join(', ')}!\n\n` : '';
+                
+                document.querySelectorAll('.contact-btn[href^="mailto:"]').forEach(link => {
+                    if (link.classList.contains('prompt-answer')) return; // handled by drawPrompts
+                    const base = link.getAttribute('href').split('?')[0];
+                    const subj = encodeURIComponent("RE: Alec Dating Application");
+                    const body = advText ? `&body=${encodeURIComponent(advText)}` : '';
+                    link.setAttribute('href', `${base}?subject=${subj}${body}`);
+                });
+            });
+            p._listenerAttached = true;
+        });
     }
 
     /* ── Floating site soundtrack (Spotify mini-player) ──
@@ -1222,6 +1281,7 @@
         initCheekyGag();
         initDeepLinks();
         initShare();
+        initDatePills();
         initPrompts();
         initLightbox();
         initGallery();

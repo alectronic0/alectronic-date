@@ -2,7 +2,7 @@
 
 A personal website built to help me share who I am with potential partners — skipping the small talk and giving a real, honest picture of what dating me could look like.
 
-**🔗 Official site: [date.alectronic.co](https://date.alectronic.co)**
+**🔗 Official site: [date.alec.today](https://date.alec.today)**
 
 ---
 
@@ -17,7 +17,7 @@ The page walks through:
 - **What I Can Be** — what dating me could actually look like
 - **Looking For** — what I hope to find in a partner (an invitation, not a checklist)
 - **Date Ideas** — pick our first adventure: foodie, chill, active, intellectual, creative or a video-game session
-- **Contact** — email, Linktree, Instagram, LinkedIn and Telegram
+- **Contact** — email, Instagram, LinkedIn and Telegram
 - **The Deep Dive** — a grid of topic buttons that pop up modals with everything else: notable moments, personality & a week in the life (coming soon), radical transparency / growth, hobbies, bucket list, places, movies & TV, video games, food, music (with embedded Spotify playlists), books, podcasts, sports, politics & religion, gentle dislikes, future goals, plus favourite plants & creatures
 
 There's also a floating 🎧 **site soundtrack** player (bottom corner) with a cosy gaming-lofi playlist to scroll to.
@@ -75,7 +75,7 @@ This uses Playwright to render `poster.html` and saves high-resolution JPGs into
 
 Hosted via GitHub Pages on the `main` branch. Pushes to `main` deploy automatically.
 
-Custom domain: **[date.alectronic.co](https://date.alectronic.co)** (configured via `CNAME` and DNS).
+Custom domain: **[date.alec.today](https://date.alec.today)** (configured via `CNAME` and DNS).
 
 > `.nojekyll` is required — without it, GitHub Pages' Jekyll build ignores any folder starting with `_` or numeric prefixes.
 
@@ -83,4 +83,4 @@ Custom domain: **[date.alectronic.co](https://date.alectronic.co)** (configured 
 
 ## Contact
 
-Reach me at [date.alec@alectronic.co.uk](mailto:date.alec@alectronic.co.uk) or via the links on the site — [Linktree](https://linktr.ee/Alectronic), [Instagram](https://www.instagram.com/alectronic0/), [LinkedIn](https://www.linkedin.com/in/alectronic0/) and [Telegram](https://t.me/alectronic0).
+Reach me at [date@alec.today](mailto:date@alec.today) or via the links on the site — [Instagram](https://www.instagram.com/alectronic0/), [LinkedIn](https://www.linkedin.com/in/alectronic0/) and [Telegram](https://t.me/alectronic0).

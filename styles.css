@@ -194,7 +194,7 @@ nav a.nav-deep { color: var(--rose-light); font-weight: 600; }
 /* ─── Layout primitives ─────────────────────── */
 .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
 section {
-  padding: 76px 0; border-bottom: 1px solid var(--border);
+  padding: 38px 0; border-bottom: 1px solid var(--border);
   scroll-margin-top: var(--nav-h); /* anchor jumps land below the pinned nav */
 }
 section:last-of-type { border-bottom: none; }
@@ -367,7 +367,9 @@ body:has(dialog[open]) { overflow: hidden; }
 .feature-text { font-size: 0.9rem; color: var(--muted); }
 
 .value-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px; margin-bottom: 16px; }
-.value-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+.value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px; margin-bottom: 16px; }
+.value-col { display: flex; flex-direction: column; gap: 16px; }
+.value-card { flex: 1; background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
 .value-card h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-light); margin-bottom: 12px; }
 .value-card .value-card-text { font-size: 0.92rem; color: var(--muted); margin-bottom: 12px; }
 .value-card ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
@@ -387,7 +389,10 @@ body:has(dialog[open]) { overflow: hidden; }
 .pill {
   background: var(--surface-3); border: 1px solid var(--border);
   border-radius: 50px; padding: 5px 13px; font-size: 0.82rem; color: var(--muted);
+  cursor: pointer; user-select: none; transition: all 0.2s ease;
 }
+.pill:hover { background: var(--surface-2); color: var(--text); border-color: var(--muted); }
+.pill.selected { background: var(--rose); color: var(--aubergine); border-color: var(--rose-light); font-weight: 500; }
 
 /* ─── Contact ───────────────────────────────── */
 .contact-section {
@@ -855,7 +860,7 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
 
 /* ─── Responsive ────────────────────────────── */
 @media (max-width: 680px) {
-  .value-cols, .two-cols { grid-template-columns: 1fr; }
+  .value-cols, .value-grid, .two-cols { grid-template-columns: 1fr; }
   .contact-section { padding: 28px 20px; }
   .share-section { padding: 28px 20px; }
   .deep-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
@@ -865,7 +870,7 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
   .soundtrack { right: 12px; bottom: 12px; }
   .soundtrack-label { display: none; }
   .soundtrack-toggle { padding: 12px 14px; }
-  section { padding: 52px 0; }
+  section { padding: 26px 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

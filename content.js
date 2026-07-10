@@ -113,7 +113,7 @@ window.CONTENT = {
         note: "⚔️ It's dangerous to go alone! Take this:",
         links: [
             {
-                label: "Email", icon: "gmail", href: "mailto:date.alec@alectronic.co.uk?subject=RE%3A%20Alec%20Dating%20Application", primary: true
+                label: "Email", icon: "gmail", href: "mailto:date@alec.today?subject=RE%3A%20Alec%20Dating%20Application", primary: true
             },
             {
                 label: "Linktree", href: "https://linktr.ee/Alectronic",
@@ -160,7 +160,7 @@ window.CONTENT = {
         count: 3,
         shuffleLabel: "Shuffle the deck",
         answerLabel: "Email me your answers",
-        email: "date.alec@alectronic.co.uk",
+        email: "date@alec.today",
         emailSubject: "My answers to Alec's questions 🎮❤️",
         emailIntro: "Hi Alec! Here are my answers to a few of your questions:",
         questions: [
@@ -429,6 +429,10 @@ window.CONTENT = {
                             text: "Pebbling you with hundreds of perfectly curated memes."
                         }
                     ]
+                },
+                {
+                    type: "paragraph",
+                    html: '<div style="text-align: center; margin-top: 32px;"><a href="#contact" class="share-btn primary" style="text-decoration: none;">Heard enough? Skip the scroll and jump into getting in contact ⏭️</a></div>'
                 }
             ]
         }, lookingFor: {
@@ -482,7 +486,7 @@ window.CONTENT = {
                     ]
                 },
                 {
-                    type: "valueCols", columns: [
+                    type: "valueGrid", columns: [
                         {
                             title: "⚡ Suggested Previous Experience",
                             text: "A plus, not a prerequisite — on-the-job experience is provided.",
@@ -511,6 +515,10 @@ window.CONTENT = {
                             ]
                         }
                     ]
+                },
+                {
+                    type: "paragraph",
+                    html: '<div style="text-align: center; margin-top: 32px;"><a href="#contact" class="share-btn primary" style="text-decoration: none;">Heard enough? Skip the scroll and jump into getting in contact ⏭️</a></div>'
                 }
             ]
         }, dates: {
