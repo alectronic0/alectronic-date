@@ -383,49 +383,41 @@ window.CONTENT = {
                         {
                             src: "img/boyfriend-mode/couple-hugging.webp",
                             alt: "A couple hugging",
-                            icon: "🤗",
                             text: "Always supportive and caring — there through the good and bad times, with great hugs, forehead kisses and massages."
                         },
                         {
                             src: "img/boyfriend-mode/person-taking-photo.webp",
                             alt: "Taking a photo",
-                            icon: "📸",
                             text: "Your personal photographer — making sure you always look great."
                         },
                         {
                             src: "img/boyfriend-mode/person-getting-coffee-from-a-shop.webp",
                             alt: "Getting coffee",
-                            icon: "☕",
                             text: "Always knowing your coffee order & keeping your favourite snack on hand."
                         },
                         {
                             src: "img/boyfriend-mode/a-google-calendar-invite-for-cute-date.webp",
                             alt: "A calendar invite for a date",
-                            icon: "📅",
                             text: "Organising cute dates (and yes, adding them to Google Calendar)."
                         },
                         {
                             src: "img/boyfriend-mode/person-surprising-someone-with-flowers.webp",
                             alt: "Surprise flowers",
-                            icon: "💐",
                             text: "Random flowers and cute little gifts, just because."
                         },
                         {
                             src: "img/boyfriend-mode/passenger-princess.webp",
                             alt: "Passenger Princess",
-                            icon: "👑",
                             text: "Full passenger-princess treatment whenever we're on the road."
                         },
                         {
                             src: "img/boyfriend-mode/writing-a-shared-doc.webp",
                             alt: "Writing a doc",
-                            icon: "📊",
                             text: "Keeping docs & spreadsheets of the things that matter to you and our plans."
                         },
                         {
                             src: "img/boyfriend-mode/sharing-memes.webp",
                             alt: "Sharing memes",
-                            icon: "😂",
                             text: "Pebbling you with hundreds of perfectly curated memes."
                         }
                     ]
@@ -450,37 +442,31 @@ window.CONTENT = {
                         {
                             src: "img/looking-for/couple-going-exploring-nature.webp",
                             alt: "A couple exploring nature",
-                            icon: "🌿",
                             text: "New places, new food, new cultures — exploring the world one Google Maps pin at a time."
                         },
                         {
                             src: "img/looking-for/couple-watching-movie-together.webp",
                             alt: "A couple watching a movie",
-                            icon: "🍿",
                             text: "A slow one in. A film on, blankets, snacks, and absolutely nowhere we need to be."
                         },
                         {
                             src: "img/looking-for/couple-playing-video-games.webp",
                             alt: "A couple gaming",
-                            icon: "🎮",
                             text: "Controller in hand — competitive or co-op. Board games, fantasy, anime, sci-fi… I'll happily dive into your world if you'll dive into mine."
                         },
                         {
                             src: "img/looking-for/couple-cooking.webp",
                             alt: "A couple cooking",
-                            icon: "🍳",
                             text: "Making a mess in the kitchen, dancing to the music — I always want to be trying something new, exciting, and fun."
                         },
                         {
                             src: "img/looking-for/couple-enjoying-tea-on-the-couch.webp",
                             alt: "A couple enjoying tea",
-                            icon: "🫖",
                             text: "Each other's safe space — no conversation too difficult, no walls up, and the trust that you'll always be listened to and heard."
                         },
                         {
                             src: "img/looking-for/couple-at-the-gym-working-out.webp",
                             alt: "A couple at the gym",
-                            icon: "💪",
                             text: "Cheering each other on to be our best selves and always being there when the going gets tough."
                         }
                     ]
@@ -531,9 +517,9 @@ window.CONTENT = {
                     type: "dateCards", cards: [
                         {
                             src: "img/dates/flower-market.webp", alt: "A flower market", title: "🍕 Foodie & Market", pills: [
-                                "Pastry Adventure",
-                                "Flower Market",
-                                "Food Market"
+                                "🥐 Pastry Adventure",
+                                "🌸 Flower Market",
+                                "🌮 Food Market"
                             ]
                         },
                         {
@@ -541,10 +527,10 @@ window.CONTENT = {
                             alt: "Calm Adventure",
                             title: "Chill mode",
                             pills: [
-                                "Coffee & Walk",
-                                "Nature walk",
-                                "Bookstore Tour",
-                                "Canal Walk"
+                                "☕ Coffee & Walk",
+                                "🌳 Nature walk",
+                                "📚 Bookstore Tour",
+                                "🦆 Canal Walk"
                             ]
                         },
                         {
@@ -552,10 +538,10 @@ window.CONTENT = {
                             alt: "Axe throwing date",
                             title: "⚡ Active",
                             pills: [
-                                "Arcade",
-                                "Axe Throwing",
-                                "Mini Golf",
-                                "Virtual Clay Pigeon"
+                                "🕹️ Arcade",
+                                "🪓 Axe Throwing",
+                                "⛳ Mini Golf",
+                                "🔫 Virtual Clay Pigeon"
                             ]
                         },
                         {
@@ -563,11 +549,11 @@ window.CONTENT = {
                             alt: "A museum gallery",
                             title: "🧠 Intellectual",
                             pills: [
-                                "Museum",
-                                "Art Gallery",
-                                "Aquarium / Zoo",
-                                "Planetarium",
-                                "Exhibition"
+                                "🏛️ Museum",
+                                "🖼️ Art Gallery",
+                                "🐠 Aquarium / Zoo",
+                                "🪐 Planetarium",
+                                "🎫 Exhibition"
                             ]
                         },
                         {
@@ -575,11 +561,11 @@ window.CONTENT = {
                             alt: "A pottery class date",
                             title: "🎨 Creative",
                             pills: [
-                                "Pottery",
-                                "Kintsugi",
-                                "Terrarium making",
-                                "Cooking Class",
-                                "Painting"
+                                "🏺 Pottery",
+                                "✨ Kintsugi",
+                                "🌱 Terrarium making",
+                                "🧑‍🍳 Cooking Class",
+                                "🖌️ Painting"
                             ]
                         },
                         {
@@ -587,11 +573,11 @@ window.CONTENT = {
                             alt: "Playing video games together",
                             title: "🎮 Video Game Session!",
                             pills: [
-                                "Peak",
-                                "It Takes Two",
-                                "Split Fiction",
-                                "Portal 2",
-                                "Chat of Discord"
+                                "⛰️ Peak",
+                                "👫 It Takes Two",
+                                "📖 Split Fiction",
+                                "🌀 Portal 2",
+                                "💬 Chat of Discord"
                             ]
                         }
                     ]

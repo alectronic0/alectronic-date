@@ -266,9 +266,7 @@
             `<div class="feature-grid">${b.features
                 .map(
                     (f) =>
-                        `<div class="feature">${img(f.src, f.alt)}<div class="feature-body"><span class="feature-icon">${esc(
-                            f.icon
-                        )}</span><span class="feature-text">${esc(f.text)}</span></div></div>`
+                        `<div class="feature">${img(f.src, f.alt)}<div class="feature-body">${f.icon ? `<span class="feature-icon">${esc(f.icon)}</span>` : ''}<span class="feature-text">${esc(f.text)}</span></div></div>`
                 )
                 .join('')}</div>`,
 
@@ -764,11 +762,11 @@
     const promptMailto = (p, questions) => {
         const selectedAdventures = Array.from(document.querySelectorAll('.date-idea-pill.selected'))
                                         .map(el => el.getAttribute('data-idea'));
-        const advIntro = selectedAdventures.length 
-            ? `P.S. For our first adventure, I'm thinking: ${selectedAdventures.join(', ')}!\n\n` 
+        const advPS = selectedAdventures.length 
+            ? `\n\nP.S. For our first adventure, I'm thinking: ${selectedAdventures.join(', ')}!` 
             : '';
         const intro = p.emailIntro ? p.emailIntro + '\n\n' : '';
-        const body = advIntro + intro + questions.map((q, i) => `${i + 1}. ${q}\n\n\n`).join('');
+        const body = intro + questions.map((q, i) => `${i + 1}. ${q}\n\n\n`).join('') + advPS;
         const subject = encodeURIComponent(p.emailSubject || document.title);
         return `mailto:${promptEmail(p)}?subject=${subject}&body=${encodeURIComponent(body)}`;
     };
