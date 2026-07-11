@@ -124,13 +124,14 @@ window.CONTENT = {
             {
                 label: "Email", icon: "gmail", href: "mailto:date@alec.today?subject=RE%3A%20Alec%20Dating%20Application", primary: true
             },
-            {
-                label: "Linktree", href: "https://linktr.ee/Alectronic",
-            },
             {label: "Instagram", href: "https://www.instagram.com/alectronic0/"},
+            {label: "LinkedIn", href: "https://www.linkedin.com/in/alectronic0/"},
             {
-                label: "LinkedIn",
-                href: "https://www.linkedin.com/in/alectronic0/"
+                label: "WhatsApp",
+                sublabel: "(coming soon)",
+                icon: "whatsapp",
+                href: "javascript:void(0)",
+                disabled: true
             },
             {label: "Telegram", href: "https://t.me/alectronic0"}
         ]
@@ -1853,5 +1854,12 @@ window.CONTENT = {
         }
     },
 
-
+    outro: {
+        tag: "🎉 One Last Thing",
+        heading: "Thanks for Getting This Far!",
+        lead: "If you've liked what you've seen, please reach out — I'd love to hear from you and put together a fun first date.",
+        links: [
+            { label: "Shoot your shot! 💘", href: "#contact", primary: true }
+        ]
+    }
 };
