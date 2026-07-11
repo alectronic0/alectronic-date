@@ -306,21 +306,25 @@
                 .join('')}</div>`,
 
         valueGrid: (b) =>
-            `<div class="value-grid">${b.columns
+            `<div class="value-cols">${b.columns
                 .map(
                     (col) =>
-                        `<div class="value-card"><h3>${esc(col.title)}</h3>${
-                            col.text ? `<p class="value-card-text">${esc(col.text)}</p>` : ''
-                        }${
-                            col.tags && col.tags.length
-                                ? `<div class="tag-row">${col.tags.map(tagHtml).join('')}</div>`
-                                : ''
-                        }${
-                            col.items && col.items.length
-                                ? `<ul>${col.items
-                                      .map((i) => `<li>${i && i.html ? i.html : esc(i)}</li>`)
-                                      .join('')}</ul>`
-                                : ''
+                        `<div class="value-col">${
+                            col.cards ? col.cards.map(card => 
+                            `<div class="value-card"><h3>${esc(card.title)}</h3>${
+                                card.text ? `<p class="value-card-text">${esc(card.text)}</p>` : ''
+                            }${
+                                card.tags && card.tags.length
+                                    ? `<div class="tag-row">${card.tags.map(tagHtml).join('')}</div>`
+                                    : ''
+                            }${
+                                card.items && card.items.length
+                                    ? `<ul>${card.items
+                                          .map((i) => `<li>${i && i.html ? i.html : esc(i)}</li>`)
+                                          .join('')}</ul>`
+                                    : ''
+                            }</div>`
+                            ).join('') : ''
                         }</div>`
                 )
                 .join('')}</div>`,

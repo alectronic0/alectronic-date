@@ -21,6 +21,15 @@
    detailList, link, spotify, construction.
    ============================================================ */
 
+const _dob = new Date("1991-05-19");
+const _today = new Date();
+let _myAge = _today.getFullYear() - _dob.getFullYear();
+if (_today.getMonth() < _dob.getMonth() || (_today.getMonth() === _dob.getMonth() && _today.getDate() < _dob.getDate())) {
+    _myAge--;
+}
+const _minAge = Math.floor(_myAge / 2) + 7;
+const _maxAge = _myAge + 1;
+
 window.CONTENT = {
     meta: {
         title: "Alec's Dating Application",
@@ -474,30 +483,48 @@ window.CONTENT = {
                 {
                     type: "valueGrid", columns: [
                         {
-                            title: "⚡ Suggested Previous Experience",
-                            text: "A plus, not a prerequisite — on-the-job experience is provided.",
-                            tags: [
-                                "🍜 Foodie",
-                                "🤓 Nerd",
-                                "🎮 Gamer girl",
-                                "📚 Fantasy book girly",
-                                "🌿 Nature girl",
-                                "🎒 Backpacker",
-                                "😈 Secret wild side"
+                            cards: [
+                                {
+                                    title: "⚡ Suggested Previous Experience",
+                                    text: "A plus, not a prerequisite — on-the-job experience is provided.",
+                                    tags: [
+                                        "🍜 Foodie",
+                                        "🤓 Nerd",
+                                        "🎮 Gamer girl",
+                                        "📚 Fantasy book girly",
+                                        "🌿 Nature girl",
+                                        "🎒 Backpacker",
+                                        "😈 Secret wild side"
+                                    ]
+                                },
+                                {
+                                    title: "🛑 Dealbreakers (Dating Preferences)",
+                                    text: "Everyone has preferences, and to avoid disappointment, here are some bare minimum requirements. It's not you, it's me 😞",
+                                    tags: [
+                                        "🚭 No smokers",
+                                        "👶 No kids",
+                                        "👪 Wants kids",
+                                        `🎂 ~${_minAge} to ~${_maxAge}`
+                                    ]
+                                }
                             ]
                         },
                         {
-                            title: "💍 The Contract",
-                            items: [
-                                "💍 Permanent, monogamous role",
-                                "🤗 Salary paid in snacks and hugs",
-                                "✈️ Paid holidays (ok, we might need to split it)",
-                                "🎁 Bonuses paid out on birthdays and special occasions",
-                                "🚗 Company car (passenger princess privileges included)",
-                                "🐾 Pet-friendly workspace",
-                                "☕ Unlimited tea allowance",
-                                "🛋️ Flexible working — sometimes the sofa, sometimes the summit of a mountain",
-                                {html: "❤️ …and so much more — see <a href=\"#boyfriend-mode\">Boyfriend Mode</a> 👆"}
+                            cards: [
+                                {
+                                    title: "💍 The Contract",
+                                    items: [
+                                        "💍 Permanent, monogamous role",
+                                        "🤗 Salary paid in snacks and hugs",
+                                        "✈️ Paid holidays (ok, we might need to split it)",
+                                        "🎁 Bonuses paid out on birthdays and special occasions",
+                                        "🚗 Company car (passenger princess privileges included)",
+                                        "🐾 Pet-friendly workspace",
+                                        "☕ Unlimited tea allowance",
+                                        "🛋️ Flexible working — sometimes the sofa, sometimes the summit of a mountain",
+                                        {html: "❤️ …and so much more — see <a href=\"#boyfriend-mode\">Boyfriend Mode</a> 👆"}
+                                    ]
+                                }
                             ]
                         }
                     ]
