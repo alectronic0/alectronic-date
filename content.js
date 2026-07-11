@@ -250,12 +250,7 @@ window.CONTENT = {
        edits needed. `wip: true` adds a 🚧 badge to the button (pair it with
        a `construction` block in the section). */
     accordion: [
-        {
-            key: "moments",
-            emoji: "🏆",
-            title: "Notable Moments",
-            hint: "— milestones & adventures"
-        },
+        { type: "heading", text: "Get to know me" },
         {
             key: "personality",
             emoji: "🧬",
@@ -270,42 +265,13 @@ window.CONTENT = {
             hint: "— my typical seven days",
             wip: true
         },
+        {
+            key: "moments",
+            emoji: "🏆",
+            title: "Notable Moments",
+            hint: "— milestones & adventures"
+        },
         {key: "transparency", emoji: "🌱", title: "Radical Transparency", hint: "— areas of active growth"},
-        {
-            key: "hobbies",
-            emoji: "✨",
-            title: "Hobbies & Interests",
-            hint: "— things that light me up"
-        },
-        {key: "bucketList", emoji: "🎯", title: "Bucket List", hint: "— things I'd love to try"},
-        {
-            key: "places",
-            emoji: "✈️",
-            title: "Places — Been & Want to Go",
-            hint: "— stamps & wishlist"
-        },
-        {key: "moviesTV", emoji: "🎬", title: "Movies & TV", hint: "— what I'm watching"},
-        {
-            key: "videoGames",
-            emoji: "🎮",
-            title: "Video Games",
-            hint: "— player one, ready"
-        },
-        {key: "food", emoji: "🍽️", title: "Food", hint: "— the way to my heart"},
-        {
-            key: "music",
-            emoji: "🎵",
-            title: "Music",
-            hint: "— what's on my playlist"
-        },
-        {key: "books", emoji: "📚", title: "Books", hint: "— on my shelf"},
-        {
-            key: "podcasts",
-            emoji: "🎙️",
-            title: "Podcasts",
-            hint: "— long-journey listening"
-        },
-        {key: "sports", emoji: "⚽", title: "Sports", hint: "— mostly a spectator"},
         {
             key: "politics",
             emoji: "🏛️",
@@ -313,13 +279,51 @@ window.CONTENT = {
             hint: "— where I stand"
         },
         {key: "dislikes", emoji: "🙅", title: "Gentle Dislikes", hint: "— a preference for calm"},
+        {key: "friends", emoji: "👥", title: "Friend Review", hint: "— what they say about me", wip: true},
+        {key: "bucketList", emoji: "🎯", title: "Bucket List", hint: "— things I'd love to try"},
         {
             key: "goals",
             emoji: "🚀",
             title: "Future Goals",
             hint: "— where I'm headed"
         },
-        {key: "plantsAnimals", emoji: "🌺", title: "Bonus: Plants & Creatures", hint: "— a few favourites"},
+        { type: "heading", text: "Hobbies & Interests" },
+        {
+            key: "hobbies",
+            emoji: "✨",
+            title: "Hobbies & Interests",
+            hint: "— things that light me up"
+        },
+        {
+            key: "places",
+            emoji: "✈️",
+            title: "Places — Been & Want to Go",
+            hint: "— stamps & wishlist"
+        },
+        {key: "food", emoji: "🍽️", title: "Food", hint: "— the way to my heart"},
+        {key: "moviesTV", emoji: "🎬", title: "Movies & TV", hint: "— what I'm watching"},
+        {
+            key: "videoGames",
+            emoji: "🎮",
+            title: "Video Games",
+            hint: "— player one, ready"
+        },
+        {key: "books", emoji: "📚", title: "Books", hint: "— on my shelf"},
+        {
+            key: "music",
+            emoji: "🎵",
+            title: "Music",
+            hint: "— what's on my playlist"
+        },
+        {
+            key: "podcasts",
+            emoji: "🎙️",
+            title: "Podcasts",
+            hint: "— long-journey listening"
+        },
+        {key: "sports", emoji: "⚽", title: "Sports", hint: "— mostly a spectator"},
+        { type: "heading", text: "DLC - Bonus content" },
+        {key: "plantsAnimals", emoji: "🌺", title: "Plants & Creatures", hint: "— a few favourites"},
         {key: "gifs", emoji: "🎞️", title: "GIFs I Love", hint: "— my life in looping form"}
     ],
 
@@ -1613,6 +1617,15 @@ window.CONTENT = {
             ]
         },
 
+        friends: {
+            blocks: [
+                {
+                    type: "construction",
+                    text: "I'm currently collecting reviews from my friends. Check back soon to see what they say behind my back! 🕵️‍♂️"
+                }
+            ]
+        },
+
         goals: {
             blocks: [
                 {
@@ -1841,11 +1854,4 @@ window.CONTENT = {
     },
 
 
-    // Renders with the same component as `contact` — just a different title and
-    // text. With no `links` of its own it reuses contact.links (single source).
-    outro: {
-        tag: "🎉 One Last Thing",
-        heading: "Thanks for Getting This Far!",
-        lead: "If you've liked what you've seen, please reach out — I'd love to hear from you and put together a fun first date."
-    }
 };

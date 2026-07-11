@@ -472,7 +472,9 @@
         grid.innerHTML = C.accordion
             .map(
                 (a) =>
-                    `<button class="deep-card" type="button" data-modal="${esc(
+                    a.type === 'heading'
+                        ? `<h3 class="deep-group-header">${esc(a.text)}</h3>`
+                        : `<button class="deep-card" type="button" data-modal="${esc(
                         a.key
                     )}" aria-haspopup="dialog">` +
                     (a.wip ? '<span class="deep-card-badge">🚧 WIP</span>' : '') +
@@ -493,6 +495,7 @@
             document.body.appendChild(host);
         }
         host.innerHTML = C.accordion
+            .filter((a) => a.type !== 'heading')
             .map(
                 (a) =>
                     `<dialog class="deep-modal" id="${esc(a.key)}" aria-label="${esc(a.title)}">` +
@@ -917,17 +920,9 @@
             burger.setAttribute('aria-expanded', open ? 'true' : 'false');
         };
         burger.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
-        nav.querySelectorAll('.nav-inner a').forEach((a) =>
+        nav.querySelectorAll('a').forEach((a) =>
             a.addEventListener('click', () => setOpen(false))
         );
-        // "Go on a date" pill pops up the contact + share modal.
-        const dateBtn = nav.querySelector('.nav-contact');
-        if (dateBtn) {
-            dateBtn.addEventListener('click', () => {
-                setOpen(false);
-                openDeepModal('date-modal');
-            });
-        }
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') setOpen(false);
         });
@@ -1273,7 +1268,7 @@
         renderShare('[data-share="date-modal"]');
         renderConnectCard(C.contact, '[data-connect="cheeky-modal"]');
         renderShare('[data-share="cheeky-modal"]');
-        renderConnectCard(C.outro, '[data-connect="outro"]');
+
         renderFooterLinks();
         renderSoundtrack();
 

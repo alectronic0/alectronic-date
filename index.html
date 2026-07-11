@@ -81,7 +81,7 @@
 <!-- ════════════════ NAV ════════════════ -->
 <!-- Always at the very top (above the hero) on every screen size: a slim bar
      with the hamburger menu and an always-visible "Go on a date" button that
-     pops up the contact + share modal from anywhere on the page. The section
+     scrolls to the contact section from anywhere on the page. The section
      links fold down when the burger is opened. -->
 <nav aria-label="Section navigation">
   <div class="nav-bar">
@@ -89,7 +89,7 @@
       <span class="burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
       <span class="burger-label">Menu</span>
     </button>
-    <button type="button" class="nav-contact" aria-haspopup="dialog">💘 Go on a date</button>
+    <a href="#contact" class="nav-contact" style="text-decoration:none;">💘 Go on a date</a>
   </div>
   <div class="nav-inner" id="nav-menu">
     <a href="#about">Who I Am</a>
@@ -173,22 +173,6 @@
   </div>
 </section>
 
-<!-- ════════════════ WARNING DIVIDER ════════════════ -->
-<section id="warning">
-  <div class="container">
-    <div class="warning-banner">
-      <div class="w-emoji">⚠️</div>
-      <h2>Spoiler Warning</h2>
-      <p>You've seen the headline. Beyond this point is the deep dive — my personality, the honest growth stuff, hobbies, tastes, travels and future goals.</p>
-      <div class="warning-tags">
-        <span>Personality</span><span>Radical Transparency</span><span>Hobbies &amp; Interests</span>
-        <span>Likes &amp; Dislikes</span><span>Future Goals</span>
-      </div>
-      <p style="margin-top:16px;">If you'd rather discover all this in person — feel free to look away now and just say hi! 👆</p>
-    </div>
-  </div>
-</section>
-
 <!-- ════════════════ DEEP DIVE (topic buttons + modals) ════════════════ -->
 <section id="deep-dive">
   <div class="container">
@@ -198,8 +182,10 @@
       <div class="section-tag tag-rose">🔬 The Deep Dive</div>
       <h2>Everything Else About Me <span class="deep-link" role="button" tabindex="0" data-anchor="deep-dive" aria-label="Copy link to The Deep Dive" title="Copy link to this section">🔗</span></h2>
     </div>
-    <div class="deep-intro">
-      <p class="lead" style="margin-left:auto;margin-right:auto;">Tap any topic to open it. Skim what catches your eye, or read the lot — your call.</p>
+    <div class="warning-banner" style="margin-bottom: 24px;">
+      <div class="w-emoji">⚠️</div>
+      <h2>Spoiler Warning</h2>
+      <p style="margin-top:16px; margin-bottom:0;">Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story.</p>
     </div>
 
     <!-- Topic buttons + their pop-up modals are built from CONTENT.accordion
@@ -243,23 +229,6 @@
     <button class="gallery-close" type="button" aria-label="Close gallery">×</button>
   </div>
   <div class="gallery-grid" data-gallery="grid"></div>
-</dialog>
-
-<!-- "Go on a date" modal (opened from the mobile nav pill). Reuses the
-     deep-modal shell so close/backdrop/Escape wiring comes from initDeepDive;
-     its body is filled by renderConnectCard + renderShare in main.js. -->
-<dialog class="deep-modal date-modal" id="date-modal" aria-label="Go on a date with Alec">
-  <div class="deep-modal-inner">
-    <div class="deep-modal-head">
-      <span class="deep-modal-emoji" aria-hidden="true">💘</span>
-      <h3 class="deep-modal-title">Let's Go on a Date</h3>
-      <button class="deep-modal-close" type="button" aria-label="Close">×</button>
-    </div>
-    <div class="deep-modal-body">
-      <div class="contact-section" data-connect="date-modal"></div>
-      <div class="share-section" data-share="date-modal"></div>
-    </div>
-  </div>
 </dialog>
 
 <!-- 🔒 "Sexy photos" gag, step 1: the tease. Opened from the locked banner

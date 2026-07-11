@@ -539,10 +539,20 @@ body:has(dialog[open]) { overflow: hidden; }
 .warning-banner .w-emoji { font-size: 2.2rem; margin-bottom: 12px; }
 .warning-banner h2 { font-size: 1.5rem; color: var(--rose-light); margin-bottom: 8px; }
 .warning-banner p { max-width: 520px; margin: 0 auto; }
-.warning-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-.warning-tags span {
-  background: rgba(255, 107, 138, 0.14); border: 1px solid rgba(255, 107, 138, 0.34);
-  border-radius: 50px; padding: 5px 15px; font-size: 0.82rem; color: var(--rose-light);
+
+
+.deep-group-header {
+  grid-column: 1 / -1;
+  margin-top: 16px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.deep-group-header:first-child {
+  margin-top: 0;
 }
 
 /* ─── Deep dive · topic grid + pop-up modals ── */
