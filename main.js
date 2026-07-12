@@ -1343,8 +1343,18 @@
 
         // Delegated so it covers images injected after load.
         document.addEventListener('click', (e) => {
-            const img = e.target.closest(selectors);
-            if (!img || e.target.tagName !== 'IMG') return;
+            // First try matching an image directly
+            let img = e.target.closest(selectors);
+            
+            // If they clicked inside a card but not exactly on the img, find the image inside that card
+            if (!img && e.target.tagName !== 'IMG') {
+                const card = e.target.closest('.feature, .date-card, .place-card, .interest-card, .labeled-photo-card, .faces-item, .logo-tile');
+                if (card) {
+                    img = card.querySelector(selectors);
+                }
+            }
+
+            if (!img || img.tagName !== 'IMG') return;
             if (img.classList.contains('flag')) return; // tiny inline flags aren't zoomable
             
             // Gather images dynamically for gallery navigation, scoped to the current section
@@ -1372,7 +1382,7 @@
         }
 
         document.addEventListener('click', (e) => {
-            if (e.target.closest('[data-faces="expand"]')) {
+            if (e.target.closest('[data-faces="expand"]') || e.target.closest('#faces-expand-btn')) {
                 gallery.showModal();
                 gallery.scrollTop = 0;
                 return;
@@ -1530,7 +1540,7 @@
                 setHtml('#profile-tag-container', `<div class="section-tag tag-purple">${esc(C.profile.tag)}</div>`);
             }
             if (C.faces && C.faces.photos && C.faces.photos.length > 0) {
-                setHtml('#faces-expand-btn', `<span aria-hidden="true">⤢</span> ${esc(C.profile.viewPhotosLabel)}`);
+                setHtml('#faces-expand-btn', esc(C.profile.viewPhotosLabel));
             } else {
                 const btn = document.getElementById('faces-expand-btn');
                 if (btn) btn.style.display = 'none';
