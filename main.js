@@ -559,7 +559,9 @@
             }
         }
 
-        setText('[data-hero="cta"]', h.cta);
+        if (h.cta) {
+            setHtml('#hero-cta-container', `<a href="#about" class="hero-cta" data-hero="cta">${esc(h.cta)}</a>`);
+        }
         // All three are visible without scrolling, so none should be lazy;
         // the first is the LCP element and gets fetchpriority="high" too.
         setHtml(
@@ -1516,13 +1518,23 @@
         
         if (C.nav) {
             setText('#nav-burger-label', C.nav.menuLabel);
-            setText('#nav-cta', C.nav.ctaText);
+            if (C.nav.ctaText) {
+                setHtml('#nav-cta-container', `<a href="#contact" class="nav-contact"><span id="nav-cta">${esc(C.nav.ctaText)}</span></a>`);
+            }
         }
         if (C.hero) {
             setText('#hero-scroll-hint', C.hero.scrollHint);
         }
         if (C.profile) {
-            setHtml('#faces-expand-btn', `<span aria-hidden="true">⤢</span> ${esc(C.profile.viewPhotosLabel)}`);
+            if (C.profile.tag) {
+                setHtml('#profile-tag-container', `<div class="section-tag tag-purple">${esc(C.profile.tag)}</div>`);
+            }
+            if (C.faces && C.faces.photos && C.faces.photos.length > 0) {
+                setHtml('#faces-expand-btn', `<span aria-hidden="true">⤢</span> ${esc(C.profile.viewPhotosLabel)}`);
+            } else {
+                const btn = document.getElementById('faces-expand-btn');
+                if (btn) btn.style.display = 'none';
+            }
             setHtml('#profile-evolving-note', C.profile.evolvingNote);
         }
         if (C.deepDive) {
@@ -1534,6 +1546,24 @@
             setText('#footer-emoji', C.footer.emoji);
             setText('#footer-note', C.footer.note);
             setHtml('#footer-credit', C.footer.credit);
+        }
+
+        // Hide empty structural sections to avoid blank padding gaps
+        if (!C.contact && !C.share) {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) contactSection.style.display = 'none';
+        }
+        if (!C.outro) {
+            const outroSection = document.getElementById('outro');
+            if (outroSection) outroSection.style.display = 'none';
+        }
+        if (!C.profile) {
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) aboutSection.style.display = 'none';
+        }
+        if (!C.deepDive) {
+            const deepDiveSection = document.getElementById('deep-dive');
+            if (deepDiveSection) deepDiveSection.style.display = 'none';
         }
     }
 
