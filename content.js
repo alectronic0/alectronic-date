@@ -420,41 +420,55 @@ window.CONTENT = {
                         {
                             src: "img/boyfriend-mode/couple-hugging.webp",
                             alt: "A couple hugging",
+                            title: "🤗 Emotional Support Nerd",
                             text: "Always supportive and caring — there through the good and bad times, with great hugs, forehead kisses, and massages."
-                        },
-                        {
-                            src: "img/boyfriend-mode/person-taking-photo.webp",
-                            alt: "Taking a photo",
-                            text: "Your personal photographer — making sure you always look great."
-                        },
-                        {
-                            src: "img/boyfriend-mode/person-getting-coffee-from-a-shop.webp",
-                            alt: "Getting coffee",
-                            text: "Always knowing your coffee order & keeping your favourite snack on hand."
-                        },
-                        {
-                            src: "img/boyfriend-mode/a-google-calendar-invite-for-cute-date.webp",
-                            alt: "A calendar invite for a date",
-                            text: "Organising cute dates (and yes, adding them to Google Calendar)."
-                        },
-                        {
-                            src: "img/boyfriend-mode/person-surprising-someone-with-flowers.webp",
-                            alt: "Surprise flowers",
-                            text: "Random flowers and cute little gifts, just because."
                         },
                         {
                             src: "img/boyfriend-mode/passenger-princess.webp",
                             alt: "Passenger Princess",
+                            title: "🚗 Chauffeur Mode Enabled",
                             text: "Full passenger-princess treatment whenever we're on the road."
+                        },
+                        {
+                            src: "img/boyfriend-mode/person-taking-photo.webp",
+                            alt: "Taking a photo",
+                            title: "📸 Personal Photographer",
+                            text: "Making sure you always look great."
                         },
                         {
                             src: "img/boyfriend-mode/writing-a-shared-doc.webp",
                             alt: "Writing a doc",
+                            title: "📊 A Freak in the Spreadsheets",
                             text: "Keeping shared docs & spreadsheets for the things that matter to you, and of course, our plans."
+                        },
+                        {
+                            src: "img/boyfriend-mode/a-google-calendar-invite-for-cute-date.webp",
+                            alt: "A calendar invite for a date",
+                            title: "📅 Calendar Invites Included",
+                            text: "Organising cute dates (and yes, adding them to Google Calendar)."
+                        },
+                        {
+                            src: "img/boyfriend-mode/designated-bug-relocator.jpg",
+                            alt: "A hand holding a glass over a spider",
+                            title: "🕷️ Designated Bug Relocator",
+                            text: "Bravely capturing and releasing any 8-legged intruders so you don't have to (Certification from the prestigious 2yr Australian outback diploma 🦘)."
+                        },
+                        {
+                            src: "img/boyfriend-mode/person-surprising-someone-with-flowers.webp",
+                            alt: "Surprise flowers",
+                            title: "🎁 Random Loot Drops",
+                            text: "Random flowers and cute little gifts, just because."
+                        },
+                        {
+                            src: "img/boyfriend-mode/person-getting-coffee-from-a-shop.webp",
+                            alt: "Getting coffee",
+                            title: "☕ Cached Coffee Order",
+                            text: "Always knowing your coffee order & keeping your favourite snack on hand."
                         },
                         {
                             src: "img/boyfriend-mode/sharing-memes.webp",
                             alt: "Sharing memes",
+                            title: "🐧 Certified Meme Dealer",
                             text: "Pebbling you with hundreds of perfectly curated memes."
                         }
                     ]
@@ -855,9 +869,7 @@ window.CONTENT = {
                             title: "A Play at The Globe",
                             caption: "Shakespeare the way it was meant to be seen."
                         },
-                        {
-                            src: "img/bucket-list/indoor-climbing-wall.webp", icon: "🧗", title: "Rock Climbing / Bouldering", caption: "Up the wall, one hold at a time."
-                        },
+
                         {
                             src: "img/bucket-list/lavender-field-provence.webp", icon: "🌷", title: "A Flower Field", caption: "Lavender or tulips in full bloom."
                         },
@@ -1571,7 +1583,7 @@ window.CONTENT = {
                         {src: "img/sports/archery.webp", label: "Archery"},
                         {
                             src: "img/sports/rock-climbing.webp",
-                            label: "Bouldering"
+                            label: "Rock Climbing"
                         },
                         {src: "img/sports/basketball.webp", label: "Basketball"},
                         {src: "img/sports/cycling.webp", label: "Cycling"},

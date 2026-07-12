@@ -418,7 +418,7 @@ body:has(dialog[open]) { overflow: hidden; }
 /* ─── Feature rows (text + image) — Boyfriend Mode / Looking For ─── */
 .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
 /* "An Invitation, Not a Checklist" reads better at 3-up than 4-up on desktop */
-#looking-for .feature-grid { grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); }
+#looking-for .feature-grid, #boyfriend-mode .feature-grid { grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); }
 .feature {
   display: flex; flex-direction: column;
   background: var(--surface); border: 1px solid var(--border);
