@@ -546,7 +546,42 @@
         setText('[data-hero="emoji"]', h.emoji);
         setHtml('[data-hero="headline"]', h.headline);
         setText('[data-hero="sub"]', h.subheading);
-        setText('[data-hero="tagline"]', h.tagline);
+        
+        const taglineEl = document.querySelector('[data-hero="tagline"]');
+        if (taglineEl) {
+            if (h.taglineSlots && h.taglineSlots.length > 0) {
+                const slots = h.taglineSlots;
+                const n = slots.length - 1;
+                const step = 100 / n;
+                const pauseTime = step * 0.75;
+                
+                let keyframes = `@keyframes slot-spin {\n`;
+                for (let i = 0; i <= n; i++) {
+                    if (i === n) {
+                        keyframes += `  100% { transform: translateY(-${i * 1.5}em); }\n`;
+                    } else {
+                        const start = i * step;
+                        const end = start + pauseTime;
+                        keyframes += `  ${start.toFixed(2)}%, ${end.toFixed(2)}% { transform: translateY(-${i * 1.5}em); }\n`;
+                    }
+                }
+                keyframes += `}\n`;
+                
+                let styleEl = document.getElementById('slot-machine-style');
+                if (!styleEl) {
+                    styleEl = document.createElement('style');
+                    styleEl.id = 'slot-machine-style';
+                    document.head.appendChild(styleEl);
+                }
+                styleEl.innerHTML = keyframes;
+                
+                const animDuration = n * 3; // 3 seconds per item
+                taglineEl.innerHTML = `${esc(h.taglineStart || "")}<span class="slot-machine"><span class="slot-machine-inner" style="animation-duration: ${animDuration}s">${slots.map(s => `<span>${esc(s)}</span>`).join('')}</span></span><br><span class="hero-tagline-end">${esc(h.taglineEnd || "")}</span>`;
+            } else {
+                setText('[data-hero="tagline"]', h.tagline);
+            }
+        }
+
         setText('[data-hero="cta"]', h.cta);
         // All three are visible without scrolling, so none should be lazy;
         // the first is the LCP element and gets fetchpriority="high" too.
@@ -1196,23 +1231,93 @@
     function initLightbox() {
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
         if (!lightbox || !lightboxImg) return;
 
-        // Any click — image, close button or backdrop — dismisses the lightbox.
-        lightbox.addEventListener('click', () => lightbox.close());
-        // Drop the old image once closed so it can't flash up next time.
-        lightbox.addEventListener('close', () => lightboxImg.removeAttribute('src'));
+        let currentImages = [];
+        let currentIndex = -1;
 
         const selectors =
             '[data-zoom], .mosaic-strip img, .gallery-grid img, .poster-grid img, .photo-grid img, .labeled-photo-card img, .gif-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img';
+
+        function getCaption(img) {
+            const feature = img.closest('.feature');
+            if (feature) {
+                const text = feature.querySelector('.feature-text');
+                return text ? text.textContent : img.alt;
+            }
+            const labeledPhoto = img.closest('.labeled-photo-card');
+            if (labeledPhoto) {
+                const label = labeledPhoto.querySelector('.labeled-photo-label');
+                return label ? label.textContent : img.alt;
+            }
+            const dateCard = img.closest('.date-card');
+            if (dateCard) {
+                const title = dateCard.querySelector('h3');
+                const text = dateCard.querySelector('p');
+                return (title ? title.textContent + ' — ' : '') + (text ? text.textContent : img.alt);
+            }
+            const placeCard = img.closest('.place-card');
+            if (placeCard) {
+                const title = placeCard.querySelector('h3');
+                return title ? title.textContent : img.alt;
+            }
+            return img.alt || '';
+        }
+
+        function showImage(index) {
+            if (index < 0) index = currentImages.length - 1;
+            if (index >= currentImages.length) index = 0;
+            currentIndex = index;
+            const img = currentImages[currentIndex];
+            if (!img) return;
+            lightboxImg.src = img.currentSrc || img.src;
+            lightboxImg.alt = img.alt;
+            if (lightboxCaption) {
+                lightboxCaption.textContent = getCaption(img);
+            }
+        }
+
+        // Any click — image, close button or backdrop — dismisses the lightbox.
+        lightbox.addEventListener('click', (e) => {
+            if (e.target.closest('.lightbox-prev')) {
+                showImage(currentIndex - 1);
+                return;
+            }
+            if (e.target.closest('.lightbox-next')) {
+                showImage(currentIndex + 1);
+                return;
+            }
+            if (e.target.closest('.lightbox-caption') || e.target.closest('.lightbox-nav')) {
+                return;
+            }
+            lightbox.close();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.open) return;
+            if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+            if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+        });
+
+        // Drop the old image once closed so it can't flash up next time.
+        lightbox.addEventListener('close', () => {
+            lightboxImg.removeAttribute('src');
+            if (lightboxCaption) lightboxCaption.textContent = '';
+        });
 
         // Delegated so it covers images injected after load.
         document.addEventListener('click', (e) => {
             const img = e.target.closest(selectors);
             if (!img || e.target.tagName !== 'IMG') return;
             if (img.classList.contains('flag')) return; // tiny inline flags aren't zoomable
-            lightboxImg.src = img.currentSrc || img.src;
-            lightboxImg.alt = img.alt;
+            
+            // Gather images dynamically for gallery navigation, scoped to the current section
+            const container = img.closest('dialog') || img.closest('section') || img.closest('.container') || document.body;
+            currentImages = Array.from(container.querySelectorAll(selectors)).filter(i => !i.classList.contains('flag') && i.tagName === 'IMG');
+            currentIndex = currentImages.indexOf(img);
+            
+            showImage(currentIndex);
             lightbox.showModal();
         });
     }

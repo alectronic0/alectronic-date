@@ -114,7 +114,7 @@
     </div>
     <div class="hero-media" data-hero="media"></div>
   </div>
-  <div class="hero-scroll">ok, a little scrolling required ↓</div>
+  <div class="hero-scroll">start your scrolling adventure ↓</div>
 </header>
 
 <main>
@@ -134,7 +134,10 @@
         <div data-profile="intro"></div>
         <div class="fact-grid" data-profile="facts"></div>
       </div>
-      <div class="profile-photo" data-profile="photo"></div>
+      <div class="profile-photo-col">
+        <div class="profile-photo" data-profile="photo"></div>
+        <button class="faces-expand" type="button" data-faces="expand" aria-haspopup="dialog" style="width: 100%; margin-top: 16px;"><span aria-hidden="true">⤢</span> View all photos</button>
+      </div>
     </div>
     <p class="evolving-note">🚧 <strong>Like me, this site is always growing</strong> — it continues to evolve and won't always be perfect: the odd bug, glitch or typo will sneak through. It'll keep trying anyway. 💜</p>
   </div>
@@ -271,7 +274,12 @@
 <!-- Lightbox -->
 <dialog class="lightbox" id="lightbox" aria-label="Photo lightbox">
   <button class="lightbox-close" type="button" aria-label="Close">×</button>
-  <img id="lightbox-img" src="" alt="Enlarged photo of Alec Doran-Twyford">
+  <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">‹</button>
+  <figure class="lightbox-figure">
+    <img id="lightbox-img" src="" alt="Enlarged photo">
+    <figcaption id="lightbox-caption" class="lightbox-caption"></figcaption>
+  </figure>
+  <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">›</button>
 </dialog>
 
 <script src="content.js" defer></script>

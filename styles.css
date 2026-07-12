@@ -88,7 +88,35 @@ img { display: block; max-width: 100%; background: white }
 }
 .hero h1 span { color: var(--rose-light); }
 .hero-sub { font-size: 1.12rem; color: var(--muted); max-width: 460px; margin-bottom: 14px; }
-.hero-tagline { font-size: 0.95rem; color: var(--accent-light); font-weight: 600; margin-bottom: 30px; }
+.hero-tagline {
+  font-size: 1.15rem; color: var(--muted); line-height: 1.5; margin-bottom: 24px;
+}
+
+.slot-machine {
+  display: inline-flex;
+  flex-direction: column;
+  height: 1.5em;
+  overflow: hidden;
+  vertical-align: bottom;
+  color: var(--text); /* highlight the spinning part slightly */
+  font-weight: 500;
+}
+.slot-machine-inner {
+  display: flex;
+  flex-direction: column;
+  animation: slot-spin 15s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.slot-machine-inner > span {
+  height: 1.5em;
+  line-height: 1.5em;
+  display: block;
+}
+.hero-tagline-end {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  display: inline-block;
+  margin-top: 4px;
+}
 .hero-media {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -244,7 +272,7 @@ p { color: var(--muted); margin-bottom: 14px; }
 .profile-name { font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
 .profile-tagline { color: var(--gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 18px; }
 /* Sticks below the section's sticky head (nav + tag + name), not just the nav */
-.profile-photo { position: sticky; top: calc(var(--nav-h) + 110px); }
+.profile-photo-col { position: sticky; top: calc(var(--nav-h) + 110px); }
 .profile-photo img {
   /* height: auto overrides the image's width/height attributes (added for
      CLS elsewhere) so aspect-ratio is what actually sizes it here. */
@@ -273,7 +301,7 @@ p { color: var(--muted); margin-bottom: 14px; }
 
 @media (max-width: 760px) {
   .profile-layout { grid-template-columns: 1fr; }
-  .profile-photo { position: static; order: -1; }
+  .profile-photo-col { position: static; order: -1; }
 }
 
 /* ─── Photo marquee strip ───────────────────── */
@@ -874,10 +902,32 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
 }
 .lightbox[open] { display: flex; }
 .lightbox::backdrop { background: transparent; }
-.lightbox img { max-width: 92vw; max-height: 90vh; border-radius: 10px; object-fit: contain; }
-.lightbox-close { position: absolute; top: 18px; right: 26px; background: none; border: none; font-size: 2.2rem; color: var(--muted); cursor: pointer; line-height: 1; }
+
+.lightbox-figure {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  max-width: 92vw; max-height: 90vh; margin: 0; cursor: default;
+}
+.lightbox-figure img {
+  max-width: 100%; max-height: calc(90vh - 40px);
+  border-radius: 10px; object-fit: contain; cursor: zoom-out;
+}
+.lightbox-caption {
+  color: #fff; margin-top: 12px; font-size: 1.05rem; text-align: center;
+  font-weight: 500;
+}
+
+.lightbox-close { position: absolute; top: 18px; right: 26px; background: none; border: none; font-size: 2.2rem; color: var(--muted); cursor: pointer; line-height: 1; z-index: 10; }
 .lightbox-close:hover { color: #fff; }
 
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%;
+  width: 50px; height: 50px; font-size: 2rem; display: flex; justify-content: center; align-items: center;
+  cursor: pointer; z-index: 10; transition: background 0.2s; padding-bottom: 4px;
+}
+.lightbox-nav:hover { background: rgba(0,0,0,0.8); }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
 /* ─── Responsive ────────────────────────────── */
 @media (max-width: 680px) {
   .value-cols, .value-grid, .two-cols { grid-template-columns: 1fr; }

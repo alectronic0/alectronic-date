@@ -40,7 +40,22 @@ window.CONTENT = {
         emoji: "🎮❤️🎮",
         headline: "Alec's <span>Dating</span> Application",
         subheading: "A visual introduction to what having me as your boyfriend could look like.",
-        tagline: "Looking for my nerdy other half — the Player 2 to my Player 1. No swiping required... ok there's a bit of scrolling.",
+        taglineStart: "Looking for ",
+        taglineSlots: [
+            "my nerdy other half 🤓",
+            "a gym buddy 🏋️‍♂️",
+            "a travel partner ✈️",
+            "a taste tester 🍕",
+            "a D&D party member 🎲",
+            "a board game rival ♟️",
+            "a fellow adventurer 🧭",
+            "the princess to my hero 👑",
+            "a Player 2 🎮",
+            "an anime binge buddy 📺",
+            "a partner in crime 🕵️‍♂️",
+            "my nerdy other half 🤓"
+        ],
+        taglineEnd: "No swiping required... ok there's a bit of scrolling.",
         cta: "Come find out more ↓",
         // First image is the LCP element — rendered eager + high priority (see main.js renderHero).
         images: [
