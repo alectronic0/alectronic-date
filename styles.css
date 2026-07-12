@@ -669,6 +669,7 @@ body:has(dialog[open]) { overflow: hidden; }
   position: relative; overflow: hidden;
   background: var(--surface-2); border: 1px solid rgba(230, 169, 121, 0.45);
   border-radius: var(--radius); padding: 40px 24px 32px; text-align: center;
+  margin-bottom: 24px;
 }
 .construction-banner::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 8px;
@@ -736,6 +737,12 @@ body:has(dialog[open]) { overflow: hidden; }
 .photo-grid img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); cursor: zoom-in; transition: transform 0.15s; }
 .photo-grid img:hover { transform: scale(1.03); }
 
+.labeled-photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+.labeled-photo-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; text-align: center; transition: transform 0.15s, border-color 0.15s; }
+.labeled-photo-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.labeled-photo-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; border-bottom: 1px solid var(--border); cursor: zoom-in; }
+.labeled-photo-label { padding: 8px; font-size: 0.85rem; font-weight: 500; color: var(--text); }
+
 .logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; }
 .logo-tile {
   background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px;
@@ -757,6 +764,7 @@ body:has(dialog[open]) { overflow: hidden; }
 .interest-card-head { display: flex; align-items: center; gap: 10px; }
 .interest-card-icon { font-size: 1.5rem; line-height: 1; }
 .interest-card-title { font-weight: 600; font-size: 1rem; color: var(--text); }
+.interest-card-subtitle { font-weight: 400; font-size: 0.8rem; color: var(--text-muted); opacity: 0.8; margin-left: 4px; }
 .interest-card-body { font-size: 0.88rem; color: var(--muted); margin: 0; }
 .interest-card-photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; }
 .interest-card-photos img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); cursor: zoom-in; transition: transform 0.15s; }

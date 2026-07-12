@@ -193,7 +193,7 @@
                     (c) =>
                         `<div class="interest-card"><div class="interest-card-head"><span class="interest-card-icon">${esc(
                             c.icon
-                        )}</span><span class="interest-card-title">${esc(c.title)}</span></div>${
+                        )}</span><span class="interest-card-title">${esc(c.title)}${c.subtitle ? ` <span class="interest-card-subtitle">${esc(c.subtitle)}</span>` : ''}</span></div>${
                             c.body ? `<p class="interest-card-body">${esc(c.body)}</p>` : ''
                         }${
                             c.images && c.images.length
@@ -224,6 +224,16 @@
 
         photoGrid: (b) =>
             `<div class="photo-grid">${b.images.map((i) => img(i.src, i.alt)).join('')}</div>`,
+
+        labeledPhotoGrid: (b) =>
+            `<div class="labeled-photo-grid">${b.images
+                .map(
+                    (i) =>
+                        `<div class="labeled-photo-card">${img(i.src, i.alt)}<div class="labeled-photo-label">${esc(
+                            i.alt
+                        )}</div></div>`
+                )
+                .join('')}</div>`,
 
         // GIFs keep their natural aspect ratio (no square cropping) — they're
         // externally hosted (Giphy/Tenor), so no width/height attributes.
@@ -271,7 +281,7 @@
             `<div class="feature-grid">${b.features
                 .map(
                     (f) =>
-                        `<div class="feature">${img(f.src, f.alt)}<div class="feature-body">${f.icon ? `<span class="feature-icon">${esc(f.icon)}</span>` : ''}<span class="feature-text">${esc(f.text)}</span></div></div>`
+                        `<div class="feature">${img(f.src, f.alt)}<div class="feature-body">${f.icon ? `<span class="feature-icon">${esc(f.icon)}</span>` : ''}<div>${f.title ? `<strong style="display:block; margin-bottom:4px; font-size:1.05rem;">${esc(f.title)}</strong>` : ''}<span class="feature-text">${esc(f.text)}</span></div></div></div>`
                 )
                 .join('')}</div>`,
 
@@ -1194,7 +1204,7 @@
         lightbox.addEventListener('close', () => lightboxImg.removeAttribute('src'));
 
         const selectors =
-            '[data-zoom], .mosaic-strip img, .gallery-grid img, .poster-grid img, .photo-grid img, .gif-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img';
+            '[data-zoom], .mosaic-strip img, .gallery-grid img, .poster-grid img, .photo-grid img, .labeled-photo-card img, .gif-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img';
 
         // Delegated so it covers images injected after load.
         document.addEventListener('click', (e) => {

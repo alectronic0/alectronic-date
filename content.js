@@ -390,7 +390,7 @@ window.CONTENT = {
             tag: "❤️ Boyfriend mode in Action",
             tagClass: "tag-rose",
             heading: "What Dating Me Could Look Like",
-            lead: "A peek at \"boyfriend mode\" — the little things I love doing for the person I'm with.",
+            lead: "A peek at \"boyfriend mode\" — the little things I love doing for the person I'm with. Because there is no 'bare minimum' with me, only princess treatment! 👑",
             blocks: [
                 {
                     type: "featureGrid", features: [
@@ -456,31 +456,37 @@ window.CONTENT = {
                         {
                             src: "img/looking-for/couple-going-exploring-nature.webp",
                             alt: "A couple exploring nature",
+                            title: "⛰️💚 An Adventurous Heart",
                             text: "New places, new food, new cultures — exploring the world one Google Maps pin at a time."
                         },
                         {
                             src: "img/looking-for/couple-watching-movie-together.webp",
                             alt: "A couple watching a movie",
+                            title: "🛋️💜 A Cosy Soul",
                             text: "A slow one in. A film on, blankets, snacks, and absolutely nowhere we need to be."
                         },
                         {
                             src: "img/looking-for/couple-playing-video-games.webp",
                             alt: "A couple gaming",
+                            title: "🎮💛 A Playful Spirit",
                             text: "Controller in hand — competitive or co-op. Board games, fantasy, anime, sci-fi… I'll happily dive into your world if you'll dive into mine."
                         },
                         {
                             src: "img/looking-for/couple-cooking.webp",
                             alt: "A couple cooking",
+                            title: "🎨🧠 A Creative Mind",
                             text: "Making a mess in the kitchen, dancing to the music — I always want to be trying something new, exciting, and fun."
                         },
                         {
                             src: "img/looking-for/couple-enjoying-tea-on-the-couch.webp",
                             alt: "A couple enjoying tea",
+                            title: "🫂🩷 A Safe Space",
                             text: "Each other's safe space — no conversation too difficult, no walls up, and the trust that you'll always be listened to and heard."
                         },
                         {
                             src: "img/looking-for/couple-at-the-gym-working-out.webp",
                             alt: "A couple at the gym",
+                            title: "💪❤️ An Ambitious Body",
                             text: "Cheering each other on to be our best selves and always being there when the going gets tough."
                         }
                     ]
@@ -622,37 +628,21 @@ window.CONTENT = {
         personality: {
             blocks: [
                 {
-                    type: "paragraph",
-                    text: "While I write this one up properly, here are my rapid-fire dating-app classics:"
-                },
-                {
-                    type: "detailList", items: [
-                        {
-                            icon: "🦸",
-                            title: "My real-life superpower",
-                            description: "Building incredibly organised Google Docs and spreadsheets to manage my life and all of my serial hobbies. 🛠️✨"
-                        },
-                        {
-                            icon: "🫖",
-                            title: "My perfect Sunday",
-                            description: "A completely tidy house, a proper hot cup of tea, and diving into a great video game while it rains outside. 🎮"
-                        },
-                        {
-                            icon: "🤝",
-                            title: "Together, we could…",
-                            description: "Venture out to track down incredible new food spots, try a fun new activity, or just keep it cosy at home with a co-op game or a TV series."
-                        },
-                        {
-                            icon: "💞",
-                            title: "The life-partner pitch",
-                            description: "If you're a little nerdy, enjoy quiet days at home but also fun adventures out (and finding amazing food) — you'll have a loyal partner for life!"
-                        }
-                    ]
-                },
-                {
                     type: "construction",
                     gif: "img/gifs/xUStFKHmuFPYk.gif",
                     text: "The rest — my personality type, love languages, and the general vibe I bring to a room — is still being written. Check back soon!"
+                },
+                {
+                    type: "interestCards", cards: [
+                        { icon: "🛡️", title: "Loyal" },
+                        { icon: "⏰", title: "Punctual" },
+                        { icon: "📅", title: "Organiser & planner" },
+                        { icon: "⚖️", title: "Ambivert" },
+                        { icon: "🤓", title: "Nerdy", subtitle: "(if you didn't realise already)" },
+                        { icon: "🔥", title: "Passionate" },
+                        { icon: "💯", title: "Bit all or nothing" },
+                        { icon: "🦉", title: "Night owl" }
+                    ]
                 }
             ]
         },
@@ -662,7 +652,50 @@ window.CONTENT = {
                 {
                     type: "construction",
                     gif: "img/gifs/xUStFKHmuFPYk.gif",
-                    text: "A tour of a typical Alec week — work, gym, gaming nights and everything in between — is on its way."
+                    text: "The rest — a tour of a typical Alec week, from work to weekend adventures — is still being written. Check back soon!"
+                },
+                {
+                    type: "paragraph",
+                    text: "A typical week for me looks a bit like this (photos of me actually doing these things coming soon!):"
+                },
+                {
+                    type: "interestCards", cards: [
+                        {
+                            icon: "😴",
+                            title: "Sleep",
+                            body: "Recharging the batteries."
+                        },
+                        {
+                            icon: "💻",
+                            title: "Work",
+                            body: "Getting things done."
+                        },
+                        {
+                            icon: "🏋️‍♂️",
+                            title: "Gym",
+                            body: "Staying active and healthy."
+                        },
+                        {
+                            icon: "🍻",
+                            title: "See Friends",
+                            body: "Hanging out and catching up."
+                        },
+                        {
+                            icon: "🐉",
+                            title: "Play D&D",
+                            body: "Rolling dice and going on imaginary adventures."
+                        },
+                        {
+                            icon: "🚆",
+                            title: "Monthly trip to the London office",
+                            body: "Heading into the city to see the team."
+                        },
+                        {
+                            icon: "🌍",
+                            title: "Adventure out and about",
+                            body: "Exploring new places and trying new things."
+                        }
+                    ]
                 }
             ]
         },
@@ -1622,7 +1655,8 @@ window.CONTENT = {
             blocks: [
                 {
                     type: "construction",
-                    text: "I'm currently collecting reviews from my friends. Check back soon to see what they say behind my back! 🕵️‍♂️"
+                    gif: "img/gifs/xUStFKHmuFPYk.gif",
+                    text: "The rest — collecting reviews from my friends to see what they say behind my back — is still being written. Check back soon! 🕵️‍♂️"
                 }
             ]
         },
@@ -1704,7 +1738,7 @@ window.CONTENT = {
             blocks: [
                 {type: "heading", text: "🌸 Plants & Flowers I Find Pretty"},
                 {
-                    type: "photoGrid",
+                    type: "labeledPhotoGrid",
                     images: [
                         {src: "img/plants/sakura.webp", alt: "Sakura"},
                         {src: "img/plants/tulips.webp", alt: "Tulips"},
@@ -1735,7 +1769,7 @@ window.CONTENT = {
                 },
                 {type: "heading", text: "🐉 Favourite Animals & Creatures"},
                 {
-                    type: "photoGrid",
+                    type: "labeledPhotoGrid",
                     images: [
                         {src: "img/animals/barn-owl.webp", alt: "Barn owl"},
                         {src: "img/animals/red-panda.webp", alt: "Red panda"},
