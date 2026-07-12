@@ -1215,14 +1215,29 @@
             }
         });
 
-        // Mobile/Desktop alternative: tap the footer emoji 7 times rapidly
-        const footerEmoji = document.getElementById('footer-emoji');
-        if (footerEmoji) {
+        function showTickleToast() {
+            if (document.querySelector('.tickle-toast')) return;
+            const toast = document.createElement('div');
+            toast.className = 'konami-toast tickle-toast';
+            toast.innerHTML = "<strong>Hey, that tickles! 🤭</strong><span class=\"konami-sub\">maybe there's a secret... keep tapping?</span>";
+            document.body.appendChild(toast);
+            requestAnimationFrame(() => toast.classList.add('show'));
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, 2000);
+        }
+
+        function attachEasterEggClick(el) {
+            if (!el) return;
             let taps = 0;
             let tapTimer = null;
-            footerEmoji.addEventListener('click', () => {
+            el.addEventListener('click', () => {
                 taps++;
                 if (tapTimer) clearTimeout(tapTimer);
+                if (taps === 1) {
+                    showTickleToast();
+                }
                 if (taps >= 7) {
                     taps = 0;
                     revealSecret();
@@ -1231,10 +1246,14 @@
                 }
             });
             // Prevent text highlighting during rapid taps
-            footerEmoji.style.userSelect = 'none';
+            el.style.userSelect = 'none';
             // Provide a cursor hint
-            footerEmoji.style.cursor = 'pointer';
+            el.style.cursor = 'pointer';
         }
+
+        attachEasterEggClick(document.getElementById('footer-emoji'));
+        attachEasterEggClick(document.querySelector('.hero-emoji'));
+        attachEasterEggClick(document.getElementById('profile-tag-container'));
     }
 
     // The 1-UP reveal — a celebratory toast + a shower of hearts. Self-removing,

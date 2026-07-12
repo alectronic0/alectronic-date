@@ -52,7 +52,6 @@ jobs:
           staticDistDir: ./
           uploadArtifacts: true
           temporaryPublicStorage: true
-          temporaryPublicStorage: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
