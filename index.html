@@ -77,6 +77,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<noscript><div class="container" style="padding: 40px; text-align: center;"><h1>Alec's Dating Application</h1><p>Please enable JavaScript to view this site.</p></div></noscript>
 
 <!-- ════════════════ NAV ════════════════ -->
 <!-- Always at the very top (above the hero) on every screen size: a slim bar
@@ -87,19 +88,11 @@
   <div class="nav-bar">
     <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
       <span class="burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="burger-label">Menu</span>
+      <span class="burger-label" id="nav-burger-label"></span>
     </button>
-    <a href="#contact" class="nav-contact" style="text-decoration:none;">💘 Go on a date</a>
+    <a href="#contact" class="nav-contact"><span id="nav-cta"></span></a>
   </div>
-  <div class="nav-inner" id="nav-menu">
-    <a href="#about">Who I Am</a>
-    <a href="#photos">Faces</a>
-    <a href="#boyfriend-mode">Boyfriend Mode</a>
-    <a href="#looking-for">Looking For</a>
-    <a href="#dates">Date Ideas</a>
-    <a href="#contact">Contact</a>
-    <a href="#deep-dive" class="nav-deep">Deep Dive ↓</a>
-  </div>
+  <div class="nav-inner" id="nav-menu"></div>
 </nav>
 
 <!-- ════════════════ HERO ════════════════ -->
@@ -114,7 +107,7 @@
     </div>
     <div class="hero-media" data-hero="media"></div>
   </div>
-  <div class="hero-scroll">start your scrolling adventure ↓</div>
+  <p class="hero-scroll" id="hero-scroll-hint"></p>
 </header>
 
 <main>
@@ -136,10 +129,10 @@
       </div>
       <div class="profile-photo-col">
         <div class="profile-photo" data-profile="photo" data-faces="expand"></div>
-        <button class="faces-expand" type="button" data-faces="expand" aria-haspopup="dialog" style="width: 100%; margin-top: 16px;"><span aria-hidden="true">⤢</span> View all photos</button>
+        <button class="faces-expand" id="faces-expand-btn"></button>
       </div>
     </div>
-    <p class="evolving-note">🚧 <strong>Like me, this site is always growing</strong> — it continues to evolve and won't always be perfect: the odd bug, glitch or typo will sneak through. It'll keep trying anyway. 💜</p>
+    <div id="profile-evolving-note" class="evolving-note"></div>
   </div>
 </section>
 
@@ -172,14 +165,10 @@
     <!-- The sticky head sits directly in the container (not inside .deep-intro)
          so it stays pinned for the whole section, topic grid included. -->
     <div class="section-head deep-intro">
-      <div class="section-tag tag-rose">🔬 The Deep Dive</div>
-      <h2>Everything Else About Me <span class="deep-link" role="button" tabindex="0" data-anchor="deep-dive" aria-label="Copy link to The Deep Dive" title="Copy link to this section">🔗</span></h2>
+      <span class="section-tag" id="deep-dive-tag"></span>
+      <h2 id="deep-dive-title"></h2>
     </div>
-    <div class="warning-banner" style="margin-bottom: 24px;">
-      <div class="w-emoji">⚠️</div>
-      <h2>Spoiler Warning</h2>
-      <p style="margin-top:16px; margin-bottom:0;">Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story.</p>
-    </div>
+    <div id="deep-dive-spoiler"></div>
 
     <!-- Topic buttons + their pop-up modals are built from CONTENT.accordion
          by main.js (renderDeepDive). -->
@@ -188,11 +177,7 @@
     <!-- 🔒 The "sexy photos" gag — deliberately NOT one of the topic cards
          above: its own locked vault at the very bottom of the deep dive.
          Opens the tease modal (#sexyPhotos); wired by initCheekyGag(). -->
-    <button class="locked-banner" type="button" aria-haspopup="dialog">
-      <span class="locked-emoji" aria-hidden="true">🔒</span>
-      <span class="locked-title">Private Sexy Photos (Do Not Open) 🙅</span>
-      <span class="locked-tagline">do you dare? 😉😈🌶️🔥🔞</span>
-    </button>
+    <div id="deep-dive-locked"></div>
   </div>
 </section>
 
@@ -207,10 +192,10 @@
 
 <footer>
   <div class="container">
-    <div style="font-size:2rem;margin-bottom:16px;">🎮❤️🎮</div>
+    <div class="footer-emoji" id="footer-emoji"></div>
     <div class="footer-links" data-footer="links"></div>
-    <div class="footer-note">Alec Doran-Twyford · Welwyn Garden City · he/him/they/them</div>
-    <div class="footer-note footer-credit">Powered by Alec + <a href="https://github.com/alectronic0/alectronic-date" target="_blank" rel="noopener">GitHub Pages</a></div>
+    <p class="footer-note" id="footer-note"></p>
+    <p class="footer-credit" id="footer-credit"></p>
   </div>
 </footer>
 
@@ -229,18 +214,7 @@
      (see initCheekyGag in main.js). Its id makes #sexyPhotos a shareable
      deep link, same as the topic modals. -->
 <dialog class="deep-modal" id="sexyPhotos" aria-label="Private Sexy Photos (Do Not Open)">
-  <div class="deep-modal-inner">
-    <div class="deep-modal-head">
-      <span class="deep-modal-emoji" aria-hidden="true">🔒</span>
-      <h3 class="deep-modal-title">Private Sexy Photos (Do Not Open) 🙅</h3>
-      <span class="deep-link" role="button" tabindex="0" data-anchor="sexyPhotos" aria-label="Copy link to Private Sexy Photos" title="Copy link to this section">🔗</span>
-      <button class="deep-modal-close" type="button" aria-label="Close">×</button>
-    </div>
-    <div class="deep-modal-body">
-      <p>😳 Seriously?! Do you really think I'd have those just lying around on my dating site…</p>
-      <p><button class="cheeky-unlock" type="button" aria-haspopup="dialog">🔓🔑 Access sexy photos 😏</button></p>
-    </div>
-  </div>
+  <div id="cheeky-dialog-content"></div>
 </dialog>
 
 <!-- 🔒 "Sexy photos" gag, step 2: the punchline (opened by the 🔓 button

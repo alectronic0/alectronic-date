@@ -21,7 +21,8 @@
    detailList, link, spotify, construction.
    ============================================================ */
 
-const _dob = new Date("1991-05-19");
+const DOB = "1991-05-19";
+const _dob = new Date(DOB);
 const _today = new Date();
 let _myAge = _today.getFullYear() - _dob.getFullYear();
 if (_today.getMonth() < _dob.getMonth() || (_today.getMonth() === _dob.getMonth() && _today.getDate() < _dob.getDate())) {
@@ -32,10 +33,13 @@ const _maxAge = _myAge + 1;
 
 window.CONTENT = {
     meta: {
+        domainFallback: 'https://date.alec.today/',
+        defaultAlt: 'Alec Doran-Twyford',
         title: "Alec's Dating Application",
         tagline: "Loveable nerd, looking for his player 2",
         emoji: "🎮❤️🎮"
     },
+    nav: { menuLabel: 'Menu', ctaText: '💘 Go on a date', links: [ { label: 'Who I Am', href: '#about' }, { label: 'Faces', href: '#faces' }, { label: 'Boyfriend Mode', href: '#boyfriend-mode' }, { label: 'Looking For', href: '#looking-for' }, { label: 'Date Ideas', href: '#dates' }, { label: 'Contact', href: '#contact' }, { label: 'Deep Dive ↓', href: '#deep-dive' } ] },
     hero: {
         emoji: "🎮❤️🎮",
         headline: "Alec's <span>Dating</span> Application",
@@ -57,6 +61,7 @@ window.CONTENT = {
         ],
         taglineEnd: "No swiping required... ok there's a bit of scrolling.",
         cta: "Come find out more ↓",
+        scrollHint: 'start your scrolling adventure ↓',
         // First image is the LCP element — rendered eager + high priority (see main.js renderHero).
         images: [
             {src: "img/alec/alec-pokemon-plushies-pokeball.webp", alt: "Alec Doran-Twyford", w: 900, h: 1200},
@@ -72,13 +77,15 @@ window.CONTENT = {
         tag: "📋 Who I Am",
         name: "Alec Doran-Twyford",
         tagline: "Loveable nerd · Software Engineer · Welwyn Garden City",
+        evolvingNote: "🚧 Like me, this site is always growing — it continues to evolve and won't always be perfect: the odd bug, glitch or typo will sneak through. It'll keep trying anyway. 💜",
         intro: [
             "Hi, I'm Alec! This little site started as a slide deck I made for myself — a reminder of who I am and what I love. I then realised it could be a fun way to skip some of the small talk and give you a real sense of me from the start.",
             "So here's the honest (and slightly chaotic) introduction: the facts, the photos, and the bits that make me, me. If you like what you see, my contact details are just a little further down."
         ],
         photo: {src: "img/alec/alec-portrait-terracotta-wall.webp", alt: "Alec Doran-Twyford", w: 900, h: 1200},
+        viewPhotosLabel: '⤢ View all photos',
         facts: [
-            {icon: "🚹", label: "Gender", value: "Male"},
+            {icon: "🚹", label: "Gender", value: "Nerdy Gentleman"},
             {icon: "❤️", label: "Orientation", value: "Straight"},
             {
                 icon: "🗣️",
@@ -90,7 +97,7 @@ window.CONTENT = {
             },
             // Age auto-computes from dob at render time (see factValue in
             // main.js), so it never goes stale.
-            {icon: "🎂", label: "Age", dob: "1991-05-19"},
+            {icon: "🎂", label: "Age", dob: DOB},
             {icon: "♉", label: "Star sign", value: "Taurus"},
             {icon: "💼", label: "Profession", value: "Software Engineer"},
             {
@@ -135,6 +142,7 @@ window.CONTENT = {
         heading: "Shoot Your Shot",
         lead: "I prefer not to share my phone number upfront — but reach me through any of these and you'll get a hold of me.",
         note: "⚔️ It's dangerous to go alone! Take this:",
+        emailTemplate: { subject: "RE: Alec Dating Application", body: "Hi Alec! I'm ready to shoot my shot.\n\nFor our first adventure, I'd love to do: …" },
         links: [
             {
                 label: "Email", icon: "gmail", href: "mailto:date@alec.today?subject=RE%3A%20Alec%20Dating%20Application", primary: true
@@ -233,29 +241,29 @@ window.CONTENT = {
         // to the <img> width/height attributes so the browser can reserve the
         // right box before the image loads (avoids layout shift in the marquee).
         photos: [
-            {src: "img/alec/alec-portrait-terracotta-wall.webp", w: 900, h: 1200},
-            {src: "img/alec/alec-pokemon-plushies-pokeball.webp", w: 900, h: 1200},
-            {src: "img/alec/alec-kimono-red-torii-gate.webp", w: 903, h: 1200},
-            {src: "img/alec/alec-portrait-garden-archway.webp", w: 903, h: 1200},
-            {src: "img/alec/alec-japanese-onsen-curtain.webp", w: 900, h: 1200},
-            {src: "img/alec/alec-silly-face-japanese-onsen.webp", w: 900, h: 1200},
-            {src: "img/alec/alec-pokemon-cyndaquil-statue.webp", w: 903, h: 1200},
-            {src: "img/alec/alec-super-mario-bros-40th-statue.webp", w: 903, h: 1200},
-            {src: "img/alec/alec-cherry-blossom-park.webp", w: 900, h: 1200},
-            {src: "img/alec/alec-napping-headphones-pikachu-shirt.webp", w: 1200, h: 1200},
-            {src: "img/alec/alec-rope-knot-tying.webp", w: 900, h: 1200},
-            {src: "img/alec/alec-coffee-times-square-new-york.webp", w: 900, h: 1200},
-            {src: "img/alec/alec-portrait-tropical-garden.webp", w: 900, h: 1200},
-            {src: "img/alec/alec-mt-batur-sunrise-hike-bali.webp", w: 903, h: 1200},
-            {src: "img/alec/alec-mt-batur-sunrise-silly-selfie-bali.webp", w: 900, h: 1200},
-            {src: "img/alec/alec-portrait-sunny-garden.webp", w: 900, h: 1200},
-            {src: "img/alec/alec-mad-scientist-lab-coat-costume.webp", w: 745, h: 744},
-            {src: "img/alec/alec-holding-pineapple-supermarket.webp", w: 900, h: 1200},
-            {src: "img/alec/alec-fire-staff-spinning-night.webp", w: 1080, h: 1080},
-            {src: "img/alec/alec-exhausted-after-gym-workout.webp", w: 1200, h: 900},
-            {src: "img/alec/alec-sandwich-lunch-cafe.webp", w: 684, h: 911},
-            {src: "img/alec/alec-times-square-street-selfie.webp", w: 683, h: 911},
-            {src: "img/alec/alec-rope-knot-tying-closeup.webp", w: 683, h: 911},
+            {src: "img/alec/alec-portrait-terracotta-wall.webp", alt: "Alec portrait terracotta wall", w: 900, h: 1200},
+            {src: "img/alec/alec-pokemon-plushies-pokeball.webp", alt: "Alec pokemon plushies pokeball", w: 900, h: 1200},
+            {src: "img/alec/alec-kimono-red-torii-gate.webp", alt: "Alec kimono red torii gate", w: 903, h: 1200},
+            {src: "img/alec/alec-portrait-garden-archway.webp", alt: "Alec portrait garden archway", w: 903, h: 1200},
+            {src: "img/alec/alec-japanese-onsen-curtain.webp", alt: "Alec japanese onsen curtain", w: 900, h: 1200},
+            {src: "img/alec/alec-silly-face-japanese-onsen.webp", alt: "Alec silly face japanese onsen", w: 900, h: 1200},
+            {src: "img/alec/alec-pokemon-cyndaquil-statue.webp", alt: "Alec pokemon cyndaquil statue", w: 903, h: 1200},
+            {src: "img/alec/alec-super-mario-bros-40th-statue.webp", alt: "Alec super mario bros 40th statue", w: 903, h: 1200},
+            {src: "img/alec/alec-cherry-blossom-park.webp", alt: "Alec cherry blossom park", w: 900, h: 1200},
+            {src: "img/alec/alec-napping-headphones-pikachu-shirt.webp", alt: "Alec napping headphones pikachu shirt", w: 1200, h: 1200},
+            {src: "img/alec/alec-rope-knot-tying.webp", alt: "Alec rope knot tying", w: 900, h: 1200},
+            {src: "img/alec/alec-coffee-times-square-new-york.webp", alt: "Alec coffee times square new york", w: 900, h: 1200},
+            {src: "img/alec/alec-portrait-tropical-garden.webp", alt: "Alec portrait tropical garden", w: 900, h: 1200},
+            {src: "img/alec/alec-mt-batur-sunrise-hike-bali.webp", alt: "Alec mt batur sunrise hike bali", w: 903, h: 1200},
+            {src: "img/alec/alec-mt-batur-sunrise-silly-selfie-bali.webp", alt: "Alec mt batur sunrise silly selfie bali", w: 900, h: 1200},
+            {src: "img/alec/alec-portrait-sunny-garden.webp", alt: "Alec portrait sunny garden", w: 900, h: 1200},
+            {src: "img/alec/alec-mad-scientist-lab-coat-costume.webp", alt: "Alec mad scientist lab coat costume", w: 745, h: 744},
+            {src: "img/alec/alec-holding-pineapple-supermarket.webp", alt: "Alec holding pineapple supermarket", w: 900, h: 1200},
+            {src: "img/alec/alec-fire-staff-spinning-night.webp", alt: "Alec fire staff spinning night", w: 1080, h: 1080},
+            {src: "img/alec/alec-exhausted-after-gym-workout.webp", alt: "Alec exhausted after gym workout", w: 1200, h: 900},
+            {src: "img/alec/alec-sandwich-lunch-cafe.webp", alt: "Alec sandwich lunch cafe", w: 684, h: 911},
+            {src: "img/alec/alec-times-square-street-selfie.webp", alt: "Alec times square street selfie", w: 683, h: 911},
+            {src: "img/alec/alec-rope-knot-tying-closeup.webp", alt: "Alec rope knot tying closeup", w: 683, h: 911},
         ]
     },
 
@@ -1910,5 +1918,9 @@ window.CONTENT = {
         links: [
             { label: "Shoot your shot! 💘", href: "#contact", primary: true }
         ]
-    }
+    },
+    deepDive: { tag: '🔬 The Deep Dive', title: 'Everything Else About Me', spoiler: { emoji: '⚠️', title: 'Spoiler Warning', body: "Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story." }, lockedBanner: { emoji: '🔒', title: 'Private Sexy Photos (Do Not Open) 🙅', tagline: 'do you dare? 😉😈🌶️🔥🔞' } },
+    cheekyGag: { title: 'Private Sexy Photos (Do Not Open) 🙅', teaseText: "😳 Seriously?! Do you really think I'd have those just lying around on my dating site…", unlockButton: '🔓🔑 Access sexy photos 😏', punchlineTitle: "You're Cheeky — I Like That!", punchlineBody: "You're cheeky 😉 I like that! If you really do want some fun though, you should just contact me 😏" },
+    footer: { note: 'Alec Doran-Twyford · Welwyn Garden City · he/him/they/them', credit: 'Powered by Alec + GitHub Pages', emoji: '🎮❤️🎮' },
+    easterEgg: { toastTitle: '1-UP!', toastBody: "It's a secret to everybody.", toastSub: '🍄 +30 lives · you found the cheat code 🎮', emojis: ['❤️', '🍄', '⭐', '🎮'] }
 };

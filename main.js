@@ -166,6 +166,19 @@
         return `<span class="tag-item ${variant}">${flagify(label)}</span>`;
     };
 
+    const renderValueCard = (c) =>
+        `<div class="value-card"><h3>${esc(c.title)}</h3>${
+            c.text ? `<p class="value-card-text">${esc(c.text)}</p>` : ''
+        }${
+            c.tags && c.tags.length
+                ? `<div class="tag-row">${c.tags.map(tagHtml).join('')}</div>`
+                : ''
+        }${
+            c.items && c.items.length
+                ? `<ul>${c.items.map((i) => `<li>${i && i.html ? i.html : esc(i)}</li>`).join('')}</ul>`
+                : ''
+        }</div>`;
+
     /* ── block renderers (each returns an HTML string) ── */
     const blocks = {
         paragraph: (b) => `<p>${b.html ? b.html : esc(b.text)}</p>`,
@@ -301,47 +314,11 @@
         // mirroring the paragraph block's text/html split. A column can also
         // carry an intro `text` line and a `tags` chip row instead of items.
         valueCols: (b) =>
-            `<div class="value-cols">${b.columns
-                .map(
-                    (col) =>
-                        `<div class="value-card"><h3>${esc(col.title)}</h3>${
-                            col.text ? `<p class="value-card-text">${esc(col.text)}</p>` : ''
-                        }${
-                            col.tags && col.tags.length
-                                ? `<div class="tag-row">${col.tags.map(tagHtml).join('')}</div>`
-                                : ''
-                        }${
-                            col.items && col.items.length
-                                ? `<ul>${col.items
-                                      .map((i) => `<li>${i.html ? i.html : esc(i)}</li>`)
-                                      .join('')}</ul>`
-                                : ''
-                        }</div>`
-                )
-                .join('')}</div>`,
+            `<div class="value-cols">${b.columns.map(renderValueCard).join('')}</div>`,
 
         valueGrid: (b) =>
             `<div class="value-cols">${b.columns
-                .map(
-                    (col) =>
-                        `<div class="value-col">${
-                            col.cards ? col.cards.map(card => 
-                            `<div class="value-card"><h3>${esc(card.title)}</h3>${
-                                card.text ? `<p class="value-card-text">${esc(card.text)}</p>` : ''
-                            }${
-                                card.tags && card.tags.length
-                                    ? `<div class="tag-row">${card.tags.map(tagHtml).join('')}</div>`
-                                    : ''
-                            }${
-                                card.items && card.items.length
-                                    ? `<ul>${card.items
-                                          .map((i) => `<li>${i && i.html ? i.html : esc(i)}</li>`)
-                                          .join('')}</ul>`
-                                    : ''
-                            }</div>`
-                            ).join('') : ''
-                        }</div>`
-                )
+                .map((col) => `<div class="value-col">${col.cards ? col.cards.map(renderValueCard).join('') : ''}</div>`)
                 .join('')}</div>`,
 
         // Two columns, each holding one or more titled lists (gold bullets)
@@ -705,7 +682,8 @@
     // the page is opened from disk (file://) so share links are never broken.
     const shareUrl = () => {
         const here = location.href.split('#')[0];
-        return /^https?:/.test(here) ? here : 'https://date.alectronic.co/';
+        const fallback = (C && C.meta && C.meta.domainFallback) || 'https://date.alectronic.co/';
+        return /^https?:/.test(here) ? here : fallback;
     };
 
     // Turn a share `type` + the page url/text into a service share link.
@@ -855,33 +833,35 @@
     }
 
     function initDatePills() {
-        const pills = document.querySelectorAll('.date-idea-pill');
-        if (!pills.length || pills[0]._listenerAttached) return;
-        
-        pills.forEach(p => {
-            p.addEventListener('click', () => {
-                p.classList.toggle('selected');
-                
-                // Update the prompts mailto link without shuffling
-                if (typeof drawPrompts === 'function') {
-                    drawPrompts(false); 
-                }
-                
-                // Update the main contact mailto links (footer, etc)
-                const selected = Array.from(document.querySelectorAll('.date-idea-pill.selected'))
-                              .map(el => el.getAttribute('data-idea'));
-                const advText = selected.length ? `Hi Alec! I'm ready to shoot my shot.\n\nFor our first adventure, I'd love to do: ${selected.join(', ')}!\n\n` : '';
-                
-                document.querySelectorAll('.contact-btn[href^="mailto:"]').forEach(link => {
-                    if (link.classList.contains('prompt-answer')) return; // handled by drawPrompts
-                    const base = link.getAttribute('href').split('?')[0];
-                    const subj = encodeURIComponent("RE: Alec Dating Application");
-                    const body = advText ? `&body=${encodeURIComponent(advText)}` : '';
-                    link.setAttribute('href', `${base}?subject=${subj}${body}`);
-                });
+        if (document._datePillsDelegated) return;
+        document.addEventListener('click', (e) => {
+            const p = e.target.closest('.date-idea-pill');
+            if (!p) return;
+            p.classList.toggle('selected');
+            
+            // Update the prompts mailto link without shuffling
+            if (typeof drawPrompts === 'function') {
+                drawPrompts(false); 
+            }
+            
+            // Update the main contact mailto links (footer, etc)
+            const selected = Array.from(document.querySelectorAll('.date-idea-pill.selected'))
+                          .map(el => el.getAttribute('data-idea'));
+            
+            const emailTemplate = (C && C.contact && C.contact.emailTemplate) || {};
+            const subject = emailTemplate.subject || "RE: Alec Dating Application";
+            const intro = emailTemplate.body || "Hi Alec! I'm ready to shoot my shot.";
+            const advText = selected.length ? `${intro}\n\nFor our first adventure, I'd love to do: ${selected.join(', ')}!\n\n` : '';
+            
+            document.querySelectorAll('.contact-btn[href^="mailto:"]').forEach(link => {
+                if (link.classList.contains('prompt-answer')) return; // handled by drawPrompts
+                const base = link.getAttribute('href').split('?')[0];
+                const subj = encodeURIComponent(subject);
+                const body = advText ? `&body=${encodeURIComponent(advText)}` : '';
+                link.setAttribute('href', `${base}?subject=${subj}${body}`);
             });
-            p._listenerAttached = true;
         });
+        document._datePillsDelegated = true;
     }
 
     /* ── Floating site soundtrack (Spotify mini-player) ──
@@ -938,6 +918,12 @@
     /* ============================================================
        Interactions (run AFTER render so the DOM exists)
        ============================================================ */
+
+    function renderNav() {
+        if (!C || !C.nav || !C.nav.links) return;
+        const html = C.nav.links.map(l => `<a href="${esc(l.href)}">${esc(l.label)}</a>`).join('');
+        setHtml('#nav-menu', html);
+    }
 
     // Hamburger nav (all screen sizes): toggles the fold-down link menu.
     // Tapping a link, pressing Escape, tapping outside the nav or starting
@@ -1013,8 +999,7 @@
         history.replaceState(null, '', '#' + id);
     }
 
-    // Copy text to the clipboard, with a tiny ✓ flash on the 🔗 button. Falls
-    // back to a hidden textarea for non-secure contexts (e.g. file://).
+    // Copy text to the clipboard, with a tiny ✓ flash on the 🔗 button.
     function copyLink(url, el) {
         const flash = () => {
             el.classList.add('copied');
@@ -1025,44 +1010,26 @@
             }, 1200);
         };
         if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(url).then(flash, () => fallbackCopy(url, flash));
-        } else {
-            fallbackCopy(url, flash);
+            navigator.clipboard.writeText(url).then(flash).catch(() => {});
         }
-    }
-
-    function fallbackCopy(text, done) {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        ta.setAttribute('readonly', '');
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        try {
-            document.execCommand('copy');
-            if (done) done();
-        } catch (e) {
-            /* clipboard unavailable — silently skip */
-        }
-        document.body.removeChild(ta);
     }
 
     function initDeepDive() {
-        // Topic buttons open their matching modal.
-        document.querySelectorAll('.deep-card').forEach((btn) => {
-            if (btn._listenerAttached) return;
-            btn.addEventListener('click', () => openDeepModal(btn.getAttribute('data-modal')));
-            btn._listenerAttached = true;
+        if (document._deepDiveDelegated) return;
+        document.addEventListener('click', (e) => {
+            const card = e.target.closest('.deep-card');
+            if (card) {
+                openDeepModal(card.getAttribute('data-modal'));
+                return;
+            }
+            const dlg = e.target.closest('.deep-modal');
+            if (dlg && e.target === dlg) {
+                dlg.close();
+            }
         });
 
         document.querySelectorAll('.deep-modal').forEach((dlg) => {
             if (dlg._listenerAttached) return;
-            // A click on the backdrop lands on the <dialog> itself (the inner
-            // wrapper covers the whole visible card), so it means "close".
-            dlg.addEventListener('click', (e) => {
-                if (e.target === dlg) dlg.close();
-            });
             // Drop the #hash again once the modal is closed (Escape included).
             dlg.addEventListener('close', () => {
                 if (location.hash === '#' + dlg.id) {
@@ -1073,6 +1040,66 @@
             if (close) close.addEventListener('click', () => dlg.close());
             dlg._listenerAttached = true;
         });
+        document._deepDiveDelegated = true;
+    }
+
+    function buildDeepDiveElements() {
+        if (!C) return;
+        if (C.deepDive) {
+            const spoiler = C.deepDive.spoiler;
+            if (spoiler) {
+                setHtml('#deep-dive-spoiler', `
+                    <div class="warning-banner">
+                        <div class="w-emoji">${esc(spoiler.emoji)}</div>
+                        <h2>${esc(spoiler.title)}</h2>
+                        <p style="margin-top:16px; margin-bottom:0;">${esc(spoiler.body)}</p>
+                    </div>
+                `);
+            }
+            const locked = C.deepDive.lockedBanner;
+            if (locked) {
+                setHtml('#deep-dive-locked', `
+                    <button class="locked-banner" type="button" aria-haspopup="dialog">
+                        <span class="locked-emoji" aria-hidden="true">${esc(locked.emoji)}</span>
+                        <span class="locked-title">${esc(locked.title)}</span>
+                        <span class="locked-tagline">${esc(locked.tagline)}</span>
+                    </button>
+                `);
+            }
+        }
+        const gag = C.cheekyGag;
+        if (gag) {
+            setHtml('#cheeky-dialog-content', `
+                <div class="deep-modal-inner">
+                    <div class="deep-modal-head">
+                        <span class="deep-modal-emoji" aria-hidden="true">🙅</span>
+                        <h3 class="deep-modal-title">${esc(gag.title)}</h3>
+                        <span class="deep-link" role="button" tabindex="0" data-anchor="sexyPhotos" aria-label="Copy link to ${esc(gag.title)}" title="Copy link to this section">🔗</span>
+                        <button class="deep-modal-close" type="button" aria-label="Close">×</button>
+                    </div>
+                    <div class="deep-modal-body">
+                        <p>${esc(gag.teaseText)}</p>
+                        <p><button class="cheeky-unlock" type="button" aria-haspopup="dialog">${esc(gag.unlockButton)}</button></p>
+                    </div>
+                </div>
+            `);
+
+            const punchline = document.querySelector('#cheeky-modal');
+            if (punchline) {
+                const head = punchline.querySelector('.deep-modal-head');
+                if (head) {
+                    head.innerHTML = `
+                        <span class="deep-modal-emoji" aria-hidden="true">😏</span>
+                        <h3 class="deep-modal-title">${esc(gag.punchlineTitle)}</h3>
+                        <button class="deep-modal-close" type="button" aria-label="Close">×</button>
+                    `;
+                }
+                const bodyLine = punchline.querySelector('.cheeky-line');
+                if (bodyLine) {
+                    bodyLine.textContent = gag.punchlineBody;
+                }
+            }
+        }
     }
 
     // The 🔒 "sexy photos" gag: the locked banner under the deep-dive grid
@@ -1102,21 +1129,27 @@
     // Section-heading 🔗 chips: point the URL at the section's id and copy the
     // deep link. Native browser scrolling handles the jump on the next load.
     function initDeepLinks() {
-        document.querySelectorAll('.deep-link').forEach((link) => {
-            if (link._listenerAttached) return;
-            const activate = (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const id = link.getAttribute('data-anchor');
-                if (id) history.replaceState(null, '', '#' + id);
-                copyLink(linkFor(id), link);
-            };
-            link.addEventListener('click', activate);
-            link.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') activate(e);
-            });
-            link._listenerAttached = true;
+        if (document._deepLinksDelegated) return;
+        const activate = (e, link) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const id = link.getAttribute('data-anchor');
+            if (id) history.replaceState(null, '', '#' + id);
+            copyLink(linkFor(id), link);
+        };
+        
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('.deep-link');
+            if (link) activate(e, link);
         });
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                const link = e.target.closest('.deep-link');
+                if (link) activate(e, link);
+            }
+        });
+        document._deepLinksDelegated = true;
     }
 
     // Share cards: wire the native "Share…" buttons and the "Copy link"
@@ -1149,9 +1182,7 @@
                 };
                 const url = btn.getAttribute('data-copy');
                 if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(url).then(done, () => fallbackCopy(url, done));
-                } else {
-                    fallbackCopy(url, done);
+                    navigator.clipboard.writeText(url).then(done).catch(() => {});
                 }
             });
             btn._listenerAttached = true;
@@ -1174,6 +1205,27 @@
                 revealSecret();
             }
         });
+
+        // Mobile/Desktop alternative: tap the footer emoji 7 times rapidly
+        const footerEmoji = document.getElementById('footer-emoji');
+        if (footerEmoji) {
+            let taps = 0;
+            let tapTimer = null;
+            footerEmoji.addEventListener('click', () => {
+                taps++;
+                if (tapTimer) clearTimeout(tapTimer);
+                if (taps >= 7) {
+                    taps = 0;
+                    revealSecret();
+                } else {
+                    tapTimer = setTimeout(() => { taps = 0; }, 600);
+                }
+            });
+            // Prevent text highlighting during rapid taps
+            footerEmoji.style.userSelect = 'none';
+            // Provide a cursor hint
+            footerEmoji.style.cursor = 'pointer';
+        }
     }
 
     // The 1-UP reveal — a celebratory toast + a shower of hearts. Self-removing,
@@ -1188,10 +1240,11 @@
             '<span class="konami-sub">🍄 +30 lives · you found the cheat code 🎮</span>';
         document.body.appendChild(toast);
 
+        const emojis = (C && C.easterEgg && C.easterEgg.emojis) || ['❤️', '🍄', '⭐', '🎮'];
         for (let i = 0; i < 14; i++) {
             const h = document.createElement('div');
             h.className = 'konami-heart';
-            h.textContent = ['❤️', '🍄', '⭐', '🎮'][i % 4];
+            h.textContent = emojis[i % emojis.length];
             h.style.left = Math.random() * 100 + 'vw';
             h.style.animationDelay = Math.random() * 0.6 + 's';
             document.body.appendChild(h);
@@ -1388,13 +1441,18 @@
         
         if (slots.length === 0) return;
 
+        if (!C.faces?.photos?.length) return;
+
         // Get all portrait images from faces (height > width)
         const portraits = C.faces.photos.filter(p => p.h > p.w);
         
         const onsen1 = "alec-silly-face-japanese-onsen.webp";
         const onsen2 = "alec-japanese-onsen-curtain.webp";
 
-        setInterval(() => {
+        if (window._cyclingImagesInterval) clearInterval(window._cyclingImagesInterval);
+
+        window._cyclingImagesInterval = setInterval(() => {
+            if (document.hidden) return;
             // Pick a random slot
             const slot = slots[Math.floor(Math.random() * slots.length)];
             
@@ -1428,7 +1486,8 @@
             
             const newImg = document.createElement('img');
             newImg.src = nextPhoto.src;
-            newImg.alt = nextPhoto.alt || "Alec Doran-Twyford";
+            const fallbackAlt = (C.meta && C.meta.defaultAlt) || "Alec Doran-Twyford";
+            newImg.alt = nextPhoto.alt || fallbackAlt;
             
             // Preserve object position from the original image (e.g., hero's center 22%)
             const oldImg = slot.querySelector('img.active');
@@ -1452,6 +1511,32 @@
         }, 5000);
     }
 
+    function initStaticContent() {
+        if (!C) return;
+        
+        if (C.nav) {
+            setText('#nav-burger-label', C.nav.menuLabel);
+            setText('#nav-cta', C.nav.ctaText);
+        }
+        if (C.hero) {
+            setText('#hero-scroll-hint', C.hero.scrollHint);
+        }
+        if (C.profile) {
+            setHtml('#faces-expand-btn', `<span aria-hidden="true">⤢</span> ${esc(C.profile.viewPhotosLabel)}`);
+            setHtml('#profile-evolving-note', C.profile.evolvingNote);
+        }
+        if (C.deepDive) {
+            setText('#deep-dive-tag', C.deepDive.tag);
+            const titleHtml = `${esc(C.deepDive.title)}${headingLink('deep-dive', C.deepDive.title)}`;
+            setHtml('#deep-dive-title', titleHtml);
+        }
+        if (C.footer) {
+            setText('#footer-emoji', C.footer.emoji);
+            setText('#footer-note', C.footer.note);
+            setHtml('#footer-credit', C.footer.credit);
+        }
+    }
+
     /* ── boot ── */
     function boot() {
         if (!C) {
@@ -1459,6 +1544,9 @@
             return;
         }
         initImageFallback();
+        initStaticContent();
+        renderNav();
+        buildDeepDiveElements();
         renderHero();
         renderProfile();
         // Faces section removed, using hero/profile image swapping instead
