@@ -59,7 +59,7 @@ window.CONTENT = {
             "a partner in crime 🕵️‍♂️",
             "my nerdy other half 🤓"
         ],
-        taglineEnd: "No swiping required... ok there's a bit of scrolling.",
+        taglineEnd: "No swiping required... okay, maybe a bit of scrolling.",
         cta: "Come find out more ↓",
         scrollHint: 'start your scrolling adventure ↓',
         // First image is the LCP element — rendered eager + high priority (see main.js renderHero).
@@ -76,8 +76,8 @@ window.CONTENT = {
     profile: {
         tag: "📋 Who I Am",
         name: "Alec Doran-Twyford",
-        tagline: "Loveable nerd · Software Engineer · Welwyn Garden City",
-        evolvingNote: "🚧 Like me, this site is always growing — it continues to evolve and won't always be perfect: the odd bug, glitch or typo will sneak through. It'll keep trying anyway. 💜",
+        tagline: "Lovable nerd · Software Engineer · Welwyn Garden City",
+        evolvingNote: "🚧 Like me, this site is a work in progress — it continues to evolve and won't always be perfect. The odd bug, glitch, or typo might sneak through, but it's trying its best anyway. 💜",
         intro: [
             "Hi, I'm Alec! This little site started as a slide deck I made for myself — a reminder of who I am and what I love. I then realised it could be a fun way to skip some of the small talk and give you a real sense of me from the start.",
             "So here's the honest (and slightly chaotic) introduction: the facts, the photos, and the bits that make me, me. If you like what you see, my contact details are just a little further down."
@@ -140,7 +140,7 @@ window.CONTENT = {
     }, contact: {
         tag: "💬 How to Get in Touch",
         heading: "Shoot Your Shot",
-        lead: "I prefer not to share my phone number upfront — but reach me through any of these and you'll get a hold of me.",
+        lead: "I prefer not to share my phone number upfront — but reach out through any of these and you'll get a hold of me.",
         note: "⚔️ It's dangerous to go alone! Take this:",
         emailTemplate: { subject: "RE: Alec Dating Application", body: "Hi Alec! I'm ready to shoot my shot.\n\nFor our first adventure, I'd love to do: …" },
         links: [
@@ -189,7 +189,7 @@ window.CONTENT = {
        so a match can reply straight away. Add to `questions` to grow the deck —
        no code changes needed. */
     prompts: {
-        intro: "Not sure how to break the ice? Here are a few things I'd love you to answer — pick the ones that spark something and bring them my way. 🃏",
+        intro: "Not sure how to break the ice? Here are a few questions I'd love you to answer — pick the ones that spark something and send them my way. 🃏",
         count: 3,
         shuffleLabel: "Shuffle the deck",
         answerLabel: "Email me your answers",
@@ -236,7 +236,7 @@ window.CONTENT = {
     faces: {
         tag: "📸 A Few Faces of Alec",
         heading: "Snapshots of my Life",
-        lead: "Yes, I'm the one in most of them. Tap any photo to enlarge.",
+        lead: "Yes, I'm the guy in most of them. Tap any photo to enlarge.",
         // w/h are the actual encoded pixel dimensions of each file, passed through
         // to the <img> width/height attributes so the browser can reserve the
         // right box before the image loads (avoids layout shift in the marquee).
@@ -357,7 +357,7 @@ window.CONTENT = {
         // Rendered inside its deep-dive modal, so no tag/heading here —
         // the modal head already carries the 🏆 title.
         moments: {
-            lead: "A life well lived (so far) — a few of the milestones, mishaps and adventures. Tap any to enlarge.",
+            lead: "A life well lived (so far) — a few milestones, mishaps, and adventures. Tap any to enlarge.",
             blocks: [
                 {
                     type: "cardGrid", cards: [
@@ -413,14 +413,14 @@ window.CONTENT = {
             tag: "❤️ Boyfriend mode in Action",
             tagClass: "tag-rose",
             heading: "What Dating Me Could Look Like",
-            lead: "A peek at \"boyfriend mode\" — the little things I love doing for the person I'm with. Because there is no 'bare minimum' with me, only princess treatment! 👑",
+            lead: "A peek at \"boyfriend mode\" — the little things I love doing for the person I'm with. There is no 'bare minimum' with me, only princess treatment! 👑",
             blocks: [
                 {
                     type: "featureGrid", features: [
                         {
                             src: "img/boyfriend-mode/couple-hugging.webp",
                             alt: "A couple hugging",
-                            text: "Always supportive and caring — there through the good and bad times, with great hugs, forehead kisses and massages."
+                            text: "Always supportive and caring — there through the good and bad times, with great hugs, forehead kisses, and massages."
                         },
                         {
                             src: "img/boyfriend-mode/person-taking-photo.webp",
@@ -450,7 +450,7 @@ window.CONTENT = {
                         {
                             src: "img/boyfriend-mode/writing-a-shared-doc.webp",
                             alt: "Writing a doc",
-                            text: "Keeping docs & spreadsheets of the things that matter to you and our plans."
+                            text: "Keeping shared docs & spreadsheets for the things that matter to you, and of course, our plans."
                         },
                         {
                             src: "img/boyfriend-mode/sharing-memes.webp",
@@ -461,7 +461,7 @@ window.CONTENT = {
                 },
                 {
                     type: "paragraph",
-                    html: '<div style="text-align: center; margin-top: 32px;"><a href="#contact" class="share-btn primary" style="text-decoration: none;">Heard enough? Skip the scroll and jump into getting in contact ⏭️</a></div>'
+                    html: '<div style="text-align: center; margin-top: 32px;"><a href="#contact" class="share-btn primary" style="text-decoration: none;">Heard enough? Skip the scroll and jump straight to my contact details ⏭️</a></div>'
                 }
             ]
         }, lookingFor: {
@@ -486,7 +486,7 @@ window.CONTENT = {
                             src: "img/looking-for/couple-watching-movie-together.webp",
                             alt: "A couple watching a movie",
                             title: "🛋️💜 A Cosy Soul",
-                            text: "A slow one in. A film on, blankets, snacks, and absolutely nowhere we need to be."
+                            text: "A slow night in. A film on, blankets, snacks, and absolutely nowhere we need to be."
                         },
                         {
                             src: "img/looking-for/couple-playing-video-games.webp",
@@ -533,7 +533,7 @@ window.CONTENT = {
                                 },
                                 {
                                     title: "🛑 Dealbreakers (Dating Preferences)",
-                                    text: "Everyone has preferences, and to avoid disappointment, here are some bare minimum requirements. It's not you, it's me 😞",
+                                    text: "Everyone has preferences, and to avoid disappointment, here are my bare minimum requirements. It's not you, it's me 😞",
                                     tags: [
                                         "🚭 No smokers",
                                         "👶 No kids",
@@ -550,8 +550,8 @@ window.CONTENT = {
                                     items: [
                                         "💍 Permanent, monogamous role",
                                         "🤗 Salary paid in snacks and hugs",
-                                        "✈️ Paid holidays (ok, we might need to split it)",
-                                        "🎁 Bonuses paid out on birthdays and special occasions",
+                                        "✈️ Paid holidays (okay, we might need to split the bill)",
+                                        "🎁 Bonuses paid out on birthdays, anniversaries, and special occasions",
                                         "🚗 Company car (passenger princess privileges included)",
                                         "🐾 Pet-friendly workspace",
                                         "☕ Unlimited tea allowance",
@@ -565,7 +565,7 @@ window.CONTENT = {
                 },
                 {
                     type: "paragraph",
-                    html: '<div style="text-align: center; margin-top: 32px;"><a href="#contact" class="share-btn primary" style="text-decoration: none;">Heard enough? Skip the scroll and jump into getting in contact ⏭️</a></div>'
+                    html: '<div style="text-align: center; margin-top: 32px;"><a href="#contact" class="share-btn primary" style="text-decoration: none;">Heard enough? Skip the scroll and jump straight to my contact details ⏭️</a></div>'
                 }
             ]
         }, dates: {
@@ -775,7 +775,7 @@ window.CONTENT = {
                                 {src: "img/hobbies/knitting-in-progress.webp", alt: "A knitting project in progress"},
                                 {src: "img/hobbies/lego-imperial-star-destroyer-built.webp", alt: "A Lego Imperial Star Destroyer I built"}
                             ],
-                            tags: ["Crochet & Yarn", "Rope / Shibari", "Pottery", "Lego", "DIY", "Crafts"]
+                            tags: ["🧶 Crochet & Yarn", "🪢 Rope / Shibari", "🏺 Pottery", "🧱 Lego", "🔨 DIY", "✂️ Crafts"]
                         },
                         {
                             icon: "📷", title: "Photography",
@@ -784,7 +784,7 @@ window.CONTENT = {
                                 {src: "img/hobbies/sunset-landscape-photography.webp", alt: "A landscape photo I took"},
                                 {src: "img/hobbies/st-pauls-cathedral-london.webp", alt: "St Paul's Cathedral, London"}
                             ],
-                            tags: ["Nature", "Landscapes", "Food", "Aerial", "Night & Astro", "Portraits"]
+                            tags: ["🌿 Nature", "🏞️ Landscapes", "🍔 Food", "🚁 Aerial", "🌌 Night & Astro", "👤 Portraits"]
                         },
                         {
                             icon: "🎮", title: "Fun & Games",
@@ -795,16 +795,16 @@ window.CONTENT = {
                                 {src: "img/hobbies/board-game-collection-in-bag.webp", alt: "My board game collection"},
                                 {src: "img/hobbies/d20-dice-dnd.webp", alt: "D&D dice"}
                             ],
-                            tags: ["Video Games", "Board Games", "D&D", "Pool / Snooker"]
+                            tags: ["🎮 Video Games", "🎲 Board Games", "🐉 D&D", "🎱 Pool / Snooker"]
                         },
                         {
                             icon: "🍜", title: "Food",
-                            body: "I love experimenting in the kitchen to make something delicious from time to time — fresh cookies out the oven, a proper brew from an embarrassingly large tea collection — and I'm always on the adventure for my next best meal.",
+                            body: "I love experimenting in the kitchen to make something delicious from time to time — fresh cookies out of the oven, a proper brew from an embarrassingly large tea collection — and I'm always on the lookout for my next best meal.",
                             images: [
                                 {src: "img/hobbies/homemade-chocolate-chip-cookies.webp", alt: "Homemade chocolate chip cookies"},
                                 {src: "img/hobbies/t2-tea-collection.webp", alt: "My tea collection"}
                             ],
-                            tags: ["Cooking", "Baking", "Eating out", "Tea"]
+                            tags: ["🍳 Cooking", "🧁 Baking", "🍽️ Eating out", "🫖 Tea"]
                         },
                         {
                             icon: "🏃", title: "Active",
@@ -816,7 +816,7 @@ window.CONTENT = {
                                 {src: "img/hobbies/alec-with-fire-spinning-staff.webp", alt: "Me spinning a fire staff"},
                                 {src: "img/hobbies/alec-led-poi-spinning-light-trails.webp", alt: "LED staff light trails at night"}
                             ],
-                            tags: ["Countryside walks", "Cycling", "Archery", "Fire & LED Staff"]
+                            tags: ["🥾 Countryside walks", "🚴 Cycling", "🏹 Archery", "🔥 Fire & LED Staff"]
                         },
                         {
                             icon: "📚", title: "Curious & Learning",
@@ -914,7 +914,7 @@ window.CONTENT = {
                             country: "🇩🇪", name: "Germany", detail: "Berlin & Munich", src: "img/places-been/bavarian-beer-garden-munich.webp"
                         },
                         {
-                            country: "🇵🇱", name: "Poland", detail: "Enjoying too much vodka...Never again...", src: "img/places-been/palace-of-culture-science-warsaw.webp"
+                            country: "🇵🇱", name: "Poland", detail: "Enjoying too much vodka... Never again...", src: "img/places-been/palace-of-culture-science-warsaw.webp"
                         },
                         {
                             country: "🇳🇱", name: "Netherlands", detail: "Amsterdam", src: "img/places-been/amsterdam-canal-street-view.webp"
@@ -943,7 +943,7 @@ window.CONTENT = {
                         {
                             country: "🇯🇵",
                             name: "Japan",
-                            detail: "Tea, Food, Anime, Nintendo, Pokemon, Pokemon, Pokemon...",
+                            detail: "Tea, food, anime, Nintendo, Pokémon, Pokémon, Pokémon...",
                             src: "img/places-been/alec-kimono-torii-gate-japan.webp"
                         }
                     ]
@@ -995,17 +995,17 @@ window.CONTENT = {
                         },
                         {
                             src: "img/places-want/family-feast-communal-dining-table.webp",
-                            detail: "Enjoy Cultures food"
+                            detail: "Enjoying different cultures' food"
                         },
                         {src: "img/places-want/poolside-reading-sunglasses-book.webp", detail: "Relaxing poolside"},
                         {
                             src: "img/places-want/alpine-ski-chalet-snow-pool.webp",
-                            detail: "Relaxing in a Snowy place"
+                            detail: "Relaxing in a snowy place"
                         },
                     ]
                 },
                 {
-                    type: "paragraph", text: "…and honestly, the rest of the world too — there's so much food, history and culture I want to see it all."
+                    type: "paragraph", text: "…and honestly, the rest of the world too — there's so much food, history, and culture, I want to see it all."
                 }
             ]
         },
@@ -1310,7 +1310,7 @@ window.CONTENT = {
                         {src: "img/food/carbonara.webp", alt: "Carbonara"},
                     ]
                 },
-                {type: "heading", text: "My chef specialties (without Images)"},
+                {type: "heading", text: "My chef specialties (without images)"},
                 {
                     type: "tagRow", tags: [
                         "Butter Chicken Curry",
@@ -1328,7 +1328,7 @@ window.CONTENT = {
             blocks: [
                 {
                     type: "paragraph",
-                    text: "My taste is very eclectic — mostly video game & anime music, but ranging through metal, rock, rap, pop, lofi, j-pop and j-rock. I'm not big on loud, crowded venues, but I'd love to do a festival like Glastonbury one day."
+                    text: "My taste is very eclectic — mostly video game & anime music, but ranging through metal, rock, rap, pop, lofi, j-pop, and j-rock. I'm not big on loud, crowded venues, but I'd love to go to a festival like Glastonbury one day."
                 },
                 {
                     type: "link", href: "https://open.spotify.com/user/alec_game", label: "Check out my Spotify"
@@ -1382,13 +1382,13 @@ window.CONTENT = {
                         },
                     ]
                 },
-                {type: "heading", text: "Some Albums, Artist, Single I love!"},
+                {type: "heading", text: "Some Albums, Artists & Singles I Love!"},
                 {
                     type: "cardGrid",
                     cards: [
                         {
                             title: "Pop Culture",
-                            caption: "Song by Madeon - Just describe my eclectic taste in music (ok it mostly pop in this)",
+                            caption: "Song by Madeon - Just describes my eclectic taste in music (okay, it's mostly pop in this)",
                             src: "img/music/love/pop-culture.webp",
                             href: "https://www.youtube.com/watch?v=lTx3G6h2xyA"
                         },
@@ -1412,13 +1412,13 @@ window.CONTENT = {
                         },
                         {
                             title: "Yasunori Nishiki",
-                            caption: "Compose of the Octopath series the music is amazing",
+                            caption: "Composer of the Octopath series, the music is amazing",
                             src: "https://image-cdn-fa.spotifycdn.com/image/ab6761610000f1781ceaf3dd34211f6f527ac575",
                             href: "https://open.spotify.com/artist/0Ph31fnwwrbxz5d7mEE1Zv"
                         },
                         {
                             title: "Christopher Larkin",
-                            caption: "Compose of the Hollow knight series the music is amazing",
+                            caption: "Composer of the Hollow Knight series, the music is amazing",
                             src: "https://image-cdn-fa.spotifycdn.com/image/ab6761610000f17822c3ebc48fc86c3bfdc47dfe",
                             href: "https://open.spotify.com/artist/13kMpt8IdcHcdxPLcJrgU2"
                         },
@@ -1472,7 +1472,7 @@ window.CONTENT = {
                         },
                         {title: "Apprentice to the Villain", src: "img/books/apprentice-to-the-villain.webp"},
                         {
-                            title: "Komi cant communicate",
+                            title: "Komi Can't Communicate",
                             src: "img/books/komi-cant-communicate.webp"
                         },
                         {title: "Frieren", src: "img/books/frieren.webp"}
@@ -1545,7 +1545,7 @@ window.CONTENT = {
             blocks: [
                 {
                     type: "paragraph",
-                    text: "Not really a sporty person, but I keep fit with cycling, long walks and the gym — and dabble in bouldering, archery and basketball. I don't really watch sport, but I support a few teams (mostly thanks to friends & family)."
+                    text: "Not really a sporty person, but I keep fit with cycling, long walks, and the gym — and dabble in bouldering, archery, and basketball. I don't really watch sports, but I support a few teams (mostly thanks to friends & family)."
                 },
                 {type: "heading", text: "Teams I support"},
                 {
