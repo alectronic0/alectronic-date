@@ -1916,7 +1916,7 @@ window.CONTENT = {
         heading: "Thanks for Getting This Far!",
         lead: "If you've liked what you've seen, please reach out — I'd love to hear from you and put together a fun first date.",
         links: [
-            { label: "Shoot your shot! 💘", href: "mailto:date@alec.today?subject=RE%3A%20Alec%20Dating%20Application", primary: true }
+            { label: "Shoot your shot! 💘", href: "#contact", primary: true }
         ]
     },
     deepDive: { tag: '🔬 The Deep Dive', title: 'Everything Else About Me', spoiler: { emoji: '⚠️', title: 'Spoiler Warning', body: "Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story." }, lockedBanner: { emoji: '🔒', title: 'Private Sexy Photos (Do Not Open) 🙅', tagline: 'do you dare? 😉😈🌶️🔥🔞' } },

@@ -1198,6 +1198,8 @@
         });
     }
 
+    let secretRevealed = false;
+
     // Konami code easter egg: ↑ ↑ ↓ ↓ ← → ← → B A reveals a hidden 1-UP toast
     // — "It's a secret to everybody." A nod to Zelda + every cheat-code childhood.
     function initKonami() {
@@ -1216,6 +1218,7 @@
         });
 
         function showTickleToast() {
+            if (secretRevealed) return;
             if (document.querySelector('.tickle-toast')) return;
             const toast = document.createElement('div');
             toast.className = 'konami-toast tickle-toast';
@@ -1253,13 +1256,14 @@
 
         attachEasterEggClick(document.getElementById('footer-emoji'));
         attachEasterEggClick(document.querySelector('.hero-emoji'));
-        attachEasterEggClick(document.getElementById('profile-tag-container'));
+        document.querySelectorAll('.section-tag').forEach(attachEasterEggClick);
     }
 
     // The 1-UP reveal — a celebratory toast + a shower of hearts. Self-removing,
     // and guarded so spamming the code doesn't stack duplicates.
     function revealSecret() {
-        if (document.querySelector('.konami-toast')) return;
+        secretRevealed = true;
+        if (document.querySelector('.konami-toast:not(.tickle-toast)')) return;
         const toast = document.createElement('div');
         toast.className = 'konami-toast';
         toast.innerHTML =
