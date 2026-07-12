@@ -643,10 +643,14 @@
     // contact.links so the buttons stay a single source of truth.
     function renderConnectCard(data, sel) {
         if (!data) return;
-        const linkHtml = (l) =>
-            `<a class="contact-btn${l.primary ? ' primary' : ''}${l.disabled ? ' disabled' : ''}" href="${esc(l.href)}"${linkTarget(
-                l.href
-            )}>${linkIcon(l, 'contact-favicon')} <span class="btn-label">${esc(l.label)}</span>${l.sublabel ? `<span class="btn-sublabel">${esc(l.sublabel)}</span>` : ''}</a>`;
+        const linkHtml = (l) => {
+            const cls = `contact-btn${l.primary ? ' primary' : ''}${l.disabled ? ' disabled' : ''}`;
+            const content = `${linkIcon(l, 'contact-favicon')} <span class="btn-label">${esc(l.label)}</span>${l.sublabel ? `<span class="btn-sublabel">${esc(l.sublabel)}</span>` : ''}`;
+            if (l.disabled) {
+                return `<span class="${cls}">${content}</span>`;
+            }
+            return `<a class="${cls}" href="${esc(l.href)}"${linkTarget(l.href)}>${content}</a>`;
+        };
 
         // The contact card carries the ice-breaker prompts between its lead and
         // links; renderPrompts() fills this mount afterwards.
@@ -673,10 +677,13 @@
     // Footer links — same contact.links data, lighter text-link styling.
     function renderFooterLinks() {
         if (!C || !C.contact) return;
-        const linkHtml = (l) =>
-            `<a href="${esc(l.href)}"${linkTarget(l.href)}>${linkIcon(l, 'footer-favicon')}<span>${esc(
-                l.label
-            )}</span></a>`;
+        const linkHtml = (l) => {
+            const content = `${linkIcon(l, 'footer-favicon')}<span>${esc(l.label)}</span>`;
+            if (l.disabled) {
+                return `<span class="footer-link disabled">${content}</span>`;
+            }
+            return `<a href="${esc(l.href)}"${linkTarget(l.href)}>${content}</a>`;
+        };
         setHtml('[data-footer="links"]', C.contact.links.map(linkHtml).join(''));
     }
 

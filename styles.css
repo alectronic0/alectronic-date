@@ -613,7 +613,7 @@ body:has(dialog[open]) { overflow: hidden; }
   margin-top: 16px;
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-light);
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
   text-align: left;
@@ -921,8 +921,9 @@ img.img-missing { object-fit: contain !important; background: #fff; }
 footer { background: var(--aubergine); border-top: 1px solid var(--border); padding: 48px 24px; text-align: center; }
 .footer-emoji { font-size: 2rem; margin-bottom: 16px; }
 .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; }
-.footer-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--muted-2); }
+.footer-links a, .footer-links .footer-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--muted-2); }
 .footer-links a:hover { color: var(--text); }
+.footer-links .disabled { opacity: 0.5; cursor: not-allowed; }
 .footer-favicon { width: 15px; height: 15px; border-radius: 3px; flex-shrink: 0; background: transparent; }
 .footer-note { font-size: 0.78rem; color: var(--muted-2); }
 .footer-credit { margin-top: 8px; }
