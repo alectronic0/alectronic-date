@@ -599,7 +599,7 @@
         setHtml('[data-profile="name"]', esc(p.name) + headingLink('about', p.name));
         setText('[data-profile="tagline"]', p.tagline);
         setHtml('[data-profile="intro"]', p.intro.map((t) => `<p>${esc(t)}</p>`).join(''));
-        setHtml('[data-profile="photo"]', img(p.photo.src, p.photo.alt, 'data-zoom', { w: p.photo.w, h: p.photo.h }));
+        setHtml('[data-profile="photo"]', img(p.photo.src, p.photo.alt, '', { w: p.photo.w, h: p.photo.h }));
         setHtml('[data-profile="facts"]', p.facts.map(factHtml).join(''));
     }
 
@@ -641,26 +641,6 @@
         return `<span class="fact" title="${esc(f.label)}"><span class="fact-icon" aria-hidden="true">${esc(
             f.icon
         )}</span><span class="sr-only">${esc(f.label)}: </span>${factValue(f)}</span>`;
-    }
-
-    function renderFaces() {
-        if (!C || !C.faces) return;
-        // A "view all" button lets people open the full grid instead of waiting
-        // for the marquee to scroll each photo into view (see initGallery).
-        const expandBtn =
-            '<button class="faces-expand" type="button" data-faces="expand" aria-haspopup="dialog">' +
-            '<span aria-hidden="true">⤢</span> View all photos</button>';
-        setHtml('[data-faces="header"]', sectionHeaderHtml(C.faces, 'photos') + expandBtn);
-        const photos = C.faces.photos;
-        // Duplicate the set so the marquee can loop seamlessly (track animates -50%).
-        const once = photos.map((p) => img(p.src, p.alt, '', { w: p.w, h: p.h })).join('');
-        const twice = photos
-            .map((p) => img(p.src, '', 'aria-hidden="true"', { w: p.w, h: p.h }))
-            .join('');
-        setHtml('[data-faces="track"]', once + twice);
-        // The expanded gallery shows the full set once, in a static grid.
-        setHtml('[data-gallery="grid"]', once);
-        setText('[data-gallery="title"]', C.faces.heading || 'Photos');
     }
 
     // A link's icon: prefer the site favicon, fall back to the emoji `icon` when
@@ -1329,6 +1309,13 @@
         const gallery = document.getElementById('gallery');
         if (!gallery) return;
 
+        if (C && C.faces && C.faces.photos) {
+            const photos = C.faces.photos;
+            const html = photos.map((p) => img(p.src, p.alt, '', { w: p.w, h: p.h })).join('');
+            setHtml('[data-gallery="grid"]', html);
+            setText('[data-gallery="title"]', C.faces.heading || 'Photos');
+        }
+
         document.addEventListener('click', (e) => {
             if (e.target.closest('[data-faces="expand"]')) {
                 gallery.showModal();
@@ -1368,6 +1355,103 @@
         );
     }
 
+    function initCyclingImages() {
+        const slots = [];
+        
+        // Convert hero images into cycling slots
+        const heroMedia = document.querySelector('[data-hero="media"]');
+        if (heroMedia) {
+            Array.from(heroMedia.children).forEach(img => {
+                if (img.tagName !== 'IMG') return;
+                const wrapper = document.createElement('div');
+                wrapper.className = 'cycling-images';
+                img.parentNode.insertBefore(wrapper, img);
+                img.classList.add('active');
+                wrapper.appendChild(img);
+                slots.push(wrapper);
+            });
+        }
+        
+        // Convert profile photo into a cycling slot
+        const profilePhoto = document.querySelector('.profile-photo');
+        if (profilePhoto) {
+            const img = profilePhoto.querySelector('img');
+            if (img) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'cycling-images';
+                img.parentNode.insertBefore(wrapper, img);
+                img.classList.add('active');
+                wrapper.appendChild(img);
+                slots.push(wrapper);
+            }
+        }
+        
+        if (slots.length === 0) return;
+
+        // Get all portrait images from faces (height > width)
+        const portraits = C.faces.photos.filter(p => p.h > p.w);
+        
+        const onsen1 = "alec-silly-face-japanese-onsen.webp";
+        const onsen2 = "alec-japanese-onsen-curtain.webp";
+
+        setInterval(() => {
+            // Pick a random slot
+            const slot = slots[Math.floor(Math.random() * slots.length)];
+            
+            // Collect currently visible image sources
+            const currentSrcs = slots.map(s => {
+                const active = s.querySelector('img.active');
+                return active ? active.getAttribute('src') : null;
+            }).filter(Boolean);
+            
+            const activeSrc = slot.querySelector('img.active')?.getAttribute('src');
+            const otherSrcs = currentSrcs.filter(src => src !== activeSrc);
+            
+            const othersHaveOnsen1 = otherSrcs.some(src => src && src.includes(onsen1));
+            const othersHaveOnsen2 = otherSrcs.some(src => src && src.includes(onsen2));
+
+            let available = portraits.filter(p => {
+                // Don't pick an image that's currently visible
+                if (currentSrcs.some(src => src && src.includes(p.src))) return false;
+                
+                // If the OTHER slots have onsen1, don't allow onsen2
+                if (othersHaveOnsen1 && p.src.includes(onsen2)) return false;
+                // If the OTHER slots have onsen2, don't allow onsen1
+                if (othersHaveOnsen2 && p.src.includes(onsen1)) return false;
+                
+                return true;
+            });
+            
+            if (available.length === 0) return;
+            
+            const nextPhoto = available[Math.floor(Math.random() * available.length)];
+            
+            const newImg = document.createElement('img');
+            newImg.src = nextPhoto.src;
+            newImg.alt = nextPhoto.alt || "Alec Doran-Twyford";
+            
+            // Preserve object position from the original image (e.g., hero's center 22%)
+            const oldImg = slot.querySelector('img.active');
+            if (oldImg && oldImg.style.objectPosition) {
+                newImg.style.objectPosition = oldImg.style.objectPosition;
+            }
+            
+            slot.appendChild(newImg);
+            
+            // Trigger reflow for transition
+            void newImg.offsetWidth;
+            
+            newImg.classList.add('active');
+            if (oldImg) {
+                oldImg.classList.remove('active');
+                // Remove old image after CSS fade transition (1.5s)
+                setTimeout(() => {
+                    if (oldImg.parentNode === slot) slot.removeChild(oldImg);
+                }, 1600);
+            }
+        }, 5000);
+    }
+
     /* ── boot ── */
     function boot() {
         if (!C) {
@@ -1377,7 +1461,7 @@
         initImageFallback();
         renderHero();
         renderProfile();
-        renderFaces();
+        // Faces section removed, using hero/profile image swapping instead
         renderDeepDive();
         renderSections();
         renderConnectCard(C.contact, '[data-connect="contact"]');
@@ -1400,6 +1484,7 @@
         initPrompts();
         initLightbox();
         initGallery();
+        initCyclingImages();
         initKonami();
 
         openFromHash();

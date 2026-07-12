@@ -95,9 +95,10 @@ img { display: block; max-width: 100%; background: white }
 .slot-machine {
   display: inline-flex;
   flex-direction: column;
-  height: 1.5em;
+  height: 1.3em;
   overflow: hidden;
-  vertical-align: bottom;
+  vertical-align: top;
+  text-align: left;
   color: var(--text); /* highlight the spinning part slightly */
   font-weight: 500;
 }
@@ -119,19 +120,24 @@ img { display: block; max-width: 100%; background: white }
 }
 .hero-media {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(2, 1fr);
   gap: 12px;
   height: min(72vh, 540px);
 }
-.hero-media img {
+.hero-media > img,
+.hero-media .cycling-images {
   width: 100%; height: 100%;
-  object-fit: cover;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
-.hero-media img:first-child { grid-row: span 2; object-position: center 22%; }
+.hero-media > img { object-fit: cover; }
+.hero-media .cycling-images > img { object-fit: cover; }
+.hero-media > img:first-child,
+.hero-media .cycling-images:first-child { grid-row: span 2; }
+.hero-media > img:first-child,
+.hero-media .cycling-images:first-child > img { object-position: center 22%; }
 .hero-cta {
   display: inline-flex; align-items: center;
   background: var(--accent);
@@ -273,12 +279,16 @@ p { color: var(--muted); margin-bottom: 14px; }
 .profile-tagline { color: var(--gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 18px; }
 /* Sticks below the section's sticky head (nav + tag + name), not just the nav */
 .profile-photo-col { position: sticky; top: calc(var(--nav-h) + 110px); }
-.profile-photo img {
+.profile-photo { cursor: pointer; }
+.profile-photo > img,
+.profile-photo .cycling-images {
   /* height: auto overrides the image's width/height attributes (added for
      CLS elsewhere) so aspect-ratio is what actually sizes it here. */
-  width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 18%;
+  width: 100%; height: auto; aspect-ratio: 3 / 4;
   border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow);
 }
+.profile-photo > img,
+.profile-photo .cycling-images > img { object-fit: cover; object-position: center 18%; }
 
 /* Bumble-style fact chips: compact icon + value pills that wrap in rows.
    The label is visually dropped (the icon carries it) but kept in a
@@ -339,22 +349,46 @@ p { color: var(--muted); margin-bottom: 14px; }
   position: fixed; inset: 0; width: 100%; height: 100%;
   max-width: none; max-height: none; margin: 0; border: none;
   color: var(--text); background: rgba(10, 4, 9, 0.97);
-  overflow-y: auto; padding: 24px;
+  overflow-y: auto; padding: 0;
 }
 .gallery::backdrop { background: transparent; }
 
 /* Lock the page scroll while any modal dialog is up. */
 body:has(dialog[open]) { overflow: hidden; }
+
+.cycling-images {
+  position: relative;
+  overflow: hidden;
+}
+.cycling-images > img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+.cycling-images > img.active {
+  opacity: 1;
+}
+
 .gallery-head {
   display: flex; align-items: center; justify-content: space-between;
-  max-width: 1120px; margin: 0 auto 18px; padding-top: 4px;
+  max-width: 1168px; margin: 0 auto;
+  padding: 24px 24px 18px;
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(10, 4, 9, 0.97);
 }
 .gallery-head h3 { margin: 0; font-size: 1.35rem; }
 .gallery-close { background: none; border: none; color: var(--muted); font-size: 2.2rem; line-height: 1; cursor: pointer; padding: 0 6px; }
 .gallery-close:hover { color: #fff; }
 .gallery-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 10px; max-width: 1120px; margin: 0 auto;
+  gap: 10px; max-width: 1168px; margin: 0 auto;
+  padding: 0 24px 24px;
+}
+@media (max-width: 560px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); padding: 0 16px 24px; gap: 8px; }
+  .gallery-head { padding: 20px 16px 14px; }
 }
 .gallery-grid img {
   /* height: auto overrides the images' width/height attributes (added for CLS
