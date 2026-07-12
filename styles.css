@@ -155,11 +155,11 @@ img { display: block; max-width: 100%; background: white }
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 
 @media (max-width: 820px) {
-  .hero { padding: 24px 20px 32px; }
-  .hero-inner { display: flex; flex-direction: column; flex: 1; gap: 20px; width: 100%; }
+  .hero { padding: 24px 20px 32px; height: calc(100dvh - var(--nav-h)); min-height: 0; }
+  .hero-inner { display: flex; flex-direction: column; flex: 1; gap: 20px; width: 100%; min-height: 0; }
   .hero-text { text-align: center; flex-shrink: 0; }
   .hero-sub, .hero-tagline { margin-left: auto; margin-right: auto; }
-  .hero-media { flex: 1; min-height: 160px; height: auto; max-width: 460px; width: 100%; margin: 0 auto; }
+  .hero-media { flex: 1; min-height: 0; max-width: 460px; width: 100%; margin: 0 auto; height: auto; }
   .hero-scroll { display: none; }
   .slot-machine { display: flex; text-align: center; margin: 4px 0 12px; }
   .hero-tagline br { display: none; }
