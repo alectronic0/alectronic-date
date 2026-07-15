@@ -1266,6 +1266,7 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
   font-size: 0.95rem;
   color: var(--text);
   font-weight: 600;
+  text-align: center;
 }
 .adventure-chips {
   display: flex;
@@ -1395,6 +1396,7 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
   gap: 8px;
   font-size: 0.88rem;
   color: var(--muted);
+    place-content: center;
 }
 .picked-location-row .location-icon {
   font-size: 1.1rem;
