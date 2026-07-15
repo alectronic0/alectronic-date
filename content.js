@@ -65,12 +65,8 @@ window.CONTENT = {
         // First image is the LCP element — rendered eager + high priority (see main.js renderHero).
         images: [
             {src: "img/alec/alec-pokemon-plushies-pokeball.webp", alt: "Alec Doran-Twyford", w: 900, h: 1200},
-            {
-                src: "img/alec/alec-silly-face-japanese-onsen.webp",
-                alt: "Alec smiling",
-                w: 900, h: 1200
-            },
-            {src: "img/alec/alec-portrait-garden-archway.webp", alt: "Alec portrait", w: 903, h: 1200}
+            {src: "img/alec/alec-portrait-garden-archway.webp", alt: "Alec portrait garden archway", w: 903, h: 1200},
+            {src: "img/alec/alec-los-mochis-city.webp", alt: "Alec in Los Mochis", w: 900, h: 1200}
         ]
     },
     profile: {
@@ -247,6 +243,7 @@ window.CONTENT = {
             {src: "img/alec/alec-portrait-garden-archway.webp", alt: "Alec portrait garden archway", w: 903, h: 1200},
             {src: "img/alec/alec-japanese-onsen-curtain.webp", alt: "Alec japanese onsen curtain", w: 900, h: 1200},
             {src: "img/alec/alec-silly-face-japanese-onsen.webp", alt: "Alec silly face japanese onsen", w: 900, h: 1200},
+            {src: "img/alec/alec-los-mochis-city.webp", alt: "Alec in Los Mochis", w: 900, h: 1200},
             {src: "img/alec/alec-pokemon-cyndaquil-statue.webp", alt: "Alec pokemon cyndaquil statue", w: 903, h: 1200},
             {src: "img/alec/alec-super-mario-bros-40th-statue.webp", alt: "Alec super mario bros 40th statue", w: 903, h: 1200},
             {src: "img/alec/alec-cherry-blossom-park.webp", alt: "Alec cherry blossom park", w: 900, h: 1200},
@@ -796,7 +793,12 @@ window.CONTENT = {
                             body: "Photography threads through nearly everything else I do — nature, food, landscapes, my shibari art, fire and LED poi after dark, the stars, and my friends. I shoot on a Google Pixel 10 Pro (edited in Snapseed) and fly a DJI drone; I've got a Polaroid I'm still figuring out, and I'm dreaming of a proper camera — or even a telescope rig for night shots.",
                             images: [
                                 {src: "img/hobbies/sunset-landscape-photography.webp", alt: "A landscape photo I took"},
-                                {src: "img/hobbies/st-pauls-cathedral-london.webp", alt: "St Paul's Cathedral, London"}
+                                {src: "img/hobbies/st-pauls-cathedral-london.webp", alt: "St Paul's Cathedral, London"},
+                                {src: "img/hobbies/drone-shot-1.webp", alt: "Aerial drone photography shot 1"},
+                                {src: "img/hobbies/drone-shot-2.webp", alt: "Aerial drone photography shot 2"},
+                                {src: "img/hobbies/drone-shot-4.webp", alt: "Aerial drone photography shot 4"},
+                                {src: "img/hobbies/drone-shot-5.webp", alt: "Aerial drone photography shot 5"},
+                                {src: "img/hobbies/drone-shot-6.webp", alt: "Aerial drone photography shot 6"}
                             ],
                             tags: ["🌿 Nature", "🏞️ Landscapes", "🍔 Food", "🚁 Aerial", "🌌 Night & Astro", "👤 Portraits"]
                         },
