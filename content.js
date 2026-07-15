@@ -2050,7 +2050,7 @@ window.CONTENT = {
         ]
     },
     deepDive: { tag: '🔬 The Deep Dive', title: 'Everything Else About Me', spoiler: { emoji: '⚠️', title: 'Spoiler Warning', body: "Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story." }, lockedBanner: { emoji: '🔒', title: 'Private Sexy Photos (Do Not Open) 🙅', tagline: 'do you dare? 😉😈🌶️🔥🔞' } },
-    cheekyGag: { title: 'Private Sexy Photos (Do Not Open) 🙅', teaseText: "😳 Seriously?! Do you really think I'd have those just lying around on my dating site…", unlockButton: '🔓🔑 Access sexy photos 😏', punchlineTitle: "You're Cheeky — I Like That!", punchlineBody: "You're cheeky 😉 I like that! If you really do want some fun though, you should just contact me 😏" },
+    cheekyGag: { title: 'Private Sexy Photos (Do Not Open) 🙅', teaseText: "😳 Seriously?! Do you really think I'd have those just lying around on my dating site…", unlockButton: '🔓🔑 Access sexy photos 😏', punchlineTitle: "You're Cheeky — I Like That!", punchlineBody: "You're cheeky 😉 I like that! If you really do want some fun though, go on — shoot your shot!" },
     footer: { note: 'Alec Doran-Twyford · Welwyn Garden City · he/him/they/them', credit: 'Powered by Alec + GitHub Pages', emoji: '🎮❤️🎮' },
     easterEgg: { toastTitle: '1-UP!', toastBody: "It's a secret to everybody.", toastSub: '🍄 +30 lives · you found the cheat code 🎮', emojis: ['❤️', '🍄', '⭐', '🎮'] }
 };

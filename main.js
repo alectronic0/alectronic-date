@@ -1613,6 +1613,65 @@
             if (open && open.id !== 'cheeky-modal') open.close();
             openDeepModal('cheeky-modal');
         });
+
+        // "Shoot Your Shot" button — close modal, scroll to contact section
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.cheeky-shoot-btn')) return;
+            const modal = document.getElementById('cheeky-modal');
+            if (modal) modal.close();
+            const contact = document.getElementById('contact');
+            if (contact) {
+                setTimeout(() => contact.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+            }
+        });
+
+        // "go on then" button — reveal tasteful photo gallery inside the modal
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('.cheeky-goon-btn');
+            if (!btn) return;
+            const goOnP = btn.closest('.cheeky-goonthen');
+            if (!goOnP) return;
+
+            goOnP.innerHTML = `
+                <p style="text-align: center; margin-bottom: 14px;">
+                    <button type="button" class="cheeky-hide-btn">🙈 oops I don't want to see that</button>
+                </p>
+                <p style="font-size: 0.78rem; color: var(--muted); font-style: italic; margin-bottom: 14px;">
+                    I told you I'd find a few nice ones 😉
+                </p>
+                <div class="cheeky-gallery">
+                    <img src="img/alec/alec-portrait-moody-bw.jpg" alt="Alec looking sharp" loading="lazy">
+                    <img src="img/alec/alec-dark-artistic-portrait.jpg" alt="Alec artistic portrait" loading="lazy">
+                    <img src="img/alec/alec-cosy-bed-portrait.jpg" alt="Alec cosy portrait" loading="lazy">
+                </div>
+            `;
+        });
+
+        // Hide button — collapse gallery back to the tiny "go on then" button
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('.cheeky-hide-btn');
+            if (!btn) return;
+            const goOnP = btn.closest('.cheeky-goonthen');
+            if (!goOnP) return;
+
+            goOnP.innerHTML = `
+                <button type="button" class="cheeky-goon-btn" id="cheeky-goon-btn">actual sexy photos</button>
+            `;
+        });
+
+        // Reset gallery when cheeky-modal is closed
+        const cheekyModal = document.getElementById('cheeky-modal');
+        if (cheekyModal) {
+            cheekyModal.addEventListener('close', () => {
+                const goOnP = cheekyModal.querySelector('.cheeky-goonthen');
+                if (goOnP) {
+                    goOnP.innerHTML = `
+                        <button type="button" class="cheeky-goon-btn" id="cheeky-goon-btn">actual sexy photos</button>
+                    `;
+                }
+            });
+        }
+
     }
 
     // Open the deep-dive modal named in the URL hash, e.g. …#food.
@@ -1793,7 +1852,7 @@
         let currentIndex = -1;
 
         const selectors =
-            '[data-zoom], .mosaic-strip img, .gallery-grid img, .poster-grid img, .photo-grid img, .labeled-photo-card img, .gif-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img';
+            '[data-zoom], .mosaic-strip img, .gallery-grid img, .poster-grid img, .photo-grid img, .labeled-photo-card img, .gif-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img, .cheeky-gallery img';
 
         function getCaption(img) {
             const feature = img.closest('.feature');

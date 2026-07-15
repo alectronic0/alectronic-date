@@ -799,6 +799,46 @@ body:has(dialog[open]) { overflow: hidden; }
   text-align: center; font-weight: 600; color: var(--gold);
   max-width: 480px; margin: 0 auto 16px;
 }
+.cheeky-shoot-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); border: 1px solid var(--accent);
+  border-radius: 12px; padding: 12px 28px; min-height: 48px;
+  font-family: var(--font); font-size: 0.95rem; font-weight: 600; color: #fff;
+  cursor: pointer; box-shadow: 0 6px 18px rgba(153, 78, 168, 0.4);
+  transition: background 0.2s, transform 0.15s;
+}
+.cheeky-shoot-btn:hover { background: #ab5cba; transform: translateY(-2px); }
+.cheeky-goon-btn {
+  background: none; border: none;
+  font-family: var(--font); font-size: 0.35rem; font-weight: 400;
+  color: var(--muted-2); cursor: pointer;
+  text-decoration: underline; opacity: 0.6;
+  transition: opacity 0.2s, color 0.2s;
+  padding: 2px 4px;
+}
+.cheeky-goon-btn:hover { opacity: 1; }
+.cheeky-gallery {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px; margin-top: 8px;
+}
+.cheeky-gallery img {
+  width: 100%; border-radius: 10px; aspect-ratio: 1;
+  object-fit: cover; box-shadow: var(--shadow-sm);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.cheeky-gallery img:hover { transform: scale(1.03); }
+.cheeky-hide-btn {
+  background: none; border: 1px solid var(--border);
+  font-family: var(--font); font-size: 0.7rem; font-weight: 500;
+  color: var(--muted-2); cursor: pointer;
+  padding: 5px 12px; border-radius: 8px;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+.cheeky-hide-btn:hover {
+  color: var(--rose-light); border-color: var(--rose);
+  background: rgba(255, 107, 138, 0.06);
+}
 
 /* 🚧 placeholder banner for topics that aren't written yet */
 .construction-banner {
