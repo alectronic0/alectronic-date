@@ -783,22 +783,126 @@ window.CONTENT = {
                             images: [
                                 {src: "img/hobbies/alec-crochet-snorlax.webp", alt: "A Snorlax I crocheted"},
                                 {src: "img/hobbies/alec-ceramic-pot-made.webp", alt: "A ceramic pot I threw"},
-                                {src: "img/hobbies/knitting-in-progress.webp", alt: "A knitting project in progress"},
-                                {src: "img/hobbies/lego-imperial-star-destroyer-built.webp", alt: "A Lego Imperial Star Destroyer I built"}
+                                {src: "img/hobbies/lego-imperial-star-destroyer-built.webp", alt: "A Lego Imperial Star Destroyer I built"},
+                                {src: "img/hobbies/shibari-rope-bondage-torso.webp", alt: "Shibari rope bondage art"}
                             ],
                             tags: ["🧶 Crochet & Yarn", "🪢 Rope / Shibari", "🏺 Pottery", "🧱 Lego", "🔨 DIY", "✂️ Crafts"]
                         },
                         {
                             icon: "📷", title: "Photography",
                             body: "Photography threads through nearly everything else I do — nature, food, landscapes, my shibari art, fire and LED poi after dark, the stars, and my friends. I shoot on a Google Pixel 10 Pro (edited in Snapseed) and fly a DJI drone; I've got a Polaroid I'm still figuring out, and I'm dreaming of a proper camera — or even a telescope rig for night shots.",
-                            images: [
-                                {src: "img/hobbies/sunset-landscape-photography.webp", alt: "A landscape photo I took"},
-                                {src: "img/hobbies/st-pauls-cathedral-london.webp", alt: "St Paul's Cathedral, London"},
-                                {src: "img/hobbies/drone-shot-1.webp", alt: "Aerial drone photography shot 1"},
-                                {src: "img/hobbies/drone-shot-2.webp", alt: "Aerial drone photography shot 2"},
-                                {src: "img/hobbies/drone-shot-4.webp", alt: "Aerial drone photography shot 4"},
-                                {src: "img/hobbies/drone-shot-5.webp", alt: "Aerial drone photography shot 5"},
-                                {src: "img/hobbies/drone-shot-6.webp", alt: "Aerial drone photography shot 6"}
+                            imageGroups: [
+                                {
+                                    title: "Night Photography 🌌",
+                                    images: [
+                                        {src: "img/hobbies/crescent-moon-black-sky.webp", alt: "Crescent moon black sky"},
+                                        {src: "img/hobbies/full-moon-astrophotography.webp", alt: "Full moon astrophotography"},
+                                        {src: "img/hobbies/full-moon-behind-branches.webp", alt: "Full moon behind branches"},
+                                        {src: "img/hobbies/dark-alley-illuminated-street-light.webp", alt: "Dark alley illuminated by street light"},
+                                        {src: "img/hobbies/illuminated-led-tree-night.webp", alt: "Illuminated led tree night"},
+                                        {src: "img/hobbies/led-hula-hoop-fire-spinning-night.webp", alt: "LED hula hoop and fire spinning night (Long exposure shot)"},
+                                        {src: "img/hobbies/led-staff-beach-long-exposure.webp", alt: "LED staff on the beach (Long exposure shot)"},
+                                        {src: "img/hobbies/bokeh-city-lights-water-reflection.webp", alt: "Bokeh city lights water reflection"},
+                                        {src: "img/hobbies/city-lights-night-river.webp", alt: "City lights night river"},
+                                        {src: "img/hobbies/moonlight-through-winter-trees.webp", alt: "Moonlight through winter trees"},
+                                        {src: "img/hobbies/starry-night-sky-1.webp", alt: "Starry night sky"},
+                                        {src: "img/hobbies/starry-night-sky-2.webp", alt: "Starry night sky"},
+                                        {src: "img/hobbies/starry-night-sky-trees.webp", alt: "Starry night sky trees"}
+                                    ]
+                                },
+                                {
+                                    title: "Nature 🌿",
+                                    images: [
+                                        {src: "img/hobbies/bumblebee-on-lavender-flowers.webp", alt: "Bumblebee on lavender flowers"},
+                                        {src: "img/hobbies/grey-squirrel-behind-tree.webp", alt: "Grey squirrel behind tree"},
+                                        {src: "img/hobbies/looking-up-through-green-leaves.webp", alt: "Looking up through green leaves"},
+                                        {src: "img/hobbies/flower-macro.webp", alt: "Flower macro"}
+                                    ]
+                                },
+                                {
+                                    title: "Landscapes 🏞️",
+                                    images: [
+                                        {src: "img/hobbies/sunset-landscape-photography.webp", alt: "One of my 1st sunset photo on a very old camera phone"},
+                                        {src: "img/hobbies/bali-street-market.webp", alt: "Bali street market"},
+                                        {src: "img/hobbies/airplane-landing-shot.webp", alt: "Airplane landing shot"},
+                                        {src: "img/hobbies/arched-concrete-bridge-monochrome.webp", alt: "Arched concrete bridge monochrome"},
+                                        {src: "img/hobbies/cozy-market-lights-london.webp", alt: "Cozy market lights london"},
+                                        {src: "img/hobbies/dogs-walking-autumn-forest-path.webp", alt: "Dogs walking autumn forest path"},
+                                        {src: "img/hobbies/golden-sunset-hilly-landscape.webp", alt: "Golden sunset hilly landscape"},
+                                        {src: "img/hobbies/green-country-dirt-path.webp", alt: "Green country dirt path"},
+                                        {src: "img/hobbies/new-york-cityscape.webp", alt: "New York cityscape"},
+                                        {src: "img/hobbies/misty-winter-forest-path.webp", alt: "Misty winter forest path"},
+                                        {src: "img/hobbies/stone-window-sea-view-cyprus.webp", alt: "Stone window sea view (Cyprus)"},
+                                        {src: "img/hobbies/sunburst-shining-through-forest.webp", alt: "Sunburst shining through forest"},
+                                        {src: "img/hobbies/sunset-skyline-silhouette.webp", alt: "Sunset skyline silhouette"},
+                                        {src: "img/hobbies/tranquil-lake-blue-sky.webp", alt: "Tranquil lake blue sky"},
+                                        {src: "img/hobbies/vibrant-photo-effect.webp", alt: "Vibrant photo effect"},
+                                        {src: "img/hobbies/arthurs-seat-edinburgh.webp", alt: "Arthur's Seat in Edinburgh"},
+                                        {src: "img/hobbies/winter-forest-foggy-path.webp", alt: "Winter forest foggy path"}
+                                    ]
+                                },
+                                {
+                                    title: "Buildings & Architecture 🏛️",
+                                    images: [
+                                        {src: "img/hobbies/empire-state-building-night-blue.webp", alt: "Empire state building night blue"},
+                                        {src: "img/hobbies/glass-skyscrapers-london-clouds.webp", alt: "Glass skyscrapers london clouds"},
+                                        {src: "img/hobbies/greenwich-royal-naval-college.webp", alt: "Greenwich royal naval college"},
+                                        {src: "img/hobbies/houses-of-parliament-big-ben.webp", alt: "Houses of parliament big ben"},
+                                        {src: "img/hobbies/london-eye-black-white.webp", alt: "London eye black white"},
+                                        {src: "img/hobbies/london-skyscraper-glass-night.webp", alt: "London skyscraper glass night"},
+                                        {src: "img/hobbies/painted-hearts-mural-wall.webp", alt: "Painted hearts mural wall"},
+                                        {src: "img/hobbies/radcliffe-camera-oxford.webp", alt: "Radcliffe camera oxford"},
+                                        {src: "img/hobbies/welwyn-garden-city-viaduct.webp", alt: "Welwyn Garden City viaduct"},
+                                        {src: "img/hobbies/st-pauls-cathedral-night-illuminated.webp", alt: "St pauls cathedral night illuminated"},
+                                        {src: "img/hobbies/st-pauls-cobbled-street-london.webp", alt: "St pauls cobbled street london"},
+                                        {src: "img/hobbies/tower-bridge-london-day.webp", alt: "Tower bridge london day"},
+                                        {src: "img/hobbies/tower-bridge-river-thames-aerial.webp", alt: "Tower bridge river thames aerial"},
+                                        {src: "img/hobbies/tower-bridge-sunset.webp", alt: "Tower bridge sunset"}
+                                    ]
+                                },
+                                {
+                                    title: "Drone Shots 🚁",
+                                    images: [
+                                        {src: "img/hobbies/drone-shot-1.webp", alt: "Aerial drone photography shot 1"},
+                                        {src: "img/hobbies/drone-shot-2.webp", alt: "Aerial drone photography shot 2"},
+                                        {src: "img/hobbies/drone-shot-4.webp", alt: "Aerial drone photography shot 4"},
+                                        {src: "img/hobbies/drone-shot-5.webp", alt: "Aerial drone photography shot 5"},
+                                        {src: "img/hobbies/drone-shot-6.webp", alt: "Aerial drone photography shot 6"},
+                                        {src: "img/hobbies/aerial-green-fields-trees.webp", alt: "Aerial green fields trees"},
+                                        {src: "img/hobbies/aerial-pond-autumn-trees.webp", alt: "Aerial pond autumn trees"},
+                                        {src: "img/hobbies/aerial-snowy-winter-forest.webp", alt: "Aerial snowy winter forest"},
+                                        {src: "img/hobbies/aerial-viaduct-green-fields.webp", alt: "Aerial viaduct green fields"},
+                                        {src: "img/hobbies/aerial-winding-green-landscape.webp", alt: "Aerial winding green landscape"}
+                                    ]
+                                },
+                                {
+                                    title: "Pets 🐾",
+                                    images: [
+                                        {src: "img/hobbies/birthday-dog-blue-bandana.webp", alt: "Birthday dog blue bandana"},
+                                        {src: "img/hobbies/black-white-dog-wooden-floor.webp", alt: "Black white dog wooden floor"},
+                                        {src: "img/hobbies/cat-scratching-tunnel-peeking.webp", alt: "Cat scratching tunnel peeking"},
+                                        {src: "img/hobbies/colorful-parrot-on-keys.webp", alt: "Colorful parrot on keys"},
+                                        {src: "img/hobbies/dog-playing-in-snow.webp", alt: "Dog playing in snow"},
+                                        {src: "img/hobbies/dog-portrait-looking-up.webp", alt: "Dog portrait looking up"},
+                                        {src: "img/hobbies/dog-under-table.webp", alt: "Dog under table"},
+                                        {src: "img/hobbies/rabbit.webp", alt: "Rabbit"},
+                                        {src: "img/hobbies/shiba-inu-dog-leash.webp", alt: "Shiba inu dog leash"},
+                                        {src: "img/hobbies/tabby-cat-sleeping-wooden-floor.webp", alt: "Tabby cat sleeping wooden floor"},
+                                        {src: "img/hobbies/two-dogs-cuddling-close.webp", alt: "Two dogs cuddling close"},
+                                        {src: "img/hobbies/owner-looking-at-puppy.webp", alt: "Owner looking at puppy"}
+                                    ]
+                                },
+                                {
+                                    title: "Close ups 🔍",
+                                    images: [
+                                        {src: "img/hobbies/biscuits-close-up.webp", alt: "Biscuits close up"},
+                                        {src: "img/hobbies/decorated-purple-monster-cake.webp", alt: "Decorated purple monster cake"},
+                                        {src: "img/hobbies/breakfast-tea.webp", alt: "Breakfast tea"},
+                                        {src: "img/hobbies/cake-decorating-tools.webp", alt: "Cake decorating tools"},
+                                        {src: "img/hobbies/chinese-lanterns-sydney.webp", alt: "Chinese lanterns in Sydney (with my little kangaroo & koala statue)"},
+                                        {src: "img/hobbies/blue-metal-mailbox-fence.webp", alt: "Blue metal mailbox fence"}
+                                    ]
+                                }
                             ],
                             tags: ["🌿 Nature", "🏞️ Landscapes", "🍔 Food", "🚁 Aerial", "🌌 Night & Astro", "👤 Portraits"]
                         },
@@ -809,7 +913,7 @@ window.CONTENT = {
                                 {src: "img/hobbies/alec-gaming-setup-triple-monitors.webp", alt: "My triple-monitor gaming desk"},
                                 {src: "img/hobbies/nes-cartridge-retro-games.webp", alt: "Retro NES cartridges"},
                                 {src: "img/hobbies/board-game-collection-in-bag.webp", alt: "My board game collection"},
-                                {src: "img/hobbies/d20-dice-dnd.webp", alt: "D&D dice"}
+                                {src: "img/hobbies/d20-dice-dnd-blue.webp", alt: "Blue D20 D&D die"}
                             ],
                             tags: ["🎮 Video Games", "🎲 Board Games", "🐉 D&D", "🎱 Pool / Snooker"]
                         },
@@ -818,7 +922,9 @@ window.CONTENT = {
                             body: "I love experimenting in the kitchen to make something delicious from time to time — fresh cookies out of the oven, a proper brew from an embarrassingly large tea collection — and I'm always on the lookout for my next best meal.",
                             images: [
                                 {src: "img/hobbies/homemade-chocolate-chip-cookies.webp", alt: "Homemade chocolate chip cookies"},
-                                {src: "img/hobbies/t2-tea-collection.webp", alt: "My tea collection"}
+                                {src: "img/hobbies/t2-tea-collection.webp", alt: "My tea collection"},
+                                {src: "img/food/dessert-ice-cream-meringue.webp", alt: "Dessert ice cream meringue"},
+                                {src: "img/food/roast-chicken-sunday-dinner.webp", alt: "Roast chicken Sunday dinner"}
                             ],
                             tags: ["🍳 Cooking", "🧁 Baking", "🍽️ Eating out", "🫖 Tea"]
                         },
@@ -829,8 +935,7 @@ window.CONTENT = {
                                 {src: "img/hobbies/autumn-walk-with-dachshund-dog.webp", alt: "An autumn countryside walk with a dachshund"},
                                 {src: "img/hobbies/mountain-bike-on-path.webp", alt: "My mountain bike out on a path"},
                                 {src: "img/hobbies/archery-target-with-arrows.webp", alt: "An archery target with my arrows"},
-                                {src: "img/hobbies/alec-with-fire-spinning-staff.webp", alt: "Me spinning a fire staff"},
-                                {src: "img/hobbies/alec-led-poi-spinning-light-trails.webp", alt: "LED staff light trails at night"}
+                                {src: "img/hobbies/alec-with-fire-spinning-staff.webp", alt: "Me spinning a fire staff"}
                             ],
                             tags: ["🥾 Countryside walks", "🚴 Cycling", "🏹 Archery", "🔥 Fire & LED Staff"]
                         },
@@ -1258,6 +1363,8 @@ window.CONTENT = {
                             alt: "Street tacos"
                         },
                         {src: "img/food/japanese-fried-chicken-moss-plating.webp", alt: "Japanese fried chicken"},
+                        {src: "img/food/dessert-ice-cream-meringue.webp", alt: "Dessert ice cream meringue"},
+                        {src: "img/food/gin-tonic-cocktail-restaurant.webp", alt: "Gin tonic cocktail restaurant"},
                         {
                             src: "img/food/korean-fried-chicken-wings.webp",
                             alt: "Korean fried chicken"
@@ -1322,6 +1429,7 @@ window.CONTENT = {
                         },
                         {src: "img/food/lamb-curry.webp", alt: "Lamb Curry"},
                         {src: "img/food/carbonara.webp", alt: "Carbonara"},
+
                     ]
                 },
                 {type: "heading", text: "My chef specialties (without images)"},

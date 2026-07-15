@@ -200,8 +200,9 @@
         // paragraph, an optional strip of personal photos, and tag pills. Every
         // field but icon/title is optional, so a card can be photo-rich or just
         // text + tags.
-        interestCards: (b) =>
-            `<div class="interest-cards">${b.cards
+        interestCards: (b) => {
+            let modals = '';
+            const cardsHtml = b.cards
                 .map(
                     (c) =>
                         `<div class="interest-card"><div class="interest-card-head"><span class="interest-card-icon">${esc(
@@ -209,7 +210,49 @@
                         )}</span><span class="interest-card-title">${esc(c.title)}${c.subtitle ? ` <span class="interest-card-subtitle">${esc(c.subtitle)}</span>` : ''}</span></div>${
                             c.body ? `<p class="interest-card-body">${esc(c.body)}</p>` : ''
                         }${
-                            c.images && c.images.length
+                            c.imageGroups && c.imageGroups.length
+                                ? (() => {
+                                      const allImages = c.imageGroups.reduce((acc, g) => acc.concat(g.images), []);
+                                      const total = allImages.length;
+                                      const shuffled = [...allImages].sort(() => 0.5 - Math.random());
+                                      const highlights = shuffled.slice(0, 4);
+                                      const cardPhotos = `<div class="interest-card-photos">` +
+                                          highlights.map((i, idx) => {
+                                              if (total > 4 && idx === 3) {
+                                                  return `<div class="photo-overlay-container" data-open-gallery="photography">${img(i.src, i.alt)}<div class="photo-overlay">+${total - 3}</div></div>`;
+                                              } else {
+                                                  return img(i.src, i.alt, `data-open-gallery="photography"`);
+                                              }
+                                          }).join('') +
+                                          `</div>`;
+
+                                      const modalHtml = `<dialog class="deep-modal" id="photography-gallery-modal" aria-label="Photography Gallery">
+                                          <div class="deep-modal-inner">
+                                              <div class="deep-modal-head">
+                                                  <span class="deep-modal-emoji" aria-hidden="true">📷</span>
+                                                  <h3 class="deep-modal-title">Photography Gallery</h3>
+                                                  <button class="deep-modal-close" type="button" aria-label="Close">×</button>
+                                              </div>
+                                              <div class="deep-modal-body">
+                                                  ${c.imageGroups
+                                                      .map(
+                                                          (g) =>
+                                                              `<div class="interest-card-group">
+                                                                  <h4 class="interest-card-group-title">${esc(g.title)}</h4>
+                                                                  <div class="interest-card-photos">
+                                                                      ${g.images.map((im) => img(im.src, im.alt)).join('')}
+                                                                  </div>
+                                                              </div>`
+                                                      )
+                                                      .join('')}
+                                              </div>
+                                          </div>
+                                      </dialog>`;
+
+                                      modals += modalHtml;
+                                      return cardPhotos;
+                                  })()
+                                : c.images && c.images.length
                                 ? `<div class="interest-card-photos">${c.images
                                       .map((i, idx) => {
                                           if (c.images.length > 4 && idx === 3) {
@@ -241,7 +284,9 @@
                                 : ''
                         }</div>`
                 )
-                .join('')}</div>`,
+                .join('');
+            return `<div class="interest-cards">${cardsHtml}</div>` + modals;
+        },
 
         photoGrid: (b) =>
             `<div class="photo-grid">${b.images.map((i) => img(i.src, i.alt)).join('')}</div>`,
@@ -1381,6 +1426,15 @@
 
         // Delegated so it covers images injected after load.
         document.addEventListener('click', (e) => {
+            const openGallery = e.target.closest('[data-open-gallery="photography"]');
+            if (openGallery) {
+                const modal = document.getElementById('photography-gallery-modal');
+                if (modal) {
+                    modal.showModal();
+                }
+                return;
+            }
+
             // First try matching an image directly
             let img = e.target.closest(selectors);
             
