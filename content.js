@@ -64,62 +64,62 @@ window.CONTENT = {
         scrollHint: 'start your scrolling adventure ↓',
         // First image is the LCP element — rendered eager + high priority (see main.js renderHero).
         images: [
+            {src: "img/alec/alec-los-mochis-city.webp", alt: "Alec in Los Mochis", w: 900, h: 1200},
             {src: "img/alec/alec-pokemon-plushies-pokeball.webp", alt: "Alec Doran-Twyford", w: 900, h: 1200},
-            {src: "img/alec/alec-portrait-garden-archway.webp", alt: "Alec portrait garden archway", w: 903, h: 1200},
-            {src: "img/alec/alec-los-mochis-city.webp", alt: "Alec in Los Mochis", w: 900, h: 1200}
+            {src: "img/alec/alec-portrait-garden-archway.webp", alt: "Alec portrait garden archway", w: 903, h: 1200}
         ]
     },
     profile: {
         tag: "📋 Who I Am",
         name: "Alec Doran-Twyford",
-        tagline: "Lovable nerd · Software Engineer · Welwyn Garden City",
+        tagline: "",
         evolvingNote: "🚧 Like me, this site is a work in progress — it continues to evolve and won't always be perfect. The odd bug, glitch, or typo might sneak through, but it's trying its best anyway. 💜",
         intro: [
-            "Hi, I'm Alec! This little site started as a slide deck I made for myself — a reminder of who I am and what I love. I then realised it could be a fun way to skip some of the small talk and give you a real sense of me from the start.",
-            "So here's the honest (and slightly chaotic) introduction: the facts, the photos, and the bits that make me, me. If you like what you see, my contact details are just a little further down."
+            "Hi, I'm Alec! 👋 A few years ago, after focusing on my career and buying a house 🏠, I decided it was time to start dating. But let's face it: <strong style=\"color: var(--rose-light);\">dating apps suck</strong> 💔, and I noticed people often lost their sense of self in relationships. To stay grounded, I wrote a 'boyfriend application' presentation 📝 listing who I am and what I value. This interactive site 💻 is the evolution of that list.",
+            "This site is a direct extension of me, quirks and nerdy info-dumps 🤓 included. I'm not perfect, but I put real effort into what matters (hopefully you! 😉). If you aren't overwhelmed by the absurdity of this site, you might be the kind of person I'm looking for: a <strong style=\"color: var(--rose-light);\">life partner</strong> 💖 to share in the fun bits, the challenging bits, and everything in between. If you're <strong style=\"color: var(--gold);\">nerdy</strong>, want a family, and enjoy both <strong style=\"color: #80c0ff;\">quiet days at home</strong> ☕ and <strong style=\"color: var(--mint);\">exciting adventures</strong> 🗺️, you might just be it.",
+            "P.S. If I'm not your type, please share this with someone who is, or just send it to a friend for a 'WTF, look what this person made!' 😂",
+            "P.P.S. There are a few easter eggs ✨ hidden around here, see if you can find them! 😉"
         ],
         photo: {src: "img/alec/alec-portrait-terracotta-wall.webp", alt: "Alec Doran-Twyford", w: 900, h: 1200},
         viewPhotosLabel: '⤢ View all photos',
         facts: [
-            {icon: "🚹", label: "Gender", value: "Nerdy Gentleman"},
-            {icon: "❤️", label: "Orientation", value: "Straight"},
+            // Basics & Identity
+            {icon: "🎂", label: "Age", dob: DOB, toast: "Yes, I know, I am an old millennial now! 👴"},
+            {icon: "📏", label: "Height", value: "~5'8\"", toast: "My height might vary throughout the day! 📏"},
+            {icon: "🚹", label: "Gender", value: "Gentleman"},
             {
                 icon: "🗣️",
                 label: "Pronouns",
                 value: [
                     "He / Him ",
                     " They / Them"
-                ]
+                ],
+                toast: "I use they/them to support my non-binary friends and acknowledge your pronouns are what you want them to be! 🗣️"
             },
-            // Age auto-computes from dob at render time (see factValue in
-            // main.js), so it never goes stale.
-            {icon: "🎂", label: "Age", dob: DOB},
-            {icon: "♉", label: "Star sign", value: "Taurus"},
-            {icon: "💼", label: "Profession", value: "Software Engineer"},
+            {icon: "❤️", label: "Orientation", value: "Straight"},
+
+            // Origins & Location
+            {
+                icon: "📍", label: "Living in", value: "Welwyn Garden City", href: "https://www.google.com/maps/place/Welwyn+Garden+City",
+                toast: "Welwyn Garden City — a lovely garden city in Hertfordshire! 🗺️"
+            },
+            {
+                icon: "🪪", label: "Nationality", value: [
+                    "British",
+                    "New Zealander"
+                ],
+                toast: "UK, Australia and New Zealand... before Brexit I could go to Europe too 😒"
+            },
+
+            // Career & Education
+            {icon: "💼", label: "Profession", value: "Software Engineer", toast: "I make computers do the thing! 💻"},
             {
                 icon: "🎓",
                 label: "Education",
                 value: "BSc Computer Science"
             },
-            {
-                icon: "🌍", label: "Nationality", value: [
-                    "British",
-                    "New Zealander"
-                ]
-            },
-            {
-                icon: "📍", label: "Living in", value: "Welwyn Garden City", href: "https://www.google.com/maps/place/Welwyn+Garden+City"
-            },
-            {icon: "🏙️", label: "Hometown", value: "From London"},
-            {icon: "📏", label: "Height", value: "~5'8\""},
-            {icon: "🌱", label: "Politics", value: "Liberal / Left"},
-            {icon: "😌", label: "Religion", value: "Atheist"},
-            {
-                icon: "👶", label: "Kids", value: [
-                    "Want kids",
-                    "none yet"
-                ]
-            },
+
+            // Relationships & Family
             {
                 icon: "💞", label: "Looking for", value: [
                     "Long-term",
@@ -127,17 +127,21 @@ window.CONTENT = {
                 ]
             },
             {
-                icon: "🍷", label: "Drinking & smoking", value: [
-                    "Drinks sometimes",
-                    "never smokes"
+                icon: "👶", label: "Kids", value: [
+                    "Want kids",
+                    "none yet"
                 ]
             },
+
+            // Lifestyle & Beliefs
+            {icon: "🌱", label: "Politics", value: "Liberal / Left"},
+            {icon: "😌", label: "Religion", value: "Atheist"},
+            {icon: "🍷", label: "Drinking", value: "Social drinker"}
         ]
     }, contact: {
         tag: "💬 How to Get in Touch",
         heading: "Shoot Your Shot",
-        lead: "I prefer not to share my phone number upfront — but reach out through any of these and you'll get a hold of me.",
-        note: "⚔️ It's dangerous to go alone! Take this:",
+        lead: "You've made it to the contact section, do you want to shoot your shot?\n\nI've worked to make this as easy as possible: pick your <span class=\"text-green\">adventure</span>, answer a few <span class=\"text-blue\">ice breakers</span>, set your rough <span class=\"text-red\">location</span>, and leave the rest to me!",
         emailTemplate: { subject: "RE: Alec Dating Application", body: "Hi Alec! I'm ready to shoot my shot.\n\nFor our first adventure, I'd love to do: …" },
         links: [
             {
@@ -185,13 +189,12 @@ window.CONTENT = {
        so a match can reply straight away. Add to `questions` to grow the deck —
        no code changes needed. */
     prompts: {
-        intro: "Not sure how to break the ice? Here are a few questions I'd love you to answer — pick the ones that spark something and send them my way. 🃏",
         count: 3,
         shuffleLabel: "Shuffle the deck",
-        answerLabel: "Email me your answers",
+        answerLabel: "Email me your responses",
         email: "date@alec.today",
-        emailSubject: "My answers to Alec's questions 🎮❤️",
-        emailIntro: "Hi Alec! Here are my answers to a few of your questions:",
+        emailSubject: "My responses to Alec's questions 🎮❤️",
+        emailIntro: "Hi Alec!\nHere are my responses to your questions:",
         questions: [
             "What are your top three favourite countries — and what made them special?",
             "If you had to pick a favourite god or goddess, who would it be and why?",
@@ -582,9 +585,14 @@ window.CONTENT = {
         }, dates: {
             tag: "🗺️ Date Ideas",
             tagClass: "tag-purple",
-            heading: "Choose Our First Adventure",
+            heading: "Choose your own adventure",
             lead: "Tell me your rough location and what you'd be up for trying — I'll sort out a time and a place.",
             blocks: [
+                {
+                    type: "locationInput",
+                    label: "What is your rough location?",
+                    placeholder: "e.g. Postcode, town, or train station"
+                },
                 {
                     type: "dateCards", cards: [
                         {

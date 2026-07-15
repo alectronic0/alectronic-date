@@ -163,7 +163,7 @@
     const tagHtml = (t) => {
         const label = typeof t === 'string' ? t : t.label;
         const variant = typeof t === 'string' ? '' : (t.variant || '');
-        return `<span class="tag-item ${variant}">${flagify(label)}</span>`;
+        return `<span class="tag-item ${variant}" data-label="${esc(label)}">${flagify(label)}</span>`;
     };
 
     const renderValueCard = (c) =>
@@ -182,6 +182,15 @@
     /* ── block renderers (each returns an HTML string) ── */
     const blocks = {
         paragraph: (b) => `<p>${b.html ? b.html : esc(b.text)}</p>`,
+
+        locationInput: (b) =>
+            `<div class="location-input-container">` +
+            `<label for="rough-location">${esc(b.label || 'Your rough location:')}</label>` +
+            `<div class="location-input-wrapper">` +
+            `<input type="text" id="rough-location" placeholder="${esc(b.placeholder || 'e.g. Postcode, town, or train station')}" autocomplete="off">` +
+            `<div id="location-suggestions" class="location-suggestions"></div>` +
+            `</div>` +
+            `</div>`,
 
         heading: (b) => `<h3>${esc(b.text)}</h3>`,
 
@@ -358,7 +367,10 @@
                         `<div class="date-card">${img(c.src, c.alt)}<div class="date-card-body"><h3>${esc(
                             c.title
                         )}</h3><div class="date-pills">${c.pills
-                            .map((p) => `<button type="button" class="pill date-idea-pill" data-idea="${esc(p)}">${esc(p)}</button>`)
+                            .map((p) => {
+                                const isSelected = p === "☕ Coffee & Walk";
+                                return `<button type="button" class="pill date-idea-pill${isSelected ? ' selected' : ''}" data-idea="${esc(p)}">${esc(p)}</button>`;
+                            })
                             .join('')}</div></div></div>`
                 )
                 .join('')}</div>`,
@@ -629,10 +641,91 @@
         if (!C || !C.profile) return;
         const p = C.profile;
         setHtml('[data-profile="name"]', esc(p.name) + headingLink('about', p.name));
-        setText('[data-profile="tagline"]', p.tagline);
-        setHtml('[data-profile="intro"]', p.intro.map((t) => `<p>${esc(t)}</p>`).join(''));
+        const taglineEl = document.querySelector('[data-profile="tagline"]');
+        if (taglineEl) {
+            if (p.tagline) {
+                taglineEl.textContent = p.tagline;
+                taglineEl.style.display = '';
+            } else {
+                taglineEl.textContent = '';
+                taglineEl.style.display = 'none';
+            }
+        }
+        setHtml('[data-profile="intro"]', p.intro.map((t) => `<p>${t}</p>`).join(''));
         setHtml('[data-profile="photo"]', img(p.photo.src, p.photo.alt, '', { w: p.photo.w, h: p.photo.h }));
         setHtml('[data-profile="facts"]', p.facts.map(factHtml).join(''));
+    }
+
+    function rainEmoji(emoji) {
+        for (let i = 0; i < 15; i++) {
+            const el = document.createElement('div');
+            el.className = 'emoji-rain-drop';
+            el.textContent = emoji;
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.animationDelay = Math.random() * 0.8 + 's';
+            el.style.fontSize = (1.2 + Math.random() * 0.8) + 'rem';
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 2600);
+        }
+    }
+
+    let activeFactToast = null;
+    function showFactToast(message) {
+        if (activeFactToast) {
+            activeFactToast.remove();
+            activeFactToast = null;
+        }
+        const toast = document.createElement('div');
+        toast.className = 'fact-toast';
+        toast.innerHTML = `<span>${esc(message)}</span>`;
+        document.body.appendChild(toast);
+        activeFactToast = toast;
+
+        requestAnimationFrame(() => toast.classList.add('show'));
+
+        setTimeout(() => {
+            if (activeFactToast === toast) {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    if (toast.parentNode) toast.remove();
+                    if (activeFactToast === toast) activeFactToast = null;
+                }, 400);
+            }
+        }, 4000);
+    }
+
+    function initFactClicks() {
+        const container = document.querySelector('[data-profile="facts"]');
+        if (container) {
+            container.addEventListener('click', (e) => {
+                const factEl = e.target.closest('.fact');
+                if (!factEl) return;
+                const iconEl = factEl.querySelector('.fact-icon');
+                if (!iconEl) return;
+                const emoji = iconEl.textContent.trim();
+                if (emoji) {
+                    rainEmoji(emoji);
+                }
+                const toastMsg = factEl.getAttribute('data-toast');
+                if (toastMsg) {
+                    showFactToast(toastMsg);
+                }
+            });
+        }
+
+        // Global delegate for clicking any tag-item chip
+        document.body.addEventListener('click', (e) => {
+            const tagEl = e.target.closest('.tag-item');
+            if (!tagEl) return;
+            const label = tagEl.getAttribute('data-label');
+            if (label) {
+                const m = label.match(/^(\p{Extended_Pictographic})/u);
+                const emoji = m ? m[1] : '';
+                if (emoji) {
+                    rainEmoji(emoji);
+                }
+            }
+        });
     }
 
     // Age auto-calculates from a fact's `dob` (YYYY-MM-DD) so it's always
@@ -658,19 +751,20 @@
                 : esc(text);
         if (f.dob) {
             const birthday = new Date(f.dob).toLocaleDateString('en-GB', {day: 'numeric', month: 'long'});
-            return `<span class="fact-value">${linkify(`${calcAge(f.dob)} · ${birthday}`)}</span>`;
+            return `<span class="fact-value">${linkify(`${calcAge(f.dob)} (${birthday})`)}</span>`;
         }
         const vals = Array.isArray(f.value) ? f.value : [f.value];
         return `<span class="fact-value">${vals
             .map((v) => linkify(String(v).trim()))
-            .join('<span class="fact-sep" aria-hidden="true"> · </span>')}</span>`;
+            .join('<span class="fact-sep" aria-hidden="true"> / </span>')}</span>`;
     }
 
     // Each fact is a compact Bumble-style chip: icon + value. The label isn't
     // shown (the icon carries it) but stays for screen readers, plus a title
     // tooltip for mouse users.
     function factHtml(f) {
-        return `<span class="fact" title="${esc(f.label)}"><span class="fact-icon" aria-hidden="true">${esc(
+        const toastAttr = f.toast ? ` data-toast="${esc(f.toast)}"` : '';
+        return `<span class="fact"${toastAttr} title="${esc(f.label)}"><span class="fact-icon" aria-hidden="true">${esc(
             f.icon
         )}</span><span class="sr-only">${esc(f.label)}: </span>${factValue(f)}</span>`;
     }
@@ -709,6 +803,8 @@
         // links; renderPrompts() fills this mount afterwards.
         const withPrompts = sel === '[data-connect="contact"]' && C.prompts;
         const promptsMount = withPrompts ? '<div class="prompt-block" data-prompts="root"></div>' : '';
+        const withAdventures = sel === '[data-connect="contact"]';
+        const adventuresMount = withAdventures ? '<div class="selected-adventures-block" data-adventures="root"></div>' : '';
 
         let links = data.links && data.links.length ? data.links : (C.contact ? C.contact.links : []);
         // The prompts' "Email me your answers" button is the email path on this
@@ -720,8 +816,9 @@
         const html =
             (data.tag ? `<div class="section-tag tag-purple">${esc(data.tag)}</div>` : '') +
             `<h2>${esc(data.heading)}${headingLink(anchor, data.heading)}</h2>` +
-            `<p class="lead">${esc(data.lead)}</p>` +
+            `<p class="lead">${(data.lead || '').replace(/\n/g, '<br>')}</p>` +
             (data.note ? `<p class="contact-note">${esc(data.note)}</p>` : '') +
+            adventuresMount +
             promptsMount +
             `<div class="contact-links">${links.map(linkHtml).join('')}</div>`;
         setHtml(sel, html);
@@ -836,15 +933,26 @@
         return m ? m.href.replace(/^mailto:/i, '').split('?')[0] : '';
     };
 
-    // A mailto: whose body lists the given questions with room to answer.
-    const promptMailto = (p, questions) => {
+    const getCompiledBody = (questions) => {
+        const p = C.prompts || {};
         const selectedAdventures = Array.from(document.querySelectorAll('.date-idea-pill.selected'))
                                         .map(el => el.getAttribute('data-idea'));
-        const advPS = selectedAdventures.length 
-            ? `\n\nP.S. For our first adventure, I'm thinking: ${selectedAdventures.join(', ')}!` 
-            : '';
+        const locationVal = document.getElementById('rough-location') ? document.getElementById('rough-location').value.trim() : '';
+        let locText = '';
+        if (locationVal) {
+            const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationVal)}`;
+            locText = `My rough location is: ${locationVal} (${mapLink})\n\n`;
+        }
+        const advPS = `P.S. For our first adventure, I'm thinking:\n` + 
+            (selectedAdventures.length ? selectedAdventures.map(a => `- ${a}`).join('\n') : '- 🫣 Surprise me!');
         const intro = p.emailIntro ? p.emailIntro + '\n\n' : '';
-        const body = intro + questions.map((q, i) => `${i + 1}. ${q}\n\n\n`).join('') + advPS;
+        const questionsText = questions.map((q, i) => `${i + 1}. ${q}\n\n`).join('').trim();
+        return intro + locText + questionsText + '\n\n' + advPS;
+    };
+
+    // A mailto: whose body lists the given questions with room to answer.
+    const promptMailto = (p, questions) => {
+        const body = getCompiledBody(questions);
         const subject = encodeURIComponent(p.emailSubject || document.title);
         return `mailto:${promptEmail(p)}?subject=${subject}&body=${encodeURIComponent(body)}`;
     };
@@ -855,19 +963,96 @@
     function drawPrompts(forceShuffle = true) {
         if (!C || !C.prompts) return;
         const p = C.prompts;
+        const count = p.count || 3;
+
         if (forceShuffle || !currentPromptPicks.length) {
-            currentPromptPicks = sample(p.questions || [], p.count || 3);
+            const allPool = p.questions || [];
+
+            // Initialize if empty
+            if (!currentPromptPicks.length) {
+                const initial = sample(allPool, count);
+                currentPromptPicks = initial.map(q => ({ text: q, held: false }));
+            } else {
+                // Re-roll the non-held ones
+                const currentTexts = currentPromptPicks.map(item => item.text);
+                const availablePool = allPool.filter(q => !currentTexts.includes(q));
+                const shuffledPool = sample(availablePool, availablePool.length);
+
+                currentPromptPicks = currentPromptPicks.map(item => {
+                    if (item.held) return item; // Keep held
+                    if (shuffledPool.length > 0) {
+                        return { text: shuffledPool.pop(), held: false };
+                    }
+                    return item; // Fallback
+                });
+            }
+        }
+
+        // Draw the cards (always draw to update hold buttons, disabled states, and active classes)
+        const heldCount = currentPromptPicks.filter(item => item.held).length;
+        const container = document.querySelector('[data-prompts="cards"]');
+        
+        if (container && container.querySelectorAll('.prompt-card').length === count) {
+            // Incremental update to only animate cards whose text actually changes
+            const existingCards = container.querySelectorAll('.prompt-card');
+            currentPromptPicks.forEach((item, i) => {
+                const card = existingCards[i];
+                const qSpan = card.querySelector('.prompt-q');
+                const holdBtn = card.querySelector('.prompt-hold-btn');
+                const isHeld = item.held;
+                const canHold = isHeld || heldCount < (count - 1);
+
+                const oldText = qSpan.textContent;
+                const newText = item.text;
+
+                if (oldText !== newText) {
+                    qSpan.textContent = newText;
+                    // Trigger reflow to restart CSS fade-in animation
+                    card.style.animation = 'none';
+                    void card.offsetWidth;
+                    card.style.animation = '';
+                }
+
+                if (isHeld) {
+                    card.classList.add('active');
+                    holdBtn.classList.add('active');
+                    holdBtn.textContent = '🔒 Held';
+                } else {
+                    card.classList.remove('active');
+                    holdBtn.classList.remove('active');
+                    holdBtn.textContent = '🔓 Hold';
+                }
+
+                if (canHold) {
+                    holdBtn.removeAttribute('disabled');
+                    holdBtn.removeAttribute('title');
+                } else {
+                    holdBtn.setAttribute('disabled', 'true');
+                    holdBtn.setAttribute('title', 'Cannot hold all questions');
+                }
+            });
+        } else if (container) {
+            // Initial render
             const cards = currentPromptPicks
-                .map(
-                    (q, i) =>
-                        `<li class="prompt-card"><span class="prompt-num">${i + 1}</span>` +
-                        `<span class="prompt-q">${esc(q)}</span></li>`
-                )
+                .map((item, i) => {
+                    const isHeld = item.held;
+                    const canHold = isHeld || heldCount < (count - 1);
+                    const activeClass = isHeld ? ' active' : '';
+                    const disabledAttr = canHold ? '' : ' disabled title="Cannot hold all questions"';
+                    return `<li class="prompt-card${activeClass}" data-index="${i}">` +
+                        `<span class="prompt-num">${i + 1}</span>` +
+                        `<span class="prompt-q">${esc(item.text)}</span>` +
+                        `<button type="button" class="prompt-hold-btn${activeClass}" ${disabledAttr}>` +
+                        `${isHeld ? '🔒 Held' : '🔓 Hold'}` +
+                        `</button>` +
+                        `</li>`;
+                })
                 .join('');
             setHtml('[data-prompts="cards"]', cards);
         }
+
         const answer = document.querySelector('.prompt-answer');
-        if (answer) answer.setAttribute('href', promptMailto(p, currentPromptPicks));
+        if (answer) answer.setAttribute('href', promptMailto(p, currentPromptPicks.map(item => item.text)));
     }
 
     function renderPrompts() {
@@ -876,12 +1061,16 @@
         if (!document.querySelector('[data-prompts="root"]')) return; // no mount → nothing to do
         const html =
             (p.intro ? `<p class="prompt-intro">${esc(p.intro)}</p>` : '') +
+            `<div class="prompt-header-action">` +
+            `<button type="button" class="prompt-shuffle"><i class="prompt-icon" aria-hidden="true">🃏</i>` +
+            `<span>${esc(p.shuffleLabel || 'Shuffle')}</span></button>` +
+            `</div>` +
             `<ol class="prompt-cards" data-prompts="cards"></ol>` +
             `<div class="prompt-actions">` +
-            `<button type="button" class="prompt-shuffle"><i class="prompt-icon" aria-hidden="true">🔀</i>` +
-            `<span>${esc(p.shuffleLabel || 'Shuffle')}</span></button>` +
             `<a class="prompt-answer" href="#"><i class="prompt-icon" aria-hidden="true">✉️</i>` +
-            `<span>${esc(p.answerLabel || 'Email me your answers')}</span></a>` +
+            `<span>${esc(p.answerLabel || 'Email me your responses')}</span></a>` +
+            `<button type="button" class="prompt-copy-btn"><i class="prompt-icon" aria-hidden="true">📋</i>` +
+            `<span>Copy responses</span></button>` +
             `</div>`;
         setHtml('[data-prompts="root"]', html);
         drawPrompts();
@@ -890,40 +1079,288 @@
     function initPrompts() {
         const btn = document.querySelector('.prompt-shuffle');
         if (!btn || btn._listenerAttached) return;
-        btn.addEventListener('click', () => drawPrompts(true));
+        
+        btn.addEventListener('click', () => {
+            rainEmoji('🃏');
+            drawPrompts(true);
+        });
+
+        // Delegate Hold button clicks
+        const cardsContainer = document.querySelector('[data-prompts="cards"]');
+        if (cardsContainer) {
+            cardsContainer.addEventListener('click', (e) => {
+                const holdBtn = e.target.closest('.prompt-hold-btn');
+                if (!holdBtn || holdBtn.disabled) return;
+
+                const card = holdBtn.closest('.prompt-card');
+                if (!card) return;
+
+                const idx = parseInt(card.getAttribute('data-index'), 10);
+                if (currentPromptPicks[idx]) {
+                    currentPromptPicks[idx].held = !currentPromptPicks[idx].held;
+                    drawPrompts(false); // Update button states and classes
+                }
+            });
+        }
+
+        // Copy responses button event listener
+        const copyBtn = document.querySelector('.prompt-copy-btn');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                const body = getCompiledBody(currentPromptPicks.map(item => item.text));
+                navigator.clipboard.writeText(body).then(() => {
+                    const span = copyBtn.querySelector('span');
+                    const origText = span.textContent;
+                    span.textContent = 'Copied! ✅';
+                    const prevBorder = copyBtn.style.borderColor;
+                    copyBtn.style.borderColor = 'var(--gold)';
+                    setTimeout(() => {
+                        span.textContent = origText;
+                        copyBtn.style.borderColor = prevBorder;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy text:', err);
+                });
+            });
+        }
+
         btn._listenerAttached = true;
+    }
+
+    function renderSelectedAdventures() {
+        const mount = document.querySelector('[data-adventures="root"]');
+        if (!mount) return;
+
+        const selected = Array.from(document.querySelectorAll('.date-idea-pill.selected'))
+                              .map(el => el.getAttribute('data-idea'));
+
+        const locationInput = document.getElementById('rough-location');
+        const locationVal = locationInput ? locationInput.value.trim() : '';
+
+        let locHtml = '';
+        if (locationVal) {
+            const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationVal)}`;
+            locHtml = `
+                <div class="picked-location-section">
+                    <div class="picked-location-row">
+                        <span class="location-icon">📍</span>
+                        <strong>Rough Location:</strong>
+                        <a href="${esc(mapLink)}" target="_blank" rel="noopener" class="location-link">${esc(locationVal)}</a>
+                        <button type="button" class="change-location-btn">Change location ⬆️</button>
+                    </div>
+                </div>
+            `;
+        } else {
+            locHtml = `
+                <div class="picked-location-section empty-location-prompt">
+                    <div class="picked-location-row" style="color: var(--muted); font-size: 0.82rem;">
+                        <span class="location-icon">📍</span>
+                        <span>No location entered yet.</span>
+                        <button type="button" class="change-location-btn" style="color: var(--gold); border-color: var(--gold); background: rgba(230, 169, 121, 0.05); margin-left: 8px;">Add location ⬆️</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        let listContent = '';
+        if (selected.length > 0) {
+            listContent = `
+                <div class="adventure-chips">
+                    ${selected.map(item => `
+                        <span class="adventure-chip">
+                            ${esc(item)}
+                            <button type="button" class="remove-adventure-btn" data-idea="${esc(item)}" aria-label="Remove ${esc(item)}">×</button>
+                        </span>
+                    `).join('')}
+                </div>
+            `;
+        } else {
+            listContent = `
+                <p class="no-dates-selected-warning" style="margin: 0; font-size: 0.82rem; color: var(--muted); line-height: 1.5; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 1.2rem; flex-shrink: 0;">😢</span>
+                    <span>No date ideas selected yet! Go scroll up to <a href="#dates" style="color: var(--gold); text-decoration: underline; font-weight: 600;">Date Ideas</a> and pick a few things you'd like to try!</span>
+                </p>
+            `;
+        }
+
+        mount.innerHTML = `
+            <h4 class="picked-adventures-title" style="margin: 0 0 10px;">🗺️ Your Picked Adventures:</h4>
+            ${locHtml}
+            <div class="selected-adventures-list">
+                ${listContent}
+            </div>
+            <div class="change-adventures-row" style="margin-top: 12px; display: flex; justify-content: center;">
+                <button type="button" class="change-adventures-btn">Choose other options? ⬆️</button>
+            </div>
+        `;
+    }
+
+    function updateDatesState() {
+        if (typeof drawPrompts === 'function') {
+            drawPrompts(false); 
+        }
+
+        const selected = Array.from(document.querySelectorAll('.date-idea-pill.selected'))
+                      .map(el => el.getAttribute('data-idea'));
+
+        const emailTemplate = (C && C.contact && C.contact.emailTemplate) || {};
+        const subject = emailTemplate.subject || "RE: Alec Dating Application";
+        const intro = emailTemplate.body || "Hi Alec! I'm ready to shoot my shot.";
+        const locationVal = document.getElementById('rough-location') ? document.getElementById('rough-location').value.trim() : '';
+        let locText = '';
+        if (locationVal) {
+            const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationVal)}`;
+            locText = `My rough location is: ${locationVal} (${mapLink})\n\n`;
+        }
+        const advText = `${intro}\n\n${locText}For our first adventure, I'd love to do:\n` + 
+            (selected.length ? selected.map(a => `- ${a}`).join('\n') : '- 🫣 Surprise me!') + `\n\n`;
+
+        document.querySelectorAll('.contact-btn[href^="mailto:"]').forEach(link => {
+            if (link.classList.contains('prompt-answer')) return; // handled by drawPrompts
+            const base = link.getAttribute('href').split('?')[0];
+            const subj = encodeURIComponent(subject);
+            const body = advText ? `&body=${encodeURIComponent(advText)}` : '';
+            link.setAttribute('href', `${base}?subject=${subj}${body}`);
+        });
+
+        renderSelectedAdventures();
     }
 
     function initDatePills() {
         if (document._datePillsDelegated) return;
+
+        // Handle pill selection
         document.addEventListener('click', (e) => {
             const p = e.target.closest('.date-idea-pill');
             if (!p) return;
-            p.classList.toggle('selected');
-            
-            // Update the prompts mailto link without shuffling
-            if (typeof drawPrompts === 'function') {
-                drawPrompts(false); 
+
+            // Rain emoji when clicking!
+            const m = p.textContent.trim().match(/^(\p{Extended_Pictographic})/u);
+            const emoji = m ? m[1] : '';
+            if (emoji) {
+                rainEmoji(emoji);
             }
-            
-            // Update the main contact mailto links (footer, etc)
-            const selected = Array.from(document.querySelectorAll('.date-idea-pill.selected'))
-                          .map(el => el.getAttribute('data-idea'));
-            
-            const emailTemplate = (C && C.contact && C.contact.emailTemplate) || {};
-            const subject = emailTemplate.subject || "RE: Alec Dating Application";
-            const intro = emailTemplate.body || "Hi Alec! I'm ready to shoot my shot.";
-            const advText = selected.length ? `${intro}\n\nFor our first adventure, I'd love to do: ${selected.join(', ')}!\n\n` : '';
-            
-            document.querySelectorAll('.contact-btn[href^="mailto:"]').forEach(link => {
-                if (link.classList.contains('prompt-answer')) return; // handled by drawPrompts
-                const base = link.getAttribute('href').split('?')[0];
-                const subj = encodeURIComponent(subject);
-                const body = advText ? `&body=${encodeURIComponent(advText)}` : '';
-                link.setAttribute('href', `${base}?subject=${subj}${body}`);
-            });
+
+            p.classList.toggle('selected');
+            updateDatesState();
         });
+
+        // Handle adventure chip removal (delegated)
+        document.addEventListener('click', (e) => {
+            const removeBtn = e.target.closest('.remove-adventure-btn');
+            if (!removeBtn) return;
+
+            const idea = removeBtn.getAttribute('data-idea');
+            const pill = Array.from(document.querySelectorAll('.date-idea-pill'))
+                .find(p => p.getAttribute('data-idea') === idea);
+            if (pill) {
+                pill.classList.remove('selected');
+            }
+            updateDatesState();
+        });
+
+        // Handle change location click (scroll up to input)
+        document.addEventListener('click', (e) => {
+            const changeBtn = e.target.closest('.change-location-btn');
+            if (!changeBtn) return;
+
+            const input = document.getElementById('rough-location');
+            if (input) {
+                input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => input.focus(), 500);
+            }
+        });
+
+        // Handle change adventures click (scroll up to dates section)
+        document.addEventListener('click', (e) => {
+            const changeAdvBtn = e.target.closest('.change-adventures-btn');
+            if (!changeAdvBtn) return;
+
+            const datesSec = document.getElementById('dates');
+            if (datesSec) {
+                datesSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+
         document._datePillsDelegated = true;
+    }
+
+    function initLocationAutocomplete() {
+        const input = document.getElementById('rough-location');
+        const suggestionsBox = document.getElementById('location-suggestions');
+        if (!input || !suggestionsBox) return;
+
+        let debounceTimer;
+        input.addEventListener('input', () => {
+            updateDatesState();
+            clearTimeout(debounceTimer);
+            const query = input.value.trim();
+            if (query.length < 3) {
+                suggestionsBox.innerHTML = '';
+                suggestionsBox.style.display = 'none';
+                return;
+            }
+
+            debounceTimer = setTimeout(() => {
+                const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&addressdetails=1&limit=5&countrycodes=gb,us,nz,ca,au`;
+                
+                fetch(url, {
+                    headers: {
+                        'Accept-Language': 'en'
+                    }
+                })
+                .then(res => res.json())
+                .then(data => {
+                    suggestionsBox.innerHTML = '';
+                    if (data && data.length) {
+                        data.forEach(item => {
+                            const btn = document.createElement('button');
+                            btn.type = 'button';
+                            btn.className = 'suggestion-item';
+                            
+                            const parts = [];
+                            const addr = item.address || {};
+                            const main = addr.road || addr.suburb || addr.quarter || addr.neighbourhood || addr.railway || '';
+                            const city = addr.city || addr.town || addr.village || addr.city_district || '';
+                            const county = addr.county || addr.state || '';
+                            const postcode = addr.postcode || '';
+                            if (main) parts.push(main);
+                            if (city) parts.push(city);
+                            if (county) parts.push(county);
+                            if (postcode) parts.push(postcode);
+                            
+                            const text = parts.length ? parts.join(', ') : item.display_name;
+                            btn.textContent = text;
+                            
+                            btn.addEventListener('click', () => {
+                                input.value = text;
+                                suggestionsBox.innerHTML = '';
+                                suggestionsBox.style.display = 'none';
+                                updateDatesState();
+                            });
+                            suggestionsBox.appendChild(btn);
+                        });
+                        suggestionsBox.style.display = 'block';
+                    } else {
+                        suggestionsBox.style.display = 'none';
+                    }
+                })
+                .catch(err => {
+                    console.error('Error fetching location suggestions:', err);
+                });
+            }, 300);
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!input.contains(e.target) && !suggestionsBox.contains(e.target)) {
+                suggestionsBox.innerHTML = '';
+                suggestionsBox.style.display = 'none';
+            }
+        });
+        
+        input.addEventListener('change', () => {
+            updateDatesState();
+        });
     }
 
     /* ── Floating site soundtrack (Spotify mini-player) ──
@@ -1440,6 +1877,7 @@
             
             // If they clicked inside a card but not exactly on the img, find the image inside that card
             if (!img && e.target.tagName !== 'IMG') {
+                if (e.target.closest('button, a, .pill, .date-idea-pill, input, select, textarea')) return;
                 const card = e.target.closest('.feature, .date-card, .place-card, .interest-card, .labeled-photo-card, .faces-item, .logo-tile');
                 if (card) {
                     img = card.querySelector(selectors);
@@ -1607,12 +2045,12 @@
             newImg.classList.add('active');
             if (oldImg) {
                 oldImg.classList.remove('active');
-                // Remove old image after CSS fade transition (1.5s)
+                // Remove old image after CSS fade transition (0.9s)
                 setTimeout(() => {
                     if (oldImg.parentNode === slot) slot.removeChild(oldImg);
-                }, 1600);
+                }, 1000);
             }
-        }, 5000);
+        }, 2500);
     }
 
     function initStaticContent() {
@@ -1701,11 +2139,14 @@
         initDeepLinks();
         initShare();
         initDatePills();
+        initLocationAutocomplete();
+        updateDatesState();
         initPrompts();
         initLightbox();
         initGallery();
         initCyclingImages();
         initKonami();
+        initFactClicks();
 
         openFromHash();
         window.addEventListener('hashchange', openFromHash);
