@@ -39,7 +39,17 @@ window.CONTENT = {
         tagline: "Loveable nerd, looking for his player 2",
         emoji: "🎮❤️🎮"
     },
-    nav: { menuLabel: 'Menu', ctaText: '💘 Go on a date', links: [ { label: 'Who I Am', href: '#about' }, { label: 'Faces', href: '#faces' }, { label: 'Boyfriend Mode', href: '#boyfriend-mode' }, { label: 'Looking For', href: '#looking-for' }, { label: 'Date Ideas', href: '#dates' }, { label: 'Contact', href: '#contact' }, { label: 'Deep Dive ↓', href: '#deep-dive' } ] },
+    nav: {
+        menuLabel: 'Menu', ctaText: '💘 Go on a date', links: [
+            {label: 'Who I Am', href: '#about'},
+            {label: 'Faces', href: '#faces'},
+            {label: 'Boyfriend Mode', href: '#boyfriend-mode'},
+            {label: 'Looking For', href: '#looking-for'},
+            {label: 'Date Ideas', href: '#dates'},
+            {label: 'Contact', href: '#contact'},
+            {label: 'Deep Dive ↓', href: '#deep-dive'}
+        ]
+    },
     hero: {
         emoji: "🎮❤️🎮",
         headline: "Alec's <span>Dating</span> Application",
@@ -66,7 +76,7 @@ window.CONTENT = {
         images: [
             {src: "img/alec/alec-los-mochis-city.webp", alt: "Alec in Los Mochis", w: 900, h: 1200},
             {src: "img/alec/alec-pokemon-plushies-pokeball.webp", alt: "Alec Doran-Twyford", w: 900, h: 1200},
-            {src: "img/alec/alec-portrait-garden-archway.webp", alt: "Alec portrait garden archway", w: 903, h: 1200}
+            {src: "img/alec/alec-portrait-garden-archway.webp", alt: "Alec portrait garden archway", w: 900, h: 1200}
         ]
     },
     profile: {
@@ -86,7 +96,7 @@ window.CONTENT = {
             // Basics & Identity
             {icon: "🎂", label: "Age", dob: DOB, toast: "Yes, I know, I am an old millennial now! 👴"},
             {icon: "📏", label: "Height", value: "~5'8\"", toast: "My height might vary throughout the day! 📏"},
-            {icon: "🚹", label: "Gender", value: "Gentleman"},
+            {icon: "♂️", label: "Gender", value: "Gentleman"},
             {
                 icon: "🗣️",
                 label: "Pronouns",
@@ -113,11 +123,7 @@ window.CONTENT = {
 
             // Career & Education
             {icon: "💼", label: "Profession", value: "Software Engineer", toast: "I make computers do the thing! 💻"},
-            {
-                icon: "🎓",
-                label: "Education",
-                value: "BSc Computer Science"
-            },
+            {icon: "🎓", label: "Education", value: "BSc Computer Science"},
 
             // Relationships & Family
             {
@@ -134,32 +140,24 @@ window.CONTENT = {
             },
 
             // Lifestyle & Beliefs
-            {icon: "🌱", label: "Politics", value: "Liberal / Left"},
-            {icon: "😌", label: "Religion", value: "Atheist"},
+            {icon: "🏛️", label: "Politics", value: "Liberal / Left"},
+            {icon: "🙏", label: "Religion", value: "Atheist"},
             {icon: "🍷", label: "Drinking", value: "Social drinker"}
         ]
-    }, contact: {
+    },
+    contact: {
         tag: "💬 How to Get in Touch",
         heading: "Shoot Your Shot",
         lead: "You've made it to the contact section, do you want to shoot your shot?\n\nI've worked to make this as easy as possible: pick your <span class=\"text-green\">adventure</span>, answer a few <span class=\"text-blue\">ice breakers</span>, set your rough <span class=\"text-red\">location</span>, and leave the rest to me!",
-        emailTemplate: { subject: "RE: Alec Dating Application", body: "Hi Alec! I'm ready to shoot my shot.\n\nFor our first adventure, I'd love to do: …" },
+        emailTemplate: {subject: "RE: Alec Dating Application", body: "Hi Alec! I'm ready to shoot my shot.\n\nFor our first adventure, I'd love to do: …"},
         links: [
-            {
-                label: "Email", icon: "gmail", href: "mailto:date@alec.today?subject=RE%3A%20Alec%20Dating%20Application", primary: true
-            },
+            {label: "Email", icon: "gmail", href: "mailto:date@alec.today?subject=RE%3A%20Alec%20Dating%20Application", primary: true},
             {label: "Instagram", href: "https://www.instagram.com/alectronic0/"},
             {label: "LinkedIn", href: "https://www.linkedin.com/in/alectronic0/"},
-            {
-                label: "WhatsApp",
-                sublabel: "(coming soon)",
-                icon: "whatsapp",
-                href: "javascript:void(0)",
-                disabled: true
-            },
+            {label: "WhatsApp", sublabel: "(coming soon)", icon: "whatsapp", href: "javascript:void(0)", disabled: true},
             {label: "Telegram", href: "https://t.me/alectronic0"}
         ]
     },
-
     /* ── Share ──
        Pass-it-on block shown under the contact card. Each option names a
        `type` that main.js (buildShareUrl) turns into a share link for the
@@ -208,7 +206,6 @@ window.CONTENT = {
             "What's the best meal you've ever had?",
             "Cats, dogs, or something more exotic?",
             "What does your perfect lazy Sunday look like?",
-            "What's a song or artist you always come back to?",
             "Are you more of a night owl or an early bird?",
             "What's something you're quietly proud of?",
             "What's still left on your bucket list?",
@@ -274,86 +271,34 @@ window.CONTENT = {
        edits needed. `wip: true` adds a 🚧 badge to the button (pair it with
        a `construction` block in the section). */
     accordion: [
-        { type: "heading", text: "Get to know me" },
-        {
-            key: "personality",
-            emoji: "🧬",
-            title: "Personality & Vibe",
-            hint: "— what I'm like to be around",
-            wip: true
-        },
-        {
-            key: "weekInLife",
-            emoji: "📅",
-            title: "A Week in the Life",
-            hint: "— my typical seven days",
-            wip: true
-        },
-        {
-            key: "moments",
-            emoji: "🏆",
-            title: "Notable Moments",
-            hint: "— milestones & adventures"
-        },
+        {type: "heading", text: "Get to know me"},
+        {key: "personality", emoji: "🧬", title: "Personality & Vibe", hint: "— what I'm like to be around", wip: true},
+        {key: "weekInLife", emoji: "📅", title: "A Week in the Life", hint: "— my typical seven days", wip: true},
+        {key: "moments", emoji: "🏆", title: "Notable Moments", hint: "— milestones & adventures"},
         {key: "transparency", emoji: "🌱", title: "Radical Transparency", hint: "— areas of active growth"},
-        {
-            key: "politics",
-            emoji: "🏛️",
-            title: "Politics & Religion",
-            hint: "— where I stand"
-        },
+        {key: "politics", emoji: "🏛️", title: "Politics & Religion", hint: "— where I stand"},
         {key: "dislikes", emoji: "🙅", title: "Gentle Dislikes", hint: "— a preference for calm"},
         {key: "friends", emoji: "👥", title: "Friend Review", hint: "— what they say about me", wip: true},
         {key: "bucketList", emoji: "🎯", title: "Bucket List", hint: "— things I'd love to try"},
-        {
-            key: "goals",
-            emoji: "🚀",
-            title: "Future Goals",
-            hint: "— where I'm headed"
-        },
-        { type: "heading", text: "Hobbies & Interests" },
-        {
-            key: "hobbies",
-            emoji: "✨",
-            title: "Hobbies & Interests",
-            hint: "— things that light me up"
-        },
-        {
-            key: "places",
-            emoji: "✈️",
-            title: "Places — Been & Want to Go",
-            hint: "— stamps & wishlist"
-        },
+        {key: "goals", emoji: "🚀", title: "Future Goals", hint: "— where I'm headed"},
+        {type: "heading", text: "Hobbies & Interests"},
+        {key: "hobbies", emoji: "✨", title: "Hobbies & Interests", hint: "— things that light me up"},
+        {key: "places", emoji: "✈️", title: "Places — Been & Want to Go", hint: "— stamps & wishlist"},
         {key: "food", emoji: "🍽️", title: "Food", hint: "— the way to my heart"},
         {key: "moviesTV", emoji: "🎬", title: "Movies & TV", hint: "— what I'm watching"},
-        {
-            key: "videoGames",
-            emoji: "🎮",
-            title: "Video Games",
-            hint: "— player one, ready"
-        },
+        {key: "videoGames", emoji: "🎮", title: "Video Games", hint: "— player one, ready"},
         {key: "books", emoji: "📚", title: "Books", hint: "— on my shelf"},
-        {
-            key: "music",
-            emoji: "🎵",
-            title: "Music",
-            hint: "— what's on my playlist"
-        },
-        {
-            key: "podcasts",
-            emoji: "🎙️",
-            title: "Podcasts",
-            hint: "— long-journey listening"
-        },
+        {key: "music", emoji: "🎵", title: "Music", hint: "— what's on my playlist"},
+        {key: "podcasts", emoji: "🎙️", title: "Podcasts", hint: "— long-journey listening"},
         {key: "sports", emoji: "⚽", title: "Sports", hint: "— mostly a spectator"},
-        { type: "heading", text: "DLC - Bonus content" },
+        {type: "heading", text: "DLC - Bonus content"},
         {key: "plantsAnimals", emoji: "🌺", title: "Plants & Creatures", hint: "— a few favourites"},
-        {key: "gifs", emoji: "🎞️", title: "GIFs I Love", hint: "— my life in looping form"}
+        {key: "gifs", emoji: "🎞️", title: "GIFs I Love", hint: "— my life in looping form"},
+        {key: "couples", emoji: "💑", title: "Couple goals", hint: "— couple I aspire my future relationship to be like", wip: true},
     ],
 
     /* ── Mid-page sections (each = blocks[]) ── */
     sections: {
-
         // Rendered inside its deep-dive modal, so no tag/heading here —
         // the modal head already carries the 🏆 title.
         moments: {
@@ -409,7 +354,9 @@ window.CONTENT = {
                     ]
                 }
             ]
-        }, boyfriendMode: {
+        },
+
+        boyfriendMode: {
             tag: "❤️ Boyfriend mode in Action",
             tagClass: "tag-rose",
             heading: "What Dating Me Could Look Like",
@@ -478,7 +425,8 @@ window.CONTENT = {
                     html: '<div style="text-align: center; margin-top: 32px;"><a href="#contact" class="share-btn primary" style="text-decoration: none;">Heard enough? Skip the scroll and jump straight to my contact details ⏭️</a></div>'
                 }
             ]
-        }, lookingFor: {
+        },
+        lookingFor: {
             tag: "📋 Now Hiring: Player 2",
             tagClass: "tag-gold",
             heading: "Job Opening: Player 2 (Permanent Role)",
@@ -582,7 +530,8 @@ window.CONTENT = {
                     html: '<div style="text-align: center; margin-top: 32px;"><a href="#contact" class="share-btn primary" style="text-decoration: none;">Heard enough? Skip the scroll and jump straight to my contact details ⏭️</a></div>'
                 }
             ]
-        }, dates: {
+        },
+        dates: {
             tag: "🗺️ Date Ideas",
             tagClass: "tag-purple",
             heading: "Choose your own adventure",
@@ -676,14 +625,14 @@ window.CONTENT = {
                 },
                 {
                     type: "interestCards", cards: [
-                        { icon: "🛡️", title: "Loyal" },
-                        { icon: "⏰", title: "Punctual" },
-                        { icon: "📅", title: "Organiser & planner" },
-                        { icon: "⚖️", title: "Ambivert" },
-                        { icon: "🤓", title: "Nerdy", subtitle: "(if you didn't realise already)" },
-                        { icon: "🔥", title: "Passionate" },
-                        { icon: "💯", title: "Bit all or nothing" },
-                        { icon: "🦉", title: "Night owl" }
+                        {icon: "🛡️", title: "Loyal"},
+                        {icon: "⏰", title: "Punctual"},
+                        {icon: "📅", title: "Organiser & planner"},
+                        {icon: "⚖️", title: "Ambivert"},
+                        {icon: "🤓", title: "Nerdy", subtitle: "(if you didn't realise already)"},
+                        {icon: "🔥", title: "Passionate"},
+                        {icon: "💯", title: "Bit all or nothing"},
+                        {icon: "🦉", title: "Night owl"}
                     ]
                 }
             ]
@@ -794,7 +743,14 @@ window.CONTENT = {
                                 {src: "img/hobbies/lego-imperial-star-destroyer-built.webp", alt: "A Lego Imperial Star Destroyer I built"},
                                 {src: "img/hobbies/shibari-rope-bondage-torso.webp", alt: "Shibari rope bondage art"}
                             ],
-                            tags: ["🧶 Crochet & Yarn", "🪢 Rope / Shibari", "🏺 Pottery", "🧱 Lego", "🔨 DIY", "✂️ Crafts"]
+                            tags: [
+                                "🧶 Crochet & Yarn",
+                                "🪢 Rope / Shibari",
+                                "🏺 Pottery",
+                                "🧱 Lego",
+                                "🔨 DIY",
+                                "✂️ Crafts"
+                            ]
                         },
                         {
                             icon: "📷", title: "Photography",
@@ -912,7 +868,14 @@ window.CONTENT = {
                                     ]
                                 }
                             ],
-                            tags: ["🌿 Nature", "🏞️ Landscapes", "🍔 Food", "🚁 Aerial", "🌌 Night & Astro", "👤 Portraits"]
+                            tags: [
+                                "🌿 Nature",
+                                "🏞️ Landscapes",
+                                "🍔 Food",
+                                "🚁 Aerial",
+                                "🌌 Night & Astro",
+                                "👤 Portraits"
+                            ]
                         },
                         {
                             icon: "🎮", title: "Fun & Games",
@@ -923,7 +886,12 @@ window.CONTENT = {
                                 {src: "img/hobbies/board-game-collection-in-bag.webp", alt: "My board game collection"},
                                 {src: "img/hobbies/d20-dice-dnd-blue.webp", alt: "Blue D20 D&D die"}
                             ],
-                            tags: ["🎮 Video Games", "🎲 Board Games", "🐉 D&D", "🎱 Pool / Snooker"]
+                            tags: [
+                                "🎮 Video Games",
+                                "🎲 Board Games",
+                                "🐉 D&D",
+                                "🎱 Pool / Snooker"
+                            ]
                         },
                         {
                             icon: "🍜", title: "Food",
@@ -934,7 +902,12 @@ window.CONTENT = {
                                 {src: "img/food/dessert-ice-cream-meringue.webp", alt: "Dessert ice cream meringue"},
                                 {src: "img/food/roast-chicken-sunday-dinner.webp", alt: "Roast chicken Sunday dinner"}
                             ],
-                            tags: ["🍳 Cooking", "🧁 Baking", "🍽️ Eating out", "🫖 Tea"]
+                            tags: [
+                                "🍳 Cooking",
+                                "🧁 Baking",
+                                "🍽️ Eating out",
+                                "🫖 Tea"
+                            ]
                         },
                         {
                             icon: "🏃", title: "Active",
@@ -945,7 +918,12 @@ window.CONTENT = {
                                 {src: "img/hobbies/archery-target-with-arrows.webp", alt: "An archery target with my arrows"},
                                 {src: "img/hobbies/alec-with-fire-spinning-staff.webp", alt: "Me spinning a fire staff"}
                             ],
-                            tags: ["🥾 Countryside walks", "🚴 Cycling", "🏹 Archery", "🔥 Fire & LED Staff"]
+                            tags: [
+                                "🥾 Countryside walks",
+                                "🚴 Cycling",
+                                "🏹 Archery",
+                                "🔥 Fire & LED Staff"
+                            ]
                         },
                         {
                             icon: "📚", title: "Curious & Learning",
@@ -2038,7 +2016,22 @@ window.CONTENT = {
                     ]
                 }
             ]
-        }
+        },
+
+        couples: {
+            blocks: [
+                {
+                    type: "construction",
+                    gif: "img/gifs/xUStFKHmuFPYk.gif",
+                    text: "Fictional or maybe no so fictional couples who I just look and go yup something like that!, Check back soon!"
+                },
+                {
+                    type: "featureGrid", features: [
+
+                    ]
+                }
+            ]
+        },
     },
 
     outro: {
@@ -2046,11 +2039,18 @@ window.CONTENT = {
         heading: "Thanks for Getting This Far!",
         lead: "If you've liked what you've seen, please reach out — I'd love to hear from you and put together a fun first date.",
         links: [
-            { label: "Shoot your shot! 💘", href: "#contact", primary: true }
+            {label: "Shoot your shot! 💘", href: "#contact", primary: true}
         ]
     },
-    deepDive: { tag: '🔬 The Deep Dive', title: 'Everything Else About Me', spoiler: { emoji: '⚠️', title: 'Spoiler Warning', body: "Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story." }, lockedBanner: { emoji: '🔒', title: 'Private Sexy Photos (Do Not Open) 🙅', tagline: 'do you dare? 😉😈🌶️🔥🔞' } },
-    cheekyGag: { title: 'Private Sexy Photos (Do Not Open) 🙅', teaseText: "😳 Seriously?! Do you really think I'd have those just lying around on my dating site…", unlockButton: '🔓🔑 Access sexy photos 😏', punchlineTitle: "You're Cheeky — I Like That!", punchlineBody: "You're cheeky 😉 I like that! If you really do want some fun though, go on — shoot your shot!" },
-    footer: { note: 'Alec Doran-Twyford · Welwyn Garden City · he/him/they/them', credit: 'Powered by Alec + GitHub Pages', emoji: '🎮❤️🎮' },
-    easterEgg: { toastTitle: '1-UP!', toastBody: "It's a secret to everybody.", toastSub: '🍄 +30 lives · you found the cheat code 🎮', emojis: ['❤️', '🍄', '⭐', '🎮'] }
+    deepDive: {tag: '🔬 The Deep Dive', title: 'Everything Else About Me', spoiler: {emoji: '⚠️', title: 'Spoiler Warning', body: "Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story."}, lockedBanner: {emoji: '🔒', title: 'Private Sexy Photos (Do Not Open) 🙅', tagline: 'do you dare? 😉😈🌶️🔥🔞'}},
+    cheekyGag: {title: 'Private Sexy Photos (Do Not Open) 🙅', teaseText: "😳 Seriously?! Do you really think I'd have those just lying around on my dating site…", unlockButton: '🔓🔑 Access sexy photos 😏', punchlineTitle: "You're Cheeky — I Like That!", punchlineBody: "You're cheeky 😉 I like that! If you really do want some fun though, go on — shoot your shot!"},
+    footer: {note: 'Alec Doran-Twyford · Welwyn Garden City · he/him/they/them', credit: 'Powered by Alec + GitHub Pages', emoji: '🎮❤️🎮'},
+    easterEgg: {
+        toastTitle: '1-UP!', toastBody: "It's a secret to everybody.", toastSub: '🍄 +30 lives · you found the cheat code 🎮', emojis: [
+            '❤️',
+            '🍄',
+            '⭐',
+            '🎮'
+        ]
+    }
 };
