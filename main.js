@@ -211,7 +211,15 @@
                         }${
                             c.images && c.images.length
                                 ? `<div class="interest-card-photos">${c.images
-                                      .map((i) => img(i.src, i.alt))
+                                      .map((i, idx) => {
+                                          if (c.images.length > 4 && idx === 3) {
+                                              return `<div class="photo-overlay-container">${img(i.src, i.alt)}<div class="photo-overlay">+${c.images.length - 3}</div></div>`;
+                                          } else if (idx > 3) {
+                                              return img(i.src, i.alt, 'style="display: none;"');
+                                          } else {
+                                              return img(i.src, i.alt);
+                                          }
+                                      })
                                       .join('')}</div>`
                                 : ''
                         }${
