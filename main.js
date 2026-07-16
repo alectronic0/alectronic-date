@@ -357,7 +357,7 @@
             `<div class="feature-grid">${b.features
                 .map(
                     (f) =>
-                        `<div class="feature">${img(f.src, f.alt)}<div class="feature-body">${f.icon ? `<span class="feature-icon">${esc(f.icon)}</span>` : ''}<div>${f.title ? `<strong style="display:block; margin-bottom:4px; font-size:1.05rem;">${esc(f.title)}</strong>` : ''}<span class="feature-text">${esc(f.text)}</span></div></div></div>`
+                        `<div class="feature">${img(f.src, f.alt)}<div class="feature-body" style="gap: 0;"><div>${f.title ? `<strong style="display:block; margin-bottom:4px; font-size:1.05rem;">${f.icon ? `${esc(f.icon)} ` : ''}${esc(f.title)}</strong>` : ''}<span class="feature-text">${esc(f.text)}</span></div></div></div>`
                 )
                 .join('')}</div>`,
 
@@ -1948,9 +1948,11 @@
             if (lightboxTitle) {
                 const section = img.closest('section, dialog');
                 if (section) {
-                    const h2 = section.querySelector('h2');
+                    const h2 = section.querySelector('h2, .deep-modal-title');
                     if (h2) {
                         lightboxTitle.innerHTML = h2.innerHTML;
+                    } else {
+                        lightboxTitle.innerHTML = '';
                     }
                 }
             }

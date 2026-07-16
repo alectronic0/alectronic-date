@@ -272,7 +272,7 @@ window.CONTENT = {
     accordion: [
         {type: "heading", text: "Get to know me"},
         {key: "personality", emoji: "🧬", title: "Personality & Vibe", hint: "— what I'm like to be around", wip: true},
-        {key: "weekInLife", emoji: "📅", title: "A Week in the Life", hint: "— my typical seven days", wip: true},
+        {key: "weekInLife", emoji: "📅", title: "A day in the life of Alec", hint: "— my typical routines", wip: true},
         {key: "moments", emoji: "🏆", title: "Notable Moments", hint: "— milestones & adventures"},
         {key: "transparency", emoji: "🌱", title: "Radical Transparency", hint: "— areas of active growth"},
         {key: "politics", emoji: "🏛️", title: "Politics & Religion", hint: "— where I stand"},
@@ -643,48 +643,93 @@ window.CONTENT = {
                 {
                     type: "construction",
                     gif: "img/gifs/xUStFKHmuFPYk.gif",
-                    text: "The rest — a tour of a typical Alec week, from work to weekend adventures — is still being written. Check back soon!"
+                    text: "This section is still a work in progress! More photos and details coming soon."
                 },
                 {
                     type: "paragraph",
-                    text: "A typical week for me looks a bit like this (photos of me actually doing these things coming soon!):"
+                    html: "<strong>Most days</strong>: sleep, gym <span style=\"font-size: 0.85em; opacity: 0.8;\">(x2-3 week)</span>, work, repeat."
                 },
                 {
-                    type: "interestCards", cards: [
+                    type: "featureGrid", features: [
                         {
                             icon: "😴",
                             title: "Sleep",
-                            body: "Recharging the batteries."
-                        },
-                        {
-                            icon: "💻",
-                            title: "Work",
-                            body: "Getting things done."
+                            text: "Recharging the batteries.",
+                            src: "img/alec/alec-sleep.jpeg",
+                            alt: "Alec sleeping"
                         },
                         {
                             icon: "🏋️‍♂️",
                             title: "Gym",
-                            body: "Staying active and healthy."
+                            text: "Staying active and healthy. Occasionally dying when \"boss\" aka my PT decides I need to increase the weight... meanie.",
+                            src: "img/alec/alec-exhausted-after-gym-workout.webp",
+                            alt: "Alec passed out from working out"
+                        },
+                        {
+                            icon: "💻",
+                            title: "Work",
+                            text: "Doing the tippy-tappy and trying to break production... wait, I mean trying NOT to break production.",
+                            src: "img/gifs/maNB0qAiRVAty.gif",
+                            alt: "Cat typing rapidly"
+                        }
+                    ]
+                },
+                {
+                    type: "paragraph",
+                    html: "<strong>Once a week</strong>: I will play D&D and see friends."
+                },
+                {
+                    type: "featureGrid", features: [
+                        {
+                            icon: "🐉",
+                            title: "Play D&D",
+                            text: "Rolling dice and going on imaginary adventures.",
+                            src: "img/hobbies/d20-dice-dnd-blue.webp",
+                            alt: "Blue d20 D&D dice"
                         },
                         {
                             icon: "🍻",
                             title: "See Friends",
-                            body: "Hanging out and catching up."
-                        },
-                        {
-                            icon: "🐉",
-                            title: "Play D&D",
-                            body: "Rolling dice and going on imaginary adventures."
-                        },
+                            text: "Hanging out and catching up.",
+                            src: "img/alec/alec-seeing-friends.jpg",
+                            alt: "Alec hanging out with friends"
+                        }
+                    ]
+                },
+                {
+                    type: "paragraph",
+                    html: "<strong>Once a month</strong>: going to the office to see the team."
+                },
+                {
+                    type: "featureGrid", features: [
                         {
                             icon: "🚆",
-                            title: "Monthly trip to the London office",
-                            body: "Heading into the city to see the team."
+                            title: "Office Trip",
+                            text: "Heading into the city to see the team.",
+                            src: "img/places-been/deliveroo-office.jpg",
+                            alt: "Deliveroo office interior"
+                        }
+                    ]
+                },
+                {
+                    type: "paragraph",
+                    html: "<strong>Every half a year</strong>: go on a holiday (usually something cultural in the spring/May time, and a relaxing one during the autumn/winter period)."
+                },
+                {
+                    type: "featureGrid", features: [
+                        {
+                            icon: "🌸",
+                            title: "Spring Cultural Trip",
+                            text: "Exploring new places, cultures, and history.",
+                            src: "img/places-been/alec-kimono-torii-gate-japan.webp",
+                            alt: "Alec in kimono at Torii gate in Japan"
                         },
                         {
-                            icon: "🌍",
-                            title: "Adventure out and about",
-                            body: "Exploring new places and trying new things."
+                            icon: "🌴",
+                            title: "Winter Relaxing Holiday",
+                            text: "Recharging the batteries and unwinding.",
+                            src: "img/places-been/alec-infinity-pool-maldives.webp",
+                            alt: "Alec in infinity pool in Maldives"
                         }
                     ]
                 }
@@ -1092,7 +1137,7 @@ window.CONTENT = {
                         },
                     ]
                 },
-                {type: "heading", text: "Daydreaming Of…"},
+                {type: "heading", text: "💭 Daydreaming Of…"},
                 {
                     type: "placeCards", cards: [
                         {
