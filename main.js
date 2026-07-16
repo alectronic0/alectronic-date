@@ -1858,24 +1858,31 @@
         function getCaption(img) {
             const feature = img.closest('.feature');
             if (feature) {
+                const title = feature.querySelector('strong');
                 const text = feature.querySelector('.feature-text');
-                return text ? text.textContent : img.alt;
+                let html = '';
+                if (title) html += '<h3>' + title.innerHTML + '</h3>';
+                if (text) html += '<p>' + text.innerHTML + '</p>';
+                return html || img.alt;
             }
             const labeledPhoto = img.closest('.labeled-photo-card');
             if (labeledPhoto) {
                 const label = labeledPhoto.querySelector('.labeled-photo-label');
-                return label ? label.textContent : img.alt;
+                return label ? label.innerHTML : img.alt;
             }
             const dateCard = img.closest('.date-card');
             if (dateCard) {
                 const title = dateCard.querySelector('h3');
                 const text = dateCard.querySelector('p');
-                return (title ? title.textContent + ' — ' : '') + (text ? text.textContent : img.alt);
+                let html = '';
+                if (title) html += '<h3>' + title.innerHTML + '</h3>';
+                if (text) html += '<p>' + text.innerHTML + '</p>';
+                return html || img.alt;
             }
             const placeCard = img.closest('.place-card');
             if (placeCard) {
                 const title = placeCard.querySelector('h3');
-                return title ? title.textContent : img.alt;
+                return title ? '<h3>' + title.innerHTML + '</h3>' : img.alt;
             }
             return img.alt || '';
         }
@@ -1889,7 +1896,7 @@
             lightboxImg.src = img.currentSrc || img.src;
             lightboxImg.alt = img.alt;
             if (lightboxCaption) {
-                lightboxCaption.textContent = getCaption(img);
+                lightboxCaption.innerHTML = getCaption(img);
             }
         }
 

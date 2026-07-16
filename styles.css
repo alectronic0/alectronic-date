@@ -51,7 +51,7 @@ body {
 a { color: var(--accent-light); text-decoration: none; transition: color 0.15s; }
 a:hover { color: var(--rose-light); }
 
-img { display: block; max-width: 100%; background: white }
+img { display: block; max-width: 100%; }
 
 /* ─── Hero ──────────────────────────────────── */
 .hero {
@@ -1119,16 +1119,22 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
 .lightbox::backdrop { background: transparent; }
 
 .lightbox-figure {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  max-width: 92vw; max-height: 90vh; margin: 0; cursor: default;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  max-width: 92vw; height: calc(70vh + 120px); margin: 0; cursor: default;
 }
 .lightbox-figure img {
-  max-width: 100%; max-height: calc(90vh - 40px);
+  width: 90vw; max-width: 800px; height: 70vh;
   border-radius: 10px; object-fit: contain; cursor: zoom-out;
 }
 .lightbox-caption {
-  color: #fff; margin-top: 12px; font-size: 1.05rem; text-align: center;
-  font-weight: 500;
+  color: #fff; margin-top: 16px; font-size: 1.05rem; text-align: center;
+  font-weight: 500; max-width: 800px;
+}
+.lightbox-caption h3 {
+  margin: 0 0 4px 0; font-size: 1.2rem; color: var(--primary);
+}
+.lightbox-caption p {
+  margin: 0; font-size: 1rem; color: #ddd; line-height: 1.4;
 }
 
 .lightbox-close { position: absolute; top: 18px; right: 26px; background: none; border: none; font-size: 2.2rem; color: var(--muted); cursor: pointer; line-height: 1; z-index: 10; }
