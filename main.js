@@ -837,7 +837,8 @@
         };
         const footerLinks = [
             ...(C.contact.links || []),
-            { label: 'Cookie Settings', icon: '🍪', href: 'javascript:Cookiebot.renew()' }
+            { label: 'Cookie Settings', icon: '🍪', href: 'javascript:Cookiebot.renew()' },
+            { label: 'Cookie Vault', icon: '🍪', href: 'cookies.html' }
         ];
         setHtml('[data-footer="links"]', footerLinks.map(linkHtml).join(''));
     }
