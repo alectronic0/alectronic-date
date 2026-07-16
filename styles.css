@@ -1474,3 +1474,57 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
   font-weight: 600;
 }
 
+/* ─── Cookiebot Custom Styles ───────────────── */
+#CybotCookiebotDialog {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow) !important;
+  font-family: var(--font) !important;
+  color: var(--text) !important;
+}
+#CybotCookiebotDialogBodyContentTitle,
+#CybotCookiebotDialog .CybotCookiebotDialogBodyLevelButton,
+#CybotCookiebotDialog h2,
+#CybotCookiebotDialog h3 {
+  color: var(--text) !important;
+  font-family: var(--font) !important;
+}
+#CybotCookiebotDialogBodyContentText,
+#CybotCookiebotDialogBodyLevelIntro {
+  color: var(--muted) !important;
+  font-family: var(--font) !important;
+}
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll,
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-family: var(--font) !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: background 0.15s, opacity 0.15s !important;
+}
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll:hover,
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection:hover {
+  background: var(--accent-light) !important;
+}
+#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll,
+#CybotCookiebotDialogBodyButtonDecline,
+#CybotCookiebotDialogBodyButtonCustom {
+  background: var(--surface-2) !important;
+  color: var(--muted) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  font-family: var(--font) !important;
+  cursor: pointer !important;
+  transition: color 0.15s, border-color 0.15s !important;
+}
+#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll:hover,
+#CybotCookiebotDialogBodyButtonDecline:hover,
+#CybotCookiebotDialogBodyButtonCustom:hover {
+  color: var(--text) !important;
+  border-color: var(--muted) !important;
+}
+

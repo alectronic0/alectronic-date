@@ -835,7 +835,11 @@
             }
             return `<a href="${esc(l.href)}"${linkTarget(l.href)}>${content}</a>`;
         };
-        setHtml('[data-footer="links"]', C.contact.links.map(linkHtml).join(''));
+        const footerLinks = [
+            ...(C.contact.links || []),
+            { label: 'Cookie Settings', icon: '🍪', href: 'javascript:Cookiebot.renew()' }
+        ];
+        setHtml('[data-footer="links"]', footerLinks.map(linkHtml).join(''));
     }
 
     // The canonical, hash-free URL to share. Falls back to the live domain when
