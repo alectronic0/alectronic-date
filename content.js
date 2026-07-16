@@ -35,7 +35,7 @@ window.CONTENT = {
     meta: {
         domainFallback: 'https://date.alec.today/',
         defaultAlt: 'Alec Doran-Twyford',
-        title: "Alec's Dating Application",
+        title: "Date Alec Today | Alec's Dating Application",
         tagline: "Loveable nerd, looking for his player 2",
         emoji: "🎮❤️🎮"
     },
