@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
   <!-- Consent Mode Defaults -->
-  <script>
+  <script data-cookieconsent="ignore">
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('consent', 'default', {
       'ad_storage': 'denied',
       'ad_user_data': 'denied',
       'ad_personalization': 'denied',
-      'analytics_storage': 'denied'
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500
     });
   </script>
   
   <!-- Cookiebot CMP -->
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="820f6652-0e65-48ca-a9f9-f99af973382f" type="text/javascript" async></script>
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="820f6652-0e65-48ca-a9f9-f99af973382f" data-blockingmode="auto" type="text/javascript"></script>
   
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4Q5KJSLNK"></script>
