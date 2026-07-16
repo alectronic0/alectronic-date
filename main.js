@@ -842,7 +842,7 @@
     // the page is opened from disk (file://) so share links are never broken.
     const shareUrl = () => {
         const here = location.href.split('#')[0];
-        const fallback = (C && C.meta && C.meta.domainFallback) || 'https://date.alectronic.co/';
+        const fallback = (C && C.meta && C.meta.domainFallback) || 'https://date.alec.today/';
         return /^https?:/.test(here) ? here : fallback;
     };
 
@@ -1896,7 +1896,9 @@
             lightboxImg.src = img.currentSrc || img.src;
             lightboxImg.alt = img.alt;
             if (lightboxCaption) {
-                lightboxCaption.innerHTML = getCaption(img);
+                const cap = getCaption(img);
+                lightboxCaption.innerHTML = cap;
+                lightboxCaption.style.display = cap && cap.trim() ? 'block' : 'none';
             }
         }
 

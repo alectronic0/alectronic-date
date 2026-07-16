@@ -1126,9 +1126,17 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
   width: 90vw; max-width: 800px; height: 70vh;
   border-radius: 10px; object-fit: contain; cursor: zoom-out;
 }
+img[src*="a-google-calendar-invite-for-cute-date"] {
+  background: white;
+}
 .lightbox-caption {
+  width: 90vw; max-width: 800px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 16px 20px; box-sizing: border-box;
   color: #fff; margin-top: 16px; font-size: 1.05rem; text-align: center;
-  font-weight: 500; max-width: 800px;
+  font-weight: 500;
 }
 .lightbox-caption h3 {
   margin: 0 0 4px 0; font-size: 1.2rem; color: var(--primary);
