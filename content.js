@@ -384,7 +384,7 @@ window.CONTENT = {
                         {
                             src: "img/boyfriend-mode/writing-a-shared-doc.webp",
                             alt: "Writing a doc",
-                            title: "📊 A Freak in the Spreadsheets",
+                            title: "📊 Freak in the Spreadsheets",
                             text: "Keeping shared docs & spreadsheets for the things that matter to you, and of course, our plans."
                         },
                         {
@@ -440,37 +440,37 @@ window.CONTENT = {
                         {
                             src: "img/looking-for/couple-going-exploring-nature.webp",
                             alt: "A couple exploring nature",
-                            title: "⛰️💚 An Adventurous Heart",
+                            title: "⛰️💚 Adventurous Heart",
                             text: "New places, new food, new cultures — exploring the world one Google Maps pin at a time."
                         },
                         {
                             src: "img/looking-for/couple-watching-movie-together.webp",
                             alt: "A couple watching a movie",
-                            title: "🛋️💜 A Cosy Soul",
+                            title: "🛋️💜 Cosy Soul",
                             text: "A slow night in. A film on, blankets, snacks, and absolutely nowhere we need to be."
                         },
                         {
                             src: "img/looking-for/couple-playing-video-games.webp",
                             alt: "A couple gaming",
-                            title: "🎮💛 A Playful Spirit",
+                            title: "🎮💛 Playful Spirit",
                             text: "Controller in hand — competitive or co-op. Board games, fantasy, anime, sci-fi… I'll happily dive into your world if you'll dive into mine."
                         },
                         {
                             src: "img/looking-for/couple-cooking.webp",
                             alt: "A couple cooking",
-                            title: "🎨🧠 A Creative Mind",
+                            title: "🎨🧠 Creative Mind",
                             text: "Making a mess in the kitchen, dancing to the music — I always want to be trying something new, exciting, and fun."
                         },
                         {
                             src: "img/looking-for/couple-enjoying-tea-on-the-couch.webp",
                             alt: "A couple enjoying tea",
-                            title: "🫂🩷 A Safe Space",
+                            title: "🫂🩷 Safe Space",
                             text: "Each other's safe space — no conversation too difficult, no walls up, and the trust that you'll always be listened to and heard."
                         },
                         {
                             src: "img/looking-for/couple-at-the-gym-working-out.webp",
                             alt: "A couple at the gym",
-                            title: "💪❤️ An Ambitious Body",
+                            title: "💪❤️ Ambitious Body",
                             text: "Cheering each other on to be our best selves and always being there when the going gets tough."
                         }
                     ]

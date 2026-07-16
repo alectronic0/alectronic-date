@@ -971,8 +971,17 @@
 
             // Initialize if empty
             if (!currentPromptPicks.length) {
-                const initial = sample(allPool, count);
-                currentPromptPicks = initial.map(q => ({ text: q, held: false }));
+                try {
+                    const savedPicks = JSON.parse(localStorage.getItem('alec-date-prompts'));
+                    if (savedPicks && Array.isArray(savedPicks) && savedPicks.length === count) {
+                        currentPromptPicks = savedPicks;
+                    }
+                } catch(e) {}
+
+                if (!currentPromptPicks.length) {
+                    const initial = sample(allPool, count);
+                    currentPromptPicks = initial.map(q => ({ text: q, held: false }));
+                }
             } else {
                 // Re-roll the non-held ones
                 const currentTexts = currentPromptPicks.map(item => item.text);
@@ -1054,6 +1063,10 @@
 
         const answer = document.querySelector('.prompt-answer');
         if (answer) answer.setAttribute('href', promptMailto(p, currentPromptPicks.map(item => item.text)));
+
+        try {
+            localStorage.setItem('alec-date-prompts', JSON.stringify(currentPromptPicks));
+        } catch(e) {}
     }
 
     function renderPrompts() {
@@ -1132,8 +1145,8 @@
         const mount = document.querySelector('[data-adventures="root"]');
         if (!mount) return;
 
-        const selected = Array.from(document.querySelectorAll('.date-idea-pill.selected'))
-                              .map(el => el.getAttribute('data-idea'));
+        const selected = Array.from(new Set(Array.from(document.querySelectorAll('.date-idea-pill.selected'))
+                              .map(el => el.getAttribute('data-idea'))));
 
         const locationInput = document.getElementById('rough-location');
         const locationVal = locationInput ? locationInput.value.trim() : '';
@@ -1201,8 +1214,8 @@
             drawPrompts(false); 
         }
 
-        const selected = Array.from(document.querySelectorAll('.date-idea-pill.selected'))
-                      .map(el => el.getAttribute('data-idea'));
+        const selected = Array.from(new Set(Array.from(document.querySelectorAll('.date-idea-pill.selected'))
+                      .map(el => el.getAttribute('data-idea'))));
 
         const emailTemplate = (C && C.contact && C.contact.emailTemplate) || {};
         const subject = emailTemplate.subject || "RE: Alec Dating Application";
@@ -1230,6 +1243,28 @@
     function initDatePills() {
         if (document._datePillsDelegated) return;
 
+        // Restore state from localStorage if available
+        try {
+            const savedPills = JSON.parse(localStorage.getItem('alec-date-pills'));
+            if (savedPills && Array.isArray(savedPills)) {
+                document.querySelectorAll('.date-idea-pill').forEach(el => {
+                    const idea = el.getAttribute('data-idea');
+                    if (savedPills.includes(idea)) {
+                        el.classList.add('selected');
+                    } else {
+                        el.classList.remove('selected');
+                    }
+                });
+            }
+            const savedLoc = localStorage.getItem('alec-date-location');
+            if (savedLoc !== null) {
+                const input = document.getElementById('rough-location');
+                if (input) input.value = savedLoc;
+            }
+        } catch(e) {
+            console.warn('Failed to restore state from localStorage', e);
+        }
+
         // Handle pill selection
         document.addEventListener('click', (e) => {
             const p = e.target.closest('.date-idea-pill');
@@ -1242,7 +1277,20 @@
                 rainEmoji(emoji);
             }
 
-            p.classList.toggle('selected');
+            const idea = p.getAttribute('data-idea');
+            const isSelected = p.classList.contains('selected');
+            
+            // Sync all pills with the same idea (e.g. main page and lightbox)
+            document.querySelectorAll('.date-idea-pill').forEach(el => {
+                if (el.getAttribute('data-idea') === idea) {
+                    if (isSelected) {
+                        el.classList.remove('selected');
+                    } else {
+                        el.classList.add('selected');
+                    }
+                }
+            });
+
             updateDatesState();
         });
 
@@ -1252,11 +1300,11 @@
             if (!removeBtn) return;
 
             const idea = removeBtn.getAttribute('data-idea');
-            const pill = Array.from(document.querySelectorAll('.date-idea-pill'))
-                .find(p => p.getAttribute('data-idea') === idea);
-            if (pill) {
-                pill.classList.remove('selected');
-            }
+            document.querySelectorAll('.date-idea-pill').forEach(p => {
+                if (p.getAttribute('data-idea') === idea) {
+                    p.classList.remove('selected');
+                }
+            });
             updateDatesState();
         });
 
@@ -1873,15 +1921,15 @@
             const dateCard = img.closest('.date-card');
             if (dateCard) {
                 const title = dateCard.querySelector('h3');
-                const text = dateCard.querySelector('p');
+                const pills = dateCard.querySelector('.date-pills');
                 let html = '';
                 if (title) html += '<h3>' + title.innerHTML + '</h3>';
-                if (text) html += '<p>' + text.innerHTML + '</p>';
+                if (pills) html += '<div class="date-pills" style="margin-top: 12px;">' + pills.innerHTML + '</div>';
                 return html || img.alt;
             }
             const placeCard = img.closest('.place-card');
             if (placeCard) {
-                const title = placeCard.querySelector('h3');
+                const title = placeCard.querySelector('strong');
                 return title ? '<h3>' + title.innerHTML + '</h3>' : img.alt;
             }
             return img.alt || '';
@@ -1895,9 +1943,30 @@
             if (!img) return;
             lightboxImg.src = img.currentSrc || img.src;
             lightboxImg.alt = img.alt;
+
+            const lightboxTitle = document.querySelector('.lightbox-title');
+            if (lightboxTitle) {
+                const section = img.closest('section, dialog');
+                if (section) {
+                    const h2 = section.querySelector('h2');
+                    if (h2) {
+                        lightboxTitle.innerHTML = h2.innerHTML;
+                    }
+                }
+            }
+
             if (lightboxCaption) {
                 const cap = getCaption(img);
                 lightboxCaption.innerHTML = cap;
+                if (cap && cap.trim()) {
+                    const h3 = lightboxCaption.querySelector('h3');
+                    if (h3) {
+                        const slug = getSlug(img);
+                        if (slug) {
+                            h3.insertAdjacentHTML('beforeend', ` <span class="deep-link" role="button" tabindex="0" data-anchor="${slug}" title="Copy link to this photo">🔗</span>`);
+                        }
+                    }
+                }
                 lightboxCaption.style.display = cap && cap.trim() ? 'block' : 'none';
             }
         }
@@ -1928,7 +1997,51 @@
         lightbox.addEventListener('close', () => {
             lightboxImg.removeAttribute('src');
             if (lightboxCaption) lightboxCaption.textContent = '';
+            if (location.hash) history.replaceState(null, null, ' ');
         });
+
+        function getSlug(img) {
+            const feature = img.closest('.feature');
+            if (feature) {
+                const strong = feature.querySelector('strong');
+                if (strong) return strong.textContent.toLowerCase().replace(/[^a-z0-9]/g, '');
+            }
+            const dateCard = img.closest('.date-card');
+            if (dateCard) {
+                const title = dateCard.querySelector('h3');
+                if (title) return title.textContent.toLowerCase().replace(/[^a-z0-9]/g, '');
+            }
+            const placeCard = img.closest('.place-card');
+            if (placeCard) {
+                const title = placeCard.querySelector('strong');
+                if (title) return title.textContent.toLowerCase().replace(/[^a-z0-9]/g, '');
+            }
+            return img.alt ? img.alt.toLowerCase().replace(/[^a-z0-9]/g, '') : '';
+        }
+
+        function checkHashForLightbox() {
+            const hash = location.hash.replace(/^#/, '');
+            if (!hash) return;
+            
+            // Ignore if the hash points to an actual ID on the page (like #about or a deep-modal)
+            if (document.getElementById(hash)) return;
+
+            const imgs = Array.from(document.querySelectorAll(selectors)).filter(i => !i.classList.contains('flag') && i.tagName === 'IMG');
+            const target = imgs.find(img => {
+                const slug = getSlug(img);
+                return slug && (slug === hash || slug.endsWith(hash));
+            });
+            if (target) {
+                const container = target.closest('dialog') || target.closest('section') || target.closest('.container') || document.body;
+                currentImages = Array.from(container.querySelectorAll(selectors)).filter(i => !i.classList.contains('flag') && i.tagName === 'IMG');
+                currentIndex = currentImages.indexOf(target);
+                showImage(currentIndex);
+                if (!lightbox.open) lightbox.showModal();
+            }
+        }
+
+        window.addEventListener('hashchange', checkHashForLightbox);
+        setTimeout(checkHashForLightbox, 100);
 
         // Delegated so it covers images injected after load.
         document.addEventListener('click', (e) => {
