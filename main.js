@@ -189,6 +189,7 @@
             `<div class="location-input-wrapper">` +
             `<input type="text" id="rough-location" placeholder="${esc(b.placeholder || 'e.g. Postcode, town, or train station')}" autocomplete="off">` +
             `<div id="location-suggestions" class="location-suggestions"></div>` +
+            (b.subtext ? `<div class="location-subtext">${esc(b.subtext)}</div>` : '') +
             `</div>` +
             `</div>`,
 

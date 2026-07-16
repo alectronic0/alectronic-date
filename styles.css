@@ -1318,6 +1318,12 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
   font-weight: 600;
   color: var(--muted);
 }
+.location-subtext {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.4;
+}
 .location-input-wrapper {
   position: relative;
   flex: 1 1 auto;

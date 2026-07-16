@@ -259,8 +259,7 @@ window.CONTENT = {
             {src: "img/alec/alec-fire-staff-spinning-night.webp", alt: "Alec fire staff spinning night", w: 1080, h: 1080},
             {src: "img/alec/alec-exhausted-after-gym-workout.webp", alt: "Alec exhausted after gym workout", w: 1200, h: 900},
             {src: "img/alec/alec-sandwich-lunch-cafe.webp", alt: "Alec sandwich lunch cafe", w: 684, h: 911},
-            {src: "img/alec/alec-times-square-street-selfie.webp", alt: "Alec times square street selfie", w: 683, h: 911},
-            {src: "img/alec/alec-rope-knot-tying-closeup.webp", alt: "Alec rope knot tying closeup", w: 683, h: 911},
+
         ]
     },
 
@@ -540,7 +539,8 @@ window.CONTENT = {
                 {
                     type: "locationInput",
                     label: "What is your rough location?",
-                    placeholder: "e.g. Postcode, town, or train station"
+                    placeholder: "e.g. Postcode, town, or train station",
+                    subtext: "No tracking — I only see your location when you send the email."
                 },
                 {
                     type: "dateCards", cards: [
@@ -2027,7 +2027,12 @@ window.CONTENT = {
                 },
                 {
                     type: "featureGrid", features: [
-
+                        {
+                            src: "https://media1.tenor.com/m/OGqyw4P1bgUAAAAd/fitzsimmons-fitzs.gif",
+                            alt: "Fitzsimmons (Agents of S.H.I.E.L.D.)",
+                            title: "Fitzsimmons (Agents of S.H.I.E.L.D.)",
+                            text: "You know, I realized something. The universe can't stop us. 'Cause we have crossed galaxies, we traveled through time, we survived the bottom of the Atlantic just so we could be together. Now, a love like that, that is stronger than any curse, and you and I, we are unstoppable together."
+                        },
                     ]
                 }
             ]
