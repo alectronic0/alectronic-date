@@ -1248,6 +1248,8 @@
         const selected = Array.from(new Set(Array.from(document.querySelectorAll('.date-idea-pill.selected'))
                       .map(el => el.getAttribute('data-idea'))));
 
+
+
         const emailTemplate = (C && C.contact && C.contact.emailTemplate) || {};
         const subject = emailTemplate.subject || "RE: Alec Dating Application";
         const intro = emailTemplate.body || "Hi Alec! I'm ready to shoot my shot.";
@@ -2310,6 +2312,7 @@
             setText('#nav-burger-label', C.nav.menuLabel);
             if (C.nav.ctaText) {
                 setHtml('#nav-cta-container', `<a href="#contact" class="nav-contact"><span id="nav-cta">${esc(C.nav.ctaText)}</span></a>`);
+                setHtml('#floating-cta-title', esc(C.nav.ctaText));
             }
         }
         if (C.hero) {
@@ -2433,6 +2436,19 @@
         });
     }
 
+    function initFloatingCta() {
+        document.addEventListener('click', (e) => {
+            const cta = e.target.closest('.floating-cta');
+            if (!cta) return;
+            e.preventDefault();
+            const target = document.getElementById('contact');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+                history.pushState(null, '', '#contact');
+            }
+        });
+    }
+
     /* ── boot ── */
     function boot() {
         if (!C) {
@@ -2475,6 +2491,7 @@
         initFactClicks();
         initInfiniteSwipe();
         initCollapsibleCards();
+        initFloatingCta();
 
         openFromHash();
         window.addEventListener('hashchange', openFromHash);

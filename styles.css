@@ -921,6 +921,7 @@ body:has(dialog[open]) { overflow: hidden; }
 .soundtrack {
   position: fixed; right: 16px; bottom: 16px; z-index: 400;
   display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
+  pointer-events: none;
 }
 .soundtrack-panel {
   width: min(340px, calc(100vw - 32px));
@@ -945,9 +946,15 @@ body:has(dialog[open]) { overflow: hidden; }
   font-family: var(--font); font-size: 0.9rem; font-weight: 600; cursor: pointer;
   box-shadow: 0 6px 18px rgba(153, 78, 168, 0.45);
   transition: background 0.2s, transform 0.15s;
+  pointer-events: auto;
 }
 .soundtrack-toggle:hover { background: #ab5cba; transform: translateY(-2px); }
 .soundtrack-toggle span[aria-hidden] { font-size: 1.1rem; line-height: 1; }
+
+/* ─── Floating CTA ──────────────────────────── */
+.floating-cta {
+  display: none !important;
+}
 
 /* ─── Image grids (used inside topic modals) ── */
 .poster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
@@ -1920,6 +1927,47 @@ button.CookiebotWidget-logo::before {
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-bottom: 16px !important;
+  }
+  .floating-cta {
+    display: inline-flex !important;
+    position: fixed;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    width: calc(100% - 136px);
+    max-width: 240px;
+    height: 48px;
+    z-index: 390;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 12px;
+    padding: 8px 16px;
+    box-shadow: 0 4px 16px rgba(153, 78, 168, 0.4);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  }
+  .floating-cta:hover {
+    background: #ab5cba;
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(153, 78, 168, 0.55);
+  }
+  .floating-cta:active {
+    transform: translateX(-50%) translateY(0);
+  }
+  .cta-title {
+    font-size: 1.15rem; /* Make it even slightly larger since there is no badge now! */
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  #CookiebotWidget {
+    left: 12px !important;
+    right: auto !important;
+    bottom: 12px !important;
+  }
+  #nav-cta-container {
+    display: none !important;
   }
 }
 
