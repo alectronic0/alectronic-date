@@ -1913,6 +1913,14 @@ button.CookiebotWidget-logo::before {
     width: 100%;
     max-width: 100%;
   }
+  .section-head {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 16px !important;
+  }
 }
 
 /* ─── Cookiebot Declaration Styles ───────────────── */
