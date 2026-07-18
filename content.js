@@ -153,6 +153,7 @@ window.CONTENT = {
         links: [
             {label: "Email", icon: "gmail", href: "mailto:date@alec.today?subject=RE%3A%20Alec%20Dating%20Application", primary: true},
             {label: "Instagram", href: "https://www.instagram.com/alectronic0/"},
+            {label: "TikTok", href: "https://www.tiktok.com/alectronic0/"},
             {label: "LinkedIn", href: "https://www.linkedin.com/in/alectronic0/"},
             {label: "WhatsApp", sublabel: "(coming soon)", icon: "whatsapp", href: "javascript:void(0)", disabled: true},
             {label: "Telegram", href: "https://t.me/alectronic0"}
