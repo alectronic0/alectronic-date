@@ -652,7 +652,11 @@
                 styleEl.innerHTML = keyframes;
                 
                 const animDuration = n * 3; // 3 seconds per item
-                taglineEl.innerHTML = `${esc(h.taglineStart || "")}<span class="slot-machine"><span class="slot-machine-inner" style="animation-duration: ${animDuration}s">${slots.map(s => `<span>${esc(s)}</span>`).join('')}</span></span><br><span class="hero-tagline-end">${esc(h.taglineEnd || "")}</span>`;
+                let taglineHtml = `${esc(h.taglineStart || "")}<span class="slot-machine"><span class="slot-machine-inner" style="animation-duration: ${animDuration}s">${slots.map(s => `<span>${esc(s)}</span>`).join('')}</span></span>`;
+                if (h.taglineEnd) {
+                    taglineHtml += `<br><span class="hero-tagline-end">${esc(h.taglineEnd)}</span>`;
+                }
+                taglineEl.innerHTML = taglineHtml;
             } else {
                 setText('[data-hero="tagline"]', h.tagline);
             }
