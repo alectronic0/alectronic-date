@@ -1483,48 +1483,277 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
   font-family: var(--font) !important;
   color: var(--text) !important;
 }
+
 #CybotCookiebotDialogBodyContentTitle,
-#CybotCookiebotDialog .CybotCookiebotDialogBodyLevelButton,
 #CybotCookiebotDialog h2,
-#CybotCookiebotDialog h3 {
+#CybotCookiebotDialog h3,
+#CybotCookiebotDialog h4,
+#CybotCookiebotDialogDetailBodyContentTextOverview,
+#CybotCookiebotDialogDetailBodyContentTextAbout,
+#CybotCookiebotDialogDetailBodyContentTextIABv2,
+.CookiebotWidget-header strong {
   color: var(--text) !important;
   font-family: var(--font) !important;
 }
+
 #CybotCookiebotDialogBodyContentText,
-#CybotCookiebotDialogBodyLevelIntro {
+#CybotCookiebotDialogBodyContentText p,
+#CybotCookiebotDialogBodyContentText li,
+#CybotCookiebotDialogBodyLevelIntro,
+.CybotCookiebotDialogDetailBodyContentCookieTypeIntro {
   color: var(--muted) !important;
   font-family: var(--font) !important;
 }
-#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll,
-#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection {
+
+#CybotCookiebotDialogBodyContentText a,
+#CybotCookiebotDialogDetailBodyContentTextAbout a,
+#CybotCookiebotDialogTabContentDetails a {
+  color: var(--accent-light) !important;
+}
+#CybotCookiebotDialogBodyContentText a:hover,
+#CybotCookiebotDialogDetailBodyContentTextAbout a:hover,
+#CybotCookiebotDialogTabContentDetails a:hover {
+  color: var(--rose-light) !important;
+}
+
+/* Scroll Faders to blend with Dark Background */
+.CybotCookiebotFader,
+.CybotCookiebotFaderLeft {
+  background-image: linear-gradient(to right, var(--surface), rgba(33, 20, 32, 0)) !important;
+}
+.CybotCookiebotFaderRight {
+  background-image: linear-gradient(to left, var(--surface), rgba(33, 20, 32, 0)) !important;
+}
+
+/* Tabs Navigation */
+#CybotCookiebotDialogNav {
+  border-bottom: 1px solid var(--border) !important;
+}
+.CybotCookiebotDialogNavItemLink {
+  color: var(--muted) !important;
+  font-family: var(--font) !important;
+  border-bottom: 3px solid transparent !important;
+  transition: all 0.15s ease !important;
+}
+.CybotCookiebotDialogNavItemLink:hover,
+.CybotCookiebotDialogNavItemLink.CybotCookiebotDialogActive {
+  color: var(--text) !important;
+  background-color: var(--surface-2) !important;
+}
+.CybotCookiebotDialogNavItemLink.CybotCookiebotDialogActive {
+  border-bottom-color: var(--accent-light) !important;
+}
+
+/* Custom categories cards inside Details */
+.CookieCard {
+  background: var(--surface-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  margin-bottom: 8px !important;
+}
+.CybotCookiebotDialogDetailBodyContentCookieContainerButton {
+  color: var(--text) !important;
+  font-family: var(--font) !important;
+}
+.CybotCookiebotDialogDetailBulkConsentCount {
+  background: var(--surface-3) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+.CybotCookiebotDialogDetailBodyContentCookieProvider {
+  color: var(--accent-light) !important;
+  font-family: var(--font) !important;
+}
+.CybotCookiebotDialogDetailBodyContentCookieInfoWrapper {
+  background: var(--surface-3) !important;
+  border-left: 3px solid var(--accent-light) !important;
+  border-radius: 4px !important;
+  color: var(--muted) !important;
+}
+
+/* Switches & Sliders styling */
+.CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: var(--surface-3) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 20px !important;
+}
+.CybotCookiebotDialogBodyLevelButtonSlider:before {
+  background-color: var(--muted) !important;
+}
+input:checked + .CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: var(--accent) !important;
+}
+input:checked + .CybotCookiebotDialogBodyLevelButtonSlider:before {
+  background-color: #fff !important;
+}
+.CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled {
+  opacity: 0.5 !important;
+}
+
+/* Accept Buttons (Primary Action) */
+#CybotCookiebotDialogBodyButtonAccept,
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection,
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll {
   background: var(--accent) !important;
   color: #fff !important;
   border: none !important;
-  border-radius: 8px !important;
+  border-radius: 50px !important;
   font-family: var(--font) !important;
   font-weight: 600 !important;
+  padding: 12px 28px !important;
+  box-shadow: 0 4px 14px rgba(153, 78, 168, 0.4) !important;
   cursor: pointer !important;
-  transition: background 0.15s, opacity 0.15s !important;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s !important;
 }
-#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll:hover,
-#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection:hover {
-  background: var(--accent-light) !important;
+#CybotCookiebotDialogBodyButtonAccept:hover,
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection:hover,
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll:hover {
+  background: #ab5cba !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(153, 78, 168, 0.5) !important;
 }
-#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll,
+
+/* Decline & Customize Buttons (Secondary Action) */
 #CybotCookiebotDialogBodyButtonDecline,
+#CybotCookiebotDialogBodyLevelButtonCustomize,
 #CybotCookiebotDialogBodyButtonCustom {
   background: var(--surface-2) !important;
   color: var(--muted) !important;
   border: 1px solid var(--border) !important;
-  border-radius: 8px !important;
+  border-radius: 50px !important;
   font-family: var(--font) !important;
+  font-weight: 600 !important;
+  padding: 12px 28px !important;
   cursor: pointer !important;
-  transition: color 0.15s, border-color 0.15s !important;
+  transition: color 0.15s, border-color 0.15s, background 0.15s, transform 0.15s !important;
 }
-#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll:hover,
 #CybotCookiebotDialogBodyButtonDecline:hover,
+#CybotCookiebotDialogBodyLevelButtonCustomize:hover,
 #CybotCookiebotDialogBodyButtonCustom:hover {
+  color: var(--rose-light) !important;
+  border-color: var(--rose-light) !important;
+  background: var(--surface-3) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Powered By Branding styling */
+#CybotCookiebotDialogPoweredbyCybot svg path {
+  fill: var(--muted-2) !important;
+}
+#CybotCookiebotDialogPoweredbyImage {
+  opacity: 0.5 !important;
+  filter: grayscale(1) !important;
+}
+.CybotExternalLinkArrow {
+  filter: invert(0.8) sepia(0.1) saturate(0.5) hue-rotate(270deg) !important;
+}
+
+/* ─── Cookiebot Widget Overrides ────────────── */
+#CookiebotWidget {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 24px !important;
+  box-shadow: var(--shadow) !important;
+  font-family: var(--font) !important;
   color: var(--text) !important;
-  border-color: var(--muted) !important;
+}
+
+/* Hide default SVG logo inside button widget and show cookie emoji 🍪 */
+button.CookiebotWidget-logo {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  padding: 0 !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+button.CookiebotWidget-logo svg {
+  display: none !important;
+}
+button.CookiebotWidget-logo::before {
+  content: "🍪" !important;
+  font-size: 26px !important;
+  display: block !important;
+  line-height: 1 !important;
+}
+#CookiebotWidget:not(.CookiebotWidget-open):hover {
+  box-shadow: 0 4px 18px rgba(153, 78, 168, 0.4) !important;
+  transform: scale(1.05) !important;
+}
+
+#CookiebotWidget-widgetContent {
+  background-color: var(--surface) !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--border) !important;
+}
+.CookiebotWidget-header {
+  border-bottom: 1px solid var(--border) !important;
+}
+.CookiebotWidget-close svg {
+  fill: var(--muted) !important;
+}
+.CookiebotWidget-close:hover svg {
+  fill: var(--rose-light) !important;
+}
+.CookiebotWidget-body-inner {
+  color: var(--text) !important;
+}
+.CookiebotWidget-consents-list li {
+  color: var(--muted) !important;
+  font-family: var(--font) !important;
+}
+.CookiebotWidget-consents-list li.CookiebotWidget-approved svg {
+  fill: var(--mint) !important;
+}
+.CookiebotWidget-consent-details button {
+  color: var(--accent-light) !important;
+  font-family: var(--font) !important;
+}
+.CookiebotWidget-consent-details-box {
+  background-color: var(--surface-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  color: var(--muted) !important;
+}
+.CookiebotWidget-date,
+.CookiebotWidget-consent-id {
+  color: var(--text) !important;
+}
+.CookiebotWidget-main-logo svg path {
+  fill: var(--muted-2) !important;
+}
+
+#CookiebotWidget-buttons {
+  border-top: 1px solid var(--border) !important;
+}
+#CookiebotWidget-buttons #CookiebotWidget-btn-change {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  font-family: var(--font) !important;
+  box-shadow: 0 4px 12px rgba(153, 78, 168, 0.3) !important;
+  transition: all 0.2s !important;
+}
+#CookiebotWidget-buttons #CookiebotWidget-btn-change:hover {
+  background-color: #ab5cba !important;
+  border-color: #ab5cba !important;
+}
+#CookiebotWidget-buttons #CookiebotWidget-btn-withdraw {
+  background-color: var(--surface-2) !important;
+  border-color: var(--border) !important;
+  color: var(--muted) !important;
+  border-radius: 50px !important;
+  font-family: var(--font) !important;
+  transition: all 0.2s !important;
+}
+#CookiebotWidget-buttons #CookiebotWidget-btn-withdraw:hover {
+  color: var(--rose-light) !important;
+  border-color: var(--rose-light) !important;
+  background-color: var(--surface-3) !important;
 }
 
