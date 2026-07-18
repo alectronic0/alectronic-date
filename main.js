@@ -460,6 +460,22 @@
                 b.title || 'Spotify player'
             )}" width="100%" height="${Number(b.height) || 152}" frameborder="0" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>`,
 
+        testimonialRows: (b) =>
+            `<div class="testimonial-rows">${b.items
+                .map((item, idx) => {
+                    const imgPos = item.imagePosition || (idx % 2 === 0 ? 'left' : 'right');
+                    const imgHtml = item.src ? `<div class="testimonial-img-wrapper">${img(item.src, item.alt)}</div>` : '';
+                    const bodyHtml = `<div class="testimonial-body">
+                        ${item.title ? `<h3>${item.icon ? `${esc(item.icon)} ` : ''}${esc(item.title)}</h3>` : ''}
+                        <p class="testimonial-text">${esc(item.text)}</p>
+                        ${item.signature ? `<span class="testimonial-signature">${esc(item.signature)}</span>` : ''}
+                    </div>`;
+                    return `<div class="testimonial-row img-${imgPos}">
+                        ${imgPos === 'left' ? imgHtml + bodyHtml : bodyHtml + imgHtml}
+                    </div>`;
+                })
+                .join('')}</div>`,
+
         // 🚧 placeholder banner for sections that aren't written yet.
         construction: (b) =>
             '<div class="construction-banner">' +
@@ -1906,9 +1922,20 @@
         let currentIndex = -1;
 
         const selectors =
-            '[data-zoom], .mosaic-strip img, .gallery-grid img, .poster-grid img, .photo-grid img, .labeled-photo-card img, .gif-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img, .cheeky-gallery img';
+            '[data-zoom], .mosaic-strip img, .gallery-grid img, .poster-grid img, .photo-grid img, .labeled-photo-card img, .gif-grid img, .feature img, .date-card img, .place-card img, .logo-tile img, .interest-card-photos img, .cheeky-gallery img, .testimonial-img-wrapper img';
 
         function getCaption(img) {
+            const testimonial = img.closest('.testimonial-row');
+            if (testimonial) {
+                const title = testimonial.querySelector('h3');
+                const text = testimonial.querySelector('.testimonial-text');
+                const signature = testimonial.querySelector('.testimonial-signature');
+                let html = '';
+                if (title) html += '<h3>' + title.innerHTML + '</h3>';
+                if (text) html += '<p>' + text.innerHTML + '</p>';
+                if (signature) html += '<div class="testimonial-signature" style="margin-top: 10px; font-weight:600; color:var(--accent-light);">' + signature.innerHTML + '</div>';
+                return html || img.alt;
+            }
             const feature = img.closest('.feature');
             if (feature) {
                 const title = feature.querySelector('strong');

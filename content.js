@@ -1834,6 +1834,20 @@ window.CONTENT = {
                     type: "construction",
                     gif: "img/gifs/xUStFKHmuFPYk.gif",
                     text: "The rest — collecting reviews from my friends to see what they say behind my back — is still being written. Check back soon! 🕵️‍♂️"
+                },
+                {
+                    type: "testimonialRows",
+                    items: [
+                        {
+                            src: "img/friends/minty.jpg",
+                            alt: "Minty",
+                            icon: "💪",
+                            title: "Someone you can count on",
+                            text: "Alec is a no. 1 person to turn to. I know he will always be there for whatever you need. He's helpful and reliable. Always calm and a problem solver. I love his gentle, caring side. He's a keeper.",
+                            signature: '— Minty aka. "Final Boss", Personal Trainer & Friend',
+                            imagePosition: "left"
+                        }
+                    ]
                 }
             ]
         },
