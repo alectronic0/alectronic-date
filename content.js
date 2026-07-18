@@ -58,7 +58,7 @@ window.CONTENT = {
         taglineSlots: [
             "my nerdy other half 🤓",
             "a gym buddy 🏋️‍♂️",
-            "a travel partner ✈️",
+            "a travel companion ✈️",
             "a taste tester 🍕",
             "a D&D party member 🎲",
             "a board game rival ♟️",
@@ -69,9 +69,9 @@ window.CONTENT = {
             "a partner in crime 🕵️‍♂️",
             "my nerdy other half 🤓"
         ],
-        taglineEnd: "No swiping required... okay, maybe a bit of scrolling.",
+        taglineEnd: "",
         cta: "Come find out more ↓",
-        scrollHint: 'start your scrolling adventure ↓',
+        scrollHint: 'start your adventure ↓',
         // First image is the LCP element — rendered eager + high priority (see main.js renderHero).
         images: [
             {src: "img/alec/alec-los-mochis-city.webp", alt: "Alec in Los Mochis", w: 900, h: 1200},

@@ -242,7 +242,9 @@ section:last-of-type { border-bottom: none; }
 .section-head {
   position: sticky; top: var(--nav-h); z-index: 60;
   background: var(--bg);
-  padding: 10px 0 6px;
+  padding: 10px 24px 6px;
+  margin-left: -24px;
+  margin-right: -24px;
 }
 .section-head .section-tag { margin-bottom: 8px; }
 .section-head h2 { margin-bottom: 6px; }
@@ -1822,7 +1824,7 @@ button.CookiebotWidget-logo::before {
   color: var(--accent-light);
 }
 
-/* Mobile responsive collapsing */
+/* Mobile responsive collapsing & swipeable features */
 @media (max-width: 600px) {
   .testimonial-row {
     flex-direction: column !important;
@@ -1830,6 +1832,33 @@ button.CookiebotWidget-logo::before {
   .testimonial-img-wrapper {
     width: 100%;
     aspect-ratio: 16 / 10;
+  }
+  
+  .feature-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 16px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .feature-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .feature {
+    width: 280px;
+    max-width: 80vw;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+  .feature-grid > .feature:only-child {
+    width: 100%;
+    max-width: 100%;
   }
 }
 

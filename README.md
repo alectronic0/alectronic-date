@@ -8,7 +8,7 @@ A personal website built to help me share who I am with potential partners — s
 
 ## What is this?
 
-This is a single-page dating profile / slide deck for **Alec Doran-Twyford** — a loveable nerd and Software Engineer based in Welwyn Garden City, "looking for his player 2. No swiping required." It's hosted on GitHub Pages and gives someone a genuine sense of me before we even meet, so conversations can start somewhere real.
+This is a single-page dating profile / slide deck for **Alec Doran-Twyford** — a loveable nerd and Software Engineer based in Welwyn Garden City, looking for his player 2. It's hosted on GitHub Pages and gives someone a genuine sense of me before we even meet, so conversations can start somewhere real.
 
 The page walks through:
 
