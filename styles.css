@@ -1915,4 +1915,81 @@ button.CookiebotWidget-logo::before {
   }
 }
 
+/* ─── Cookiebot Declaration Styles ───────────────── */
+#CookieDeclaration,
+.CookieDeclaration,
+.CookieDeclarationTable {
+  background-color: transparent !important;
+  color: var(--text) !important;
+  font-family: var(--font) !important;
+  text-align: left !important;
+}
+#CookieDeclaration h1,
+#CookieDeclaration h2,
+#CookieDeclaration h3,
+#CookieDeclaration h4,
+#CookieDeclaration h5,
+#CookieDeclaration h6 {
+  color: var(--text) !important;
+  font-family: var(--font) !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+#CookieDeclaration table,
+#CookieDeclaration td,
+#CookieDeclaration th,
+#CookieDeclaration tr,
+#CookieDeclaration tbody,
+#CookieDeclaration thead {
+  background-color: transparent !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+#CookieDeclaration th {
+  background-color: var(--surface-3) !important;
+  color: var(--accent-light) !important;
+  padding: 10px !important;
+  border-bottom: 2px solid var(--border) !important;
+  font-weight: 600 !important;
+}
+#CookieDeclaration td {
+  padding: 10px !important;
+  font-size: 0.85rem !important;
+}
+#CookieDeclaration tr {
+  border-bottom: 1px solid var(--border) !important;
+}
+#CookieDeclaration tr:hover {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+#CookieDeclaration a {
+  color: var(--accent-light) !important;
+  text-decoration: underline !important;
+}
+#CookieDeclaration a:hover {
+  color: var(--rose-light) !important;
+}
+.CookieDeclarationTypeNavigation {
+  border-bottom: 1px solid var(--border) !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 4px !important;
+  margin-bottom: 1rem !important;
+}
+.CookieDeclarationTypeNavigationItem {
+  color: var(--muted) !important;
+  background-color: var(--surface-2) !important;
+  border: 1px solid var(--border) !important;
+  border-bottom: none !important;
+  padding: 8px 16px !important;
+  border-radius: 8px 8px 0 0 !important;
+  cursor: pointer !important;
+}
+.CookieDeclarationTypeNavigationItem.CookieDeclarationTypeNavigationItemActive {
+  color: var(--text) !important;
+  background-color: var(--surface-3) !important;
+  border-color: var(--accent-light) !important;
+  font-weight: 600 !important;
+}
+
 

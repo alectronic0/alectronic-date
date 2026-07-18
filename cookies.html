@@ -64,8 +64,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
+            padding: 3rem 1rem;
             overflow-x: hidden;
+            overflow-y: auto;
             background-image:
                     radial-gradient(ellipse 60% 50% at 50% 0%, rgba(153, 78, 168, 0.12) 0%, transparent 70%),
                     radial-gradient(ellipse 40% 40% at 80% 80%, rgba(255, 107, 138, 0.06) 0%, transparent 60%);
@@ -85,7 +87,7 @@
 
         /* --- card --- */
         .card {
-            width: min(460px, 92vw);
+            width: min(840px, 96vw);
             background: linear-gradient(
                     135deg,
                     rgba(43, 26, 41, 0.72) 0%,
