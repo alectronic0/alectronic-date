@@ -454,6 +454,60 @@ body:has(dialog[open]) { overflow: hidden; }
 .value-card li { display: flex; align-items: flex-start; gap: 9px; font-size: 0.92rem; color: var(--muted); }
 .value-card li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-light); flex-shrink: 0; margin-top: 8px; }
 
+/* Collapsible styling for value cards */
+.value-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.value-card-header h3 {
+  margin-bottom: 0 !important;
+}
+.value-card-chevron {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+  color: var(--muted);
+}
+.value-card-chevron svg {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
+.value-card-collapsible.collapsed .value-card-chevron svg {
+  transform: rotate(0deg);
+}
+
+@media (min-width: 601px) {
+  .value-card-header {
+    display: block;
+    margin-bottom: 12px;
+  }
+  .value-card-chevron {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .value-card.value-card-collapsible {
+    padding: 0;
+    overflow: hidden;
+    flex: none !important;
+  }
+  .value-card-header {
+    padding: 16px 18px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .value-card-content {
+    padding: 0 18px 18px 18px;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  .value-card-collapsible.collapsed .value-card-content {
+    display: none !important;
+  }
+}
+
 /* ─── Date menu ─────────────────────────────── */
 .date-menu { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 8px; }
 .date-card {
@@ -1834,11 +1888,10 @@ button.CookiebotWidget-logo::before {
     aspect-ratio: 16 / 10;
   }
   
-  .feature-grid {
+  .feature-grid, .date-menu {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     gap: 16px;
     padding-bottom: 16px;
@@ -1847,16 +1900,16 @@ button.CookiebotWidget-logo::before {
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
-  .feature-grid::-webkit-scrollbar {
+  .feature-grid::-webkit-scrollbar, .date-menu::-webkit-scrollbar {
     display: none;
   }
-  .feature {
+  .feature, .date-card {
     width: 280px;
     max-width: 80vw;
     flex-shrink: 0;
     scroll-snap-align: start;
   }
-  .feature-grid > .feature:only-child {
+  .feature-grid > .feature:only-child, .date-menu > .date-card:only-child {
     width: 100%;
     max-width: 100%;
   }

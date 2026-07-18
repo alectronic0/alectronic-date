@@ -166,18 +166,28 @@
         return `<span class="tag-item ${variant}" data-label="${esc(label)}">${flagify(label)}</span>`;
     };
 
-    const renderValueCard = (c) =>
-        `<div class="value-card"><h3>${esc(c.title)}</h3>${
-            c.text ? `<p class="value-card-text">${esc(c.text)}</p>` : ''
-        }${
-            c.tags && c.tags.length
-                ? `<div class="tag-row">${c.tags.map(tagHtml).join('')}</div>`
-                : ''
-        }${
-            c.items && c.items.length
-                ? `<ul>${c.items.map((i) => `<li>${i && i.html ? i.html : esc(i)}</li>`).join('')}</ul>`
-                : ''
-        }</div>`;
+    const renderValueCard = (c, collapsible = false) => {
+        if (collapsible) {
+            return `<div class="value-card value-card-collapsible collapsed">
+                <div class="value-card-header">
+                    <h3>${esc(c.title)}</h3>
+                    <span class="value-card-chevron"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                </div>
+                <div class="value-card-content">
+                    ${c.text ? `<p class="value-card-text">${esc(c.text)}</p>` : ''}
+                    ${c.tags && c.tags.length ? `<div class="tag-row">${c.tags.map(tagHtml).join('')}</div>` : ''}
+                    ${c.items && c.items.length ? `<ul>${c.items.map((i) => `<li>${i && i.html ? i.html : esc(i)}</li>`).join('')}</ul>` : ''}
+                </div>
+            </div>`;
+        }
+
+        return `<div class="value-card">
+            <h3>${esc(c.title)}</h3>
+            ${c.text ? `<p class="value-card-text">${esc(c.text)}</p>` : ''}
+            ${c.tags && c.tags.length ? `<div class="tag-row">${c.tags.map(tagHtml).join('')}</div>` : ''}
+            ${c.items && c.items.length ? `<ul>${c.items.map((i) => `<li>${i && i.html ? i.html : esc(i)}</li>`).join('')}</ul>` : ''}
+        </div>`;
+    };
 
     /* ── block renderers (each returns an HTML string) ── */
     const blocks = {
@@ -380,11 +390,11 @@
         // mirroring the paragraph block's text/html split. A column can also
         // carry an intro `text` line and a `tags` chip row instead of items.
         valueCols: (b) =>
-            `<div class="value-cols">${b.columns.map(renderValueCard).join('')}</div>`,
+            `<div class="value-cols">${b.columns.map(c => renderValueCard(c, false)).join('')}</div>`,
 
         valueGrid: (b) =>
             `<div class="value-cols">${b.columns
-                .map((col) => `<div class="value-col">${col.cards ? col.cards.map(renderValueCard).join('') : ''}</div>`)
+                .map((col) => `<div class="value-col">${col.cards ? col.cards.map(c => renderValueCard(c, true)).join('') : ''}</div>`)
                 .join('')}</div>`,
 
         // Two columns, each holding one or more titled lists (gold bullets)
@@ -1566,6 +1576,12 @@
         const body = dlg.querySelector('.deep-modal-body');
         if (body) body.scrollTop = 0;
         history.replaceState(null, '', '#' + id);
+
+        if (window.initInfiniteSwipeForContainer) {
+            setTimeout(() => {
+                dlg.querySelectorAll('.feature-grid, .date-menu').forEach(window.initInfiniteSwipeForContainer);
+            }, 100);
+        }
     }
 
     // Copy text to the clipboard, with a tiny ✓ flash on the 🔗 button.
@@ -1750,8 +1766,14 @@
         const id = decodeURIComponent((location.hash || '').replace(/^#/, ''));
         if (!id) return;
         const item = document.getElementById(id);
-        if (!item || !item.classList.contains('deep-modal')) return;
-        openDeepModal(id);
+        if (!item) return;
+        if (item.classList.contains('deep-modal')) {
+            openDeepModal(id);
+        } else {
+            setTimeout(() => {
+                item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 150);
+        }
     }
 
     // Section-heading 🔗 chips: point the URL at the section's id and copy the
@@ -2105,7 +2127,19 @@
             
             // Gather images dynamically for gallery navigation, scoped to the current section
             const container = img.closest('dialog') || img.closest('section') || img.closest('.container') || document.body;
-            currentImages = Array.from(container.querySelectorAll(selectors)).filter(i => !i.classList.contains('flag') && i.tagName === 'IMG');
+
+            // If the clicked image is a clone, map it to its original counterpart
+            if (img.closest('[data-clone-pre]') || img.closest('[data-clone-post]')) {
+                const originalImages = Array.from(container.querySelectorAll(selectors)).filter(i => !i.classList.contains('flag') && i.tagName === 'IMG' && !i.closest('[data-clone-pre]') && !i.closest('[data-clone-post]'));
+                const match = originalImages.find(i => i.src === img.src && i.alt === img.alt);
+                if (match) img = match;
+            }
+
+            currentImages = Array.from(container.querySelectorAll(selectors)).filter(i => {
+                if (i.classList.contains('flag') || i.tagName !== 'IMG') return false;
+                if (i.closest('[data-clone-pre]') || i.closest('[data-clone-post]')) return false;
+                return true;
+            });
             currentIndex = currentImages.indexOf(img);
             
             showImage(currentIndex);
@@ -2323,6 +2357,82 @@
         }
     }
 
+    function initInfiniteSwipe() {
+        if (window.innerWidth > 600) return;
+
+        const containers = document.querySelectorAll('.feature-grid, .date-menu');
+        containers.forEach(container => {
+            const children = Array.from(container.children);
+            if (children.length <= 1) return;
+
+            const clonesPre = children.map(child => {
+                const clone = child.cloneNode(true);
+                clone.dataset.clonePre = 'true';
+                return clone;
+            });
+            const clonesPost = children.map(child => {
+                const clone = child.cloneNode(true);
+                clone.dataset.clonePost = 'true';
+                return clone;
+            });
+
+            clonesPre.reverse().forEach(clone => {
+                container.insertBefore(clone, container.firstChild);
+            });
+            clonesPost.forEach(clone => {
+                container.appendChild(clone);
+            });
+
+            container.addEventListener('scroll', () => {
+                if (container.dataset.initialized !== 'true') return;
+
+                const scrollLeft = container.scrollLeft;
+                const childrenArray = Array.from(container.children);
+                const preClones = childrenArray.filter(el => el.dataset.clonePre === 'true');
+                const originalItems = childrenArray.filter(el => !el.dataset.clonePre && !el.dataset.clonePost);
+                
+                const preWidth = preClones.reduce((acc, el) => acc + el.offsetWidth + 16, 0);
+                const originalWidth = originalItems.reduce((acc, el) => acc + el.offsetWidth + 16, 0);
+
+                if (scrollLeft < preWidth - 10) {
+                    container.scrollLeft = scrollLeft + originalWidth;
+                } else if (scrollLeft > preWidth + originalWidth + 10) {
+                    container.scrollLeft = scrollLeft - originalWidth;
+                }
+            });
+
+            if (container.offsetWidth > 0) {
+                setTimeout(() => {
+                    window.initInfiniteSwipeForContainer(container);
+                }, 100);
+            }
+        });
+    }
+
+    window.initInfiniteSwipeForContainer = (container) => {
+        if (container.dataset.initialized === 'true') return;
+        if (container.offsetWidth === 0) return;
+
+        container.dataset.initialized = 'true';
+        const preClones = Array.from(container.children).filter(el => el.dataset.clonePre === 'true');
+        const preWidth = preClones.reduce((acc, el) => acc + el.offsetWidth + 16, 0);
+        container.scrollLeft = preWidth;
+    };
+
+
+
+    function initCollapsibleCards() {
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth > 600) return;
+            const header = e.target.closest('.value-card-header');
+            if (!header) return;
+            const card = header.closest('.value-card-collapsible');
+            if (card) {
+                card.classList.toggle('collapsed');
+            }
+        });
+    }
+
     /* ── boot ── */
     function boot() {
         if (!C) {
@@ -2363,6 +2473,8 @@
         initCyclingImages();
         initKonami();
         initFactClicks();
+        initInfiniteSwipe();
+        initCollapsibleCards();
 
         openFromHash();
         window.addEventListener('hashchange', openFromHash);

@@ -1,0 +1,11 @@
+{
+  "name": "alectronic-date-tests",
+  "version": "1.0.0",
+  "description": "Integration tests for dating profile site",
+  "devDependencies": {
+    "@playwright/test": "^1.45.0"
+  },
+  "scripts": {
+    "test": "playwright test"
+  }
+}
