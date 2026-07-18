@@ -15,6 +15,13 @@
 
     const C = window.CONTENT;
 
+    /* ── analytics helper ── */
+    function trackEvent(name, params = {}) {
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', name, params);
+        }
+    }
+
     /* ── tiny helpers ── */
     const esc = (s) =>
         String(s == null ? '' : s)
@@ -1482,6 +1489,7 @@
             }
             wrap.classList.toggle('open', open);
             toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            trackEvent('soundtrack_toggle', { 'open': open });
         };
         toggle.addEventListener('click', () => setOpen(!wrap.classList.contains('open')));
         wrap.querySelector('.soundtrack-close').addEventListener('click', () => setOpen(false));
@@ -1548,6 +1556,9 @@
         const sections = document.querySelectorAll('section[id]');
         if (!navLinks.length || !sections.length) return;
 
+        let activeSectionId = null;
+        let sectionTimer = null;
+
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -1556,9 +1567,15 @@
                     const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
                     if (!active) return;
                     active.classList.add('active');
-                    // (No scrollIntoView here: it was for the old horizontal
-                    // link row, and on the fold-down menu it scrolls the
-                    // window — which would dismiss the menu it just opened.)
+                    
+                    const sectionId = entry.target.id;
+                    if (sectionId !== activeSectionId) {
+                        activeSectionId = sectionId;
+                        clearTimeout(sectionTimer);
+                        sectionTimer = setTimeout(() => {
+                            trackEvent('section_view', { 'section_id': sectionId });
+                        }, 1500);
+                    }
                 });
             },
             {rootMargin: '-40% 0px -55% 0px'}
@@ -1575,6 +1592,7 @@
         const dlg = document.getElementById(id);
         if (!dlg || !dlg.classList.contains('deep-modal') || !dlg.showModal) return;
         if (!dlg.open) dlg.showModal();
+        trackEvent('deep_modal_open', { 'modal_id': id });
         const body = dlg.querySelector('.deep-modal-body');
         if (body) body.scrollTop = 0;
         history.replaceState(null, '', '#' + id);
@@ -1619,6 +1637,7 @@
             if (dlg._listenerAttached) return;
             // Drop the #hash again once the modal is closed (Escape included).
             dlg.addEventListener('close', () => {
+                trackEvent('deep_modal_close', { 'modal_id': dlg.id });
                 if (location.hash === '#' + dlg.id) {
                     history.replaceState(null, '', location.pathname + location.search);
                 }
@@ -1880,6 +1899,7 @@
             let tapTimer = null;
             el.addEventListener('click', () => {
                 taps++;
+                trackEvent('easter_egg_tap', { 'element_id': el.id || el.className || 'element', 'tap_count': taps });
                 if (tapTimer) clearTimeout(tapTimer);
                 if (taps === 1) {
                     showTickleToast();
@@ -1906,6 +1926,7 @@
     // and guarded so spamming the code doesn't stack duplicates.
     function revealSecret() {
         secretRevealed = true;
+        trackEvent('konami_triggered');
         if (document.querySelector('.konami-toast:not(.tickle-toast)')) return;
         const toast = document.createElement('div');
         toast.className = 'konami-toast';
@@ -1999,6 +2020,7 @@
             if (!img) return;
             lightboxImg.src = img.currentSrc || img.src;
             lightboxImg.alt = img.alt;
+            trackEvent('lightbox_image_view', { 'image_src': img.src, 'image_alt': img.alt || '' });
 
             const lightboxTitle = document.querySelector('.lightbox-title');
             if (lightboxTitle) {
@@ -2053,6 +2075,7 @@
 
         // Drop the old image once closed so it can't flash up next time.
         lightbox.addEventListener('close', () => {
+            trackEvent('lightbox_close');
             lightboxImg.removeAttribute('src');
             if (lightboxCaption) lightboxCaption.textContent = '';
             if (location.hash) history.replaceState(null, null, ' ');
@@ -2167,10 +2190,15 @@
             if (e.target.closest('[data-faces="expand"]') || e.target.closest('#faces-expand-btn')) {
                 gallery.showModal();
                 gallery.scrollTop = 0;
+                trackEvent('gallery_open');
                 return;
             }
             if (e.target.closest('.gallery-close')) return gallery.close();
             if (e.target === gallery) gallery.close(); // click outside the photos
+        });
+
+        gallery.addEventListener('close', () => {
+            trackEvent('gallery_close');
         });
     }
 
@@ -2449,6 +2477,51 @@
         });
     }
 
+    function initGlobalAnalytics() {
+        // 1. Scroll Depth tracking (25%, 50%, 75%, 90%)
+        let scrollMilestones = { 25: false, 50: false, 75: false, 90: false };
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight <= 0) return;
+            const pct = Math.round((scrollTop / docHeight) * 100);
+            for (let m in scrollMilestones) {
+                if (pct >= Number(m) && !scrollMilestones[m]) {
+                    scrollMilestones[m] = true;
+                    trackEvent('scroll_depth', { 'depth_percentage': Number(m) });
+                }
+            }
+        }, { passive: true });
+
+        // 2. Global click tracking (links, buttons, interactive items)
+        document.addEventListener('click', (e) => {
+            const anchor = e.target.closest('a');
+            if (anchor) {
+                const href = anchor.getAttribute('href') || '';
+                const text = anchor.textContent.trim();
+                const isExternal = href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
+                trackEvent('link_click', {
+                    'link_url': href,
+                    'link_text': text || anchor.title || 'Untitled',
+                    'link_type': isExternal ? 'external' : 'internal'
+                });
+                return;
+            }
+
+            const btn = e.target.closest('button');
+            if (btn) {
+                const text = btn.textContent.trim();
+                const id = btn.id || '';
+                const classes = btn.className || '';
+                trackEvent('button_click', {
+                    'button_text': text || btn.ariaLabel || 'Untitled',
+                    'button_id': id,
+                    'button_classes': classes
+                });
+            }
+        });
+    }
+
     /* ── boot ── */
     function boot() {
         if (!C) {
@@ -2492,6 +2565,7 @@
         initInfiniteSwipe();
         initCollapsibleCards();
         initFloatingCta();
+        initGlobalAnalytics();
 
         openFromHash();
         window.addEventListener('hashchange', openFromHash);
