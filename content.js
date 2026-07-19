@@ -280,7 +280,7 @@ window.CONTENT = {
         {key: "transparency", emoji: "🌱", title: "Radical Transparency", hint: "— areas of active growth"},
         {key: "politics", emoji: "🏛️", title: "Politics & Religion", hint: "— where I stand"},
         {key: "dislikes", emoji: "🙅", title: "Gentle Dislikes", hint: "— a preference for calm"},
-        {key: "friends", emoji: "👥", title: "Friend Review", hint: "— what they say about me", wip: true},
+        {key: "friends", emoji: "👥", title: "Friend Review", hint: "— what they say about me"},
         {key: "bucketList", emoji: "🎯", title: "Bucket List", hint: "— things I'd love to try"},
         {key: "goals", emoji: "🚀", title: "Future Goals", hint: "— where I'm headed"},
         {type: "heading", text: "Hobbies & Interests"},
@@ -1833,11 +1833,6 @@ window.CONTENT = {
         friends: {
             blocks: [
                 {
-                    type: "construction",
-                    gif: "img/gifs/xUStFKHmuFPYk.gif",
-                    text: "The rest — collecting reviews from my friends to see what they say behind my back — is still being written. Check back soon! 🕵️‍♂️"
-                },
-                {
                     type: "testimonialRows",
                     items: [
                         {
@@ -1859,6 +1854,10 @@ window.CONTENT = {
                             imagePosition: "right"
                         }
                     ]
+                },
+                {
+                    type: "note",
+                    text: "📢 FRIEND PUBLIC SERVICE ANNOUNCEMENT: If you're a friend of mine and you're not on this website yet… you're officially letting the team down! 😱 Send me a message right now to get your beautiful face on the site! 💅✨"
                 }
             ]
         },
