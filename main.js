@@ -498,7 +498,52 @@
             '<div class="construction-banner">' +
             (b.gif ? `<img class="c-gif" src="${esc(b.gif)}" alt="Under construction" loading="lazy">` : '<div class="c-emoji">🚧</div>') +
             '<strong>Under Construction</strong>' +
-            `<p>${esc(b.text || 'This section is still being built — check back soon!')}</p></div>`
+            `<p>${esc(b.text || 'This section is still being built — check back soon!')}</p></div>`,
+
+        socialCampaign: (b) => {
+            const profilesHtml = b.profiles
+                ? `<div class="social-profile-grid">${b.profiles
+                      .map(
+                          (p) => `<a class="social-profile-card" href="${esc(p.href)}" target="_blank" rel="noopener noreferrer">
+                              <span class="social-card-icon">${esc(p.icon || '📱')}</span>
+                              <div class="social-card-info">
+                                  <strong>${esc(p.platform)}</strong>
+                                  <span class="social-card-handle">${esc(p.handle)}</span>
+                              </div>
+                              <span class="social-card-cta">${esc(p.cta || 'Follow')} ↗</span>
+                          </a>`
+                      )
+                      .join('')}</div>`
+                : '';
+
+            const clipsHtml = b.clips && b.clips.length
+                ? `<div class="social-clips-grid">${b.clips
+                      .map((clip) => {
+                          if (clip.embedUrl) {
+                              return `<div class="social-clip-card">
+                                  <div class="social-clip-embed">
+                                      <iframe src="${esc(clip.embedUrl)}" title="${esc(clip.title || 'Clip')}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                                  </div>
+                                  ${clip.title ? `<p class="social-clip-title">${esc(clip.title)}</p>` : ''}
+                              </div>`;
+                          }
+                          return `<a class="social-clip-card link-card" href="${esc(clip.href || clip.link || '#')}" target="_blank" rel="noopener noreferrer">
+                              <div class="social-clip-thumb">${clip.src ? img(clip.src, clip.title) : `<span class="thumb-emoji">${clip.platform === 'TikTok' ? '🎵' : '📸'}</span>`}</div>
+                              <div class="social-clip-info">
+                                  <strong>${esc(clip.title || 'Watch Clip')}</strong>
+                                  <span>${esc(clip.caption || 'Watch on ' + (clip.platform || 'social'))} ↗</span>
+                              </div>
+                          </a>`;
+                      })
+                      .join('')}</div>`
+                : `<div class="social-clips-placeholder">
+                      <div class="placeholder-badge">🎥 Clips Dropping Soon</div>
+                      <p>Clips for the <strong>"Date Me" Campaign</strong> are dropping on social media!</p>
+                      <p class="placeholder-sub">Follow below to catch every episode, date test, and vlog as the adventure unfolds.</p>
+                  </div>`;
+
+            return `<div class="social-campaign-block">${profilesHtml}${clipsHtml}</div>`;
+        }
     };
 
     function renderBlocks(list) {

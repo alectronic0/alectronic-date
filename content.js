@@ -46,6 +46,7 @@ window.CONTENT = {
             {label: 'Boyfriend Mode', href: '#boyfriend-mode'},
             {label: 'Looking For', href: '#looking-for'},
             {label: 'Date Ideas', href: '#dates'},
+            {label: 'Campaign 🎬', href: '#campaign'},
             {label: 'Contact', href: '#contact'},
             {label: 'Deep Dive ↓', href: '#deep-dive'}
         ]
@@ -2104,6 +2105,34 @@ window.CONTENT = {
                             text: "You know, I realized something. The universe can't stop us. 'Cause we have crossed galaxies, we traveled through time, we survived the bottom of the Atlantic just so we could be together. Now, a love like that, that is stronger than any curse, and you and I, we are unstoppable together."
                         },
                     ]
+                }
+            ]
+        },
+
+        campaign: {
+            tag: '🎬 "Date Me" Campaign',
+            heading: 'Watch the dating adventure unfold on social media as I do the "Date Me" Campaign',
+            lead: 'Follow along on TikTok and Instagram as I test out date ideas, share behind-the-scenes vlogs, and document the journey to find Player 2!',
+            blocks: [
+                {
+                    type: "socialCampaign",
+                    profiles: [
+                        {
+                            platform: "TikTok",
+                            handle: "@alectronic0",
+                            href: "https://www.tiktok.com/@alectronic0/",
+                            icon: "🎵",
+                            cta: "Follow on TikTok"
+                        },
+                        {
+                            platform: "Instagram",
+                            handle: "@alectronic0",
+                            href: "https://www.instagram.com/alectronic0/",
+                            icon: "📸",
+                            cta: "Follow on Instagram"
+                        }
+                    ],
+                    clips: []
                 }
             ]
         },
