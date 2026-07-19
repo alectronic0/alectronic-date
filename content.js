@@ -1847,6 +1847,15 @@ window.CONTENT = {
                             text: "Alec is a no. 1 person to turn to. I know he will always be there for whatever you need. He's helpful and reliable. Always calm and a problem solver. I love his gentle, caring side. He's a keeper.",
                             signature: '— Minty aka. "Final Boss", Personal Trainer & Friend',
                             imagePosition: "left"
+                        },
+                        {
+                            src: "img/friends/agent-l.jpg",
+                            alt: "Agent L & Alec",
+                            icon: "🕵️‍♀️",
+                            title: "Finding ways to make you smile",
+                            text: "Alec is the type of friend that everyone needs. He will show up for you, really listen and always shows his love and care in the most empathetic of ways, while always looking for ways to make you genuinely smile.",
+                            signature: '— Agent L, Friend (photo of her has been redacted to protect her identity on secret mission)',
+                            imagePosition: "right"
                         }
                     ]
                 }
