@@ -170,7 +170,8 @@
     const tagHtml = (t) => {
         const label = typeof t === 'string' ? t : t.label;
         const variant = typeof t === 'string' ? '' : (t.variant || '');
-        return `<span class="tag-item ${variant}" data-label="${esc(label)}">${flagify(label)}</span>`;
+        const hint = typeof t === 'object' && t.hint ? t.hint : '';
+        return `<span class="tag-item ${variant}" data-label="${esc(label)}"${hint ? ` data-hint="${esc(hint)}"` : ''}>${flagify(label)}</span>`;
     };
 
     const renderValueCard = (c, collapsible = false) => {
@@ -842,6 +843,10 @@
             const tagEl = e.target.closest('.tag-item');
             if (!tagEl) return;
             const label = tagEl.getAttribute('data-label');
+            const hint = tagEl.getAttribute('data-hint');
+            if (hint) {
+                showFactToast(hint);
+            }
             if (label) {
                 const m = label.match(/^(\p{Extended_Pictographic})/u);
                 const emoji = m ? m[1] : '';
