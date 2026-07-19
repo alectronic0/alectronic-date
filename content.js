@@ -278,6 +278,7 @@ window.CONTENT = {
         {key: "weekInLife", emoji: "📅", title: "A day in the life of Alec", hint: "— my typical routines", wip: true},
         {key: "moments", emoji: "🏆", title: "Notable Moments", hint: "— milestones & adventures"},
         {key: "transparency", emoji: "🚩", title: "My Red Flags", hint: "— no one's perfect, at least I'm being honest"},
+        {key: "dealbreakers", emoji: "⛔", title: "Dealbreakers & Preferences", hint: "— clear boundaries & non-negotiables"},
         {key: "politics", emoji: "🏛️", title: "Politics & Religion", hint: "— where I stand"},
         {key: "dislikes", emoji: "🙅", title: "Gentle Dislikes", hint: "— a preference for calm"},
         {key: "friends", emoji: "👥", title: "Friend Review", hint: "— what they say about me"},
@@ -801,6 +802,44 @@ window.CONTENT = {
                         "🍲 Relationship with Food",
                         "💼 Workaholic",
                         "🌱 Active Self-Growth"
+                    ]
+                }
+            ]
+        },
+        dealbreakers: {
+            blocks: [
+                {
+                    type: "paragraph",
+                    html: "Clear boundaries and honest dating preferences save everyone time. Here are my non-negotiables:"
+                },
+                {
+                    type: "detailList",
+                    items: [
+                        {
+                            icon: "🌍",
+                            title: "No Long Distance (UK Only)",
+                            description: "If you're not living in the UK, you're not for me! I need someone local enough that we can actually spend quality time together, hang out, and build a real-life connection."
+                        },
+                        {
+                            icon: "🎂",
+                            title: "Age Range (25 – 42)",
+                            description: "I prefer dating someone near my age or a little younger, where we share similar life stages and long-term goals."
+                        },
+                        {
+                            icon: "🚭",
+                            title: "Non-Smoker",
+                            description: "Got nothing personal against people who smoke, but to be completely honest, it's bad for your health and I strongly prefer a smoke-free environment."
+                        },
+                        {
+                            icon: "👶",
+                            title: "No Existing Children",
+                            description: "Nothing against single mothers at all, but I just don't feel I can handle stepping in to raise or manage another person's child right now."
+                        },
+                        {
+                            icon: "🍼",
+                            title: "Wants a Family in the Future",
+                            description: "I am 80–90% sure I want to build a family! If that's not something you envision in your future, then we're likely not a long-term match."
+                        }
                     ]
                 }
             ]
