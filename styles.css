@@ -675,7 +675,7 @@ body:has(dialog[open]) { overflow: hidden; }
 /* ─── Konami code easter egg ────────────────── */
 .konami-toast {
   position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 24px);
-  z-index: 1000; pointer-events: none;
+  z-index: 2147483647; pointer-events: none;
   display: flex; flex-direction: column; align-items: center; gap: 4px;
   background: linear-gradient(135deg, var(--accent), #5a2a8a);
   color: #fff; text-align: center;
@@ -687,7 +687,7 @@ body:has(dialog[open]) { overflow: hidden; }
 .konami-toast.show { opacity: 1; transform: translate(-50%, 0); }
 .fact-toast {
   position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 24px);
-  z-index: 1000; pointer-events: none;
+  z-index: 2147483647; pointer-events: none;
   display: flex; flex-direction: column; align-items: center; gap: 4px;
   background: linear-gradient(135deg, var(--accent), #5a2a8a);
   color: #fff; text-align: center;
@@ -708,7 +708,7 @@ body:has(dialog[open]) { overflow: hidden; }
 }
 .konami-sub { font-size: 0.82rem; color: #f3e3ff; }
 .konami-heart {
-  position: fixed; top: -40px; z-index: 1000; pointer-events: none;
+  position: fixed; top: -40px; z-index: 2147483647; pointer-events: none;
   font-size: 1.6rem; animation: konami-fall 2.4s linear forwards;
 }
 @keyframes konami-fall {
@@ -716,7 +716,7 @@ body:has(dialog[open]) { overflow: hidden; }
   100% { transform: translateY(105vh) rotate(220deg); opacity: 0; }
 }
 .emoji-rain-drop {
-  position: fixed; top: -40px; z-index: 1000; pointer-events: none;
+  position: fixed; top: -40px; z-index: 2147483647; pointer-events: none;
   animation: konami-fall 2.4s linear forwards;
 }
 

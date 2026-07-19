@@ -98,7 +98,7 @@ window.CONTENT = {
             // Basics & Identity
             {icon: "🎂", label: "Age", dob: DOB, toast: "Yes, I know, I am an old millennial now! 👴"},
             {icon: "📏", label: "Height", value: "~5'8\"", toast: "My height might vary throughout the day! 📏"},
-            {icon: "♂️", label: "Gender", value: "Gentleman"},
+            {icon: "♂️", label: "Gender", value: "Gentleman", toast: "Chivalry isn't dead, just modernized! 🎩"},
             {
                 icon: "🗣️",
                 label: "Pronouns",
@@ -108,7 +108,7 @@ window.CONTENT = {
                 ],
                 toast: "I use they/them to support my non-binary friends and acknowledge your pronouns are what you want them to be! 🗣️"
             },
-            {icon: "❤️", label: "Orientation", value: "Straight"},
+            {icon: "❤️", label: "Orientation", value: "Straight", toast: "Hoping to find the right woman to share life's adventures with 👩🏼‍🤝‍👨🏻"},
 
             // Origins & Location
             {
@@ -125,26 +125,28 @@ window.CONTENT = {
 
             // Career & Education
             {icon: "💼", label: "Profession", value: "Software Engineer", toast: "I make computers do the thing! 💻"},
-            {icon: "🎓", label: "Education", value: "BSc Computer Science"},
+            {icon: "🎓", label: "Education", value: "BSc Computer Science", toast: "I know Computer Kung Fu... 🕶️💻"},
 
             // Relationships & Family
             {
                 icon: "💞", label: "Looking for", value: [
                     "Long-term",
                     "monogamous"
-                ]
+                ],
+                toast: "Here for the real deal — building a long-term life together 💖"
             },
             {
                 icon: "👶", label: "Kids", value: [
                     "Want kids",
                     "none yet"
-                ]
+                ],
+                toast: "Ready for future dad jokes and bedtime stories! 👨‍👩‍👧"
             },
 
             // Lifestyle & Beliefs
-            {icon: "🏛️", label: "Politics", value: "Liberal / Left"},
-            {icon: "🙏", label: "Religion", value: "Atheist"},
-            {icon: "🍷", label: "Drinking", value: "Social drinker"}
+            {icon: "🏛️", label: "Politics", value: "Liberal / Left", toast: "Believer in empathy, equity, and progress 🌹"},
+            {icon: "🙏", label: "Religion", value: "Atheist", toast: "Guided by science, curiosity, and good morals 🔬"},
+            {icon: "🍷", label: "Drinking", value: "Social drinker", toast: "Cocktails, Guinness, a proper G&T, or a tequila shot... and I've recently realized spicy drinks are amazing! 🍸🔥"}
         ]
     },
     contact: {
@@ -486,13 +488,13 @@ window.CONTENT = {
                                     title: "⚡ Suggested Previous Experience",
                                     text: "A plus, not a prerequisite — on-the-job experience is provided.",
                                     tags: [
-                                        "🍜 Foodie",
-                                        "🤓 Nerd",
-                                        "🎮 Gamer girl",
-                                        "📚 Fantasy book girly",
-                                        "🌿 Nature girl",
-                                        "🎒 Backpacker",
-                                        "😈 Secret wild side"
+                                        {label: "🍜 Foodie", hint: "Always down to explore street food markets or try new recipes! 🥟"},
+                                        {label: "🤓 Nerd", hint: "Embracing all things nerdy — tech, sci-fi, and deep rabbit holes! 🤓"},
+                                        {label: "🎮 Gamer girl", hint: "Cosy gamer or co-op partner — playing a game together will always be fun! 🎮☕"},
+                                        {label: "📚 Fantasy book girly", hint: "Always happy to chat about epic fantasy worlds, magic systems, and lore! 📚"},
+                                        {label: "🌿 Nature girl", hint: "Countryside walks, fresh forest air, and outdoor resets! 🌲"},
+                                        {label: "🎒 Backpacker", hint: "Exploring new cities, stamps in the passport, and great memories! 🎒"},
+                                        {label: "😈 Secret wild side", hint: "A mischievous, adventurous side saved just for the right person behind closed doors 😏🔥"}
                                     ]
                                 },
                                 {
@@ -813,10 +815,10 @@ window.CONTENT = {
                     title: "🪞 Reflection & Self-Awareness",
                     text: "✨ I know most of my triggers and have worked hard to process most of my history. Consistent, open and honest communication are things I value very much in a relationship.",
                     tags: [
-                        "🩹 Childhood Bullying",
-                        "🍲 Relationship with Food",
-                        "💼 Workaholic",
-                        "🌱 Active Self-Growth"
+                        {label: "🩹 Childhood Bullying", hint: "Overcame early hurdles, which made me a far more empathetic and resilient person."},
+                        {label: "🍲 Relationship with Food", hint: "Always working on a balanced, healthy, and happy relationship with good food!"},
+                        {label: "💼 Workaholic", hint: "I get deeply passionate about my projects, but learning to disconnect and enjoy life."},
+                        {label: "🌱 Active Self-Growth", hint: "Always trying to be a better partner, friend, and human than I was yesterday."}
                     ]
                 }
             ]
@@ -841,12 +843,12 @@ window.CONTENT = {
                                 {src: "img/hobbies/shibari-rope-bondage-torso.webp", alt: "Shibari rope bondage art"}
                             ],
                             tags: [
-                                "🧶 Crochet & Yarn",
-                                "🪢 Rope / Shibari",
-                                "🏺 Pottery",
-                                "🧱 Lego",
-                                "🔨 DIY",
-                                "✂️ Crafts"
+                                {label: "🧶 Crochet & Yarn", hint: "Very proud of my little crocheted Snorlax amigurumi plushie! 🧶💤"},
+                                {label: "🪢 Rope / Shibari", hint: "Exploring aesthetics, trust, and tension through rope art 🪢"},
+                                {label: "🏺 Pottery", hint: "There's something magical about throwing clay on a wheel 🏺"},
+                                {label: "🧱 Lego", hint: "Building Lego sets is my ultimate meditative zen state 🧱"},
+                                {label: "🔨 DIY", hint: "Drilling a hole or assembling IKEA furniture? I'm your man! 🔨📦"},
+                                {label: "✂️ Crafts", hint: "Always up for getting crafty 😏✂️"}
                             ]
                         },
                         {
@@ -966,12 +968,12 @@ window.CONTENT = {
                                 }
                             ],
                             tags: [
-                                "🌿 Nature",
-                                "🏞️ Landscapes",
-                                "🍔 Food",
-                                "🚁 Aerial",
-                                "🌌 Night & Astro",
-                                "👤 Portraits"
+                                {label: "🌿 Nature", hint: "Fresh air and green trees are my favorite reset button 🌲"},
+                                {label: "🏞️ Landscapes", hint: "Always chasing scenic views and golden hour light 🌅"},
+                                {label: "🍔 Food", hint: "Food photography makes everything taste twice as good! 📸🍔"},
+                                {label: "🚁 Aerial", hint: "Viewing the world from 100 feet up with my DJI drone! 🚁"},
+                                {label: "🌌 Night & Astro", hint: "Long exposures of stars and moonlight in the dark 🌌"},
+                                {label: "👤 Portraits", hint: "Capturing genuine moments and natural smiles 📸"}
                             ]
                         },
                         {
@@ -984,10 +986,10 @@ window.CONTENT = {
                                 {src: "img/hobbies/d20-dice-dnd-blue.webp", alt: "Blue D20 D&D die"}
                             ],
                             tags: [
-                                "🎮 Video Games",
-                                "🎲 Board Games",
-                                "🐉 D&D",
-                                "🎱 Pool / Snooker"
+                                {label: "🎮 Video Games", hint: "Player one ready! From cosy games to epic co-op adventures 🎮"},
+                                {label: "🎲 Board Games", hint: "Always down for a board game night with friends! 🎲"},
+                                {label: "🐉 D&D", hint: "Natural 20 on initiating fun tabletop adventures! 🎲"},
+                                {label: "🎱 Pool / Snooker", hint: "Always down for a relaxed frame at the pub 🎱"}
                             ]
                         },
                         {
@@ -1000,10 +1002,10 @@ window.CONTENT = {
                                 {src: "img/food/roast-chicken-sunday-dinner.webp", alt: "Roast chicken Sunday dinner"}
                             ],
                             tags: [
-                                "🍳 Cooking",
-                                "🧁 Baking",
-                                "🍽️ Eating out",
-                                "🫖 Tea"
+                                {label: "🍳 Cooking", hint: "Experimenting in the kitchen with fresh ingredients 🍳"},
+                                {label: "🧁 Baking", hint: "Fresh cookies out of the oven are my superpower 🍪"},
+                                {label: "🍽️ Eating out", hint: "Always hunting for the next best food spot 🍽️"},
+                                {label: "🫖 Tea", hint: "An embarrassingly large tea collection for every mood 🫖"}
                             ]
                         },
                         {
@@ -1016,10 +1018,10 @@ window.CONTENT = {
                                 {src: "img/hobbies/alec-with-fire-spinning-staff.webp", alt: "Me spinning a fire staff"}
                             ],
                             tags: [
-                                "🥾 Countryside walks",
-                                "🚴 Cycling",
-                                "🏹 Archery",
-                                "🔥 Fire & LED Staff"
+                                {label: "🥾 Countryside walks", hint: "Best paired with a dog and a cosy pub finish 🐶"},
+                                {label: "🚴 Cycling", hint: "Getting out on two wheels for a scenic ride 🚴"},
+                                {label: "🏹 Archery", hint: "Hitting the bullseye with bow and arrow 🏹"},
+                                {label: "🔥 Fire & LED Staff", hint: "Spinning fire and glowing staffs after dark! 🔥"}
                             ]
                         },
                         {
@@ -1153,10 +1155,10 @@ window.CONTENT = {
                 {type: "heading", text: "Also Stamped My Passport In"},
                 {
                     type: "tagRow", tags: [
-                        "🇬🇷 Greece",
-                        "🇪🇸 Spain",
-                        "🇫🇷 France",
-                        "🇨🇾 Cyprus"
+                        {label: "🇬🇷 Greece", hint: "Ancient ruins, crystal clear waters, and incredible food 🇬🇷"},
+                        {label: "🇪🇸 Spain", hint: "Tapas, sunshine, and rich architecture 🇪🇸"},
+                        {label: "🇫🇷 France", hint: "Fresh croissants, culture, and beautiful countrysides 🇫🇷"},
+                        {label: "🇨🇾 Cyprus", hint: "Stunning coastal views and warm Mediterranean vibes 🇨🇾"}
                     ]
                 },
                 {type: "heading", text: "🗺️ Where I Want to Go Next"},
@@ -1222,20 +1224,18 @@ window.CONTENT = {
                 {
                     type: "tagRow",
                     tags: [
-                        "Comedy",
-                        "Action",
-                        "Adventure",
-                        "Drama",
-                        "Romance",
-                        "Sci-Fi",
-                        "Supernatural",
-                        "Fantasy",
-                        "Animation",
-                        "Anime",
-                        "Detective Procedurals",
-                        {
-                            label: "Horror — not for me", variant: "hate"
-                        }
+                        {label: "🎭 Comedy", hint: "Nothing beats a great laugh after a long day! 🎭"},
+                        {label: "💥 Action", hint: "Thrilling stunts, high stakes, and fast pacing 💥"},
+                        {label: "🗺️ Adventure", hint: "Epic journeys and discovering new worlds 🗺️"},
+                        {label: "🎭 Drama", hint: "Deep storytelling and compelling character arcs 🎭"},
+                        {label: "💖 Romance", hint: "Sucker for a good heartwarming love story 💖"},
+                        {label: "🚀 Sci-Fi", hint: "Mind-bending concepts, space, and futuristic tech 🚀"},
+                        {label: "🔮 Supernatural", hint: "Mysteries, magic, and unexplained occurrences 🔮"},
+                        {label: "🐉 Fantasy", hint: "Swords, sorcery, and incredible world-building 🐉"},
+                        {label: "🎨 Animation", hint: "Stunning artwork and creative animation styles 🎨"},
+                        {label: "🌸 Anime", hint: "From Studio Ghibli classics to shonen hype 🌸"},
+                        {label: "🔍 Detective Procedurals", hint: "Solving the case step-by-step alongside the team 🕵️‍♂️"},
+                        {label: "🎃 Horror — not for me", variant: "hate", hint: "Jump scares and horror movies are definitely not my vibe 🙈"}
                     ]
                 },
                 {
@@ -1308,14 +1308,14 @@ window.CONTENT = {
                 {type: "heading", text: "Genres I Gravitate To"},
                 {
                     type: "tagRow", tags: [
-                        "Metroidvania",
-                        "Platformer",
-                        "Puzzle",
-                        "Strategy / RTS",
-                        "Cosy",
-                        "Shooters",
-                        "City Builders",
-                        "Adventure"
+                        {label: "🗝️ Metroidvania", hint: "Exploring interconnected maps and unlocking new abilities! 🗝️"},
+                        {label: "🏃 Platformer", hint: "Precise jumps, tight controls, and satisfying movement 🏃"},
+                        {label: "🧩 Puzzle", hint: "Engaging brain-teasers and clever game mechanics 🧩"},
+                        {label: "⚔️ Strategy / RTS", hint: "Base building, resource management, and big tactical moves ⚔️"},
+                        {label: "☕ Cosy", hint: "Relaxing gameplay, warm vibes, and zero stress ☕"},
+                        {label: "🎯 Shooters", hint: "Tactical co-op or casual multiplayer fun 🎯"},
+                        {label: "🏙️ City Builders", hint: "Designing efficient, thriving digital cities from scratch 🏙️"},
+                        {label: "🗺️ Adventure", hint: "Rich stories, immersive worlds, and grand quests 🗺️"}
                     ]
                 },
                 {
@@ -1402,33 +1402,25 @@ window.CONTENT = {
                 {type: "heading", text: "Top of the Menu"},
                 {
                     type: "tagRow", tags: [
-                        {label: "Tonkatsu", variant: "love"},
-                        {label: "Sushi", variant: "love"},
-                        {
-                            label: "Ramen", variant: "love"
-                        },
-                        {label: "Bao Bun", variant: "love"},
-                        {label: "Banh Mi", variant: "love"},
-                        {
-                            label: "Tacos", variant: "love"
-                        },
-                        {label: "BBQ Ribs", variant: "love"},
-                        {
-                            label: "Full English", variant: "love"
-                        },
-                        {label: "Sunday Roast", variant: "love"},
-                        {label: "Matcha & Tea", variant: "love"},
-                        {
-                            label: "Pastries", variant: "love"
-                        },
-                        {label: "Sour sweets", variant: "love"}
+                        {label: "🥩 Tonkatsu", variant: "love", hint: "Crispy panko-breaded pork cutlet is elite comfort food 🥩"},
+                        {label: "🍣 Sushi", variant: "love", hint: "Fresh nigiri and rolls are always a top pick 🍣"},
+                        {label: "🍜 Ramen", variant: "love", hint: "Rich, slow-cooked broth with springy noodles 🍜"},
+                        {label: "🥟 Bao Bun", variant: "love", hint: "Soft, fluffy steamed buns packed with flavor 🥟"},
+                        {label: "🥖 Banh Mi", variant: "love", hint: "Crispy baguette, pickled veggies, and savoury fillings 🥖"},
+                        {label: "🌮 Tacos", variant: "love", hint: "Authentic Mexican tacos with fresh lime & salsa 🌮"},
+                        {label: "🍖 BBQ Ribs", variant: "love", hint: "Tender, smoky, fall-off-the-bone ribs 🍖"},
+                        {label: "🍳 Full English", variant: "love", hint: "The ultimate weekend breakfast treat 🍳"},
+                        {label: "🥩 Sunday Roast", variant: "love", hint: "Proper roast potatoes, gravy, and Yorkshire puddings 🥩"},
+                        {label: "🍵 Matcha & Tea", variant: "love", hint: "A warm cup of matcha or quality loose-leaf tea 🍵"},
+                        {label: "🥐 Pastries", variant: "love", hint: "Flaky croissants and fresh bakery treats 🥐"},
+                        {label: "🍬 Sour sweets", variant: "love", hint: "The sourer, the better! 🍬"}
                     ]
                 },
                 {type: "heading", text: "In the bin"},
                 {
                     type: "tagRow", tags: [
-                        {label: "Onion", variant: "hate"},
-                        {label: "Sweetcorn", variant: "hate"}
+                        {label: "🧅 Onion", variant: "hate", hint: "Raw onions are a firm no for me 🙅‍♂️"},
+                        {label: "🌽 Sweetcorn", variant: "hate", hint: "Definite pass on sweetcorn in my meals 🌽"}
                     ]
                 },
                 {type: "heading", text: "Food I've eaten"},
@@ -1555,15 +1547,15 @@ window.CONTENT = {
                 {type: "heading", text: "Genres on Rotation"},
                 {
                     type: "tagRow", tags: [
-                        "Video Game Music",
-                        "Anime Music",
-                        "Metal",
-                        "Rock",
-                        "Rap",
-                        "Pop",
-                        "Lofi",
-                        "J-Pop",
-                        "J-Rock"
+                        {label: "🎮 Video Game Music", hint: "Orchestral and 8-bit game soundtracks light up my focus 🎮"},
+                        {label: "🌸 Anime Music", hint: "High-energy openings and emotional anime themes 🌸"},
+                        {label: "🤘 Metal", hint: "Heavy riffs and driving beats for intense workouts or focus 🤘"},
+                        {label: "🎸 Rock", hint: "Classic and alternative rock tunes 🎸"},
+                        {label: "🎤 Rap", hint: "Clever wordplay, flow, and great rhythms 🎤"},
+                        {label: "🎵 Pop", hint: "Catchy melodies that you can't help singing along to 🎵"},
+                        {label: "🎧 Lofi", hint: "Chill lofi beats for coding and quiet evenings 🎧"},
+                        {label: "🎌 J-Pop", hint: "Upbeat Japanese pop tracks 🎌"},
+                        {label: "🎸 J-Rock", hint: "Dynamic guitar solos and energetic Japanese rock 🎸"}
                     ]
                 },
                 {type: "heading", text: "Concerts & Live Music"},
@@ -1844,19 +1836,19 @@ window.CONTENT = {
                 {
                     type: "tagRow",
                     tags: [
-                        "🌿 Environmentalism",
-                        "✊ Human Rights",
-                        "🏳️‍🌈🏳️‍⚧️ LGBTQIA+ Ally",
-                        "♀️ Women's Rights",
-                        "🧠 Neurodiversity",
-                        "♿ Disability Rights",
-                        "💚 Mental Health",
-                        "🍉 Free Palestine",
-                        "🇺🇦 Stand With Ukraine",
-                        "✊🏿 Black Lives Matter",
-                        "🤝 Stop Asian Hate",
-                        "🕊️ Refugee Sanctuary",
-                        "🐾 Animal Welfare"
+                        {label: "🌿 Environmentalism", hint: "Protecting our planet and living sustainably 🌿"},
+                        {label: "✊ Human Rights", hint: "Dignity, freedom, and equality for everyone everywhere ✊"},
+                        {label: "🏳️‍🌈🏳️‍⚧️ LGBTQIA+ Ally", hint: "Standing proud with my LGBTQIA+ friends & community 🏳️‍🌈"},
+                        {label: "♀️ Women's Rights", hint: "Supporting gender equality and women's empowerment ♀️"},
+                        {label: "🧠 Neurodiversity", hint: "Celebrating different minds, perspectives, and thinking styles 🧠"},
+                        {label: "♿ Disability Rights", hint: "Advocating for accessibility and inclusion for all ♿"},
+                        {label: "💚 Mental Health", hint: "Prioritising well-being, empathy, and open conversations 💚"},
+                        {label: "🍉 Free Palestine", hint: "Peace, justice, and human rights for Palestine 🍉"},
+                        {label: "🇺🇦 Stand With Ukraine", hint: "Standing in solidarity with Ukraine 🇺🇦"},
+                        {label: "✊🏿 Black Lives Matter", hint: "Racial justice, equality, and ending discrimination ✊🏿"},
+                        {label: "🤝 Stop Asian Hate", hint: "Standing against Asian hate and solidarity with communities 🤝"},
+                        {label: "🕊️ Refugee Sanctuary", hint: "Welcoming and protecting those seeking safety from danger 🕊️"},
+                        {label: "🐾 Animal Welfare", hint: "Kindness and protection for animals big and small 🐾"}
                     ]
                 }
             ]

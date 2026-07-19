@@ -781,7 +781,16 @@
         setHtml('[data-profile="facts"]', p.facts.map(factHtml).join(''));
     }
 
+    function getActiveContainer() {
+        const openDialogs = document.querySelectorAll('dialog[open]');
+        if (openDialogs.length > 0) {
+            return openDialogs[openDialogs.length - 1];
+        }
+        return document.body;
+    }
+
     function rainEmoji(emoji) {
+        const container = getActiveContainer();
         for (let i = 0; i < 15; i++) {
             const el = document.createElement('div');
             el.className = 'emoji-rain-drop';
@@ -789,7 +798,7 @@
             el.style.left = Math.random() * 100 + 'vw';
             el.style.animationDelay = Math.random() * 0.8 + 's';
             el.style.fontSize = (1.2 + Math.random() * 0.8) + 'rem';
-            document.body.appendChild(el);
+            container.appendChild(el);
             setTimeout(() => el.remove(), 2600);
         }
     }
@@ -800,10 +809,11 @@
             activeFactToast.remove();
             activeFactToast = null;
         }
+        const container = getActiveContainer();
         const toast = document.createElement('div');
         toast.className = 'fact-toast';
         toast.innerHTML = `<span>${esc(message)}</span>`;
-        document.body.appendChild(toast);
+        container.appendChild(toast);
         activeFactToast = toast;
 
         requestAnimationFrame(() => toast.classList.add('show'));
@@ -820,39 +830,26 @@
     }
 
     function initFactClicks() {
-        const container = document.querySelector('[data-profile="facts"]');
-        if (container) {
-            container.addEventListener('click', (e) => {
-                const factEl = e.target.closest('.fact');
-                if (!factEl) return;
-                const iconEl = factEl.querySelector('.fact-icon');
-                if (!iconEl) return;
-                const emoji = iconEl.textContent.trim();
-                if (emoji) {
-                    rainEmoji(emoji);
-                }
-                const toastMsg = factEl.getAttribute('data-toast');
-                if (toastMsg) {
-                    showFactToast(toastMsg);
-                }
-            });
-        }
-
-        // Global delegate for clicking any tag-item chip
+        // Global delegate for clicking any tag-item, fact, or chip
         document.body.addEventListener('click', (e) => {
-            const tagEl = e.target.closest('.tag-item');
-            if (!tagEl) return;
-            const label = tagEl.getAttribute('data-label');
-            const hint = tagEl.getAttribute('data-hint');
+            const el = e.target.closest('.tag-item, .fact, .chip');
+            if (!el) return;
+            if (el.classList.contains('date-idea-pill')) return;
+
+            const hint = el.getAttribute('data-hint') || el.getAttribute('data-toast');
             if (hint) {
                 showFactToast(hint);
             }
-            if (label) {
+
+            const iconEl = el.querySelector('.fact-icon');
+            let emoji = iconEl ? iconEl.textContent.trim() : '';
+            if (!emoji) {
+                const label = el.getAttribute('data-label') || el.textContent.trim();
                 const m = label.match(/^(\p{Extended_Pictographic})/u);
-                const emoji = m ? m[1] : '';
-                if (emoji) {
-                    rainEmoji(emoji);
-                }
+                emoji = m ? m[1] : '';
+            }
+            if (emoji) {
+                rainEmoji(emoji);
             }
         });
     }
@@ -1983,10 +1980,11 @@
         function showTickleToast() {
             if (secretRevealed) return;
             if (document.querySelector('.tickle-toast')) return;
+            const container = getActiveContainer();
             const toast = document.createElement('div');
             toast.className = 'konami-toast tickle-toast';
             toast.innerHTML = "<strong>Hey, that tickles! 🤭</strong><span class=\"konami-sub\">maybe there's a secret... keep tapping?</span>";
-            document.body.appendChild(toast);
+            container.appendChild(toast);
             requestAnimationFrame(() => toast.classList.add('show'));
             setTimeout(() => {
                 toast.classList.remove('show');
@@ -2029,13 +2027,14 @@
         secretRevealed = true;
         trackEvent('konami_triggered');
         if (document.querySelector('.konami-toast:not(.tickle-toast)')) return;
+        const container = getActiveContainer();
         const toast = document.createElement('div');
         toast.className = 'konami-toast';
         toast.innerHTML =
             '<span class="konami-1up">1-UP!</span>' +
             "<strong>It's a secret to everybody.</strong>" +
             '<span class="konami-sub">🍄 +30 lives · you found the cheat code 🎮</span>';
-        document.body.appendChild(toast);
+        container.appendChild(toast);
 
         const emojis = (C && C.easterEgg && C.easterEgg.emojis) || ['❤️', '🍄', '⭐', '🎮'];
         for (let i = 0; i < 14; i++) {
@@ -2044,7 +2043,7 @@
             h.textContent = emojis[i % emojis.length];
             h.style.left = Math.random() * 100 + 'vw';
             h.style.animationDelay = Math.random() * 0.6 + 's';
-            document.body.appendChild(h);
+            container.appendChild(h);
             setTimeout(() => h.remove(), 2600);
         }
         requestAnimationFrame(() => toast.classList.add('show'));
@@ -2241,7 +2240,7 @@
             
             // If they clicked inside a card but not exactly on the img, find the image inside that card
             if (!img && e.target.tagName !== 'IMG') {
-                if (e.target.closest('button, a, .pill, .date-idea-pill, input, select, textarea')) return;
+                if (e.target.closest('button, a, .pill, .date-idea-pill, .tag-item, .fact, .chip, input, select, textarea')) return;
                 const card = e.target.closest('.feature, .date-card, .place-card, .interest-card, .labeled-photo-card, .faces-item, .logo-tile');
                 if (card) {
                     img = card.querySelector(selectors);
