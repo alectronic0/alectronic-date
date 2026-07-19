@@ -1900,7 +1900,13 @@
             e.preventDefault();
             e.stopPropagation();
             const id = link.getAttribute('data-anchor');
-            if (id) history.replaceState(null, '', '#' + id);
+            if (id) {
+                history.replaceState(null, '', '#' + id);
+                const target = document.getElementById(id) || document.querySelector(`[data-section="${id}"]`);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
             copyLink(linkFor(id), link);
         };
         

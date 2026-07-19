@@ -3,3 +3,7 @@
 .remember/
 outputs/
 node_modules/
+
+.aider.chat.history.md
+
+.aider.tags.cache.v4/cache.db
