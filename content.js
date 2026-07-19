@@ -1781,11 +1781,19 @@ window.CONTENT = {
                 {
                     type: "tagRow",
                     tags: [
-                        "🌿 Environmentalism",
-                        "✊ Human rights",
+                        "🌿 Environmentalism & Climate Justice",
+                        "✊ Human Rights for All",
                         "🏳️‍🌈🏳️‍⚧️ LGBTQIA+ Ally",
-                        "♀️ Women's rights",
-                        "🧠 Neurodiversity"
+                        "♀️ Women's Rights & Gender Equality",
+                        "🧠 Neurodiversity Affirming",
+                        "♿ Disability Rights & Accessibility",
+                        "💚 Mental Health Advocacy",
+                        "🍉 Free Palestine",
+                        "🇺🇦 Stand With Ukraine",
+                        "✊🏿 Black Lives Matter",
+                        "🤝 Stop Asian Hate",
+                        "🕊️ Refugee Support & Sanctuary",
+                        "🐾 Animal Welfare & Protection"
                     ]
                 }
             ]
