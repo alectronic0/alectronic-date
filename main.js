@@ -505,7 +505,7 @@
                 ? `<div class="social-profile-grid">${b.profiles
                       .map(
                           (p) => `<a class="social-profile-card" href="${esc(p.href)}" target="_blank" rel="noopener noreferrer">
-                              <span class="social-card-icon">${esc(p.icon || '📱')}</span>
+                              <img class="social-card-logo" src="${esc(faviconFor(p.href))}" alt="${esc(p.platform)} logo" loading="lazy">
                               <div class="social-card-info">
                                   <strong>${esc(p.platform)}</strong>
                                   <span class="social-card-handle">${esc(p.handle)}</span>

@@ -2088,9 +2088,11 @@ button.CookiebotWidget-logo::before {
   background: var(--surface-3, rgba(255, 255, 255, 0.06));
 }
 
-.social-card-icon {
-  font-size: 2rem;
-  line-height: 1;
+.social-card-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
 .social-card-info {

@@ -2112,7 +2112,7 @@ window.CONTENT = {
         campaign: {
             tag: '🎬 "Date Me" Campaign',
             heading: 'Watch the dating adventure unfold on social media as I do the "Date Me" Campaign',
-            lead: 'Follow along on TikTok and Instagram as I test out date ideas, share behind-the-scenes vlogs, and document the journey to find Player 2!',
+            lead: 'Follow along on TikTok and Instagram as I test out date ideas, share behind-the-scenes vlogs, and document the journey of finding my Player 1!',
             blocks: [
                 {
                     type: "socialCampaign",
