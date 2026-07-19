@@ -1856,8 +1856,10 @@ window.CONTENT = {
                     ]
                 },
                 {
-                    type: "note",
-                    text: "📢 FRIEND PUBLIC SERVICE ANNOUNCEMENT: If you're a friend of mine and you're not on this website yet… you're officially letting the team down! 😱 Send me a message right now to get your beautiful face on the site! 💅✨"
+                    type: "calloutBanner",
+                    emoji: "📢",
+                    title: "FRIEND PUBLIC SERVICE ANNOUNCEMENT",
+                    text: "If you're a friend of mine and you're not on this website yet… you're officially letting the team down! 😱 Drop me a message to get your beautiful face featured on the site! 💅✨"
                 }
             ]
         },

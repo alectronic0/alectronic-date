@@ -496,9 +496,16 @@
         // 🚧 placeholder banner for sections that aren't written yet.
         construction: (b) =>
             '<div class="construction-banner">' +
-            (b.gif ? `<img class="c-gif" src="${esc(b.gif)}" alt="Under construction" loading="lazy">` : '<div class="c-emoji">🚧</div>') +
-            '<strong>Under Construction</strong>' +
+            (b.gif ? `<img class="c-gif" src="${esc(b.gif)}" alt="${esc(b.title || 'Under construction')}" loading="lazy">` : '<div class="c-emoji">🚧</div>') +
+            `<strong>${esc(b.title || 'Under Construction')}</strong>` +
             `<p>${esc(b.text || 'This section is still being built — check back soon!')}</p></div>`,
+
+        calloutBanner: (b) =>
+            `<div class="callout-banner">` +
+            (b.emoji ? `<span class="callout-emoji" aria-hidden="true">${esc(b.emoji)}</span>` : '') +
+            (b.title ? `<span class="callout-title">${esc(b.title)}</span>` : '') +
+            (b.text ? `<span class="callout-tagline">${esc(b.text)}</span>` : '') +
+            `</div>`,
 
         socialCampaign: (b) => {
             const profilesHtml = b.profiles

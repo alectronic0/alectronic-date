@@ -845,6 +845,17 @@ body:has(dialog[open]) { overflow: hidden; }
 .locked-title { font-weight: 700; font-size: 1.05rem; }
 .locked-tagline { font-size: 0.85rem; color: var(--rose-light); font-weight: 600; }
 
+.callout-banner {
+  display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center;
+  width: 100%; margin-top: 24px; padding: 26px 20px;
+  background: var(--surface-2);
+  border: 1px dashed var(--rose); border-radius: var(--radius);
+  font-family: var(--font); color: var(--text);
+}
+.callout-emoji { font-size: 2rem; line-height: 1; }
+.callout-title { font-weight: 700; font-size: 1.05rem; }
+.callout-tagline { font-size: 0.9rem; color: var(--rose-light); font-weight: 500; line-height: 1.5; max-width: 600px; margin-top: 4px; }
+
 .deep-modal-body p:has(> .cheeky-unlock) { text-align: center; margin: 22px 0 6px; }
 .cheeky-unlock {
   display: inline-flex; align-items: center; gap: 8px;
