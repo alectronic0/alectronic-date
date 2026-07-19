@@ -1752,14 +1752,17 @@ window.CONTENT = {
                         {
                             groups: [
                                 {
-                                    title: "Policy & Support",
+                                    title: "🏛️ Policies I Believe In",
                                     items: [
-                                        "Simpler tax rules & closing loopholes",
-                                        "Nationalising utilities & transport",
-                                        "Human rights & LGBTQIA+ (incl. Trans rights)",
-                                        "Disability & neurodivergent equality",
-                                        "Race & gender equality, reproductive rights",
-                                        "Solving climate change"
+                                        "📜 Simpler tax rules & closing tax loopholes",
+                                        "🚆 Nationalising utilities & public transport",
+                                        "🏥 Universal healthcare access & protecting the NHS",
+                                        "⚖️ Workers' rights & fair living wages",
+                                        "🏠 Housing justice & right to shelter",
+                                        "🌿 Climate action & green energy transition",
+                                        "📚 Freedom of speech, civil liberties & open access to knowledge",
+                                        "🚲 Walkable cities, cycling & active travel",
+                                        "🌐 Open source software & digital privacy"
                                     ]
                                 }
                             ]
@@ -1767,33 +1770,44 @@ window.CONTENT = {
                         {
                             groups: [
                                 {
-                                    title: "Religion",
+                                    title: "🙏 Religion & Beliefs",
                                     items: [
                                         "Raised Christian; I now choose not to hold a belief system and just try to be as good and kind as I can",
                                         "I respect others' beliefs and try to educate myself on them"
+                                    ]
+                                },
+                                {
+                                    title: "❤️ Charities & Organisations I Support (Tap to Donate / Learn More)",
+                                    charities: [
+                                        {label: "MSF", url: "https://www.msf.org.uk/"},
+                                        {label: "Mind", url: "https://www.mind.org.uk/"},
+                                        {label: "Amnesty Int.", url: "https://www.amnesty.org.uk/"},
+                                        {label: "Trussell Trust", url: "https://www.trusselltrust.org/"},
+                                        {label: "Red Cross", url: "https://www.redcross.org.uk/"},
+                                        {label: "NHS Give Blood", url: "https://www.blood.co.uk/"}
                                     ]
                                 }
                             ]
                         }
                     ]
                 },
-                {type: "heading", text: "🌍 Causes & Communities"},
+                {type: "heading", text: "🌍 Causes & Communities I Support"},
                 {
                     type: "tagRow",
                     tags: [
-                        "🌿 Environmentalism & Climate Justice",
-                        "✊ Human Rights for All",
+                        "🌿 Environmentalism",
+                        "✊ Human Rights",
                         "🏳️‍🌈🏳️‍⚧️ LGBTQIA+ Ally",
-                        "♀️ Women's Rights & Gender Equality",
-                        "🧠 Neurodiversity Affirming",
-                        "♿ Disability Rights & Accessibility",
-                        "💚 Mental Health Advocacy",
+                        "♀️ Women's Rights",
+                        "🧠 Neurodiversity",
+                        "♿ Disability Rights",
+                        "💚 Mental Health",
                         "🍉 Free Palestine",
                         "🇺🇦 Stand With Ukraine",
                         "✊🏿 Black Lives Matter",
                         "🤝 Stop Asian Hate",
-                        "🕊️ Refugee Support & Sanctuary",
-                        "🐾 Animal Welfare & Protection"
+                        "🕊️ Refugee Sanctuary",
+                        "🐾 Animal Welfare"
                     ]
                 }
             ]

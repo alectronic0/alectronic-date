@@ -412,9 +412,9 @@
                         `<div class="list-block">${col.groups
                             .map(
                                 (g) =>
-                                    `<h3>${esc(g.title)}</h3><ul>${g.items
-                                        .map((i) => `<li>${esc(i)}</li>`)
-                                        .join('')}</ul>`
+                                    `<h3>${esc(g.title)}</h3>` +
+                                    (g.items && g.items.length ? `<ul>${g.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>` : '') +
+                                    (g.charities && g.charities.length ? `<div class="charity-grid-wrapper">${blocks.charityGrid({tiles: g.charities})}</div>` : '')
                             )
                             .join('')}</div>`
                 )
@@ -454,6 +454,17 @@
                 .map(
                     (t) =>
                         `<div class="logo-tile">${img(t.src, t.label)}<span>${esc(t.label)}</span></div>`
+                )
+                .join('')}</div>`,
+
+        charityGrid: (b) =>
+            `<div class="charity-grid">${b.tiles
+                .map(
+                    (t) =>
+                        `<a class="charity-tile" href="${esc(t.url)}" target="_blank" rel="noopener noreferrer" title="Donate / support ${esc(t.label)}">
+                            <img class="charity-logo" src="${esc(t.logo || faviconFor(t.url))}" alt="${esc(t.label)} logo" loading="lazy">
+                            <span class="charity-name">${esc(t.label)}</span>
+                        </a>`
                 )
                 .join('')}</div>`,
 
