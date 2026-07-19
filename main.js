@@ -212,7 +212,8 @@
 
         heading: (b) => `<h3>${esc(b.text)}</h3>`,
 
-        note: (b) => `<div class="${esc(b.variant || 'growth-note')}">${esc(b.text)}</div>`,
+        note: (b) =>
+            `<div class="${esc(b.variant || 'growth-note')}">${b.title ? `<h3 style="margin-bottom:8px;">${esc(b.title)}</h3>` : ''}<p style="margin:0;">${esc(b.text)}</p>${b.tags && b.tags.length ? `<div class="tag-row" style="margin-top:14px;">${b.tags.map(tagHtml).join('')}</div>` : ''}</div>`,
 
         // External link as a favicon chip ("🟢 Check out my Spotify →").
         // `icon` may be an explicit favicon URL; otherwise it's derived from the domain.
@@ -468,6 +469,20 @@
                 )
                 .join('')}</div>`,
 
+        redFlags: (b) =>
+            `<div class="red-flags-grid">${b.cards
+                .map(
+                    (c) =>
+                        `<div class="red-flag-card">
+                            <span class="rf-icon">${esc(c.icon || "🚩")}</span>
+                            <div class="rf-content">
+                                <strong class="rf-title">${esc(c.title)}</strong>
+                                <p class="rf-desc">${esc(c.desc)}</p>
+                            </div>
+                        </div>`
+                )
+                .join('')}</div>`,
+
         detailList: (b) =>
             `<div class="detail-list">${b.items
                 .map(
@@ -477,6 +492,14 @@
                         )}</span><div class="detail-text"><strong>${esc(d.title)}</strong>${esc(
                             d.description
                         )}</div></div>`
+                )
+                .join('')}</div>`,
+
+        detailCols: (b) =>
+            `<div class="two-cols">${b.columns
+                .map(
+                    (col) =>
+                        `<div class="list-block"><h3>${esc(col.title)}</h3>${blocks.detailList({items: col.items})}</div>`
                 )
                 .join('')}</div>`,
 

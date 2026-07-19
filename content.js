@@ -277,7 +277,7 @@ window.CONTENT = {
         {key: "personality", emoji: "🧬", title: "Personality & Vibe", hint: "— what I'm like to be around", wip: true},
         {key: "weekInLife", emoji: "📅", title: "A day in the life of Alec", hint: "— my typical routines", wip: true},
         {key: "moments", emoji: "🏆", title: "Notable Moments", hint: "— milestones & adventures"},
-        {key: "transparency", emoji: "🌱", title: "Radical Transparency", hint: "— areas of active growth"},
+        {key: "transparency", emoji: "🚩", title: "My Red Flags", hint: "— no one's perfect, at least I'm being honest"},
         {key: "politics", emoji: "🏛️", title: "Politics & Religion", hint: "— where I stand"},
         {key: "dislikes", emoji: "🙅", title: "Gentle Dislikes", hint: "— a preference for calm"},
         {key: "friends", emoji: "👥", title: "Friend Review", hint: "— what they say about me"},
@@ -744,24 +744,49 @@ window.CONTENT = {
                 {
                     type: "note",
                     variant: "growth-banner",
-                    text: "I think it's important to be upfront and self-aware. None of this defines me — it's just the honest stuff I'm actively working on, and I'd rather you know me fully."
+                    text: "💬 No one is perfect, at least I am being honest! None of this defines me — it's just the honest stuff I'm actively working on, and I'd rather you know me fully."
                 },
                 {
-                    type: "valueCols", columns: [
+                    type: "detailCols",
+                    columns: [
                         {
-                            title: "Physical Health — On the Up",
+                            title: "💪 Physical Health — On the Up",
                             items: [
-                                "Since March 2025 I've worked with a personal trainer and lost ~10kg",
-                                "Goal: reach a healthy 70–80kg",
-                                "Managing high blood pressure & diabetes — and steadily improving"
+                                {
+                                    icon: "🩺",
+                                    title: "Health Management",
+                                    description: "Actively managing high blood pressure & diabetes — steadily improving."
+                                },
+                                {
+                                    icon: "🏋️‍♂️",
+                                    title: "Personal Trainer & Fitness",
+                                    description: "Working with a personal trainer since March 2025 and lost ~10kg so far!"
+                                },
+                                {
+                                    icon: "🎯",
+                                    title: "Weight Target Goal",
+                                    description: "Heading steadily towards a healthy 70–80kg range."
+                                }
                             ]
                         },
                         {
-                            title: "Mind & Emotions — Self-Aware",
+                            title: "🧠 Mind & Emotions — Self-Aware",
                             items: [
-                                "Dyslexia, depression, anxious attachment & (undiagnosed) AuDHD",
-                                "An overthinker and a recovering people-pleaser who feels things deeply",
-                                "I've done therapy a couple of times before and I'm better for it!"
+                                {
+                                    icon: "🧩",
+                                    title: "Neurotype & Mindset",
+                                    description: "Dyslexia, depression, anxious attachment & (undiagnosed) AuDHD."
+                                },
+                                {
+                                    icon: "💭",
+                                    title: "Deep Feeler & Overthinker",
+                                    description: "An overthinker and recovering people-pleaser who feels things deeply."
+                                },
+                                {
+                                    icon: "🗣️",
+                                    title: "Therapy Positive",
+                                    description: "I've done therapy a couple of times before and I'm much stronger & better for it."
+                                }
                             ]
                         }
                     ]
@@ -769,7 +794,14 @@ window.CONTENT = {
                 {
                     type: "note",
                     variant: "growth-note",
-                    text: "I know my triggers and have worked hard to process most of my history. Consistent, open and honest communication is what keeps me steady — and it's the thing I value most in a relationship."
+                    title: "🪞 Reflection & Self-Awareness",
+                    text: "✨ I know most of my triggers and have worked hard to process most of my history. Consistent, open and honest communication are things I value very much in a relationship.",
+                    tags: [
+                        "🩹 Childhood Bullying",
+                        "🍲 Relationship with Food",
+                        "💼 Workaholic",
+                        "🌱 Active Self-Growth"
+                    ]
                 }
             ]
         },
