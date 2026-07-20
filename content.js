@@ -853,7 +853,7 @@ window.CONTENT = {
                         },
                         {
                             icon: "📷", title: "Photography",
-                            body: "Photography threads through nearly everything else I do — nature, food, landscapes, my shibari art, fire and LED poi after dark, the stars, and my friends. I shoot on a Google Pixel 10 Pro (edited in Snapseed) and fly a DJI drone; I've got a Polaroid I'm still figuring out, and I'm dreaming of a proper camera — or even a telescope rig for night shots.",
+                            body: "Photography threads through nearly everything else I do — nature, food, landscapes, my shibari art, fire and LED staff after dark, the stars, and my friends. I shoot on a Google Pixel 10 Pro (edited in Snapseed) and fly a DJI drone; I've got a Polaroid I'm still figuring out, and I'm dreaming of a proper camera — or even a telescope rig for night shots.",
                             imageGroups: [
                                 {
                                     title: "Night Photography 🌌",
