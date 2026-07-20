@@ -2196,10 +2196,10 @@ window.CONTENT = {
                             src: "https://media1.tenor.com/m/OGqyw4P1bgUAAAAd/fitzsimmons-fitzs.gif",
                             alt: "Fitzsimmons (Agents of S.H.I.E.L.D.)",
                             title: "Fitzsimmons (Agents of S.H.I.E.L.D.)",
-                            text: "You know, I realized something. The universe can't stop us. 'Cause we have crossed galaxies, we traveled through time, we survived the bottom of the Atlantic just so we could be together. Now, a love like that, that is stronger than any curse, and you and I, we are unstoppable together."
+                            text: "\"You know, I realized something. The universe can't stop us. 'Cause we have crossed galaxies, we traveled through time, we survived the bottom of the Atlantic just so we could be together. Now, a love like that, that is stronger than any curse, and you and I, we are unstoppable together.\""
                         },
                         {
-                            src: "https://media1.tenor.com/m/P0uW0GvI0cAAAAAC/fma-roy.gif",
+                            src: "https://media1.tenor.com/m/Ye9HTo8O6wcAAAAC/roy-mustang-and-riza-hawkeye-roy-mustang.gif",
                             alt: "Roy & Hawkeye (Fullmetal Alchemist)",
                             title: "Roy & Hawkeye (Fullmetal Alchemist)",
                             text: "Unshakable trust and quiet loyalty. Having each other's back through thick and thin, keeping each other grounded and accountable."
@@ -2211,19 +2211,25 @@ window.CONTENT = {
                             text: "Matching each other's wit and intellect while secretly caring for each other deeply."
                         },
                         {
-                            src: "https://media1.tenor.com/m/sZfO-p15bY0AAAAC/tonikawa-over-the-moon-for-you.gif",
+                            src: "https://media1.tenor.com/m/6vTGcjFMzHcAAAAC/tsukasa-tsukasita.gif",
                             alt: "Nasa & Tsukasa (Tonikawa)",
                             title: "Nasa & Tsukasa (Tonikawa)",
                             text: "Wholesome, earnest love — navigating life's everyday moments with devotion."
                         },
                         {
-                            src: "https://media1.tenor.com/m/M1d-rOaZ17cAAAAC/doctor-who-river-song.gif",
-                            alt: "Doctor & River Song / Rory & Amy (Doctor Who)",
-                            title: "Doctor & River Song / Rory & Amy (Doctor Who)",
-                            text: "Cross-time adventures, unfailing loyalty, and a romance that spans space and time."
+                            src: "https://media1.tenor.com/m/v0MKqyPA8BsAAAAC/doctorwho-mattsmith.gif",
+                            alt: "Rory & Amy (Doctor Who)",
+                            title: "Rory & Amy (Doctor Who)",
+                            text: "The Centurion and his girl — unconditional, unbreakable devotion across two millennia."
                         },
                         {
-                            src: "https://media1.tenor.com/m/N5jOq-48mSEAAAAC/good-omens-ineffable-husbands.gif",
+                            src: "https://media1.tenor.com/m/O1-UR5lORTgAAAAC/doctor-who-whovian.gif",
+                            alt: "The Doctor & River Song (Doctor Who)",
+                            title: "The Doctor & River Song (Doctor Who)",
+                            text: "Loving the Doctor is like loving the stars themselves — cross-time adventures and impossible romance."
+                        },
+                        {
+                            src: "https://media1.tenor.com/m/RmcPflelHv0AAAAC/aziraphale-crowley.gif",
                             alt: "Crowley & Aziraphale (Good Omens)",
                             title: "Crowley & Aziraphale (Good Omens)",
                             text: "Ineffable partners across millennia — opposites who balance each other perfectly."
