@@ -2163,6 +2163,12 @@ window.CONTENT = {
                 {
                     type: "featureGrid", features: [
                         {
+                            src: "https://media1.tenor.com/m/MPCQRMAcpHUAAAAC/ceceisthebest.gif",
+                            alt: "Tom Holland and Zendaya",
+                            title: "Tom Holland & Zendaya",
+                            text: "The ultimate real-life couple goals. Beyond the chemistry, what makes them special is how they unabashedly celebrate each other's wins."
+                        },
+                        {
                             src: "https://media1.tenor.com/m/OGqyw4P1bgUAAAAd/fitzsimmons-fitzs.gif",
                             alt: "Fitzsimmons (Agents of S.H.I.E.L.D.)",
                             title: "Fitzsimmons (Agents of S.H.I.E.L.D.)",
