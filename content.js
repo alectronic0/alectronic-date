@@ -1426,14 +1426,6 @@ window.CONTENT = {
                         {label: "🍬 Sour sweets", variant: "love", hint: "The sourer, the better! 🍬"}
                     ]
                 },
-                {type: "heading", text: "Things I'd like to try"},
-                {
-                    type: "tagRow", tags: [
-                        {label: "🧪 Fermentation", hint: "Getting into sourdough, kombucha, kimchi, and fermentation 🧪"},
-                        {label: "🍳 Gastronomy", hint: "Exploring modern gastronomy and culinary science 🍳"},
-                        {label: "🍺 Brewing & Distilling", hint: "Crafting small-batch brews and spirits 🍺"}
-                    ]
-                },
                 {type: "heading", text: "In the bin"},
                 {
                     type: "tagRow", tags: [
