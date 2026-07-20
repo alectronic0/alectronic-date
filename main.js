@@ -376,7 +376,7 @@
             `<div class="feature-grid">${b.features
                 .map(
                     (f) =>
-                        `<div class="feature">${img(f.src, f.alt)}<div class="feature-body" style="gap: 0;"><div>${f.title ? `<strong style="display:block; margin-bottom:4px; font-size:1.05rem;">${f.icon ? `${esc(f.icon)} ` : ''}${esc(f.title)}</strong>` : ''}<span class="feature-text">${esc(f.text)}</span></div></div></div>`
+                        `<div class="feature">${img(f.src, f.alt)}<div class="feature-body" style="gap: 0;"><div>${f.title ? `<strong style="display:block; margin-bottom:4px; font-size:1.05rem;">${f.icon ? `${esc(f.icon)} ` : ''}${esc(f.title)}</strong>` : ''}<span class="feature-text">${f.html ? f.html : esc(f.text)}</span></div></div></div>`
                 )
                 .join('')}</div>`,
 

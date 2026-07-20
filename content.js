@@ -2190,13 +2190,13 @@ window.CONTENT = {
                             src: "https://media1.tenor.com/m/OLVsLLBhDr8AAAAC/brooklyn-nine-nine-amy-santiago.gif",
                             alt: "Jake & Amy (Brooklyn Nine-Nine)",
                             title: "Jake & Amy (Brooklyn Nine-Nine)",
-                            text: "Competitive, silly, and deeply supportive — dorks who push each other to grow while having endless fun together."
+                            html: "<em>\"I love you and I treasure you... and you bore me.\"</em> (Okay, maybe not the bore me part! 😉)<br><br>Competitive, silly, and deeply supportive. Dorks who push each other to grow while having endless fun together."
                         },
                         {
                             src: "https://media1.tenor.com/m/OGqyw4P1bgUAAAAd/fitzsimmons-fitzs.gif",
                             alt: "Fitzsimmons (Agents of S.H.I.E.L.D.)",
                             title: "Fitzsimmons (Agents of S.H.I.E.L.D.)",
-                            text: "\"You know, I realized something. The universe can't stop us. 'Cause we have crossed galaxies, we traveled through time, we survived the bottom of the Atlantic just so we could be together. Now, a love like that, that is stronger than any curse, and you and I, we are unstoppable together.\""
+                            html: "<em>\"You know, I realized something. The universe can't stop us. 'Cause we have crossed galaxies, we traveled through time, we survived the bottom of the Atlantic just so we could be together. Now, a love like that, that is stronger than any curse, and you and I, we are unstoppable together.\"</em>"
                         },
                         {
                             src: "https://media1.tenor.com/m/Ye9HTo8O6wcAAAAC/roy-mustang-and-riza-hawkeye-roy-mustang.gif",
@@ -2214,31 +2214,31 @@ window.CONTENT = {
                             src: "https://media1.tenor.com/m/6vTGcjFMzHcAAAAC/tsukasa-tsukasita.gif",
                             alt: "Nasa & Tsukasa (Tonikawa)",
                             title: "Nasa & Tsukasa (Tonikawa)",
-                            text: "Wholesome, earnest love — navigating life's everyday moments with devotion."
+                            text: "Wholesome, earnest love navigating life's everyday moments with devotion."
                         },
                         {
                             src: "https://media1.tenor.com/m/v0MKqyPA8BsAAAAC/doctorwho-mattsmith.gif",
                             alt: "Rory & Amy (Doctor Who)",
                             title: "Rory & Amy (Doctor Who)",
-                            text: "The Centurion and his girl — unconditional, unbreakable devotion across two millennia."
+                            text: "The Centurion and his girl. Unconditional, unbreakable devotion across two millennia."
                         },
                         {
                             src: "https://media1.tenor.com/m/O1-UR5lORTgAAAAC/doctor-who-whovian.gif",
                             alt: "The Doctor & River Song (Doctor Who)",
                             title: "The Doctor & River Song (Doctor Who)",
-                            text: "Loving the Doctor is like loving the stars themselves — cross-time adventures and impossible romance."
+                            html: "<em>\"When you love the Doctor, it's like loving the stars themselves. You don't expect a sunset to admire you back.\"</em><br><br>Cross-time adventures, unfailing loyalty, and a romance that spans space and time."
                         },
                         {
                             src: "https://media1.tenor.com/m/RmcPflelHv0AAAAC/aziraphale-crowley.gif",
                             alt: "Crowley & Aziraphale (Good Omens)",
                             title: "Crowley & Aziraphale (Good Omens)",
-                            text: "Ineffable partners across millennia — opposites who balance each other perfectly."
+                            text: "Ineffable partners across millennia. Opposites who balance each other perfectly."
                         },
                         {
                             src: "https://media1.tenor.com/m/m2wUr4fJm_8AAAAC/hotfuzz-hot.gif",
                             alt: "Simon Pegg & Nick Frost",
                             title: "Simon Pegg & Nick Frost",
-                            text: "Iconic friendship and partner-in-crime energy — ride-or-die duo through alien invasions and village mysteries."
+                            text: "Iconic friendship and partner-in-crime energy. Ride-or-die duo through alien invasions and village mysteries."
                         }
                     ]
                 }
