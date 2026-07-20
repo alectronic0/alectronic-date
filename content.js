@@ -2205,7 +2205,7 @@ window.CONTENT = {
                             text: "Unshakable trust and quiet loyalty. Having each other's back through thick and thin, keeping each other grounded and accountable."
                         },
                         {
-                            src: "https://media1.tenor.com/m/3hOvhQfVd6IAAAAC/kaguya-sama-love-is-war-shinomiya-kaguya.gif",
+                            src: "https://media1.tenor.com/m/K-ssHUtHo0kAAAAC/kaguya-sama-love-is-war-kaguya-sama.gif",
                             alt: "Miyuki & Kaguya (Love is War)",
                             title: "Miyuki & Kaguya (Love is War)",
                             text: "Matching each other's wit and intellect while secretly caring for each other deeply."
