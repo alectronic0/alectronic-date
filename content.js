@@ -994,7 +994,7 @@ window.CONTENT = {
                         },
                         {
                             icon: "🍜", title: "Food",
-                            body: "I love experimenting in the kitchen to make something delicious from time to time — fresh cookies out of the oven, a proper brew from an embarrassingly large tea collection — and I'm always on the lookout for my next best meal.",
+                            body: "I love experimenting in the kitchen to make something delicious from time to time — from fresh cookies out of the oven to gastronomy, fermentation (kimchi, kombucha, sourdough), and brewing/distilling — alongside a proper brew from an embarrassingly large tea collection.",
                             images: [
                                 {src: "img/hobbies/homemade-chocolate-chip-cookies.webp", alt: "Homemade chocolate chip cookies"},
                                 {src: "img/hobbies/t2-tea-collection.webp", alt: "My tea collection"},
@@ -1004,6 +1004,9 @@ window.CONTENT = {
                             tags: [
                                 {label: "🍳 Cooking", hint: "Experimenting in the kitchen with fresh ingredients 🍳"},
                                 {label: "🧁 Baking", hint: "Fresh cookies out of the oven are my superpower 🍪"},
+                                {label: "🧪 Fermentation (Want to try)", hint: "Getting into sourdough, kombucha, kimchi, and fermentation 🧪"},
+                                {label: "🍳 Gastronomy (Want to try)", hint: "Exploring modern gastronomy and culinary science 🍳"},
+                                {label: "🍺 Brewing & Distilling (Want to try)", hint: "Crafting small-batch brews and spirits 🍺"},
                                 {label: "🍽️ Eating out", hint: "Always hunting for the next best food spot 🍽️"},
                                 {label: "🫖 Tea", hint: "An embarrassingly large tea collection for every mood 🫖"}
                             ]
@@ -1097,6 +1100,9 @@ window.CONTENT = {
                         },
                         {
                             src: "img/bucket-list/terrarium.webp", icon: "🌿", title: "Terrarium Making", caption: "A tiny living world under glass."
+                        },
+                        {
+                            src: "img/bucket-list/swordplay.webp", icon: "⚔️", title: "Swordplay & Fencing", caption: "Learning historical swordplay, fencing, or stage combat."
                         }
                     ]
                 }
@@ -1291,6 +1297,10 @@ window.CONTENT = {
                         {title: "Fringe", src: "img/movies-tv/fringe-tv-show-poster.webp"},
                         {title: "Warehouse 13", src: "img/movies-tv/warehouse-13-tv-show-poster.webp"},
                         {title: "Stargate", src: "img/movies-tv/stargate-sg1-atlantis-universe-posters.webp"},
+                        {title: "Doctor Who", src: "img/movies-tv/doctor-who-poster.webp"},
+                        {title: "Good Omens", src: "img/movies-tv/good-omens-poster.webp"},
+                        {title: "Love is War", src: "img/movies-tv/kaguya-sama-love-is-war-anime-poster.webp"},
+                        {title: "Tonikawa", src: "img/movies-tv/tonikawa-over-the-moon-for-you-poster.webp"},
                         {title: "Star Trek: Lower Decks", src: "img/movies-tv/star-trek-lower-decks-poster.webp"},
                         {title: "The Expanse", src: "img/movies-tv/the-expanse-amazon-prime-poster.webp"}
                     ]
@@ -1414,6 +1424,14 @@ window.CONTENT = {
                         {label: "🍵 Matcha & Tea", variant: "love", hint: "A warm cup of matcha or quality loose-leaf tea 🍵"},
                         {label: "🥐 Pastries", variant: "love", hint: "Flaky croissants and fresh bakery treats 🥐"},
                         {label: "🍬 Sour sweets", variant: "love", hint: "The sourer, the better! 🍬"}
+                    ]
+                },
+                {type: "heading", text: "Things I'd like to try"},
+                {
+                    type: "tagRow", tags: [
+                        {label: "🧪 Fermentation", hint: "Getting into sourdough, kombucha, kimchi, and fermentation 🧪"},
+                        {label: "🍳 Gastronomy", hint: "Exploring modern gastronomy and culinary science 🍳"},
+                        {label: "🍺 Brewing & Distilling", hint: "Crafting small-batch brews and spirits 🍺"}
                     ]
                 },
                 {type: "heading", text: "In the bin"},
@@ -2169,11 +2187,53 @@ window.CONTENT = {
                             text: "The ultimate real-life couple goals. Beyond the chemistry, what makes them special is how they unabashedly celebrate each other's wins."
                         },
                         {
+                            src: "https://media1.tenor.com/m/o6j0_W7V9oUAAAAd/peraltiago-b99.gif",
+                            alt: "Jake & Amy (Brooklyn Nine-Nine)",
+                            title: "Jake & Amy (Brooklyn Nine-Nine)",
+                            text: "Competitive, silly, and deeply supportive — dorks who push each other to grow while having endless fun together."
+                        },
+                        {
                             src: "https://media1.tenor.com/m/OGqyw4P1bgUAAAAd/fitzsimmons-fitzs.gif",
                             alt: "Fitzsimmons (Agents of S.H.I.E.L.D.)",
                             title: "Fitzsimmons (Agents of S.H.I.E.L.D.)",
                             text: "You know, I realized something. The universe can't stop us. 'Cause we have crossed galaxies, we traveled through time, we survived the bottom of the Atlantic just so we could be together. Now, a love like that, that is stronger than any curse, and you and I, we are unstoppable together."
                         },
+                        {
+                            src: "https://media1.tenor.com/m/P0uW0GvI0cAAAAAC/fma-roy.gif",
+                            alt: "Roy & Hawkeye (Fullmetal Alchemist)",
+                            title: "Roy & Hawkeye (Fullmetal Alchemist)",
+                            text: "Unshakable trust and quiet loyalty. Having each other's back through thick and thin, keeping each other grounded and accountable."
+                        },
+                        {
+                            src: "https://media1.tenor.com/m/3hOvhQfVd6IAAAAC/kaguya-sama-love-is-war-shinomiya-kaguya.gif",
+                            alt: "Miyuki & Kaguya (Love is War)",
+                            title: "Miyuki & Kaguya (Love is War)",
+                            text: "Matching each other's wit and intellect while secretly caring for each other deeply."
+                        },
+                        {
+                            src: "https://media1.tenor.com/m/sZfO-p15bY0AAAAC/tonikawa-over-the-moon-for-you.gif",
+                            alt: "Nasa & Tsukasa (Tonikawa)",
+                            title: "Nasa & Tsukasa (Tonikawa)",
+                            text: "Wholesome, earnest love — navigating life's everyday moments with devotion."
+                        },
+                        {
+                            src: "https://media1.tenor.com/m/M1d-rOaZ17cAAAAC/doctor-who-river-song.gif",
+                            alt: "Doctor & River Song / Rory & Amy (Doctor Who)",
+                            title: "Doctor & River Song / Rory & Amy (Doctor Who)",
+                            text: "Cross-time adventures, unfailing loyalty, and a romance that spans space and time."
+                        },
+                        {
+                            src: "https://media1.tenor.com/m/N5jOq-48mSEAAAAC/good-omens-ineffable-husbands.gif",
+                            alt: "Crowley & Aziraphale (Good Omens)",
+                            title: "Crowley & Aziraphale (Good Omens)",
+                            text: "Ineffable partners across millennia — opposites who balance each other perfectly."
+                        },
+                        {
+                            src: "https://media1.tenor.com/m/6H-L1VqG-iMAAAAC/hot-fuzz-simon-pegg.gif",
+                            alt: "Simon Pegg & Nick Frost",
+                            title: "Simon Pegg & Nick Frost",
+                            text: "Iconic friendship and partner-in-crime energy — ride-or-die duo through alien invasions and village mysteries."
+                        }
                     ]
                 }
             ]
