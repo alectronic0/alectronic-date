@@ -2229,7 +2229,7 @@ window.CONTENT = {
                             text: "Ineffable partners across millennia — opposites who balance each other perfectly."
                         },
                         {
-                            src: "https://media1.tenor.com/m/6H-L1VqG-iMAAAAC/hot-fuzz-simon-pegg.gif",
+                            src: "https://media1.tenor.com/m/m2wUr4fJm_8AAAAC/hotfuzz-hot.gif",
                             alt: "Simon Pegg & Nick Frost",
                             title: "Simon Pegg & Nick Frost",
                             text: "Iconic friendship and partner-in-crime energy — ride-or-die duo through alien invasions and village mysteries."
