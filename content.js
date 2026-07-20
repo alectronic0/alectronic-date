@@ -2187,7 +2187,7 @@ window.CONTENT = {
                             text: "The ultimate real-life couple goals. Beyond the chemistry, what makes them special is how they unabashedly celebrate each other's wins."
                         },
                         {
-                            src: "https://media1.tenor.com/m/o6j0_W7V9oUAAAAd/peraltiago-b99.gif",
+                            src: "https://media1.tenor.com/m/OLVsLLBhDr8AAAAC/brooklyn-nine-nine-amy-santiago.gif",
                             alt: "Jake & Amy (Brooklyn Nine-Nine)",
                             title: "Jake & Amy (Brooklyn Nine-Nine)",
                             text: "Competitive, silly, and deeply supportive — dorks who push each other to grow while having endless fun together."
