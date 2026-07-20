@@ -298,7 +298,7 @@ window.CONTENT = {
         {type: "heading", text: "DLC - Bonus content"},
         {key: "plantsAnimals", emoji: "🌺", title: "Plants & Creatures", hint: "— a few favourites"},
         {key: "gifs", emoji: "🎞️", title: "GIFs I Love", hint: "— my life in looping form"},
-        {key: "couples", emoji: "💑", title: "Couple goals", hint: "— couple I aspire my future relationship to be like", wip: true},
+        {key: "couples", emoji: "💑", title: "Couple goals", hint: "— couple I aspire my future relationship to be like"},
     ],
 
     /* ── Mid-page sections (each = blocks[]) ── */
@@ -2173,11 +2173,6 @@ window.CONTENT = {
 
         couples: {
             blocks: [
-                {
-                    type: "construction",
-                    gif: "img/gifs/xUStFKHmuFPYk.gif",
-                    text: "Fictional or maybe no so fictional couples who I just look and go yup something like that!, Check back soon!"
-                },
                 {
                     type: "featureGrid", features: [
                         {
