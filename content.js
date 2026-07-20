@@ -2181,16 +2181,22 @@ window.CONTENT = {
                 {
                     type: "featureGrid", features: [
                         {
-                            src: "https://media1.tenor.com/m/MPCQRMAcpHUAAAAC/ceceisthebest.gif",
-                            alt: "Tom Holland and Zendaya",
-                            title: "Tom Holland & Zendaya",
-                            text: "The ultimate real-life couple goals. Beyond the chemistry, what makes them special is how they unabashedly celebrate each other's wins."
-                        },
-                        {
                             src: "https://media1.tenor.com/m/OLVsLLBhDr8AAAAC/brooklyn-nine-nine-amy-santiago.gif",
                             alt: "Jake & Amy (Brooklyn Nine-Nine)",
                             title: "Jake & Amy (Brooklyn Nine-Nine)",
                             html: "<em>\"I love you and I treasure you... and you bore me.\"</em> (Okay, maybe not the bore me part! 😉)<br><br>Competitive, silly, and deeply supportive. Dorks who push each other to grow while having endless fun together."
+                        },
+                        {
+                            src: "https://media1.tenor.com/m/O1-UR5lORTgAAAAC/doctor-who-whovian.gif",
+                            alt: "The Doctor & River Song (Doctor Who)",
+                            title: "The Doctor & River Song (Doctor Who)",
+                            html: "<em>\"When you love the Doctor, it's like loving the stars themselves. You don't expect a sunset to admire you back.\"</em><br><br>Cross-time adventures, unfailing loyalty, and a romance that spans space and time."
+                        },
+                        {
+                            src: "https://media1.tenor.com/m/MPCQRMAcpHUAAAAC/ceceisthebest.gif",
+                            alt: "Tom Holland and Zendaya",
+                            title: "Tom Holland & Zendaya",
+                            text: "The ultimate real-life couple goals. Beyond the chemistry, what makes them special is how they unabashedly celebrate each other's wins."
                         },
                         {
                             src: "https://media1.tenor.com/m/OGqyw4P1bgUAAAAd/fitzsimmons-fitzs.gif",
@@ -2203,6 +2209,12 @@ window.CONTENT = {
                             alt: "Roy & Hawkeye (Fullmetal Alchemist)",
                             title: "Roy & Hawkeye (Fullmetal Alchemist)",
                             text: "Unshakable trust and quiet loyalty. Having each other's back through thick and thin, keeping each other grounded and accountable."
+                        },
+                        {
+                            src: "https://media1.tenor.com/m/m2wUr4fJm_8AAAAC/hotfuzz-hot.gif",
+                            alt: "Simon Pegg & Nick Frost",
+                            title: "Simon Pegg & Nick Frost",
+                            text: "Iconic friendship and partner-in-crime energy. Ride-or-die duo through alien invasions and village mysteries."
                         },
                         {
                             src: "https://media1.tenor.com/m/K-ssHUtHo0kAAAAC/kaguya-sama-love-is-war-kaguya-sama.gif",
@@ -2223,22 +2235,10 @@ window.CONTENT = {
                             text: "The Centurion and his girl. Unconditional, unbreakable devotion across two millennia."
                         },
                         {
-                            src: "https://media1.tenor.com/m/O1-UR5lORTgAAAAC/doctor-who-whovian.gif",
-                            alt: "The Doctor & River Song (Doctor Who)",
-                            title: "The Doctor & River Song (Doctor Who)",
-                            html: "<em>\"When you love the Doctor, it's like loving the stars themselves. You don't expect a sunset to admire you back.\"</em><br><br>Cross-time adventures, unfailing loyalty, and a romance that spans space and time."
-                        },
-                        {
                             src: "https://media1.tenor.com/m/RmcPflelHv0AAAAC/aziraphale-crowley.gif",
                             alt: "Crowley & Aziraphale (Good Omens)",
                             title: "Crowley & Aziraphale (Good Omens)",
                             text: "Ineffable partners across millennia. Opposites who balance each other perfectly."
-                        },
-                        {
-                            src: "https://media1.tenor.com/m/m2wUr4fJm_8AAAAC/hotfuzz-hot.gif",
-                            alt: "Simon Pegg & Nick Frost",
-                            title: "Simon Pegg & Nick Frost",
-                            text: "Iconic friendship and partner-in-crime energy. Ride-or-die duo through alien invasions and village mysteries."
                         }
                     ]
                 }
