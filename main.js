@@ -2596,7 +2596,7 @@
             let zIndexCounter = 10;
             const shuffledImages = [...images].sort(() => Math.random() - 0.5);
 
-            container.addEventListener('click', (e) => {
+            container.addEventListener('pointerdown', (e) => {
                 const prompt = container.querySelector('.click-prompt');
                 if (prompt) prompt.style.opacity = '0';
                 
