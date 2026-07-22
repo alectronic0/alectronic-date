@@ -43,6 +43,7 @@ window.CONTENT = {
         menuLabel: 'Menu', ctaText: '💘 Go on a date', links: [
             {label: 'Who I Am', href: '#about'},
             {label: 'Faces', href: '#faces'},
+            {label: 'General Vibe', href: '#general-vibe'},
             {label: 'Boyfriend Mode', href: '#boyfriend-mode'},
             {label: 'Looking For', href: '#looking-for'},
             {label: 'Date Ideas', href: '#dates'},
@@ -355,6 +356,53 @@ window.CONTENT = {
                         {
                             src: "img/moments/alec-kimono-torii-gate-japan.webp", icon: "🇯🇵", title: "A month solo in Japan", caption: "Temples, ramen and a lot of walking."
                         }
+                    ]
+                }
+            ]
+        },
+
+        generalVibe: {
+            tag: "✨ General Vibe",
+            tagClass: "tag-blue",
+            heading: "The General Vibe",
+            lead: "A glimpse into what it's like hanging out with me. Moments, vibes, and a little chaos.",
+            blocks: [
+                {
+                    type: "fadingCollage",
+                    images: [
+                        {src: "img/vibe/slide_img_0.jpg", alt: "Vibe 0"},
+                        {src: "img/vibe/slide_img_1.jpg", alt: "Vibe 1"},
+                        {src: "img/vibe/slide_img_2.jpg", alt: "Vibe 2"},
+                        {src: "img/vibe/slide_img_3.jpg", alt: "Vibe 3"},
+                        {src: "img/vibe/slide_img_4.jpg", alt: "Vibe 4"},
+                        {src: "img/vibe/slide_img_5.jpg", alt: "Vibe 5"},
+                        {src: "img/vibe/slide_img_6.jpg", alt: "Vibe 6"},
+                        {src: "img/vibe/slide_img_7.jpg", alt: "Vibe 7"},
+                        {src: "img/vibe/slide_img_8.jpg", alt: "Vibe 8"},
+                        {src: "img/vibe/slide_img_9.jpg", alt: "Vibe 9"},
+                        {src: "img/vibe/slide_img_10.jpg", alt: "Vibe 10"},
+                        {src: "img/vibe/slide_img_11.jpg", alt: "Vibe 11"},
+                        {src: "img/vibe/slide_img_12.jpg", alt: "Vibe 12"},
+                        {src: "img/vibe/slide_img_13.jpg", alt: "Vibe 13"},
+                        {src: "img/vibe/slide_img_14.jpg", alt: "Vibe 14"},
+                        {src: "img/vibe/slide_img_15.jpg", alt: "Vibe 15"},
+                        {src: "img/vibe/slide_img_16.jpg", alt: "Vibe 16"},
+                        {src: "img/vibe/slide_img_17.jpg", alt: "Vibe 17"},
+                        {src: "img/vibe/slide_img_18.jpg", alt: "Vibe 18"},
+                        {src: "img/vibe/slide_img_19.jpg", alt: "Vibe 19"},
+                        {src: "img/vibe/slide_img_20.jpg", alt: "Vibe 20"},
+                        {src: "img/vibe/slide_img_21.jpg", alt: "Vibe 21"},
+                        {src: "img/vibe/slide_img_22.jpg", alt: "Vibe 22"},
+                        {src: "img/vibe/slide_img_23.jpg", alt: "Vibe 23"},
+                        {src: "img/vibe/slide_img_24.jpg", alt: "Vibe 24"},
+                        {src: "img/vibe/slide_img_25.jpg", alt: "Vibe 25"},
+                        {src: "img/vibe/slide_img_26.jpg", alt: "Vibe 26"},
+                        {src: "img/vibe/slide_img_27.jpg", alt: "Vibe 27"},
+                        {src: "img/alec/alec-portrait-terracotta-wall.webp", alt: "Alec portrait"},
+                        {src: "img/alec/alec-pokemon-plushies-pokeball.webp", alt: "Alec pokemon plushies"},
+                        {src: "img/alec/alec-los-mochis-city.webp", alt: "Alec city"},
+                        {src: "img/alec/alec-cherry-blossom-park.webp", alt: "Alec cherry blossom"},
+                        {src: "img/alec/alec-napping-headphones-pikachu-shirt.webp", alt: "Alec napping"}
                     ]
                 }
             ]

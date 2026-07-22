@@ -2397,3 +2397,47 @@ button.CookiebotWidget-logo::before {
 }
 
 
+
+/* ════════════════ GENERAL VIBE COLLAGE ════════════════ */
+.fading-collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 8px;
+  margin-top: 24px;
+}
+@media (min-width: 600px) {
+  .fading-collage {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+}
+.fading-collage-cell {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+.fading-collage-cell img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+.fading-collage-cell img.fc-active {
+  opacity: 1;
+}
+.fading-collage-cell img.fc-fade-out {
+  opacity: 0;
+  z-index: 1;
+}
+.fading-collage-cell img.fc-next {
+  opacity: 0;
+  z-index: 2;
+}

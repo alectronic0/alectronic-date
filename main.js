@@ -585,6 +585,12 @@
                   </div>`;
 
             return `<div class="social-campaign-block">${profilesHtml}${clipsHtml}</div>`;
+        },
+        
+        fadingCollage: (b) => {
+            if (!b.images || !b.images.length) return '';
+            const cellsHtml = Array.from({ length: 12 }, (_, i) => `<div class="fading-collage-cell" data-cell="${i}"></div>`).join('');
+            return `<div class="fading-collage" data-images='${esc(JSON.stringify(b.images))}'>${cellsHtml}</div>`;
         }
     };
 
@@ -2577,6 +2583,57 @@
         });
     }
 
+    function initFadingCollage() {
+        const containers = document.querySelectorAll('.fading-collage');
+        containers.forEach(container => {
+            let images = [];
+            try { images = JSON.parse(container.getAttribute('data-images') || '[]'); } catch (e) {}
+            if (!images.length) return;
+            images.sort(() => Math.random() - 0.5);
+            
+            const cells = container.querySelectorAll('.fading-collage-cell');
+            if (!cells.length) return;
+
+            let imageIndex = 0;
+            const getNextImage = () => images[imageIndex++ % images.length];
+
+            cells.forEach(cell => {
+                const imgData = getNextImage();
+                const newImg = document.createElement('img');
+                newImg.src = imgData.src;
+                newImg.alt = imgData.alt || '';
+                newImg.className = 'fc-active';
+                cell.appendChild(newImg);
+            });
+
+            setInterval(() => {
+                const randomCell = cells[Math.floor(Math.random() * cells.length)];
+                const imgData = getNextImage();
+                
+                const newImg = document.createElement('img');
+                newImg.src = imgData.src;
+                newImg.alt = imgData.alt || '';
+                newImg.className = 'fc-next';
+                randomCell.appendChild(newImg);
+                
+                void newImg.offsetWidth;
+                
+                newImg.classList.add('fc-active');
+                newImg.classList.remove('fc-next');
+                
+                const oldImgs = randomCell.querySelectorAll('img');
+                if (oldImgs.length > 1) {
+                    const oldImg = oldImgs[0];
+                    oldImg.classList.remove('fc-active');
+                    oldImg.classList.add('fc-fade-out');
+                    setTimeout(() => {
+                        if (oldImg.parentNode === randomCell) randomCell.removeChild(oldImg);
+                    }, 1500);
+                }
+            }, 1000);
+        });
+    }
+
     function initGlobalAnalytics() {
         // 1. Scroll Depth tracking (25%, 50%, 75%, 90%)
         let scrollMilestones = { 25: false, 50: false, 75: false, 90: false };
@@ -2665,6 +2722,7 @@
         initInfiniteSwipe();
         initCollapsibleCards();
         initFloatingCta();
+        initFadingCollage();
         initGlobalAnalytics();
 
         openFromHash();
