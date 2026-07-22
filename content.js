@@ -368,6 +368,11 @@ window.CONTENT = {
             lead: "A collage of things I enjoy or find interesting. My general vibe!",
             blocks: [
                 {
+                    type: "construction",
+                    title: "Experimental Feature",
+                    text: "Hey! This infinite collage is a new feature and might still be a bit buggy."
+                },
+                {
                     type: "fadingCollage",
                     images: [
                         {src: "img/vibe/slide_img_0.webp", alt: "Vibe 0"},
