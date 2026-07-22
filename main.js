@@ -2610,20 +2610,23 @@
                 const size = window.innerWidth < 600 ? (25 + Math.random() * 20) : (12 + Math.random() * 15); 
                 const rot = (Math.random() - 0.5) * 60; 
                 
-                // Infinity symbol (Lemniscate) sweep! Alternating arcs!
-                // Angle increases slowly to trace the path
-                const angle = spawnCounter * 0.15; 
+                // Spirograph / Lissajous curve to create an orbiting, screen-filling pattern
+                const t = spawnCounter * 0.15; 
                 
-                // Lemniscate formula
-                const scaleX = window.innerWidth < 600 ? 35 : 45; // Width of the infinity loop
-                const scaleY = window.innerWidth < 600 ? 25 : 30; // Height of the loops
-                const denominator = 1 + Math.sin(angle) * Math.sin(angle);
+                // Frequencies that create a dense overlapping "stencil/orbit" pattern
+                const a = 5; 
+                const b = 4; 
+                const delta = Math.PI / 2;
                 
-                const baseX = (scaleX * Math.cos(angle)) / denominator;
-                const baseY = (scaleY * Math.sin(angle) * Math.cos(angle)) / denominator;
+                const scaleX = window.innerWidth < 600 ? 35 : 45; 
+                const scaleY = window.innerWidth < 600 ? 35 : 40; 
                 
-                // Add some random spread so it forms a thick fuzzy band
-                const spread = Math.random() * 15;
+                // Lissajous equations
+                const baseX = scaleX * Math.sin(a * t + delta);
+                const baseY = scaleY * Math.sin(b * t);
+                
+                // Small organic spread
+                const spread = Math.random() * 5;
                 const spreadAngle = Math.random() * Math.PI * 2;
                 const jx = Math.cos(spreadAngle) * spread;
                 const jy = Math.sin(spreadAngle) * spread;
