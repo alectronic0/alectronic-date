@@ -365,7 +365,7 @@ window.CONTENT = {
             tag: "✨ General Vibe",
             tagClass: "tag-blue",
             heading: "The General Vibe",
-            lead: "A glimpse into what it's like hanging out with me. Moments, vibes, and a little chaos.",
+            lead: "A collage of things I enjoy or find interesting. My general vibe!",
             blocks: [
                 {
                     type: "fadingCollage",
