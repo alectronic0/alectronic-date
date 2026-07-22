@@ -2592,7 +2592,7 @@
             container.innerHTML = '';
             container.classList.add('dynamic-scatter-mode');
             
-            const maxPhotosOnScreen = window.innerWidth < 600 ? 40 : 80;
+            const maxPhotosOnScreen = window.innerWidth < 600 ? 80 : 150;
             const shuffledImages = [...images].sort(() => Math.random() - 0.5);
             let imageIndex = 0;
             let zIndexCounter = 10;
@@ -2604,8 +2604,8 @@
                 const photo = document.createElement('div');
                 photo.className = 'scattered-photo';
                 
-                // Much larger sizes to ensure the container is fully covered
-                const size = window.innerWidth < 600 ? (45 + Math.random() * 40) : (25 + Math.random() * 30); 
+                // Smaller sizes as requested, but we compensate with higher density
+                const size = window.innerWidth < 600 ? (25 + Math.random() * 20) : (12 + Math.random() * 15); 
                 const rot = (Math.random() - 0.5) * 60; 
                 
                 // Allow images to slightly overhang the edges to cover gaps
@@ -2646,7 +2646,7 @@
 
             // massive initial burst to instantly cover the canvas
             for (let i = 0; i < maxPhotosOnScreen; i++) {
-                setTimeout(spawnImage, Math.random() * 800);
+                setTimeout(spawnImage, Math.random() * 400);
             }
 
             // aggressive spawn rate to keep it fully populated
@@ -2655,7 +2655,7 @@
                 if (currentCount < maxPhotosOnScreen + 10) {
                     spawnImage();
                 }
-            }, 300);
+            }, 150);
         });
     }
 
