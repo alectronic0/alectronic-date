@@ -2582,39 +2582,42 @@
         });
     }
 
-    function initFadingCollage() {
+    function initClickToAddCollage() {
         const containers = document.querySelectorAll('.fading-collage');
         containers.forEach(container => {
             let images = [];
             try { images = JSON.parse(container.getAttribute('data-images') || '[]'); } catch (e) {}
             if (!images.length) return;
             
-            container.innerHTML = '';
-            container.classList.add('scattered-mode');
+            container.innerHTML = '<div class="click-prompt">👆 Click anywhere to reveal a memory</div>';
+            container.classList.add('click-collage-mode');
             
             let imageIndex = 0;
-            images.sort(() => Math.random() - 0.5);
-            const getNextImage = () => images[imageIndex++ % images.length];
+            let zIndexCounter = 10;
+            const shuffledImages = [...images].sort(() => Math.random() - 0.5);
 
-            const maxPhotos = window.innerWidth < 600 ? 12 : 24;
-            const photoDuration = 10000; // 10s
-            const interval = photoDuration / maxPhotos; 
-
-            const createPhoto = () => {
-                const imgData = getNextImage();
+            container.addEventListener('click', (e) => {
+                const prompt = container.querySelector('.click-prompt');
+                if (prompt) prompt.style.opacity = '0';
+                
+                const imgData = shuffledImages[imageIndex % shuffledImages.length];
+                imageIndex++;
+                
                 const photo = document.createElement('div');
                 photo.className = 'scattered-photo';
                 
-                const size = window.innerWidth < 600 ? (35 + Math.random() * 25) : (20 + Math.random() * 15); 
-                const top = Math.random() * 60; 
-                const left = Math.random() * (100 - size);
+                const size = window.innerWidth < 600 ? (40 + Math.random() * 20) : (20 + Math.random() * 15); 
                 const rot = (Math.random() - 0.5) * 40; 
                 
+                const rect = container.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
                 photo.style.width = `${size}%`;
-                photo.style.top = `${top}%`;
-                photo.style.left = `${left}%`;
-                photo.dataset.rot = rot;
-                photo.style.transform = `rotate(${rot}deg) scale(0.9)`;
+                photo.style.left = `${x}px`;
+                photo.style.top = `${y}px`;
+                photo.style.zIndex = zIndexCounter++;
+                photo.style.transform = `translate(-50%, -50%) rotate(${rot}deg) scale(0.5)`;
                 photo.style.opacity = '0';
                 
                 const img = document.createElement('img');
@@ -2622,37 +2625,13 @@
                 img.alt = imgData.alt || '';
                 photo.appendChild(img);
                 
-                return photo;
-            };
-
-            const removePhoto = (photo) => {
-                photo.style.opacity = '0';
-                photo.style.transform = `rotate(${photo.dataset.rot}deg) scale(0.9)`;
-                setTimeout(() => {
-                    if (photo.parentNode === container) container.removeChild(photo);
-                }, 1500);
-            };
-
-            for (let i = 0; i < maxPhotos; i++) {
-                const photo = createPhoto();
                 container.appendChild(photo);
-                void photo.offsetWidth;
-                photo.style.opacity = '1';
-                photo.style.transform = `rotate(${photo.dataset.rot}deg) scale(1)`;
                 
-                const lifespan = (0.5 + Math.random() * 0.5) * photoDuration;
-                setTimeout(() => removePhoto(photo), lifespan);
-            }
-
-            setInterval(() => {
-                const photo = createPhoto();
-                container.appendChild(photo);
                 void photo.offsetWidth;
-                photo.style.opacity = '1';
-                photo.style.transform = `rotate(${photo.dataset.rot}deg) scale(1)`;
                 
-                setTimeout(() => removePhoto(photo), photoDuration);
-            }, interval);
+                photo.style.opacity = '1';
+                photo.style.transform = `translate(-50%, -50%) rotate(${rot}deg) scale(1)`;
+            });
         });
     }
 
@@ -2744,7 +2723,7 @@
         initInfiniteSwipe();
         initCollapsibleCards();
         initFloatingCta();
-        initFadingCollage();
+        initClickToAddCollage();
         initGlobalAnalytics();
 
         openFromHash();
