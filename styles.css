@@ -2414,7 +2414,6 @@ button.CookiebotWidget-logo::before {
 .scattered-photo {
   position: absolute;
   transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
   border-radius: 4px;
   background: transparent; /* allow image transparency to show through */
 }

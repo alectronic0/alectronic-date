@@ -2592,7 +2592,7 @@
             container.innerHTML = '';
             container.classList.add('dynamic-scatter-mode');
             
-            const maxPhotosOnScreen = window.innerWidth < 600 ? 12 : 24;
+            const maxPhotosOnScreen = window.innerWidth < 600 ? 40 : 80;
             const shuffledImages = [...images].sort(() => Math.random() - 0.5);
             let imageIndex = 0;
             let zIndexCounter = 10;
@@ -2604,10 +2604,13 @@
                 const photo = document.createElement('div');
                 photo.className = 'scattered-photo';
                 
-                const size = window.innerWidth < 600 ? (35 + Math.random() * 25) : (20 + Math.random() * 15); 
-                const rot = (Math.random() - 0.5) * 40; 
-                const top = Math.random() * (100 - size);
-                const left = Math.random() * (100 - size);
+                // Much larger sizes to ensure the container is fully covered
+                const size = window.innerWidth < 600 ? (45 + Math.random() * 40) : (25 + Math.random() * 30); 
+                const rot = (Math.random() - 0.5) * 60; 
+                
+                // Allow images to slightly overhang the edges to cover gaps
+                const top = -10 + Math.random() * (110 - size);
+                const left = -10 + Math.random() * (110 - size);
                 
                 photo.style.width = `${size}%`;
                 photo.style.left = `${left}%`;
@@ -2628,7 +2631,8 @@
                 photo.style.opacity = '1';
                 photo.style.transform = `rotate(${rot}deg) scale(1)`;
 
-                const lifespan = 4000 + Math.random() * 8000; // 4 to 12 seconds
+                // Longer lifespan to ensure high density is maintained
+                const lifespan = 8000 + Math.random() * 10000; 
                 setTimeout(() => {
                     photo.style.opacity = '0';
                     photo.style.transform = `rotate(${photo.dataset.rot}deg) scale(0.5)`;
@@ -2640,16 +2644,18 @@
                 }, lifespan);
             };
 
+            // massive initial burst to instantly cover the canvas
             for (let i = 0; i < maxPhotosOnScreen; i++) {
-                setTimeout(spawnImage, Math.random() * 2000);
+                setTimeout(spawnImage, Math.random() * 800);
             }
 
+            // aggressive spawn rate to keep it fully populated
             setInterval(() => {
                 const currentCount = container.querySelectorAll('.scattered-photo').length;
-                if (currentCount < maxPhotosOnScreen + 5) {
+                if (currentCount < maxPhotosOnScreen + 10) {
                     spawnImage();
                 }
-            }, 800);
+            }, 300);
         });
     }
 
