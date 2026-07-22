@@ -2255,7 +2255,78 @@ window.CONTENT = {
                             cta: "Follow on Instagram"
                         }
                     ],
-                    clips: []
+                    clips: [
+                        {
+                            title: "Launch Day: Dating Profile Live! 🎉",
+                            caption: "Exciting news — my dating profile is now live! Check it out and let me know your feedback.",
+                            href: "https://www.tiktok.com/@alectronic0/photo/7660644090798722326",
+                            src: "img/campaign/clip-1.webp",
+                            platform: "TikTok"
+                        },
+                        {
+                            title: "Launch Day: Setup & TikTok Launch 🤔",
+                            caption: "Still figuring out TikTok content! Set up a dating website to find my nerdy other half.",
+                            href: "https://www.tiktok.com/@alectronic0/photo/7662876569240620310",
+                            src: "img/campaign/clip-2.webp",
+                            platform: "TikTok"
+                        },
+                        {
+                            title: "Day 0: Poster Distribution! 🗺️🗡️",
+                            caption: "New side-quest unlocked: Poster Distribution! Time to head to local coffee shops and bookstores.",
+                            href: "https://www.tiktok.com/@alectronic0/video/7663174049757007126",
+                            src: "img/campaign/clip-3.jpg",
+                            platform: "TikTok"
+                        },
+                        {
+                            title: "Day 1: Cozy Café Mission ☕🎮",
+                            caption: "Manifesting a beautiful nerd to find my poster in a local cafe today. Real-world dating side-quest: Accepted.",
+                            href: "https://www.tiktok.com/@alectronic0/video/7663554136201301270",
+                            src: "img/campaign/clip-4.jpg",
+                            platform: "TikTok"
+                        },
+                        {
+                            title: "Day 1: Side-Quest Day 1 🗺️🏃‍♂️",
+                            caption: "Just got back from side-questing! Day 1 of the IRL \"Date me\" campaign is officially over.",
+                            href: "https://www.tiktok.com/@alectronic0/video/7663621465404689686",
+                            src: "img/campaign/clip-5.jpg",
+                            platform: "TikTok"
+                        },
+                        {
+                            title: "Day 2: London Wandering 🎲❌",
+                            caption: "RNG wasn't in my favor today. Wandered around London trying to get posters up, but it turns out not many spots do notice boards.",
+                            href: "https://www.tiktok.com/@alectronic0/video/7664002673460530454",
+                            src: "img/campaign/clip-6.jpg",
+                            platform: "TikTok"
+                        },
+                        {
+                            title: "Day 3: St Albans Win 🗺️🏃‍♂️",
+                            caption: "St Albans edition! Massive upgrade today. Secured baked goods and actually got a poster up at Chaos City Comics! Plus, Snorlax joined me.",
+                            href: "https://www.tiktok.com/@alectronic0/video/7664279284034456854",
+                            src: "img/campaign/clip-7.jpg",
+                            platform: "TikTok"
+                        },
+                        {
+                            title: "Day 4: Gym & Bug Fixes 🏋️‍♂️💻",
+                            caption: "Balance & Bug Fixes! Started at the gym with my PT, then back home to grind through coding bug fixes.",
+                            href: "https://www.tiktok.com/@alectronic0/video/7664711249007086870",
+                            src: "img/campaign/clip-8.jpg",
+                            platform: "TikTok"
+                        },
+                        {
+                            title: "Day 5: Cooldown & Lego Crocs 🔋😴",
+                            caption: "Taking a rest day. Social battery hit 0%, so no poster runs—just hanging out at home showcasing the ultimate quest gear: Lego Crocs.",
+                            href: "https://www.tiktok.com/@alectronic0/video/7665071561157725472",
+                            src: "img/campaign/clip-9.jpg",
+                            platform: "TikTok"
+                        },
+                        {
+                            title: "Day 6: Cookie Baking 🍪",
+                            caption: "Leveled up my baking stats today! Spiced chocolate chunk cookies with pretzels and marshmallows—plus Pikachu ones too! 💛✨",
+                            href: "https://www.tiktok.com/@alectronic0/video/7665458523991559446",
+                            src: "img/campaign/clip-10.jpg",
+                            platform: "TikTok"
+                        }
+                    ]
                 }
             ]
         },
