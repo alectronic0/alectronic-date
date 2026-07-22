@@ -2408,14 +2408,15 @@ button.CookiebotWidget-logo::before {
   overflow: hidden;
   margin-top: 24px;
   border-radius: 12px;
-  background: transparent;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--border);
 }
 .scattered-photo {
   position: absolute;
   transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 0 6px white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
   border-radius: 4px;
-  background: white; /* avoids transparent gaps around image */
+  background: transparent; /* allow image transparency to show through */
 }
 .scattered-photo img {
   display: block;
