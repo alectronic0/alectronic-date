@@ -2631,8 +2631,8 @@
                 photo.style.opacity = '1';
                 photo.style.transform = `rotate(${rot}deg) scale(1)`;
 
-                // Longer lifespan to ensure high density is maintained
-                const lifespan = 8000 + Math.random() * 10000; 
+                // Longer lifespan so they stay on screen longer before fading, helping it build up
+                const lifespan = 20000 + Math.random() * 15000; 
                 setTimeout(() => {
                     photo.style.opacity = '0';
                     photo.style.transform = `rotate(${photo.dataset.rot}deg) scale(0.5)`;
@@ -2644,18 +2644,18 @@
                 }, lifespan);
             };
 
-            // Gradual build-up over 10 seconds instead of an instant flood
+            // Gradual build-up over 25 seconds for a slower, more deliberate rendering
             for (let i = 0; i < maxPhotosOnScreen; i++) {
-                setTimeout(spawnImage, Math.random() * 10000);
+                setTimeout(spawnImage, Math.random() * 25000);
             }
 
-            // aggressive spawn rate to keep it fully populated
+            // aggressive spawn rate to keep it fully populated, slightly slower
             setInterval(() => {
                 const currentCount = container.querySelectorAll('.scattered-photo').length;
                 if (currentCount < maxPhotosOnScreen + 10) {
                     spawnImage();
                 }
-            }, 150);
+            }, 300);
         });
     }
 
