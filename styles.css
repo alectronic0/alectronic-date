@@ -2399,7 +2399,7 @@ button.CookiebotWidget-logo::before {
 
 
 /* ════════════════ GENERAL VIBE COLLAGE ════════════════ */
-.fading-collage.static-scatter-mode {
+.fading-collage.dynamic-scatter-mode {
   display: block;
   position: relative;
   width: 100%;

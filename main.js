@@ -2582,7 +2582,7 @@
         });
     }
 
-    function initStaticScatteredCollage() {
+    function initDynamicScatteredCollage() {
         const containers = document.querySelectorAll('.fading-collage');
         containers.forEach(container => {
             let images = [];
@@ -2590,13 +2590,17 @@
             if (!images.length) return;
             
             container.innerHTML = '';
-            container.classList.add('static-scatter-mode');
+            container.classList.add('dynamic-scatter-mode');
             
-            // Pick a random subset of images so it's not overcrowded (max 40)
-            const maxPhotos = window.innerWidth < 600 ? 15 : 35;
-            const shuffledImages = [...images].sort(() => Math.random() - 0.5).slice(0, maxPhotos);
+            const maxPhotosOnScreen = window.innerWidth < 600 ? 12 : 24;
+            const shuffledImages = [...images].sort(() => Math.random() - 0.5);
+            let imageIndex = 0;
+            let zIndexCounter = 10;
 
-            shuffledImages.forEach((imgData, i) => {
+            const spawnImage = () => {
+                const imgData = shuffledImages[imageIndex % shuffledImages.length];
+                imageIndex++;
+                
                 const photo = document.createElement('div');
                 photo.className = 'scattered-photo';
                 
@@ -2608,9 +2612,10 @@
                 photo.style.width = `${size}%`;
                 photo.style.left = `${left}%`;
                 photo.style.top = `${top}%`;
-                photo.style.zIndex = i + 1;
+                photo.style.zIndex = zIndexCounter++;
                 photo.style.opacity = '0';
                 photo.style.transform = `rotate(${rot}deg) scale(0.5)`;
+                photo.dataset.rot = rot;
                 
                 const img = document.createElement('img');
                 img.src = imgData.src;
@@ -2618,13 +2623,33 @@
                 photo.appendChild(img);
                 
                 container.appendChild(photo);
+                void photo.offsetWidth;
                 
-                // Slight delay for a cascading pop-in effect when they load
+                photo.style.opacity = '1';
+                photo.style.transform = `rotate(${rot}deg) scale(1)`;
+
+                const lifespan = 4000 + Math.random() * 8000; // 4 to 12 seconds
                 setTimeout(() => {
-                    photo.style.transform = `rotate(${rot}deg) scale(1)`;
-                    photo.style.opacity = '1';
-                }, i * 50);
-            });
+                    photo.style.opacity = '0';
+                    photo.style.transform = `rotate(${photo.dataset.rot}deg) scale(0.5)`;
+                    setTimeout(() => {
+                        if (photo.parentNode === container) {
+                            container.removeChild(photo);
+                        }
+                    }, 1500);
+                }, lifespan);
+            };
+
+            for (let i = 0; i < maxPhotosOnScreen; i++) {
+                setTimeout(spawnImage, Math.random() * 2000);
+            }
+
+            setInterval(() => {
+                const currentCount = container.querySelectorAll('.scattered-photo').length;
+                if (currentCount < maxPhotosOnScreen + 5) {
+                    spawnImage();
+                }
+            }, 800);
         });
     }
 
@@ -2716,7 +2741,7 @@
         initInfiniteSwipe();
         initCollapsibleCards();
         initFloatingCta();
-        initStaticScatteredCollage();
+        initDynamicScatteredCollage();
         initGlobalAnalytics();
 
         openFromHash();

@@ -76,10 +76,9 @@ window.CONTENT = {
         scrollHint: 'start your adventure ↓',
         // First image is the LCP element — rendered eager + high priority (see main.js renderHero).
         images: [
-            {src: "img/alec/alec-portrait-terracotta-wall.webp", alt: "Alec portrait terracotta wall"},
-            {src: "img/alec/alec-kimono-red-torii-gate.webp", alt: "Alec kimono red torii gate"},
-            {src: "img/alec/alec-napping-headphones-pikachu-shirt.webp", alt: "Alec napping headphones pikachu shirt"},
-            {src: "img/alec/alec-fire-staff-spinning-night.webp", alt: "Alec fire staff spinning night"}
+            {src: "img/alec/alec-los-mochis-city.webp", alt: "Alec in Los Mochis", w: 900, h: 1200},
+            {src: "img/alec/alec-pokemon-plushies-pokeball.webp", alt: "Alec Doran-Twyford", w: 900, h: 1200},
+            {src: "img/alec/alec-portrait-garden-archway.webp", alt: "Alec portrait garden archway", w: 900, h: 1200}
         ]
     },
     profile: {
