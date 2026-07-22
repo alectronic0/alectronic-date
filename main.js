@@ -589,8 +589,7 @@
         
         fadingCollage: (b) => {
             if (!b.images || !b.images.length) return '';
-            const cellsHtml = Array.from({ length: 12 }, (_, i) => `<div class="fading-collage-cell" data-cell="${i}"></div>`).join('');
-            return `<div class="fading-collage" data-images='${esc(JSON.stringify(b.images))}'>${cellsHtml}</div>`;
+            return `<div class="fading-collage" data-images='${esc(JSON.stringify(b.images))}'></div>`;
         }
     };
 
@@ -2589,48 +2588,71 @@
             let images = [];
             try { images = JSON.parse(container.getAttribute('data-images') || '[]'); } catch (e) {}
             if (!images.length) return;
-            images.sort(() => Math.random() - 0.5);
             
-            const cells = container.querySelectorAll('.fading-collage-cell');
-            if (!cells.length) return;
-
+            container.innerHTML = '';
+            container.classList.add('scattered-mode');
+            
             let imageIndex = 0;
+            images.sort(() => Math.random() - 0.5);
             const getNextImage = () => images[imageIndex++ % images.length];
 
-            cells.forEach(cell => {
+            const maxPhotos = window.innerWidth < 600 ? 12 : 24;
+            const photoDuration = 10000; // 10s
+            const interval = photoDuration / maxPhotos; 
+
+            const createPhoto = () => {
                 const imgData = getNextImage();
-                const newImg = document.createElement('img');
-                newImg.src = imgData.src;
-                newImg.alt = imgData.alt || '';
-                newImg.className = 'fc-active';
-                cell.appendChild(newImg);
-            });
+                const photo = document.createElement('div');
+                photo.className = 'scattered-photo';
+                
+                const size = window.innerWidth < 600 ? (35 + Math.random() * 25) : (20 + Math.random() * 15); 
+                const top = Math.random() * 60; 
+                const left = Math.random() * (100 - size);
+                const rot = (Math.random() - 0.5) * 40; 
+                
+                photo.style.width = `${size}%`;
+                photo.style.top = `${top}%`;
+                photo.style.left = `${left}%`;
+                photo.dataset.rot = rot;
+                photo.style.transform = `rotate(${rot}deg) scale(0.9)`;
+                photo.style.opacity = '0';
+                
+                const img = document.createElement('img');
+                img.src = imgData.src;
+                img.alt = imgData.alt || '';
+                photo.appendChild(img);
+                
+                return photo;
+            };
+
+            const removePhoto = (photo) => {
+                photo.style.opacity = '0';
+                photo.style.transform = `rotate(${photo.dataset.rot}deg) scale(0.9)`;
+                setTimeout(() => {
+                    if (photo.parentNode === container) container.removeChild(photo);
+                }, 1500);
+            };
+
+            for (let i = 0; i < maxPhotos; i++) {
+                const photo = createPhoto();
+                container.appendChild(photo);
+                void photo.offsetWidth;
+                photo.style.opacity = '1';
+                photo.style.transform = `rotate(${photo.dataset.rot}deg) scale(1)`;
+                
+                const lifespan = (0.5 + Math.random() * 0.5) * photoDuration;
+                setTimeout(() => removePhoto(photo), lifespan);
+            }
 
             setInterval(() => {
-                const randomCell = cells[Math.floor(Math.random() * cells.length)];
-                const imgData = getNextImage();
+                const photo = createPhoto();
+                container.appendChild(photo);
+                void photo.offsetWidth;
+                photo.style.opacity = '1';
+                photo.style.transform = `rotate(${photo.dataset.rot}deg) scale(1)`;
                 
-                const newImg = document.createElement('img');
-                newImg.src = imgData.src;
-                newImg.alt = imgData.alt || '';
-                newImg.className = 'fc-next';
-                randomCell.appendChild(newImg);
-                
-                void newImg.offsetWidth;
-                
-                newImg.classList.add('fc-active');
-                newImg.classList.remove('fc-next');
-                
-                const oldImgs = randomCell.querySelectorAll('img');
-                if (oldImgs.length > 1) {
-                    const oldImg = oldImgs[0];
-                    oldImg.classList.remove('fc-active');
-                    oldImg.classList.add('fc-fade-out');
-                    setTimeout(() => {
-                        if (oldImg.parentNode === randomCell) randomCell.removeChild(oldImg);
-                    }, 1500);
-                }
-            }, 1000);
+                setTimeout(() => removePhoto(photo), photoDuration);
+            }, interval);
         });
     }
 
