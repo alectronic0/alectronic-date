@@ -2582,43 +2582,35 @@
         });
     }
 
-    function initClickToAddCollage() {
+    function initStaticScatteredCollage() {
         const containers = document.querySelectorAll('.fading-collage');
         containers.forEach(container => {
             let images = [];
             try { images = JSON.parse(container.getAttribute('data-images') || '[]'); } catch (e) {}
             if (!images.length) return;
             
-            container.innerHTML = '<div class="click-prompt">👆 Click anywhere to reveal a memory</div>';
-            container.classList.add('click-collage-mode');
+            container.innerHTML = '';
+            container.classList.add('static-scatter-mode');
             
-            let imageIndex = 0;
-            let zIndexCounter = 10;
-            const shuffledImages = [...images].sort(() => Math.random() - 0.5);
+            // Pick a random subset of images so it's not overcrowded (max 40)
+            const maxPhotos = window.innerWidth < 600 ? 15 : 35;
+            const shuffledImages = [...images].sort(() => Math.random() - 0.5).slice(0, maxPhotos);
 
-            container.addEventListener('pointerdown', (e) => {
-                const prompt = container.querySelector('.click-prompt');
-                if (prompt) prompt.style.opacity = '0';
-                
-                const imgData = shuffledImages[imageIndex % shuffledImages.length];
-                imageIndex++;
-                
+            shuffledImages.forEach((imgData, i) => {
                 const photo = document.createElement('div');
                 photo.className = 'scattered-photo';
                 
-                const size = window.innerWidth < 600 ? (40 + Math.random() * 20) : (20 + Math.random() * 15); 
+                const size = window.innerWidth < 600 ? (35 + Math.random() * 25) : (20 + Math.random() * 15); 
                 const rot = (Math.random() - 0.5) * 40; 
-                
-                const rect = container.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
+                const top = Math.random() * (100 - size);
+                const left = Math.random() * (100 - size);
                 
                 photo.style.width = `${size}%`;
-                photo.style.left = `${x}px`;
-                photo.style.top = `${y}px`;
-                photo.style.zIndex = zIndexCounter++;
-                photo.style.transform = `translate(-50%, -50%) rotate(${rot}deg) scale(0.5)`;
+                photo.style.left = `${left}%`;
+                photo.style.top = `${top}%`;
+                photo.style.zIndex = i + 1;
                 photo.style.opacity = '0';
+                photo.style.transform = `rotate(${rot}deg) scale(0.5)`;
                 
                 const img = document.createElement('img');
                 img.src = imgData.src;
@@ -2627,10 +2619,11 @@
                 
                 container.appendChild(photo);
                 
-                void photo.offsetWidth;
-                
-                photo.style.opacity = '1';
-                photo.style.transform = `translate(-50%, -50%) rotate(${rot}deg) scale(1)`;
+                // Slight delay for a cascading pop-in effect when they load
+                setTimeout(() => {
+                    photo.style.transform = `rotate(${rot}deg) scale(1)`;
+                    photo.style.opacity = '1';
+                }, i * 50);
             });
         });
     }
@@ -2723,7 +2716,7 @@
         initInfiniteSwipe();
         initCollapsibleCards();
         initFloatingCta();
-        initClickToAddCollage();
+        initStaticScatteredCollage();
         initGlobalAnalytics();
 
         openFromHash();
