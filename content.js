@@ -368,9 +368,8 @@ window.CONTENT = {
             lead: "A collage of things I enjoy or find interesting. My general vibe!",
             blocks: [
                 {
-                    type: "construction",
-                    title: "Experimental Feature",
-                    text: "Hey! This infinite collage is a new feature and might still be a bit buggy."
+                    type: "paragraph",
+                    html: "<div class='evolving-note'>🚧 Hey! This infinite collage is a new feature and might still be a bit buggy.</div>"
                 },
                 {
                     type: "fadingCollage",
