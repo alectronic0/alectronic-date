@@ -2644,9 +2644,9 @@
                 }, lifespan);
             };
 
-            // massive initial burst to instantly cover the canvas
+            // Gradual build-up over 10 seconds instead of an instant flood
             for (let i = 0; i < maxPhotosOnScreen; i++) {
-                setTimeout(spawnImage, Math.random() * 400);
+                setTimeout(spawnImage, Math.random() * 10000);
             }
 
             // aggressive spawn rate to keep it fully populated
