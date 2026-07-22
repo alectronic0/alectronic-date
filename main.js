@@ -2596,10 +2596,12 @@
             const shuffledImages = [...images].sort(() => Math.random() - 0.5);
             let imageIndex = 0;
             let zIndexCounter = 10;
+            let spawnCounter = 0;
 
             const spawnImage = () => {
                 const imgData = shuffledImages[imageIndex % shuffledImages.length];
                 imageIndex++;
+                spawnCounter++;
                 
                 const photo = document.createElement('div');
                 photo.className = 'scattered-photo';
@@ -2608,9 +2610,27 @@
                 const size = window.innerWidth < 600 ? (25 + Math.random() * 20) : (12 + Math.random() * 15); 
                 const rot = (Math.random() - 0.5) * 60; 
                 
-                // Allow images to slightly overhang the edges to cover gaps
-                const top = -10 + Math.random() * (110 - size);
-                const left = -10 + Math.random() * (110 - size);
+                // Infinity symbol (Lemniscate) sweep! Alternating arcs!
+                // Angle increases slowly to trace the path
+                const angle = spawnCounter * 0.15; 
+                
+                // Lemniscate formula
+                const scaleX = window.innerWidth < 600 ? 35 : 45; // Width of the infinity loop
+                const scaleY = window.innerWidth < 600 ? 25 : 30; // Height of the loops
+                const denominator = 1 + Math.sin(angle) * Math.sin(angle);
+                
+                const baseX = (scaleX * Math.cos(angle)) / denominator;
+                const baseY = (scaleY * Math.sin(angle) * Math.cos(angle)) / denominator;
+                
+                // Add some random spread so it forms a thick fuzzy band
+                const spread = Math.random() * 15;
+                const spreadAngle = Math.random() * Math.PI * 2;
+                const jx = Math.cos(spreadAngle) * spread;
+                const jy = Math.sin(spreadAngle) * spread;
+                
+                // Center at 50%, 50%
+                const left = 50 + baseX + jx - (size / 2);
+                const top = 50 + baseY + jy - (size / 2);
                 
                 photo.style.width = `${size}%`;
                 photo.style.left = `${left}%`;
