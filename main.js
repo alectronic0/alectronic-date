@@ -483,6 +483,29 @@
                 )
                 .join('')}</div>`,
 
+        timeline: (b) =>
+            `<div class="timeline-container">${b.events
+                .map(
+                    (e) =>
+                        `<div class="timeline-item">
+                            <div class="timeline-marker">
+                                ${e.icon ? `<span class="timeline-icon">${esc(e.icon)}</span>` : '<span class="timeline-dot"></span>'}
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="timeline-year">${esc(e.year)}</span>
+                                    ${e.title ? `<h4 class="timeline-title">${esc(e.title)}</h4>` : ''}
+                                </div>
+                                ${e.description ? `<p class="timeline-desc">${esc(e.description)}</p>` : ''}
+                                ${e.travel && e.travel.length ? `<div class="timeline-travel">
+                                    <div class="timeline-travel-header">✈️ Adventures</div>
+                                    <ul class="timeline-travel-list">${e.travel.map(t => `<li>${flagify(t)}</li>`).join('')}</ul>
+                                </div>` : ''}
+                            </div>
+                        </div>`
+                )
+                .join('')}</div>`,
+
         detailList: (b) =>
             `<div class="detail-list">${b.items
                 .map(
