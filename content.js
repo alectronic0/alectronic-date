@@ -41,15 +41,15 @@ window.CONTENT = {
     },
     nav: {
         menuLabel: 'Menu', ctaText: '💘 Go on a date', links: [
-            {label: 'Who I Am', href: '#about'},
-            {label: 'Faces', href: '#faces'},
-            {label: 'General Vibe', href: '#general-vibe'},
-            {label: 'Boyfriend Mode', href: '#boyfriend-mode'},
-            {label: 'Looking For', href: '#looking-for'},
-            {label: 'Date Ideas', href: '#dates'},
-            {label: 'Campaign 🎬', href: '#campaign'},
-            {label: 'Contact', href: '#contact'},
-            {label: 'Deep Dive ↓', href: '#deep-dive'}
+            {label: '📋 Who I Am', href: '#about'},
+            {label: '📸 Faces', href: '#faces'},
+            {label: '✨ General Vibe', href: '#general-vibe'},
+            {label: '❤️ Boyfriend Mode', href: '#boyfriend-mode'},
+            {label: '📋 Looking For', href: '#looking-for'},
+            {label: '🗺️ Date Ideas', href: '#dates'},
+            {label: '🎬 Campaign', href: '#campaign'},
+            {label: '💬 Contact', href: '#contact'},
+            {label: '🔬 Deep Dive ↓', href: '#deep-dive'}
         ]
     },
     hero: {
