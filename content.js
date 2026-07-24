@@ -762,13 +762,6 @@ window.CONTENT = {
                 {
                     type: "dateCards", cards: [
                         {
-                            src: "img/dates/flower-market.webp", alt: "A flower market", title: "🍕 Foodie & Market", pills: [
-                                "🥐 Pastry Adventure",
-                                "🌸 Flower Market",
-                                "🌮 Food Market"
-                            ]
-                        },
-                        {
                             src: "img/dates/couple-date-bookstore.webp",
                             alt: "Calm Adventure",
                             title: "Chill mode",
@@ -777,6 +770,13 @@ window.CONTENT = {
                                 "🌳 Nature walk",
                                 "📚 Bookstore Tour",
                                 "🦆 Canal Walk"
+                            ]
+                        },
+                        {
+                            src: "img/dates/flower-market.webp", alt: "A flower market", title: "🍕 Foodie & Market", pills: [
+                                "🥐 Pastry Adventure",
+                                "🌸 Flower Market",
+                                "🌮 Food Market"
                             ]
                         },
                         {
