@@ -1779,7 +1779,7 @@
             setHtml('#cheeky-dialog-content', `
                 <div class="deep-modal-inner">
                     <div class="deep-modal-head">
-                        <span class="deep-modal-emoji" aria-hidden="true">🙅</span>
+                        <span class="deep-modal-emoji" aria-hidden="true">${esc(gag.emoji || '🙅')}</span>
                         <h3 class="deep-modal-title">${esc(gag.title)}</h3>
                         <span class="deep-link" role="button" tabindex="0" data-anchor="secretContent" aria-label="Copy link to ${esc(gag.title)}" title="Copy link to this section">🔗</span>
                         <button class="deep-modal-close" type="button" aria-label="Close">×</button>
