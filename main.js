@@ -1371,7 +1371,7 @@
             if (lat && lon) {
                 const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.800986785326494, -0.20373398847054403);
                 const comment = getDistanceComment(dist);
-                distanceHtml = `<div style="font-size: 0.85rem; color: var(--muted); margin-top: 4px;">(~${Math.round(dist)} miles away from me) - ${comment}</div>`;
+                distanceHtml = `<div style="font-size: 0.85rem; color: var(--muted); margin-top: 4px;">${comment}</div>`;
             }
 
             locHtml = `
@@ -1453,7 +1453,7 @@
             if (lat && lon) {
                 const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.800986785326494, -0.20373398847054403);
                 const comment = getDistanceComment(dist);
-                subtextEl.innerHTML = `(~${Math.round(dist)} miles away from me) - ${comment}`;
+                subtextEl.innerHTML = comment;
                 subtextEl.style.color = 'var(--accent)';
                 subtextEl.style.fontWeight = '600';
             } else {
@@ -1700,14 +1700,26 @@
                             btn.textContent = text;
                             
                             if (item.lat && item.lon) {
+                                btn.textContent = '';
                                 const dist = calculateDistance(parseFloat(item.lat), parseFloat(item.lon), 51.800986785326494, -0.20373398847054403);
-                                const comment = getDistanceComment(dist);
-                                const span = document.createElement('span');
-                                span.style.color = 'var(--muted)';
-                                span.style.fontSize = '0.85em';
-                                span.style.marginLeft = '8px';
-                                span.textContent = `(~${Math.round(dist)} miles away) - ${comment}`;
-                                btn.appendChild(span);
+                                
+                                const textSpan = document.createElement('span');
+                                textSpan.textContent = text;
+                                
+                                const distSpan = document.createElement('span');
+                                distSpan.style.color = 'var(--muted)';
+                                distSpan.style.fontSize = '0.85em';
+                                distSpan.style.marginLeft = '12px';
+                                distSpan.style.whiteSpace = 'nowrap';
+                                distSpan.textContent = `(~${Math.round(dist)} miles)`;
+                                
+                                btn.style.display = 'flex';
+                                btn.style.justifyContent = 'space-between';
+                                btn.style.alignItems = 'center';
+                                btn.style.textAlign = 'left';
+                                
+                                btn.appendChild(textSpan);
+                                btn.appendChild(distSpan);
                             }
                             
                             btn.addEventListener('click', () => {
