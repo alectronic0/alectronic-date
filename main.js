@@ -2581,9 +2581,19 @@
                 const originalWidth = originalItems.reduce((acc, el) => acc + el.offsetWidth + 16, 0);
 
                 if (scrollLeft < preWidth - 10) {
+                    container.style.scrollBehavior = 'auto';
+                    container.style.scrollSnapType = 'none';
                     container.scrollLeft = scrollLeft + originalWidth;
+                    void container.offsetHeight; // Force reflow
+                    container.style.scrollBehavior = '';
+                    container.style.scrollSnapType = '';
                 } else if (scrollLeft > preWidth + originalWidth + 10) {
+                    container.style.scrollBehavior = 'auto';
+                    container.style.scrollSnapType = 'none';
                     container.scrollLeft = scrollLeft - originalWidth;
+                    void container.offsetHeight; // Force reflow
+                    container.style.scrollBehavior = '';
+                    container.style.scrollSnapType = '';
                 }
             });
 
@@ -2602,7 +2612,13 @@
         container.dataset.initialized = 'true';
         const preClones = Array.from(container.children).filter(el => el.dataset.clonePre === 'true');
         const preWidth = preClones.reduce((acc, el) => acc + el.offsetWidth + 16, 0);
+        
+        container.style.scrollBehavior = 'auto';
+        container.style.scrollSnapType = 'none';
         container.scrollLeft = preWidth;
+        void container.offsetHeight;
+        container.style.scrollBehavior = '';
+        container.style.scrollSnapType = '';
     };
 
 
