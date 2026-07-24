@@ -2104,7 +2104,7 @@ window.CONTENT = {
                         {
                             src: "img/friends/anastasiia.jpg",
                             alt: "Anastasiia",
-                            icon: "🕶️",
+                            icon: "😎",
                             title: "Someone you can count on",
                             text: "",
                             signature: "— Anastasiia, Bestie obvs",
