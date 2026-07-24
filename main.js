@@ -512,12 +512,17 @@
                                     ${e.title ? `<h4 class="timeline-title">${esc(e.title)}</h4>` : ''}
                                 </div>
                                 ${e.description ? `<p class="timeline-desc">${esc(e.description)}</p>` : ''}
-                                ${e.companies && e.companies.length ? `<div class="timeline-companies">
-                                    ${e.companies.map(c => `<img class="timeline-logo" src="${esc(c.logo)}" alt="${esc(c.name)} logo" loading="lazy" title="${esc(c.name)}">`).join('')}
-                                </div>` : ''}
-                                ${e.travel && e.travel.length ? `<div class="timeline-travel">
-                                    <div class="timeline-travel-header">✈️ Adventures</div>
-                                    <ul class="timeline-travel-list">${e.travel.map(t => `<li>${flagify(t)}</li>`).join('')}</ul>
+                                ${e.companies && e.companies.length || e.travel && e.travel.length ? `<div class="timeline-meta-grid">
+                                    ${e.companies && e.companies.length ? `<div class="timeline-career">
+                                        <div class="timeline-meta-header">💼 Career</div>
+                                        <div class="timeline-companies">
+                                            ${e.companies.map(c => `<img class="timeline-logo" src="${esc(c.logo)}" alt="${esc(c.name)} logo" loading="lazy" title="${esc(c.name)}">`).join('')}
+                                        </div>
+                                    </div>` : ''}
+                                    ${e.travel && e.travel.length ? `<div class="timeline-travel">
+                                        <div class="timeline-meta-header">✈️ Adventures</div>
+                                        <ul class="timeline-travel-list">${e.travel.map(t => `<li>${flagify(t)}</li>`).join('')}</ul>
+                                    </div>` : ''}
                                 </div>` : ''}
                             </div>
                         </div>`

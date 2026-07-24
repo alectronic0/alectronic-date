@@ -908,6 +908,8 @@ window.CONTENT = {
                             description: "Readjusting to normal life and trying to start my career. A confusing but necessary transition phase.",
                             icon: "🌧️",
                             companies: [
+                                { name: "Welcome Break", logo: "img/company-logos/welcome-break.jpg" },
+                                { name: "Waitrose", logo: "img/company-logos/waitrose.jpg" },
                                 { name: "GLEAT", logo: "img/company-logos/gleat.png" },
                                 { name: "Sky", logo: "img/company-logos/sky.jpg" }
                             ],
@@ -958,6 +960,9 @@ window.CONTENT = {
                             title: "First Relationship",
                             description: "Experienced my first serious relationship. A time of immense learning and emotional investment.",
                             icon: "❤️",
+                            companies: [
+                                { name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg" }
+                            ],
                             travel: [
                                 "🇮🇩 Bali",
                                 "🇫🇷 Lille"
@@ -968,6 +973,9 @@ window.CONTENT = {
                             title: "Building Back Stronger",
                             description: "Starting again post-breakup. Hit the gym hard with a PT and faced the depression head-on.",
                             icon: "💪",
+                            companies: [
+                                { name: "Deliveroo × DoorDash", logo: "img/company-logos/deliveroo-x-doordash.webp" }
+                            ],
                             travel: [
                                 "🇺🇸 New York",
                                 "🇲🇻 Maldives",
@@ -978,7 +986,10 @@ window.CONTENT = {
                             year: "NOW",
                             title: "The Present",
                             description: "Ready for whatever comes next.",
-                            icon: "✨"
+                            icon: "✨",
+                            companies: [
+                                { name: "Deliveroo × DoorDash", logo: "img/company-logos/deliveroo-x-doordash.webp" }
+                            ]
                         }
                     ]
                 }
