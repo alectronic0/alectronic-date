@@ -151,19 +151,18 @@
 
     const flagify = (text) => {
         const s = String(text == null ? '' : text);
-        const m = s.match(/^([\u{1F1E6}-\u{1F1FF}]{2})\s*/u);
-        if (!m) return esc(s);
-        const cc = [...m[1]]
-            .map((ch) => String.fromCharCode(ch.codePointAt(0) - 0x1f1e6 + 65))
-            .join('')
-            .toLowerCase();
-        const rest = esc(s.slice(m[0].length));
-        return (
-            `<img class="flag" src="https://flagcdn.com/24x18/${cc}.png" ` +
-            `srcset="https://flagcdn.com/48x36/${cc}.png 2x" width="24" height="18" ` +
-            `alt="${esc(countryName(cc))} flag" loading="lazy">` +
-            (rest ? ' ' + rest : '')
-        );
+        const escaped = esc(s);
+        return escaped.replace(/([\u{1F1E6}-\u{1F1FF}]{2})/gu, (match) => {
+            const cc = [...match]
+                .map((ch) => String.fromCharCode(ch.codePointAt(0) - 0x1f1e6 + 65))
+                .join('')
+                .toLowerCase();
+            return (
+                `<img class="flag" src="https://flagcdn.com/24x18/${cc}.png" ` +
+                `srcset="https://flagcdn.com/48x36/${cc}.png 2x" width="24" height="18" ` +
+                `alt="${esc(countryName(cc))} flag" loading="lazy">`
+            );
+        });
     };
 
     // A tag can be a plain string or { label, variant }
@@ -520,7 +519,8 @@
                     const bodyHtml = `<div class="testimonial-body">
                         ${item.title ? `<h3>${item.icon ? `${esc(item.icon)} ` : ''}${esc(item.title)}</h3>` : ''}
                         <p class="testimonial-text">${esc(item.text)}</p>
-                        ${item.signature ? `<span class="testimonial-signature">${esc(item.signature)}</span>` : ''}
+                        ${item.signature ? `<span class="testimonial-signature">${flagify(item.signature)}</span>` : ''}
+                        ${item.socialLink ? `<a href="${esc(item.socialLink)}" target="_blank" rel="noopener noreferrer" class="social-favicon" title="Visit link"><img src="${esc(faviconFor(item.socialLink))}" alt="Social link"></a>` : ''}
                     </div>`;
                     return `<div class="testimonial-row img-${imgPos}">
                         ${imgPos === 'left' ? imgHtml + bodyHtml : bodyHtml + imgHtml}
@@ -1835,22 +1835,22 @@
 
         // "go on then" button — reveal tasteful photo gallery inside the modal
         document.addEventListener('click', (e) => {
-            const btn = e.target.closest('.cheeky-goon-btn');
+            const btn = e.target.closest('.secret-reveal-btn');
             if (!btn) return;
-            const goOnP = btn.closest('.cheeky-goonthen');
+            const goOnP = btn.closest('.secret-reveal-container');
             if (!goOnP) return;
 
             goOnP.innerHTML = `
                 <p style="text-align: center; margin-bottom: 14px;">
-                    <button type="button" class="cheeky-hide-btn">🙈 oops I don't want to see that</button>
+                    <button type="button" class="cheeky-hide-btn">🙈 sorry I didn't mean to see this</button>
                 </p>
-                <p style="font-size: 0.78rem; color: var(--muted); font-style: italic; margin-bottom: 14px;">
-                    I told you I'd find a few nice ones 😉
+                <p style="font-size: 0.78rem; color: var(--muted); font-style: italic; margin-bottom: 14px; text-align: center;">
+                    Okay fine! happy now? you could have at least bought me a coffee 1st 🙄
                 </p>
                 <div class="cheeky-gallery">
-                    <img src="img/alec/alec-portrait-moody-bw.jpg" alt="Alec looking sharp" loading="lazy">
-                    <img src="img/alec/alec-dark-artistic-portrait.jpg" alt="Alec artistic portrait" loading="lazy">
-                    <img src="img/alec/alec-cosy-bed-portrait.jpg" alt="Alec cosy portrait" loading="lazy">
+                    <div class="flash-wrapper"><img src="img/alec/alec-portrait-moody-bw.jpg" alt="Alec looking sharp" loading="lazy"></div>
+                    <div class="flash-wrapper"><img src="img/alec/alec-dark-artistic-portrait.jpg" alt="Alec artistic portrait" loading="lazy"></div>
+                    <div class="flash-wrapper"><img src="img/alec/alec-cosy-bed-portrait.jpg" alt="Alec cosy portrait" loading="lazy"></div>
                 </div>
             `;
         });
@@ -1859,11 +1859,11 @@
         document.addEventListener('click', (e) => {
             const btn = e.target.closest('.cheeky-hide-btn');
             if (!btn) return;
-            const goOnP = btn.closest('.cheeky-goonthen');
+            const goOnP = btn.closest('.secret-reveal-container');
             if (!goOnP) return;
 
             goOnP.innerHTML = `
-                <button type="button" class="cheeky-goon-btn" id="cheeky-goon-btn">actual secret content</button>
+                <button type="button" class="secret-reveal-btn" id="secret-reveal-btn">😈</button>
             `;
         });
 
@@ -1871,10 +1871,10 @@
         const cheekyModal = document.getElementById('cheeky-modal');
         if (cheekyModal) {
             cheekyModal.addEventListener('close', () => {
-                const goOnP = cheekyModal.querySelector('.cheeky-goonthen');
+                const goOnP = cheekyModal.querySelector('.secret-reveal-container');
                 if (goOnP) {
                     goOnP.innerHTML = `
-                        <button type="button" class="cheeky-goon-btn" id="cheeky-goon-btn">actual secret content</button>
+                        <button type="button" class="secret-reveal-btn" id="secret-reveal-btn">😈</button>
                     `;
                 }
             });
