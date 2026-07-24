@@ -555,12 +555,14 @@ window.CONTENT = {
                     <div style="text-align: center; margin-top: 32px;">
                         <button onclick="document.getElementById('bfExtrasModal').showModal()" class="share-btn primary" style="background: var(--surface-2); border: 1px solid var(--border); color: var(--text); font-weight: 600; padding: 12px 24px; border-radius: 8px; cursor: pointer; display: inline-block;">✨ And so much more...</button>
                     </div>
-                    <dialog id="bfExtrasModal" class="deep-modal" style="border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); padding: 0; max-width: 500px; width: 90%; margin: auto;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--border); background: var(--surface-2);">
-                            <h3 style="margin: 0; font-size: 1.2rem;">✨ And so much more...</h3>
-                            <button onclick="this.closest('dialog').close()" style="background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); padding: 0; line-height: 1;">&times;</button>
-                        </div>
-                        <div style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+                    <dialog id="bfExtrasModal" class="deep-modal">
+                        <div class="deep-modal-inner">
+                            <div class="deep-modal-head">
+                                <h3 class="deep-modal-title">✨ And so much more...</h3>
+                                <button class="deep-modal-close" aria-label="Close modal" onclick="this.closest('dialog').close()">&times;</button>
+                            </div>
+                            <div class="deep-modal-body">
+                                <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
                             <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
                                 <div style="font-size: 2rem; line-height: 1;">☕</div>
                                 <div>
@@ -615,6 +617,8 @@ window.CONTENT = {
                                 <div>
                                     <div style="font-weight: 600; margin-bottom: 4px;">Designated Bug Relocator</div>
                                     <div style="color: var(--muted); font-size: 0.9rem;">Bravely capturing and releasing any 8-legged intruders so you don't have to (Certification from the prestigious 2yr Australian outback diploma 🦘)</div>
+                                </div>
+                            </div>
                                 </div>
                             </div>
                         </div>
