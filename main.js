@@ -222,7 +222,7 @@
             `<input type="text" id="rough-location" placeholder="${esc(b.placeholder || 'e.g. Postcode, town, or train station')}" autocomplete="off">` +
             `<button type="button" id="clear-location-btn" aria-label="Clear location" style="display: none; position: absolute; right: 12px; top: 22px; transform: translateY(-50%); background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--muted); padding: 4px; line-height: 1; z-index: 2;">&times;</button>` +
             `<div id="location-suggestions" class="location-suggestions"></div>` +
-            (b.subtext ? `<div class="location-subtext">${esc(b.subtext)}</div>` : '') +
+            `<div class="location-subtext">${esc(b.subtext || 'Note: UK based locations only please.')}</div>` +
             `</div>` +
             `</div>`,
 
@@ -1323,6 +1323,18 @@
         btn._listenerAttached = true;
     }
 
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+        const R = 3958.8; // Radius of the earth in miles
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+        const a = 
+            Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+            Math.sin(dLon/2) * Math.sin(dLon/2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+        return R * c; 
+    }
+
     function renderSelectedAdventures() {
         const mount = document.querySelector('[data-adventures="root"]');
         if (!mount) return;
@@ -1332,17 +1344,27 @@
 
         const locationInput = document.getElementById('rough-location');
         const locationVal = locationInput ? locationInput.value.trim() : '';
+        const lat = locationInput ? locationInput.dataset.lat : null;
+        const lon = locationInput ? locationInput.dataset.lon : null;
 
         let locHtml = '';
         if (locationVal) {
             const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationVal)}`;
+            
+            let distanceHtml = '';
+            if (lat && lon) {
+                const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.8031, -0.2068);
+                distanceHtml = `<div style="font-size: 0.85rem; color: var(--muted); margin-top: 4px;">(~${Math.round(dist)} miles away from me)</div>`;
+            }
+
             locHtml = `
                 <div class="picked-location-section">
-                    <div class="picked-location-row">
+                    <div class="picked-location-row" style="flex-wrap: wrap;">
                         <span class="location-icon">📍</span>
                         <strong>Rough Location:</strong>
                         <a href="${esc(mapLink)}" target="_blank" rel="noopener" class="location-link">${esc(locationVal)}</a>
                         <button type="button" class="change-location-btn">Change location please ⬆️</button>
+                        ${distanceHtml ? `<div style="flex-basis: 100%; margin-left: 28px;">${distanceHtml}</div>` : ''}
                     </div>
                 </div>
             `;
@@ -1405,10 +1427,19 @@
         const subject = emailTemplate.subject || "RE: Alec Dating Application";
         const intro = emailTemplate.body || "Hi Alec! I'm ready to shoot my shot.";
         const locationVal = document.getElementById('rough-location') ? document.getElementById('rough-location').value.trim() : '';
+        const lat = document.getElementById('rough-location') ? document.getElementById('rough-location').dataset.lat : null;
+        const lon = document.getElementById('rough-location') ? document.getElementById('rough-location').dataset.lon : null;
         
         try {
             localStorage.setItem('alec-date-pills', JSON.stringify(selected));
             localStorage.setItem('alec-date-location', locationVal);
+            if (lat && lon) {
+                localStorage.setItem('alec-date-location-lat', lat);
+                localStorage.setItem('alec-date-location-lon', lon);
+            } else {
+                localStorage.removeItem('alec-date-location-lat');
+                localStorage.removeItem('alec-date-location-lon');
+            }
         } catch (e) {
             console.warn('Failed to save state to localStorage', e);
         }
@@ -1451,7 +1482,11 @@
             const savedLoc = localStorage.getItem('alec-date-location');
             if (savedLoc !== null) {
                 const input = document.getElementById('rough-location');
-                if (input) input.value = savedLoc;
+                if (input) {
+                    input.value = savedLoc;
+                    input.dataset.lat = localStorage.getItem('alec-date-location-lat') || '';
+                    input.dataset.lon = localStorage.getItem('alec-date-location-lon') || '';
+                }
             }
         } catch(e) {
             console.warn('Failed to restore state from localStorage', e);
@@ -1568,6 +1603,8 @@
         if (clearBtn) {
             clearBtn.addEventListener('click', () => {
                 input.value = '';
+                delete input.dataset.lat;
+                delete input.dataset.lon;
                 clearBtn.style.display = 'none';
                 suggestionsBox.innerHTML = '';
                 suggestionsBox.style.display = 'none';
@@ -1582,6 +1619,8 @@
 
         let debounceTimer;
         input.addEventListener('input', () => {
+            delete input.dataset.lat;
+            delete input.dataset.lon;
             updateDatesState();
             if (clearBtn) {
                 clearBtn.style.display = input.value.trim().length > 0 ? 'block' : 'none';
@@ -1596,7 +1635,7 @@
             }
 
             debounceTimer = setTimeout(() => {
-                const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&addressdetails=1&limit=5&countrycodes=gb`;
+                const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&addressdetails=1&namedetails=1&limit=5&countrycodes=gb`;
                 
                 fetch(url, {
                     headers: {
@@ -1629,6 +1668,8 @@
                             
                             btn.addEventListener('click', () => {
                                 input.value = text;
+                                input.dataset.lat = item.lat || '';
+                                input.dataset.lon = item.lon || '';
                                 suggestionsBox.innerHTML = '';
                                 suggestionsBox.style.display = 'none';
                                 currentFocus = -1;
