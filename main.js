@@ -1372,6 +1372,7 @@
                 const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.800986785326494, -0.20373398847054403);
                 const comment = getDistanceComment(dist);
                 distanceHtml = `<div style="font-size: 0.85rem; color: var(--muted); margin-top: 4px;">${comment}</div>`;
+                distanceHtml += `<div id="dist-map" style="width: 100%; height: 120px; border-radius: 6px; margin-top: 12px; border: 1px solid rgba(255,255,255,0.05); overflow: hidden; position: relative; z-index: 1;"></div>`;
             }
 
             locHtml = `
@@ -1428,6 +1429,30 @@
                 <button type="button" class="change-adventures-btn">Choose other options? ⬆️</button>
             </div>
         `;
+
+        if (lat && lon && typeof L !== 'undefined') {
+            setTimeout(() => {
+                const mapEl = document.getElementById('dist-map');
+                if (mapEl && !mapEl._leaflet_id) {
+                    const map = L.map(mapEl, { zoomControl: false, attributionControl: false, dragging: false, scrollWheelZoom: false, doubleClickZoom: false });
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                        subdomains: 'abcd',
+                        maxZoom: 20
+                    }).addTo(map);
+
+                    const p1 = [parseFloat(lat), parseFloat(lon)];
+                    const p2 = [51.800986785326494, -0.20373398847054403];
+                    
+                    L.circleMarker(p1, {color: '#e6a979', radius: 4, fillOpacity: 1, weight: 2}).addTo(map);
+                    L.circleMarker(p2, {color: '#8c52ff', radius: 4, fillOpacity: 1, weight: 2}).addTo(map);
+                    
+                    const line = L.polyline([p1, p2], {color: '#e6a979', dashArray: '5, 5', weight: 2}).addTo(map);
+                    
+                    // Add some padding to bounds so markers don't clip
+                    map.fitBounds(line.getBounds(), { padding: [15, 15], maxZoom: 14 });
+                }
+            }, 50);
+        }
     }
 
     function updateDatesState() {
