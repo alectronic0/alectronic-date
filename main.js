@@ -1426,9 +1426,24 @@
         const emailTemplate = (C && C.contact && C.contact.emailTemplate) || {};
         const subject = emailTemplate.subject || "RE: Alec Dating Application";
         const intro = emailTemplate.body || "Hi Alec! I'm ready to shoot my shot.";
-        const locationVal = document.getElementById('rough-location') ? document.getElementById('rough-location').value.trim() : '';
-        const lat = document.getElementById('rough-location') ? document.getElementById('rough-location').dataset.lat : null;
-        const lon = document.getElementById('rough-location') ? document.getElementById('rough-location').dataset.lon : null;
+        const locationInput = document.getElementById('rough-location');
+        const locationVal = locationInput ? locationInput.value.trim() : '';
+        const lat = locationInput ? locationInput.dataset.lat : null;
+        const lon = locationInput ? locationInput.dataset.lon : null;
+
+        const subtextEl = document.querySelector('.location-subtext');
+        if (subtextEl) {
+            if (lat && lon) {
+                const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.8031, -0.2068);
+                subtextEl.innerHTML = `(~${Math.round(dist)} miles away from me)`;
+                subtextEl.style.color = 'var(--accent)';
+                subtextEl.style.fontWeight = '600';
+            } else {
+                subtextEl.innerHTML = 'Note: UK based locations only please.';
+                subtextEl.style.color = 'var(--muted)';
+                subtextEl.style.fontWeight = 'normal';
+            }
+        }
         
         try {
             localStorage.setItem('alec-date-pills', JSON.stringify(selected));
@@ -1665,6 +1680,17 @@
                             
                             const text = parts.length ? parts.join(', ') : item.display_name;
                             btn.textContent = text;
+                            
+                            if (item.lat && item.lon) {
+                                const dist = calculateDistance(parseFloat(item.lat), parseFloat(item.lon), 51.8031, -0.2068);
+                                const span = document.createElement('span');
+                                span.style.color = 'var(--muted)';
+                                span.style.fontSize = '0.85em';
+                                span.style.marginLeft = '8px';
+                                span.style.whiteSpace = 'nowrap';
+                                span.textContent = `(~${Math.round(dist)} miles away)`;
+                                btn.appendChild(span);
+                            }
                             
                             btn.addEventListener('click', () => {
                                 input.value = text;
