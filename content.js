@@ -619,6 +619,20 @@ window.CONTENT = {
                                     <div style="color: var(--muted); font-size: 0.9rem;">Bravely capturing and releasing any 8-legged intruders so you don't have to (Certification from the prestigious 2yr Australian outback diploma 🦘)</div>
                                 </div>
                             </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🪛</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Certified IKEA Flatpack Builder</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Never worry about missing screws or confusing instruction manuals again</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🛠️</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Handler of the "Blue Jobs"</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">From taking out the bins to heavy lifting and DIY—I've got all the gross and heavy stuff covered</div>
+                                </div>
+                            </div>
                                 </div>
                             </div>
                         </div>
