@@ -278,12 +278,13 @@ window.CONTENT = {
     accordion: [
         {type: "heading", text: "Get to know me"},
         {key: "personality", emoji: "🧬", title: "Personality & Vibe", hint: "— what I'm like to be around"},
+        {key: "dislikes", emoji: "🙅", title: "Gentle Dislikes", hint: "— a preference for calm"},
+        {key: "friends", emoji: "👥", title: "Friend Review", hint: "— what they say about me"},
         {key: "weekInLife", emoji: "📅", title: "A day in the life of Alec", hint: "— my typical routines"},
+        {key: "timeline", emoji: "⏳", title: "My Timeline", hint: "— the story so far"},
         {key: "moments", emoji: "🏆", title: "Notable Moments", hint: "— milestones & adventures"},
         {key: "transparency", emoji: "🚩", title: "My Red Flags", hint: "— no one's perfect, at least I'm being honest"},
         {key: "politics", emoji: "🏛️", title: "Politics & Religion", hint: "— where I stand"},
-        {key: "dislikes", emoji: "🙅", title: "Gentle Dislikes", hint: "— a preference for calm"},
-        {key: "friends", emoji: "👥", title: "Friend Review", hint: "— what they say about me"},
         {key: "bucketList", emoji: "🎯", title: "Bucket List", hint: "— things I'd love to try"},
         {key: "goals", emoji: "🚀", title: "Future Goals", hint: "— where I'm headed"},
         {type: "heading", text: "Hobbies & Interests"},
@@ -867,6 +868,99 @@ window.CONTENT = {
                         {icon: "🤲", title: "Acts of Service", body: "It feels weird asking for help sometimes, but I deeply appreciate it when people step in."},
                         {icon: "💬", title: "Words of Affirmation", body: "Sometimes I'm not entirely sure how to take a compliment, but it still feels really nice."},
                         {icon: "🎁", title: "Gift Giving", body: "Receiving gifts can be a bit awkward, mainly because I can be very particular about things."}
+                    ]
+                }
+            ]
+        },
+
+        timeline: {
+            blocks: [
+                {
+                    type: "timeline",
+                    events: [
+                        {
+                            year: "Late 1900s~",
+                            title: "The Formative Years",
+                            description: "School, college, and university. Navigated a bit of bullying and a lot of repressed emotional trauma, but made it out alive with a Computer Science degree (with a 1st!).",
+                            icon: "🎒",
+                            travel: ["🇬🇷 Zante & Malia"]
+                        },
+                        {
+                            year: "2013 - 2014",
+                            title: "Backpacking & Discovery",
+                            description: "Backpacking across Australia, a bit of New Zealand, and interrailing. A huge period of growth and adventure.",
+                            icon: "🦘",
+                            travel: [
+                                "🇦🇺 Sydney & Cairns",
+                                "🇳🇿 New Zealand",
+                                "🇪🇺 Interrailing (Germany & Poland)"
+                            ]
+                        },
+                        {
+                            year: "2015 - 2016",
+                            title: "The Dark Ages",
+                            description: "Readjusting to normal life and trying to start my career. A confusing but necessary transition phase.",
+                            icon: "🌧️",
+                            travel: ["🇪🇸 Barcelona"]
+                        },
+                        {
+                            year: "2016 - 2018",
+                            title: "Early Career Hustle",
+                            description: "The classic early career grind: overworked, underpaid, and battling heavy imposter syndrome.",
+                            icon: "💼",
+                            travel: [
+                                "🇳🇱 Amsterdam",
+                                "🇸🇪 Stockholm",
+                                "🇹🇭 Phuket"
+                            ]
+                        },
+                        {
+                            year: "2018 - 2021",
+                            title: "The Rightmove & Covid-19",
+                            description: "Joined Rightmove and navigated the weirdness of the pandemic years like everyone else.",
+                            icon: "🏠",
+                            travel: [
+                                "🇺🇦 Kyiv",
+                                "🇳🇱 Amsterdam",
+                                "🇨🇿 Prague"
+                            ]
+                        },
+                        {
+                            year: "2021 - 2023",
+                            title: "The Route to Independence",
+                            description: "A huge era of change: moving to Deliveroo, getting promoted, buying a house, and venturing into the dating world (which brought its own flavor of dating depression).",
+                            icon: "🔑",
+                            travel: [
+                                "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh & Glasgow"
+                            ]
+                        },
+                        {
+                            year: "2024 - 2025",
+                            title: "First Relationship",
+                            description: "Experienced my first serious relationship. A time of immense learning and emotional investment.",
+                            icon: "❤️",
+                            travel: [
+                                "🇮🇩 Bali",
+                                "🇫🇷 Lille"
+                            ]
+                        },
+                        {
+                            year: "2025 - 2026",
+                            title: "Building Back Stronger",
+                            description: "Starting again post-breakup. Hit the gym hard with a PT and faced the depression head-on.",
+                            icon: "💪",
+                            travel: [
+                                "🇺🇸 New York",
+                                "🇲🇻 Maldives",
+                                "🇯🇵 Tokyo, Sapporo & Osaka"
+                            ]
+                        },
+                        {
+                            year: "NOW",
+                            title: "The Present",
+                            description: "Ready for whatever comes next.",
+                            icon: "✨"
+                        }
                     ]
                 }
             ]
