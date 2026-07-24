@@ -367,10 +367,7 @@ window.CONTENT = {
             heading: "The General Vibe",
             lead: "A collage of things I enjoy or find interesting. My general vibe!",
             blocks: [
-                {
-                    type: "paragraph",
-                    html: "<div class='evolving-note'>🚧 Hey! This infinite collage is a new feature and might still be a bit buggy.</div>"
-                },
+
                 {
                     type: "fadingCollage",
                     images: [
