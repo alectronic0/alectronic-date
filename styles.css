@@ -1012,7 +1012,7 @@ body:has(dialog[open]) { overflow: hidden; }
   background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px;
   padding: 9px; display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center;
 }
-.logo-tile img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 8px; cursor: zoom-in; }
+.logo-tile img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 8px; cursor: zoom-in; background-color: #fff; padding: 8px; }
 .logo-tile span { font-size: 0.78rem; color: var(--muted); }
 
 /* ─── Mini Charity Grid ─────────────────────── */
