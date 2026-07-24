@@ -1596,7 +1596,7 @@
             }
 
             debounceTimer = setTimeout(() => {
-                const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&addressdetails=1&limit=5&countrycodes=gb,us,nz,ca,au`;
+                const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&addressdetails=1&limit=5&countrycodes=gb`;
                 
                 fetch(url, {
                     headers: {
