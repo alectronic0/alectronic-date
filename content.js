@@ -542,12 +542,6 @@ window.CONTENT = {
                             text: "Organising cute dates (and yes, adding them to Google Calendar)."
                         },
                         {
-                            src: "img/boyfriend-mode/designated-bug-relocator.jpg",
-                            alt: "A hand holding a glass over a spider",
-                            title: "🕷️ Designated Bug Relocator",
-                            text: "Bravely capturing and releasing any 8-legged intruders so you don't have to (Certification from the prestigious 2yr Australian outback diploma 🦘)."
-                        },
-                        {
                             src: "img/boyfriend-mode/person-surprising-someone-with-flowers.webp",
                             alt: "Surprise flowers",
                             title: "🎁 Random Loot Drops",
@@ -614,6 +608,13 @@ window.CONTENT = {
                                 <div>
                                     <div style="font-weight: 600; margin-bottom: 4px;">Spontaneous</div>
                                     <div style="color: var(--muted); font-size: 0.9rem;">Always ready for spontaneous adventures or quiet nights in</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🕷️</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Designated Bug Relocator</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Bravely capturing and releasing any 8-legged intruders so you don't have to (Certification from the prestigious 2yr Australian outback diploma 🦘)</div>
                                 </div>
                             </div>
                         </div>
