@@ -1785,7 +1785,7 @@
                         <button class="deep-modal-close" type="button" aria-label="Close">×</button>
                     </div>
                     <div class="deep-modal-body">
-                        <p>${esc(gag.teaseText)}</p>
+                        <p class="cheeky-line">${esc(gag.teaseText)}</p>
                         <p><button class="cheeky-unlock" type="button" aria-haspopup="dialog">${esc(gag.unlockButton)}</button></p>
                     </div>
                 </div>
