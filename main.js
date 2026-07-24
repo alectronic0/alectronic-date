@@ -1404,6 +1404,14 @@
         const subject = emailTemplate.subject || "RE: Alec Dating Application";
         const intro = emailTemplate.body || "Hi Alec! I'm ready to shoot my shot.";
         const locationVal = document.getElementById('rough-location') ? document.getElementById('rough-location').value.trim() : '';
+        
+        try {
+            localStorage.setItem('alec-date-pills', JSON.stringify(selected));
+            localStorage.setItem('alec-date-location', locationVal);
+        } catch (e) {
+            console.warn('Failed to save state to localStorage', e);
+        }
+
         let locText = '';
         if (locationVal) {
             const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationVal)}`;
