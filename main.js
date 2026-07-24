@@ -1339,7 +1339,7 @@
 
     function getDistanceComment(dist) {
         if (dist <= 5) return "you are basically on top of me your not a stalker are you 👀";
-        if (dist <= 15) return "nice and local";
+        if (dist <= 15) return "nice and local 😊";
         if (dist <= 30) return "getting a bit further out but still doable";
         if (dist <= 50) return "ooo getting a bit far but if we can do regular visits still doable";
         if (dist <= 100) return "oooooof might be a bit too far for myself but always worth a talk";
@@ -1374,7 +1374,8 @@
                 const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.800986785326494, -0.20373398847054403);
                 const comment = getDistanceComment(dist);
                 distanceHtml = `<div style="font-size: 0.85rem; color: var(--muted); margin-top: 4px; text-align: center; width: 100%;">${comment}</div>`;
-                distanceHtml += `<div id="dist-map" style="width: 100%; height: 120px; border-radius: 6px; margin-top: 12px; border: 1px solid rgba(255,255,255,0.05); overflow: hidden; position: relative; z-index: 1;"></div>`;
+                const dirLink = `https://www.google.com/maps/dir/?api=1&origin=${lat},${lon}&destination=51.800986785326494,-0.20373398847054403`;
+                distanceHtml += `<a href="${dirLink}" target="_blank" rel="noopener" style="display: block; cursor: pointer; text-decoration: none;"><div id="dist-map" style="width: 100%; height: 120px; border-radius: 6px; margin-top: 12px; border: 1px solid rgba(255,255,255,0.05); overflow: hidden; position: relative; z-index: 1;"></div></a>`;
             }
 
             locHtml = `
