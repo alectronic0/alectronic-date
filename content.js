@@ -978,8 +978,7 @@ window.CONTENT = {
                             ],
                             travel: [
                                 "🇺🇸 New York",
-                                "🇲🇻 Maldives",
-                                "🇯🇵 Japan"
+                                "🇲🇻 Maldives"
                             ]
                         },
                         {
@@ -990,6 +989,10 @@ window.CONTENT = {
                             companies: [
                                 { name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg" },
                                 { name: "DoorDash", logo: "img/company-logos/doordash.jpg" }
+                            ],
+                            travel: [
+                                "🇯🇵 Japan",
+                                "❓ ????"
                             ]
                         }
                     ]
