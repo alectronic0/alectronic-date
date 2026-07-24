@@ -633,6 +633,13 @@ window.CONTENT = {
                                     <div style="color: var(--muted); font-size: 0.9rem;">From taking out the bins to heavy lifting and DIY—I've got all the gross and heavy stuff covered</div>
                                 </div>
                             </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">📖</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Book Boyfriend Roleplayer</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">BookTok girls will know exactly what this means 😉 (Willing to supply 'who did this to you?' energy on demand)</div>
+                                </div>
+                            </div>
                                 </div>
                                 <div style="margin-top: 24px; text-align: center; font-size: 0.85rem; color: var(--muted-2);">
                                     <p style="margin: 0;"><em>*Batteries not included (except for the phone charger battery pack he always carries around with him)</em></p>
