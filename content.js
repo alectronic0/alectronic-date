@@ -278,7 +278,7 @@ window.CONTENT = {
     accordion: [
         {type: "heading", text: "Get to know me"},
         {key: "personality", emoji: "🧬", title: "Personality & Vibe", hint: "— what I'm like to be around"},
-        {key: "weekInLife", emoji: "📅", title: "A day in the life of Alec", hint: "— my typical routines", wip: true},
+        {key: "weekInLife", emoji: "📅", title: "A day in the life of Alec", hint: "— my typical routines"},
         {key: "moments", emoji: "🏆", title: "Notable Moments", hint: "— milestones & adventures"},
         {key: "transparency", emoji: "🚩", title: "My Red Flags", hint: "— no one's perfect, at least I'm being honest"},
         {key: "politics", emoji: "🏛️", title: "Politics & Religion", hint: "— where I stand"},
@@ -300,6 +300,7 @@ window.CONTENT = {
         {key: "plantsAnimals", emoji: "🌺", title: "Plants & Creatures", hint: "— a few favourites"},
         {key: "gifs", emoji: "🎞️", title: "GIFs I Love", hint: "— my life in looping form"},
         {key: "couples", emoji: "💑", title: "Couple goals", hint: "— couple I aspire my future relationship to be like"},
+        {key: "underConstruction", emoji: "🚧", title: "Under construction", hint: "— check back soon", wip: true},
     ],
 
     /* ── Mid-page sections (each = blocks[]) ── */
@@ -871,13 +872,17 @@ window.CONTENT = {
             ]
         },
 
-        weekInLife: {
+        underConstruction: {
             blocks: [
                 {
                     type: "construction",
                     gif: "img/gifs/xUStFKHmuFPYk.gif",
-                    text: "This section is still a work in progress! More photos and details coming soon."
-                },
+                    text: "This website is always being updated so check back soon to see what other section I add next!"
+                }
+            ]
+        },
+        weekInLife: {
+            blocks: [
                 {
                     type: "paragraph",
                     html: "<strong>Most days</strong>: sleep, gym <span style=\"font-size: 0.85em; opacity: 0.8;\">(x2-3 week)</span>, work, repeat."

@@ -775,6 +775,7 @@ body:has(dialog[open]) { overflow: hidden; }
   font-family: var(--font); text-align: center; color: var(--text);
   cursor: pointer; transition: transform 0.15s, border-color 0.15s;
 }
+.deep-card-is-wip { border-style: dashed; }
 .deep-card:hover { transform: translateY(-3px); border-color: var(--accent); }
 .deep-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .deep-card-emoji { font-size: 1.7rem; line-height: 1; }

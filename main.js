@@ -657,7 +657,7 @@
                 (a) =>
                     a.type === 'heading'
                         ? `<h3 class="deep-group-header">${esc(a.text)}</h3>`
-                        : `<button class="deep-card" type="button" data-modal="${esc(
+                        : `<button class="deep-card${a.wip ? ' deep-card-is-wip' : ''}" type="button" data-modal="${esc(
                         a.key
                     )}" aria-haspopup="dialog">` +
                     (a.wip ? '<span class="deep-card-badge">🚧 WIP</span>' : '') +
