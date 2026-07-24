@@ -552,18 +552,6 @@ window.CONTENT = {
                             alt: "Surprise flowers",
                             title: "🎁 Random Loot Drops",
                             text: "Random flowers and cute little gifts, just because."
-                        },
-                        {
-                            src: "img/boyfriend-mode/person-getting-coffee-from-a-shop.webp",
-                            alt: "Getting coffee",
-                            title: "☕ Cached Coffee Order",
-                            text: "Always knowing your coffee order & keeping your favourite snack on hand."
-                        },
-                        {
-                            src: "img/boyfriend-mode/sharing-memes.webp",
-                            alt: "Sharing memes",
-                            title: "🐧 Certified Meme Dealer",
-                            text: "Pebbling you with hundreds of perfectly curated memes."
                         }
                     ]
                 },
@@ -580,10 +568,31 @@ window.CONTENT = {
                         </div>
                         <div style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
                             <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🧠</div>
+                                <div style="font-size: 2rem; line-height: 1;">☕</div>
                                 <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Great memory</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Remembering the little details from our conversations</div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Cached Coffee Order</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Always knowing your coffee order & keeping your favourite snack on hand</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🐧</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Certified Meme Dealer</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Pebbling you with hundreds of perfectly curated memes</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🧑‍🍳</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Personal Chef / Baker</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Fresh cookies and a meal fit for a queen at a moment's notice</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;"><img src="https://cdn.simpleicons.org/deliveroo/00CC99" style="width: 32px; height: 32px; display: block;" alt="Deliveroo"></div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Deliveroo on Speed Dial</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Deliveroo taken at the drop of a hat</div>
                                 </div>
                             </div>
                             <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
@@ -591,13 +600,6 @@ window.CONTENT = {
                                 <div>
                                     <div style="font-weight: 600; margin-bottom: 4px;">Errands Helper</div>
                                     <div style="color: var(--muted); font-size: 0.9rem;">Always happy to run errands to make your day easier</div>
-                                </div>
-                            </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">👂</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Sounding Board</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">A great listener and sounding board for your ideas</div>
                                 </div>
                             </div>
                             <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
