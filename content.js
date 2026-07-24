@@ -570,18 +570,52 @@ window.CONTENT = {
                 {
                     type: "paragraph",
                     html: `
-                    <div style="margin: 32px auto 0; max-width: 600px;">
-                        <details style="background: var(--surface-2); border: 1px solid var(--border); padding: 16px; border-radius: 12px; cursor: pointer;">
-                            <summary style="font-weight: 600; font-size: 1.1rem; color: var(--text); user-select: none;">✨ And so much more...</summary>
-                            <ul style="margin-top: 16px; padding-left: 24px; color: var(--muted); line-height: 1.6; font-size: 0.95rem;">
-                                <li>Remembering the little details from our conversations</li>
-                                <li>Always happy to run errands to make your day easier</li>
-                                <li>A great listener and sounding board for your ideas</li>
-                                <li>Your personal 24/7 tech support</li>
-                                <li>Always ready for spontaneous adventures or quiet nights in</li>
-                            </ul>
-                        </details>
+                    <div style="text-align: center; margin-top: 32px;">
+                        <button onclick="document.getElementById('bfExtrasModal').showModal()" class="share-btn primary" style="background: var(--surface-2); border: 1px solid var(--border); color: var(--text); font-weight: 600; padding: 12px 24px; border-radius: 8px; cursor: pointer; display: inline-block;">✨ And so much more...</button>
                     </div>
+                    <dialog id="bfExtrasModal" class="deep-modal" style="border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); padding: 0; max-width: 500px; width: 90%; margin: auto;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--border); background: var(--surface-2);">
+                            <h3 style="margin: 0; font-size: 1.2rem;">✨ And so much more...</h3>
+                            <button onclick="this.closest('dialog').close()" style="background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); padding: 0; line-height: 1;">&times;</button>
+                        </div>
+                        <div style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🧠</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Great memory</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Remembering the little details from our conversations</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🛍️</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Errands Helper</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Always happy to run errands to make your day easier</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">👂</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Sounding Board</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">A great listener and sounding board for your ideas</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">💻</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">24/7 Tech Support</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Your personal tech support for all devices</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🗺️</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Spontaneous</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Always ready for spontaneous adventures or quiet nights in</div>
+                                </div>
+                            </div>
+                        </div>
+                    </dialog>
                     <div style="text-align: center; margin-top: 32px;">
                         <a href="#contact" class="share-btn primary" style="text-decoration: none;">Heard enough? Skip the scroll and jump straight to my contact details ⏭️</a>
                     </div>
