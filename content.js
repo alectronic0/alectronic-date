@@ -883,6 +883,9 @@ window.CONTENT = {
                             title: "The Formative Years",
                             description: "School, college, and university. Navigated a bit of bullying and a lot of repressed emotional trauma, but made it out alive with a Computer Science degree (with a 1st!).",
                             icon: "🎒",
+                            companies: [
+                                { name: "Waitrose", logo: "img/company-logos/waitrose.jpg" }
+                            ],
                             travel: ["🇬🇷 Zante & Malia"]
                         },
                         {
@@ -890,6 +893,9 @@ window.CONTENT = {
                             title: "Backpacking & Discovery",
                             description: "Backpacking across Australia, a bit of New Zealand, and interrailing. A huge period of growth and adventure.",
                             icon: "🦘",
+                            companies: [
+                                { name: "IVSTEL", logo: "img/company-logos/ivestel.jpg" }
+                            ],
                             travel: [
                                 "🇦🇺 Sydney & Cairns",
                                 "🇳🇿 New Zealand",
@@ -901,6 +907,10 @@ window.CONTENT = {
                             title: "The Dark Ages",
                             description: "Readjusting to normal life and trying to start my career. A confusing but necessary transition phase.",
                             icon: "🌧️",
+                            companies: [
+                                { name: "GLEAT", logo: "img/company-logos/gleat.png" },
+                                { name: "Sky", logo: "img/company-logos/sky.jpg" }
+                            ],
                             travel: ["🇪🇸 Barcelona"]
                         },
                         {
@@ -908,6 +918,9 @@ window.CONTENT = {
                             title: "Early Career Hustle",
                             description: "The classic early career grind: overworked, underpaid, and battling heavy imposter syndrome.",
                             icon: "💼",
+                            companies: [
+                                { name: "Solirius Consulting", logo: "img/company-logos/solirius.avif" }
+                            ],
                             travel: [
                                 "🇳🇱 Amsterdam",
                                 "🇸🇪 Stockholm",
@@ -919,6 +932,9 @@ window.CONTENT = {
                             title: "The Rightmove & Covid-19",
                             description: "Joined Rightmove and navigated the weirdness of the pandemic years like everyone else.",
                             icon: "🏠",
+                            companies: [
+                                { name: "Rightmove", logo: "img/company-logos/rightmove.jpg" }
+                            ],
                             travel: [
                                 "🇺🇦 Kyiv",
                                 "🇳🇱 Amsterdam",
@@ -930,6 +946,9 @@ window.CONTENT = {
                             title: "The Route to Independence",
                             description: "A huge era of change: moving to Deliveroo, getting promoted, buying a house, and venturing into the dating world (which brought its own flavor of dating depression).",
                             icon: "🔑",
+                            companies: [
+                                { name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg" }
+                            ],
                             travel: [
                                 "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh & Glasgow"
                             ]
