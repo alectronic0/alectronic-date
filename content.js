@@ -277,7 +277,7 @@ window.CONTENT = {
        a `construction` block in the section). */
     accordion: [
         {type: "heading", text: "Get to know me"},
-        {key: "personality", emoji: "🧬", title: "Personality & Vibe", hint: "— what I'm like to be around", wip: true},
+        {key: "personality", emoji: "🧬", title: "Personality & Vibe", hint: "— what I'm like to be around"},
         {key: "weekInLife", emoji: "📅", title: "A day in the life of Alec", hint: "— my typical routines", wip: true},
         {key: "moments", emoji: "🏆", title: "Notable Moments", hint: "— milestones & adventures"},
         {key: "transparency", emoji: "🚩", title: "My Red Flags", hint: "— no one's perfect, at least I'm being honest"},
@@ -555,94 +555,59 @@ window.CONTENT = {
                     <dialog id="bfExtrasModal" class="deep-modal">
                         <div class="deep-modal-inner">
                             <div class="deep-modal-head">
-                                <h3 class="deep-modal-title">✨ And so much more... <span class="deep-link" role="button" tabindex="0" data-anchor="bfExtrasModal" title="Copy link to this section">🔗</span></h3>
+                                <h3 class="deep-modal-title">✨ And so much more...</h3>
+                                <span class="deep-link" role="button" tabindex="0" data-anchor="bfExtrasModal" title="Copy link to this section">🔗</span>
                                 <button class="deep-modal-close" aria-label="Close modal" onclick="this.closest('dialog').close()">&times;</button>
                             </div>
                             <div class="deep-modal-body">
-                                <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🫂</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Expert Warm Hugger</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Always ready to wrap you up in a big, comforting hug exactly when you need it most</div>
-                                </div>
+                                <div class="interest-cards">
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">🫂</span><span class="interest-card-title">Expert Warm Hugger</span></div>
+                                <p class="interest-card-body">Always ready to wrap you up in a big, comforting hug exactly when you need it most</p>
                             </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">☕</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Pre-Loaded Coffee Order</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Never having to repeat your coffee order, plus a constant supply of your favourite snacks</div>
-                                </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">☕</span><span class="interest-card-title">Pre-Loaded Coffee Order</span></div>
+                                <p class="interest-card-body">Never having to repeat your coffee order, plus a constant supply of your favourite snacks</p>
                             </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🪛</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Certified IKEA Flatpack Builder</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Never worry about missing screws or confusing instruction manuals again</div>
-                                </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">🪛</span><span class="interest-card-title">Certified IKEA Flatpack Builder</span></div>
+                                <p class="interest-card-body">Never worry about missing screws or confusing instruction manuals again</p>
                             </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🐧</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Certified Meme Dealer</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Pebbling you with hundreds of perfectly curated memes</div>
-                                </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">🐧</span><span class="interest-card-title">Certified Meme Dealer</span></div>
+                                <p class="interest-card-body">Pebbling you with hundreds of perfectly curated memes</p>
                             </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">📖</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Book Boyfriend Roleplayer</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">BookTok girls will know exactly what this means 😉 (Willing to supply 'who did this to you?' energy on demand)</div>
-                                </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">📖</span><span class="interest-card-title">Book Boyfriend Roleplayer</span></div>
+                                <p class="interest-card-body">BookTok girls will know exactly what this means 😉 (Willing to supply 'who did this to you?' energy on demand)</p>
                             </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🧑‍🍳</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Personal Chef / Baker</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Fresh cookies and a meal fit for a queen at a moment's notice</div>
-                                </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">🧑‍🍳</span><span class="interest-card-title">Personal Chef / Baker</span></div>
+                                <p class="interest-card-body">Fresh cookies and a meal fit for a queen at a moment's notice</p>
                             </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🛠️</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Handler of the "Blue Jobs"</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">From taking out the bins to heavy lifting and DIY—I've got all the gross and heavy stuff covered</div>
-                                </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">🛠️</span><span class="interest-card-title">Handler of the "Blue Jobs"</span></div>
+                                <p class="interest-card-body">From taking out the bins to heavy lifting and DIY—I've got all the gross and heavy stuff covered</p>
                             </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;"><img src="https://cdn.simpleicons.org/deliveroo/00CC99" style="width: 32px; height: 32px; display: block;" alt="Deliveroo"></div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Deliveroo on Speed Dial</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">When cooking isn't the vibe, your favourite takeout is just a tap away</div>
-                                </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon"><img src="https://cdn.simpleicons.org/deliveroo/00CC99" style="width: 24px; height: 24px; display: block;" alt="Deliveroo"></span><span class="interest-card-title">Deliveroo on Speed Dial</span></div>
+                                <p class="interest-card-body">When cooking isn't the vibe, your favourite takeout is just a tap away</p>
                             </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">💻</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">24/7 Tech Support</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Your personal tech support for all devices</div>
-                                </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">💻</span><span class="interest-card-title">24/7 Tech Support</span></div>
+                                <p class="interest-card-body">Your personal tech support for all devices</p>
                             </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🛍️</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Errands Helper</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Always happy to run errands to make your day easier</div>
-                                </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">🛍️</span><span class="interest-card-title">Errands Helper</span></div>
+                                <p class="interest-card-body">Always happy to run errands to make your day easier</p>
                             </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🕷️</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Designated Bug Relocator</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Bravely capturing and releasing any 8-legged intruders so you don't have to (Certification from the prestigious 2yr Australian outback diploma 🦘)</div>
-                                </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">🕷️</span><span class="interest-card-title">Designated Bug Relocator</span></div>
+                                <p class="interest-card-body">Bravely capturing and releasing any 8-legged intruders so you don't have to (Certification from the prestigious 2yr Australian outback diploma 🦘)</p>
                             </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🗺️</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Spontaneous</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Always ready for spontaneous adventures or quiet nights in</div>
-                                </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">🗺️</span><span class="interest-card-title">Spontaneous</span></div>
+                                <p class="interest-card-body">Always ready for spontaneous adventures or quiet nights in</p>
                             </div>
                                 </div>
                                 <div style="margin-top: 24px; text-align: center; font-size: 0.85rem; color: var(--muted-2);">
@@ -875,20 +840,32 @@ window.CONTENT = {
         personality: {
             blocks: [
                 {
-                    type: "construction",
-                    gif: "img/gifs/xUStFKHmuFPYk.gif",
-                    text: "The rest — my personality type, love languages, and the general vibe I bring to a room — is still being written. Check back soon!"
+                    type: "interestCards", cards: [
+                        {icon: "🐕", title: "Golden Retriever Energy", body: "Enthusiastic, deeply loyal, eager to please, and just happy to be included. I thrive on affection and bring a boundless, supportive energy to the people I care about."},
+                        {icon: "🛡️", title: "Protective", body: "My namesake, Alec, literally means 'Protector of Mankind'. I naturally fall into the 'guy in the chair' or support character role. I'm always looking out for the people around me, making sure everyone is okay, and fiercely protecting those who treat me with respect."},
+                        {icon: "⏰", title: "Punctual", body: "99.999% of the time, I'm right on time (or more accurately, 30 minutes early). If I think I'm going to be even 2 minutes late, you'll be getting a text with my exact GPS coordinates."},
+                        {icon: "📅", title: "Organiser & Planner", body: "Google Calendar out, Google Spreadsheets ready, Google Maps up, everything is meticulously planned out."},
+                        {icon: "🗺️", title: "Spontaneous", body: "Despite the planning, I can occasionally just say 'f*ck it, let's go' for short-term plans. (Though you probably won't catch me jumping on a plane unless the logistics are already handled)."},
+                        {icon: "⚖️", title: "Ambivert", body: "Sometimes I want to be out seeing people, and other times I just want to be wrapped up in a blanket on the couch, eating snacks and playing video games. It really just depends on the mood, the people, and the place."},
+                        {icon: "🤓", title: "Nerdy", subtitle: "(if you didn't realise already)", body: "Video games, anime, science, history, sci-fi, fantasy... you name it, I've probably played it or dabbled in it at least once. It's taken a while to fully embrace, but it's who I am, and I like me!"},
+                        {icon: "🔥", title: "Passionate", body: "Best believe a deep fire lives inside me, whether it's for the people I care about, a show I love, or an activity. I'm a massive Google and Nintendo fanboy, and if we disagree on a political viewpoint, I will defend my side with PASSION."},
+                        {icon: "💯", title: "Bit all or nothing", body: "I can be quite extreme. I'll either be the quietest person in the room or the loudest; I'll care deeply or not at all; I can be incredibly loved by people or totally detested. I'm a bit of a walking hypocrite sometimes."},
+                        {icon: "🦉", title: "Night owl", body: "I definitely do my best work at night (no, I'm not Batman). I only wake up early if I can't get back to sleep, or if I absolutely have to, and you better believe I'll need a morning matcha or coffee to get me going."}
+                    ]
+                },
+                { type: "heading", text: "Putting Myself in a Box" },
+                {
+                    type: "paragraph",
+                    html: "<p style='color: var(--muted); font-size: 0.95rem; margin-top: -12px;'><em>Disclaimer: I know these concepts get banded about a lot, and there aren't always good things to be said about the people who invented them... but sometimes it's just nice to put yourself in a box!</em></p>"
                 },
                 {
                     type: "interestCards", cards: [
-                        {icon: "🛡️", title: "Loyal"},
-                        {icon: "⏰", title: "Punctual"},
-                        {icon: "📅", title: "Organiser & planner"},
-                        {icon: "⚖️", title: "Ambivert"},
-                        {icon: "🤓", title: "Nerdy", subtitle: "(if you didn't realise already)"},
-                        {icon: "🔥", title: "Passionate"},
-                        {icon: "💯", title: "Bit all or nothing"},
-                        {icon: "🦉", title: "Night owl"}
+                        {icon: "♉", title: "Taurus", body: "The textbook definition is usually stubborn, materialistic, food-loving, and calm-natured... right up until they're a bull in a china shop. Honestly, I do resonate with that."},
+                        {icon: "🧠", title: "INFJ-T", body: "Introverted, Intuitive, Feeling, and Judging (with Turbulence). Known as the 'Advocate' personality, meaning I tend to approach life with deep thoughtfulness and imagination. I am driven by my core values and care deeply about helping others, but the 'Turbulent' side means I can be a bit of a perfectionist and hard on myself."},
+                        {icon: "🫂", title: "Physical Touch & Quality Time", subtitle: "(Primary)", body: "These are by far my main love languages. I just want to be close to the people I care about."},
+                        {icon: "🤲", title: "Acts of Service", body: "It feels weird asking for help sometimes, but I deeply appreciate it when people step in."},
+                        {icon: "💬", title: "Words of Affirmation", body: "Sometimes I'm not entirely sure how to take a compliment, but it still feels really nice."},
+                        {icon: "🎁", title: "Gift Giving", body: "Receiving gifts can be a bit awkward, mainly because I can be very particular about things."}
                     ]
                 }
             ]
