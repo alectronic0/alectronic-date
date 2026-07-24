@@ -1,0 +1,33 @@
+name: Content Scanner
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  scan-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Scan for firewall trigger words
+        run: |
+          # Define a regex of blocked words (case insensitive)
+          # We use boundary \b to ensure we match whole words where appropriate.
+          BLOCKLIST="\b(sexy|nsfw|porn|onlyfans|x-rated)\b|18\+|\+18"
+          
+          echo "Scanning for trigger words: $BLOCKLIST"
+          
+          # Run grep. If it finds anything, it returns 0 (which we want to treat as a failure).
+          # If it finds nothing, it returns 1 (which we want to treat as success).
+          # We search in typical web files
+          if grep -r -i -E "$BLOCKLIST" --include=\*.{html,js,css,md,txt} .; then
+            echo "::error::Found firewall trigger words! Please remove them so the site doesn't get blocked."
+            exit 1
+          else
+            echo "No trigger words found. Looking good!"
+            exit 0
+          fi
