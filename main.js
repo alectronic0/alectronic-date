@@ -151,7 +151,22 @@
 
     const flagify = (text) => {
         const s = String(text == null ? '' : text);
-        const escaped = esc(s);
+        let escaped = esc(s);
+
+        // Handle sub-region flags (Scotland, England, Wales)
+        escaped = escaped.replace(/\u{1F3F4}[\u{E0061}-\u{E007A}]+\u{E007F}/gu, (match) => {
+            const tags = [...match].slice(1, -1);
+            let code = tags.map(ch => String.fromCharCode(ch.codePointAt(0) - 0xE0000)).join('');
+            if (code.startsWith('gb')) {
+                code = 'gb-' + code.substring(2);
+            }
+            return (
+                `<img class="flag" src="https://flagcdn.com/24x18/${code}.png" ` +
+                `srcset="https://flagcdn.com/48x36/${code}.png 2x" width="24" height="18" ` +
+                `alt="${code} flag" loading="lazy">`
+            );
+        });
+
         return escaped.replace(/([\u{1F1E6}-\u{1F1FF}]{2})/gu, (match) => {
             const cc = [...match]
                 .map((ch) => String.fromCharCode(ch.codePointAt(0) - 0x1f1e6 + 65))
