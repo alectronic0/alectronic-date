@@ -992,6 +992,8 @@ window.CONTENT = {
                             ],
                             travel: [
                                 "🇯🇵 Japan",
+                                "🇨🇦 Toronto",
+                                "🇩🇪 Berlin",
                                 "❓ ????"
                             ]
                         }
