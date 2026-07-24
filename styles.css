@@ -183,7 +183,7 @@ img { display: block; max-width: 100%; }
    menu + the "Go on a date" pill. The section links fold down from the bar
    when the burger is opened. */
 nav {
-  position: sticky; top: 0; z-index: 100;
+  position: sticky; top: 0; z-index: 9999;
   background: rgba(22, 13, 20, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
