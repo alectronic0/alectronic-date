@@ -520,7 +520,7 @@ window.CONTENT = {
                         {
                             src: "img/boyfriend-mode/passenger-princess.webp",
                             alt: "Passenger Princess",
-                            title: "👸 Passenger Princess",
+                            title: "👸 Passenger Princess as Standard",
                             text: "Full passenger-princess treatment whenever we're on the road."
                         },
                         {
