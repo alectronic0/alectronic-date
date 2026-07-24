@@ -1777,7 +1777,7 @@
                     <div class="deep-modal-head">
                         <span class="deep-modal-emoji" aria-hidden="true">🙅</span>
                         <h3 class="deep-modal-title">${esc(gag.title)}</h3>
-                        <span class="deep-link" role="button" tabindex="0" data-anchor="sexyPhotos" aria-label="Copy link to ${esc(gag.title)}" title="Copy link to this section">🔗</span>
+                        <span class="deep-link" role="button" tabindex="0" data-anchor="secretContent" aria-label="Copy link to ${esc(gag.title)}" title="Copy link to this section">🔗</span>
                         <button class="deep-modal-close" type="button" aria-label="Close">×</button>
                     </div>
                     <div class="deep-modal-body">
@@ -1805,12 +1805,12 @@
         }
     }
 
-    // The 🔒 "sexy photos" gag: the locked banner under the deep-dive grid
+    // The 🔒 "secret content" gag: the locked banner under the deep-dive grid
     // opens the tease modal, whose 🔓 button swaps it for the punchline
     // modal — which is really just the contact + share cards.
     function initCheekyGag() {
         const banner = document.querySelector('.locked-banner');
-        if (banner) banner.addEventListener('click', () => openDeepModal('sexyPhotos'));
+        if (banner) banner.addEventListener('click', () => openDeepModal('secretContent'));
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.cheeky-unlock')) return;
             const open = e.target.closest('dialog.deep-modal');
@@ -1859,7 +1859,7 @@
             if (!goOnP) return;
 
             goOnP.innerHTML = `
-                <button type="button" class="cheeky-goon-btn" id="cheeky-goon-btn">actual sexy photos</button>
+                <button type="button" class="cheeky-goon-btn" id="cheeky-goon-btn">actual secret content</button>
             `;
         });
 
@@ -1870,7 +1870,7 @@
                 const goOnP = cheekyModal.querySelector('.cheeky-goonthen');
                 if (goOnP) {
                     goOnP.innerHTML = `
-                        <button type="button" class="cheeky-goon-btn" id="cheeky-goon-btn">actual sexy photos</button>
+                        <button type="button" class="cheeky-goon-btn" id="cheeky-goon-btn">actual secret content</button>
                     `;
                 }
             });
@@ -2745,7 +2745,7 @@
         renderConnectCard(C.contact, '[data-connect="contact"]');
         renderPrompts();
         renderShare('[data-share="share"]');
-        // and so does the punchline of the 🔒 "sexy photos" gag.
+        // and so does the punchline of the 🔒 "secret content" gag.
         renderConnectCard(C.contact, '[data-connect="cheeky-modal"]');
         renderShare('[data-share="cheeky-modal"]');
         renderConnectCard(C.outro, '[data-connect="outro"]');

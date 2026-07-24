@@ -239,9 +239,9 @@
          by main.js (renderDeepDive). -->
     <div class="deep-grid"></div>
 
-    <!-- 🔒 The "sexy photos" gag — deliberately NOT one of the topic cards
+    <!-- 🔒 The "secret content" gag — deliberately NOT one of the topic cards
          above: its own locked vault at the very bottom of the deep dive.
-         Opens the tease modal (#sexyPhotos); wired by initCheekyGag(). -->
+         Opens the tease modal (#secretContent); wired by initCheekyGag(). -->
     <div id="deep-dive-locked"></div>
   </div>
 </section>
@@ -281,15 +281,15 @@
   <div class="gallery-grid" data-gallery="grid"></div>
 </dialog>
 
-<!-- 🔒 "Sexy photos" gag, step 1: the tease. Opened from the locked banner
+<!-- 🔒 "Secret content" gag, step 1: the tease. Opened from the locked banner
      at the bottom of the deep dive; the 🔓 button swaps it for #cheeky-modal
-     (see initCheekyGag in main.js). Its id makes #sexyPhotos a shareable
+     (see initCheekyGag in main.js). Its id makes #secretContent a shareable
      deep link, same as the topic modals. -->
-<dialog class="deep-modal" id="sexyPhotos" aria-label="Private Sexy Photos (Do Not Open)">
+<dialog class="deep-modal" id="secretContent" aria-label="Top Secret Content (Do Not Open)">
   <div id="cheeky-dialog-content"></div>
 </dialog>
 
-<!-- 🔒 "Sexy photos" gag, step 2: the punchline (opened by the 🔓 button
+<!-- 🔒 "Secret content" gag, step 2: the punchline (opened by the 🔓 button
      above). Reuses the deep-modal/date-modal shell, and the same contact +
      share cards filled by renderConnectCard + renderShare. -->
 <dialog class="deep-modal date-modal" id="cheeky-modal" aria-label="You're cheeky — I like that!">
@@ -305,7 +305,7 @@
         <button type="button" class="cheeky-shoot-btn" id="cheeky-shoot-btn">Shoot Your Shot 💘</button>
       </p>
       <p class="cheeky-goonthen" style="text-align: center; margin-top: 24px;">
-        <button type="button" class="cheeky-goon-btn" id="cheeky-goon-btn">actual sexy photos</button>
+        <button type="button" class="cheeky-goon-btn" id="cheeky-goon-btn">actual secret content</button>
       </p>
     </div>
   </div>

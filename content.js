@@ -520,7 +520,7 @@ window.CONTENT = {
                         {
                             src: "img/boyfriend-mode/passenger-princess.webp",
                             alt: "Passenger Princess",
-                            title: "🚗 Chauffeur Mode Enabled",
+                            title: "👸 Passenger Princess",
                             text: "Full passenger-princess treatment whenever we're on the road."
                         },
                         {
@@ -569,7 +569,23 @@ window.CONTENT = {
                 },
                 {
                     type: "paragraph",
-                    html: '<div style="text-align: center; margin-top: 32px;"><a href="#contact" class="share-btn primary" style="text-decoration: none;">Heard enough? Skip the scroll and jump straight to my contact details ⏭️</a></div>'
+                    html: `
+                    <div style="margin: 32px auto 0; max-width: 600px;">
+                        <details style="background: var(--surface-2); border: 1px solid var(--border); padding: 16px; border-radius: 12px; cursor: pointer;">
+                            <summary style="font-weight: 600; font-size: 1.1rem; color: var(--text); user-select: none;">✨ And so much more...</summary>
+                            <ul style="margin-top: 16px; padding-left: 24px; color: var(--muted); line-height: 1.6; font-size: 0.95rem;">
+                                <li>Remembering the little details from our conversations</li>
+                                <li>Always happy to run errands to make your day easier</li>
+                                <li>A great listener and sounding board for your ideas</li>
+                                <li>Your personal 24/7 tech support</li>
+                                <li>Always ready for spontaneous adventures or quiet nights in</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div style="text-align: center; margin-top: 32px;">
+                        <a href="#contact" class="share-btn primary" style="text-decoration: none;">Heard enough? Skip the scroll and jump straight to my contact details ⏭️</a>
+                    </div>
+                    `
                 }
             ]
         },
@@ -2052,13 +2068,22 @@ window.CONTENT = {
                     type: "testimonialRows",
                     items: [
                         {
+                            src: "img/alec/alec-mt-batur-sunrise-silly-selfie-bali.webp",
+                            alt: "Matěj & Alec at Mt Batur",
+                            icon: "📋",
+                            title: "Trusted Team player",
+                            text: "Alec is great at keeping up with friends and loved ones throughout life's ups and downs. Kind and caring throughout. Plus masterful at logistics, definitely trusted as the team planner!",
+                            signature: "— Matěj, Friend of many years",
+                            imagePosition: "left"
+                        },
+                        {
                             src: "img/friends/minty.jpg",
                             alt: "Minty",
                             icon: "💪",
-                            title: "Someone you can count on",
+                            title: "Your No. 1 person to turn to",
                             text: "Alec is a no. 1 person to turn to. I know he will always be there for whatever you need. He's helpful and reliable. Always calm and a problem solver. I love his gentle, caring side. He's a keeper.",
                             signature: '— Minty aka. "Final Boss", Personal Trainer & Friend',
-                            imagePosition: "left"
+                            imagePosition: "right"
                         },
                         {
                             src: "img/friends/agent-l.jpg",
@@ -2067,7 +2092,23 @@ window.CONTENT = {
                             title: "Finding ways to make you smile",
                             text: "Alec is the type of friend that everyone needs. He will show up for you, really listen and always shows his love and care in the most empathetic of ways, while always looking for ways to make you genuinely smile.",
                             signature: '— Agent L, Friend (photo of her has been redacted to protect her identity on secret mission)',
+                            imagePosition: "left"
+                        },
+                        {
+                            icon: "🧸",
+                            title: "A small thing they do for people",
+                            text: "Bought me some pokemon plushies back from Japan because I told him my favourite pokemon and was having a hard time at work.",
+                            signature: "— Colleague, Friend",
                             imagePosition: "right"
+                        },
+                        {
+                            src: "img/friends/anastasiia.jpg",
+                            alt: "Anastasiia",
+                            icon: "🕶️",
+                            title: "Someone you can count on",
+                            text: "",
+                            signature: "— Anastasiia, Bestie obvs",
+                            imagePosition: "left"
                         }
                     ]
                 },
@@ -2483,8 +2524,8 @@ window.CONTENT = {
             {label: "Shoot your shot! 💘", href: "#contact", primary: true}
         ]
     },
-    deepDive: {tag: '🔬 The Deep Dive', title: 'Everything Else About Me', spoiler: {emoji: '⚠️', title: 'Spoiler Warning', body: "Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story."}, lockedBanner: {emoji: '🔒', title: 'Private Sexy Photos (Do Not Open) 🙅', tagline: 'do you dare? 😉😈🌶️🔥🔞'}},
-    cheekyGag: {title: 'Private Sexy Photos (Do Not Open) 🙅', teaseText: "😳 Seriously?! Do you really think I'd have those just lying around on my dating site…", unlockButton: '🔓🔑 Access sexy photos 😏', punchlineTitle: "You're Cheeky — I Like That!", punchlineBody: "You're cheeky 😉 I like that! If you really do want some fun though, go on — shoot your shot!"},
+    deepDive: {tag: '🔬 The Deep Dive', title: 'Everything Else About Me', spoiler: {emoji: '⚠️', title: 'Spoiler Warning', body: "Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story."}, lockedBanner: {emoji: '🔒', title: 'Top Secret Content (Do Not Open) 🙅', tagline: 'do you dare? 😉😈🌶️🔥'}},
+    cheekyGag: {title: 'Top Secret Content (Do Not Open) 🙅', teaseText: "😳 Seriously?! Do you really think I'd have that just lying around on my dating site…", unlockButton: '🔓🔑 Access secret content 😏', punchlineTitle: "You're Cheeky — I Like That!", punchlineBody: "You're cheeky 😉 I like that! If you really do want some fun though, go on — shoot your shot!"},
     footer: {note: 'Alec Doran-Twyford · Welwyn Garden City · he/him/they/them', credit: 'Powered by <a href="https://github.com/alectronic0/alectronic-date" target="_blank" rel="noopener noreferrer">Alec + GitHub Pages</a>', emoji: '🎮❤️🎮'},
     easterEgg: {
         toastTitle: '1-UP!', toastBody: "It's a secret to everybody.", toastSub: '🍄 +30 lives · you found the cheat code 🎮', emojis: [
