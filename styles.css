@@ -1537,6 +1537,7 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  justify-content: center;
 }
 .adventure-chip {
   display: inline-flex;

@@ -1256,6 +1256,7 @@
         const p = C.prompts;
         if (!document.querySelector('[data-prompts="root"]')) return; // no mount → nothing to do
         const html =
+            `<div style="text-align: center;">` +
             (p.intro ? `<p class="prompt-intro">${esc(p.intro)}</p>` : '') +
             `<div class="prompt-header-action">` +
             `<button type="button" class="prompt-shuffle"><i class="prompt-icon" aria-hidden="true">🃏</i>` +
@@ -1267,6 +1268,7 @@
             `<span>${esc(p.answerLabel || 'Email me your responses')}</span></a>` +
             `<button type="button" class="prompt-copy-btn"><i class="prompt-icon" aria-hidden="true">📋</i>` +
             `<span>Copy responses</span></button>` +
+            `</div>` +
             `</div>`;
         setHtml('[data-prompts="root"]', html);
         drawPrompts();
@@ -1371,7 +1373,7 @@
             if (lat && lon) {
                 const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.800986785326494, -0.20373398847054403);
                 const comment = getDistanceComment(dist);
-                distanceHtml = `<div style="font-size: 0.85rem; color: var(--muted); margin-top: 4px;">${comment}</div>`;
+                distanceHtml = `<div style="font-size: 0.85rem; color: var(--muted); margin-top: 4px; text-align: center; width: 100%;">${comment}</div>`;
                 distanceHtml += `<div id="dist-map" style="width: 100%; height: 120px; border-radius: 6px; margin-top: 12px; border: 1px solid rgba(255,255,255,0.05); overflow: hidden; position: relative; z-index: 1;"></div>`;
             }
 
@@ -1420,13 +1422,15 @@
         }
 
         mount.innerHTML = `
-            <h4 class="picked-adventures-title" style="margin: 0 0 10px;">🗺️ Your Picked Adventures:</h4>
-            ${locHtml}
-            <div class="selected-adventures-list">
-                ${listContent}
-            </div>
-            <div class="change-adventures-row" style="margin-top: 12px; display: flex; justify-content: center;">
-                <button type="button" class="change-adventures-btn">Choose other options? ⬆️</button>
+            <div style="text-align: center;">
+                <h4 class="picked-adventures-title" style="margin: 0 0 10px;">🗺️ Your Picked Adventures:</h4>
+                ${locHtml}
+                <div class="selected-adventures-list">
+                    ${listContent}
+                </div>
+                <div class="change-adventures-row" style="margin-top: 12px; display: flex; justify-content: center;">
+                    <button type="button" class="change-adventures-btn">Choose other options? ⬆️</button>
+                </div>
             </div>
         `;
 
