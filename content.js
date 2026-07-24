@@ -564,8 +564,8 @@ window.CONTENT = {
                             <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
                                 <div style="font-size: 2rem; line-height: 1;">☕</div>
                                 <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Cached Coffee Order</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Always knowing your coffee order & keeping your favourite snack on hand</div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Pre-Loaded Coffee Order</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Never having to repeat your coffee order, plus a constant supply of your favourite snacks</div>
                                 </div>
                             </div>
                             <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
@@ -586,7 +586,7 @@ window.CONTENT = {
                                 <div style="font-size: 2rem; line-height: 1;"><img src="https://cdn.simpleicons.org/deliveroo/00CC99" style="width: 32px; height: 32px; display: block;" alt="Deliveroo"></div>
                                 <div>
                                     <div style="font-weight: 600; margin-bottom: 4px;">Deliveroo on Speed Dial</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Deliveroo taken at the drop of a hat</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">When cooking isn't the vibe, your favourite takeout is just a tap away</div>
                                 </div>
                             </div>
                             <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
