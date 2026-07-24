@@ -774,7 +774,7 @@ window.CONTENT = {
                                         "🐾 Pet-friendly workspace",
                                         "☕ Unlimited tea allowance",
                                         "🛋️ Flexible working — sometimes the sofa, sometimes the summit of a mountain",
-                                        {html: "❤️ …and so much more — see <a href=\"#boyfriend-mode\">Boyfriend Mode</a> 👆"}
+                                        {html: "<span>✨ …and so much more — check out the <a href=\"#bfExtrasModal\" style=\"white-space: nowrap;\">Boyfriend Mode Extras 👆</a></span>"}
                                     ]
                                 }
                             ]
