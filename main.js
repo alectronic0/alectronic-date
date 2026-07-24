@@ -1532,12 +1532,46 @@
         const clearBtn = document.getElementById('clear-location-btn');
         if (!input || !suggestionsBox) return;
 
+        let currentFocus = -1;
+
+        function setActive(items) {
+            if (!items) return;
+            items.forEach(item => item.classList.remove('active'));
+            if (currentFocus >= items.length) currentFocus = 0;
+            if (currentFocus < 0) currentFocus = items.length - 1;
+            items[currentFocus].classList.add('active');
+            items[currentFocus].scrollIntoView({ block: 'nearest' });
+        }
+
+        input.addEventListener('keydown', (e) => {
+            const items = suggestionsBox.querySelectorAll('.suggestion-item');
+            if (!items.length || suggestionsBox.style.display === 'none') return;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                currentFocus++;
+                setActive(items);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                currentFocus--;
+                setActive(items);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (currentFocus > -1) {
+                    items[currentFocus].click();
+                } else {
+                    items[0].click();
+                }
+            }
+        });
+
         if (clearBtn) {
             clearBtn.addEventListener('click', () => {
                 input.value = '';
                 clearBtn.style.display = 'none';
                 suggestionsBox.innerHTML = '';
                 suggestionsBox.style.display = 'none';
+                currentFocus = -1;
                 updateDatesState();
                 input.focus();
             });
@@ -1553,6 +1587,7 @@
                 clearBtn.style.display = input.value.trim().length > 0 ? 'block' : 'none';
             }
             clearTimeout(debounceTimer);
+            currentFocus = -1;
             const query = input.value.trim();
             if (query.length < 3) {
                 suggestionsBox.innerHTML = '';
@@ -1571,6 +1606,7 @@
                 .then(res => res.json())
                 .then(data => {
                     suggestionsBox.innerHTML = '';
+                    currentFocus = -1;
                     if (data && data.length) {
                         data.forEach(item => {
                             const btn = document.createElement('button');
@@ -1595,6 +1631,7 @@
                                 input.value = text;
                                 suggestionsBox.innerHTML = '';
                                 suggestionsBox.style.display = 'none';
+                                currentFocus = -1;
                                 updateDatesState();
                             });
                             suggestionsBox.appendChild(btn);
@@ -1614,6 +1651,7 @@
             if (!input.contains(e.target) && !suggestionsBox.contains(e.target)) {
                 suggestionsBox.innerHTML = '';
                 suggestionsBox.style.display = 'none';
+                currentFocus = -1;
             }
         });
         

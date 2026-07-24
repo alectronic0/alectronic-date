@@ -1572,7 +1572,7 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
 .location-input-container {
   max-width: 640px;
   margin: 0 auto 28px;
-  text-align: left;
+  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -1592,18 +1592,6 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
 .location-input-wrapper {
   position: relative;
   flex: 1 1 auto;
-}
-@media (min-width: 768px) {
-  .location-input-container {
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-  }
-  .location-input-container label {
-    flex-shrink: 0;
-    width: 210px;
-    margin-bottom: 0;
-  }
 }
 .location-input-wrapper input {
   width: 100%;
@@ -1647,7 +1635,8 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
   cursor: pointer;
   transition: background-color 0.15s;
 }
-.suggestion-item:hover {
+.suggestion-item:hover,
+.suggestion-item.active {
   background-color: var(--surface-3);
   color: #fff;
 }
