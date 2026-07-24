@@ -786,6 +786,7 @@ window.CONTENT = {
                             pills: [
                                 "🕹️ Arcade",
                                 "🪓 Axe Throwing",
+                                "🎳 Bowling",
                                 "⛳ Mini Golf",
                                 "🔫 Virtual Clay Pigeon"
                             ]
@@ -797,7 +798,8 @@ window.CONTENT = {
                             pills: [
                                 "🏛️ Museum",
                                 "🖼️ Art Gallery",
-                                "🐠 Aquarium / Zoo",
+                                "🐠 Aquarium",
+                                "🦁 Zoo",
                                 "🪐 Planetarium",
                                 "🎫 Exhibition"
                             ]
