@@ -634,6 +634,14 @@ window.CONTENT = {
                                 </div>
                             </div>
                                 </div>
+                                <div style="margin-top: 24px; text-align: center; font-size: 0.85rem; color: var(--muted-2);">
+                                    <p style="margin: 0;"><em>*Batteries not included (except for the phone charger battery pack he always carries around with him)</em></p>
+                                    <div style="margin-top: 16px; background: var(--surface-3); padding: 20px; border-radius: 12px; border: 1px dashed var(--accent);">
+                                        <h4 style="margin: 0 0 8px; font-size: 1.1rem; color: var(--text);">💍 Upgrade to Husband Mode™</h4>
+                                        <p style="margin: 0 0 16px; font-size: 0.95rem; color: var(--muted);">Currently in closed beta. Subject to a successful trial period.</p>
+                                        <button onclick="this.closest('dialog').close(); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'}), 100);" class="share-btn primary" style="padding: 10px 20px; font-size: 0.95rem; display: inline-block; cursor: pointer; border: none; font-weight: 600;">Take for a test drive 🚗💨</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </dialog>
