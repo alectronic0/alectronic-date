@@ -220,6 +220,7 @@
             `<label for="rough-location">${esc(b.label || 'Your rough location:')}</label>` +
             `<div class="location-input-wrapper">` +
             `<input type="text" id="rough-location" placeholder="${esc(b.placeholder || 'e.g. Postcode, town, or train station')}" autocomplete="off">` +
+            `<button type="button" id="clear-location-btn" aria-label="Clear location" style="display: none; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--muted); padding: 4px; line-height: 1; z-index: 2;">&times;</button>` +
             `<div id="location-suggestions" class="location-suggestions"></div>` +
             (b.subtext ? `<div class="location-subtext">${esc(b.subtext)}</div>` : '') +
             `</div>` +
@@ -1341,7 +1342,7 @@
                         <span class="location-icon">📍</span>
                         <strong>Rough Location:</strong>
                         <a href="${esc(mapLink)}" target="_blank" rel="noopener" class="location-link">${esc(locationVal)}</a>
-                        <button type="button" class="change-location-btn">Change location ⬆️</button>
+                        <button type="button" class="change-location-btn">Change location please ⬆️</button>
                     </div>
                 </div>
             `;
@@ -1351,7 +1352,7 @@
                     <div class="picked-location-row" style="color: var(--muted); font-size: 0.82rem;">
                         <span class="location-icon">📍</span>
                         <span>No location entered yet.</span>
-                        <button type="button" class="change-location-btn" style="color: var(--gold); border-color: var(--gold); background: rgba(230, 169, 121, 0.05); margin-left: 8px;">Add location ⬆️</button>
+                        <button type="button" class="change-location-btn" style="color: var(--gold); border-color: var(--gold); background: rgba(230, 169, 121, 0.05); margin-left: 8px;">Add location please ⬆️</button>
                     </div>
                 </div>
             `;
@@ -1528,11 +1529,29 @@
     function initLocationAutocomplete() {
         const input = document.getElementById('rough-location');
         const suggestionsBox = document.getElementById('location-suggestions');
+        const clearBtn = document.getElementById('clear-location-btn');
         if (!input || !suggestionsBox) return;
+
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                input.value = '';
+                clearBtn.style.display = 'none';
+                suggestionsBox.innerHTML = '';
+                suggestionsBox.style.display = 'none';
+                updateDatesState();
+                input.focus();
+            });
+            if (input.value.trim().length > 0) {
+                clearBtn.style.display = 'block';
+            }
+        }
 
         let debounceTimer;
         input.addEventListener('input', () => {
             updateDatesState();
+            if (clearBtn) {
+                clearBtn.style.display = input.value.trim().length > 0 ? 'block' : 'none';
+            }
             clearTimeout(debounceTimer);
             const query = input.value.trim();
             if (query.length < 3) {
