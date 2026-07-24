@@ -558,65 +558,23 @@ window.CONTENT = {
                     <dialog id="bfExtrasModal" class="deep-modal">
                         <div class="deep-modal-inner">
                             <div class="deep-modal-head">
-                                <h3 class="deep-modal-title">✨ And so much more...</h3>
+                                <h3 class="deep-modal-title">✨ And so much more... <span class="deep-link" role="button" tabindex="0" data-anchor="bfExtrasModal" title="Copy link to this section">🔗</span></h3>
                                 <button class="deep-modal-close" aria-label="Close modal" onclick="this.closest('dialog').close()">&times;</button>
                             </div>
                             <div class="deep-modal-body">
                                 <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
                             <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🫂</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Expert Warm Hugger</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Always ready to wrap you up in a big, comforting hug exactly when you need it most</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
                                 <div style="font-size: 2rem; line-height: 1;">☕</div>
                                 <div>
                                     <div style="font-weight: 600; margin-bottom: 4px;">Pre-Loaded Coffee Order</div>
                                     <div style="color: var(--muted); font-size: 0.9rem;">Never having to repeat your coffee order, plus a constant supply of your favourite snacks</div>
-                                </div>
-                            </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🐧</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Certified Meme Dealer</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Pebbling you with hundreds of perfectly curated memes</div>
-                                </div>
-                            </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🧑‍🍳</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Personal Chef / Baker</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Fresh cookies and a meal fit for a queen at a moment's notice</div>
-                                </div>
-                            </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;"><img src="https://cdn.simpleicons.org/deliveroo/00CC99" style="width: 32px; height: 32px; display: block;" alt="Deliveroo"></div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Deliveroo on Speed Dial</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">When cooking isn't the vibe, your favourite takeout is just a tap away</div>
-                                </div>
-                            </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🛍️</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Errands Helper</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Always happy to run errands to make your day easier</div>
-                                </div>
-                            </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">💻</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">24/7 Tech Support</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Your personal tech support for all devices</div>
-                                </div>
-                            </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🗺️</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Spontaneous</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Always ready for spontaneous adventures or quiet nights in</div>
-                                </div>
-                            </div>
-                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🕷️</div>
-                                <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Designated Bug Relocator</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Bravely capturing and releasing any 8-legged intruders so you don't have to (Certification from the prestigious 2yr Australian outback diploma 🦘)</div>
                                 </div>
                             </div>
                             <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
@@ -627,10 +585,10 @@ window.CONTENT = {
                                 </div>
                             </div>
                             <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🛠️</div>
+                                <div style="font-size: 2rem; line-height: 1;">🐧</div>
                                 <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Handler of the "Blue Jobs"</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">From taking out the bins to heavy lifting and DIY—I've got all the gross and heavy stuff covered</div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Certified Meme Dealer</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Pebbling you with hundreds of perfectly curated memes</div>
                                 </div>
                             </div>
                             <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
@@ -641,10 +599,52 @@ window.CONTENT = {
                                 </div>
                             </div>
                             <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
-                                <div style="font-size: 2rem; line-height: 1;">🫂</div>
+                                <div style="font-size: 2rem; line-height: 1;">🧑‍🍳</div>
                                 <div>
-                                    <div style="font-weight: 600; margin-bottom: 4px;">Expert Warm Hugger</div>
-                                    <div style="color: var(--muted); font-size: 0.9rem;">Always ready to wrap you up in a big, comforting hug exactly when you need it most</div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Personal Chef / Baker</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Fresh cookies and a meal fit for a queen at a moment's notice</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🛠️</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Handler of the "Blue Jobs"</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">From taking out the bins to heavy lifting and DIY—I've got all the gross and heavy stuff covered</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;"><img src="https://cdn.simpleicons.org/deliveroo/00CC99" style="width: 32px; height: 32px; display: block;" alt="Deliveroo"></div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Deliveroo on Speed Dial</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">When cooking isn't the vibe, your favourite takeout is just a tap away</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">💻</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">24/7 Tech Support</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Your personal tech support for all devices</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🛍️</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Errands Helper</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Always happy to run errands to make your day easier</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🕷️</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Designated Bug Relocator</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Bravely capturing and releasing any 8-legged intruders so you don't have to (Certification from the prestigious 2yr Australian outback diploma 🦘)</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;">
+                                <div style="font-size: 2rem; line-height: 1;">🗺️</div>
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 4px;">Spontaneous</div>
+                                    <div style="color: var(--muted); font-size: 0.9rem;">Always ready for spontaneous adventures or quiet nights in</div>
                                 </div>
                             </div>
                                 </div>
