@@ -1335,6 +1335,22 @@
         return R * c; 
     }
 
+    function getDistanceComment(dist) {
+        if (dist <= 5) return "you are basically on top of me your not a stalker are you 👀";
+        if (dist <= 15) return "nice and local";
+        if (dist <= 30) return "getting a bit further out but still doable";
+        if (dist <= 50) return "ooo getting a bit far but if we can do regular visits still doable";
+        if (dist <= 100) return "oooooof might be a bit too far for myself but always worth a talk";
+        if (dist <= 150) return "Wait, are you planning to commute by private jet? 🛩️";
+        if (dist <= 200) return "We might as well be in different timezones at this point 🌍";
+        if (dist <= 250) return "Did you just randomly throw a dart at a map? 🎯";
+        if (dist <= 300) return "You know they invented planes for distances like this right? ✈️";
+        if (dist <= 350) return "I'm not sure if you're looking for a date or a pen pal 📜";
+        if (dist <= 400) return "Are you messaging me from a boat in the middle of the ocean? ⛵";
+        if (dist <= 500) return "At this point we are practically on different planets 🪐";
+        return "Are you an alien? 👽 Because you are out of this world far away!";
+    }
+
     function renderSelectedAdventures() {
         const mount = document.querySelector('[data-adventures="root"]');
         if (!mount) return;
@@ -1354,7 +1370,8 @@
             let distanceHtml = '';
             if (lat && lon) {
                 const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.800986785326494, -0.20373398847054403);
-                distanceHtml = `<div style="font-size: 0.85rem; color: var(--muted); margin-top: 4px;">(~${Math.round(dist)} miles away from me)</div>`;
+                const comment = getDistanceComment(dist);
+                distanceHtml = `<div style="font-size: 0.85rem; color: var(--muted); margin-top: 4px;">(~${Math.round(dist)} miles away from me) - ${comment}</div>`;
             }
 
             locHtml = `
@@ -1435,7 +1452,8 @@
         if (subtextEl) {
             if (lat && lon) {
                 const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.800986785326494, -0.20373398847054403);
-                subtextEl.innerHTML = `(~${Math.round(dist)} miles away from me)`;
+                const comment = getDistanceComment(dist);
+                subtextEl.innerHTML = `(~${Math.round(dist)} miles away from me) - ${comment}`;
                 subtextEl.style.color = 'var(--accent)';
                 subtextEl.style.fontWeight = '600';
             } else {
@@ -1683,12 +1701,12 @@
                             
                             if (item.lat && item.lon) {
                                 const dist = calculateDistance(parseFloat(item.lat), parseFloat(item.lon), 51.800986785326494, -0.20373398847054403);
+                                const comment = getDistanceComment(dist);
                                 const span = document.createElement('span');
                                 span.style.color = 'var(--muted)';
                                 span.style.fontSize = '0.85em';
                                 span.style.marginLeft = '8px';
-                                span.style.whiteSpace = 'nowrap';
-                                span.textContent = `(~${Math.round(dist)} miles away)`;
+                                span.textContent = `(~${Math.round(dist)} miles away) - ${comment}`;
                                 btn.appendChild(span);
                             }
                             
