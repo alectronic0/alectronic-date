@@ -908,7 +908,6 @@ window.CONTENT = {
                             description: "Readjusting to normal life and trying to start my career. A confusing but necessary transition phase.",
                             icon: "🌧️",
                             companies: [
-                                { name: "Welcome Break", logo: "img/company-logos/welcome-break.jpg" },
                                 { name: "Waitrose", logo: "img/company-logos/waitrose.jpg" },
                                 { name: "GLEAT", logo: "img/company-logos/gleat.png" },
                                 { name: "Sky", logo: "img/company-logos/sky.jpg" }
@@ -974,12 +973,13 @@ window.CONTENT = {
                             description: "Starting again post-breakup. Hit the gym hard with a PT and faced the depression head-on.",
                             icon: "💪",
                             companies: [
-                                { name: "Deliveroo × DoorDash", logo: "img/company-logos/deliveroo-x-doordash.webp" }
+                                { name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg" },
+                                { name: "DoorDash", logo: "img/company-logos/doordash.jpg" }
                             ],
                             travel: [
                                 "🇺🇸 New York",
                                 "🇲🇻 Maldives",
-                                "🇯🇵 Tokyo, Sapporo & Osaka"
+                                "🇯🇵 Japan"
                             ]
                         },
                         {
@@ -988,7 +988,8 @@ window.CONTENT = {
                             description: "Ready for whatever comes next.",
                             icon: "✨",
                             companies: [
-                                { name: "Deliveroo × DoorDash", logo: "img/company-logos/deliveroo-x-doordash.webp" }
+                                { name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg" },
+                                { name: "DoorDash", logo: "img/company-logos/doordash.jpg" }
                             ]
                         }
                     ]
