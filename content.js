@@ -2327,23 +2327,11 @@ window.CONTENT = {
                     type: "gifGrid",
                     gifs: [
                         {
-                            src: "img/gifs/143vPc6b08locw.gif",
+                            src: "img/gifs/E87jjnSCANThe.gif",
                             alt: "A GIF that describes my life"
                         },
                         {
-                            src: "img/gifs/SRx5tBBrTQOBi.gif",
-                            alt: "A GIF that describes my life"
-                        },
-                        {
-                            src: "img/gifs/xUStFKHmuFPYk.gif",
-                            alt: "A GIF that describes my life"
-                        },
-                        {
-                            src: "img/gifs/maNB0qAiRVAty.gif",
-                            alt: "A GIF that describes my life"
-                        },
-                        {
-                            src: "img/gifs/7Wcyq7KvKFNTO.gif",
+                            src: "img/gifs/9PAIhJvcQ35hdZPUir.gif",
                             alt: "A GIF that describes my life"
                         },
                         {
@@ -2355,27 +2343,11 @@ window.CONTENT = {
                             alt: "A GIF that describes my life"
                         },
                         {
-                            src: "img/gifs/VsLN4UlXS4oz6.gif",
-                            alt: "A GIF that describes my life"
-                        },
-                        {
                             src: "img/gifs/yAYZnhvY3fflS.gif",
                             alt: "A GIF that describes my life"
                         },
                         {
-                            src: "img/gifs/7eAvzJ0SBBzHy.gif",
-                            alt: "A GIF that describes my life"
-                        },
-                        {
-                            src: "img/gifs/UO5elnTqo4vSg.gif",
-                            alt: "A GIF that describes my life"
-                        },
-                        {
-                            src: "img/gifs/9PAIhJvcQ35hdZPUir.gif",
-                            alt: "A GIF that describes my life"
-                        },
-                        {
-                            src: "img/gifs/31lPv5L3aIvTi.gif",
+                            src: "img/gifs/NTur7XlVDUdqM.gif",
                             alt: "A GIF that describes my life"
                         },
                         {
@@ -2383,15 +2355,7 @@ window.CONTENT = {
                             alt: "A GIF that describes my life"
                         },
                         {
-                            src: "img/gifs/oFeUVZfiuim9G.gif",
-                            alt: "A GIF that describes my life"
-                        },
-                        {
-                            src: "img/gifs/E87jjnSCANThe.gif",
-                            alt: "A GIF that describes my life"
-                        },
-                        {
-                            src: "img/gifs/eoFJSruUWf7qq1zNHD.gif",
+                            src: "img/gifs/xUStFKHmuFPYk.gif",
                             alt: "A GIF that describes my life"
                         },
                         {
@@ -2399,7 +2363,43 @@ window.CONTENT = {
                             alt: "A GIF that describes my life"
                         },
                         {
-                            src: "img/gifs/NTur7XlVDUdqM.gif",
+                            src: "img/gifs/7eAvzJ0SBBzHy.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "img/gifs/eoFJSruUWf7qq1zNHD.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "img/gifs/SRx5tBBrTQOBi.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "img/gifs/143vPc6b08locw.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "img/gifs/31lPv5L3aIvTi.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "img/gifs/UO5elnTqo4vSg.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "img/gifs/oFeUVZfiuim9G.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "img/gifs/maNB0qAiRVAty.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "img/gifs/7Wcyq7KvKFNTO.gif",
+                            alt: "A GIF that describes my life"
+                        },
+                        {
+                            src: "img/gifs/VsLN4UlXS4oz6.gif",
                             alt: "A GIF that describes my life"
                         }
                     ]
