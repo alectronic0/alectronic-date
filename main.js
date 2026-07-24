@@ -220,7 +220,7 @@
             `<label for="rough-location">${esc(b.label || 'Your rough location:')}</label>` +
             `<div class="location-input-wrapper">` +
             `<input type="text" id="rough-location" placeholder="${esc(b.placeholder || 'e.g. Postcode, town, or train station')}" autocomplete="off">` +
-            `<button type="button" id="clear-location-btn" aria-label="Clear location" style="display: none; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--muted); padding: 4px; line-height: 1; z-index: 2;">&times;</button>` +
+            `<button type="button" id="clear-location-btn" aria-label="Clear location" style="display: none; position: absolute; right: 12px; top: 22px; transform: translateY(-50%); background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--muted); padding: 4px; line-height: 1; z-index: 2;">&times;</button>` +
             `<div id="location-suggestions" class="location-suggestions"></div>` +
             (b.subtext ? `<div class="location-subtext">${esc(b.subtext)}</div>` : '') +
             `</div>` +
