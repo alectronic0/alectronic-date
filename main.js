@@ -1607,7 +1607,11 @@
 
     function renderNav() {
         if (!C || !C.nav || !C.nav.links) return;
-        const html = C.nav.links.map(l => `<a href="${esc(l.href)}">${esc(l.label)}</a>`).join('');
+        // Only render links if their target section actually exists on the page
+        const html = C.nav.links
+            .filter(l => document.getElementById(l.href.replace('#', '')))
+            .map(l => `<a href="${esc(l.href)}">${esc(l.label)}</a>`)
+            .join('');
         setHtml('#nav-menu', html);
     }
 
