@@ -1353,7 +1353,7 @@
             
             let distanceHtml = '';
             if (lat && lon) {
-                const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.8031, -0.2068);
+                const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.800986785326494, -0.20373398847054403);
                 distanceHtml = `<div style="font-size: 0.85rem; color: var(--muted); margin-top: 4px;">(~${Math.round(dist)} miles away from me)</div>`;
             }
 
@@ -1434,7 +1434,7 @@
         const subtextEl = document.querySelector('.location-subtext');
         if (subtextEl) {
             if (lat && lon) {
-                const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.8031, -0.2068);
+                const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.800986785326494, -0.20373398847054403);
                 subtextEl.innerHTML = `(~${Math.round(dist)} miles away from me)`;
                 subtextEl.style.color = 'var(--accent)';
                 subtextEl.style.fontWeight = '600';
@@ -1682,7 +1682,7 @@
                             btn.textContent = text;
                             
                             if (item.lat && item.lon) {
-                                const dist = calculateDistance(parseFloat(item.lat), parseFloat(item.lon), 51.8031, -0.2068);
+                                const dist = calculateDistance(parseFloat(item.lat), parseFloat(item.lon), 51.800986785326494, -0.20373398847054403);
                                 const span = document.createElement('span');
                                 span.style.color = 'var(--muted)';
                                 span.style.fontSize = '0.85em';
