@@ -1716,13 +1716,14 @@
                             
                             const parts = [];
                             const addr = item.address || {};
-                            const main = addr.road || addr.suburb || addr.quarter || addr.neighbourhood || addr.railway || '';
-                            const city = addr.city || addr.town || addr.village || addr.city_district || '';
-                            const county = addr.county || addr.state || '';
+                            const main = addr.road || addr.suburb || addr.borough || addr.city_district || addr.quarter || addr.neighbourhood || '';
+                            const city = addr.city || addr.town || addr.village || '';
+                            const county = addr.county || addr.state_district || addr.state || '';
                             const postcode = addr.postcode || '';
+                            
                             if (main) parts.push(main);
-                            if (city) parts.push(city);
-                            if (county) parts.push(county);
+                            if (city && city !== main) parts.push(city);
+                            if (county && county !== city && county !== main) parts.push(county);
                             if (postcode) parts.push(postcode);
                             
                             const text = parts.length ? parts.join(', ') : item.display_name;
