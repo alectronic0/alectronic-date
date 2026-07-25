@@ -1523,22 +1523,20 @@
     function renderQuestPreviewHTML() {
         const name = localStorage.getItem('alec-rpg-name') || '';
         const titleJson = localStorage.getItem('alec-rpg-title');
-        let fullName = name;
+        const displayName = name || '???????';
+        let fullName = displayName;
         if (titleJson) {
             try {
                 const t = JSON.parse(titleJson);
                 if (t.position === 'prefix') {
-                    fullName = `${t.label} ${name}`;
+                    fullName = `${t.label} ${displayName}`;
                 } else {
                     fullName = t.connector
-                        ? `${name} ${t.connector} ${t.label}`
-                        : `${name}, ${t.label}`;
+                        ? `${displayName} ${t.connector} ${t.label}`
+                        : `${displayName}, ${t.label}`;
                 }
             } catch(e) {}
         }
-
-        const locationInput = document.getElementById('rough-location');
-        const locationVal = locationInput ? locationInput.value.trim() : '';
 
         const selectedAdventures = Array.from(
             document.querySelectorAll('.date-idea-pill.selected')
@@ -1551,35 +1549,10 @@
 
         return `
             <div class="quest-letter">
-                <p class="letter-line">Hi Alec,</p>
-
-                <div class="letter-section letter-section-inline">
-                    <span class="letter-text">My name is</span>
-                    <button type="button" class="interactive-tag name-tag" onclick="questGoTo(1)" title="Click to edit name">
-                        <strong>${esc(fullName || 'Anonymous')}</strong> ✏️
-                    </button>
-                    <span class="letter-edit-hint" style="font-size:0.82rem; color:var(--muted); cursor:pointer;" onclick="questGoTo(1)">(wait, that's not my name? click to edit)</span>
-                </div>
-
-                <div class="letter-section letter-section-inline">
-                    <span class="letter-text">I hail from</span>
-                    ${locationVal ? `
-                        <button type="button" class="interactive-tag loc-tag" onclick="questGoTo(2)" title="Click to edit location">
-                            <strong>${esc(locationVal)}</strong> ✏️
-                        </button>
-                        <span class="letter-edit-hint" style="font-size:0.82rem; color:var(--muted); cursor:pointer;" onclick="questGoTo(2)">(click to change)</span>
-                    ` : `
-                        <button type="button" class="interactive-tag loc-tag empty" onclick="questGoTo(2)" title="Click to add location">
-                            <em>(no location set — click to add)</em> ➕
-                        </button>
-                    `}
-                </div>
+                <p class="letter-line" style="margin-bottom: 12px;">Hi Alec,</p>
 
                 <div class="letter-section">
-                    <div class="letter-label">
-                        <span>I would love to go on these adventures:</span>
-                        <button type="button" class="letter-edit-link" onclick="questGoTo(3)">Edit adventures ✏️</button>
-                    </div>
+                    <p class="letter-line" style="margin-bottom: 8px;">I would love to go on an adventure with you I would really like to do:</p>
                     <div class="letter-adventures-grid">
                         ${selectedAdventures.length ? selectedAdventures.map(a => `
                             <span class="adventure-chip">
@@ -1592,16 +1565,16 @@
                     </div>
                 </div>
 
-                <div class="letter-section">
-                    <div class="letter-label">
-                        <span>And here are my answers to your riddles:</span>
-                        <button type="button" class="letter-edit-link" onclick="questGoTo(4)">Edit riddles ✏️</button>
+                <div class="letter-section" style="margin-top: 16px;">
+                    <div class="letter-label" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span>And here are my answers:</span>
+                        <button type="button" class="letter-edit-link" onclick="questGoTo(4)" style="background: none; border: none; color: var(--gold); cursor: pointer; font-size: 0.82rem;">Edit riddles ✏️</button>
                     </div>
                     <div class="letter-riddles-list">
                         ${questions.map((q, i) => {
                             const ans = savedAnswers[q] || '';
                             return `
-                                <div class="preview-riddle-item" onclick="questGoTo(4)" title="Click to edit answer">
+                                <div class="preview-riddle-item" onclick="questGoTo(4)" title="Click to edit answer" style="margin-bottom: 10px; cursor: pointer;">
                                     <div class="preview-riddle-q"><strong>${i + 1}. ${esc(q)}</strong></div>
                                     <div class="preview-riddle-a">${ans ? `→ ${esc(ans)} ✏️` : `<em style="color: var(--gold);">(not answered yet — click to answer) ✏️</em>`}</div>
                                 </div>
@@ -1610,30 +1583,29 @@
                     </div>
                 </div>
 
-                <p class="letter-line">I look forward to your response! 💌</p>
+                <p class="letter-line" style="margin-top: 16px;">I look forward to your response! 💌</p>
+                <p class="letter-signature" style="margin-top: 16px; font-weight: 700; color: var(--gold); cursor: pointer;" onclick="questGoTo(1)" title="Click to edit name">${esc(fullName)} ✏️</p>
             </div>
         `;
     }
 
     function buildQuestPreview() {
-        const name = localStorage.getItem('alec-rpg-name') || 'Anonymous';
+        const name = localStorage.getItem('alec-rpg-name') || '';
         const titleJson = localStorage.getItem('alec-rpg-title');
-        let fullName = name;
+        const displayName = name || '???????';
+        let fullName = displayName;
         if (titleJson) {
             try {
                 const t = JSON.parse(titleJson);
                 if (t.position === 'prefix') {
-                    fullName = `${t.label} ${name}`;
+                    fullName = `${t.label} ${displayName}`;
                 } else {
                     fullName = t.connector
-                        ? `${name} ${t.connector} ${t.label}`
-                        : `${name}, ${t.label}`;
+                        ? `${displayName} ${t.connector} ${t.label}`
+                        : `${displayName}, ${t.label}`;
                 }
             } catch(e) {}
         }
-
-        const locationVal = document.getElementById('rough-location')
-            ? document.getElementById('rough-location').value.trim() : '';
 
         const selectedAdventures = Array.from(
             document.querySelectorAll('.date-idea-pill.selected')
@@ -1645,22 +1617,19 @@
         const questions = currentPromptPicks.map(item => item.text);
 
         let body = `Hi Alec,\n\n`;
-        body += `My name is ${fullName}.\n\n`;
-        if (locationVal) {
-            body += `I hail from ${locationVal}.\n\n`;
-        }
-        body += `I would love to go on these adventures:\n`;
+        body += `I would love to go on an adventure with you I would really like to do:\n`;
         if (selectedAdventures.length) {
             body += selectedAdventures.map(a => `- ${a}`).join('\n');
         } else {
             body += `- 🫣 Surprise me!`;
         }
-        body += `\n\nAnd here are my answers to your riddles:\n`;
+        body += `\n\nAnd here are my answers:\n`;
         questions.forEach((q, i) => {
             const ans = savedAnswers[q] || '(not answered yet)';
             body += `${i + 1}. ${q}\n→ ${ans}\n\n`;
         });
-        body += `I look forward to your response! 💌`;
+        body += `I look forward to your response! 💌\n\n`;
+        body += `${fullName}`;
         return body;
     }
 
