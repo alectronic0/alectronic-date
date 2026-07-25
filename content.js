@@ -84,8 +84,8 @@ window.CONTENT = {
     /* ── Quest form (RPG wizard) ── */
     quest: {
         crossroads: {
-            heading: "⚔️ What Will You Do Next?",
-            lead: "You've seen what I'm about — now it's your move.",
+            heading: "💘 Ready to Shoot Your Shot?",
+            lead: "You've made it this far! Do you want to shoot your shot?</br>I've worked to make this as easy as possible: Tell me your <span class='text-purple'>name</span>, set your rough <span class=\"text-red\">location</span>, pick your <span class=\"text-green\">adventure</span>, answer a few <span class=\"text-blue\">ice breakers</span>, and <span class=\"text-gold\">leave the rest to me!</span>",
             shootIcon: "💘",
             shootLabel: "Shoot Your Shot",
             shootSub: "Start the quest — let's go on a date!",
@@ -97,7 +97,7 @@ window.CONTENT = {
                 key: "name",
                 title: "What is your name, adventurer?",
                 sub: "So you're looking to go on an adventure with Alec! Before we set off, what should I call you?",
-                gaugeLabel: "Name",
+                gaugeLabel: "Intro",
                 colour: "#a855f7"
             },
             {
@@ -115,10 +115,10 @@ window.CONTENT = {
                 colour: "#22c55e"
             },
             {
-                key: "riddles",
-                title: "You Must Answer These Riddles Three",
+                key: "icebreaker",
+                title: "You Must Answer These Riddles Three!",
                 sub: "Nearly there! Answer a few ice breakers — hold the ones you like, shuffle the rest.",
-                gaugeLabel: "Riddles",
+                gaugeLabel: "Icebreakers",
                 colour: "#3b82f6"
             },
             {

@@ -21,6 +21,7 @@
   --rose-light:   #ff9bb0;
   --gold:         #e6a979;  /* warm secondary */
   --mint:         #7fc2a6;  /* "love" tags */
+  --purple:       #a855f7;
 
   /* Text */
   --text:    #f7eef4;
@@ -1702,6 +1703,10 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
   background: var(--surface-3);
 }
 
+.text-purple {
+  color: var(--purple) !important;
+  font-weight: 600;
+}
 .text-green {
   color: var(--mint) !important;
   font-weight: 600;
@@ -1712,6 +1717,10 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
 }
 .text-red {
   color: var(--rose-light) !important;
+  font-weight: 600;
+}
+.text-gold {
+  color: var(--gold) !important;
   font-weight: 600;
 }
 
@@ -2734,10 +2743,10 @@ button.CookiebotWidget-logo::before {
 .gauge-fill-bar {
   height: 100%;
   width: 20%;
-  background: #a855f7;
+  background: var(--purple);
   border-radius: 6px;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.5s ease, box-shadow 0.5s ease;
-  box-shadow: 0 0 12px #a855f7;
+  box-shadow: 0 0 12px var(--purple);
 }
 
 .gauge-steps-row {
@@ -2930,7 +2939,7 @@ button.CookiebotWidget-logo::before {
   background: rgba(245, 158, 11, 0.06);
 }
 .title-pill.selected {
-  border-color: #a855f7;
+  border-color: var(--purple);
   background: rgba(168, 85, 247, 0.15);
   box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
   font-weight: 600;
@@ -3412,7 +3421,7 @@ button.CookiebotWidget-logo::before {
 }
 .quest-name-input:focus {
   outline: none;
-  border-color: #a855f7;
+  border-color: var(--purple);
   box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
 }
 

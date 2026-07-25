@@ -1060,7 +1060,7 @@
                 <div class="quest-step active" data-quest-step="0">
                     <div class="quest-crossroads" id="quest-crossroads">
                         <h2>${esc(q.crossroads.heading)}</h2>
-                        <p class="quest-lead">${esc(q.crossroads.lead)}</p>
+                        <p class="quest-lead">${q.crossroads.lead}</p>
                         <div class="quest-choice-row">
                             <button type="button" class="quest-choice-btn primary" onclick="questGoTo(1)">
                                 <span class="choice-icon">${esc(q.crossroads.shootIcon || '💘')}</span>
