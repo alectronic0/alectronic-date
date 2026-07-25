@@ -81,6 +81,73 @@ window.CONTENT = {
             {src: "img/alec/alec-portrait-garden-archway.webp", alt: "Alec portrait garden archway", w: 900, h: 1200}
         ]
     },
+    /* ── Quest form (RPG wizard) ── */
+    quest: {
+        crossroads: {
+            heading: "⚔️ What Will You Do Next?",
+            lead: "You've seen what I'm about — now it's your move.",
+            shootIcon: "💘",
+            shootLabel: "Shoot Your Shot",
+            shootSub: "Start the quest — let's go on a date!",
+            shareLabel: "Share with a Friend",
+            shareSub: "Know someone who'd be a better match?"
+        },
+        steps: [
+            {
+                key: "name",
+                title: "State Your Name, Adventurer",
+                sub: "So you're looking to go on an adventure with Alec! Before you can set off, you'll need to answer a few questions. But first — what should I call you?",
+                gaugeLabel: "Name",
+                colour: "#a855f7"
+            },
+            {
+                key: "location",
+                title: "Where Do You Hail From?",
+                sub: "Every great quest needs a starting point. Drop your rough location so I can plan the journey.",
+                gaugeLabel: "Location",
+                colour: "#ef4444"
+            },
+            {
+                key: "adventure",
+                title: "Pick Your Adventure",
+                sub: "What kind of quest would you like to embark on? Pick as many as you like!",
+                gaugeLabel: "Adventure",
+                colour: "#22c55e"
+            },
+            {
+                key: "riddles",
+                title: "You Must Answer These Riddles Three",
+                sub: "Nearly there! Answer a few ice breakers — hold the ones you like, shuffle the rest.",
+                gaugeLabel: "Riddles",
+                colour: "#3b82f6"
+            },
+            {
+                key: "victory",
+                title: "✨ Quest Complete!",
+                sub: "This is the message you will send:",
+                gaugeLabel: "Seal & Send",
+                colour: "#f59e0b"
+            }
+        ],
+        titlePills: [
+            { emoji: "👑", label: "Princess", position: "prefix" },
+            { emoji: "⚔️", label: "Maiden", position: "prefix" },
+            { emoji: "🦊", label: "Lady", position: "prefix" },
+            { emoji: "🧙‍♀️", label: "Sorceress", position: "suffix", connector: "the" },
+            { emoji: "🐉", label: "Dragon Slayer", position: "suffix", connector: "the" },
+            { emoji: "🗡️", label: "Bad Ass Main Character", position: "suffix" },
+            { emoji: "🏰", label: "First of Her Name", position: "suffix" },
+            { emoji: "👸", label: "Queen of the Realm", position: "suffix" }
+        ],
+        complete: {
+            title: "✨ Quest Complete!",
+            sub: "This is the message you will send:",
+            emailLabel: "Send as Email",
+            copyLabel: "Copy responses",
+            altText: "Message me on other apps:",
+            editReminder: "💡 Want to change something? Click any section on the progress bar above to go back and edit."
+        }
+    },
     profile: {
         tag: "📋 Who I Am",
         name: "Alec Doran-Twyford",
