@@ -1325,7 +1325,7 @@
         if (!preview) return;
         const input = document.getElementById('rpg-name-input');
         const name = input ? input.value.trim() : '';
-        const displayName = name || '[Your Name]';
+        const displayName = name || '???????';
         
         const saved = localStorage.getItem('alec-rpg-title');
         let fullName = displayName;
