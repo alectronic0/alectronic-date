@@ -1098,12 +1098,12 @@
                         <h3>${esc(q.steps[1].title)}</h3>
                         <p>${esc(q.steps[1].sub)}</p>
                     </div>
+                    <p class="location-subtext" style="text-align: center; margin-bottom: 14px;">No tracking — I only see your location when you send the email.</p>
                     <div class="input-row">
                         <input type="text" class="quest-input" id="rough-location" placeholder="e.g. Postcode, town, or train station" aria-label="What is your rough location?" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="padding-right: 42px;">
                         <button type="button" id="clear-location-btn" aria-label="Clear location" title="Clear location" style="display:none">×</button>
                         <div id="location-suggestions"></div>
                     </div>
-                    <p class="location-subtext" style="text-align: center; margin-top: 8px;">No tracking — I only see your location when you send the email.</p>
                     <div id="quest-location-display"></div>
                     <div class="quest-nav">
                         <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>

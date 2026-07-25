@@ -2975,7 +2975,7 @@ button.CookiebotWidget-logo::before {
 #clear-location-btn {
   position: absolute;
   right: 12px;
-  top: 50%;
+  top: 26px;
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.12);
   border: none;
