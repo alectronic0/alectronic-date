@@ -1082,7 +1082,10 @@
                         <h3>${esc(q.steps[0].title)}</h3>
                         <p>${esc(q.steps[0].sub)}</p>
                     </div>
-                    <input type="text" class="quest-input" id="rpg-name-input" placeholder="Your name" value="${esc(savedName)}" oninput="updateNamePreview()">
+                    <div class="input-row">
+                        <input type="text" class="quest-input" id="rpg-name-input" placeholder="Your name" value="${esc(savedName)}" oninput="updateNamePreview(); toggleClearNameBtn();" style="padding-right: 42px;">
+                        <button type="button" class="clear-input-btn" id="clear-name-btn" aria-label="Clear name" title="Clear name" onclick="clearNameInput()" style="display: ${savedName ? 'flex' : 'none'}">×</button>
+                    </div>
                     <div class="title-pills">${titlePillsHtml}</div>
                     <div class="quest-name-preview" id="quest-name-preview"></div>
                     <div class="quest-nav">
@@ -1101,7 +1104,7 @@
                     <p class="location-subtext" style="text-align: center; margin-bottom: 14px;">No tracking — I only see your location when you send the email.</p>
                     <div class="input-row">
                         <input type="text" class="quest-input" id="rough-location" placeholder="e.g. Postcode, town, or train station" aria-label="What is your rough location?" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="padding-right: 42px;">
-                        <button type="button" id="clear-location-btn" aria-label="Clear location" title="Clear location" style="display:none">×</button>
+                        <button type="button" class="clear-input-btn" id="clear-location-btn" aria-label="Clear location" title="Clear location" style="display:none">×</button>
                         <div id="location-suggestions"></div>
                     </div>
                     <div id="quest-location-display"></div>
@@ -1340,6 +1343,25 @@
             } catch(e) {}
         }
         preview.innerHTML = `<strong class="preview-badge-name">${esc(fullName)}</strong>`;
+    };
+
+    window.toggleClearNameBtn = function() {
+        const input = document.getElementById('rpg-name-input');
+        const btn = document.getElementById('clear-name-btn');
+        if (input && btn) {
+            btn.style.display = input.value.trim() ? 'flex' : 'none';
+        }
+    };
+
+    window.clearNameInput = function() {
+        const input = document.getElementById('rpg-name-input');
+        if (input) {
+            input.value = '';
+            localStorage.removeItem('alec-rpg-name');
+            updateNamePreview();
+            window.toggleClearNameBtn();
+            input.focus();
+        }
     };
 
     window.copyQuestAnswers = function(btn) {

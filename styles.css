@@ -2970,14 +2970,15 @@ button.CookiebotWidget-logo::before {
   max-width: 450px;
   margin: 0 auto;
 }
+.clear-input-btn,
 #clear-location-btn {
   position: absolute;
   right: 12px;
   top: 26px;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.12);
-  border: none;
-  color: var(--text);
+  background: rgba(239, 68, 68, 0.16);
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  color: #ef4444;
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -2986,14 +2987,18 @@ button.CookiebotWidget-logo::before {
   justify-content: center;
   cursor: pointer;
   font-size: 1.1rem;
+  font-weight: 700;
   line-height: 1;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  transition: all 0.2s;
   z-index: 5;
 }
+.clear-input-btn:hover,
 #clear-location-btn:hover {
-  background: rgba(239, 68, 68, 0.3);
-  color: #fff;
+  background: rgba(239, 68, 68, 0.35);
+  border-color: #ef4444;
+  color: #ffffff;
   transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
 }
 
 /* ── Travel Times ── */
