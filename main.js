@@ -2054,17 +2054,9 @@
 
         const subtextEl = document.querySelector('.location-subtext');
         if (subtextEl) {
-            if (lat && lon) {
-                const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.800986785326494, -0.20373398847054403);
-                const comment = getDistanceComment(dist);
-                subtextEl.innerHTML = comment;
-                subtextEl.style.color = 'var(--accent)';
-                subtextEl.style.fontWeight = '600';
-            } else {
-                subtextEl.innerHTML = 'Note: UK based locations only please.';
-                subtextEl.style.color = 'var(--muted)';
-                subtextEl.style.fontWeight = 'normal';
-            }
+            subtextEl.innerHTML = 'No tracking — I only see your location when you send the email.';
+            subtextEl.style.color = '';
+            subtextEl.style.fontWeight = '';
         }
         
         try {
