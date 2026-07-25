@@ -871,8 +871,7 @@ window.CONTENT = {
                                 "🖼️ Art Gallery",
                                 "🐠 Aquarium",
                                 "🦁 Zoo",
-                                "🪐 Planetarium",
-                                "🎫 Exhibition"
+                                "🪐 Planetarium"
                             ]
                         },
                         {

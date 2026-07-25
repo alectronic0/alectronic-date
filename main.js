@@ -1578,7 +1578,7 @@
                         <button type="button" class="letter-edit-link" onclick="questGoTo(2, 'rough-location')">Edit location ✏️</button>
                     </div>
                     <div class="letter-location-val" onclick="questGoTo(2, 'rough-location')" style="cursor: pointer;">
-                        ${locationVal ? `📍 <strong>${esc(locationVal)}</strong> ✏️` : `<em style="color: var(--gold);">(no location set — click to add) ➕</em>`}
+                        ${locationVal ? `📍 <strong>${esc(locationVal)}</strong> ✏️` : `no location set — (click to add location ➕)`}
                     </div>
                 </div>
 
@@ -1594,7 +1594,7 @@
                                 <button type="button" class="remove-adventure-btn" data-idea="${esc(a)}" onclick="removeAdventureFromPreview('${esc(a)}')" aria-label="Remove ${esc(a)}">×</button>
                             </span>
                         `).join('') : `
-                            <span class="adventure-chip empty" style="cursor:pointer;" onclick="questGoTo(3)">🫣 Surprise me! (click to pick adventures)</span>
+                            <span class="empty" style="cursor:pointer;" onclick="questGoTo(3)">🫣 Surprise me!  — (click to add adventures ➕)</span>
                         `}
                     </div>
                 </div>
@@ -1610,7 +1610,7 @@
                             return `
                                 <div class="preview-riddle-item" onclick="questGoTo(4)" title="Click to edit answer">
                                     <div class="preview-riddle-q"><strong>${i + 1}. ${esc(q)}</strong></div>
-                                    <div class="preview-riddle-a ${ans ? 'answered' : ''}">${ans ? `→ ${esc(ans)} ✏️` : `<em>(not answered yet — click to answer) ✏️</em>`}</div>
+                                    <div class="preview-riddle-a ${ans ? 'answered' : ''}">${ans ? `→ ${esc(ans)} ✏️` : `<em>not answered yet — (click to answer✏️)</em>`}</div>
                                 </div>
                             `;
                         }).join('')}
