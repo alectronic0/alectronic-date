@@ -686,6 +686,11 @@
             const key = el.getAttribute('data-section');
             const section = C.sections[key];
             if (!section) return; // some data-sections (hero/contact) are handled separately
+            if (key === 'dates' && el.closest('#quest-form')) {
+                const dateBlocks = section.blocks.filter((b) => b.type === 'dateCards');
+                el.innerHTML = renderBlocks(dateBlocks);
+                return;
+            }
             const host = el.closest('[id]'); // the enclosing <section> / <article>
             el.innerHTML = sectionHeaderHtml(section, host ? host.id : '') + renderBlocks(section.blocks);
         });
@@ -1024,25 +1029,6 @@
             </div>
         ` : '';
 
-        const crossroadsHtml = `
-            <div class="quest-crossroads" id="quest-crossroads">
-                <h2>${esc(q.crossroads.heading)}</h2>
-                <p class="quest-lead">${esc(q.crossroads.lead)}</p>
-                <div class="quest-choice-row">
-                    <button type="button" class="quest-choice-btn primary" onclick="questStart()">
-                        <span class="choice-icon">${esc(q.crossroads.shootIcon || '💘')}</span>
-                        <span class="choice-title">${esc(q.crossroads.shootLabel)}</span>
-                        <span class="choice-sub">${esc(q.crossroads.shootSub)}</span>
-                    </button>
-                    <button type="button" class="quest-choice-btn" onclick="document.querySelector('.share-section').scrollIntoView({behavior: 'smooth'})">
-                        <span class="choice-icon">📤</span>
-                        <span class="choice-title">${esc(q.crossroads.shareLabel)}</span>
-                        <span class="choice-sub">${esc(q.crossroads.shareSub)}</span>
-                    </button>
-                </div>
-            </div>
-        `;
-
         const gaugeHtml = `
             <div class="quest-gauge" id="quest-gauge">
                 <div class="gauge-track">
@@ -1068,9 +1054,28 @@
         }).join('');
 
         const formHtml = `
-            <div class="quest-form" id="quest-form" style="display: none;">
+            <div class="quest-form" id="quest-form">
                 ${gaugeHtml}
                 
+                <div class="quest-step active" data-quest-step="0">
+                    <div class="quest-crossroads" id="quest-crossroads">
+                        <h2>${esc(q.crossroads.heading)}</h2>
+                        <p class="quest-lead">${esc(q.crossroads.lead)}</p>
+                        <div class="quest-choice-row">
+                            <button type="button" class="quest-choice-btn primary" onclick="questGoTo(1)">
+                                <span class="choice-icon">${esc(q.crossroads.shootIcon || '💘')}</span>
+                                <span class="choice-title">${esc(q.crossroads.shootLabel)}</span>
+                                <span class="choice-sub">${esc(q.crossroads.shootSub)}</span>
+                            </button>
+                            <button type="button" class="quest-choice-btn" onclick="const s = document.getElementById('share'); if(s) s.scrollIntoView({behavior: 'smooth'})">
+                                <span class="choice-icon">📤</span>
+                                <span class="choice-title">${esc(q.crossroads.shareLabel)}</span>
+                                <span class="choice-sub">${esc(q.crossroads.shareSub)}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="quest-step" data-quest-step="1">
                     <div class="quest-step-header">
                         <span class="quest-step-badge">STEP 1 OF 5</span>
@@ -1114,7 +1119,6 @@
                         <p>${esc(q.steps[2].sub)}</p>
                     </div>
                     <div data-section="dates"></div>
-                    <div data-adventures="root"></div>
                     <div class="quest-nav">
                         <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
                         <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
@@ -1143,6 +1147,7 @@
                         <p>${esc(q.steps[4].sub)}</p>
                     </div>
                     <div class="quest-preview" id="quest-preview-body"></div>
+                    <div data-adventures="root"></div>
                     <div class="quest-action-card">
                         <a href="#" id="quest-email-btn" class="quest-send-email-btn" target="_blank" rel="noopener">
                             <span class="btn-icon">📧</span> <span class="btn-text">${esc(q.complete.emailLabel)}</span>
@@ -1168,7 +1173,7 @@
             </div>
         `;
 
-        root.innerHTML = contactHeadHtml + crossroadsHtml + formHtml;
+        root.innerHTML = contactHeadHtml + formHtml;
         
         const altLinksRoot = document.getElementById('quest-alt-links');
         if (altLinksRoot && C.contact && C.contact.links) {
@@ -1184,19 +1189,13 @@
         setTimeout(updateNamePreview, 0);
 
         const savedStep = parseInt(localStorage.getItem('alec-rpg-step') || '0', 10);
-        if (savedStep > 0) {
-            document.getElementById('quest-crossroads').style.display = 'none';
-            document.getElementById('quest-form').style.display = 'flex';
-            questStep = savedStep;
-            questShowStep(questStep);
-        }
+        questStep = savedStep;
+        questShowStep(questStep);
     }
 
     let questStep = 0;
 
     window.questStart = function() {
-        document.getElementById('quest-crossroads').style.display = 'none';
-        document.getElementById('quest-form').style.display = 'flex';
         questGoTo(1);
     };
 
@@ -1227,6 +1226,27 @@
         }
         const clearLocBtn = document.getElementById('clear-location-btn');
         if (clearLocBtn) clearLocBtn.style.display = 'none';
+
+        const locDisplay = document.getElementById('quest-location-display');
+        if (locDisplay) locDisplay.innerHTML = '';
+
+        document.querySelectorAll('.date-idea-pill').forEach(btn => btn.classList.remove('selected'));
+        if (typeof renderSelectedAdventures === 'function') {
+            renderSelectedAdventures();
+        }
+
+        document.querySelectorAll('.prompt-answer-input').forEach(input => {
+            input.value = '';
+        });
+
+        questGoTo(0);
+        updateNamePreview();
+
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
 
         const locDisplay = document.getElementById('quest-location-display');
         if (locDisplay) locDisplay.innerHTML = '';
@@ -2014,31 +2034,23 @@
         const selected = Array.from(new Set(Array.from(document.querySelectorAll('.date-idea-pill.selected'))
                               .map(el => el.getAttribute('data-idea'))));
 
-        let listContent = '';
-        if (selected.length > 0) {
-            listContent = `
-                <div class="adventure-chips">
-                    ${selected.map(item => `
-                        <span class="adventure-chip">
-                            ${esc(item)}
-                            <button type="button" class="remove-adventure-btn" data-idea="${esc(item)}" aria-label="Remove ${esc(item)}">×</button>
-                        </span>
-                    `).join('')}
-                </div>
-            `;
-        } else {
-            listContent = `
-                <p class="no-dates-selected-warning" style="margin: 0; font-size: 0.85rem; color: var(--muted); line-height: 1.5; text-align: center;">
-                    <span>😢 No date ideas selected yet! Click the pills above to pick your adventures!</span>
-                </p>
-            `;
+        if (selected.length === 0) {
+            mount.innerHTML = '';
+            return;
         }
 
         mount.innerHTML = `
             <div style="text-align: center; margin-top: 20px;">
                 <h4 class="picked-adventures-title" style="margin: 0 0 10px;">🗺️ Your Picked Adventures:</h4>
                 <div class="selected-adventures-list">
-                    ${listContent}
+                    <div class="adventure-chips">
+                        ${selected.map(item => `
+                            <span class="adventure-chip">
+                                ${esc(item)}
+                                <button type="button" class="remove-adventure-btn" data-idea="${esc(item)}" aria-label="Remove ${esc(item)}">×</button>
+                            </span>
+                        `).join('')}
+                    </div>
                 </div>
             </div>
         `;

@@ -2604,15 +2604,23 @@ button.CookiebotWidget-logo::before {
   flex-direction: column;
   justify-content: center;
 }
+#contact .section-head {
+  text-align: center;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .quest-crossroads {
   text-align: center;
-  padding: 60px 0;
-  min-height: calc(100vh - 120px);
+  padding: 32px 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  width: 100%;
 }
 .quest-crossroads h2 {
   font-size: 2.2rem;
@@ -3071,16 +3079,16 @@ button.CookiebotWidget-logo::before {
   filter: brightness(1.1);
 }
 .quest-nav-btn.reset {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 0.88rem;
-  padding: 8px 18px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #ef4444;
+  font-weight: 600;
 }
 .quest-nav-btn.reset:hover {
-  background: rgba(239, 68, 68, 0.12);
-  border-color: rgba(239, 68, 68, 0.5);
+  background: rgba(239, 68, 68, 0.25);
+  border-color: #ef4444;
   color: #f87171;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.3);
 }
 
 /* ── Step 5 Seal & Send Action Card ── */
