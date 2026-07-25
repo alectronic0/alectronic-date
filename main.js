@@ -1309,6 +1309,21 @@
             }
         }
         
+        if (step === 5) {
+            const preview = document.getElementById('quest-preview-body');
+            if (preview && typeof renderQuestPreviewHTML === 'function') {
+                preview.innerHTML = renderQuestPreviewHTML();
+            }
+            const emailBtn = document.getElementById('quest-email-btn');
+            if (emailBtn && typeof C !== 'undefined' && C.prompts) {
+                const subject = encodeURIComponent(C.prompts.emailSubject || document.title);
+                emailBtn.href = `mailto:${promptEmail(C.prompts)}?subject=${subject}&body=${encodeURIComponent(buildQuestPreview())}`;
+            }
+            if (typeof renderSelectedAdventures === 'function') {
+                renderSelectedAdventures();
+            }
+        }
+        
         document.querySelectorAll('.quest-gauge-seg').forEach(el => {
             const s = parseInt(el.getAttribute('data-step'), 10);
             el.classList.toggle('completed', s < step);
