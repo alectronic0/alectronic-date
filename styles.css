@@ -2599,7 +2599,6 @@ button.CookiebotWidget-logo::before {
 
 /* Crossroads — binary choice */
 #contact .container {
-  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2710,7 +2709,6 @@ button.CookiebotWidget-logo::before {
   border-radius: 16px;
   padding: 32px 24px;
   margin-bottom: 40px;
-  min-height: calc(100vh - 120px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
