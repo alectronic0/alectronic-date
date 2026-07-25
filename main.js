@@ -1086,7 +1086,7 @@
                     <div class="title-pills">${titlePillsHtml}</div>
                     <div class="quest-name-preview" id="quest-name-preview"></div>
                     <div class="quest-nav">
-                        <div></div>
+                        <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
                         <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
                         <button type="button" class="quest-nav-btn primary" onclick="questNext()">Next →</button>
                     </div>
@@ -1165,9 +1165,9 @@
                         </div>
                     </div>
                     <div class="quest-nav">
-                        <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back to edit</button>
+                        <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
                         <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
-                        <div></div>
+                        <button type="button" class="quest-nav-btn primary" onclick="const e = document.getElementById('quest-email-btn'); if(e) e.click();">Send 📧</button>
                     </div>
                 </div>
             </div>
@@ -1339,7 +1339,7 @@
                 }
             } catch(e) {}
         }
-        preview.innerHTML = `<span class="preview-badge-label">✨ Your RPG Name:</span> <strong class="preview-badge-name">${esc(fullName)}</strong>`;
+        preview.innerHTML = `<strong class="preview-badge-name">${esc(fullName)}</strong>`;
     };
 
     window.copyQuestAnswers = function(btn) {

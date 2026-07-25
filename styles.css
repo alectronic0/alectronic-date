@@ -3050,8 +3050,8 @@ button.CookiebotWidget-logo::before {
 
 /* ── Quest Navigation ── */
 .quest-nav {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   margin-top: auto;
   align-self: flex-end;
@@ -3060,6 +3060,15 @@ button.CookiebotWidget-logo::before {
   padding-bottom: 8px;
   border-top: 1px solid var(--border);
   box-sizing: border-box;
+}
+.quest-nav > :nth-child(1) {
+  justify-self: start;
+}
+.quest-nav > :nth-child(2) {
+  justify-self: center;
+}
+.quest-nav > :nth-child(3) {
+  justify-self: end;
 }
 .quest-nav-btn {
   padding: 10px 24px;

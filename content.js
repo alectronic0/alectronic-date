@@ -95,8 +95,8 @@ window.CONTENT = {
         steps: [
             {
                 key: "name",
-                title: "State Your Name, Adventurer",
-                sub: "So you're looking to go on an adventure with Alec! Before you can set off, you'll need to answer a few questions. But first — what should I call you?",
+                title: "What is your name, adventurer?",
+                sub: "So you're looking to go on an adventure with Alec! Before we set off, what should I call you?",
                 gaugeLabel: "Name",
                 colour: "#a855f7"
             },
