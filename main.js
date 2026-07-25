@@ -1152,7 +1152,7 @@
                     <div class="quest-preview" id="quest-preview-body"></div>
                     <div data-adventures="root"></div>
                     <div class="quest-action-card">
-                        <a href="#" id="quest-email-btn" class="quest-send-email-btn" target="_blank" rel="noopener">
+                        <a href="#" id="quest-email-btn" class="quest-send-email-btn" onclick="sendQuestEmail(event)">
                             <span class="btn-icon">📧</span> <span class="btn-text">${esc(q.complete.emailLabel)}</span>
                         </a>
                         
@@ -1170,7 +1170,7 @@
                     <div class="quest-nav">
                         <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
                         <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
-                        <button type="button" class="quest-nav-btn primary" onclick="const e = document.getElementById('quest-email-btn'); if(e) e.click();">Send 📧</button>
+                        <button type="button" class="quest-nav-btn primary" onclick="sendQuestEmail(event)">Send 📧</button>
                     </div>
                 </div>
             </div>
@@ -1379,6 +1379,15 @@
         }
     };
 
+    window.sendQuestEmail = function(e) {
+        if (e && e.preventDefault) e.preventDefault();
+        const p = (typeof C !== 'undefined' && C.prompts) ? C.prompts : {};
+        const email = promptEmail(p);
+        const subject = encodeURIComponent(p.emailSubject || document.title);
+        const body = encodeURIComponent(buildQuestPreview());
+        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    };
+
     window.copyQuestAnswers = function(btn) {
         const text = buildQuestPreview();
         navigator.clipboard.writeText(text).then(() => {
@@ -1495,12 +1504,13 @@
 
     // The email to reach Alec — explicit in content, else taken from the first
     // mailto: in the contact links so it stays a single source of truth.
-    const promptEmail = (p) => {
+    function promptEmail(p) {
+        if (!p) return '';
         if (p.email) return p.email;
         const links = (C.contact && C.contact.links) || [];
         const m = links.find((l) => /^mailto:/i.test(l.href || ''));
         return m ? m.href.replace(/^mailto:/i, '').split('?')[0] : '';
-    };
+    }
 
     window.removeAdventureFromPreview = function(idea) {
         document.querySelectorAll(`.date-idea-pill[data-idea="${CSS.escape(idea)}"]`).forEach(el => {
