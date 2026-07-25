@@ -1942,14 +1942,7 @@
         const lon = locationInput ? locationInput.dataset.lon : null;
 
         if (!locationVal) {
-            container.innerHTML = `
-                <div class="picked-location-section empty-location-prompt" style="margin-top: 16px;">
-                    <div class="picked-location-row" style="color: var(--muted); font-size: 0.85rem; justify-content: center;">
-                        <span class="location-icon">📍</span>
-                        <span>Enter your location above to check travel options & distance!</span>
-                    </div>
-                </div>
-            `;
+            container.innerHTML = '';
             return;
         }
 
