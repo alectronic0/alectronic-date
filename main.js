@@ -1248,32 +1248,6 @@
         }
     };
 
-        const locDisplay = document.getElementById('quest-location-display');
-        if (locDisplay) locDisplay.innerHTML = '';
-
-        document.querySelectorAll('.date-idea-pill').forEach(btn => btn.classList.remove('selected'));
-        if (typeof updateSelectedAdventuresDisplay === 'function') {
-            updateSelectedAdventuresDisplay();
-        }
-
-        document.querySelectorAll('.prompt-answer-input').forEach(input => {
-            input.value = '';
-        });
-
-        questStep = 0;
-        const crossroads = document.getElementById('quest-crossroads');
-        const form = document.getElementById('quest-form');
-        if (crossroads) crossroads.style.display = 'flex';
-        if (form) form.style.display = 'none';
-
-        updateNamePreview();
-
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    };
-
     window.questNext = function() {
         if (questStep === 1) {
             const nInput = document.getElementById('rpg-name-input');
@@ -1283,7 +1257,7 @@
     };
 
     window.questPrev = function() {
-        if (questStep > 1) questGoTo(questStep - 1);
+        if (questStep > 0) questGoTo(questStep - 1);
     };
 
     window.questGoTo = function(step) {
