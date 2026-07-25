@@ -1150,7 +1150,6 @@
                         <p>${esc(q.steps[4].sub)}</p>
                     </div>
                     <div class="quest-preview" id="quest-preview-body"></div>
-                    <div data-adventures="root"></div>
                     <div class="quest-action-card">
                         <a href="#" id="quest-email-btn" class="quest-send-email-btn" onclick="sendQuestEmail(event)">
                             <span class="btn-icon">📧</span> <span class="btn-text">${esc(q.complete.emailLabel)}</span>
@@ -1555,6 +1554,9 @@
             } catch(e) {}
         }
 
+        const locationInput = document.getElementById('rough-location');
+        const locationVal = locationInput ? locationInput.value.trim() : (localStorage.getItem('alec-date-location') || '');
+
         const selectedAdventures = Array.from(
             document.querySelectorAll('.date-idea-pill.selected')
         ).map(el => el.getAttribute('data-idea'));
@@ -1567,6 +1569,16 @@
         return `
             <div class="quest-letter">
                 <p class="letter-line">Hi Alec,</p>
+
+                <div class="letter-section">
+                    <div class="letter-label">
+                        <span>My starting point / location:</span>
+                        <button type="button" class="letter-edit-link" onclick="questGoTo(2)">Edit location ✏️</button>
+                    </div>
+                    <div class="letter-location-val" onclick="questGoTo(2)" style="cursor: pointer;">
+                        ${locationVal ? `📍 <strong>${esc(locationVal)}</strong> ✏️` : `<em style="color: var(--gold);">(no location set — click to add) ➕</em>`}
+                    </div>
+                </div>
 
                 <div class="letter-section">
                     <div class="letter-label">
@@ -1629,6 +1641,9 @@
             } catch(e) {}
         }
 
+        const locationInput = document.getElementById('rough-location');
+        const locationVal = locationInput ? locationInput.value.trim() : (localStorage.getItem('alec-date-location') || '');
+
         const selectedAdventures = Array.from(
             document.querySelectorAll('.date-idea-pill.selected')
         ).map(el => el.getAttribute('data-idea'));
@@ -1639,6 +1654,9 @@
         const questions = getQuestionsForPreview();
 
         let body = `Hi Alec,\n\n`;
+        if (locationVal) {
+            body += `My rough location is: ${locationVal}\n\n`;
+        }
         body += `I would love to go on an adventure with you I would really like to do:\n`;
         if (selectedAdventures.length) {
             body += selectedAdventures.map(a => `- ${a}`).join('\n');
