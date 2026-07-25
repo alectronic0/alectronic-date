@@ -1083,7 +1083,7 @@
                         <p>${esc(q.steps[0].sub)}</p>
                     </div>
                     <div class="input-row">
-                        <input type="text" class="quest-input" id="rpg-name-input" placeholder="Your name" value="${esc(savedName)}" oninput="updateNamePreview(); toggleClearNameBtn();" style="padding-right: 42px;">
+                        <input type="text" class="quest-input" id="rpg-name-input" placeholder="Your name" value="${esc(savedName)}" oninput="updateNamePreview(); toggleClearNameBtn();">
                         <button type="button" class="clear-input-btn" id="clear-name-btn" aria-label="Clear name" title="Clear name" onclick="clearNameInput()" style="display: ${savedName ? 'flex' : 'none'}">×</button>
                     </div>
                     <div class="title-pills">${titlePillsHtml}</div>
@@ -1103,7 +1103,7 @@
                     </div>
                     <p class="location-subtext" style="text-align: center; margin-bottom: 14px;">No tracking — I only see your location when you send the email.</p>
                     <div class="input-row">
-                        <input type="text" class="quest-input" id="rough-location" placeholder="e.g. Postcode, town, or train station" aria-label="What is your rough location?" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="padding-right: 42px;">
+                        <input type="text" class="quest-input" id="rough-location" placeholder="e.g. Postcode, town, or train station" aria-label="What is your rough location?" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                         <button type="button" class="clear-input-btn" id="clear-location-btn" aria-label="Clear location" title="Clear location" style="display:none">×</button>
                         <div id="location-suggestions"></div>
                     </div>
