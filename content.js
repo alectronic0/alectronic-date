@@ -123,7 +123,7 @@ window.CONTENT = {
             },
             {
                 key: "victory",
-                title: "✨ Quest Complete!",
+                title: "Seal & Send",
                 sub: "This is the message you will send:",
                 gaugeLabel: "Seal & Send",
                 colour: "#f59e0b"

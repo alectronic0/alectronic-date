@@ -1145,7 +1145,7 @@
 
                 <div class="quest-step" data-quest-step="5">
                     <div class="quest-step-header">
-                        <span class="quest-step-badge">STEP 5 OF 5 • SEAL & SEND</span>
+                        <span class="quest-step-badge">STEP 5 OF 5</span>
                         <h3>${esc(q.steps[4].title)}</h3>
                         <p>${esc(q.steps[4].sub)}</p>
                     </div>
