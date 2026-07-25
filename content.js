@@ -130,16 +130,16 @@ window.CONTENT = {
             }
         ],
         titlePills: [
-            { emoji: "👑", label: "Princess", position: "prefix" },
-            { emoji: "⚔️", label: "Fair Maiden", position: "prefix" },
-            { emoji: "🦊", label: "Lady", position: "prefix" },
-            { emoji: "🧙‍♀️", label: "Sorceress", position: "suffix", connector: "the" },
-            { emoji: "🐉", label: "Dragon Slayer", position: "suffix", connector: "the" },
-            { emoji: "🗡️", label: "Bad Ass Main Character", position: "suffix" },
-            { emoji: "🏰", label: "First of Her Name", position: "suffix" },
-            { emoji: "👸", label: "Queen of the Realm", position: "suffix" },
-            { emoji: "🔥", label: "Chaos Gremlin", position: "suffix", connector: "the" },
-            { emoji: "🧹", label: "Witch", position: "suffix", connector: "the" }
+            {emoji: "👑", label: "Princess", position: "prefix"},
+            {emoji: "⚔️", label: "Fair Maiden", position: "prefix"},
+            {emoji: "🦊", label: "Lady", position: "prefix"},
+            {emoji: "🧙‍♀️", label: "Sorceress", position: "suffix", connector: "the"},
+            {emoji: "🐉", label: "Dragon Slayer", position: "suffix", connector: "the"},
+            {emoji: "🗡️", label: "Bad Ass Main Character", position: "suffix"},
+            {emoji: "🏰", label: "First of Her Name", position: "suffix"},
+            {emoji: "👸", label: "Queen of the Realm", position: "suffix"},
+            {emoji: "🔥", label: "Chaos Gremlin", position: "suffix", connector: "the"},
+            {emoji: "🧹", label: "Witch", position: "suffix", connector: "the"}
         ],
         complete: {
             title: "✨ Quest Complete!",
@@ -633,7 +633,7 @@ window.CONTENT = {
                             <div class="deep-modal-body">
                                 <div class="interest-cards">
                             <div class="interest-card">
-                                <div class="interest-card-head"><span class="interest-card-icon">🫂</span><span class="interest-card-title">Expert Warm Hugger</span></div>
+                                <div class="interest-card-head"><span class="interest-card-icon">🫂</span><span class="interest-card-title">Expert Hugger</span></div>
                                 <p class="interest-card-body">Always ready to wrap you up in a big, comforting hug exactly when you need it most</p>
                             </div>
                             <div class="interest-card">
@@ -650,7 +650,7 @@ window.CONTENT = {
                             </div>
                             <div class="interest-card">
                                 <div class="interest-card-head"><span class="interest-card-icon">📖</span><span class="interest-card-title">Book Boyfriend Roleplayer</span></div>
-                                <p class="interest-card-body">BookTok girls will know exactly what this means 😉 (Willing to supply 'who did this to you?' energy on demand)</p>
+                                <p class="interest-card-body">BookTok girls will know exactly what this means 😉 <em>(Willing to supply 'who did this to you?' energy on demand)</em></p>
                             </div>
                             <div class="interest-card">
                                 <div class="interest-card-head"><span class="interest-card-icon">🧑‍🍳</span><span class="interest-card-title">Personal Chef / Baker</span></div>
@@ -666,7 +666,7 @@ window.CONTENT = {
                             </div>
                             <div class="interest-card">
                                 <div class="interest-card-head"><span class="interest-card-icon">💻</span><span class="interest-card-title">24/7 Tech Support</span></div>
-                                <p class="interest-card-body">Your personal tech support for all devices</p>
+                                <p class="interest-card-body">Your personal tech support for all devices* <em>(Printer excluded)</em></p>
                             </div>
                             <div class="interest-card">
                                 <div class="interest-card-head"><span class="interest-card-icon">🛍️</span><span class="interest-card-title">Errands Helper</span></div>
@@ -674,11 +674,11 @@ window.CONTENT = {
                             </div>
                             <div class="interest-card">
                                 <div class="interest-card-head"><span class="interest-card-icon">🕷️</span><span class="interest-card-title">Designated Bug Relocator</span></div>
-                                <p class="interest-card-body">Bravely capturing and releasing any 8-legged intruders so you don't have to (Certification from the prestigious 2yr Australian outback diploma 🦘)</p>
+                                <p class="interest-card-body">Bravely capturing and releasing any 8-legged intruders so you don't have to <em>(Fully accredited via the Australian Outback 🦘)</em></p>
                             </div>
                             <div class="interest-card">
-                                <div class="interest-card-head"><span class="interest-card-icon">🗺️</span><span class="interest-card-title">Spontaneous</span></div>
-                                <p class="interest-card-body">Always ready for spontaneous adventures or quiet nights in</p>
+                                <div class="interest-card-head"><span class="interest-card-icon">🍷</span><span class="interest-card-title">Guaranteed to age like fine wine</span></div>
+                                <p class="interest-card-body">If my dad is any indicator, I will age like fine wine <em>(or your money back)</em></p>
                             </div>
                                 </div>
                                 <div style="margin-top: 24px; text-align: center; font-size: 0.85rem; color: var(--muted-2);">
@@ -923,7 +923,7 @@ window.CONTENT = {
                         {icon: "🦉", title: "Night owl", body: "I definitely do my best work at night (no, I'm not Batman). I only wake up early if I can't get back to sleep, or if I absolutely have to, and you better believe I'll need a morning matcha or coffee to get me going."}
                     ]
                 },
-                { type: "heading", text: "Putting Myself in a Box" },
+                {type: "heading", text: "Putting Myself in a Box"},
                 {
                     type: "paragraph",
                     html: "<p style='color: var(--muted); font-size: 0.95rem; margin-top: -12px;'><em>Disclaimer: I know these concepts get banded about a lot, and there aren't always good things to be said about the people who invented them... but sometimes it's just nice to put yourself in a box!</em></p>"
@@ -952,7 +952,7 @@ window.CONTENT = {
                             description: "School, college, and university. Navigated a bit of bullying and a lot of repressed emotional trauma, but made it out alive with a Computer Science degree (with a 1st!).",
                             icon: "🎒",
                             companies: [
-                                { name: "Waitrose", logo: "img/company-logos/waitrose.jpg" }
+                                {name: "Waitrose", logo: "img/company-logos/waitrose.jpg"}
                             ],
                             travel: ["🇬🇷 Zante & Malia"]
                         },
@@ -962,7 +962,7 @@ window.CONTENT = {
                             description: "Backpacking across Australia, a bit of New Zealand, and interrailing. A huge period of growth and adventure.",
                             icon: "🦘",
                             companies: [
-                                { name: "IVSTEL", logo: "img/company-logos/ivestel.jpg" }
+                                {name: "IVSTEL", logo: "img/company-logos/ivestel.jpg"}
                             ],
                             travel: [
                                 "🇦🇺 Sydney & Cairns",
@@ -976,9 +976,9 @@ window.CONTENT = {
                             description: "Readjusting to normal life and trying to start my career. A confusing but necessary transition phase.",
                             icon: "🌧️",
                             companies: [
-                                { name: "Waitrose", logo: "img/company-logos/waitrose.jpg" },
-                                { name: "GLEAT", logo: "img/company-logos/gleat.png" },
-                                { name: "Sky", logo: "img/company-logos/sky.jpg" }
+                                {name: "Waitrose", logo: "img/company-logos/waitrose.jpg"},
+                                {name: "GLEAT", logo: "img/company-logos/gleat.png"},
+                                {name: "Sky", logo: "img/company-logos/sky.jpg"}
                             ],
                             travel: ["🇪🇸 Barcelona"]
                         },
@@ -988,7 +988,7 @@ window.CONTENT = {
                             description: "The classic early career grind: overworked, underpaid, and battling heavy imposter syndrome.",
                             icon: "💼",
                             companies: [
-                                { name: "Solirius Consulting", logo: "img/company-logos/solirius.avif" }
+                                {name: "Solirius Consulting", logo: "img/company-logos/solirius.avif"}
                             ],
                             travel: [
                                 "🇳🇱 Amsterdam",
@@ -1002,7 +1002,7 @@ window.CONTENT = {
                             description: "Joined Rightmove and navigated the weirdness of the pandemic years like everyone else.",
                             icon: "🏠",
                             companies: [
-                                { name: "Rightmove", logo: "img/company-logos/rightmove.jpg" }
+                                {name: "Rightmove", logo: "img/company-logos/rightmove.jpg"}
                             ],
                             travel: [
                                 "🇺🇦 Kyiv",
@@ -1016,7 +1016,7 @@ window.CONTENT = {
                             description: "A huge era of change: moving to Deliveroo, getting promoted, buying a house, and venturing into the dating world (which brought its own flavor of dating depression).",
                             icon: "🔑",
                             companies: [
-                                { name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg" }
+                                {name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg"}
                             ],
                             travel: [
                                 "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh & Glasgow"
@@ -1028,7 +1028,7 @@ window.CONTENT = {
                             description: "Experienced my first serious relationship. A time of immense learning and emotional investment.",
                             icon: "❤️",
                             companies: [
-                                { name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg" }
+                                {name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg"}
                             ],
                             travel: [
                                 "🇮🇩 Bali",
@@ -1041,8 +1041,8 @@ window.CONTENT = {
                             description: "Starting again post-breakup. Hit the gym hard with a PT and faced the depression head-on.",
                             icon: "💪",
                             companies: [
-                                { name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg" },
-                                { name: "DoorDash", logo: "img/company-logos/doordash.jpg" }
+                                {name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg"},
+                                {name: "DoorDash", logo: "img/company-logos/doordash.jpg"}
                             ],
                             travel: [
                                 "🇺🇸 New York",
@@ -1055,8 +1055,8 @@ window.CONTENT = {
                             description: "Ready for whatever comes next.",
                             icon: "✨",
                             companies: [
-                                { name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg" },
-                                { name: "DoorDash", logo: "img/company-logos/doordash.jpg" }
+                                {name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg"},
+                                {name: "DoorDash", logo: "img/company-logos/doordash.jpg"}
                             ],
                             travel: [
                                 "🇯🇵 Japan",
