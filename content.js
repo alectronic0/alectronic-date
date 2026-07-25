@@ -85,7 +85,7 @@ window.CONTENT = {
     quest: {
         crossroads: {
             heading: "💘 Ready to Shoot Your Shot?",
-            lead: "You've made it this far! Do you want to shoot your shot?</br>I've worked to make this as easy as possible: Tell me your <span class='text-purple'>name</span>, set your rough <span class=\"text-red\">location</span>, pick your <span class=\"text-green\">adventure</span>, answer a few <span class=\"text-blue\">ice breakers</span>, and <span class=\"text-gold\">leave the rest to me!</span>",
+            lead: "You've made it this far! Do you want to shoot your shot?<br>I've worked to make this as easy as possible: Tell me your <span class='text-purple'>name</span>, set your rough <span class=\"text-red\">location</span>, pick your <span class=\"text-green\">adventure</span>, answer a few <span class=\"text-blue\">ice breakers</span>, and <span class=\"text-gold\">leave the rest to me!</span>",
             shootIcon: "💘",
             shootLabel: "Shoot Your Shot",
             shootSub: "Start the quest — let's go on a date!",

@@ -1602,9 +1602,9 @@
                 <div class="letter-section">
                     <div class="letter-label">
                         <span>And here are my answers:</span>
-                        <button type="button" class="letter-edit-link" onclick="questGoTo(4)">Edit riddles ✏️</button>
+                        <button type="button" class="letter-edit-link" onclick="questGoTo(4)">Edit icebreakers ✏️</button>
                     </div>
-                    <div class="letter-riddles-list">
+                    <div class="letter-question-list">
                         ${questions.map((q, i) => {
                             const ans = savedAnswers[q] || '';
                             return `
