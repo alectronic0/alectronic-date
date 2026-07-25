@@ -1105,8 +1105,8 @@
                     <div class="input-row">
                         <input type="text" class="quest-input" id="rough-location" placeholder="e.g. Postcode, town, or train station" aria-label="What is your rough location?" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                         <button type="button" class="clear-input-btn" id="clear-location-btn" aria-label="Clear location" title="Clear location" style="display:none">×</button>
-                        <div id="location-suggestions"></div>
                     </div>
+                    <div id="location-suggestions"></div>
                     <div id="quest-location-display"></div>
                     <div class="quest-nav">
                         <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
@@ -1860,12 +1860,6 @@
             `<span>${esc(p.shuffleLabel || 'Shuffle')}</span></button>` +
             `</div>` +
             `<ol class="prompt-cards" data-prompts="cards"></ol>` +
-            `<div class="prompt-actions">` +
-            `<a class="prompt-answer" href="#"><i class="prompt-icon" aria-hidden="true">✉️</i>` +
-            `<span>${esc(p.answerLabel || 'Email me your responses')}</span></a>` +
-            `<button type="button" class="prompt-copy-btn"><i class="prompt-icon" aria-hidden="true">📋</i>` +
-            `<span>Copy responses</span></button>` +
-            `</div>` +
             `</div>`;
         setHtml('[data-prompts="root"]', html);
         drawPrompts();
