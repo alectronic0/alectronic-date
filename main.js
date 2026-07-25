@@ -1775,7 +1775,7 @@
                         let savedAnswers = {};
                         try { savedAnswers = JSON.parse(localStorage.getItem('alec-date-answers')) || {}; } catch(e) {}
                         ansInput.setAttribute('data-question', newText);
-                        ansInput.placeholder = `Your answer to riddle #${i+1}...`;
+                        ansInput.placeholder = `Your answer...`;
                         ansInput.value = savedAnswers[newText] || '';
                     }
                     // Trigger reflow to restart CSS fade-in animation
@@ -1816,14 +1816,13 @@
                     const userAns = savedAnswers[item.text] || '';
                     return `<li class="prompt-card${activeClass}" data-index="${i}">` +
                         `<div class="prompt-card-top">` +
-                        `<span class="prompt-num">${i + 1}</span>` +
                         `<span class="prompt-q">${esc(item.text)}</span>` +
                         `<button type="button" class="prompt-hold-btn${activeClass}" ${disabledAttr}>` +
                         `${isHeld ? '🔒 Held' : '🔓 Hold'}` +
                         `</button>` +
                         `</div>` +
                         `<div class="prompt-answer-wrapper">` +
-                        `<input type="text" class="prompt-answer-input" data-question="${esc(item.text)}" placeholder="Your answer to riddle #${i+1}..." value="${esc(userAns)}" oninput="saveRiddleAnswer(this)">` +
+                        `<textarea class="prompt-answer-input" data-question="${esc(item.text)}" placeholder="Your answer..." oninput="saveRiddleAnswer(this)">${esc(userAns)}</textarea>` +
                         `</div>` +
                         `</li>`;
                 })
@@ -1856,8 +1855,9 @@
             `<div style="text-align: center;">` +
             (p.intro ? `<p class="prompt-intro">${esc(p.intro)}</p>` : '') +
             `<div class="prompt-header-action">` +
-            `<button type="button" class="prompt-shuffle"><i class="prompt-icon" aria-hidden="true">🃏</i>` +
-            `<span>${esc(p.shuffleLabel || 'Shuffle')}</span></button>` +
+            `<button type="button" class="prompt-shuffle">` +
+            `<span>🃏Shuffle the deck</span>` +
+            `</button>` +
             `</div>` +
             `<ol class="prompt-cards" data-prompts="cards"></ol>` +
             `</div>`;

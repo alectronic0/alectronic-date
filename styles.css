@@ -2661,8 +2661,8 @@ button.CookiebotWidget-logo::before {
   background: var(--surface-2, rgba(255,255,255,0.04));
   color: var(--text);
   cursor: pointer;
+    width: 100%;
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-  min-width: 220px;
   text-decoration: none;
 }
 .quest-choice-btn:hover {
@@ -2812,7 +2812,6 @@ button.CookiebotWidget-logo::before {
   width: 100%;
 }
 .prompt-answer-wrapper {
-  margin-top: 12px;
   width: 100%;
 }
 .prompt-answer-input {
@@ -3428,7 +3427,7 @@ button.CookiebotWidget-logo::before {
 /* ── Responsive ── */
 @media (max-width: 600px) {
   .quest-form { padding: 20px 14px; }
-  .quest-choice-btn { min-width: 140px; padding: 18px 16px; }
+  .quest-choice-btn { padding: 18px 16px; }
   .quest-gauge-seg .gauge-label { font-size: 0.6rem; }
   .travel-times { grid-template-columns: repeat(2, 1fr); }
 }

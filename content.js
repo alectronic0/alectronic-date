@@ -260,8 +260,7 @@ window.CONTENT = {
        so a match can reply straight away. Add to `questions` to grow the deck —
        no code changes needed. */
     prompts: {
-        count: 3,
-        shuffleLabel: "Shuffle the deck",
+        count: 2,
         answerLabel: "Email me your responses",
         email: "date@alec.today",
         emailSubject: "My responses to Alec's questions 🎮❤️",
@@ -270,6 +269,7 @@ window.CONTENT = {
             "What are your top three favourite countries — and what made them special?",
             "If you had to pick a favourite god or goddess, who would it be and why?",
             "What's your favourite food or cuisine?",
+            "What's your favourite Pokemon?",
             "Favourite TV show or video game right now?",
             "What did you want to be when you grew up?",
             "What do you do for work — and do you genuinely enjoy it?",
