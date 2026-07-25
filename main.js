@@ -1520,6 +1520,23 @@
         if (typeof questGoTo === 'function') questGoTo(5);
     };
 
+    function getQuestionsForPreview() {
+        if (typeof currentPromptPicks !== 'undefined' && currentPromptPicks && currentPromptPicks.length) {
+            return currentPromptPicks.map(item => item.text);
+        }
+        try {
+            const savedPicks = JSON.parse(localStorage.getItem('alec-date-prompts'));
+            if (savedPicks && savedPicks.length) {
+                currentPromptPicks = savedPicks;
+                return savedPicks.map(item => item.text);
+            }
+        } catch(e) {}
+        if (typeof C !== 'undefined' && C.prompts && C.prompts.prompts) {
+            return C.prompts.prompts.slice(0, 3);
+        }
+        return [];
+    }
+
     function renderQuestPreviewHTML() {
         const name = localStorage.getItem('alec-rpg-name') || '';
         const titleJson = localStorage.getItem('alec-rpg-title');
@@ -1545,14 +1562,17 @@
         let savedAnswers = {};
         try { savedAnswers = JSON.parse(localStorage.getItem('alec-date-answers')) || {}; } catch(e) {}
 
-        const questions = currentPromptPicks.map(item => item.text);
+        const questions = getQuestionsForPreview();
 
         return `
             <div class="quest-letter">
-                <p class="letter-line" style="margin-bottom: 12px;">Hi Alec,</p>
+                <p class="letter-line">Hi Alec,</p>
 
                 <div class="letter-section">
-                    <p class="letter-line" style="margin-bottom: 8px;">I would love to go on an adventure with you I would really like to do:</p>
+                    <div class="letter-label">
+                        <span>I would love to go on these adventures:</span>
+                        <button type="button" class="letter-edit-link" onclick="questGoTo(3)">Edit adventures ✏️</button>
+                    </div>
                     <div class="letter-adventures-grid">
                         ${selectedAdventures.length ? selectedAdventures.map(a => `
                             <span class="adventure-chip">
@@ -1565,26 +1585,28 @@
                     </div>
                 </div>
 
-                <div class="letter-section" style="margin-top: 16px;">
-                    <div class="letter-label" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <div class="letter-section">
+                    <div class="letter-label">
                         <span>And here are my answers:</span>
-                        <button type="button" class="letter-edit-link" onclick="questGoTo(4)" style="background: none; border: none; color: var(--gold); cursor: pointer; font-size: 0.82rem;">Edit riddles ✏️</button>
+                        <button type="button" class="letter-edit-link" onclick="questGoTo(4)">Edit riddles ✏️</button>
                     </div>
                     <div class="letter-riddles-list">
                         ${questions.map((q, i) => {
                             const ans = savedAnswers[q] || '';
                             return `
-                                <div class="preview-riddle-item" onclick="questGoTo(4)" title="Click to edit answer" style="margin-bottom: 10px; cursor: pointer;">
+                                <div class="preview-riddle-item" onclick="questGoTo(4)" title="Click to edit answer">
                                     <div class="preview-riddle-q"><strong>${i + 1}. ${esc(q)}</strong></div>
-                                    <div class="preview-riddle-a">${ans ? `→ ${esc(ans)} ✏️` : `<em style="color: var(--gold);">(not answered yet — click to answer) ✏️</em>`}</div>
+                                    <div class="preview-riddle-a ${ans ? 'answered' : ''}">${ans ? `→ ${esc(ans)} ✏️` : `<em>(not answered yet — click to answer) ✏️</em>`}</div>
                                 </div>
                             `;
                         }).join('')}
                     </div>
                 </div>
 
-                <p class="letter-line" style="margin-top: 16px;">I look forward to your response! 💌</p>
-                <p class="letter-signature" style="margin-top: 16px; font-weight: 700; color: var(--gold); cursor: pointer;" onclick="questGoTo(1)" title="Click to edit name">${esc(fullName)} ✏️</p>
+                <p class="letter-line">I look forward to your response! 💌</p>
+                <div class="letter-signature" onclick="questGoTo(1)" title="Click to edit name">
+                    <span>${esc(fullName)}</span> ✏️
+                </div>
             </div>
         `;
     }
@@ -1614,7 +1636,7 @@
         let savedAnswers = {};
         try { savedAnswers = JSON.parse(localStorage.getItem('alec-date-answers')) || {}; } catch(e) {}
 
-        const questions = currentPromptPicks.map(item => item.text);
+        const questions = getQuestionsForPreview();
 
         let body = `Hi Alec,\n\n`;
         body += `I would love to go on an adventure with you I would really like to do:\n`;
