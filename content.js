@@ -95,35 +95,35 @@ window.CONTENT = {
         steps: [
             {
                 key: "name",
-                title: "What is your name, adventurer?",
+                title: "👋 What is your name, adventurer?",
                 sub: "So you're looking to go on an adventure with Alec! Before we set off, what should I call you?",
                 gaugeLabel: "Intro",
                 colour: "#a855f7"
             },
             {
                 key: "location",
-                title: "Where Do You Hail From?",
+                title: "📍 Where Do You Hail From?",
                 sub: "Every great quest needs a starting point. Drop your rough location so I can plan the journey.",
                 gaugeLabel: "Location",
                 colour: "#ef4444"
             },
             {
                 key: "adventure",
-                title: "Pick Your Adventure",
-                sub: "What kind of quest would you like to embark on? Pick as many as you like!",
+                title: "🗺️ Pick Your Adventure",
+                sub: "What kind of adventure would you like to go on? Pick as many as you like!",
                 gaugeLabel: "Adventure",
                 colour: "#22c55e"
             },
             {
                 key: "icebreaker",
-                title: "You Must Answer These Riddles Three!",
-                sub: "Nearly there! Answer a few ice breakers — hold the ones you like, shuffle the rest.",
+                title: "🧊 Lets break the ice",
+                sub: "Nearly there! Answer a few ice breakers, hold the ones you like, shuffle the rest.",
                 gaugeLabel: "Icebreakers",
                 colour: "#3b82f6"
             },
             {
                 key: "victory",
-                title: "Seal & Send",
+                title: "💌 Seal & Send",
                 sub: "This is the message you will send:",
                 gaugeLabel: "Seal & Send",
                 colour: "#f59e0b"
@@ -137,7 +137,9 @@ window.CONTENT = {
             { emoji: "🐉", label: "Dragon Slayer", position: "suffix", connector: "the" },
             { emoji: "🗡️", label: "Bad Ass Main Character", position: "suffix" },
             { emoji: "🏰", label: "First of Her Name", position: "suffix" },
-            { emoji: "👸", label: "Queen of the Realm", position: "suffix" }
+            { emoji: "👸", label: "Queen of the Realm", position: "suffix" },
+            { emoji: "🔥", label: "Chaos Gremlin", position: "suffix", connector: "the" },
+            { emoji: "🧹", label: "Witch", position: "suffix", connector: "the" }
         ],
         complete: {
             title: "✨ Quest Complete!",
