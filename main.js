@@ -1262,18 +1262,20 @@
         if (questStep > 0) questGoTo(questStep - 1);
     };
 
-    window.questGoTo = function(step) {
+    window.questGoTo = function(step, focusId) {
         questStep = step;
         localStorage.setItem('alec-rpg-step', step);
         questShowStep(step);
-        if (step === 5) {
-            const preview = document.getElementById('quest-preview-body');
-            if (preview) preview.innerHTML = renderQuestPreviewHTML();
-            const emailBtn = document.getElementById('quest-email-btn');
-            if (emailBtn && C.prompts) {
-                const subject = encodeURIComponent(C.prompts.emailSubject || document.title);
-                emailBtn.href = `mailto:${promptEmail(C.prompts)}?subject=${subject}&body=${encodeURIComponent(buildQuestPreview())}`;
-            }
+        
+        const formEl = document.getElementById('quest-form');
+        if (formEl) {
+            formEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        if (focusId) {
+            setTimeout(() => {
+                const el = document.getElementById(focusId);
+                if (el && typeof el.focus === 'function') el.focus();
+            }, 350);
         }
     };
 
@@ -1572,10 +1574,10 @@
 
                 <div class="letter-section">
                     <div class="letter-label">
-                        <span>My starting point / location:</span>
-                        <button type="button" class="letter-edit-link" onclick="questGoTo(2)">Edit location ✏️</button>
+                        <span>I am based at:</span>
+                        <button type="button" class="letter-edit-link" onclick="questGoTo(2, 'rough-location')">Edit location ✏️</button>
                     </div>
-                    <div class="letter-location-val" onclick="questGoTo(2)" style="cursor: pointer;">
+                    <div class="letter-location-val" onclick="questGoTo(2, 'rough-location')" style="cursor: pointer;">
                         ${locationVal ? `📍 <strong>${esc(locationVal)}</strong> ✏️` : `<em style="color: var(--gold);">(no location set — click to add) ➕</em>`}
                     </div>
                 </div>
@@ -1616,7 +1618,7 @@
                 </div>
 
                 <p class="letter-line">I look forward to your response! 💌</p>
-                <div class="letter-signature" onclick="questGoTo(1)" title="Click to edit name">
+                <div class="letter-signature" onclick="questGoTo(1, 'rpg-name-input')" title="Click to edit name">
                     <span>${esc(fullName)}</span> ✏️
                 </div>
             </div>
