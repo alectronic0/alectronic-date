@@ -2963,49 +2963,6 @@ button.CookiebotWidget-logo::before {
   font-weight: 700;
 }
 
-.quest-input-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-  width: 100%;
-  max-width: 540px;
-  margin: 16px auto 24px;
-}
-.quest-input-row .quest-input {
-  margin: 0;
-  flex: 1;
-}
-.quest-input-row .input-row {
-  margin: 0;
-  flex: 1;
-}
-.quest-input-reset-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 0 18px;
-  height: 52px;
-  border-radius: 14px;
-  background: rgba(239, 68, 68, 0.12);
-  border: 1.5px solid rgba(239, 68, 68, 0.4);
-  color: #ef4444;
-  font-weight: 600;
-  font-size: 0.92rem;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.2s;
-  box-sizing: border-box;
-}
-.quest-input-reset-btn:hover {
-  background: rgba(239, 68, 68, 0.25);
-  border-color: #ef4444;
-  color: #f87171;
-  box-shadow: 0 0 14px rgba(239, 68, 68, 0.3);
-  transform: translateY(-1px);
-}
-
 /* ── Location Input & Clear Button ── */
 .input-row {
   position: relative;

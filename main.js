@@ -1082,14 +1082,12 @@
                         <h3>${esc(q.steps[0].title)}</h3>
                         <p>${esc(q.steps[0].sub)}</p>
                     </div>
-                    <div class="quest-input-row">
-                        <input type="text" class="quest-input" id="rpg-name-input" placeholder="Your name" value="${esc(savedName)}" oninput="updateNamePreview()">
-                        <button type="button" class="quest-input-reset-btn" onclick="questReset()" title="Reset quest form">🔄 Reset</button>
-                    </div>
+                    <input type="text" class="quest-input" id="rpg-name-input" placeholder="Your name" value="${esc(savedName)}" oninput="updateNamePreview()">
                     <div class="title-pills">${titlePillsHtml}</div>
                     <div class="quest-name-preview" id="quest-name-preview"></div>
                     <div class="quest-nav">
                         <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
+                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
                         <button type="button" class="quest-nav-btn primary" onclick="questNext()">Next →</button>
                     </div>
                 </div>
@@ -1101,17 +1099,15 @@
                         <p>${esc(q.steps[1].sub)}</p>
                     </div>
                     <p class="location-subtext" style="text-align: center; margin-bottom: 14px;">No tracking — I only see your location when you send the email.</p>
-                    <div class="quest-input-row">
-                        <div class="input-row">
-                            <input type="text" class="quest-input" id="rough-location" placeholder="e.g. Postcode, town, or train station" aria-label="What is your rough location?" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="padding-right: 42px;">
-                            <button type="button" id="clear-location-btn" aria-label="Clear location" title="Clear location" style="display:none">×</button>
-                            <div id="location-suggestions"></div>
-                        </div>
-                        <button type="button" class="quest-input-reset-btn" onclick="questReset()" title="Reset quest form">🔄 Reset</button>
+                    <div class="input-row">
+                        <input type="text" class="quest-input" id="rough-location" placeholder="e.g. Postcode, town, or train station" aria-label="What is your rough location?" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="padding-right: 42px;">
+                        <button type="button" id="clear-location-btn" aria-label="Clear location" title="Clear location" style="display:none">×</button>
+                        <div id="location-suggestions"></div>
                     </div>
                     <div id="quest-location-display"></div>
                     <div class="quest-nav">
                         <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
+                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
                         <button type="button" class="quest-nav-btn primary" onclick="questNext()">Next →</button>
                     </div>
                 </div>
@@ -1125,6 +1121,7 @@
                     <div data-section="dates"></div>
                     <div class="quest-nav">
                         <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
+                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
                         <button type="button" class="quest-nav-btn primary" onclick="questNext()">Next →</button>
                     </div>
                 </div>
@@ -1138,6 +1135,7 @@
                     <div data-prompts="root"></div>
                     <div class="quest-nav">
                         <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
+                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
                         <button type="button" class="quest-nav-btn primary" onclick="questNext()">Seal & Send →</button>
                     </div>
                 </div>
@@ -1168,6 +1166,7 @@
                     </div>
                     <div class="quest-nav">
                         <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
+                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
                         <button type="button" class="quest-nav-btn primary" onclick="const e = document.getElementById('quest-email-btn'); if(e) e.click();">Send 📧</button>
                     </div>
                 </div>
