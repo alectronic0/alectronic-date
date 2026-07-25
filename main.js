@@ -1574,7 +1574,7 @@
 
                 <div class="letter-section">
                     <div class="letter-label">
-                        <span>I am based at:</span>
+                        <span>My rough location is:</span>
                         <button type="button" class="letter-edit-link" onclick="questGoTo(2, 'rough-location')">Edit location ✏️</button>
                     </div>
                     <div class="letter-location-val" onclick="questGoTo(2, 'rough-location')" style="cursor: pointer;">
@@ -1584,7 +1584,7 @@
 
                 <div class="letter-section">
                     <div class="letter-label">
-                        <span>I would love to go on these adventures:</span>
+                        <span>I would love to go on an adventure with you, I would really like to do:</span>
                         <button type="button" class="letter-edit-link" onclick="questGoTo(3)">Edit adventures ✏️</button>
                     </div>
                     <div class="letter-adventures-grid">
@@ -1659,7 +1659,7 @@
         if (locationVal) {
             body += `My rough location is: ${locationVal}\n\n`;
         }
-        body += `I would love to go on an adventure with you I would really like to do:\n`;
+        body += `I would love to go on an adventure with you, I would really like to do:\n`;
         if (selectedAdventures.length) {
             body += selectedAdventures.map(a => `- ${a}`).join('\n');
         } else {
