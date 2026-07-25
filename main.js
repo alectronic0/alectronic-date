@@ -968,6 +968,8 @@
     // contact.links so the buttons stay a single source of truth.
     function renderConnectCard(data, sel) {
         if (!data) return;
+        // Quest form replaces the contact card
+        if (sel === '[data-connect="contact"]') return;
         const linkHtml = (l) => {
             const cls = `contact-btn${l.primary ? ' primary' : ''}${l.disabled ? ' disabled' : ''}`;
             const content = `${linkIcon(l, 'contact-favicon')} <span class="btn-label">${esc(l.label)}</span>${l.sublabel ? `<span class="btn-sublabel">${esc(l.sublabel)}</span>` : ''}`;
@@ -1001,6 +1003,359 @@
             `<div class="contact-links">${links.map(linkHtml).join('')}</div>`;
         setHtml(sel, html);
     }
+
+    function renderQuestForm() {
+        if (!C || !C.quest) return;
+        const q = C.quest;
+        const root = document.getElementById('quest-root');
+        if (!root) return;
+
+        const savedName = localStorage.getItem('alec-rpg-name') || '';
+        const savedTitle = localStorage.getItem('alec-rpg-title');
+        let selectedTitle = null;
+        if (savedTitle) {
+            try { selectedTitle = JSON.parse(savedTitle); } catch(e) {}
+        }
+
+        const contactHeadHtml = C && C.contact ? `
+            <div class="section-head">
+                <div class="section-tag tag-purple">${esc(C.contact.tag || '💬 How to Get in Touch')}</div>
+                <h2>${esc(C.contact.heading || 'Shoot Your Shot')}${headingLink('contact', C.contact.heading || 'Shoot Your Shot')}</h2>
+            </div>
+        ` : '';
+
+        const crossroadsHtml = `
+            <div class="quest-crossroads" id="quest-crossroads">
+                <h2>${esc(q.crossroads.heading)}</h2>
+                <p class="quest-lead">${esc(q.crossroads.lead)}</p>
+                <div class="quest-choice-row">
+                    <button type="button" class="quest-choice-btn primary" onclick="questStart()">
+                        <span class="choice-icon">${esc(q.crossroads.shootIcon || '💘')}</span>
+                        <span class="choice-title">${esc(q.crossroads.shootLabel)}</span>
+                        <span class="choice-sub">${esc(q.crossroads.shootSub)}</span>
+                    </button>
+                    <button type="button" class="quest-choice-btn" onclick="document.querySelector('.share-section').scrollIntoView({behavior: 'smooth'})">
+                        <span class="choice-icon">📤</span>
+                        <span class="choice-title">${esc(q.crossroads.shareLabel)}</span>
+                        <span class="choice-sub">${esc(q.crossroads.shareSub)}</span>
+                    </button>
+                </div>
+            </div>
+        `;
+
+        const gaugeHtml = `
+            <div class="quest-gauge" id="quest-gauge">
+                <div class="gauge-track">
+                    <div class="gauge-fill-bar" id="gauge-fill-bar"></div>
+                </div>
+                <div class="gauge-steps-row">
+                    ${q.steps.map((s, i) => `
+                        <div class="quest-gauge-seg" data-step="${i+1}" onclick="questGoTo(${i+1})">
+                            <span class="gauge-dot"></span>
+                            <span class="gauge-label">${esc(s.gaugeLabel)}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+
+        const titlePillsHtml = q.titlePills.map(p => {
+            const isSel = selectedTitle && selectedTitle.label === p.label;
+            const jsonStr = esc(JSON.stringify(p));
+            return `<button type="button" class="title-pill${isSel ? ' selected' : ''}" data-title='${jsonStr}' onclick="selectTitlePill(this)">
+                <span class="pill-emoji">${esc(p.emoji)}</span> ${esc(p.label)}
+            </button>`;
+        }).join('');
+
+        const formHtml = `
+            <div class="quest-form" id="quest-form" style="display: none;">
+                ${gaugeHtml}
+                
+                <div class="quest-step" data-quest-step="1">
+                    <div class="quest-step-header">
+                        <span class="quest-step-badge">STEP 1 OF 5</span>
+                        <h3>${esc(q.steps[0].title)}</h3>
+                        <p>${esc(q.steps[0].sub)}</p>
+                    </div>
+                    <input type="text" class="quest-input" id="rpg-name-input" placeholder="Your name" value="${esc(savedName)}" oninput="updateNamePreview()">
+                    <div class="title-pills">${titlePillsHtml}</div>
+                    <div class="quest-name-preview" id="quest-name-preview"></div>
+                    <div class="quest-nav">
+                        <div></div>
+                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
+                        <button type="button" class="quest-nav-btn primary" onclick="questNext()">Next →</button>
+                    </div>
+                </div>
+
+                <div class="quest-step" data-quest-step="2">
+                    <div class="quest-step-header">
+                        <span class="quest-step-badge">STEP 2 OF 5</span>
+                        <h3>${esc(q.steps[1].title)}</h3>
+                        <p>${esc(q.steps[1].sub)}</p>
+                    </div>
+                    <div class="input-row">
+                        <input type="text" class="quest-input" id="rough-location" placeholder="e.g. Postcode, town, or train station" aria-label="What is your rough location?" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="padding-right: 42px;">
+                        <button type="button" id="clear-location-btn" aria-label="Clear location" title="Clear location" style="display:none">×</button>
+                        <div id="location-suggestions"></div>
+                    </div>
+                    <p class="location-subtext" style="text-align: center; margin-top: 8px;">No tracking — I only see your location when you send the email.</p>
+                    <div id="quest-location-display"></div>
+                    <div class="quest-nav">
+                        <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
+                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
+                        <button type="button" class="quest-nav-btn primary" onclick="questNext()">Next →</button>
+                    </div>
+                </div>
+
+                <div class="quest-step" data-quest-step="3">
+                    <div class="quest-step-header">
+                        <span class="quest-step-badge">STEP 3 OF 5</span>
+                        <h3>${esc(q.steps[2].title)}</h3>
+                        <p>${esc(q.steps[2].sub)}</p>
+                    </div>
+                    <div data-section="dates"></div>
+                    <div data-adventures="root"></div>
+                    <div class="quest-nav">
+                        <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
+                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
+                        <button type="button" class="quest-nav-btn primary" onclick="questNext()">Next →</button>
+                    </div>
+                </div>
+
+                <div class="quest-step" data-quest-step="4">
+                    <div class="quest-step-header">
+                        <span class="quest-step-badge">STEP 4 OF 5</span>
+                        <h3>${esc(q.steps[3].title)}</h3>
+                        <p>${esc(q.steps[3].sub)}</p>
+                    </div>
+                    <div data-prompts="root"></div>
+                    <div class="quest-nav">
+                        <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
+                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
+                        <button type="button" class="quest-nav-btn primary" onclick="questNext()">Seal & Send →</button>
+                    </div>
+                </div>
+
+                <div class="quest-step" data-quest-step="5">
+                    <div class="quest-step-header">
+                        <span class="quest-step-badge">STEP 5 OF 5 • SEAL & SEND</span>
+                        <h3>${esc(q.steps[4].title)}</h3>
+                        <p>${esc(q.steps[4].sub)}</p>
+                    </div>
+                    <div class="quest-preview" id="quest-preview-body"></div>
+                    <div class="quest-action-card">
+                        <a href="#" id="quest-email-btn" class="quest-send-email-btn" target="_blank" rel="noopener">
+                            <span class="btn-icon">📧</span> <span class="btn-text">${esc(q.complete.emailLabel)}</span>
+                        </a>
+                        
+                        <div class="quest-divider-line"><span>OR</span></div>
+                        
+                        <button type="button" class="quest-copy-btn" onclick="copyQuestAnswers(this)">
+                            <span class="btn-icon">📋</span> <span class="btn-text">${esc(q.complete.copyLabel)}</span>
+                        </button>
+                        
+                        <div class="quest-alt-apps">
+                            <p class="alt-apps-label">${esc(q.complete.altText)}</p>
+                            <div class="contact-links" id="quest-alt-links"></div>
+                        </div>
+                    </div>
+                    <div class="quest-nav">
+                        <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back to edit</button>
+                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        root.innerHTML = contactHeadHtml + crossroadsHtml + formHtml;
+        
+        const altLinksRoot = document.getElementById('quest-alt-links');
+        if (altLinksRoot && C.contact && C.contact.links) {
+            const alts = C.contact.links.filter(l => !/^mailto:/i.test(l.href || ''));
+            altLinksRoot.innerHTML = alts.map(l => {
+                const cls = `contact-btn${l.disabled ? ' disabled' : ''}`;
+                const content = `${linkIcon(l, 'contact-favicon')} <span class="btn-label">${esc(l.label)}</span>`;
+                if (l.disabled) return `<span class="${cls}">${content}</span>`;
+                return `<a class="${cls}" href="${esc(l.href)}" target="_blank" rel="noopener">${content}</a>`;
+            }).join('');
+        }
+
+        setTimeout(updateNamePreview, 0);
+
+        const savedStep = parseInt(localStorage.getItem('alec-rpg-step') || '0', 10);
+        if (savedStep > 0) {
+            document.getElementById('quest-crossroads').style.display = 'none';
+            document.getElementById('quest-form').style.display = 'flex';
+            questStep = savedStep;
+            questShowStep(questStep);
+        }
+    }
+
+    let questStep = 0;
+
+    window.questStart = function() {
+        document.getElementById('quest-crossroads').style.display = 'none';
+        document.getElementById('quest-form').style.display = 'flex';
+        questGoTo(1);
+    };
+
+    window.questReset = function() {
+        const keysToRemove = [
+            'alec-rpg-name',
+            'alec-rpg-title',
+            'alec-rpg-step',
+            'alec-date-answers',
+            'alec-date-prompts',
+            'alec-date-pills',
+            'alec-date-location',
+            'alec-date-location-lat',
+            'alec-date-location-lon'
+        ];
+        keysToRemove.forEach(k => localStorage.removeItem(k));
+
+        const nameInput = document.getElementById('rpg-name-input');
+        if (nameInput) nameInput.value = '';
+
+        document.querySelectorAll('.title-pill').forEach(b => b.classList.remove('selected'));
+
+        const locInput = document.getElementById('rough-location');
+        if (locInput) {
+            locInput.value = '';
+            delete locInput.dataset.lat;
+            delete locInput.dataset.lon;
+        }
+        const clearLocBtn = document.getElementById('clear-location-btn');
+        if (clearLocBtn) clearLocBtn.style.display = 'none';
+
+        const locDisplay = document.getElementById('quest-location-display');
+        if (locDisplay) locDisplay.innerHTML = '';
+
+        document.querySelectorAll('.date-idea-pill').forEach(btn => btn.classList.remove('selected'));
+        if (typeof updateSelectedAdventuresDisplay === 'function') {
+            updateSelectedAdventuresDisplay();
+        }
+
+        document.querySelectorAll('.prompt-answer-input').forEach(input => {
+            input.value = '';
+        });
+
+        questStep = 0;
+        const crossroads = document.getElementById('quest-crossroads');
+        const form = document.getElementById('quest-form');
+        if (crossroads) crossroads.style.display = 'flex';
+        if (form) form.style.display = 'none';
+
+        updateNamePreview();
+
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    window.questNext = function() {
+        if (questStep === 1) {
+            const nInput = document.getElementById('rpg-name-input');
+            if (nInput) localStorage.setItem('alec-rpg-name', nInput.value.trim());
+        }
+        if (questStep < 5) questGoTo(questStep + 1);
+    };
+
+    window.questPrev = function() {
+        if (questStep > 1) questGoTo(questStep - 1);
+    };
+
+    window.questGoTo = function(step) {
+        questStep = step;
+        localStorage.setItem('alec-rpg-step', step);
+        questShowStep(step);
+        if (step === 5) {
+            const preview = document.getElementById('quest-preview-body');
+            if (preview) preview.innerHTML = renderQuestPreviewHTML();
+            const emailBtn = document.getElementById('quest-email-btn');
+            if (emailBtn && C.prompts) {
+                const subject = encodeURIComponent(C.prompts.emailSubject || document.title);
+                emailBtn.href = `mailto:${promptEmail(C.prompts)}?subject=${subject}&body=${encodeURIComponent(buildQuestPreview())}`;
+            }
+        }
+    };
+
+    function questShowStep(step) {
+        document.querySelectorAll('.quest-step').forEach(el => el.classList.remove('active'));
+        const stepEl = document.querySelector(`.quest-step[data-quest-step="${step}"]`);
+        if (stepEl) stepEl.classList.add('active');
+        
+        const fillBar = document.getElementById('gauge-fill-bar');
+        const gauge = document.getElementById('quest-gauge');
+        
+        const stepColours = {
+            1: '#a855f7',
+            2: '#ef4444',
+            3: '#22c55e',
+            4: '#3b82f6',
+            5: '#f59e0b'
+        };
+        
+        if (fillBar) {
+            const pct = (step / 5) * 100;
+            fillBar.style.width = `${pct}%`;
+            fillBar.style.backgroundColor = stepColours[step] || '#f59e0b';
+            fillBar.style.boxShadow = `0 0 14px ${stepColours[step] || '#f59e0b'}`;
+        }
+
+        if (gauge) {
+            if (step === 5) {
+                gauge.classList.add('complete');
+            } else {
+                gauge.classList.remove('complete');
+            }
+        }
+        
+        document.querySelectorAll('.quest-gauge-seg').forEach(el => {
+            const s = parseInt(el.getAttribute('data-step'), 10);
+            el.classList.toggle('completed', s < step);
+            el.classList.toggle('active', s === step);
+        });
+    }
+
+    window.selectTitlePill = function(btn) {
+        document.querySelectorAll('.title-pill').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        localStorage.setItem('alec-rpg-title', btn.getAttribute('data-title'));
+        updateNamePreview();
+    };
+
+    window.updateNamePreview = function() {
+        const preview = document.getElementById('quest-name-preview');
+        if (!preview) return;
+        const input = document.getElementById('rpg-name-input');
+        const name = input ? input.value.trim() : '';
+        const displayName = name || '[Your Name]';
+        
+        const saved = localStorage.getItem('alec-rpg-title');
+        let fullName = displayName;
+        if (saved) {
+            try {
+                const t = JSON.parse(saved);
+                if (t.position === 'prefix') {
+                    fullName = `${t.label} ${displayName}`;
+                } else {
+                    fullName = t.connector ? `${displayName} ${t.connector} ${t.label}` : `${displayName}, ${t.label}`;
+                }
+            } catch(e) {}
+        }
+        preview.innerHTML = `<span class="preview-badge-label">✨ Your RPG Name:</span> <strong class="preview-badge-name">${esc(fullName)}</strong>`;
+    };
+
+    window.copyQuestAnswers = function(btn) {
+        const text = buildQuestPreview();
+        navigator.clipboard.writeText(text).then(() => {
+            const original = btn.innerHTML;
+            btn.innerHTML = `<span class="share-logo">✅</span><span>Copied!</span>`;
+            setTimeout(() => btn.innerHTML = original, 2000);
+        });
+    };
 
     // Footer links — same contact.links data, lighter text-link styling.
     function renderFooterLinks() {
@@ -1116,6 +1471,158 @@
         return m ? m.href.replace(/^mailto:/i, '').split('?')[0] : '';
     };
 
+    window.removeAdventureFromPreview = function(idea) {
+        document.querySelectorAll(`.date-idea-pill[data-idea="${CSS.escape(idea)}"]`).forEach(el => {
+            el.classList.remove('selected');
+        });
+        if (typeof updateDatesState === 'function') updateDatesState();
+        if (typeof questGoTo === 'function') questGoTo(5);
+    };
+
+    function renderQuestPreviewHTML() {
+        const name = localStorage.getItem('alec-rpg-name') || '';
+        const titleJson = localStorage.getItem('alec-rpg-title');
+        let fullName = name;
+        if (titleJson) {
+            try {
+                const t = JSON.parse(titleJson);
+                if (t.position === 'prefix') {
+                    fullName = `${t.label} ${name}`;
+                } else {
+                    fullName = t.connector
+                        ? `${name} ${t.connector} ${t.label}`
+                        : `${name}, ${t.label}`;
+                }
+            } catch(e) {}
+        }
+
+        const locationInput = document.getElementById('rough-location');
+        const locationVal = locationInput ? locationInput.value.trim() : '';
+
+        const selectedAdventures = Array.from(
+            document.querySelectorAll('.date-idea-pill.selected')
+        ).map(el => el.getAttribute('data-idea'));
+
+        let savedAnswers = {};
+        try { savedAnswers = JSON.parse(localStorage.getItem('alec-date-answers')) || {}; } catch(e) {}
+
+        const questions = currentPromptPicks.map(item => item.text);
+
+        return `
+            <div class="quest-letter">
+                <p class="letter-line">Hi Alec,</p>
+
+                <div class="letter-section letter-section-inline">
+                    <span class="letter-text">My name is</span>
+                    <button type="button" class="interactive-tag name-tag" onclick="questGoTo(1)" title="Click to edit name">
+                        <strong>${esc(fullName || 'Anonymous')}</strong> ✏️
+                    </button>
+                    <span class="letter-edit-hint" style="font-size:0.82rem; color:var(--muted); cursor:pointer;" onclick="questGoTo(1)">(wait, that's not my name? click to edit)</span>
+                </div>
+
+                <div class="letter-section letter-section-inline">
+                    <span class="letter-text">I hail from</span>
+                    ${locationVal ? `
+                        <button type="button" class="interactive-tag loc-tag" onclick="questGoTo(2)" title="Click to edit location">
+                            <strong>${esc(locationVal)}</strong> ✏️
+                        </button>
+                        <span class="letter-edit-hint" style="font-size:0.82rem; color:var(--muted); cursor:pointer;" onclick="questGoTo(2)">(click to change)</span>
+                    ` : `
+                        <button type="button" class="interactive-tag loc-tag empty" onclick="questGoTo(2)" title="Click to add location">
+                            <em>(no location set — click to add)</em> ➕
+                        </button>
+                    `}
+                </div>
+
+                <div class="letter-section">
+                    <div class="letter-label">
+                        <span>I would love to go on these adventures:</span>
+                        <button type="button" class="letter-edit-link" onclick="questGoTo(3)">Edit adventures ✏️</button>
+                    </div>
+                    <div class="letter-adventures-grid">
+                        ${selectedAdventures.length ? selectedAdventures.map(a => `
+                            <span class="adventure-chip">
+                                ${esc(a)}
+                                <button type="button" class="remove-adventure-btn" data-idea="${esc(a)}" onclick="removeAdventureFromPreview('${esc(a)}')" aria-label="Remove ${esc(a)}">×</button>
+                            </span>
+                        `).join('') : `
+                            <span class="adventure-chip empty" style="cursor:pointer;" onclick="questGoTo(3)">🫣 Surprise me! (click to pick adventures)</span>
+                        `}
+                    </div>
+                </div>
+
+                <div class="letter-section">
+                    <div class="letter-label">
+                        <span>And here are my answers to your riddles:</span>
+                        <button type="button" class="letter-edit-link" onclick="questGoTo(4)">Edit riddles ✏️</button>
+                    </div>
+                    <div class="letter-riddles-list">
+                        ${questions.map((q, i) => {
+                            const ans = savedAnswers[q] || '';
+                            return `
+                                <div class="preview-riddle-item" onclick="questGoTo(4)" title="Click to edit answer">
+                                    <div class="preview-riddle-q"><strong>${i + 1}. ${esc(q)}</strong></div>
+                                    <div class="preview-riddle-a">${ans ? `→ ${esc(ans)} ✏️` : `<em style="color: var(--gold);">(not answered yet — click to answer) ✏️</em>`}</div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+
+                <p class="letter-line">I look forward to your response! 💌</p>
+            </div>
+        `;
+    }
+
+    function buildQuestPreview() {
+        const name = localStorage.getItem('alec-rpg-name') || 'Anonymous';
+        const titleJson = localStorage.getItem('alec-rpg-title');
+        let fullName = name;
+        if (titleJson) {
+            try {
+                const t = JSON.parse(titleJson);
+                if (t.position === 'prefix') {
+                    fullName = `${t.label} ${name}`;
+                } else {
+                    fullName = t.connector
+                        ? `${name} ${t.connector} ${t.label}`
+                        : `${name}, ${t.label}`;
+                }
+            } catch(e) {}
+        }
+
+        const locationVal = document.getElementById('rough-location')
+            ? document.getElementById('rough-location').value.trim() : '';
+
+        const selectedAdventures = Array.from(
+            document.querySelectorAll('.date-idea-pill.selected')
+        ).map(el => el.getAttribute('data-idea'));
+
+        let savedAnswers = {};
+        try { savedAnswers = JSON.parse(localStorage.getItem('alec-date-answers')) || {}; } catch(e) {}
+
+        const questions = currentPromptPicks.map(item => item.text);
+
+        let body = `Hi Alec,\n\n`;
+        body += `My name is ${fullName}.\n\n`;
+        if (locationVal) {
+            body += `I hail from ${locationVal}.\n\n`;
+        }
+        body += `I would love to go on these adventures:\n`;
+        if (selectedAdventures.length) {
+            body += selectedAdventures.map(a => `- ${a}`).join('\n');
+        } else {
+            body += `- 🫣 Surprise me!`;
+        }
+        body += `\n\nAnd here are my answers to your riddles:\n`;
+        questions.forEach((q, i) => {
+            const ans = savedAnswers[q] || '(not answered yet)';
+            body += `${i + 1}. ${q}\n→ ${ans}\n\n`;
+        });
+        body += `I look forward to your response! 💌`;
+        return body;
+    }
+
     const getCompiledBody = (questions) => {
         const p = C.prompts || {};
         const selectedAdventures = Array.from(document.querySelectorAll('.date-idea-pill.selected'))
@@ -1128,7 +1635,19 @@
         }
         const advPS = `P.S. For our first adventure, I'm thinking:\n` + 
             (selectedAdventures.length ? selectedAdventures.map(a => `- ${a}`).join('\n') : '- 🫣 Surprise me!');
-        const intro = p.emailIntro ? p.emailIntro + '\n\n' : '';
+        
+        const rpgName = localStorage.getItem('alec-rpg-name') || '';
+        const titleJson = localStorage.getItem('alec-rpg-title');
+        let fullName = rpgName;
+        if (titleJson) {
+            try {
+                const t = JSON.parse(titleJson);
+                if (t.position === 'prefix') fullName = `${t.label} ${rpgName}`;
+                else fullName = t.connector ? `${rpgName} ${t.connector} ${t.label}` : `${rpgName}, ${t.label}`;
+            } catch(e) {}
+        }
+        const nameIntro = fullName ? `My name is ${fullName}.\n\n` : '';
+        const intro = (p.emailIntro ? p.emailIntro + '\n\n' : '') + nameIntro;
         const questionsText = questions.map((q, i) => `${i + 1}. ${q}\n\n`).join('').trim();
         return intro + locText + questionsText + '\n\n' + advPS;
     };
@@ -1199,6 +1718,14 @@
 
                 if (oldText !== newText) {
                     qSpan.textContent = newText;
+                    const ansInput = card.querySelector('.prompt-answer-input');
+                    if (ansInput) {
+                        let savedAnswers = {};
+                        try { savedAnswers = JSON.parse(localStorage.getItem('alec-date-answers')) || {}; } catch(e) {}
+                        ansInput.setAttribute('data-question', newText);
+                        ansInput.placeholder = `Your answer to riddle #${i+1}...`;
+                        ansInput.value = savedAnswers[newText] || '';
+                    }
                     // Trigger reflow to restart CSS fade-in animation
                     card.style.animation = 'none';
                     void card.offsetWidth;
@@ -1224,6 +1751,9 @@
                 }
             });
         } else if (container) {
+            let savedAnswers = {};
+            try { savedAnswers = JSON.parse(localStorage.getItem('alec-date-answers')) || {}; } catch(e) {}
+
             // Initial render
             const cards = currentPromptPicks
                 .map((item, i) => {
@@ -1231,12 +1761,18 @@
                     const canHold = isHeld || heldCount < (count - 1);
                     const activeClass = isHeld ? ' active' : '';
                     const disabledAttr = canHold ? '' : ' disabled title="Cannot hold all questions"';
+                    const userAns = savedAnswers[item.text] || '';
                     return `<li class="prompt-card${activeClass}" data-index="${i}">` +
+                        `<div class="prompt-card-top">` +
                         `<span class="prompt-num">${i + 1}</span>` +
                         `<span class="prompt-q">${esc(item.text)}</span>` +
                         `<button type="button" class="prompt-hold-btn${activeClass}" ${disabledAttr}>` +
                         `${isHeld ? '🔒 Held' : '🔓 Hold'}` +
                         `</button>` +
+                        `</div>` +
+                        `<div class="prompt-answer-wrapper">` +
+                        `<input type="text" class="prompt-answer-input" data-question="${esc(item.text)}" placeholder="Your answer to riddle #${i+1}..." value="${esc(userAns)}" oninput="saveRiddleAnswer(this)">` +
+                        `</div>` +
                         `</li>`;
                 })
                 .join('');
@@ -1250,6 +1786,15 @@
             localStorage.setItem('alec-date-prompts', JSON.stringify(currentPromptPicks));
         } catch(e) {}
     }
+
+    window.saveRiddleAnswer = function(input) {
+        const q = input.getAttribute('data-question');
+        const val = input.value;
+        let savedAnswers = {};
+        try { savedAnswers = JSON.parse(localStorage.getItem('alec-date-answers')) || {}; } catch(e) {}
+        savedAnswers[q] = val;
+        localStorage.setItem('alec-date-answers', JSON.stringify(savedAnswers));
+    };
 
     function renderPrompts() {
         if (!C || !C.prompts) return;
@@ -1325,6 +1870,44 @@
         btn._listenerAttached = true;
     }
 
+    function formatTravelTime(distMiles) {
+        const times = [
+            { icon: '🚗', label: 'Car', speed: 30 },
+            { icon: '🚂', label: 'Train', speed: 20 },
+            { icon: '🐴', label: 'Horse / Bike', speed: 12 },
+            { icon: '🚶', label: 'Walking', speed: 3 }
+        ];
+        return times.map(t => {
+            const mins = Math.round((distMiles / t.speed) * 60);
+            const h = Math.floor(mins / 60);
+            const m = mins % 60;
+            const est = h > 0 ? `~${h}h ${m > 0 ? m + 'min' : ''}` : `~${mins} min`;
+            return { icon: t.icon, label: t.label, est: est.trim() };
+        });
+    }
+
+    function renderTravelTimes() {
+        const container = document.getElementById('quest-travel-times');
+        if (!container) return;
+        const input = document.getElementById('rough-location');
+        if (!input || !input.dataset.lat || !input.dataset.lon) {
+            container.innerHTML = '';
+            return;
+        }
+        const dist = calculateDistance(
+            parseFloat(input.dataset.lat), parseFloat(input.dataset.lon),
+            51.800986785326494, -0.20373398847054403
+        );
+        const times = formatTravelTime(dist);
+        container.innerHTML = `<div class="travel-times">${times.map(t =>
+            `<div class="travel-time-card">
+                <span class="travel-icon">${t.icon}</span>
+                <span class="travel-label">${esc(t.label)}</span>
+                <span class="travel-est">${esc(t.est)}</span>
+            </div>`
+        ).join('')}</div>`;
+    }
+
     function calculateDistance(lat1, lon1, lat2, lon2) {
         const R = 3958.8; // Radius of the earth in miles
         const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -1353,85 +1936,51 @@
         return "Are you an alien? 👽 Because you are out of this world far away!";
     }
 
-    function renderSelectedAdventures() {
-        const mount = document.querySelector('[data-adventures="root"]');
-        if (!mount) return;
-
-        const selected = Array.from(new Set(Array.from(document.querySelectorAll('.date-idea-pill.selected'))
-                              .map(el => el.getAttribute('data-idea'))));
+    function renderLocationDisplay() {
+        const container = document.getElementById('quest-location-display');
+        if (!container) return;
 
         const locationInput = document.getElementById('rough-location');
         const locationVal = locationInput ? locationInput.value.trim() : '';
         const lat = locationInput ? locationInput.dataset.lat : null;
         const lon = locationInput ? locationInput.dataset.lon : null;
 
-        let locHtml = '';
-        if (locationVal) {
-            const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationVal)}`;
+        if (!locationVal) {
+            container.innerHTML = `
+                <div class="picked-location-section empty-location-prompt" style="margin-top: 16px;">
+                    <div class="picked-location-row" style="color: var(--muted); font-size: 0.85rem; justify-content: center;">
+                        <span class="location-icon">📍</span>
+                        <span>Enter your location above to check travel options & distance!</span>
+                    </div>
+                </div>
+            `;
+            return;
+        }
+
+        let distanceHtml = '';
+        let travelTimesHtml = '';
+
+        if (lat && lon) {
+            const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.800986785326494, -0.20373398847054403);
+            const comment = getDistanceComment(dist);
+            distanceHtml = `<div style="font-size: 0.9rem; color: var(--gold); margin-top: 6px; font-weight: 600; text-align: center; width: 100%;">${comment}</div>`;
+            const dirLink = `https://www.google.com/maps/dir/?api=1&origin=${lat},${lon}&destination=51.800986785326494,-0.20373398847054403`;
+            distanceHtml += `<a href="${dirLink}" target="_blank" rel="noopener" style="display: block; cursor: pointer; text-decoration: none;"><div id="dist-map" style="width: 100%; height: 140px; border-radius: 8px; margin-top: 12px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden; position: relative; z-index: 1;"></div></a>`;
             
-            let distanceHtml = '';
-            if (lat && lon) {
-                const dist = calculateDistance(parseFloat(lat), parseFloat(lon), 51.800986785326494, -0.20373398847054403);
-                const comment = getDistanceComment(dist);
-                distanceHtml = `<div style="font-size: 0.85rem; color: var(--muted); margin-top: 4px; text-align: center; width: 100%;">${comment}</div>`;
-                const dirLink = `https://www.google.com/maps/dir/?api=1&origin=${lat},${lon}&destination=51.800986785326494,-0.20373398847054403`;
-                distanceHtml += `<a href="${dirLink}" target="_blank" rel="noopener" style="display: block; cursor: pointer; text-decoration: none;"><div id="dist-map" style="width: 100%; height: 120px; border-radius: 6px; margin-top: 12px; border: 1px solid rgba(255,255,255,0.05); overflow: hidden; position: relative; z-index: 1;"></div></a>`;
-            }
-
-            locHtml = `
-                <div class="picked-location-section">
-                    <div class="picked-location-row" style="flex-wrap: wrap;">
-                        <span class="location-icon">📍</span>
-                        <strong>Rough Location:</strong>
-                        <a href="${esc(mapLink)}" target="_blank" rel="noopener" class="location-link">${esc(locationVal)}</a>
-                        <button type="button" class="change-location-btn">Change location please ⬆️</button>
-                        ${distanceHtml ? `<div style="flex-basis: 100%; margin-left: 28px;">${distanceHtml}</div>` : ''}
-                    </div>
-                </div>
-            `;
-        } else {
-            locHtml = `
-                <div class="picked-location-section empty-location-prompt">
-                    <div class="picked-location-row" style="color: var(--muted); font-size: 0.82rem;">
-                        <span class="location-icon">📍</span>
-                        <span>No location entered yet.</span>
-                        <button type="button" class="change-location-btn" style="color: var(--gold); border-color: var(--gold); background: rgba(230, 169, 121, 0.05); margin-left: 8px;">Add location please ⬆️</button>
-                    </div>
-                </div>
-            `;
+            const times = formatTravelTime(dist);
+            travelTimesHtml = `<div class="travel-times" style="margin-top: 16px;">${times.map(t =>
+                `<div class="travel-time-card">
+                    <span class="travel-icon">${t.icon}</span>
+                    <span class="travel-label">${esc(t.label)}</span>
+                    <span class="travel-est">${esc(t.est)}</span>
+                </div>`
+            ).join('')}</div>`;
         }
 
-        let listContent = '';
-        if (selected.length > 0) {
-            listContent = `
-                <div class="adventure-chips">
-                    ${selected.map(item => `
-                        <span class="adventure-chip">
-                            ${esc(item)}
-                            <button type="button" class="remove-adventure-btn" data-idea="${esc(item)}" aria-label="Remove ${esc(item)}">×</button>
-                        </span>
-                    `).join('')}
-                </div>
-            `;
-        } else {
-            listContent = `
-                <p class="no-dates-selected-warning" style="margin: 0; font-size: 0.82rem; color: var(--muted); line-height: 1.5; display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 1.2rem; flex-shrink: 0;">😢</span>
-                    <span>No date ideas selected yet! Go scroll up to <a href="#dates" style="color: var(--gold); text-decoration: underline; font-weight: 600;">Date Ideas</a> and pick a few things you'd like to try!</span>
-                </p>
-            `;
-        }
-
-        mount.innerHTML = `
-            <div style="text-align: center;">
-                <h4 class="picked-adventures-title" style="margin: 0 0 10px;">🗺️ Your Picked Adventures:</h4>
-                ${locHtml}
-                <div class="selected-adventures-list">
-                    ${listContent}
-                </div>
-                <div class="change-adventures-row" style="margin-top: 12px; display: flex; justify-content: center;">
-                    <button type="button" class="change-adventures-btn">Choose other options? ⬆️</button>
-                </div>
+        container.innerHTML = `
+            <div class="picked-location-section" style="margin-top: 16px;">
+                ${distanceHtml}
+                ${travelTimesHtml}
             </div>
         `;
 
@@ -1452,12 +2001,47 @@
                     L.circleMarker(p2, {color: '#8c52ff', radius: 4, fillOpacity: 1, weight: 2}).addTo(map);
                     
                     const line = L.polyline([p1, p2], {color: '#e6a979', dashArray: '5, 5', weight: 2}).addTo(map);
-                    
-                    // Add some padding to bounds so markers don't clip
                     map.fitBounds(line.getBounds(), { padding: [15, 15], maxZoom: 14 });
                 }
             }, 50);
         }
+    }
+
+    function renderSelectedAdventures() {
+        const mount = document.querySelector('[data-adventures="root"]');
+        if (!mount) return;
+
+        const selected = Array.from(new Set(Array.from(document.querySelectorAll('.date-idea-pill.selected'))
+                              .map(el => el.getAttribute('data-idea'))));
+
+        let listContent = '';
+        if (selected.length > 0) {
+            listContent = `
+                <div class="adventure-chips">
+                    ${selected.map(item => `
+                        <span class="adventure-chip">
+                            ${esc(item)}
+                            <button type="button" class="remove-adventure-btn" data-idea="${esc(item)}" aria-label="Remove ${esc(item)}">×</button>
+                        </span>
+                    `).join('')}
+                </div>
+            `;
+        } else {
+            listContent = `
+                <p class="no-dates-selected-warning" style="margin: 0; font-size: 0.85rem; color: var(--muted); line-height: 1.5; text-align: center;">
+                    <span>😢 No date ideas selected yet! Click the pills above to pick your adventures!</span>
+                </p>
+            `;
+        }
+
+        mount.innerHTML = `
+            <div style="text-align: center; margin-top: 20px;">
+                <h4 class="picked-adventures-title" style="margin: 0 0 10px;">🗺️ Your Picked Adventures:</h4>
+                <div class="selected-adventures-list">
+                    ${listContent}
+                </div>
+            </div>
+        `;
     }
 
     function updateDatesState() {
@@ -1523,6 +2107,7 @@
             link.setAttribute('href', `${base}?subject=${subj}${body}`);
         });
 
+        renderLocationDisplay();
         renderSelectedAdventures();
     }
 
@@ -3000,9 +3585,9 @@
         renderProfile();
         // Faces section removed, using hero/profile image swapping instead
         renderDeepDive();
-        renderSections();
-        renderConnectCard(C.contact, '[data-connect="contact"]');
-        renderPrompts();
+        renderQuestForm();
+        renderSections(); // AFTER renderQuestForm so data-section="dates" inside wizard gets populated
+        renderPrompts();  // AFTER renderSections so data-prompts="root" is mounted
         renderShare('[data-share="share"]');
         // and so does the punchline of the 🔒 "secret content" gag.
         renderConnectCard(C.contact, '[data-connect="cheeky-modal"]');
