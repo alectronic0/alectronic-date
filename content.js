@@ -131,7 +131,7 @@ window.CONTENT = {
         ],
         titlePills: [
             { emoji: "👑", label: "Princess", position: "prefix" },
-            { emoji: "⚔️", label: "Maiden", position: "prefix" },
+            { emoji: "⚔️", label: "Fair Maiden", position: "prefix" },
             { emoji: "🦊", label: "Lady", position: "prefix" },
             { emoji: "🧙‍♀️", label: "Sorceress", position: "suffix", connector: "the" },
             { emoji: "🐉", label: "Dragon Slayer", position: "suffix", connector: "the" },
