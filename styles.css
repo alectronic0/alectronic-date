@@ -2880,53 +2880,51 @@ button.CookiebotWidget-logo::before {
 .quest-input {
   width: 100%;
   max-width: 450px;
-  padding: 14px 18px;
-  border-radius: 12px;
+  padding: 16px 22px;
+  border-radius: 14px;
   border: 1.5px solid var(--border);
   background: rgba(0, 0, 0, 0.25);
   color: var(--text);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-family: inherit;
   box-sizing: border-box;
   text-align: center;
   transition: border-color 0.2s, box-shadow 0.2s;
   display: block;
-  margin: 0 auto;
+  margin: 16px auto 24px;
 }
 .quest-input:focus {
   outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 14px rgba(245, 158, 11, 0.25);
-}
-  color: var(--muted);
-  margin-bottom: 24px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.3);
 }
 
 /* ── Title Pills (radio selection) ── */
 .title-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
-  margin: 22px 0 16px;
+  margin: 24px 0 20px;
+  padding: 16px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   width: 100%;
+  box-sizing: border-box;
 }
 .title-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border-radius: 20px;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 24px;
   border: 1px solid var(--border);
   background: rgba(255,255,255,0.04);
   color: var(--text);
   cursor: pointer;
   transition: all 0.2s;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 .title-pill:hover {
   border-color: var(--gold);
