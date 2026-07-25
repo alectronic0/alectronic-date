@@ -1267,7 +1267,7 @@
         localStorage.setItem('alec-rpg-step', step);
         questShowStep(step);
         
-        const formEl = document.getElementById('quest-form');
+        const formEl = document.getElementById('quest-root');
         if (formEl) {
             formEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
