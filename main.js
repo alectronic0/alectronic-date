@@ -1895,8 +1895,10 @@
         const times = formatTravelTime(dist);
         container.innerHTML = `<div class="travel-times">${times.map(t =>
             `<div class="travel-time-card">
-                <span class="travel-icon">${t.icon}</span>
-                <span class="travel-label">${esc(t.label)}</span>
+                <div class="travel-header">
+                    <span class="travel-icon">${t.icon}</span>
+                    <span class="travel-label">${esc(t.label)}</span>
+                </div>
                 <span class="travel-est">${esc(t.est)}</span>
             </div>`
         ).join('')}</div>`;
@@ -1964,8 +1966,10 @@
             const times = formatTravelTime(dist);
             travelTimesHtml = `<div class="travel-times" style="margin-top: 16px;">${times.map(t =>
                 `<div class="travel-time-card">
-                    <span class="travel-icon">${t.icon}</span>
-                    <span class="travel-label">${esc(t.label)}</span>
+                    <div class="travel-header">
+                        <span class="travel-icon">${t.icon}</span>
+                        <span class="travel-label">${esc(t.label)}</span>
+                    </div>
                     <span class="travel-est">${esc(t.est)}</span>
                 </div>`
             ).join('')}</div>`;

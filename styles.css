@@ -3013,11 +3013,11 @@ button.CookiebotWidget-logo::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 14px 10px;
+  padding: 10px 8px;
   border-radius: 12px;
   background: var(--surface-2, rgba(255, 255, 255, 0.04));
   border: 1px solid var(--border);
-  gap: 6px;
+  gap: 4px;
   text-align: center;
   transition: transform 0.2s, border-color 0.2s, background 0.2s;
 }
@@ -3026,19 +3026,26 @@ button.CookiebotWidget-logo::before {
   border-color: var(--gold);
   background: rgba(255, 255, 255, 0.08);
 }
+.travel-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
 .travel-time-card .travel-icon {
-  font-size: 1.6rem;
+  font-size: 1.1rem;
   line-height: 1;
 }
 .travel-time-card .travel-label {
   font-size: 0.72rem;
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   font-weight: 600;
+  white-space: nowrap;
 }
 .travel-time-card .travel-est {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--gold);
 }
