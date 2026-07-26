@@ -1967,7 +1967,7 @@ window.CONTENT = {
             blocks: [
                 {
                     type: "paragraph",
-                    text: "Eclectic! I was brought up on a wild mix of UK radio — XFM, Magic, Heart, Capital, Radio 1, and Classic FM — so my tastes span 80s, 90s, and 2000s classics across pop, rock, and rap. I also used to play blues and jazz on the piano and saxophone! Right now, I mostly listen to video game soundtracks — either super chill background music for focusing or hype boss fight themes for an energy boost — but play me something you love and I can easily get excited about it."
+                    text: "My music taste is...Eclectic! I was brought up on a wild mix of UK radio — XFM, Magic, Heart, Capital, Radio 1, and Classic FM. So my tastes span 80s, 90s, 2000s and beyond classics across pop, rock, and rap. I also used to play blues and jazz on the piano and saxophone! Right now it mostly video game & anime music, but ranging through metal, rock, rap, pop, lofi, j-pop, and j-rock. I mostly listen to video game soundtracks; either super chill background music for focusing or hype boss fight themes for an energy boost. I'm not big on loud, crowded venues, but I'd love to go to a festival like Glastonbury one day (go live in a tent an exprience it all (I'll probally hate it by the end though...)). But play me something you love and I can easily get excited about it."
                 },
                 {
                     type: "link", href: "https://open.spotify.com/user/alec_game", label: "Check out my Spotify"
@@ -1976,12 +1976,6 @@ window.CONTENT = {
                 {
                     type: "paragraph",
                     text: "A hand-picked mix of songs I love — press play and get a feel for my taste."
-                },
-                {
-                    type: "spotify",
-                    src: "https://open.spotify.com/embed/playlist/3pwfF9YhpDSOJiINeLCf6o?utm_source=generator",
-                    height: 352,
-                    title: "Alec's curated playlist"
                 },
                 {
                     type: "link", href: "https://open.spotify.com/playlist/3pwfF9YhpDSOJiINeLCf6o", label: "Open Main Playlist in Spotify"
