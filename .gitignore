@@ -1,9 +1,7 @@
+.DS_Store
 .idea/
-.playwright-mcp/
-.remember/
-outputs/
+.vscode/
 node_modules/
-
-.aider.chat.history.md
-
-.aider.tags.cache.v4/cache.db
+*.log
+dist/
+.aider.tags.cache.v4/
