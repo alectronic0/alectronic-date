@@ -1,1 +1,10 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="22" fill="#180e1a"/>
+  <path fill="url(#grad)" d="M50 82 C20 58 6 38 6 25 A20 20 0 0 1 45 15 L50 20 L55 15 A20 20 0 0 1 94 25 C94 38 80 58 50 82 Z"/>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4d6d"/>
+      <stop offset="100%" stop-color="#ff758f"/>
+    </linearGradient>
+  </defs>
+</svg>
