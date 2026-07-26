@@ -18,7 +18,7 @@
   </script>
   
   <!-- Cookiebot CMP -->
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="820f6652-0e65-48ca-a9f9-f99af973382f" data-blockingmode="auto" type="text/javascript"></script>
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="820f6652-0e65-48ca-a9f9-f99af973382f" data-blockingmode="auto" async></script>
   
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4Q5KJSLNK"></script>
@@ -38,8 +38,8 @@
   <meta name="theme-color" content="#1a1320">
   <link rel="canonical" href="https://date.alec.today/">
   
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" media="print" onload="this.media='all'"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
 
   <!-- ── Open Graph (Facebook, iMessage, WhatsApp, Telegram, LinkedIn…) ── -->
   <meta property="og:type" content="profile">
@@ -108,6 +108,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>nav, header.hero, main, footer { display: none !important; }</style>
   </noscript>
+  <link rel="preload" as="image" href="img/alec/alec-los-mochis-city.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
