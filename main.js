@@ -31,7 +31,7 @@
             .replace(/"/g, '&quot;');
 
     // Derive readable alt text from a descriptive filename when none is given
-    // (e.g. "img/moments/alec-at-graduation.png" -> "Alec at graduation").
+    // (e.g. "img/moments/alec-at-graduation.webp" -> "Alec at graduation").
     // Numeric-only names (the faces marquee) fall back to a generic label.
     const altFromSrc = (src) => {
         const base = String(src == null ? '' : src)
@@ -2699,9 +2699,9 @@
                     Okay fine! happy now? you could have at least bought me a coffee 1st 🙄
                 </p>
                 <div class="cheeky-gallery">
-                    <div class="flash-wrapper"><img src="img/alec/alec-portrait-moody-bw.jpg" alt="Alec looking sharp" loading="lazy"></div>
-                    <div class="flash-wrapper"><img src="img/alec/alec-dark-artistic-portrait.jpg" alt="Alec artistic portrait" loading="lazy"></div>
-                    <div class="flash-wrapper"><img src="img/alec/alec-cosy-bed-portrait.jpg" alt="Alec cosy portrait" loading="lazy"></div>
+                    <div class="flash-wrapper"><img src="img/alec/alec-portrait-moody-bw.webp" alt="Alec looking sharp" loading="lazy"></div>
+                    <div class="flash-wrapper"><img src="img/alec/alec-dark-artistic-portrait.webp" alt="Alec artistic portrait" loading="lazy"></div>
+                    <div class="flash-wrapper"><img src="img/alec/alec-cosy-bed-portrait.webp" alt="Alec cosy portrait" loading="lazy"></div>
                 </div>
             `;
         });

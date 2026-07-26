@@ -29,7 +29,7 @@ if (_today.getMonth() < _dob.getMonth() || (_today.getMonth() === _dob.getMonth(
     _myAge--;
 }
 const _minAge = Math.floor(_myAge / 2) + 7;
-const _maxAge = _myAge + 1;
+const _maxAge = _myAge;
 
 window.CONTENT = {
     meta: {
@@ -81,7 +81,6 @@ window.CONTENT = {
             {src: "img/alec/alec-portrait-garden-archway.webp", alt: "Alec portrait garden archway", w: 900, h: 1200}
         ]
     },
-    /* ── Quest form (RPG wizard) ── */
     quest: {
         crossroads: {
             heading: "💘 Ready to Shoot Your Shot?",
@@ -562,6 +561,28 @@ window.CONTENT = {
                         {src: "img/vibe/slide_img_117.webp", alt: "Vibe 117"},
                         {src: "img/vibe/slide_img_118.webp", alt: "Vibe 118"},
                         {src: "img/vibe/slide_img_119.webp", alt: "Vibe 119"},
+                        {src: "img/vibe/slide_img_120.webp", alt: "Vibe 120"},
+                        {src: "img/vibe/slide_img_121.webp", alt: "Vibe 121"},
+                        {src: "img/vibe/slide_img_122.webp", alt: "Vibe 122"},
+                        {src: "img/vibe/slide_img_123.webp", alt: "Vibe 123"},
+                        {src: "img/vibe/slide_img_124.webp", alt: "Vibe 124"},
+                        {src: "img/vibe/slide_img_125.webp", alt: "Vibe 125"},
+                        {src: "img/vibe/slide_img_126.webp", alt: "Vibe 126"},
+                        {src: "img/vibe/slide_img_127.webp", alt: "Vibe 127"},
+                        {src: "img/vibe/slide_img_128.webp", alt: "Vibe 128"},
+                        {src: "img/vibe/slide_img_129.webp", alt: "Vibe 129"},
+                        {src: "img/vibe/slide_img_130.webp", alt: "Vibe 130"},
+                        {src: "img/vibe/slide_img_131.webp", alt: "Vibe 131"},
+                        {src: "img/vibe/slide_img_132.webp", alt: "Vibe 132"},
+                        {src: "img/vibe/slide_img_133.webp", alt: "Vibe 133"},
+                        {src: "img/vibe/slide_img_134.webp", alt: "Vibe 134"},
+                        {src: "img/vibe/slide_img_135.webp", alt: "Vibe 135"},
+                        {src: "img/vibe/slide_img_136.webp", alt: "Vibe 136"},
+                        {src: "img/vibe/slide_img_137.webp", alt: "Vibe 137"},
+                        {src: "img/vibe/slide_img_138.webp", alt: "Vibe 138"},
+                        {src: "img/vibe/slide_img_139.webp", alt: "Vibe 139"},
+                        {src: "img/vibe/slide_img_140.webp", alt: "Vibe 140"},
+                        {src: "img/vibe/slide_img_141.webp", alt: "Vibe 141"},
                         {src: "img/alec/alec-portrait-terracotta-wall.webp", alt: "Alec portrait terracotta wall"},
                         {src: "img/alec/alec-kimono-red-torii-gate.webp", alt: "Alec kimono red torii gate"},
                         {src: "img/alec/alec-napping-headphones-pikachu-shirt.webp", alt: "Alec napping headphones pikachu shirt"},
@@ -827,41 +848,15 @@ window.CONTENT = {
             lead: "Tell me your rough location and what you'd be up for trying — I'll sort out a time and a place.",
             blocks: [
                 {
-                    type: "locationInput",
-                    label: "What is your rough location?",
-                    placeholder: "e.g. Postcode, town, or train station",
-                    subtext: "No tracking — I only see your location when you send the email."
-                },
-                {
                     type: "dateCards", cards: [
                         {
                             src: "img/dates/couple-date-bookstore.webp",
                             alt: "Calm Adventure",
                             title: "Chill mode",
                             pills: [
-                                "☕ Coffee & Walk",
+                                "☕ Coffee walk",
                                 "🌳 Nature walk",
-                                "📚 Bookstore Tour",
-                                "🦆 Canal Walk"
-                            ]
-                        },
-                        {
-                            src: "img/dates/flower-market.webp", alt: "A flower market", title: "🍕 Foodie & Market", pills: [
-                                "🥐 Pastry Adventure",
-                                "🌸 Flower Market",
-                                "🌮 Food Market"
-                            ]
-                        },
-                        {
-                            src: "img/dates/couple-on-date-axe-throwing.webp",
-                            alt: "Axe throwing date",
-                            title: "⚡ Active",
-                            pills: [
-                                "🕹️ Arcade",
-                                "🪓 Axe Throwing",
-                                "🎳 Bowling",
-                                "⛳ Mini Golf",
-                                "🔫 Virtual Clay Pigeon"
+                                "🦆 Canal walk"
                             ]
                         },
                         {
@@ -877,6 +872,39 @@ window.CONTENT = {
                             ]
                         },
                         {
+                            src: "img/dates/couple-playing-video-games.webp",
+                            alt: "Playing video games together",
+                            title: "🎮 Video Game Session!",
+                            pills: [
+                                "💬 Chat of Discord",
+                                "⛰️ Peak",
+                                "👫 It Takes Two",
+                                "📖 Split Fiction",
+                                "🌀 Portal 2",
+                            ]
+                        },
+                        {
+                            src: "img/dates/flower-market.webp", alt: "A flower market", title: "🍕 Foodie / Market", pills: [
+                                "🥐 Pastry Adventure",
+                                "🌸 Flower Market",
+                                "🌮 Food Market",
+                                "📚 Bookstore Tour",
+                            ]
+                        },
+                        {
+                            src: "img/dates/couple-on-date-axe-throwing.webp",
+                            alt: "Axe throwing date",
+                            title: "⚡ Active",
+                            pills: [
+                                "🕹️ Arcade",
+                                "🪓 Axe Throwing",
+                                "🎳 Bowling",
+                                "⛳ Mini Golf",
+                                "🔫 Virtual Clay Pigeon",
+                                "🎯 Flight Club"
+                            ]
+                        },
+                        {
                             src: "img/dates/couple-date-pottery-class.webp",
                             alt: "A pottery class date",
                             title: "🎨 Creative",
@@ -888,18 +916,7 @@ window.CONTENT = {
                                 "🖌️ Painting"
                             ]
                         },
-                        {
-                            src: "img/dates/couple-playing-video-games.webp",
-                            alt: "Playing video games together",
-                            title: "🎮 Video Game Session!",
-                            pills: [
-                                "⛰️ Peak",
-                                "👫 It Takes Two",
-                                "📖 Split Fiction",
-                                "🌀 Portal 2",
-                                "💬 Chat of Discord"
-                            ]
-                        }
+
                     ]
                 }
             ]
@@ -952,7 +969,7 @@ window.CONTENT = {
                             description: "School, college, and university. Navigated a bit of bullying and a lot of repressed emotional trauma, but made it out alive with a Computer Science degree (with a 1st!).",
                             icon: "🎒",
                             companies: [
-                                {name: "Waitrose", logo: "img/company-logos/waitrose.jpg"}
+                                {name: "Waitrose", logo: "img/company-logos/waitrose.webp"}
                             ],
                             travel: ["🇬🇷 Zante & Malia"]
                         },
@@ -962,7 +979,7 @@ window.CONTENT = {
                             description: "Backpacking across Australia, a bit of New Zealand, and interrailing. A huge period of growth and adventure.",
                             icon: "🦘",
                             companies: [
-                                {name: "IVSTEL", logo: "img/company-logos/ivestel.jpg"}
+                                {name: "IVSTEL", logo: "img/company-logos/ivestel.webp"}
                             ],
                             travel: [
                                 "🇦🇺 Sydney & Cairns",
@@ -976,9 +993,9 @@ window.CONTENT = {
                             description: "Readjusting to normal life and trying to start my career. A confusing but necessary transition phase.",
                             icon: "🌧️",
                             companies: [
-                                {name: "Waitrose", logo: "img/company-logos/waitrose.jpg"},
-                                {name: "GLEAT", logo: "img/company-logos/gleat.png"},
-                                {name: "Sky", logo: "img/company-logos/sky.jpg"}
+                                {name: "Waitrose", logo: "img/company-logos/waitrose.webp"},
+                                {name: "GLEAT", logo: "img/company-logos/gleat.webp"},
+                                {name: "Sky", logo: "img/company-logos/sky.webp"}
                             ],
                             travel: ["🇪🇸 Barcelona"]
                         },
@@ -988,7 +1005,7 @@ window.CONTENT = {
                             description: "The classic early career grind: overworked, underpaid, and battling heavy imposter syndrome.",
                             icon: "💼",
                             companies: [
-                                {name: "Solirius Consulting", logo: "img/company-logos/solirius.avif"}
+                                {name: "Solirius Consulting", logo: "img/company-logos/solirius.webp"}
                             ],
                             travel: [
                                 "🇳🇱 Amsterdam",
@@ -1002,7 +1019,7 @@ window.CONTENT = {
                             description: "Joined Rightmove and navigated the weirdness of the pandemic years like everyone else.",
                             icon: "🏠",
                             companies: [
-                                {name: "Rightmove", logo: "img/company-logos/rightmove.jpg"}
+                                {name: "Rightmove", logo: "img/company-logos/rightmove.webp"}
                             ],
                             travel: [
                                 "🇺🇦 Kyiv",
@@ -1016,7 +1033,7 @@ window.CONTENT = {
                             description: "A huge era of change: moving to Deliveroo, getting promoted, buying a house, and venturing into the dating world (which brought its own flavor of dating depression).",
                             icon: "🔑",
                             companies: [
-                                {name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg"}
+                                {name: "Deliveroo", logo: "img/company-logos/deliveroo.webp"}
                             ],
                             travel: [
                                 "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh & Glasgow"
@@ -1028,7 +1045,7 @@ window.CONTENT = {
                             description: "Experienced my first serious relationship. A time of immense learning and emotional investment.",
                             icon: "❤️",
                             companies: [
-                                {name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg"}
+                                {name: "Deliveroo", logo: "img/company-logos/deliveroo.webp"}
                             ],
                             travel: [
                                 "🇮🇩 Bali",
@@ -1041,8 +1058,8 @@ window.CONTENT = {
                             description: "Starting again post-breakup. Hit the gym hard with a PT and faced the depression head-on.",
                             icon: "💪",
                             companies: [
-                                {name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg"},
-                                {name: "DoorDash", logo: "img/company-logos/doordash.jpg"}
+                                {name: "Deliveroo", logo: "img/company-logos/deliveroo.webp"},
+                                {name: "DoorDash", logo: "img/company-logos/doordash.webp"}
                             ],
                             travel: [
                                 "🇺🇸 New York",
@@ -1055,8 +1072,8 @@ window.CONTENT = {
                             description: "Ready for whatever comes next.",
                             icon: "✨",
                             companies: [
-                                {name: "Deliveroo", logo: "img/company-logos/deliveroo.jpg"},
-                                {name: "DoorDash", logo: "img/company-logos/doordash.jpg"}
+                                {name: "Deliveroo", logo: "img/company-logos/deliveroo.webp"},
+                                {name: "DoorDash", logo: "img/company-logos/doordash.webp"}
                             ],
                             travel: [
                                 "🇯🇵 Japan",
@@ -1091,7 +1108,7 @@ window.CONTENT = {
                             icon: "😴",
                             title: "Sleep",
                             text: "Recharging the batteries.",
-                            src: "img/alec/alec-sleep.jpeg",
+                            src: "img/alec/alec-sleep.webp",
                             alt: "Alec sleeping"
                         },
                         {
@@ -1127,7 +1144,7 @@ window.CONTENT = {
                             icon: "🍻",
                             title: "See Friends",
                             text: "Hanging out and catching up.",
-                            src: "img/alec/alec-seeing-friends.jpg",
+                            src: "img/alec/alec-seeing-friends.webp",
                             alt: "Alec hanging out with friends"
                         }
                     ]
@@ -1142,7 +1159,7 @@ window.CONTENT = {
                             icon: "🚆",
                             title: "Office Trip",
                             text: "Heading into the city to see the team.",
-                            src: "img/places-been/deliveroo-office.jpg",
+                            src: "img/places-been/deliveroo-office.webp",
                             alt: "Deliveroo office interior"
                         }
                     ]
@@ -2333,7 +2350,7 @@ window.CONTENT = {
                             imagePosition: "left"
                         },
                         {
-                            src: "img/friends/minty.jpg",
+                            src: "img/friends/minty.webp",
                             alt: "Minty",
                             icon: "💪",
                             title: "Your No. 1 person to turn to",
@@ -2343,7 +2360,7 @@ window.CONTENT = {
                             imagePosition: "right"
                         },
                         {
-                            src: "img/friends/agent-l.jpg",
+                            src: "img/friends/agent-l.webp",
                             alt: "Agent L & Alec",
                             icon: "🕵️‍♀️",
                             title: "Finding ways to make you smile",
@@ -2359,7 +2376,7 @@ window.CONTENT = {
                             imagePosition: "right"
                         },
                         {
-                            src: "img/friends/anastasiia.jpg",
+                            src: "img/friends/anastasiia.webp",
                             alt: "Anastasiia",
                             icon: "😎",
                             title: "Someone you can count on",
@@ -2716,56 +2733,56 @@ window.CONTENT = {
                             title: "Day 0: Poster Distribution! 🗺️🗡️",
                             caption: "New side-quest unlocked: Poster Distribution! Time to head to local coffee shops and bookstores.",
                             href: "https://www.tiktok.com/@alectronic0/video/7663174049757007126",
-                            src: "img/campaign/clip-3.jpg",
+                            src: "img/campaign/clip-3.webp",
                             platform: "TikTok"
                         },
                         {
                             title: "Day 1: Cozy Café Mission ☕🎮",
                             caption: "Manifesting a beautiful nerd to find my poster in a local cafe today. Real-world dating side-quest: Accepted.",
                             href: "https://www.tiktok.com/@alectronic0/video/7663554136201301270",
-                            src: "img/campaign/clip-4.jpg",
+                            src: "img/campaign/clip-4.webp",
                             platform: "TikTok"
                         },
                         {
                             title: "Day 1: Side-Quest Day 1 🗺️🏃‍♂️",
                             caption: "Just got back from side-questing! Day 1 of the IRL \"Date me\" campaign is officially over.",
                             href: "https://www.tiktok.com/@alectronic0/video/7663621465404689686",
-                            src: "img/campaign/clip-5.jpg",
+                            src: "img/campaign/clip-5.webp",
                             platform: "TikTok"
                         },
                         {
                             title: "Day 2: London Wandering 🎲❌",
                             caption: "RNG wasn't in my favor today. Wandered around London trying to get posters up, but it turns out not many spots do notice boards.",
                             href: "https://www.tiktok.com/@alectronic0/video/7664002673460530454",
-                            src: "img/campaign/clip-6.jpg",
+                            src: "img/campaign/clip-6.webp",
                             platform: "TikTok"
                         },
                         {
                             title: "Day 3: St Albans Win 🗺️🏃‍♂️",
                             caption: "St Albans edition! Massive upgrade today. Secured baked goods and actually got a poster up at Chaos City Comics! Plus, Snorlax joined me.",
                             href: "https://www.tiktok.com/@alectronic0/video/7664279284034456854",
-                            src: "img/campaign/clip-7.jpg",
+                            src: "img/campaign/clip-7.webp",
                             platform: "TikTok"
                         },
                         {
                             title: "Day 4: Gym & Bug Fixes 🏋️‍♂️💻",
                             caption: "Balance & Bug Fixes! Started at the gym with my PT, then back home to grind through coding bug fixes.",
                             href: "https://www.tiktok.com/@alectronic0/video/7664711249007086870",
-                            src: "img/campaign/clip-8.jpg",
+                            src: "img/campaign/clip-8.webp",
                             platform: "TikTok"
                         },
                         {
                             title: "Day 5: Cooldown & Lego Crocs 🔋😴",
                             caption: "Taking a rest day. Social battery hit 0%, so no poster runs—just hanging out at home showcasing the ultimate quest gear: Lego Crocs.",
                             href: "https://www.tiktok.com/@alectronic0/video/7665071561157725472",
-                            src: "img/campaign/clip-9.jpg",
+                            src: "img/campaign/clip-9.webp",
                             platform: "TikTok"
                         },
                         {
                             title: "Day 6: Cookie Baking 🍪",
                             caption: "Leveled up my baking stats today! Spiced chocolate chunk cookies with pretzels and marshmallows—plus Pikachu ones too! 💛✨",
                             href: "https://www.tiktok.com/@alectronic0/video/7665458523991559446",
-                            src: "img/campaign/clip-10.jpg",
+                            src: "img/campaign/clip-10.webp",
                             platform: "TikTok"
                         }
                     ]
