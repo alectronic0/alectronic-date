@@ -3325,7 +3325,7 @@
         }
         if (C.footer) {
             setText('#footer-emoji', C.footer.emoji);
-            setText('#footer-note', C.footer.note);
+            setHtml('#footer-note', C.footer.note);
             setHtml('#footer-credit', C.footer.credit);
         }
 
