@@ -1967,7 +1967,7 @@ window.CONTENT = {
             blocks: [
                 {
                     type: "paragraph",
-                    text: "My taste is very eclectic — mostly video game & anime music, but ranging through metal, rock, rap, pop, lofi, j-pop, and j-rock. I'm not big on loud, crowded venues, but I'd love to go to a festival like Glastonbury one day."
+                    text: "Eclectic! I was brought up on a wild mix of UK radio — XFM, Magic, Heart, Capital, Radio 1, and Classic FM — so my tastes span 80s, 90s, and 2000s classics across pop, rock, and rap. I also used to play blues and jazz on the piano and saxophone! Right now, I mostly listen to video game soundtracks — either super chill background music for focusing or hype boss fight themes for an energy boost — but play me something you love and I can easily get excited about it."
                 },
                 {
                     type: "link", href: "https://open.spotify.com/user/alec_game", label: "Check out my Spotify"
@@ -1984,7 +1984,10 @@ window.CONTENT = {
                     title: "Alec's curated playlist"
                 },
                 {
-                    type: "link", href: "https://open.spotify.com/playlist/3pwfF9YhpDSOJiINeLCf6o", label: "Open Playlist in Spotify"
+                    type: "link", href: "https://open.spotify.com/playlist/3pwfF9YhpDSOJiINeLCf6o", label: "Open Main Playlist in Spotify"
+                },
+                {
+                    type: "link", href: "https://open.spotify.com/playlist/1MSFknLY8B5t3GSVpR4flk", label: "📻 Open 2000s Digital Vault Playlist (90s/2000s Classics)"
                 },
                 {type: "heading", text: "Genres on Rotation"},
                 {
@@ -2140,7 +2143,7 @@ window.CONTENT = {
                             title: "The Rest Is Science", description: "Science communication and research", logo: "img/podcasts/the-rest-is-science.webp", url: "https://open.spotify.com/show/5oLIbjbUqQmSMVSm0qNLge"
                         },
                         {
-                            title: "Sweet & Sour", description: "", logo: "img/podcasts/sweet-and-sour-podcast.webp", url: "https://open.spotify.com/show/33Q9r2UhclhpPrBRgP8saO"
+                            title: "Sweet & Sour", description: "Pop culture, anime, and life chats with nerdy ladies", logo: "img/podcasts/sweet-and-sour-podcast.webp", url: "https://open.spotify.com/show/33Q9r2UhclhpPrBRgP8saO"
                         },
                         {
                             title: "Jillian on Love", description: "Relationship and dating advice", logo: "img/podcasts/jillian-on-love.webp", url: "https://open.spotify.com/show/2qy9p5oXD7keoBQQzk1e1z"
