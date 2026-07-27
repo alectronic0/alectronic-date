@@ -434,11 +434,11 @@ window.CONTENT = {
         },
 
         generalVibe: {
+            tag: "✨ General Vibe",
+            tagClass: "tag-blue",
+            heading: "The General Vibe",
+            lead: "A collage of things I enjoy or find interesting. My general vibe!",
             blocks: [
-                {
-                    type: "note", variant: "section-intro", text: "Honestly who I am is always changing, but I feel like this is kinda my core self based on repeated actions in my life."
-                },
-
                 {
                     type: "fadingCollage",
                     images: [
@@ -927,6 +927,9 @@ window.CONTENT = {
 
         personality: {
             blocks: [
+                {
+                    type: "note", variant: "section-intro", text: "Honestly who I am is always changing, but I feel like this is kinda my core self based on repeated actions in my life."
+                },
                 {
                     type: "interestCards", cards: [
                         {icon: "🐕", title: "Golden Retriever Energy", body: "Enthusiastic, deeply loyal, eager to please, and just happy to be included. I thrive on affection and bring a boundless, supportive energy to the people I care about."},
