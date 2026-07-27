@@ -1657,7 +1657,10 @@ window.CONTENT = {
                 {
                     type: "paragraph", text: "I'm fairly flexible with what I watch and genuinely keen to learn what you love. A few of my comfort-watches:"
                 },
-                {type: "link", href: "https://letterboxd.com/alectronic0/", label: "Check out my Letterboxd"},
+                {type: "link", href: "https://letterboxd.com/alectronic0/", label: "🎬 Check out my Letterboxd"},
+                {type: "link", href: "https://www.imdb.com/user/p.km2yhybuiebyk5t7jb2rc3hzdy/", label: "⭐ Check out my IMDb"},
+                {type: "link", href: "https://myanimelist.net/profile/alectronic0", label: "🌸 Check out my MyAnimeList"},
+                {type: "link", href: "https://www.rottentomatoes.com/profiles/user/alectronic0", label: "🍅 Check out my Rotten Tomatoes"},
                 {type: "heading", text: "Genres I Love"},
                 {
                     type: "tagRow",
