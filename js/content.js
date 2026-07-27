@@ -1099,8 +1099,7 @@ window.CONTENT = {
         weekInLife: {
             blocks: [
                 {
-                    type: "note",
-                    variant: "section-intro",
+                    type: "paragraph",
                     html: "<strong>Most days</strong>: sleep, gym <span style=\"font-size: 0.85em; opacity: 0.8;\">(x2-3 week)</span>, work, repeat."
                 },
                 {

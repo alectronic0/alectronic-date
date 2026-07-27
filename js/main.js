@@ -229,7 +229,7 @@
         heading: (b) => `<h3>${esc(b.text)}</h3>`,
 
         note: (b) =>
-            `<div class="${esc(b.variant || 'growth-note')}">${b.title ? `<h3 style="margin-bottom:8px;">${esc(b.title)}</h3>` : ''}<p style="margin:0;">${b.html || esc(b.text)}</p>${b.tags && b.tags.length ? `<div class="tag-row" style="margin-top:14px;">${b.tags.map(tagHtml).join('')}</div>` : ''}</div>`,
+            `<div class="${esc(b.variant || 'growth-note')}">${b.title ? `<h3 style="margin-bottom:8px;">${esc(b.title)}</h3>` : ''}${b.variant === 'section-intro' ? '<span style="margin-right:6px;">💬</span>' : ''}<p style="margin:0;display:inline;">${b.html || esc(b.text)}</p>${b.tags && b.tags.length ? `<div class="tag-row" style="margin-top:14px;">${b.tags.map(tagHtml).join('')}</div>` : ''}</div>`,
 
         // External link as a favicon chip ("🟢 Check out my Spotify").
         // `icon` may be an explicit favicon URL; otherwise it's derived from the domain.
