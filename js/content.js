@@ -220,6 +220,7 @@ window.CONTENT = {
     },
     contact: {
         tag: "💬 How to Get in Touch",
+        tagClass: "tag-blue",
         heading: "Shoot Your Shot",
         lead: "You've made it to the contact section, do you want to shoot your shot?\n\nI've worked to make this as easy as possible: pick your <span class=\"text-green\">adventure</span>, answer a few <span class=\"text-blue\">ice breakers</span>, set your rough <span class=\"text-red\">location</span>, and leave the rest to me!",
         emailTemplate: {subject: "RE: Alec Dating Application", body: "Hi Alec! I'm ready to shoot my shot.\n\nFor our first adventure, I'd love to do: …"},
@@ -435,7 +436,7 @@ window.CONTENT = {
 
         generalVibe: {
             tag: "✨ General Vibe",
-            tagClass: "tag-blue",
+            tagClass: "tag-green",
             heading: "The General Vibe",
             lead: "A collage of things I enjoy or find interesting. My general vibe!",
             blocks: [

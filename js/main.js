@@ -1024,7 +1024,7 @@
 
         const contactHeadHtml = C && C.contact ? `
             <div class="section-head">
-                <div class="section-tag tag-purple">${esc(C.contact.tag || '💬 How to Get in Touch')}</div>
+                <div class="section-tag ${esc((C.contact && C.contact.tagClass) || 'tag-blue')}">${esc(C.contact.tag || '💬 How to Get in Touch')}</div>
                 <h2>${esc(C.contact.heading || 'Shoot Your Shot')}${headingLink('contact', C.contact.heading || 'Shoot Your Shot')}</h2>
             </div>
         ` : '';
