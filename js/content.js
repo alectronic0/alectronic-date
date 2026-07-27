@@ -1659,7 +1659,7 @@ window.CONTENT = {
                 },
                 {type: "link", href: "https://letterboxd.com/alectronic0/", label: "🎬 Check out my Letterboxd"},
                 {type: "link", href: "https://www.imdb.com/user/p.km2yhybuiebyk5t7jb2rc3hzdy/", label: "⭐ Check out my IMDb"},
-                {type: "link", href: "https://myanimelist.net/profile/alectronic0", label: "🌸 Check out my MyAnimeList"},
+                {type: "link", href: "https://myanimelist.net/profile/Alectronic0", label: "🌸 Check out my MyAnimeList"},
                 {type: "link", href: "https://www.rottentomatoes.com/profiles/user/alectronic0", label: "🍅 Check out my Rotten Tomatoes"},
                 {type: "heading", text: "Genres I Love"},
                 {
