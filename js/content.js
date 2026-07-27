@@ -2825,7 +2825,7 @@ window.CONTENT = {
             {label: "Shoot your shot! 💘", href: "#contact", primary: true}
         ]
     },
-    deepDive: {tag: '🔬 The Deep Dive', title: 'Everything Else About Me', spoiler: {emoji: '⚠️', title: 'Spoiler Warning', body: "Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story."}, lockedBanner: {emoji: '🔒', title: 'Top Secret Content (Do Not Open) 🙅', tagline: 'do you dare? 😉😈'}},
+    deepDive: {tag: '🔬 The Deep Dive', tagClass: 'tag-silver', title: 'Everything Else About Me', spoiler: {emoji: '⚠️', title: 'Spoiler Warning', body: "Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story."}, lockedBanner: {emoji: '🔒', title: 'Top Secret Content (Do Not Open) 🙅', tagline: 'do you dare? 😉😈'}},
     cheekyGag: {emoji: '😳', title: 'Seriously?!', teaseText: "Did you really think I'd just leave the highly sensitive material lying around for anyone to click?", unlockButton: '🔓🔑 Let me see anyway 😏', punchlineTitle: "You're Cheeky — I Like That!", punchlineBody: "Wow, you actually clicked it. I respect the curiosity 😉. If you really want to get to know me, you know what to do..."},
     footer: {note: '&copy; <span class="year"></span> Alec &middot; date.alec.today &middot; All rights reserved.', credit: 'Powered by <a href="https://alec.today/" target="_blank" rel="noopener noreferrer">Alec Doran-Twyford (Alectronic&trade;)</a>', emoji: '🎮❤️🎮'},
     easterEgg: {

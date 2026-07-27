@@ -319,6 +319,7 @@ section:last-of-type { border-bottom: none; }
 .tag-gold   { background: rgba(230, 169, 121, 0.16); color: var(--gold); }
 .tag-green  { background: rgba(127, 194, 166, 0.16); color: var(--mint); }
 .tag-blue   { background: rgba(96, 165, 250, 0.16); color: #93c5fd; }
+.tag-silver { background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(200, 205, 215, 0.12)); color: #e2e8f0; border: 1px solid rgba(226, 232, 240, 0.3); }
 .tag-grey   { background: var(--surface-3); color: var(--muted); }
 
 h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; line-height: 1.18; margin-bottom: var(--space-4); letter-spacing: -0.5px; }

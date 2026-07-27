@@ -3330,7 +3330,11 @@
             setHtml('#profile-evolving-note', C.profile.evolvingNote);
         }
         if (C.deepDive) {
-            setText('#deep-dive-tag', C.deepDive.tag);
+            const tagEl = document.getElementById('deep-dive-tag');
+            if (tagEl) {
+                tagEl.className = `section-tag ${esc((C.deepDive && C.deepDive.tagClass) || 'tag-silver')}`;
+                tagEl.textContent = C.deepDive.tag;
+            }
             const titleHtml = `${esc(C.deepDive.title)}${headingLink('deep-dive', C.deepDive.title)}`;
             setHtml('#deep-dive-title', titleHtml);
         }
