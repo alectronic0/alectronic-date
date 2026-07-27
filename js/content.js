@@ -2003,17 +2003,6 @@ window.CONTENT = {
                 {
                     type: "link", href: "https://open.spotify.com/user/alec_game", label: "Spotify"
                 },
-                {type: "heading", text: "🎧 A Playlist I Curated for You"},
-                {
-                    type: "paragraph",
-                    text: "A hand-picked mix of songs I love — press play and get a feel for my taste."
-                },
-                {
-                    type: "link", href: "https://open.spotify.com/playlist/3pwfF9YhpDSOJiINeLCf6o", label: "Open Main Playlist in Spotify"
-                },
-                {
-                    type: "link", href: "https://open.spotify.com/playlist/1MSFknLY8B5t3GSVpR4flk", label: "📻 Open 2000s Digital Vault Playlist (90s/2000s Classics)"
-                },
                 {type: "heading", text: "Genres on Rotation"},
                 {
                     type: "tagRow", tags: [
