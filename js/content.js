@@ -380,6 +380,9 @@ window.CONTENT = {
             lead: "A life well lived (so far) — a few milestones, mishaps, and adventures. Tap any to enlarge.",
             blocks: [
                 {
+                    type: "note", variant: "section-intro", text: "A life well lived (so far), a few milestones, mishaps, and adventures. Tap any to enlarge."
+                },
+                {
                     type: "cardGrid", cards: [
                         {
                             src: "img/moments/alec-at-graduation.webp", icon: "🎓", title: "Got a 1st @ University", caption: "BSc Computer Science, top marks."
@@ -437,6 +440,9 @@ window.CONTENT = {
             heading: "The General Vibe",
             lead: "A collage of things I enjoy or find interesting. My general vibe!",
             blocks: [
+                {
+                    type: "note", variant: "section-intro", text: "Honestly who I am is always changing, but I feel like this is kinda my core self based on repeated actions in my life."
+                },
 
                 {
                     type: "fadingCollage",
@@ -961,6 +967,9 @@ window.CONTENT = {
         timeline: {
             blocks: [
                 {
+                    type: "note", variant: "section-intro", text: "Seeing as I've already lived 35+ years of my life by myself, here's a quick timeline to catch you up on the big turning points since turning 18."
+                },
+                {
                     type: "timeline",
                     events: [
                         {
@@ -1098,6 +1107,9 @@ window.CONTENT = {
         },
         weekInLife: {
             blocks: [
+                {
+                    type: "note", variant: "section-intro", text: "Honestly maybe getting into TMI, but this is a general day-by-day, week-by-week of my life. It could do with a bit of a shake up!"
+                },
                 {
                     type: "paragraph",
                     html: "<strong>Most days</strong>: sleep, gym <span style=\"font-size: 0.85em; opacity: 0.8;\">(x2-3 week)</span>, work, repeat."
@@ -1481,6 +1493,9 @@ window.CONTENT = {
         bucketList: {
             blocks: [
                 {
+                    type: "note", variant: "section-intro", text: "A running list of things I want to do, experience, or just throw myself into. Explore, experience, do it, that's the philosophy. And it's always better with a +1 on the adventure..."
+                },
+                {
                     type: "cardGrid", cards: [
                         {
                             src: "img/bucket-list/camping-under-starry-sky.webp", icon: "⛺", title: "Glamping & Camping", caption: "Cosy nights out under the stars."
@@ -1544,6 +1559,9 @@ window.CONTENT = {
 
         places: {
             blocks: [
+                {
+                    type: "note", variant: "section-intro", text: "I love to travel, though I'll be honest, soloing the world takes a lot out of me. Here's where I've been and where I'm still desperate to go. Spoiler: the answer to 'where do you want to go?' is basically everywhere."
+                },
                 {type: "heading", text: "✈️ Where I've Been"},
                 {
                     type: "placeCards", cards: [
@@ -2350,6 +2368,9 @@ window.CONTENT = {
         friends: {
             blocks: [
                 {
+                    type: "note", variant: "section-intro", text: "Yes, I do have friends, some nearby, some scattered. When we actually catch up it's usually an adventure, great food, and even better banter. A few of them were kind enough to leave a reference... no actual threats or bribes were made in the collection of these reviews. Honestly they could have been a bit meaner."
+                },
+                {
                     type: "testimonialRows",
                     items: [
                         {
@@ -2483,6 +2504,9 @@ window.CONTENT = {
 
         plantsAnimals: {
             blocks: [
+                {
+                    type: "note", variant: "section-intro", text: "Okay, this one's a bit random, but here are some plants, animals, and creatures I just think are... neat. No further justification required."
+                },
                 {type: "heading", text: "🌸 Plants & Flowers I Find Pretty"},
                 {
                     type: "labeledPhotoGrid",
@@ -2547,8 +2571,7 @@ window.CONTENT = {
         gifs: {
             blocks: [
                 {
-                    type: "paragraph",
-                    text: "Some things words can't capture — my life, summed up in looping form. This collection will keep growing."
+                    type: "note", variant: "section-intro", text: "I genuinely don't know why I have a GIF section. But it's here, and honestly? I love it."
                 },
                 {
                     type: "gifGrid",
@@ -2636,6 +2659,9 @@ window.CONTENT = {
 
         couples: {
             blocks: [
+                {
+                    type: "note", variant: "section-intro", text: "Hopeless romantic right here. These are the on-screen couples and relationships where I see it and think 'yep, I want exactly that'. The loyalty, the banter, calling each other out, the affection, and actually pushing each other to be better."
+                },
                 {
                     type: "featureGrid", features: [
                         {
