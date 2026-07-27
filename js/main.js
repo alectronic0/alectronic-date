@@ -2822,6 +2822,17 @@
 
     // Konami code easter egg: ↑ ↑ ↓ ↓ ← → ← → B A reveals a hidden 1-UP toast
     // — "It's a secret to everybody." A nod to Zelda + every cheat-code childhood.
+    function initConsoleSecret() {
+        console.log(
+            "%c🗡️ IT'S A SECRET TO EVERYONE. 🗡️",
+            'font-size: 16px; font-weight: bold; color: #cf8fdb; background: #211420; padding: 8px 14px; border-radius: 8px; border: 1px solid #994ea8; font-family: sans-serif;'
+        );
+        console.log(
+            '%cHey curious dev! Glad you checked out the console. Feel free to inspect the code, or drop me a text if you find a bug! 😉',
+            'font-size: 13px; color: #cbb6c8; line-height: 1.5; font-family: sans-serif;'
+        );
+    }
+
     function initKonami() {
         const seq = [
             'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
@@ -3637,6 +3648,7 @@
         initGallery();
         initCyclingImages();
         initKonami();
+        initConsoleSecret();
         initFactClicks();
         initInfiniteSwipe();
         initCollapsibleCards();
