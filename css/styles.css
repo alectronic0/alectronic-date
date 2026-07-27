@@ -1239,16 +1239,18 @@ body:has(dialog[open]) { overflow: hidden; }
 @media (max-width: 560px) { .interest-cards { grid-template-columns: 1fr; } }
 
 /* Flag images (replace flag emoji, which Windows Chrome can't render) */
-.flag {
-  display: inline-block; width: 1.25em; height: auto;
-  vertical-align: -0.18em; border-radius: 0;
-  background: transparent; /* override global `img { background: white }` */
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
-}
-/* Beat `.place-card img { width:100% }` when the image is an inline flag */
-.place-card .flag {
-  width: 1.25em; height: auto; aspect-ratio: auto;
-  object-fit: initial; cursor: default;
+.flag, .place-card .flag, .lightbox-caption .flag {
+  display: inline-block !important;
+  width: 1.25em !important;
+  height: auto !important;
+  vertical-align: -0.18em !important;
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  aspect-ratio: auto !important;
+  object-fit: initial !important;
+  cursor: default !important;
 }
 
 /* ─── Generic list / two-col ────────────────── */
