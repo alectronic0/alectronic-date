@@ -1659,10 +1659,10 @@ window.CONTENT = {
                 {
                     type: "note", variant: "section-intro", text: "I'm fairly flexible with what I watch and genuinely keen to learn what you love. A few of my comfort-watches:"
                 },
-                {type: "link", href: "https://letterboxd.com/alectronic0/", label: "🎬 Check out my Letterboxd"},
-                {type: "link", href: "https://www.imdb.com/user/p.km2yhybuiebyk5t7jb2rc3hzdy/", label: "⭐ Check out my IMDb"},
-                {type: "link", href: "https://myanimelist.net/profile/Alectronic0", label: "🌸 Check out my MyAnimeList"},
-                {type: "link", href: "https://www.rottentomatoes.com/profiles/user/alectronic0", label: "🍅 Check out my Rotten Tomatoes"},
+                {type: "link", href: "https://letterboxd.com/alectronic0/", label: "Letterboxd"},
+                {type: "link", href: "https://www.imdb.com/user/p.km2yhybuiebyk5t7jb2rc3hzdy/", label: "IMDb"},
+                {type: "link", href: "https://myanimelist.net/profile/Alectronic0", label: "MyAnimeList"},
+                {type: "link", href: "https://www.rottentomatoes.com/profiles/user/alectronic0", label: "Rotten Tomatoes"},
                 {type: "heading", text: "Genres I Love"},
                 {
                     type: "tagRow",
@@ -1758,7 +1758,7 @@ window.CONTENT = {
                     variant: "section-intro",
                     text: "Games are a big part of my life and I'd love someone to share it with. My favourite series is The Legend of Zelda; I play on PC & Nintendo, love the music, and geek out over game dev, glitches and speedruns."
                 },
-                {type: "link", href: "https://steamcommunity.com/id/alectronic0", label: "Check out my Steam"},
+                {type: "link", href: "https://steamcommunity.com/id/alectronic0", label: "Steam"},
                 {type: "heading", text: "Genres I Gravitate To"},
                 {
                     type: "tagRow", tags: [
@@ -1984,7 +1984,7 @@ window.CONTENT = {
                     text: "My music taste is...Eclectic! I was brought up on a wild mix of UK radio — XFM, Magic, Heart, Capital, Radio 1, and Classic FM. So my tastes span 80s, 90s, 2000s and beyond classics across pop, rock, and rap. I also used to play blues and jazz on the piano and saxophone! Right now it mostly video game & anime music, but ranging through metal, rock, rap, pop, lofi, j-pop, and j-rock. I mostly listen to video game soundtracks; either super chill background music for focusing or hype boss fight themes for an energy boost. I'm not big on loud, crowded venues, but I'd love to go to a festival like Glastonbury one day (go live in a tent an exprience it all (I'll probally hate it by the end though...)). But play me something you love and I can easily get excited about it."
                 },
                 {
-                    type: "link", href: "https://open.spotify.com/user/alec_game", label: "Check out my Spotify"
+                    type: "link", href: "https://open.spotify.com/user/alec_game", label: "Spotify"
                 },
                 {type: "heading", text: "🎧 A Playlist I Curated for You"},
                 {
@@ -2082,7 +2082,7 @@ window.CONTENT = {
                 {
                     type: "note", variant: "section-intro", text: "I'm not a huge reader — but if you love books I'll happily read your favourites. Roald Dahl is my favourite childhood author."
                 },
-                {type: "link", href: "https://goodreads.com/alectronic0", label: "Check out my Goodreads"},
+                {type: "link", href: "https://goodreads.com/alectronic0", label: "Goodreads"},
                 {type: "heading", text: "On My Shelf"},
                 {
                     type: "posterGrid",
