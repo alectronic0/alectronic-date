@@ -1648,7 +1648,7 @@ window.CONTENT = {
                         {
                             country: "🇷🇺",
                             name: "Russia",
-                            detail: "I know, I know, f*** Putin starting WW3... but there is so much more to Russia than Moscow. It's the largest country on the planet with untapped nature to be explored.",
+                            detail: "I know, I know... but beyond Moscow, it is the largest country on Earth with endless, unexplored nature to discover.",
                             src: "img/places-want/russia-siberian-nature.webp"
                         },
                     ]
