@@ -1619,9 +1619,6 @@ window.CONTENT = {
                 },
                 {type: "heading", text: "🗺️ Where I Want to Go Next"},
                 {
-                    type: "note", variant: "section-intro", text: "And honestly, the rest of the world too. There's so much food, history, and culture out there, I want to see it all!"
-                },
-                {
                     type: "placeCards", cards: [
                         {
                             country: "🇮🇹", name: "Italy", detail: "Roman history & Italian food", src: "img/places-want/colosseum-rome-italy.webp"
@@ -1674,7 +1671,7 @@ window.CONTENT = {
                     ]
                 },
                 {
-                    type: "paragraph", text: "…and honestly, the rest of the world too — there's so much food, history, and culture, I want to see it all."
+                    type: "note", variant: "section-intro", text: "And honestly, the rest of the world too: there's so much food, history, and culture, I want to see it all!"
                 }
             ]
         },
