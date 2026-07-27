@@ -231,12 +231,12 @@
         note: (b) =>
             `<div class="${esc(b.variant || 'growth-note')}">${b.title ? `<h3 style="margin-bottom:8px;">${esc(b.title)}</h3>` : ''}<p style="margin:0;">${esc(b.text)}</p>${b.tags && b.tags.length ? `<div class="tag-row" style="margin-top:14px;">${b.tags.map(tagHtml).join('')}</div>` : ''}</div>`,
 
-        // External link as a favicon chip ("🟢 Check out my Spotify →").
+        // External link as a favicon chip ("🟢 Check out my Spotify").
         // `icon` may be an explicit favicon URL; otherwise it's derived from the domain.
         link: (b) =>
             `<a class="link-chip" href="${esc(b.href)}" target="_blank" rel="noopener"><img class="link-chip-favicon" src="${esc(
                 b.icon || faviconFor(b.href)
-            )}" alt="${esc(b.label)} logo" loading="lazy">${esc(b.label)} →</a>`,
+            )}" alt="${esc(b.label)} logo" loading="lazy">${esc(b.label)}</a>`,
 
         tagRow: (b) => `<div class="tag-row">${b.tags.map(tagHtml).join('')}</div>`,
 
