@@ -377,8 +377,10 @@ window.CONTENT = {
         // Rendered inside its deep-dive modal, so no tag/heading here —
         // the modal head already carries the 🏆 title.
         moments: {
-            lead: "A life well lived (so far), a few milestones, mishaps, and adventures. Tap any to enlarge.",
             blocks: [
+                {
+                    type: "note", variant: "section-intro", text: "A life well lived (so far), a few milestones, mishaps, and adventures. Tap any to enlarge."
+                },
                 {
                     type: "cardGrid", cards: [
                         {
@@ -432,10 +434,6 @@ window.CONTENT = {
         },
 
         generalVibe: {
-            tag: "✨ General Vibe",
-            tagClass: "tag-blue",
-            heading: "The General Vibe",
-            lead: "Honestly who I am is always changing, but I feel like this is kinda my core self based on repeated actions in my life.",
             blocks: [
                 {
                     type: "note", variant: "section-intro", text: "Honestly who I am is always changing, but I feel like this is kinda my core self based on repeated actions in my life."
