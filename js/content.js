@@ -2571,7 +2571,7 @@ window.CONTENT = {
         gifs: {
             blocks: [
                 {
-                    type: "note", variant: "section-intro", text: "I genuinely don't know why I have a GIF section. But it's here, and honestly? I love it."
+                    type: "note", variant: "section-intro", text: "I genuinely don't know why I have a GIF section, but some things words just can't capture. It's my life summed up in looping form, and honestly? I love it (and this collection will keep growing!)."
                 },
                 {
                     type: "gifGrid",
