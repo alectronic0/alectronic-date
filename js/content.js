@@ -1099,7 +1099,8 @@ window.CONTENT = {
         weekInLife: {
             blocks: [
                 {
-                    type: "paragraph",
+                    type: "note",
+                    variant: "section-intro",
                     html: "<strong>Most days</strong>: sleep, gym <span style=\"font-size: 0.85em; opacity: 0.8;\">(x2-3 week)</span>, work, repeat."
                 },
                 {
@@ -1260,7 +1261,8 @@ window.CONTENT = {
         hobbies: {
             blocks: [
                 {
-                    type: "paragraph",
+                    type: "note",
+                    variant: "section-intro",
                     text: "A bit of everything, honestly — making things, learning things, and getting outdoors. Here's what I actually spend my free time on, and why."
                 },
                 {
@@ -1655,7 +1657,7 @@ window.CONTENT = {
         moviesTV: {
             blocks: [
                 {
-                    type: "paragraph", text: "I'm fairly flexible with what I watch and genuinely keen to learn what you love. A few of my comfort-watches:"
+                    type: "note", variant: "section-intro", text: "I'm fairly flexible with what I watch and genuinely keen to learn what you love. A few of my comfort-watches:"
                 },
                 {type: "link", href: "https://letterboxd.com/alectronic0/", label: "🎬 Check out my Letterboxd"},
                 {type: "link", href: "https://www.imdb.com/user/p.km2yhybuiebyk5t7jb2rc3hzdy/", label: "⭐ Check out my IMDb"},
@@ -1752,7 +1754,8 @@ window.CONTENT = {
         videoGames: {
             blocks: [
                 {
-                    type: "paragraph",
+                    type: "note",
+                    variant: "section-intro",
                     text: "Games are a big part of my life and I'd love someone to share it with. My favourite series is The Legend of Zelda; I play on PC & Nintendo, love the music, and geek out over game dev, glitches and speedruns."
                 },
                 {type: "link", href: "https://steamcommunity.com/id/alectronic0", label: "Check out my Steam"},
@@ -1847,7 +1850,8 @@ window.CONTENT = {
         food: {
             blocks: [
                 {
-                    type: "paragraph",
+                    type: "note",
+                    variant: "section-intro",
                     text: "I'm always chasing the best food in London and around the world — favourites are Asian (mostly Japanese) & Mexican, from street food to Michelin stars."
                 },
                 {type: "heading", text: "Top of the Menu"},
@@ -1975,7 +1979,8 @@ window.CONTENT = {
         music: {
             blocks: [
                 {
-                    type: "paragraph",
+                    type: "note",
+                    variant: "section-intro",
                     text: "My music taste is...Eclectic! I was brought up on a wild mix of UK radio — XFM, Magic, Heart, Capital, Radio 1, and Classic FM. So my tastes span 80s, 90s, 2000s and beyond classics across pop, rock, and rap. I also used to play blues and jazz on the piano and saxophone! Right now it mostly video game & anime music, but ranging through metal, rock, rap, pop, lofi, j-pop, and j-rock. I mostly listen to video game soundtracks; either super chill background music for focusing or hype boss fight themes for an energy boost. I'm not big on loud, crowded venues, but I'd love to go to a festival like Glastonbury one day (go live in a tent an exprience it all (I'll probally hate it by the end though...)). But play me something you love and I can easily get excited about it."
                 },
                 {
@@ -2075,7 +2080,7 @@ window.CONTENT = {
         books: {
             blocks: [
                 {
-                    type: "paragraph", text: "I'm not a huge reader — but if you love books I'll happily read your favourites. Roald Dahl is my favourite childhood author."
+                    type: "note", variant: "section-intro", text: "I'm not a huge reader — but if you love books I'll happily read your favourites. Roald Dahl is my favourite childhood author."
                 },
                 {type: "link", href: "https://goodreads.com/alectronic0", label: "Check out my Goodreads"},
                 {type: "heading", text: "On My Shelf"},
@@ -2129,7 +2134,7 @@ window.CONTENT = {
         podcasts: {
             blocks: [
                 {
-                    type: "paragraph", text: "On long car journeys I'll dip into a few of these — a mix of nerdy, thoughtful and dating-curious:"
+                    type: "note", variant: "section-intro", text: "On long car journeys I'll dip into a few of these — a mix of nerdy, thoughtful and dating-curious:"
                 },
                 {
                     type: "podcastCards", cards: [
@@ -2189,7 +2194,8 @@ window.CONTENT = {
         sports: {
             blocks: [
                 {
-                    type: "paragraph",
+                    type: "note",
+                    variant: "section-intro",
                     text: "Not really a sporty person, but I keep fit with cycling, long walks, and the gym — and dabble in bouldering, archery, and basketball. I don't really watch sports, but I support a few teams (mostly thanks to friends & family)."
                 },
                 {type: "heading", text: "Teams I support"},
@@ -2233,7 +2239,8 @@ window.CONTENT = {
         politics: {
             blocks: [
                 {
-                    type: "paragraph",
+                    type: "note",
+                    variant: "section-intro",
                     html: "I'm Liberal Left (Green Party at present). My main thing is supporting the poorest so we can all be more equal. My general philosophy: <strong style=\"color:var(--text);\">\"Try not to be a dick!\"</strong>"
                 },
                 {
@@ -2305,7 +2312,7 @@ window.CONTENT = {
         dislikes: {
             blocks: [
                 {
-                    type: "paragraph", text: "I can handle these — I just won't go seeking them out. Mostly it adds up to a preference for calm, intimate settings."
+                    type: "note", variant: "section-intro", text: "I can handle these — I just won't go seeking them out. Mostly it adds up to a preference for calm, intimate settings."
                 },
                 {
                     type: "cardGrid", cards: [
@@ -2405,7 +2412,7 @@ window.CONTENT = {
         goals: {
             blocks: [
                 {
-                    type: "paragraph", text: "I've hit my main milestones — good job, a house, great friends. Still working on my health, and finding my life partner."
+                    type: "note", variant: "section-intro", text: "I've hit my main milestones — good job, a house, great friends. Still working on my health, and finding my life partner."
                 },
                 {
                     type: "listCols", columns: [

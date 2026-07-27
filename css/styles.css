@@ -1235,6 +1235,18 @@ body:has(dialog[open]) { overflow: hidden; }
   color: var(--text);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
+.section-intro {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--accent-light, #c4b5fd);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted, rgba(255,255,255,0.82));
+  position: relative;
+}
 .growth-note {
   background: var(--surface-2, rgba(255, 255, 255, 0.03));
   border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
