@@ -354,7 +354,7 @@ window.CONTENT = {
         {key: "moments", emoji: "🏆", title: "Notable Moments", hint: "milestones & adventures"},
         {key: "transparency", emoji: "🚩", title: "My Red Flags", hint: "no one's perfect, at least I'm being honest"},
         {key: "politics", emoji: "🏛️", title: "Politics & Religion", hint: "where I stand"},
-        {key: "bucketList", emoji: "🎯", title: "Bucket List", hint: "things I'd love to try"},
+        {key: "bucketList", emoji: "🪣", title: "Bucket List", hint: "things I'd love to try"},
         {key: "goals", emoji: "🚀", title: "Future Goals", hint: "where I'm headed"},
         {type: "heading", text: "Hobbies & Interests"},
         {key: "hobbies", emoji: "✨", title: "Hobbies & Interests", hint: "things that light me up"},
