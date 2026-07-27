@@ -1645,6 +1645,12 @@ window.CONTENT = {
                         {
                             country: "🇬🇧", name: "UK", detail: "Seen surprisingly little of it", src: "img/places-want/cotswolds-village-england.webp"
                         },
+                        {
+                            country: "🇷🇺",
+                            name: "Russia",
+                            detail: "I know, I know, f*** Putin starting WW3... but there is so much more to Russia than Moscow. It's the largest country on the planet with untapped nature to be explored.",
+                            src: "img/places-want/russia-siberian-nature.webp"
+                        },
                     ]
                 },
                 {type: "heading", text: "💭 Daydreaming Of…"},
