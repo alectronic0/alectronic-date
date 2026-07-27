@@ -345,31 +345,31 @@ window.CONTENT = {
        a `construction` block in the section). */
     accordion: [
         {type: "heading", text: "Get to know me"},
-        {key: "personality", emoji: "🧬", title: "Personality & Vibe", hint: "— what I'm like to be around"},
-        {key: "dislikes", emoji: "🙅", title: "Gentle Dislikes", hint: "— a preference for calm"},
-        {key: "friends", emoji: "👥", title: "Friend Review", hint: "— what they say about me"},
-        {key: "weekInLife", emoji: "📅", title: "A day in the life of Alec", hint: "— my typical routines"},
-        {key: "timeline", emoji: "⏳", title: "My Timeline", hint: "— the story so far"},
-        {key: "moments", emoji: "🏆", title: "Notable Moments", hint: "— milestones & adventures"},
-        {key: "transparency", emoji: "🚩", title: "My Red Flags", hint: "— no one's perfect, at least I'm being honest"},
-        {key: "politics", emoji: "🏛️", title: "Politics & Religion", hint: "— where I stand"},
-        {key: "bucketList", emoji: "🎯", title: "Bucket List", hint: "— things I'd love to try"},
-        {key: "goals", emoji: "🚀", title: "Future Goals", hint: "— where I'm headed"},
+        {key: "personality", emoji: "🧬", title: "Personality & Vibe", hint: "what I'm like to be around"},
+        {key: "dislikes", emoji: "🙅", title: "Gentle Dislikes", hint: "a preference for calm"},
+        {key: "friends", emoji: "👥", title: "Friend Review", hint: "what they say about me"},
+        {key: "weekInLife", emoji: "📅", title: "A day in the life of Alec", hint: "my typical routines"},
+        {key: "timeline", emoji: "⏳", title: "My Timeline", hint: "the story so far"},
+        {key: "moments", emoji: "🏆", title: "Notable Moments", hint: "milestones & adventures"},
+        {key: "transparency", emoji: "🚩", title: "My Red Flags", hint: "no one's perfect, at least I'm being honest"},
+        {key: "politics", emoji: "🏛️", title: "Politics & Religion", hint: "where I stand"},
+        {key: "bucketList", emoji: "🎯", title: "Bucket List", hint: "things I'd love to try"},
+        {key: "goals", emoji: "🚀", title: "Future Goals", hint: "where I'm headed"},
         {type: "heading", text: "Hobbies & Interests"},
-        {key: "hobbies", emoji: "✨", title: "Hobbies & Interests", hint: "— things that light me up"},
-        {key: "places", emoji: "✈️", title: "Places — Been & Want to Go", hint: "— stamps & wishlist"},
-        {key: "food", emoji: "🍽️", title: "Food", hint: "— the way to my heart"},
-        {key: "moviesTV", emoji: "🎬", title: "Movies & TV", hint: "— what I'm watching"},
-        {key: "videoGames", emoji: "🎮", title: "Video Games", hint: "— player one, ready"},
-        {key: "books", emoji: "📚", title: "Books", hint: "— on my shelf"},
-        {key: "music", emoji: "🎵", title: "Music", hint: "— what's on my playlist"},
-        {key: "podcasts", emoji: "🎙️", title: "Podcasts", hint: "— long-journey listening"},
-        {key: "sports", emoji: "⚽", title: "Sports", hint: "— mostly a spectator"},
+        {key: "hobbies", emoji: "✨", title: "Hobbies & Interests", hint: "things that light me up"},
+        {key: "places", emoji: "✈️", title: "Places (Been & Want to Go)", hint: "stamps & wishlist"},
+        {key: "food", emoji: "🍽️", title: "Food", hint: "the way to my heart"},
+        {key: "moviesTV", emoji: "🎬", title: "Movies & TV", hint: "what I'm watching"},
+        {key: "videoGames", emoji: "🎮", title: "Video Games", hint: "player one, ready"},
+        {key: "books", emoji: "📚", title: "Books", hint: "on my shelf"},
+        {key: "music", emoji: "🎵", title: "Music", hint: "what's on my playlist"},
+        {key: "podcasts", emoji: "🎙️", title: "Podcasts", hint: "long-journey listening"},
+        {key: "sports", emoji: "⚽", title: "Sports", hint: "mostly a spectator"},
         {type: "heading", text: "DLC - Bonus content"},
-        {key: "plantsAnimals", emoji: "🌺", title: "Plants & Creatures", hint: "— a few favourites"},
-        {key: "gifs", emoji: "🎞️", title: "GIFs I Love", hint: "— my life in looping form"},
-        {key: "couples", emoji: "💑", title: "Couple goals", hint: "— couple I aspire my future relationship to be like"},
-        {key: "underConstruction", emoji: "🚧", title: "Under construction", hint: "— check back soon", wip: true},
+        {key: "plantsAnimals", emoji: "🌺", title: "Plants & Creatures", hint: "a few favourites"},
+        {key: "gifs", emoji: "🎞️", title: "GIFs I Love", hint: "my life in looping form"},
+        {key: "couples", emoji: "💑", title: "Couple goals", hint: "couples I aspire my future relationship to be like"},
+        {key: "underConstruction", emoji: "🚧", title: "Under construction", hint: "check back soon", wip: true},
     ],
 
     /* ── Mid-page sections (each = blocks[]) ── */
@@ -377,11 +377,8 @@ window.CONTENT = {
         // Rendered inside its deep-dive modal, so no tag/heading here —
         // the modal head already carries the 🏆 title.
         moments: {
-            lead: "A life well lived (so far) — a few milestones, mishaps, and adventures. Tap any to enlarge.",
+            lead: "A life well lived (so far), a few milestones, mishaps, and adventures. Tap any to enlarge.",
             blocks: [
-                {
-                    type: "note", variant: "section-intro", text: "A life well lived (so far), a few milestones, mishaps, and adventures. Tap any to enlarge."
-                },
                 {
                     type: "cardGrid", cards: [
                         {
@@ -438,7 +435,7 @@ window.CONTENT = {
             tag: "✨ General Vibe",
             tagClass: "tag-blue",
             heading: "The General Vibe",
-            lead: "A collage of things I enjoy or find interesting. My general vibe!",
+            lead: "Honestly who I am is always changing, but I feel like this is kinda my core self based on repeated actions in my life.",
             blocks: [
                 {
                     type: "note", variant: "section-intro", text: "Honestly who I am is always changing, but I feel like this is kinda my core self based on repeated actions in my life."
