@@ -1675,8 +1675,14 @@ window.CONTENT = {
                         {label: "🐉 Fantasy", hint: "Swords, sorcery, and incredible world-building 🐉"},
                         {label: "🎨 Animation", hint: "Stunning artwork and creative animation styles 🎨"},
                         {label: "🌸 Anime", hint: "From Studio Ghibli classics to shonen hype 🌸"},
-                        {label: "🔍 Detective Procedurals", hint: "Solving the case step-by-step alongside the team 🕵️‍♂️"},
-                        {label: "🎃 Horror — not for me", variant: "hate", hint: "Jump scares and horror movies are definitely not my vibe 🙈"}
+                        {label: "🔍 Detective Procedurals", hint: "Solving the case step-by-step alongside the team 🕵️‍♂️"}
+                    ]
+                },
+                {type: "heading", text: "🚫 Genres I Detest"},
+                {
+                    type: "tagRow",
+                    tags: [
+                        {label: "🎃 Horror", variant: "hate", hint: "Jump scares and horror movies are definitely not my vibe 🙈"}
                     ]
                 },
                 {

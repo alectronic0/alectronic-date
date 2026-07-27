@@ -1097,7 +1097,7 @@ body:has(dialog[open]) { overflow: hidden; }
 }
 
 /* ─── Tags / pills rows ─────────────────────── */
-.tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; margin-bottom: 14px; }
 .tag-item {
   background: var(--surface-2, rgba(255, 255, 255, 0.04));
   border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
