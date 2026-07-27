@@ -848,7 +848,7 @@ body:has(dialog[open]) { overflow: hidden; }
 /* The topic modal — a centred native <dialog>; the head stays put while the
    body scrolls. UA defaults (border, background, max sizes) are overridden. */
 .deep-modal {
-  width: min(var(--maxw, 1080px), calc(100vw - 32px));
+  width: min(840px, calc(100vw - 32px));
   max-height: calc(100vh - 56px);
   margin: auto; padding: 0; border: 1px solid var(--border); border-radius: var(--radius);
   background: var(--surface); color: var(--text); box-shadow: var(--shadow);
