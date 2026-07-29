@@ -2824,13 +2824,91 @@
     // — "It's a secret to everybody." A nod to Zelda + every cheat-code childhood.
     function initConsoleSecret() {
         console.log(
-            "%c🗡️ IT'S A SECRET TO EVERYONE. 🗡️",
+            "%c🗡️ IT'S A SECRET TO EVERYBODY. 🗡️",
             'font-size: 16px; font-weight: bold; color: #cf8fdb; background: #211420; padding: 8px 14px; border-radius: 8px; border: 1px solid #994ea8; font-family: sans-serif;'
         );
         console.log(
             '%cHey curious dev! Glad you checked out the console. Feel free to inspect the code, or drop me a text if you find a bug! 😉',
             'font-size: 13px; color: #cbb6c8; line-height: 1.5; font-family: sans-serif;'
         );
+        console.log(
+            '%c🎮 Desktop Secret: Try typing ↑ ↑ ↓ ↓ ← → ← → B A on your keyboard!\n📱 Mobile Secret: Tap any header tag or emoji 7 times!\n⚡ Dev Shortcuts:\n  • secret() or partyMode()\n  • alec.makeRain(["img1.png", "img2.jpg"]) or alec.makeRain()',
+            'font-size: 12px; color: #e5b3f7; line-height: 1.6; font-family: monospace; background: #18101a; padding: 8px 12px; border-radius: 6px; margin-top: 4px;'
+        );
+
+        // Expose helper functions globally for easy console triggering
+        window.revealSecret = function (mode) {
+            revealSecret(mode);
+            return '🎉 Secret unlocked!';
+        };
+        window.secret = window.revealSecret;
+        window.partyMode = function () {
+            revealSecret('party');
+            return '🥳 Party mode activated!';
+        };
+        window.makeItRain = makeItRain;
+        window.alec = window.alec || {};
+        window.alec.secret = window.revealSecret;
+        window.alec.party = window.partyMode;
+        window.alec.makeRain = makeItRain;
+        window.alec.makerain = makeItRain;
+        window.alec.hint = function () {
+            console.log(
+                '%c💡 Easter Egg Hints:\n1. Keyboard: ↑ ↑ ↓ ↓ ← → ← → B A\n2. Touch: 7 rapid taps on section headers or emojis\n3. Console: secret(), partyMode(), or alec.makeRain(["img.jpg"])',
+                'font-size: 13px; color: #ffd700; font-family: monospace;'
+            );
+            return '💡 Hints displayed in console above!';
+        };
+    }
+
+    function makeItRain(items, opts = {}) {
+        const defaultEmojis = ['💸', '💰', '💎', '🚀', '✨', '🪙', '💵'];
+        let list = items;
+        if (!list || (Array.isArray(list) && list.length === 0)) {
+            list = defaultEmojis;
+        } else if (!Array.isArray(list)) {
+            list = [list];
+        }
+
+        const count = typeof opts.count === 'number' ? opts.count : 32;
+        const baseDuration = typeof opts.duration === 'number' ? opts.duration : 3200;
+        const container = getActiveContainer();
+
+        const isImageUrl = (val) => {
+            if (typeof val !== 'string') return false;
+            return /^(https?:\/\/|\/|\.\/|data:image\/|\w+\.(png|jpg|jpeg|gif|svg|webp))/i.test(val.trim());
+        };
+
+        for (let i = 0; i < count; i++) {
+            const val = list[i % list.length];
+            const el = isImageUrl(val) ? document.createElement('img') : document.createElement('div');
+            el.className = 'konami-heart rain-item';
+
+            if (isImageUrl(val)) {
+                el.src = val;
+                el.alt = 'Rain item';
+                const size = opts.size ? (typeof opts.size === 'number' ? `${opts.size}px` : opts.size) : `${36 + Math.random() * 24}px`;
+                el.style.width = size;
+                el.style.height = size;
+                el.style.objectFit = 'contain';
+                el.style.filter = 'drop-shadow(0 6px 12px rgba(0,0,0,0.5))';
+            } else {
+                el.textContent = val;
+                const fontSize = opts.size ? (typeof opts.size === 'number' ? `${opts.size}px` : opts.size) : `${1.4 + Math.random() * 1.2}rem`;
+                el.style.fontSize = fontSize;
+            }
+
+            el.style.left = `${Math.random() * 100}vw`;
+            const delay = Math.random() * (opts.stagger !== undefined ? opts.stagger : 2.2);
+            const duration = (baseDuration / 1000) + Math.random() * 1.2;
+            el.style.animationDelay = `${delay}s`;
+            el.style.animationDuration = `${duration}s`;
+
+            container.appendChild(el);
+            setTimeout(() => el.remove(), (delay + duration + 0.5) * 1000);
+        }
+
+        return `🌧️ Making it rain with ${count} items!`;
     }
 
     function initKonami() {
@@ -2850,13 +2928,15 @@
 
         function showTickleToast() {
             if (secretRevealed) return;
-            if (document.querySelector('.tickle-toast')) return;
+            const existing = document.querySelector('.tickle-toast');
+            if (existing) existing.remove();
             const container = getActiveContainer();
             const toast = document.createElement('div');
             toast.className = 'konami-toast tickle-toast';
             toast.innerHTML = "<strong>Hey, that tickles! 🤭</strong><span class=\"konami-sub\">maybe there's a secret... keep tapping?</span>";
             container.appendChild(toast);
-            requestAnimationFrame(() => toast.classList.add('show'));
+            void toast.offsetWidth;
+            setTimeout(() => toast.classList.add('show'), 20);
             setTimeout(() => {
                 toast.classList.remove('show');
                 setTimeout(() => toast.remove(), 400);
@@ -2892,36 +2972,69 @@
         document.querySelectorAll('.section-tag').forEach(attachEasterEggClick);
     }
 
+    let activeKonamiTimer = null;
+
     // The 1-UP reveal — a celebratory toast + a shower of hearts. Self-removing,
     // and guarded so spamming the code doesn't stack duplicates.
-    function revealSecret() {
+    function revealSecret(mode = 'normal') {
         secretRevealed = true;
-        trackEvent('konami_triggered');
-        if (document.querySelector('.konami-toast:not(.tickle-toast)')) return;
-        const container = getActiveContainer();
-        const toast = document.createElement('div');
-        toast.className = 'konami-toast';
-        toast.innerHTML =
-            '<span class="konami-1up">1-UP!</span>' +
-            "<strong>It's a secret to everybody.</strong>" +
-            '<span class="konami-sub">🍄 +30 lives · you found the cheat code 🎮</span>';
-        container.appendChild(toast);
+        trackEvent('konami_triggered', { mode });
 
-        const emojis = (C && C.easterEgg && C.easterEgg.emojis) || ['❤️', '🍄', '⭐', '🎮'];
-        for (let i = 0; i < 14; i++) {
+        // Remove any existing toasts immediately to prevent overlap/flashing
+        document.querySelectorAll('.konami-toast').forEach(el => el.remove());
+        if (activeKonamiTimer) clearTimeout(activeKonamiTimer);
+
+        const toast = document.createElement('div');
+        const isParty = mode === 'party';
+        toast.className = isParty ? 'konami-toast party' : 'konami-toast';
+        toast.innerHTML = isParty
+            ? '<span class="konami-1up party-title">🥳 PARTY MODE UNLOCKED! 🎉</span>' +
+              "<strong>It's a secret party to everybody!</strong>" +
+              '<span class="konami-sub">🌈 ✨ Infinite good vibes activated ✨ 🎈</span>'
+            : '<span class="konami-1up">1-UP!</span>' +
+              "<strong>It's a secret to everybody.</strong>" +
+              '<span class="konami-sub">🍄 +30 lives · you found the cheat code 🎮</span>';
+
+        // Always append directly to body to guarantee fixed viewport positioning
+        document.body.appendChild(toast);
+
+        if (isParty) {
+            document.querySelectorAll('.party-backdrop').forEach(el => el.remove());
+            const backdrop = document.createElement('div');
+            backdrop.className = 'party-backdrop';
+            document.body.appendChild(backdrop);
+            setTimeout(() => backdrop.remove(), 8500);
+        }
+
+        const emojis = isParty
+            ? ['🌈', '✨', '🎉', '🥳', '❤️', '⭐', '🍄', '🎮', '💥', '🚀']
+            : ((C && C.easterEgg && C.easterEgg.emojis) || ['❤️', '🍄', '⭐', '🎮']);
+
+        const count = isParty ? 36 : 14;
+        const container = getActiveContainer();
+        for (let i = 0; i < count; i++) {
             const h = document.createElement('div');
             h.className = 'konami-heart';
             h.textContent = emojis[i % emojis.length];
             h.style.left = Math.random() * 100 + 'vw';
-            h.style.animationDelay = Math.random() * 0.6 + 's';
+            h.style.animationDelay = (Math.random() * (isParty ? 2.5 : 0.8)) + 's';
+            if (isParty) {
+                h.style.fontSize = (1.5 + Math.random() * 1.2) + 'rem';
+                h.style.animationDuration = (2.6 + Math.random() * 1.2) + 's';
+            }
             container.appendChild(h);
-            setTimeout(() => h.remove(), 2600);
+            setTimeout(() => h.remove(), isParty ? 4500 : 2800);
         }
-        requestAnimationFrame(() => toast.classList.add('show'));
-        setTimeout(() => {
+
+        // Force reflow so browser registers initial opacity: 0 before opacity: 1
+        void toast.offsetWidth;
+        setTimeout(() => toast.classList.add('show'), 20);
+
+        const duration = isParty ? 8500 : 4200;
+        activeKonamiTimer = setTimeout(() => {
             toast.classList.remove('show');
             setTimeout(() => toast.remove(), 400);
-        }, 4200);
+        }, duration);
     }
 
     // Both overlays are native <dialog> elements opened with showModal(), so

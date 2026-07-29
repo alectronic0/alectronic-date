@@ -736,9 +736,42 @@ body:has(dialog[open]) { overflow: hidden; }
   padding: 18px 28px; border-radius: 14px;
   border: 1px solid var(--accent-light);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
-  opacity: 0; transition: opacity 0.35s, transform 0.35s;
+  opacity: 0;
+  will-change: opacity, transform;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 .konami-toast.show { opacity: 1; transform: translate(-50%, 0); }
+.konami-toast.party {
+  background: linear-gradient(135deg, #ff007f, #7928ca, #00dfd8);
+  background-size: 200% 200%;
+  animation: party-gradient 3s ease infinite;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 30px rgba(255, 0, 127, 0.7);
+}
+.konami-1up.party-title {
+  color: #ffea00;
+  text-shadow: 0 0 10px rgba(255, 234, 0, 0.9);
+}
+.party-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 2147483640;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(255, 0, 127, 0.15), transparent 70%);
+  animation: party-pulse 8.5s ease-in-out forwards;
+}
+@keyframes party-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes party-pulse {
+  0% { filter: hue-rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  50% { filter: hue-rotate(180deg); opacity: 1; }
+  90% { opacity: 1; }
+  100% { filter: hue-rotate(360deg); opacity: 0; }
+}
 .fact-toast {
   position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 24px);
   z-index: 2147483647; pointer-events: none;
@@ -761,8 +794,9 @@ body:has(dialog[open]) { overflow: hidden; }
   color: #9bff9b; text-shadow: 0 0 8px rgba(120, 255, 120, 0.6);
 }
 .konami-sub { font-size: 0.82rem; color: #f3e3ff; }
-.konami-heart {
-  position: fixed; top: -40px; z-index: 2147483647; pointer-events: none;
+.konami-heart,
+.rain-item {
+  position: fixed; top: -60px; z-index: 2147483647; pointer-events: none;
   font-size: 1.6rem; animation: konami-fall 2.4s linear forwards;
 }
 @keyframes konami-fall {

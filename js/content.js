@@ -63,6 +63,8 @@ window.CONTENT = {
             "a travel companion ✈️",
             "a taste tester 🍕",
             "a D&D party member 🎲",
+            "an emergency contact 🚨",
+            "a midnight snack raid partner 🌙",
             "a board game rival ♟️",
             "a fellow adventurer 🧭",
             "the princess to my hero 👑",
@@ -703,6 +705,14 @@ window.CONTENT = {
                                 <div class="interest-card-head"><span class="interest-card-icon">🍷</span><span class="interest-card-title">Guaranteed to age like fine wine</span></div>
                                 <p class="interest-card-body">If my dad is any indicator, I will age like fine wine <em>(or your money back)</em></p>
                             </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">📱</span><span class="interest-card-title">Daily Check-Ins</span></div>
+                                <p class="interest-card-body">Good morning and good night texts as standard—waking up and falling asleep with a sweet message 🌅🌙</p>
+                            </div>
+                            <div class="interest-card">
+                                <div class="interest-card-head"><span class="interest-card-icon">🚨</span><span class="interest-card-title">Priority Emergency Contact</span></div>
+                                <p class="interest-card-body">24/7 designated emergency contact status—always in your corner whenever you need someone 📞❤️</p>
+                            </div>
                                 </div>
                                 <div style="margin-top: 24px; text-align: center; font-size: 0.85rem; color: var(--muted-2);">
                                     <p style="margin: 0;"><em>*Batteries not included (except for the phone charger battery pack he always carries around with him)</em></p>
@@ -723,10 +733,10 @@ window.CONTENT = {
             ]
         },
         lookingFor: {
-            tag: "📋 Now Hiring: Player 2",
+            tag: "📋 Now Hiring: Player 2 (Permanent Role)",
             tagClass: "tag-gold",
-            heading: "Job Opening: Player 2 (Permanent Role)",
-            lead: "No previous experience required. Just curiosity, good vibes, and a willingness to get stuck in.",
+            heading: "What I'm Looking For in My Player 2 for Life!",
+            lead: "No previous experience required. Just curiosity, good vibes, and a willingness to get stuck in — below are just a few things my perfect partner might have!",
             blocks: [
                 {
                     type: "heading",
@@ -802,6 +812,10 @@ window.CONTENT = {
                                             hint: "Got nothing personal against people who smoke, but to be completely honest, it's bad for your health and I strongly prefer a smoke-free environment."
                                         },
                                         {
+                                            label: "🍕 Must be an omnivore",
+                                            hint: "🍖 Omnnomnomnivore 🥩 — I love food sooooo much! Sharing meal times, exploring new cuisines, and eating together is a huge part of how I connect, so I hope you enjoy all foods too! 🍕"
+                                        },
+                                        {
                                             label: "👶 No kids",
                                             hint: "Nothing against single mothers at all, but I just don't feel I can handle stepping in to raise or manage another person's child right now."
                                         },
@@ -830,6 +844,7 @@ window.CONTENT = {
                                         "🐾 Pet-friendly workspace",
                                         "☕ Unlimited tea allowance",
                                         "🛋️ Flexible working — sometimes the sofa, sometimes the summit of a mountain",
+                                        "🚨 24/7 Priority Emergency Contact privileges",
                                         {html: "<span>✨ …and so much more — check out the <a href=\"#bfExtrasModal\" style=\"white-space: nowrap;\">Boyfriend Mode Extras 👆</a></span>"}
                                     ]
                                 }
@@ -2396,6 +2411,8 @@ window.CONTENT = {
                             imagePosition: "left"
                         },
                         {
+                            src: "img/friends/pokemon-plushies.webp",
+                            alt: "Lilligant and Mew Pokémon plushies",
                             icon: "🧸",
                             title: "A small thing they do for people",
                             text: "Bought me some pokemon plushies back from Japan because I told him my favourite pokemon and was having a hard time at work.",
