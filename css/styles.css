@@ -3532,6 +3532,31 @@ button.CookiebotWidget-logo::before {
   box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
 }
 
+/* ── Floating Cookie Button ── */
+.cookie-floating-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9990;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cookie-floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(153, 78, 168, 0.4);
+}
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
   .quest-form { padding: 20px 14px; }
