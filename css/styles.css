@@ -1822,14 +1822,24 @@ footer { background: var(--aubergine); border-top: 1px solid var(--border); padd
   font-weight: 600;
 }
 
-/* ─── Cookiebot Custom Styles ───────────────── */
-#CybotCookiebotDialog {
-  background: var(--surface) !important;
-  border: 1px solid var(--border) !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--shadow) !important;
-  font-family: var(--font) !important;
-  color: var(--text) !important;
+/* ─── CookieConsent v3 Custom Styles ───────────────── */
+#cc-main {
+  --cc-bg: var(--surface);
+  --cc-primary-color: var(--text);
+  --cc-secondary-color: var(--muted);
+  --cc-separator-border-color: var(--border);
+  --cc-btn-primary-bg: var(--accent);
+  --cc-btn-primary-color: #ffffff;
+  --cc-btn-primary-hover-bg: var(--accent-light);
+  --cc-btn-primary-hover-color: #1a1320;
+  --cc-btn-secondary-bg: var(--surface-2);
+  --cc-btn-secondary-color: var(--text);
+  --cc-btn-secondary-hover-bg: var(--surface-3);
+  --cc-btn-secondary-hover-color: var(--text);
+  --cc-toggle-on-bg: var(--accent);
+  --cc-font-family: var(--font);
+  --cc-modal-border-radius: var(--radius);
+  --cc-btn-border-radius: 12px;
 }
 
 #CybotCookiebotDialogBodyContentTitle,

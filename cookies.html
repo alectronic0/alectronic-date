@@ -17,8 +17,10 @@
         });
     </script>
 
-    <!-- Cookiebot CMP -->
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="820f6652-0e65-48ca-a9f9-f99af973382f" data-blockingmode="auto" type="text/javascript"></script>
+    <!-- Vanilla CookieConsent v3 -->
+    <link rel="stylesheet" href="css/cookieconsent.css">
+    <script src="js/cookieconsent.umd.js" defer></script>
+    <script src="js/cookieconsent-config.js" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4Q5KJSLNK"></script>
@@ -193,10 +195,7 @@
     <h1 class="title">Cookie Vault</h1>
     <p class="message">Where we keep all the cookies</p>
     <p class="message" >🍪🍪🍪🍪🍪🍪</p>
-    <p class="message">
-        <script id="CookieDeclaration" src="https://consent.cookiebot.com/820f6652-0e65-48ca-a9f9-f99af973382f/cd.js" type="text/javascript" async></script>
-    </p>
-    <p class="message"><a href="javascript:Cookiebot.renew()"  class="btn">Cookie Settings 🍪</a></p>
+    <p class="message"><button type="button" onclick="CookieConsent.showPreferences()" class="btn">Cookie Settings 🍪</button></p>
     <p class="message"><a href="/" class="btn">← Take Me Home</a></p>
 </div>
 <p class="footer">You've found a page that keeps all the cookies.</p>
