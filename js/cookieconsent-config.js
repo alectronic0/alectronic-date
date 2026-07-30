@@ -1,7 +1,43 @@
 window.addEventListener('load', function() {
     if (typeof CookieConsent === 'undefined') return;
 
+    function handleConsentUpdate() {
+        const analyticsAccepted = CookieConsent.acceptedCategory('analytics');
+        const preferencesAccepted = CookieConsent.acceptedCategory('preferences');
+
+        if (typeof gtag === 'function') {
+            gtag('consent', 'update', {
+                'analytics_storage': analyticsAccepted ? 'granted' : 'denied'
+            });
+        }
+
+        // Clean up analytics cookies if rejected/revoked
+        if (!analyticsAccepted) {
+            const cookies = document.cookie.split(';');
+            const domain = window.location.hostname;
+            const parts = domain.split('.');
+            const rootDomain = parts.length > 1 ? parts.slice(-2).join('.') : domain;
+
+            cookies.forEach(function(c) {
+                const name = c.split('=')[0].trim();
+                if (name.startsWith('_ga') || name.startsWith('_gid') || name.startsWith('_gat')) {
+                    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + domain + ';';
+                    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + rootDomain + ';';
+                }
+            });
+        }
+
+        // Remove alec-date-prompts from localStorage if preferences category is rejected/revoked
+        if (!preferencesAccepted) {
+            try {
+                localStorage.removeItem('alec-date-prompts');
+            } catch (e) {}
+        }
+    }
+
     CookieConsent.run({
+        autoClearCookies: true,
         guiOptions: {
             consentModal: {
                 layout: 'box',
@@ -20,8 +56,18 @@ window.addEventListener('load', function() {
             necessary: {
                 readOnly: true
             },
-            preferences: {},
-            analytics: {}
+            preferences: {
+                autoClear: {
+                    cookies: []
+                }
+            },
+            analytics: {
+                autoClear: {
+                    cookies: [
+                        { name: /^(_ga|_gid|_gat|_ga_.*)/ }
+                    ]
+                }
+            }
         },
         language: {
             default: 'en',
@@ -38,7 +84,6 @@ window.addEventListener('load', function() {
                         title: "🍪 Cookie Settings & Vault",
                         acceptAllBtn: "Yes Please! Gimme the cookies 🍪",
                         acceptNecessaryBtn: "🙅‍♂️ No thanks! I don't want cookies",
-                        savePreferencesBtn: "Save Settings",
                         closeIconLabel: "Close",
                         sections: [
                             {
@@ -52,7 +97,7 @@ window.addEventListener('load', function() {
                             },
                             {
                                 title: "🎨 Preferences Cookies",
-                                description: "Saves your dating preferences (<code>alec-date-prompts</code>) locally in your browser so you can pick up where you left off. I only ever see this if you choose to send it to me — via email, WhatsApp, or another message platform.",
+                                description: "Saves your dating preferences (<code>alec-date-prompts</code>) locally in your browser so you can pick up where you left off. If rejected, this data is erased.",
                                 category: "preferences"
                             },
                             {
@@ -65,19 +110,7 @@ window.addEventListener('load', function() {
                 }
             }
         },
-        onAccept: function() {
-            if (typeof gtag === 'function') {
-                gtag('consent', 'update', {
-                    'analytics_storage': CookieConsent.acceptedCategory('analytics') ? 'granted' : 'denied'
-                });
-            }
-        },
-        onChange: function() {
-            if (typeof gtag === 'function') {
-                gtag('consent', 'update', {
-                    'analytics_storage': CookieConsent.acceptedCategory('analytics') ? 'granted' : 'denied'
-                });
-            }
-        }
+        onAccept: handleConsentUpdate,
+        onChange: handleConsentUpdate
     });
 });
