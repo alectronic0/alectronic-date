@@ -41,13 +41,13 @@ window.addEventListener('load', function() {
         guiOptions: {
             consentModal: {
                 layout: 'box',
-                position: 'bottom right',
+                position: 'bottom left',
                 equalWeightButtons: true,
                 flipButtons: false
             },
             preferencesModal: {
                 layout: 'box',
-                position: 'right',
+                position: 'left',
                 equalWeightButtons: true,
                 flipButtons: false
             }
@@ -113,4 +113,16 @@ window.addEventListener('load', function() {
         onAccept: handleConsentUpdate,
         onChange: handleConsentUpdate
     });
+
+    // Bind floating cookie button strictly to open the initial consent modal
+    document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.cookie-floating-btn') || e.target.closest('[data-cc="show-preferencesModal"]');
+        if (btn) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (typeof CookieConsent !== 'undefined' && typeof CookieConsent.show === 'function') {
+                CookieConsent.show(true);
+            }
+        }
+    }, true);
 });
