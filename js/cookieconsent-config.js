@@ -78,7 +78,7 @@ window.addEventListener('load', function() {
                         description: "💬 <b>The obligatory bit before the fun.</b><br><br>Before we get to the fun stuff, we need to talk about consent. 🛑<br>These cookies quietly help me understand how people explore this site, so I know what's actually working (and what's not).<br><br>• 🚫 No ads.<br>• 💰 No data selling.<br>• 🙅‍♂️ No funny business.<br><br>Just honest, anonymous stats. If you're okay with the cookies, go for it! If you're not, that's completely fine too. I want to be upfront from the start (just like I'll try to be if this goes any further).",
                         acceptAllBtn: "Yes Please! Gimme the cookies 🍪",
                         acceptNecessaryBtn: "🙅‍♂️ No thanks! I don't want cookies",
-                        showPreferencesBtn: "⚙️ Cookie settings"
+                        showPreferencesBtn: "What cookies do we use"
                     },
                     preferencesModal: {
                         title: "🍪 Cookie Settings & Vault",
