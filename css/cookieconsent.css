@@ -2,13 +2,14 @@
 /* Custom Accessibility Overrides & Position Sync */
 #cc-main .cm--box.cm--bottom.cm--left,
 #cc-main .cm-wrapper {
-  bottom: 85px !important;
-  left: 20px !important;
+  bottom: 75px !important;
+  left: 16px !important;
   right: auto !important;
-  max-width: 420px !important;
+  max-width: 340px !important;
   background-color: #161a1c !important;
   border: 2px solid rgba(255, 255, 255, 0.3) !important;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.85) !important;
+  padding: 1.1rem !important;
 }
 
 #cc-main .cm__title,
