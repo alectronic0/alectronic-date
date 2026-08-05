@@ -13,7 +13,6 @@
       'functionality_storage': 'denied',
       'personalization_storage': 'denied',
       'security_storage': 'granted',
-      'wait_for_update': 500
     });
   </script>
   
@@ -28,7 +27,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-N4Q5KJSLNK');
+    gtag('config', 'G-N4Q5KJSLNK', {
+      'url_passthrough': true,
+      'ads_data_redaction': true
+    });
   </script>
 
   <meta charset="UTF-8">
