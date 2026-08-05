@@ -94,6 +94,10 @@
     .hero-cta, .hero-scroll {
       display: none !important;
     }
+
+    .hero-emoji {
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", sans-serif;
+    }
   </style>
 </head>
 <body>
@@ -129,7 +133,7 @@
     document.getElementById('hero-emoji').textContent = hero.emoji;
     document.getElementById('hero-headline').innerHTML = hero.headline;
     document.getElementById('hero-sub').innerHTML = hero.subheading;
-    document.getElementById('hero-tagline').innerHTML = hero.tagline;
+    document.getElementById('hero-tagline').innerHTML = hero.tagline || window.CONTENT.meta.tagline;
 
     // Build the photo collage
     const mediaDiv = document.getElementById('hero-media');
