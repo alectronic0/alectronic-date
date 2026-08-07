@@ -114,15 +114,12 @@
 <header class="hero"></header>
 
 <main>
-
 <!-- ════════════════ WHO I AM ════════════════ -->
 <section id="about">
   <div class="container">
-    <!-- Tag + name ride in the sticky section head (and sit above the photo
-         on mobile), so you always know whose profile you're scrolling. -->
     <div class="section-head">
-      <div id="profile-tag-container"><div class="section-tag tag-purple" style="user-select: none; cursor: pointer;">📋 Who I Am</div></div>
-      <div class="profile-name" data-profile="name">Alec Doran-Twyford <span class="deep-link" role="button" tabindex="0" data-anchor="about" aria-label="Copy link to Alec Doran-Twyford" title="Copy link to this section">🔗</span></div>
+      <div id="profile-tag-container"></div>
+      <div class="profile-name" data-profile="name"></div>
     </div>
     <div class="profile-tagline" data-profile="tagline" style="display: none;"></div>
     <div class="profile-layout">
@@ -131,11 +128,11 @@
         <div class="fact-grid" data-profile="facts"></div>
       </div>
       <div class="profile-photo-col">
-        <div class="profile-photo" data-profile="photo" data-faces="expand"></div></div>
-        <button class="faces-expand" id="faces-expand-btn">⤢ View all photos</button>
+        <div class="profile-photo" data-profile="photo" data-faces="expand"></div>
+        <button class="faces-expand" id="faces-expand-btn" style="display: none;">⤢ View all photos</button>
       </div>
     </div>
-    <div id="profile-evolving-note" class="evolving-note">🚧 Like me, this site is a work in progress — it continues to evolve and won't always be perfect. The odd bug, glitch, or typo might sneak through, but it's trying its best anyway. 💜</div>
+    <div id="profile-evolving-note" class="evolving-note"></div>
   </div>
 </section>
 
@@ -156,193 +153,14 @@
 <!-- ════════════════ QUEST / CONTACT ════════════════ -->
 <section id="contact">
   <div class="container">
-    <div id="quest-root">
-            <div class="section-head">
-                <div class="section-tag tag-blue" style="user-select: none; cursor: pointer;">💬 How to Get in Touch</div>
-                <h2>Shoot Your Shot <span class="deep-link" role="button" tabindex="0" data-anchor="contact" aria-label="Copy link to Shoot Your Shot" title="Copy link to this section">🔗</span></h2>
-            </div>
-        
-            <div class="quest-form" id="quest-form">
-                
-            <div class="quest-gauge" id="quest-gauge">
-                <div class="gauge-track">
-                    <div class="gauge-fill-bar" id="gauge-fill-bar" style="width: 0%; background-color: rgb(245, 158, 11); box-shadow: rgb(245, 158, 11) 0px 0px 14px;"></div>
-                </div>
-                <div class="gauge-steps-row">
-                    
-                        <div class="quest-gauge-seg" data-step="1" onclick="questGoTo(1)">
-                            <span class="gauge-dot"></span>
-                            <span class="gauge-label">Intro</span>
-                        </div>
-                    
-                        <div class="quest-gauge-seg" data-step="2" onclick="questGoTo(2)">
-                            <span class="gauge-dot"></span>
-                            <span class="gauge-label">Location</span>
-                        </div>
-                    
-                        <div class="quest-gauge-seg" data-step="3" onclick="questGoTo(3)">
-                            <span class="gauge-dot"></span>
-                            <span class="gauge-label">Adventure</span>
-                        </div>
-                    
-                        <div class="quest-gauge-seg" data-step="4" onclick="questGoTo(4)">
-                            <span class="gauge-dot"></span>
-                            <span class="gauge-label">Icebreakers</span>
-                        </div>
-                    
-                        <div class="quest-gauge-seg" data-step="5" onclick="questGoTo(5)">
-                            <span class="gauge-dot"></span>
-                            <span class="gauge-label">Seal &amp; Send</span>
-                        </div>
-                    
-                </div>
-            </div>
-        
-
-                <div class="quest-step active" data-quest-step="0">
-                    <div class="quest-crossroads" id="quest-crossroads">
-                        <h2>💘 Ready to Shoot Your Shot?</h2>
-                        <p class="quest-lead">You've made it this far! Do you want to shoot your shot?<br>I've worked to make this as easy as possible: Tell me your <span class="text-purple">name</span>, set your rough <span class="text-red">location</span>, pick your <span class="text-green">adventure</span>, answer a few <span class="text-blue">ice breakers</span>, and <span class="text-gold">leave the rest to me!</span></p>
-                        <div class="quest-choice-row">
-                            <button type="button" class="quest-choice-btn primary" onclick="questGoTo(1)">
-                                <span class="choice-icon">💘</span>
-                                <span class="choice-title">Shoot Your Shot</span>
-                                <span class="choice-sub">Start the quest — let's go on a date!</span>
-                            </button>
-                            <button type="button" class="quest-choice-btn" onclick="const s = document.getElementById('share'); if(s) s.scrollIntoView({behavior: 'smooth'})">
-                                <span class="choice-icon">📤</span>
-                                <span class="choice-title">Share with a Friend</span>
-                                <span class="choice-sub">Know someone who'd be a better match?</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="quest-step" data-quest-step="1">
-                    <div class="quest-step-header">
-                        <span class="quest-step-badge">STEP 1 OF 5</span>
-                        <h3>👋 What is your name, adventurer?</h3>
-                        <p>So you're looking to go on an adventure with Alec! Before we set off, what should I call you?</p>
-                    </div>
-                    <div class="input-row">
-                        <input type="text" class="quest-input" id="rpg-name-input" placeholder="Your name" value="" oninput="updateNamePreview(); toggleClearNameBtn();">
-                        <button type="button" class="clear-input-btn" id="clear-name-btn" aria-label="Clear name" title="Clear name" onclick="clearNameInput()" style="display: none">×</button>
-                    </div>
-                    <div class="title-pills"><button type="button" class="title-pill" data-title="{&quot;emoji&quot;:&quot;👑&quot;,&quot;label&quot;:&quot;Princess&quot;,&quot;position&quot;:&quot;prefix&quot;}" onclick="selectTitlePill(this)">
-                <span class="pill-emoji">👑</span> Princess
-            </button><button type="button" class="title-pill" data-title="{&quot;emoji&quot;:&quot;⚔️&quot;,&quot;label&quot;:&quot;Fair Maiden&quot;,&quot;position&quot;:&quot;prefix&quot;}" onclick="selectTitlePill(this)">
-                <span class="pill-emoji">⚔️</span> Fair Maiden
-            </button><button type="button" class="title-pill" data-title="{&quot;emoji&quot;:&quot;🦊&quot;,&quot;label&quot;:&quot;Lady&quot;,&quot;position&quot;:&quot;prefix&quot;}" onclick="selectTitlePill(this)">
-                <span class="pill-emoji">🦊</span> Lady
-            </button><button type="button" class="title-pill" data-title="{&quot;emoji&quot;:&quot;🧙‍♀️&quot;,&quot;label&quot;:&quot;Sorceress&quot;,&quot;position&quot;:&quot;suffix&quot;,&quot;connector&quot;:&quot;the&quot;}" onclick="selectTitlePill(this)">
-                <span class="pill-emoji">🧙‍♀️</span> Sorceress
-            </button><button type="button" class="title-pill" data-title="{&quot;emoji&quot;:&quot;🐉&quot;,&quot;label&quot;:&quot;Dragon Slayer&quot;,&quot;position&quot;:&quot;suffix&quot;,&quot;connector&quot;:&quot;the&quot;}" onclick="selectTitlePill(this)">
-                <span class="pill-emoji">🐉</span> Dragon Slayer
-            </button><button type="button" class="title-pill" data-title="{&quot;emoji&quot;:&quot;🗡️&quot;,&quot;label&quot;:&quot;Bad Ass Main Character&quot;,&quot;position&quot;:&quot;suffix&quot;}" onclick="selectTitlePill(this)">
-                <span class="pill-emoji">🗡️</span> Bad Ass Main Character
-            </button><button type="button" class="title-pill" data-title="{&quot;emoji&quot;:&quot;🏰&quot;,&quot;label&quot;:&quot;First of Her Name&quot;,&quot;position&quot;:&quot;suffix&quot;}" onclick="selectTitlePill(this)">
-                <span class="pill-emoji">🏰</span> First of Her Name
-            </button><button type="button" class="title-pill" data-title="{&quot;emoji&quot;:&quot;👸&quot;,&quot;label&quot;:&quot;Queen of the Realm&quot;,&quot;position&quot;:&quot;suffix&quot;}" onclick="selectTitlePill(this)">
-                <span class="pill-emoji">👸</span> Queen of the Realm
-            </button><button type="button" class="title-pill" data-title="{&quot;emoji&quot;:&quot;🔥&quot;,&quot;label&quot;:&quot;Chaos Gremlin&quot;,&quot;position&quot;:&quot;suffix&quot;,&quot;connector&quot;:&quot;the&quot;}" onclick="selectTitlePill(this)">
-                <span class="pill-emoji">🔥</span> Chaos Gremlin
-            </button><button type="button" class="title-pill" data-title="{&quot;emoji&quot;:&quot;🧹&quot;,&quot;label&quot;:&quot;Witch&quot;,&quot;position&quot;:&quot;suffix&quot;,&quot;connector&quot;:&quot;the&quot;}" onclick="selectTitlePill(this)">
-                <span class="pill-emoji">🧹</span> Witch
-            </button></div>
-                    <div class="quest-name-preview" id="quest-name-preview"><strong class="preview-badge-name">???????</strong></div>
-                    <div class="quest-nav">
-                        <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
-                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
-                        <button type="button" class="quest-nav-btn primary" onclick="questNext()">Next →</button>
-                    </div>
-                </div>
-
-                <div class="quest-step" data-quest-step="2">
-                    <div class="quest-step-header">
-                        <span class="quest-step-badge">STEP 2 OF 5</span>
-                        <h3>📍 Where Do You Hail From?</h3>
-                        <p>Every great quest needs a starting point. Drop your rough location so I can plan the journey.</p>
-                    </div>
-                    <p class="location-subtext" style="text-align: center; margin-bottom: 14px;">No tracking — I only see your location when you send the email.</p>
-                    <div class="input-row">
-                        <input type="text" class="quest-input" id="rough-location" placeholder="e.g. Postcode, town, or train station" aria-label="What is your rough location?" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                        <button type="button" class="clear-input-btn" id="clear-location-btn" aria-label="Clear location" title="Clear location" style="display:none">×</button>
-                    </div>
-                    <div id="location-suggestions"></div>
-                    <div id="quest-location-display"></div>
-                    <div class="quest-nav">
-                        <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
-                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
-                        <button type="button" class="quest-nav-btn primary" onclick="questNext()">Next →</button>
-                    </div>
-                </div>
-
-                <div class="quest-step" data-quest-step="3">
-                    <div class="quest-step-header">
-                        <span class="quest-step-badge">STEP 3 OF 5</span>
-                        <h3>🗺️ Pick Your Adventure</h3>
-                        <p>What kind of adventure would you like to go on? Pick as many as you like!</p>
-                    </div>
-                    <div data-section="dates"><div class="date-menu"><div class="date-card"><img src="img/dates/couple-date-bookstore.webp" alt="Calm Adventure" loading="lazy"><div class="date-card-body"><h3>Chill mode</h3><div class="date-pills"><button type="button" class="pill date-idea-pill" data-idea="☕ Coffee walk">☕ Coffee walk</button><button type="button" class="pill date-idea-pill" data-idea="🌳 Nature walk">🌳 Nature walk</button><button type="button" class="pill date-idea-pill" data-idea="🦆 Canal walk">🦆 Canal walk</button></div></div></div><div class="date-card"><img src="img/dates/couple-date-at-a-gallery.webp" alt="A museum gallery" loading="lazy"><div class="date-card-body"><h3>🧠 Intellectual</h3><div class="date-pills"><button type="button" class="pill date-idea-pill" data-idea="🏛️ Museum">🏛️ Museum</button><button type="button" class="pill date-idea-pill" data-idea="🖼️ Art Gallery">🖼️ Art Gallery</button><button type="button" class="pill date-idea-pill" data-idea="🐠 Aquarium">🐠 Aquarium</button><button type="button" class="pill date-idea-pill" data-idea="🦁 Zoo">🦁 Zoo</button><button type="button" class="pill date-idea-pill" data-idea="🪐 Planetarium">🪐 Planetarium</button></div></div></div><div class="date-card"><img src="img/dates/couple-playing-video-games.webp" alt="Playing video games together" loading="lazy"><div class="date-card-body"><h3>🎮 Video Game Session!</h3><div class="date-pills"><button type="button" class="pill date-idea-pill" data-idea="💬 Chat of Discord">💬 Chat of Discord</button><button type="button" class="pill date-idea-pill" data-idea="⛰️ Peak">⛰️ Peak</button><button type="button" class="pill date-idea-pill" data-idea="👫 It Takes Two">👫 It Takes Two</button><button type="button" class="pill date-idea-pill" data-idea="📖 Split Fiction">📖 Split Fiction</button><button type="button" class="pill date-idea-pill" data-idea="🌀 Portal 2">🌀 Portal 2</button></div></div></div><div class="date-card"><img src="img/dates/flower-market.webp" alt="A flower market" loading="lazy"><div class="date-card-body"><h3>🍕 Foodie / Market</h3><div class="date-pills"><button type="button" class="pill date-idea-pill" data-idea="🥐 Pastry Adventure">🥐 Pastry Adventure</button><button type="button" class="pill date-idea-pill" data-idea="🌸 Flower Market">🌸 Flower Market</button><button type="button" class="pill date-idea-pill" data-idea="🌮 Food Market">🌮 Food Market</button><button type="button" class="pill date-idea-pill" data-idea="📚 Bookstore Tour">📚 Bookstore Tour</button></div></div></div><div class="date-card"><img src="img/dates/couple-on-date-axe-throwing.webp" alt="Axe throwing date" loading="lazy"><div class="date-card-body"><h3>⚡ Active</h3><div class="date-pills"><button type="button" class="pill date-idea-pill" data-idea="🕹️ Arcade">🕹️ Arcade</button><button type="button" class="pill date-idea-pill" data-idea="🪓 Axe Throwing">🪓 Axe Throwing</button><button type="button" class="pill date-idea-pill" data-idea="🎳 Bowling">🎳 Bowling</button><button type="button" class="pill date-idea-pill" data-idea="⛳ Mini Golf">⛳ Mini Golf</button><button type="button" class="pill date-idea-pill" data-idea="🔫 Virtual Clay Pigeon">🔫 Virtual Clay Pigeon</button><button type="button" class="pill date-idea-pill" data-idea="🎯 Flight Club">🎯 Flight Club</button></div></div></div><div class="date-card"><img src="img/dates/couple-date-pottery-class.webp" alt="A pottery class date" loading="lazy"><div class="date-card-body"><h3>🎨 Creative</h3><div class="date-pills"><button type="button" class="pill date-idea-pill" data-idea="🏺 Pottery">🏺 Pottery</button><button type="button" class="pill date-idea-pill" data-idea="✨ Kintsugi">✨ Kintsugi</button><button type="button" class="pill date-idea-pill" data-idea="🌱 Terrarium making">🌱 Terrarium making</button><button type="button" class="pill date-idea-pill" data-idea="🧑‍🍳 Cooking Class">🧑‍🍳 Cooking Class</button><button type="button" class="pill date-idea-pill" data-idea="🖌️ Painting">🖌️ Painting</button></div></div></div></div></div>
-                    <div class="quest-nav">
-                        <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
-                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
-                        <button type="button" class="quest-nav-btn primary" onclick="questNext()">Next →</button>
-                    </div>
-                </div>
-
-                <div class="quest-step" data-quest-step="4">
-                    <div class="quest-step-header">
-                        <span class="quest-step-badge">STEP 4 OF 5</span>
-                        <h3>🧊 Lets break the ice</h3>
-                        <p>Nearly there! Answer a few ice breakers, hold the ones you like, shuffle the rest.</p>
-                    </div>
-                    <div data-prompts="root"><div style="text-align: center;"><div class="prompt-header-action"><button type="button" class="prompt-shuffle"><span>🃏Shuffle the deck</span></button></div><ol class="prompt-cards" data-prompts="cards"><li class="prompt-card" data-index="0"><div class="prompt-card-top"><span class="prompt-q">What's a hobby or interest you could talk about for hours?</span><button type="button" class="prompt-hold-btn">🔓 Hold</button></div><div class="prompt-answer-wrapper"><textarea class="prompt-answer-input" data-question="What's a hobby or interest you could talk about for hours?" placeholder="Your answer..." oninput="saveRiddleAnswer(this)"></textarea></div></li><li class="prompt-card" data-index="1"><div class="prompt-card-top"><span class="prompt-q">What do you do for work — and do you genuinely enjoy it?</span><button type="button" class="prompt-hold-btn">🔓 Hold</button></div><div class="prompt-answer-wrapper"><textarea class="prompt-answer-input" data-question="What do you do for work — and do you genuinely enjoy it?" placeholder="Your answer..." oninput="saveRiddleAnswer(this)"></textarea></div></li></ol></div></div>
-                    <div class="quest-nav">
-                        <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
-                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
-                        <button type="button" class="quest-nav-btn primary" onclick="questNext()">Seal &amp; Send →</button>
-                    </div>
-                </div>
-
-                <div class="quest-step" data-quest-step="5">
-                    <div class="quest-step-header">
-                        <span class="quest-step-badge">STEP 5 OF 5</span>
-                        <h3>💌 Seal &amp; Send</h3>
-                        <p>This is the message you will send:</p>
-                    </div>
-                    <div class="quest-preview" id="quest-preview-body"></div>
-                    <div class="quest-action-card">
-                        <a href="#" id="quest-email-btn" class="quest-send-email-btn" onclick="sendQuestEmail(event)">
-                            <span class="btn-icon">📧</span> <span class="btn-text">Send as Email</span>
-                        </a>
-
-                        <div class="quest-divider-line"><span>OR</span></div>
-
-                        <button type="button" class="quest-copy-btn" onclick="copyQuestAnswers(this)">
-                            <span class="btn-icon">📋</span> <span class="btn-text">Copy responses</span>
-                        </button>
-
-                        <div class="quest-alt-apps">
-                            <p class="alt-apps-label">Message me on other apps:</p>
-                            <div class="contact-links" id="quest-alt-links"><a class="contact-btn" href="https://www.instagram.com/alectronic0/" target="_blank" rel="noopener"><img class="contact-favicon" src="https://www.google.com/s2/favicons?domain=www.instagram.com&amp;sz=64" alt="Instagram logo" loading="lazy"> <span class="btn-label">Instagram</span></a><a class="contact-btn" href="https://www.tiktok.com/@alectronic0/" target="_blank" rel="noopener"><img class="contact-favicon" src="https://www.google.com/s2/favicons?domain=www.tiktok.com&amp;sz=64" alt="TikTok logo" loading="lazy"> <span class="btn-label">TikTok</span></a><a class="contact-btn" href="https://www.linkedin.com/in/alectronic0/" target="_blank" rel="noopener"><img class="contact-favicon" src="https://www.google.com/s2/favicons?domain=www.linkedin.com&amp;sz=64" alt="LinkedIn logo" loading="lazy"> <span class="btn-label">LinkedIn</span></a><span class="contact-btn disabled"><svg class="contact-favicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="#25D366" d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path></svg> <span class="btn-label">WhatsApp</span></span><a class="contact-btn" href="https://t.me/alectronic0" target="_blank" rel="noopener"><img class="contact-favicon" src="https://www.google.com/s2/favicons?domain=t.me&amp;sz=64" alt="Telegram logo" loading="lazy"> <span class="btn-label">Telegram</span></a></div>
-                        </div>
-                    </div>
-                    <div class="quest-nav">
-                        <button type="button" class="quest-nav-btn" onclick="questPrev()">← Back</button>
-                        <button type="button" class="quest-nav-btn reset" onclick="questReset()">🔄 Reset</button>
-                        <button type="button" class="quest-nav-btn primary" onclick="sendQuestEmail(event)">Send 📧</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="quest-root"></div>
   </div>
 </section>
 
 <!-- ════════════════ SHARE ════════════════ -->
 <section id="share">
   <div class="container">
-    <div class="share-section" data-share="share"><div class="section-tag tag-rose" style="user-select: none; cursor: pointer;">🍄 Not Your Vibe?</div><h2>Maybe My Princess Is in Another Castle 🏰</h2><p class="lead">No hard feelings if I'm not the one for you — but maybe you know someone who is. Send this their way:</p><div class="share-links"><a class="share-btn share-email" href="mailto:?subject=Check%20out%20Alec's%20dating%20application%20%F0%9F%8E%AE%E2%9D%A4%EF%B8%8F&amp;body=Check%20out%20Alec's%20dating%20application%20%F0%9F%8E%AE%E2%9D%A4%EF%B8%8F%20http%3A%2F%2Flocalhost%3A34047%2F"><svg class="share-logo" viewBox="52 42 88 66" aria-hidden="true" focusable="false"><path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"></path><path fill="#34a853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"></path><path fill="#fbbc04" d="M120 64v10l20-15v-3.5c0-9.27-10.58-14.55-18-9l-2 1.5"></path><path fill="#ea4335" d="M72 74V48l24 18 24-18v26L96 92"></path><path fill="#c5221f" d="M52 55.5V59l20 15V48l-2-1.5c-7.42-5.55-18-.27-18 9"></path></svg><span>Email</span></a><a class="share-btn share-whatsapp" href="https://wa.me/?text=Check%20out%20Alec's%20dating%20application%20%F0%9F%8E%AE%E2%9D%A4%EF%B8%8F%20http%3A%2F%2Flocalhost%3A34047%2F" target="_blank" rel="noopener"><svg class="share-logo" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.582 0 11.94-5.359 11.944-11.893a11.821 11.821 0 00-3.487-8.413z"></path></svg><span>WhatsApp</span></a><a class="share-btn share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A34047%2F" target="_blank" rel="noopener"><svg class="share-logo" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true" focusable="false"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"></path></svg><span>Facebook</span></a><a class="share-btn share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A34047%2F" target="_blank" rel="noopener"><svg class="share-logo" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg><span>LinkedIn</span></a><a class="share-btn share-telegram" href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A34047%2F&amp;text=Check%20out%20Alec's%20dating%20application%20%F0%9F%8E%AE%E2%9D%A4%EF%B8%8F" target="_blank" rel="noopener"><svg class="share-logo" viewBox="0 0 24 24" fill="#26A5E4" aria-hidden="true" focusable="false"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path></svg><span>Telegram</span></a><a class="share-btn share-reddit" href="https://www.reddit.com/submit?url=http%3A%2F%2Flocalhost%3A34047%2F&amp;title=Check%20out%20Alec's%20dating%20application%20%F0%9F%8E%AE%E2%9D%A4%EF%B8%8F" target="_blank" rel="noopener"><svg class="share-logo" viewBox="0 0 24 24" fill="#FF4500" aria-hidden="true" focusable="false"><path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 1.066.638 1.986 1.552 2.402-.04.26-.064.522-.064.787 0 3.999 4.659 7.249 10.385 7.249s10.386-3.25 10.386-7.249c0-.256-.022-.509-.06-.758.943-.403 1.602-1.34 1.602-2.43zM7.276 14.515c0-.911.71-1.652 1.583-1.652.873 0 1.583.741 1.583 1.652s-.71 1.651-1.583 1.651-1.583-.74-1.583-1.651zm9.434 3.65c-1.118 1.118-3.255 1.205-3.881 1.205-.625 0-2.762-.087-3.879-1.205a.424.424 0 0 1 0-.601.422.422 0 0 1 .599 0c.704.705 2.207.95 3.28.95 1.075 0 2.578-.245 3.282-.95a.42.42 0 0 1 .599 0 .425.425 0 0 1 0 .601zm-.327-1.998c-.873 0-1.583-.741-1.583-1.652s.71-1.652 1.583-1.652.583.741 1.583 1.652-.71 1.652-1.583 1.652z"></path></svg><span>Reddit</span></a><button type="button" class="share-btn share-copy" data-copy="http://localhost:34047/"><svg class="share-logo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg><span>Copy link</span></button></div></div>
+    <div class="share-section" data-share="share"></div>
   </div>
 </section>
 
@@ -352,43 +170,40 @@
     <!-- The sticky head sits directly in the container (not inside .deep-intro)
          so it stays pinned for the whole section, topic grid included. -->
     <div class="section-head deep-intro">
-      <span class="section-tag tag-silver" id="deep-dive-tag" style="user-select: none; cursor: pointer;">🔬 The Deep Dive</span>
-      <h2 id="deep-dive-title">Everything Else About Me <span class="deep-link" role="button" tabindex="0" data-anchor="deep-dive" aria-label="Copy link to Everything Else About Me" title="Copy link to this section">🔗</span></h2>
+      <span class="section-tag" id="deep-dive-tag" style="user-select: none; cursor: pointer;"></span>
+      <h2 id="deep-dive-title"></h2>
     </div>
     <div id="deep-dive-spoiler">
-                    <div class="warning-banner">
-                        <div class="w-emoji">⚠️</div>
-                        <h2>Spoiler Warning</h2>
-                        <p style="margin-top:16px; margin-bottom:0;">Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story.</p>
-                    </div>
-                </div>
+      <div class="warning-banner">
+        <div class="w-emoji">⚠️</div>
+        <h2>Spoiler Warning</h2>
+        <p style="margin-top:16px; margin-bottom:0;">Beyond this point is the deep dive. If you'd rather discover all this in person, feel free to stop here and just say hi! Otherwise, tap any topic below to open the full story.</p>
+      </div>
+    </div>
 
     <!-- Topic buttons + their pop-up modals are built from CONTENT.accordion
-         by main.js (renderDeepDive). -->
+         by app.js (renderDeepDive). -->
     <div class="deep-grid"></div>
 
     <!-- 🔒 The "secret content" gag — deliberately NOT one of the topic cards
          above: its own locked vault at the very bottom of the deep dive.
          Opens the tease modal (#secretContent); wired by initCheekyGag(). -->
     <div id="deep-dive-locked">
-                    <button class="locked-banner" type="button" aria-haspopup="dialog">
-                        <span class="locked-emoji" aria-hidden="true">🔒</span>
-                        <span class="locked-title">Top Secret Content (Do Not Open) 🙅</span>
-                        <span class="locked-tagline">do you dare? 😉😈</span>
-                    </button>
-                </div>
+      <button class="locked-banner" type="button" aria-haspopup="dialog">
+        <span class="locked-emoji" aria-hidden="true">🔒</span>
+        <span class="locked-title">Top Secret Content (Do Not Open) 🙅</span>
+        <span class="locked-tagline">do you dare? 😉😈</span>
+      </button>
+    </div>
   </div>
 </section>
-
-
 
 <!-- ════════════════ OUTRO ════════════════ -->
 <section id="outro">
   <div class="container">
-    <div class="contact-section" data-connect="outro"><div class="section-tag tag-purple" style="user-select: none; cursor: pointer;">🎉 One Last Thing</div><h2>Thanks for Getting This Far! <span class="deep-link" role="button" tabindex="0" data-anchor="outro" aria-label="Copy link to Thanks for Getting This Far!" title="Copy link to this section">🔗</span></h2><p class="lead">If you've liked what you've seen, please reach out — I'd love to hear from you and put together a fun first date.</p><div class="contact-links"><a class="contact-btn primary" href="#contact"><span class="contact-emoji"></span> <span class="btn-label">Shoot your shot! 💘</span></a></div></div>
+    <div class="contact-section" data-connect="outro"></div>
   </div>
 </section>
-
 </main>
 
 <footer id="footer"></footer>
@@ -397,10 +212,10 @@
      Native <dialog> — focus trapping, Escape and top-layer stacking come for free. -->
 <dialog class="gallery" id="gallery" aria-label="All photos of Alec">
   <div class="gallery-head">
-    <h3 data-gallery="title">Snapshots of my Life</h3>
+    <h3 data-gallery="title"></h3>
     <button class="gallery-close" type="button" aria-label="Close gallery">×</button>
   </div>
-  <div class="gallery-grid" data-gallery="grid"><img src="img/alec/alec-portrait-terracotta-wall.webp" alt="Alec portrait terracotta wall" width="900" height="1200" loading="lazy"><img src="img/alec/alec-pokemon-plushies-pokeball.webp" alt="Alec pokemon plushies pokeball" width="900" height="1200" loading="lazy"><img src="img/alec/alec-kimono-red-torii-gate.webp" alt="Alec kimono red torii gate" width="903" height="1200" loading="lazy"><img src="img/alec/alec-portrait-garden-archway.webp" alt="Alec portrait garden archway" width="903" height="1200" loading="lazy"><img src="img/alec/alec-japanese-onsen-curtain.webp" alt="Alec japanese onsen curtain" width="900" height="1200" loading="lazy"><img src="img/alec/alec-silly-face-japanese-onsen.webp" alt="Alec silly face japanese onsen" width="900" height="1200" loading="lazy"><img src="img/alec/alec-los-mochis-city.webp" alt="Alec in Los Mochis" width="900" height="1200" loading="lazy"><img src="img/alec/alec-pokemon-cyndaquil-statue.webp" alt="Alec pokemon cyndaquil statue" width="903" height="1200" loading="lazy"><img src="img/alec/alec-super-mario-bros-40th-statue.webp" alt="Alec super mario bros 40th statue" width="903" height="1200" loading="lazy"><img src="img/alec/alec-cherry-blossom-park.webp" alt="Alec cherry blossom park" width="900" height="1200" loading="lazy"><img src="img/alec/alec-napping-headphones-pikachu-shirt.webp" alt="Alec napping headphones pikachu shirt" width="1200" height="1200" loading="lazy"><img src="img/alec/alec-rope-knot-tying.webp" alt="Alec rope knot tying" width="900" height="1200" loading="lazy"><img src="img/alec/alec-coffee-times-square-new-york.webp" alt="Alec coffee times square new york" width="900" height="1200" loading="lazy"><img src="img/alec/alec-portrait-tropical-garden.webp" alt="Alec portrait tropical garden" width="900" height="1200" loading="lazy"><img src="img/alec/alec-mt-batur-sunrise-hike-bali.webp" alt="Alec mt batur sunrise hike bali" width="903" height="1200" loading="lazy"><img src="img/alec/alec-mt-batur-sunrise-silly-selfie-bali.webp" alt="Alec mt batur sunrise silly selfie bali" width="900" height="1200" loading="lazy"><img src="img/alec/alec-portrait-sunny-garden.webp" alt="Alec portrait sunny garden" width="900" height="1200" loading="lazy"><img src="img/alec/alec-mad-scientist-lab-coat-costume.webp" alt="Alec mad scientist lab coat costume" width="745" height="744" loading="lazy"><img src="img/alec/alec-holding-pineapple-supermarket.webp" alt="Alec holding pineapple supermarket" width="900" height="1200" loading="lazy"><img src="img/alec/alec-fire-staff-spinning-night.webp" alt="Alec fire staff spinning night" width="1080" height="1080" loading="lazy"><img src="img/alec/alec-exhausted-after-gym-workout.webp" alt="Alec exhausted after gym workout" width="1200" height="900" loading="lazy"><img src="img/alec/alec-sandwich-lunch-cafe.webp" alt="Alec sandwich lunch cafe" width="684" height="911" loading="lazy"></div>
+  <div class="gallery-grid" data-gallery="grid"></div>
 </dialog>
 
 <!-- 🔒 "Secret content" gag, step 1: the tease. Opened from the locked banner
@@ -408,17 +223,16 @@
      (see initCheekyGag in main.js). Its id makes #secretContent a shareable
      deep link, same as the topic modals. -->
 
-
 <!-- 🔒 "Secret content" gag, step 2: the punchline (opened by the 🔓 button
      above). Reuses the deep-modal/date-modal shell, and the same contact +
      share cards filled by renderConnectCard + renderShare. -->
 <dialog class="deep-modal date-modal" id="cheeky-modal" aria-label="You're cheeky! I like that!">
   <div class="deep-modal-inner">
     <div class="deep-modal-head">
-                        <span class="deep-modal-emoji" aria-hidden="true">😏</span>
-                        <h3 class="deep-modal-title">You're Cheeky — I Like That!</h3>
-                        <button class="deep-modal-close" type="button" aria-label="Close">×</button>
-                    </div>
+      <span class="deep-modal-emoji" aria-hidden="true">😏</span>
+      <h3 class="deep-modal-title">You're Cheeky — I Like That!</h3>
+      <button class="deep-modal-close" type="button" aria-label="Close">×</button>
+    </div>
     <div class="deep-modal-body">
       <p class="cheeky-line">Wow, you actually clicked it. I respect the curiosity 😉. If you really want to get to know me, you know what to do...</p>
       <p style="text-align: center; margin-top: 18px;">
@@ -436,7 +250,7 @@
   <button class="lightbox-close" type="button" aria-label="Close">×</button>
   <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">‹</button>
   <figure class="lightbox-figure">
-    <h2 class="lightbox-title">What dating could look like</h2>
+    <h2 class="lightbox-title"></h2>
     <img id="lightbox-img" src="" alt="Enlarged photo">
     <figcaption id="lightbox-caption" class="lightbox-caption"></figcaption>
   </figure>
@@ -453,6 +267,5 @@
 
 <script src="js/content.js" defer=""></script>
 <script src="js/app.js" defer=""></script>
-
-
-<div id="deep-modals"></div></div></dialog></div><div class="soundtrack"><div class="soundtrack-panel"><div class="soundtrack-head"><span>🎧 Cosy gaming lofi — press play &amp; scroll</span><button class="soundtrack-close" type="button" aria-label="Hide player">×</button></div><div class="soundtrack-frame"></div></div><button class="soundtrack-toggle" type="button" aria-expanded="false" aria-label="Site soundtrack"><span aria-hidden="true">🎧</span><span class="soundtrack-label">Site soundtrack</span></button></div><div class="soundtrack"><div class="soundtrack-panel"><div class="soundtrack-head"><span>🎧 Cosy gaming lofi — press play &amp; scroll</span><button class="soundtrack-close" type="button" aria-label="Hide player">×</button></div><div class="soundtrack-frame"></div></div><button class="soundtrack-toggle" type="button" aria-expanded="false" aria-label="Site soundtrack"><span aria-hidden="true">🎧</span><span class="soundtrack-label">Site soundtrack</span></button></div></body></html>
+</body>
+</html>
