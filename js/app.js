@@ -1401,6 +1401,18 @@
       {label: 'Cookie Vault', icon: '🍪', href: 'cookies.html'}
     ];
     setHtml('[data-footer="links"]', footerLinks.map(linkHtml).join(''));
+
+    if (C.footer) {
+      setText('#footer-note', '');
+      const noteEl = document.getElementById('footer-note');
+      if (noteEl) noteEl.innerHTML = C.footer.note;
+      
+      const creditEl = document.getElementById('footer-credit');
+      if (creditEl) creditEl.innerHTML = C.footer.credit;
+      
+      setText('#footer-emoji', C.footer.emoji);
+    }
+
   }
 
   // The canonical, hash-free URL to share. Falls back to the live domain when
@@ -3771,7 +3783,82 @@
   }
 
   /* ── boot ── */
+  function injectSharedLayout() {
+  const C = window.CONTENT;
+  if (!C) return;
+
+  // 1. Inject Nav
+  // Don't inject on poster.html
+  if (window.location.pathname.indexOf('poster.html') === -1) {
+    let nav = document.querySelector('nav[aria-label="Section navigation"]');
+    if (!nav) {
+      nav = document.createElement('nav');
+      nav.setAttribute('aria-label', 'Section navigation');
+      document.body.insertBefore(nav, document.body.firstChild);
+    }
+    // Set innerHTML (will be populated by renderNav and others)
+    nav.innerHTML = `
+      <div class="nav-bar">
+        <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
+          <span class="burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="burger-label" id="nav-burger-label">Menu</span>
+        </button>
+        <div id="nav-cta-container"></div>
+      </div>
+      <div class="nav-inner" id="nav-menu"></div>
+    `;
+  }
+
+  // 2. Inject Header (Hero)
+  // Only index.html and poster.html have hero, 404 and cookies don't.
+  // We can let the pages include `<header class="hero"></header>` if they want it.
+  let hero = document.querySelector('header.hero');
+  if (hero) {
+    hero.innerHTML = `
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-emoji" data-hero="emoji" style="user-select: none; cursor: pointer;"></div>
+          <h1 data-hero="headline"></h1>
+          <p class="hero-sub" data-hero="sub"></p>
+          <p class="hero-tagline" data-hero="tagline"></p>
+          <div id="hero-cta-container"></div>
+        </div>
+        <div class="hero-media" data-hero="media"></div>
+      </div>
+      <p class="hero-scroll" id="hero-scroll-hint"></p>
+    `;
+  }
+
+  // 3. Inject Footer
+  // Don't inject on poster.html
+  if (window.location.pathname.indexOf('poster.html') === -1) {
+    let footer = document.querySelector('footer#footer');
+    if (!footer) {
+      footer = document.createElement('footer');
+      footer.id = 'footer';
+      document.body.appendChild(footer);
+    }
+    footer.innerHTML = `
+      <div class="container">
+        <div class="footer-emoji" id="footer-emoji" style="user-select: none; cursor: pointer;"></div>
+        <div class="footer-links" data-footer="links"></div>
+        <p class="footer-note" id="footer-note"></p>
+        <p class="footer-credit" id="footer-credit"></p>
+      </div>
+    `;
+    
+    // Also inject soundtrack if not present
+    if (!document.getElementById('soundtrack-container')) {
+      const st = document.createElement('div');
+      st.id = 'soundtrack-container';
+      st.className = 'soundtrack-container';
+      document.body.appendChild(st);
+    }
+  }
+}
+
   function boot() {
+    injectSharedLayout();
     if (!C) {
       console.error('content.js did not load — window.CONTENT is undefined.');
       return;
