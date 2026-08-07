@@ -2564,6 +2564,7 @@ button.CookiebotWidget-logo::before {
 .fading-collage.dynamic-scatter-mode {
   display: block;
   position: relative;
+  z-index: 1; /* create a stacking context so internal high z-index images don't cover sticky headers */
   width: 100%;
   height: calc(100vh - var(--nav-h) - 240px); /* Fill viewscreen perfectly without overflowing */
   min-height: 400px;

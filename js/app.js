@@ -1396,9 +1396,7 @@
       return `<a href="${esc(l.href)}"${linkTarget(l.href)}>${content}</a>`;
     };
     const footerLinks = [
-      ...(C.contact.links || []),
-      {label: 'Cookie Settings', icon: '🍪', href: 'javascript:CookieConsent.showPreferences()'},
-      {label: 'Cookie Vault', icon: '🍪', href: 'cookies.html'}
+      ...(C.contact.links || [])
     ];
     setHtml('[data-footer="links"]', footerLinks.map(linkHtml).join(''));
 

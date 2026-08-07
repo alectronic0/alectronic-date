@@ -88,14 +88,14 @@ window.addEventListener('load', function() {
                         showPreferencesBtn: "What cookies do we use"
                     },
                     preferencesModal: {
-                        title: "🍪 Cookie Settings & Vault",
+                        title: "🍪 Cookie Settings",
                         acceptAllBtn: "Yes Please! Gimme the cookies 🍪",
                         acceptNecessaryBtn: "🙅‍♂️ No thanks! I don't want cookies",
                         closeIconLabel: "Close",
                         sections: [
                             {
                                 title: "🍪 About These Cookies",
-                                description: "• <b>Cookies:</b> Tiny text files, zero calories, helping the site run smarter.<br>• <b>The Law:</b> Essential ones run automatically; everything else requires asking nicely.<br>• <b>Third Parties:</b> Google Analytics for background stats.<br>• <b>Change of heart?</b> You can change your mind anytime via Cookie Settings in the footer.<br>• <b>Privacy Questions:</b> Email <code>privacy@alectronic.co</code> — I'm a real person trying to find my Player 2, not a faceless corporation. 🎮"
+                                description: "• <b>Cookies:</b> Tiny text files, zero calories, helping the site run smarter.<br>• <b>The Law:</b> Essential ones run automatically; everything else requires asking nicely.<br>• <b>Third Parties:</b> Google Analytics for background stats.<br>• <b>Change of heart?</b> You can change your mind anytime via the cookie button.<br>• <b>Privacy Questions:</b> Email <code>privacy@alectronic.co</code> — I'm a real person trying to find my Player 2, not a faceless corporation. 🎮"
                             },
                             {
                                 title: "⚙️ Necessary Cookies",
