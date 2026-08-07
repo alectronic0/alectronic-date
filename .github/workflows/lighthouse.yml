@@ -1,21 +1,21 @@
 name: Lighthouse CI
-
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
-
+    branches:
+      - main
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v12
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          urls: |
-            http://localhost:8080/
-          staticDistDir: ./
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+          node-version: 20
+      - name: Run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli
+          lhci autorun --collect.staticDistDir="./" --upload.target="temporary-public-storage"
