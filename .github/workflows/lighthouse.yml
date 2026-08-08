@@ -15,6 +15,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Prerender HTML
+        run: |
+          npm install puppeteer
+          node scripts/prerender.js
       - name: Run Lighthouse CI
         run: |
           npm install -g @lhci/cli
