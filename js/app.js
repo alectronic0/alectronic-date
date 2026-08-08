@@ -1387,30 +1387,25 @@
 
   // Footer links — same contact.links data, lighter text-link styling.
   function renderFooterLinks() {
-    if (!C || !C.contact) return;
-    const linkHtml = (l) => {
-      const content = `${linkIcon(l, 'footer-favicon')}<span>${esc(l.label)}</span>`;
-      if (l.disabled) {
-        return `<span class="footer-link disabled">${content}</span>`;
-      }
-      return `<a href="${esc(l.href)}"${linkTarget(l.href)}>${content}</a>`;
-    };
-    const footerLinks = [
-      ...(C.contact.links || [])
-    ];
-    setHtml('[data-footer="links"]', footerLinks.map(linkHtml).join(''));
-
-    if (C.footer) {
-      setText('#footer-note', '');
-      const noteEl = document.getElementById('footer-note');
-      if (noteEl) noteEl.innerHTML = C.footer.note;
-      
-      const creditEl = document.getElementById('footer-credit');
-      if (creditEl) creditEl.innerHTML = C.footer.credit;
-      
-      setText('#footer-emoji', C.footer.emoji);
+    if (!C) return;
+    
+    // Dynamic Footer Injection
+    let footer = document.getElementById('footer');
+    if (!footer) {
+      footer = document.createElement('footer');
+      footer.id = 'footer';
+      footer.className = 'landing-footer';
+      const target = document.body;
+      target.appendChild(footer);
     }
-
+    
+    if (C.footer) {
+      footer.innerHTML = `
+        <p>&copy; <span class="year">${new Date().getFullYear()}</span> Alec &middot; alec.today &middot; All rights reserved.</p>
+        <p class="powered-by-text"><a href="https://alec.today/" target="_blank" rel="noopener" class="powered-by-link">${C.footer.credit}</a></p>
+        <p class="footer-sublink"><a href="${C.footer.wishlistUrl}" target="_blank" rel="noopener" class="wishlist-link">🎁 Wishlist (gift.alec.today)</a></p>
+      `;
+    }
   }
 
   // The canonical, hash-free URL to share. Falls back to the live domain when
