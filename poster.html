@@ -103,7 +103,17 @@
 <body>
 
 <div class="poster-container">
-  <header class="hero"></header>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-emoji" id="hero-emoji"></div>
+        <h1 id="hero-headline"></h1>
+        <p class="hero-sub" id="hero-sub"></p>
+        <p class="hero-tagline" id="hero-tagline"></p>
+      </div>
+      <div class="hero-media" id="hero-media"></div>
+    </div>
+  </header>
   
   <div class="qr-container">
     <!-- Provided Base64 QR Code -->
@@ -119,11 +129,11 @@
     const format = params.get('format') || 'og'; // og, tiktok, ig, print
     document.body.setAttribute('data-format', format);
 
-    const hero = window.CONTENT.hero;
+    const hero = window.SITE_CONTENT.hero;
     document.getElementById('hero-emoji').textContent = hero.emoji;
     document.getElementById('hero-headline').innerHTML = hero.headline;
     document.getElementById('hero-sub').innerHTML = hero.subheading;
-    document.getElementById('hero-tagline').innerHTML = hero.tagline || window.CONTENT.meta.tagline;
+    document.getElementById('hero-tagline').innerHTML = hero.tagline || window.SITE_CONTENT.meta.tagline;
 
     // Build the photo collage
     const mediaDiv = document.getElementById('hero-media');
