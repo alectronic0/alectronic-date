@@ -7976,7 +7976,7 @@ window.CONTENT = {
         ,
         {
             "name": "Arcadia Games",
-            "url": "",
+            "url": "https://www.arcadiagames.co.uk",
             "category": "Board Games",
             "location": "Central London",
             "region": "Central London",
@@ -7990,7 +7990,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Draughts - Waterloo",
-            "url": "",
+            "url": "https://www.draughtslondon.com",
             "category": "Board Games",
             "location": "Central London",
             "region": "Central London",
@@ -8004,22 +8004,8 @@ window.CONTENT = {
             ]
         }        ,
         {
-            "name": "Rogues Quarter",
-            "url": "",
-            "category": "Board Games",
-            "location": "North London",
-            "region": "North London",
-            "lat": 51.5500379,
-            "lng": -0.1516648,
-            "description": "☕ Coffee shop and gaming space.",
-            "tags": [
-          "Board Games",
-          "Coffee"
-            ]
-        }        ,
-        {
             "name": "Otter Chaos",
-            "url": "",
+            "url": "https://otterchaos.co.uk",
             "category": "Board Games",
             "location": "South London",
             "region": "South London",
@@ -8060,7 +8046,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Four Quarters Peckham",
-            "url": "",
+            "url": "https://fourquarters.bar",
             "category": "Video Games & Arcades",
             "location": "South London",
             "region": "South London",
@@ -8089,7 +8075,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Daunt Books Marylebone",
-            "url": "",
+            "url": "https://dauntbooks.co.uk/",
             "category": "Quirky & Shops",
             "location": "Central London",
             "region": "Central London",
@@ -8103,7 +8089,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Cecil Court",
-            "url": "",
+            "url": "https://www.cecilcourt.co.uk/",
             "category": "Quirky & Shops",
             "location": "Central London",
             "region": "Central London",
@@ -8117,7 +8103,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Foyles",
-            "url": "",
+            "url": "https://www.foyles.co.uk/",
             "category": "Quirky & Shops",
             "location": "Central London",
             "region": "Central London",
@@ -8131,7 +8117,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "BookBar Islington",
-            "url": "",
+            "url": "https://bookbaruk.com/",
             "category": "Quirky & Shops",
             "location": "North London",
             "region": "North London",
@@ -8146,7 +8132,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Bad Moon Cafe",
-            "url": "",
+            "url": "https://www.badmooncafe.co.uk/",
             "category": "Board Games",
             "location": "South London",
             "region": "South London",
@@ -8161,7 +8147,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Loading Bar",
-            "url": "",
+            "url": "https://loading.bar/",
             "category": "Video Games & Arcades",
             "location": "North London",
             "region": "North London",
@@ -8176,7 +8162,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "The Brotherhood Games Cafe",
-            "url": "",
+            "url": "https://brotherhoodgames.co.uk/",
             "category": "Board Games",
             "location": "South London",
             "region": "South London",
@@ -8190,7 +8176,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Zombie Games Cafe & Bar",
-            "url": "",
+            "url": "https://www.zombiegamescafe.com/",
             "category": "Board Games",
             "location": "North London",
             "region": "North London",
@@ -8204,7 +8190,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Dark Sphere Shepherd's Bush Gaming Centre",
-            "url": "",
+            "url": "https://www.darksphere.co.uk/",
             "category": "Board Games",
             "location": "West London",
             "region": "West London",
@@ -8219,7 +8205,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Notting Hill Book & Comic Exchange",
-            "url": "",
+            "url": "https://www.bookcomicexchange.com/",
             "category": "Quirky & Shops",
             "location": "West London",
             "region": "West London",
@@ -8234,7 +8220,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Gosh! Comics",
-            "url": "",
+            "url": "https://goshlondon.com/",
             "category": "Quirky & Shops",
             "location": "Central London",
             "region": "Central London",
@@ -8248,7 +8234,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Forbidden Planet London Megastore",
-            "url": "",
+            "url": "https://forbiddenplanet.com/",
             "category": "Quirky & Shops",
             "location": "Central London",
             "region": "Central London",
@@ -8262,7 +8248,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "The Thieves",
-            "url": "",
+            "url": "https://thethieves.co.uk/",
             "category": "Bars & Speakeasies",
             "location": "South London",
             "region": "South London",
@@ -8276,7 +8262,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Ink@84 Books",
-            "url": "",
+            "url": "https://www.ink84bookshop.co.uk/",
             "category": "Quirky & Shops",
             "location": "North London",
             "region": "North London",
@@ -8290,7 +8276,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "The Arcanist's Tavern: Gaming Café",
-            "url": "",
+            "url": "https://www.arcaniststavern.uk/",
             "category": "Board Games",
             "location": "East London",
             "region": "East London",
@@ -8300,6 +8286,207 @@ window.CONTENT = {
             "tags": [
           "Board Games",
           "Tavern"
+            ]
+        }
+        ,
+        {
+            "name": "Plonk Golf (Hackney & Borough Market)",
+            "url": "https://plonkgolf.co.uk/",
+            "category": "Crazy Golf",
+            "location": "London",
+            "region": "London",
+            "lat": 51.5422828,
+            "lng": -0.0578349,
+            "description": "",
+            "tags": [
+          "Crazy Golf",
+          "Hackney",
+          "Borough Market"
+            ]
+        }        ,
+        {
+            "name": "Swingers (West End & City)",
+            "url": "https://swingers.club/uk",
+            "category": "Crazy Golf",
+            "location": "London",
+            "region": "London",
+            "lat": 51.5144,
+            "lng": -0.1416,
+            "description": "",
+            "tags": [
+          "Crazy Golf",
+          "West End",
+          "City"
+            ]
+        }        ,
+        {
+            "name": "Puttshack (White City & Bank)",
+            "url": "https://puttshack.com/uk",
+            "category": "Crazy Golf",
+            "location": "London",
+            "region": "London",
+            "lat": 51.5092547,
+            "lng": -0.2232658,
+            "description": "",
+            "tags": [
+          "Crazy Golf",
+          "White City",
+          "Bank"
+            ]
+        }        ,
+        {
+            "name": "Junkyard Golf Club (Shoreditch)",
+            "url": "https://www.junkyardgolfclub.co.uk/london",
+            "category": "Crazy Golf",
+            "location": "London",
+            "region": "London",
+            "lat": 51.5218,
+            "lng": -0.0784,
+            "description": "",
+            "tags": [
+          "Crazy Golf",
+          "Shoreditch"
+            ]
+        }        ,
+        {
+            "name": "Pop Golf (Wembley)",
+            "url": "https://popgolf.com/",
+            "category": "Crazy Golf",
+            "location": "London",
+            "region": "London",
+            "lat": 51.5583,
+            "lng": -0.2818,
+            "description": "",
+            "tags": [
+          "Crazy Golf",
+          "Wembley"
+            ]
+        }        ,
+        {
+            "name": "Putt In The Park",
+            "url": "https://www.puttinthepark.com/",
+            "category": "Crazy Golf",
+            "location": "London",
+            "region": "London",
+            "lat": 51.4616713,
+            "lng": -0.2012615,
+            "description": "",
+            "tags": [
+          "Crazy Golf",
+          "Outdoors"
+            ]
+        }        ,
+        {
+            "name": "Birdies at Roof East (Stratford)",
+            "url": "https://www.playbirdies.com/",
+            "category": "Crazy Golf",
+            "location": "London",
+            "region": "London",
+            "lat": 51.5428,
+            "lng": -0.0006,
+            "description": "",
+            "tags": [
+          "Crazy Golf",
+          "Stratford",
+          "Roof East"
+            ]
+        }        ,
+        {
+            "name": "Dragon Quest Adventure Golf (Croydon)",
+            "url": "https://www.worldofgolf.co.uk/adventure-golf/croydon/",
+            "category": "Crazy Golf",
+            "location": "London",
+            "region": "London",
+            "lat": 51.3789,
+            "lng": -0.0528,
+            "description": "",
+            "tags": [
+          "Crazy Golf",
+          "Croydon"
+            ]
+        }        ,
+        {
+            "name": "Dinosaur Escape (Ruislip)",
+            "url": "https://www.dinosaurescape.co.uk/",
+            "category": "Crazy Golf",
+            "location": "London",
+            "region": "London",
+            "lat": 51.5791,
+            "lng": -0.4287,
+            "description": "",
+            "tags": [
+          "Crazy Golf",
+          "Ruislip"
+            ]
+        }        ,
+        {
+            "name": "Minigolf by Craig & Karl (Canary Wharf)",
+            "url": "https://canarywharf.com/whats-on/minigolf-by-craig-karl/",
+            "category": "Crazy Golf",
+            "location": "London",
+            "region": "London",
+            "lat": 51.5045,
+            "lng": -0.0195,
+            "description": "",
+            "tags": [
+          "Crazy Golf",
+          "Canary Wharf"
+            ]
+        }        ,
+        {
+            "name": "Mr. Mulligan’s Dino Golf (Sidcup)",
+            "url": "https://mrmulligan.com/sidcup",
+            "category": "Crazy Golf",
+            "location": "London",
+            "region": "London",
+            "lat": 51.4116,
+            "lng": 0.1064,
+            "description": "",
+            "tags": [
+          "Crazy Golf",
+          "Sidcup"
+            ]
+        }        ,
+        {
+            "name": "Axeperience Axe Throwing (Tower Hill)",
+            "url": "https://axeperience.co.uk/",
+            "category": "Axe Throwing",
+            "location": "London",
+            "region": "London",
+            "lat": 51.5111,
+            "lng": -0.0748,
+            "description": "",
+            "tags": [
+          "Axe Throwing",
+          "Tower Hill"
+            ]
+        }        ,
+        {
+            "name": "Game of Throwing (Hammersmith)",
+            "url": "https://www.gameofthrowing.co.uk/axe-throwing-london",
+            "category": "Axe Throwing",
+            "location": "London",
+            "region": "London",
+            "lat": 51.4927113,
+            "lng": -0.2321833,
+            "description": "",
+            "tags": [
+          "Axe Throwing",
+          "Hammersmith"
+            ]
+        }        ,
+        {
+            "name": "Boom Battle Bar (Liverpool Street)",
+            "url": "https://boombattlebar.com/uk/london-liverpool-street",
+            "category": "Axe Throwing",
+            "location": "London",
+            "region": "London",
+            "lat": 51.5173,
+            "lng": -0.0813,
+            "description": "",
+            "tags": [
+          "Axe Throwing",
+          "Liverpool Street"
             ]
         }
     ]
