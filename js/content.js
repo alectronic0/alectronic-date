@@ -5356,12 +5356,12 @@ window.CONTENT = {
         },
         {
             "name": "London Terrariums",
-            "url": "https://londonterrariums.com/",
+            "url": "https://londonterrariums.com/pages/visit-us",
             "category": "Art & Workshops",
-            "location": "New Cross & Bermondsey",
-            "region": "South London",
-            "lat": 51.4754,
-            "lng": -0.0381,
+            "location": "Bethnal Green, London",
+            "region": "East London",
+            "lat": 51.5254,
+            "lng": -0.0711,
             "description": "🌿 Hands-on plant workshop crafting your own self-sustaining tropical glass biome terrarium to take home.",
             "tags": [
                 "Terrarium",
