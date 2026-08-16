@@ -779,7 +779,7 @@
       transitLayer = L.layerGroup().addTo(map);
 
       // Add layer control toggle
-      L.control.layers(null, overlayMaps, { position: 'bottomleft' }).addTo(map);
+      L.control.layers(null, overlayMaps, { position: 'topright' }).addTo(map);
 
       // The app layout handles full screen implicitly. We force an invalidateSize 
       // just in case DOM paints lag slightly behind leaflet init.
