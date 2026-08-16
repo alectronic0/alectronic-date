@@ -8275,7 +8275,7 @@ window.CONTENT = {
         {
             "name": "Plonk Golf (Hackney & Borough Market)",
             "url": "https://plonkgolf.co.uk/",
-            "category": "Crazy Golf",
+            "category": "Mini Golf & Topgolf",
             "location": "London",
             "region": "London",
             "lat": 51.5422828,
@@ -8290,7 +8290,7 @@ window.CONTENT = {
         {
             "name": "Swingers (West End & City)",
             "url": "https://swingers.club/uk",
-            "category": "Crazy Golf",
+            "category": "Mini Golf & Topgolf",
             "location": "London",
             "region": "London",
             "lat": 51.5144,
@@ -8305,7 +8305,7 @@ window.CONTENT = {
         {
             "name": "Puttshack (White City & Bank)",
             "url": "https://puttshack.com/uk",
-            "category": "Crazy Golf",
+            "category": "Mini Golf & Topgolf",
             "location": "London",
             "region": "London",
             "lat": 51.5092547,
@@ -8320,7 +8320,7 @@ window.CONTENT = {
         {
             "name": "Junkyard Golf Club (Shoreditch)",
             "url": "https://www.junkyardgolfclub.co.uk/london",
-            "category": "Crazy Golf",
+            "category": "Mini Golf & Topgolf",
             "location": "London",
             "region": "London",
             "lat": 51.5218,
@@ -8334,7 +8334,7 @@ window.CONTENT = {
         {
             "name": "Putt In The Park",
             "url": "https://www.puttinthepark.com/",
-            "category": "Crazy Golf",
+            "category": "Mini Golf & Topgolf",
             "location": "London",
             "region": "London",
             "lat": 51.4616713,
@@ -8348,7 +8348,7 @@ window.CONTENT = {
         {
             "name": "Birdies at Roof East (Stratford)",
             "url": "https://www.playbirdies.com/",
-            "category": "Crazy Golf",
+            "category": "Mini Golf & Topgolf",
             "location": "London",
             "region": "London",
             "lat": 51.5428,
@@ -8363,7 +8363,7 @@ window.CONTENT = {
         {
             "name": "Minigolf by Craig & Karl (Canary Wharf)",
             "url": "https://canarywharf.com/whats-on/minigolf-by-craig-karl/",
-            "category": "Crazy Golf",
+            "category": "Mini Golf & Topgolf",
             "location": "London",
             "region": "London",
             "lat": 51.5045,
