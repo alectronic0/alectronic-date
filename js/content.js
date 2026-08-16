@@ -8231,7 +8231,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "The Thieves",
-            "url": "https://thethieves.co.uk/",
+            "url": "https://www.thethieves.pub/",
             "category": "Bars & Speakeasies",
             "location": "South London",
             "region": "South London",
