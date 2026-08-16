@@ -43,7 +43,10 @@ window.addEventListener('load', function() {
         }
     }
 
+    const isLocal = window.location.hostname.includes('wsl.localhost') || window.location.hostname === 'localhost';
+
     CookieConsent.run({
+        autoShow: !isLocal,
         autoClearCookies: true,
         guiOptions: {
             consentModal: {

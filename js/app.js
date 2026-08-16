@@ -1403,7 +1403,13 @@
       footer.innerHTML = `
         <p>&copy; <span class="year">${new Date().getFullYear()}</span> Alec &middot; alec.today &middot; All rights reserved.</p>
         <p class="powered-by-text"><a href="https://alec.today/" target="_blank" rel="noopener" class="powered-by-link">${C.footer.credit}</a></p>
-        <p class="footer-sublink"><a href="${C.footer.wishlistUrl}" target="_blank" rel="noopener" class="wishlist-link">🎁 Wishlist (gift.alec.today)</a></p>
+        <p class="footer-sublink">
+          <a href="${C.footer.wishlistUrl}" target="_blank" rel="noopener" class="wishlist-link">🎁 Wishlist (gift.alec.today)</a>
+          <span style="opacity: 0.35; margin: 0 6px;">&middot;</span>
+          <a href="events.html" class="wishlist-link" style="opacity: 0.75;">🥂 Events</a>
+          <span style="opacity: 0.35; margin: 0 6px;">&middot;</span>
+          <a href="ideas.html" class="wishlist-link" style="opacity: 0.75;">💡 Date Ideas</a>
+        </p>
       `;
     }
   }
