@@ -5062,22 +5062,6 @@ window.CONTENT = {
             ]
         },
         {
-            "name": "Goat Shed Farm Shop & Kitchen",
-            "url": "https://goat-shed.co.uk/",
-            "category": "Farm Shops & Country",
-            "location": "Honingham, Norfolk",
-            "region": "Day Trips & Beyond",
-            "lat": 52.6668,
-            "lng": 1.1092,
-            "description": "🐐 Award-winning farm shop and kitchen with craft bakery, artisan butcher, local produce, and friendly goats to say hello to.",
-            "tags": [
-                "Farm Shop",
-                "Kitchen",
-                "Animals",
-                "Country Trip"
-            ]
-        },
-        {
             "name": "Udderly Fresh Raw Milk",
             "url": "https://www.udderlyfreshrawmilk.net/",
             "category": "Farm Shops & Country",
