@@ -7351,23 +7351,6 @@ window.CONTENT = {
             ]
         },
         {
-            "name": "Lucia Coffee & Wine Bar (SE9)",
-            "url": "https://luciase9.co.uk/",
-            "category": "Coffee & Cafes",
-            "location": "154 Westmount Rd, Eltham, London SE9 1JA",
-            "region": "South London",
-            "lat": 51.4602,
-            "lng": 0.052,
-            "description": "☕ Italian specialty coffee and bakery by day, atmospheric natural wine & cicchetti bar by night with fresh cannoli, sourdough, and cured meats.",
-            "tags": [
-                "Coffee & Wine",
-                "Italian Bakery",
-                "Cannoli",
-                "Natural Wine",
-                "South London"
-            ]
-        },
-        {
             "name": "Hon's BBQ (Bloomsbury / West End)",
             "url": "https://www.honsbbq.com/",
             "category": "Dinner & Dining",
