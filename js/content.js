@@ -8446,22 +8446,6 @@ window.CONTENT = {
                 "Kentish Town"
             ]
         }
-    ]
-},
-
-  footer: {
-    note: '&copy; <span class="year"></span> Alec &middot; date.alec.today &middot; All rights reserved.',
-    credit: 'Powered by <a href="https://alec.today/" target="_blank" rel="noopener noreferrer">Alec Doran-Twyford (Alectronic&trade;)</a>',
-    emoji: '🎮❤️🎮',
-    wishlistUrl: 'https://gift.alec.today/'
-  },
-
-  easterEgg: {
-    toastTitle: '1-UP!', toastBody: "It's a secret to everybody.", toastSub: '🍄 +30 lives · you found the cheat code 🎮', emojis: [
-      '❤️',
-      '🍄',
-      '⭐',
-      '🎮'
             ,
         {
                   "name": "Aguamiel Churros Mexicanos",
@@ -8591,6 +8575,24 @@ window.CONTENT = {
                             "Notting Hill"
                   ]
         }
+
+]
+},
+
+  footer: {
+    note: '&copy; <span class="year"></span> Alec &middot; date.alec.today &middot; All rights reserved.',
+    credit: 'Powered by <a href="https://alec.today/" target="_blank" rel="noopener noreferrer">Alec Doran-Twyford (Alectronic&trade;)</a>',
+    emoji: '🎮❤️🎮',
+    wishlistUrl: 'https://gift.alec.today/'
+  },
+
+  easterEgg: {
+    toastTitle: '1-UP!', toastBody: "It's a secret to everybody.", toastSub: '🍄 +30 lives · you found the cheat code 🎮', emojis: [
+      '❤️',
+      '🍄',
+      '⭐',
+      '🎮'
+
     ]
   }
 };
