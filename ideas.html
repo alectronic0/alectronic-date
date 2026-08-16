@@ -624,16 +624,7 @@
           <a href="index.html" class="back-link" aria-label="Return to main profile">← Back to Profile</a>
           <a href="events.html" class="back-link" style="color: var(--rose-light);" aria-label="View singles events">🥂 Singles Events →</a>
         </div>
-        <h1 class="page-title" id="section-title" style="font-size: 1.5rem; margin-bottom: 5px;">Recommended Date Ideas & Map</h1>
-        <p class="page-subtitle" id="section-subtitle" style="font-size: 0.85rem; margin-bottom: 15px;">Fun, creative, and memorable date ideas, local spots, food markets & activities across London & Hertfordshire.</p>
-        
-        <div class="search-wrapper">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="search-input" class="search-input" placeholder="Search spots, areas, keywords..." aria-label="Search date ideas">
-        </div>
-        <div style="display: flex; justify-content: flex-end; margin-top: 8px; font-size: 0.84rem; color: var(--muted);">
-          <span id="results-count" style="font-weight: 600; color: var(--text);"></span>
-        </div>
+
       </header>
 
       <!-- ── Cards Grid View ── -->
@@ -739,10 +730,12 @@
       });
 
       const searchInput = document.getElementById('search-input');
-      searchInput.addEventListener('input', (e) => {
-        searchQuery = e.target.value.trim().toLowerCase();
-        applyFilters();
-      });
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value.trim().toLowerCase();
+          applyFilters();
+        });
+      }
 
 
       // Always initialize map on load
@@ -932,7 +925,7 @@
       const grid = document.getElementById('ideas-grid');
       const totalCount = (window.CONTENT && window.CONTENT.dateIdeas && window.CONTENT.dateIdeas.items.length) || 0;
 
-      countEl.textContent = `Showing ${filtered.length} of ${totalCount} date ideas`;
+      if (countEl) countEl.textContent = `Showing ${filtered.length} of ${totalCount} date ideas`;
 
       // Render Cards
       if (filtered.length === 0) {
