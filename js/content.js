@@ -8074,20 +8074,6 @@ window.CONTENT = {
             ]
         }        ,
         {
-            "name": "Studio Ma",
-            "url": "",
-            "category": "Active & Social Sports",
-            "location": "North London",
-            "region": "North London",
-            "lat": 51.6909845,
-            "lng": -0.418291,
-            "description": "🧘 Yoga studio.",
-            "tags": [
-          "Yoga",
-          "Wellness"
-            ]
-        }        ,
-        {
             "name": "Cable Street Studios",
             "url": "",
             "category": "Quirky & Shops",
