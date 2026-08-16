@@ -5402,22 +5402,6 @@ window.CONTENT = {
             ]
         },
         {
-            "name": "Art Play",
-            "url": "https://www.artplaylondon.co.uk/",
-            "category": "Art & Workshops",
-            "location": "Spitalfields / Shoreditch",
-            "region": "East London",
-            "lat": 51.5195,
-            "lng": -0.076,
-            "description": "🎨 Playful paint & sip workshops with neon paints, canvas craft, and creative cocktail making in Spitalfields.",
-            "tags": [
-                "Art Studio",
-                "Painting",
-                "Sip & Paint",
-                "Shoreditch"
-            ]
-        },
-        {
             "name": "Colour and Clay Studio",
             "url": "https://colourandclay.co.uk/",
             "category": "Pottery & Ceramics",
@@ -5462,21 +5446,6 @@ window.CONTENT = {
                 "Pottery",
                 "Creative",
                 "Ceramics"
-            ]
-        },
-        {
-            "name": "Wimbledon Art Studios",
-            "url": "https://www.wimbledonartstudios.co.uk/",
-            "category": "Art & Workshops",
-            "location": "Wimbledon, South London",
-            "region": "South London",
-            "lat": 51.4312,
-            "lng": -0.1874,
-            "description": "🎨 Thriving artists' community hosting open studio weekends, ceramic sessions, and interactive craft popups.",
-            "tags": [
-                "Art Studios",
-                "Exhibitions",
-                "Wimbledon"
             ]
         },
         {
