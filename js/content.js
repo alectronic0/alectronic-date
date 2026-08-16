@@ -8462,6 +8462,135 @@ window.CONTENT = {
       '🍄',
       '⭐',
       '🎮'
+            ,
+        {
+                  "name": "Aguamiel Churros Mexicanos",
+                  "url": "https://aguamiel.co.uk/",
+                  "category": "Cafes & Bakeries",
+                  "location": "Covent Garden, London",
+                  "region": "Central London",
+                  "lat": 51.5118,
+                  "lng": -0.1197,
+                  "description": "☕ Authentic Mexican churros, hot chocolate, and horchata in Covent Garden.",
+                  "tags": [
+                            "Churros",
+                            "Mexican",
+                            "Dessert",
+                            "Covent Garden"
+                  ]
+        }        ,
+        {
+                  "name": "Cecil Court",
+                  "url": "https://www.cecilcourt.co.uk/",
+                  "category": "Quirky & Shops",
+                  "location": "Covent Garden, London",
+                  "region": "Central London",
+                  "lat": 51.5114,
+                  "lng": -0.1281,
+                  "description": "🛍️ A picturesque Victorian street lined with independent second-hand bookshops, antiquarian sellers, and antique maps (often compared to Diagon Alley).",
+                  "tags": [
+                            "Books",
+                            "Antiques",
+                            "Walking",
+                            "Covent Garden"
+                  ]
+        }        ,
+        {
+                  "name": "Waxy O'Connor's",
+                  "url": "https://waxyoconnorslondon.co.uk/",
+                  "category": "Bars & Speakeasies",
+                  "location": "Soho, London",
+                  "region": "Central London",
+                  "lat": 51.5114,
+                  "lng": -0.1325,
+                  "description": "🍻 A huge, labyrinthine Irish pub with gothic woodwork, multiple bars over six levels, and a giant tree growing inside.",
+                  "tags": [
+                            "Pub",
+                            "Irish",
+                            "Drinks",
+                            "Soho"
+                  ]
+        }        ,
+        {
+                  "name": "Kiln",
+                  "url": "https://www.kilnsoho.com/",
+                  "category": "Restaurants",
+                  "location": "Soho, London",
+                  "region": "Central London",
+                  "lat": 51.5126,
+                  "lng": -0.1362,
+                  "description": "🍜 Incredible rural Thai barbecue and clay pot dishes cooked over wood embers. Sit at the counter to watch the flames.",
+                  "tags": [
+                            "Thai",
+                            "Dinner",
+                            "Counter Dining",
+                            "Soho"
+                  ]
+        }        ,
+        {
+                  "name": "Carnaby Street",
+                  "url": "https://www.thisissoho.co.uk/carnaby-street/",
+                  "category": "Quirky & Shops",
+                  "location": "Soho, London",
+                  "region": "Central London",
+                  "lat": 51.5134,
+                  "lng": -0.139,
+                  "description": "🛍️ Iconic pedestrianised shopping street famous for its fashion heritage, colorful light displays, and independent boutiques.",
+                  "tags": [
+                            "Shopping",
+                            "Walking",
+                            "Fashion",
+                            "Soho"
+                  ]
+        }        ,
+        {
+                  "name": "The British Museum",
+                  "url": "https://www.britishmuseum.org/",
+                  "category": "Galleries & Museums",
+                  "location": "Bloomsbury, London",
+                  "region": "Central London",
+                  "lat": 51.5194,
+                  "lng": -0.127,
+                  "description": "🏛️ World-famous museum dedicated to human history, art, and culture. A perfect relaxed daytime date.",
+                  "tags": [
+                            "Museum",
+                            "History",
+                            "Free",
+                            "Bloomsbury"
+                  ]
+        }        ,
+        {
+                  "name": "Jusu Brothers",
+                  "url": "https://www.jusubrothers.com/",
+                  "category": "Cafes & Bakeries",
+                  "location": "Notting Hill, London",
+                  "region": "West London",
+                  "lat": 51.5147,
+                  "lng": -0.1983,
+                  "description": "☕ A beautifully designed pan-Asian superfood cafe on Westbourne Grove offering matcha, healthy bowls, and great coffee.",
+                  "tags": [
+                            "Cafe",
+                            "Matcha",
+                            "Healthy",
+                            "Notting Hill"
+                  ]
+        }        ,
+        {
+                  "name": "Sumi",
+                  "url": "https://www.sushisumi.com/",
+                  "category": "Restaurants",
+                  "location": "Notting Hill, London",
+                  "region": "West London",
+                  "lat": 51.5097,
+                  "lng": -0.1963,
+                  "description": "🍣 Elegant but relaxed Japanese restaurant serving exceptional sushi and robata dishes (little sister to Michelin-starred Endo).",
+                  "tags": [
+                            "Sushi",
+                            "Japanese",
+                            "Dinner",
+                            "Notting Hill"
+                  ]
+        }
     ]
   }
 };
