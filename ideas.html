@@ -587,27 +587,6 @@
       text-decoration: none;
     }
 
-    .card-map-jump {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      border-radius: 10px;
-      padding: var(--space-3);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-size: 1.1rem;
-      line-height: 1;
-    }
-
-    .card-map-jump:hover {
-      background: var(--surface-3);
-      color: var(--gold);
-      border-color: var(--gold);
-    }
-
     .empty-state {
       text-align: center;
       padding: var(--space-7) var(--space-4);
@@ -962,7 +941,7 @@
         grid.innerHTML = filtered.map(item => {
           const catIcon = CATEGORY_ICONS[item.category] || '💡';
           return `
-            <article class="idea-card">
+            <article class="idea-card" ${item.lat && item.lng ? `style="cursor: pointer;" onclick="focusOnMap(${item.lat}, ${item.lng}, '${encodeURIComponent(item.name)}')" title="View on Map"` : ''}>
               <div>
                 <div class="card-header">
                   <span class="category-badge">${catIcon} ${item.category || 'Idea'}</span>
@@ -978,13 +957,10 @@
                   </div>
                 ` : ''}
                 <div class="card-actions-row">
-                  <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="card-action">
+                  ${item.url ? `
+                  <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="card-action" onclick="event.stopPropagation()">
                     Explore Activity ↗
                   </a>
-                  ${item.lat && item.lng ? `
-                    <button type="button" class="card-map-jump" onclick="focusOnMap(${item.lat}, ${item.lng}, '${encodeURIComponent(item.name)}')" title="View on Map" aria-label="View on map">
-                      🗺️
-                    </button>
                   ` : ''}
                 </div>
               </div>
