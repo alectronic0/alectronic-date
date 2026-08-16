@@ -652,6 +652,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <script src="js/content.js"></script>
+  <script src="js/canals.js"></script>
   <script>
 
     let activeCategory = 'All';
@@ -761,18 +762,15 @@
       }).addTo(map);
 
       // Load Canals Layer
-      fetch('js/canals.geojson')
-        .then(res => res.json())
-        .then(geojsonData => {
-          L.geoJSON(geojsonData, {
-            style: {
-              color: '#3498db',
-              weight: 2.5,
-              opacity: 0.7
-            }
-          }).addTo(map);
-        })
-        .catch(err => console.warn('Could not load canals:', err));
+      if (window.CANALS_GEOJSON) {
+        L.geoJSON(window.CANALS_GEOJSON, {
+          style: {
+            color: '#3498db',
+            weight: 2.5,
+            opacity: 0.7
+          }
+        }).addTo(map);
+      }
 
       markersLayer = L.layerGroup().addTo(map);
       transitLayer = L.layerGroup().addTo(map);
