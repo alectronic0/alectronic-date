@@ -7973,6 +7973,349 @@ window.CONTENT = {
                 "Broxbourne"
             ]
         }
+        ,
+        {
+            "name": "Arcadia Games",
+            "url": "",
+            "category": "Board Games",
+            "location": "Central London",
+            "region": "Central London",
+            "lat": 51.5129521,
+            "lng": -0.1130357,
+            "description": "🎲 Board game club.",
+            "tags": [
+          "Board Games",
+          "Gaming"
+            ]
+        }        ,
+        {
+            "name": "Draughts - Waterloo",
+            "url": "",
+            "category": "Board Games",
+            "location": "Central London",
+            "region": "Central London",
+            "lat": 51.5017821,
+            "lng": -0.1154534,
+            "description": "🎲 Board game cafe and licensed restaurant under the arches.",
+            "tags": [
+          "Board Games",
+          "Cafe",
+          "Waterloo"
+            ]
+        }        ,
+        {
+            "name": "Rogues Quarter",
+            "url": "",
+            "category": "Board Games",
+            "location": "North London",
+            "region": "North London",
+            "lat": 51.5500379,
+            "lng": -0.1516648,
+            "description": "☕ Coffee shop and gaming space.",
+            "tags": [
+          "Board Games",
+          "Coffee"
+            ]
+        }        ,
+        {
+            "name": "Otter Chaos",
+            "url": "",
+            "category": "Board Games",
+            "location": "South London",
+            "region": "South London",
+            "lat": 51.4628998,
+            "lng": -0.1134693,
+            "description": "🎲 Board game club.",
+            "tags": [
+          "Board Games",
+          "Gaming"
+            ]
+        }        ,
+        {
+            "name": "Stonecutters Lane",
+            "url": "",
+            "category": "Quirky & Shops",
+            "location": "Central London",
+            "region": "Central London",
+            "lat": 51.5066886,
+            "lng": -0.0921076,
+            "description": "🛍️ Shopping Centre.",
+            "tags": [
+          "Shopping"
+            ]
+        }        ,
+        {
+            "name": "Anatomie Studio London",
+            "url": "",
+            "category": "Active & Social Sports",
+            "location": "South London",
+            "region": "South London",
+            "lat": 51.4750996,
+            "lng": -0.0565537,
+            "description": "💪 Alternative gym and studio.",
+            "tags": [
+          "Gym",
+          "Fitness"
+            ]
+        }        ,
+        {
+            "name": "Four Quarters Peckham",
+            "url": "",
+            "category": "Video Games & Arcades",
+            "location": "South London",
+            "region": "South London",
+            "lat": 51.4680069,
+            "lng": -0.0670145,
+            "description": "🕹️ Retro arcade bar in Peckham.",
+            "tags": [
+          "Arcade",
+          "Bar",
+          "Peckham"
+            ]
+        }        ,
+        {
+            "name": "Studio Ma",
+            "url": "",
+            "category": "Active & Social Sports",
+            "location": "North London",
+            "region": "North London",
+            "lat": 51.6909845,
+            "lng": -0.418291,
+            "description": "🧘 Yoga studio.",
+            "tags": [
+          "Yoga",
+          "Wellness"
+            ]
+        }        ,
+        {
+            "name": "Cable Street Studios",
+            "url": "",
+            "category": "Quirky & Shops",
+            "location": "East London",
+            "region": "East London",
+            "lat": 51.5112951,
+            "lng": -0.0432546,
+            "description": "🎨 Creative workspace and studios.",
+            "tags": [
+          "Studios",
+          "Creative"
+            ]
+        }        ,
+        {
+            "name": "Daunt Books Marylebone",
+            "url": "",
+            "category": "Quirky & Shops",
+            "location": "Central London",
+            "region": "Central London",
+            "lat": 51.5204371,
+            "lng": -0.1522504,
+            "description": "📚 Beautiful Edwardian bookshop.",
+            "tags": [
+          "Books",
+          "Marylebone"
+            ]
+        }        ,
+        {
+            "name": "Cecil Court",
+            "url": "",
+            "category": "Quirky & Shops",
+            "location": "Central London",
+            "region": "Central London",
+            "lat": 51.5107273,
+            "lng": -0.1276572,
+            "description": "📚 Historic alleyway famous for antiquarian bookshops.",
+            "tags": [
+          "Books",
+          "History"
+            ]
+        }        ,
+        {
+            "name": "Foyles",
+            "url": "",
+            "category": "Quirky & Shops",
+            "location": "Central London",
+            "region": "Central London",
+            "lat": 51.5142726,
+            "lng": -0.130083,
+            "description": "📚 Massive multi-story bookshop.",
+            "tags": [
+          "Books",
+          "Reading"
+            ]
+        }        ,
+        {
+            "name": "BookBar Islington",
+            "url": "",
+            "category": "Quirky & Shops",
+            "location": "North London",
+            "region": "North London",
+            "lat": 51.560263,
+            "lng": -0.0987492,
+            "description": "📚 Book shop and wine bar.",
+            "tags": [
+          "Books",
+          "Wine",
+          "Islington"
+            ]
+        }        ,
+        {
+            "name": "Bad Moon Cafe",
+            "url": "",
+            "category": "Board Games",
+            "location": "South London",
+            "region": "South London",
+            "lat": 51.4966026,
+            "lng": -0.0883479,
+            "description": "🎲 Tabletop gaming cafe and bar.",
+            "tags": [
+          "Board Games",
+          "Cafe",
+          "Tabletop"
+            ]
+        }        ,
+        {
+            "name": "Loading Bar",
+            "url": "",
+            "category": "Video Games & Arcades",
+            "location": "North London",
+            "region": "North London",
+            "lat": 51.5605692,
+            "lng": -0.0740582,
+            "description": "🕹️ Cocktail bar with board games and video games.",
+            "tags": [
+          "Arcade",
+          "Bar",
+          "Gaming"
+            ]
+        }        ,
+        {
+            "name": "The Brotherhood Games Cafe",
+            "url": "",
+            "category": "Board Games",
+            "location": "South London",
+            "region": "South London",
+            "lat": 51.4938,
+            "lng": -0.0716,
+            "description": "🃏 Trading Card Shop and cafe.",
+            "tags": [
+          "Trading Cards",
+          "Games"
+            ]
+        }        ,
+        {
+            "name": "Zombie Games Cafe & Bar",
+            "url": "",
+            "category": "Board Games",
+            "location": "North London",
+            "region": "North London",
+            "lat": 51.5839,
+            "lng": -0.1541,
+            "description": "🃏 Trading Card Shop and gaming space.",
+            "tags": [
+          "Trading Cards",
+          "Games"
+            ]
+        }        ,
+        {
+            "name": "Dark Sphere Shepherd's Bush Gaming Centre",
+            "url": "",
+            "category": "Board Games",
+            "location": "West London",
+            "region": "West London",
+            "lat": 51.5037,
+            "lng": -0.2227,
+            "description": "🎲 Hobby shop and gaming centre.",
+            "tags": [
+          "Hobby",
+          "Tabletop",
+          "Shepherd's Bush"
+            ]
+        }        ,
+        {
+            "name": "Notting Hill Book & Comic Exchange",
+            "url": "",
+            "category": "Quirky & Shops",
+            "location": "West London",
+            "region": "West London",
+            "lat": 51.5097,
+            "lng": -0.1978,
+            "description": "📚 Comic book shop.",
+            "tags": [
+          "Comics",
+          "Books",
+          "Notting Hill"
+            ]
+        }        ,
+        {
+            "name": "Gosh! Comics",
+            "url": "",
+            "category": "Quirky & Shops",
+            "location": "Central London",
+            "region": "Central London",
+            "lat": 51.5135,
+            "lng": -0.1328,
+            "description": "📚 Comic book shop in Soho.",
+            "tags": [
+          "Comics",
+          "Soho"
+            ]
+        }        ,
+        {
+            "name": "Forbidden Planet London Megastore",
+            "url": "",
+            "category": "Quirky & Shops",
+            "location": "Central London",
+            "region": "Central London",
+            "lat": 51.5147,
+            "lng": -0.1293,
+            "description": "📚 Massive comic book and collectibles store.",
+            "tags": [
+          "Comics",
+          "Collectibles"
+            ]
+        }        ,
+        {
+            "name": "The Thieves",
+            "url": "",
+            "category": "Bars & Speakeasies",
+            "location": "South London",
+            "region": "South London",
+            "lat": 51.4503,
+            "lng": -0.0818,
+            "description": "🍻 Cosy local pub.",
+            "tags": [
+          "Pub",
+          "Drinks"
+            ]
+        }        ,
+        {
+            "name": "Ink@84 Books",
+            "url": "",
+            "category": "Quirky & Shops",
+            "location": "North London",
+            "region": "North London",
+            "lat": 51.5583,
+            "lng": -0.1018,
+            "description": "📚 Independent bookshop.",
+            "tags": [
+          "Books",
+          "Independent"
+            ]
+        }        ,
+        {
+            "name": "The Arcanist's Tavern: Gaming Café",
+            "url": "",
+            "category": "Board Games",
+            "location": "East London",
+            "region": "East London",
+            "lat": 51.5235,
+            "lng": -0.0768,
+            "description": "🎲 Board game club and fantasy tavern.",
+            "tags": [
+          "Board Games",
+          "Tavern"
+            ]
+        }
     ]
 },
 
