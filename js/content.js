@@ -5194,16 +5194,16 @@ window.CONTENT = {
         },
         {
             "name": "Lucia's",
-            "url": "https://luciase9.co.uk/",
+            "url": "",
             "category": "Dinner & Dining",
             "location": "Hackney Wick, London",
             "region": "East London",
-            "lat": 51.5430673,
-            "lng": -0.0235713,
-            "description": "🍽️ Stylish neighbourhood spot serving fresh, seasonal sharing plates and great natural wine in the heart of Hackney Wick.",
+            "lat": 51.5431415,
+            "lng": -0.0237189,
+            "description": "🌮 Tacos and mezcal in the heart of Hackney Wick.",
             "tags": [
-                "Dining",
-                "Wine",
+                "Tacos",
+                "Mezcal",
                 "Hackney Wick",
                 "Dinner"
             ]
