@@ -5178,7 +5178,7 @@ window.CONTENT = {
         },
         {
             "name": "Four Quarters East",
-            "url": "https://fourquarters.bar/",
+            "url": "https://fourquarters.bar/location/arcade-bar-east-london/",
             "category": "Video Games & Arcades",
             "location": "Hackney Wick, London",
             "region": "East London",
@@ -8029,7 +8029,7 @@ window.CONTENT = {
         }        ,
         {
             "name": "Four Quarters Peckham",
-            "url": "https://fourquarters.bar",
+            "url": "https://fourquarters.bar/location/arcade-bar-south-london/",
             "category": "Video Games & Arcades",
             "location": "South London",
             "region": "South London",
@@ -8040,6 +8040,21 @@ window.CONTENT = {
           "Arcade",
           "Bar",
           "Peckham"
+            ]
+        }        ,
+        {
+            "name": "Four Quarters Elephant & Castle",
+            "url": "https://fourquarters.bar/location/elephant-castle-arcade-bar/",
+            "category": "Video Games & Arcades",
+            "location": "Elephant and Castle, London",
+            "region": "South London",
+            "lat": 51.4936,
+            "lng": -0.0991,
+            "description": "🕹️ Huge retro arcade bar featuring vintage consoles, arcade machines, craft beer, and street food.",
+            "tags": [
+          "Arcade",
+          "Bar",
+          "Elephant & Castle"
             ]
         }        ,
         {
