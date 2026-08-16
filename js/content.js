@@ -8488,6 +8488,21 @@ window.CONTENT = {
           "Axe Throwing",
           "Liverpool Street"
             ]
+        },
+        {
+            "name": "Rogues Quarter",
+            "url": "https://www.roguesquarter.com/",
+            "category": "Board Games",
+            "location": "North London",
+            "region": "North London",
+            "lat": 51.5500379,
+            "lng": -0.1516648,
+            "description": "☕ Coffee shop and gaming space.",
+            "tags": [
+                "Board Games",
+                "Coffee",
+                "Kentish Town"
+            ]
         }
     ]
 },
