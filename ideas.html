@@ -760,6 +760,20 @@
         subdomains: 'abcd'
       }).addTo(map);
 
+      // Load Canals Layer
+      fetch('js/canals.geojson')
+        .then(res => res.json())
+        .then(geojsonData => {
+          L.geoJSON(geojsonData, {
+            style: {
+              color: '#3498db',
+              weight: 2.5,
+              opacity: 0.7
+            }
+          }).addTo(map);
+        })
+        .catch(err => console.warn('Could not load canals:', err));
+
       markersLayer = L.layerGroup().addTo(map);
       transitLayer = L.layerGroup().addTo(map);
 
