@@ -8332,20 +8332,6 @@ window.CONTENT = {
             ]
         }        ,
         {
-            "name": "Pop Golf (Wembley)",
-            "url": "https://popgolf.com/",
-            "category": "Crazy Golf",
-            "location": "London",
-            "region": "London",
-            "lat": 51.5583,
-            "lng": -0.2818,
-            "description": "",
-            "tags": [
-          "Crazy Golf",
-          "Wembley"
-            ]
-        }        ,
-        {
             "name": "Putt In The Park",
             "url": "https://www.puttinthepark.com/",
             "category": "Crazy Golf",
@@ -8375,34 +8361,6 @@ window.CONTENT = {
             ]
         }        ,
         {
-            "name": "Dragon Quest Adventure Golf (Croydon)",
-            "url": "https://www.worldofgolf.co.uk/adventure-golf/croydon/",
-            "category": "Crazy Golf",
-            "location": "London",
-            "region": "London",
-            "lat": 51.3789,
-            "lng": -0.0528,
-            "description": "",
-            "tags": [
-          "Crazy Golf",
-          "Croydon"
-            ]
-        }        ,
-        {
-            "name": "Dinosaur Escape (Ruislip)",
-            "url": "https://www.dinosaurescape.co.uk/",
-            "category": "Crazy Golf",
-            "location": "London",
-            "region": "London",
-            "lat": 51.5791,
-            "lng": -0.4287,
-            "description": "",
-            "tags": [
-          "Crazy Golf",
-          "Ruislip"
-            ]
-        }        ,
-        {
             "name": "Minigolf by Craig & Karl (Canary Wharf)",
             "url": "https://canarywharf.com/whats-on/minigolf-by-craig-karl/",
             "category": "Crazy Golf",
@@ -8414,20 +8372,6 @@ window.CONTENT = {
             "tags": [
           "Crazy Golf",
           "Canary Wharf"
-            ]
-        }        ,
-        {
-            "name": "Mr. Mulligan’s Dino Golf (Sidcup)",
-            "url": "https://mrmulligan.com/sidcup",
-            "category": "Crazy Golf",
-            "location": "London",
-            "region": "London",
-            "lat": 51.4116,
-            "lng": 0.1064,
-            "description": "",
-            "tags": [
-          "Crazy Golf",
-          "Sidcup"
             ]
         }        ,
         {
