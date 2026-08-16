@@ -5193,6 +5193,22 @@ window.CONTENT = {
             ]
         },
         {
+            "name": "Lucia's",
+            "url": "https://luciase9.co.uk/",
+            "category": "Dinner & Dining",
+            "location": "Hackney Wick, London",
+            "region": "East London",
+            "lat": 51.5430673,
+            "lng": -0.0235713,
+            "description": "🍽️ Stylish neighbourhood spot serving fresh, seasonal sharing plates and great natural wine in the heart of Hackney Wick.",
+            "tags": [
+                "Dining",
+                "Wine",
+                "Hackney Wick",
+                "Dinner"
+            ]
+        },
+        {
             "name": "Electric Shuffle",
             "url": "https://electricshuffle.com/",
             "category": "Shuffleboard",
