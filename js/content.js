@@ -8641,6 +8641,39 @@ window.CONTENT = {
                             "Shoreditch"
                   ]
         }
+            ,
+        {
+                  "name": "Jar and Fern",
+                  "url": "https://www.jarandfern.co.uk/workshops",
+                  "category": "Art & Workshops",
+                  "location": "Peckham, London",
+                  "region": "South London",
+                  "lat": 51.4678,
+                  "lng": -0.0742,
+                  "description": "🌿 Independent terrarium workshop space in Peckham where you can learn the science and craft of making your own closed ecosystem.",
+                  "tags": [
+                            "Terrarium",
+                            "Plants",
+                            "Workshop",
+                            "Peckham"
+                  ]
+        }        ,
+        {
+                  "name": "Tropical Glass",
+                  "url": "https://tropicalglass.co.uk/collections/terrarium-workshops",
+                  "category": "Art & Workshops",
+                  "location": "Wood Green, London",
+                  "region": "North London",
+                  "lat": 51.5945,
+                  "lng": -0.092,
+                  "description": "🌿 Intimate terrarium workshops in North London. Build a beautiful miniature ecosystem inside specialized glassware.",
+                  "tags": [
+                            "Terrarium",
+                            "Plants",
+                            "Workshop",
+                            "Wood Green"
+                  ]
+        }
     ]
 },
 
