@@ -756,24 +756,30 @@
 
       // Light-themed CartoDB Voyager tiles (crisp, beautiful, high-contrast roads, waters, and greenery)
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://carto.com/" target="_blank">CARTO</a> &middot; &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+        attribution: '&copy; <a href="https://carto.com/" target="_blank">CARTO</a> &middot; <a href="https://www.openstreetmap.org/copyright" target="_blank">OSM</a>',
         maxZoom: 19,
         subdomains: 'abcd'
       }).addTo(map);
 
-      // Load Canals Layer
+      const overlayMaps = {};
+
+      // Load Canals Layer (Off by default)
       if (window.CANALS_GEOJSON) {
-        L.geoJSON(window.CANALS_GEOJSON, {
+        const canalLayer = L.geoJSON(window.CANALS_GEOJSON, {
           style: {
             color: '#3498db',
             weight: 2.5,
             opacity: 0.7
           }
-        }).addTo(map);
+        });
+        overlayMaps["Canals & Rivers"] = canalLayer;
       }
 
       markersLayer = L.layerGroup().addTo(map);
       transitLayer = L.layerGroup().addTo(map);
+
+      // Add layer control toggle
+      L.control.layers(null, overlayMaps, { position: 'bottomleft' }).addTo(map);
 
       // The app layout handles full screen implicitly. We force an invalidateSize 
       // just in case DOM paints lag slightly behind leaflet init.
