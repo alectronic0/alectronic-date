@@ -8576,7 +8576,72 @@ window.CONTENT = {
                   ]
         }
 
-]
+        ,
+        {
+                  "name": "Social Pottery",
+                  "url": "https://socialpottery.com/",
+                  "category": "Arts & Crafts",
+                  "location": "Kentish Town, London",
+                  "region": "North London",
+                  "lat": 51.5484,
+                  "lng": -0.1402,
+                  "description": "🎨 Relaxed pottery painting studio where you can bring your own bottle (BYOB) in the evenings. Great way to chat without the pressure of a sit-down dinner.",
+                  "tags": [
+                            "Pottery",
+                            "Art",
+                            "BYOB",
+                            "Kentish Town"
+                  ]
+        }        ,
+        {
+                  "name": "Token Studio",
+                  "url": "https://tokenstudio.co.uk/",
+                  "category": "Arts & Crafts",
+                  "location": "Southwark, London",
+                  "region": "South London",
+                  "lat": 51.4984,
+                  "lng": -0.0967,
+                  "description": "🎨 Quirky creative space offering masterclasses in soap making, pottery, and crafts. Very intimate and hands-on.",
+                  "tags": [
+                            "Crafts",
+                            "Masterclass",
+                            "Art",
+                            "Southwark"
+                  ]
+        }        ,
+        {
+                  "name": "Eataly London",
+                  "url": "https://www.eataly.co.uk/",
+                  "category": "Restaurants",
+                  "location": "Bishopsgate, London",
+                  "region": "East London",
+                  "lat": 51.5173,
+                  "lng": -0.0805,
+                  "description": "🍝 A sprawling Italian food marketplace. You can take pasta-making masterclasses together, or just wander and eat fresh cannoli.",
+                  "tags": [
+                            "Italian",
+                            "Masterclass",
+                            "Food Market",
+                            "Bishopsgate"
+                  ]
+        }        ,
+        {
+                  "name": "TT Liquor",
+                  "url": "https://ttliquor.co.uk/",
+                  "category": "Bars & Speakeasies",
+                  "location": "Shoreditch, London",
+                  "region": "East London",
+                  "lat": 51.5273,
+                  "lng": -0.0768,
+                  "description": "🍸 Multilevel establishment built inside a historic police station. Known for their incredible cocktail-making masterclasses and a hidden cellar bar.",
+                  "tags": [
+                            "Cocktails",
+                            "Masterclass",
+                            "Speakeasy",
+                            "Shoreditch"
+                  ]
+        }
+    ]
 },
 
   footer: {
