@@ -3650,11 +3650,12 @@ button.CookiebotWidget-logo::before {
       font-weight: 500;
     }
 
-    /* ── App Layout ── */
-    html, body {
+    /* ── App Layout (Fullscreen Map Views) ── */
+    html:has(.app-layout),
+    body:has(.app-layout) {
       margin: 0;
       padding: 0;
-      overflow: hidden; /* Global fullscreen lock */
+      overflow: hidden;
       height: 100vh;
       width: 100vw;
     }
