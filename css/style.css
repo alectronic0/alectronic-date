@@ -3818,4 +3818,114 @@ button.CookiebotWidget-logo::before {
       transform: scale(1.2);
     }
 
-    /* ── Cards Grid ── */
+    /* ── Workshop Bookings Map ───────────────────── */
+    .workshop-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      margin-bottom: var(--space-3);
+      cursor: pointer;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .workshop-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    .workshop-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.15rem;
+      color: var(--text);
+      line-height: 1.3;
+      font-weight: 700;
+    }
+
+    .company {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: var(--mint);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .duration {
+      color: var(--muted-2);
+      font-size: 0.85rem;
+    }
+
+    .loc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .book-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-3);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: var(--space-2) var(--space-3);
+      border-radius: 10px;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      text-align: center;
+    }
+
+    .book-btn:hover {
+      background: var(--gold);
+      color: var(--bg);
+      transform: translateY(-1px);
+    }
+
+    .filter-group input { 
+      width: 100%; 
+      padding: 12px 16px; 
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border); 
+      border-radius: 10px; 
+      box-sizing: border-box; 
+      font-size: 0.95rem; 
+      font-family: var(--font);
+      margin-bottom: var(--space-4);
+    }
+
+    .filter-group input:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .filter-group input::placeholder {
+      color: var(--muted-2);
+    }
+
+    #workshop-list {
+      margin-top: 10px;
+    }
+
+    .map-bottom-filters {
+      max-height: 40vh;
+    }
