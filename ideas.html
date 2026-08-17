@@ -608,9 +608,12 @@
     <!-- ── Left Sidebar Drawer ── -->
     <aside class="sidebar-drawer">
       <header class="drawer-header">
-        <div class="top-links" style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+        <div class="top-links" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
           <a href="index.html" class="back-link" aria-label="Return to main profile">← Back to Profile</a>
-          <a href="events.html" class="back-link" style="color: var(--rose-light);" aria-label="View singles events">🥂 Singles Events →</a>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <a href="book-workshops.html" class="back-link" style="color: var(--gold); border: 1px solid rgba(230,169,121,0.3);" aria-label="Book Workshops">🏺 Book Workshops</a>
+            <a href="events.html" class="back-link" style="color: var(--rose-light);" aria-label="View singles events">🥂 Singles Events →</a>
+          </div>
         </div>
 
       </header>

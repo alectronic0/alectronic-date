@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Bookings</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            background: var(--bg);
+        }
+        
+        .app-layout {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            width: 100vw;
+            background: var(--bg);
+        }
+        
+        .sidebar-drawer {
+            width: 420px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border);
+            background: var(--bg);
+            z-index: 10;
+        }
+        
+        .drawer-header {
+            padding: var(--space-4);
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+            z-index: 2;
+            position: sticky;
+            top: 0;
+        }
+        
+        .drawer-scroll-area {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: var(--space-4);
+        }
+        
+        .map-area {
+            flex-grow: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .map-bottom-filters {
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            padding: var(--space-4);
+            z-index: 2;
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        .scrollable-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .filter-btn {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .filter-btn:hover {
+            background: var(--surface-3);
+            color: var(--text);
+            border-color: var(--gold);
+        }
+
+        .filter-btn.active {
+            background: rgba(230, 169, 121, 0.18);
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .filter-count {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--muted);
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            margin-left: 4px;
+        }
+        
+        .filter-btn.active .filter-count {
+            background: rgba(230, 169, 121, 0.25);
+            color: var(--gold);
+        }
+
+        /* Custom overrides to match the dark aesthetic for the workshop cards */
+        .workshop-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: var(--space-4);
+            margin-bottom: var(--space-3);
+            cursor: pointer;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+        }
+        .workshop-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow);
+        }
+        .workshop-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.15rem;
+            color: var(--text);
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        .company { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600; }
+        .price-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .price { color: var(--mint); font-weight: bold; font-size: 1.1rem; }
+        .duration { color: var(--muted-2); font-size: 0.85rem; }
+        .loc { font-size: 0.85rem; color: var(--muted); line-height: 1.4; margin-bottom: 12px; }
+        
+        .book-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--surface-3);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+            padding: var(--space-2) var(--space-3);
+            border-radius: 10px;
+            transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+            text-align: center;
+        }
+        .book-btn:hover { background: var(--gold); color: var(--bg); transform: translateY(-1px); }
+        
+        .filter-group input { 
+            width: 100%; 
+            padding: 12px 16px; 
+            background: var(--surface-2);
+            color: var(--text);
+            border: 1px solid var(--border); 
+            border-radius: 10px; 
+            box-sizing: border-box; 
+            font-size: 0.95rem; 
+            font-family: var(--font);
+            margin-bottom: var(--space-4);
+        }
+        .filter-group input:focus { outline: none; border-color: var(--gold); }
+        .filter-group input::placeholder { color: var(--muted-2); }
+        
+        #workshop-list { margin-top: 10px; }
+        .map-bottom-filters { max-height: 40vh; }
+    </style>
+    <!-- Load data offline -->
+    <script src="workshops_geo.js"></script>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar-drawer" id="sidebar">
+        <header class="drawer-header">
+            <div class="top-links" style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                <a href="ideas.html" class="back-link" aria-label="Return to ideas map">← Back to Ideas Map</a>
+            </div>
+            <h1 style="font-size: 2rem; margin-bottom: 10px; color: var(--text);">Discover Workshops</h1>
+            <div class="filter-group">
+                <input type="text" id="search" placeholder="Search activities, companies, or locations...">
+            </div>
+        </header>
+        <div id="workshop-list" class="drawer-scroll-area">
+            <p style="color: var(--muted);">Loading workshops...</p>
+        </div>
+    </aside>
+    
+    <main id="map-view-container" class="map-area" style="display: flex; flex-direction: column;">
+        <div id="map" style="flex: 1; z-index: 1;"></div>
+        <div class="map-bottom-filters">
+            <div id="category-pills" class="category-pills scrollable-pills">
+                <!-- Pills populated by JS -->
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    const map = L.map('map').setView([51.5074, -0.1278], 11); // Center on London
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+    }).addTo(map);
+
+    let workshops = [];
+    let markers = [];
+
+    let activeCategory = 'All';
+
+    // Load offline data directly from JS array
+    if (window.WORKSHOPS_DATA) {
+        workshops = window.WORKSHOPS_DATA;
+        renderPills();
+        renderWorkshops(workshops);
+        renderMarkers(workshops);
+    } else {
+        document.getElementById('workshop-list').innerHTML = `
+            <div style="color:#cb2431; padding:15px; border:1px solid #cb2431; border-radius:6px; background:#ffeef0;">
+                <strong>Error:</strong> Could not load data.<br>
+                Ensure <code>workshops_geo.js</code> has been generated and is in the same directory.
+            </div>`;
+    }
+
+    function renderWorkshops(list) {
+        const container = document.getElementById('workshop-list');
+        container.innerHTML = '';
+        
+        if (list.length === 0) {
+            container.innerHTML = '<p style="color:#6a737d;">No workshops found matching your search.</p>';
+            return;
+        }
+
+        // Limit to 100 on sidebar for performance, but map shows all
+        list.slice(0, 100).forEach((w, index) => { 
+            const div = document.createElement('div');
+            div.className = 'workshop-card';
+            div.onclick = () => focusWorkshop(w);
+            const badgeColor = w.source === 'Airbnb' ? 'var(--rose-light)' : 'var(--gold)';
+            const badgeBg = w.source === 'Airbnb' ? 'rgba(255,107,138,0.16)' : 'rgba(230,169,121,0.16)';
+            
+            div.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+                    <span style="background:${badgeBg}; color:${badgeColor}; padding:3px 10px; border-radius:999px; font-size:0.75rem; font-weight:600; border:1px solid ${badgeBg}; text-transform:uppercase; letter-spacing:1px;">
+                        ${w.source || 'ClassBento'}
+                    </span>
+                    <span style="font-size:0.8rem; color:var(--muted-2);">⭐ ${w.rating || 'New'}</span>
+                </div>
+                <h3>${w.title}</h3>
+                <div class="company" style="color:var(--gold); font-size:0.95rem; margin-bottom:12px;">${w.company_teacher}</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px;">
+                    <span style="background:var(--surface-2); color:var(--text); padding:4px 8px; border-radius:6px; font-size:0.8rem; border:1px solid var(--border);">
+                        💰 £${w.price}
+                    </span>
+                    <span style="background:var(--surface-2); color:var(--text); padding:4px 8px; border-radius:6px; font-size:0.8rem; border:1px solid var(--border);">
+                        ⏱️ ${w.duration || '?'}
+                    </span>
+                </div>
+                
+                <div style="font-size:0.85rem; color:var(--mint); margin-bottom:8px; font-weight:500;">
+                    📅 ${w.activity_patterns || 'Check availability'}
+                </div>
+                
+                ${w.times && w.times.length > 0 ? `
+                <div style="margin-top:4px; font-size:0.8rem; color:var(--muted); background:var(--surface-2); padding:8px; border-radius:8px; border:1px solid var(--border); margin-bottom:12px;">
+                    <strong style="color:var(--accent-light);">Upcoming Dates:</strong><br>
+                    <div style="margin-top:4px; line-height:1.4;">
+                        ${w.times.slice(0, 3).join('<br>')}
+                        ${w.times.length > 3 ? `<br><em style="color:var(--muted-2);">+ ${w.times.length - 3} more dates</em>` : ''}
+                    </div>
+                </div>
+                ` : ''}
+            `;
+            container.appendChild(div);
+        });
+    }
+
+    function getCategory(title) {
+        const t = (title || "").toLowerCase();
+        
+        // 🌟 Ultra Niche / Unique
+        if (t.match(/neon/)) return { name: 'Neon Art', emoji: '✨' };
+        if (t.match(/leather|bag /)) return { name: 'Leathercraft', emoji: '👜' };
+        if (t.match(/resin/)) return { name: 'Resin Art', emoji: '🧪' };
+        if (t.match(/forag/)) return { name: 'Foraging', emoji: '🍄' };
+        if (t.match(/tarot|astrology|psychic|magic|witch/)) return { name: 'Mystic & Tarot', emoji: '🔮' };
+        if (t.match(/blacksmith|forge|knife|axe|sword|metalwork/)) return { name: 'Blacksmithing', emoji: '⚒️' };
+        if (t.match(/glass|lampwork|stained|fused glass/)) return { name: 'Glasswork', emoji: '🪟' };
+        if (t.match(/perfume|oil |scent|soap|bath bomb|skincare/)) return { name: 'Bath & Fragrance', emoji: '🛁' };
+        
+        // 💮 Arts & Crafts
+        if (t.match(/stamp|lino|printing|screen print|block print/)) return { name: 'Print & Stamp', emoji: '💮' };
+        if (t.match(/potter|ceramic|clay|wheel|sculpt|kintsugi/)) return { name: 'Pottery & Kintsugi', emoji: '🏺' };
+        if (t.match(/sip & paint|sip and paint|paint & sip|paint and sip/)) return { name: 'Paint & Sip', emoji: '🖌️' };
+        if (t.match(/paint|art |draw|watercolour|sketch|acrylic|portrait|life drawing/)) return { name: 'Painting & Art', emoji: '🎨' };
+        if (t.match(/mosaic|collage|decoupage/)) return { name: 'Mosaic & Collage', emoji: '✂️' };
+        if (t.match(/candle|wax /)) return { name: 'Candlemaking', emoji: '🕯️' };
+        if (t.match(/ring|jewel|silver|gold|earring|necklace|silversmith/)) return { name: 'Jewellery', emoji: '💍' };
+        if (t.match(/sew|tuft|textile|rug|knit|crochet|embroid|weave|clothes|garment|macrame/)) return { name: 'Textiles & Yarn', emoji: '🧶' };
+        if (t.match(/wood|carpentry|furniture|carv|whittling/)) return { name: 'Woodwork', emoji: '🪚' };
+        if (t.match(/letter|calligraphy|paper|bookbinding|origami/)) return { name: 'Papercraft', emoji: '📜' };
+        
+        // 🫖 Food & Drink
+        if (t.match(/tea /)) return { name: 'Tea & Tasting', emoji: '🫖' };
+        if (t.match(/coffee|barista|latte/)) return { name: 'Coffee', emoji: '☕' };
+        if (t.match(/chocolate|truffle/)) return { name: 'Chocolate', emoji: '🍫' };
+        if (t.match(/cake|bak|pastry|biscuit|cookie|bread|sourdough/)) return { name: 'Baking', emoji: '🧁' };
+        if (t.match(/sushi|dim sum|dumpling|asian|chinese|japanese|thai|korean|ramen/)) return { name: 'Asian Cuisine', emoji: '🥢' };
+        if (t.match(/pizza|pasta|italian|gnocchi/)) return { name: 'Italian Cuisine', emoji: '🍝' };
+        if (t.match(/cheese/)) return { name: 'Cheese', emoji: '🧀' };
+        if (t.match(/cook|food|beef|culinary|kitchen|vegan|bbq|meat/)) return { name: 'Cooking', emoji: '🍳' };
+        if (t.match(/cocktail|mixology|gin |vodka|rum /)) return { name: 'Cocktails', emoji: '🍹' };
+        if (t.match(/wine|tasting|whisky|beer|byob|drink/)) return { name: 'Drinks & Tastings', emoji: '🍷' };
+
+        // 🌿 Life & Wellness
+        if (t.match(/flower|terrarium|plant|botanical|ikebana|wreath|florist|garden|floral|bouquet|bonsai/)) return { name: 'Plants & Floristry', emoji: '🌿' };
+        if (t.match(/yoga|meditat|breath|mindful|sound bath|healing|pilates/)) return { name: 'Wellness & Yoga', emoji: '🧘' };
+        if (t.match(/dance|bachata|salsa|ballet|bollywood|twerk|tango/)) return { name: 'Dance', emoji: '💃' };
+        
+        // 📸 Media & Activities
+        if (t.match(/photo|camera|videography|film|darkroom/)) return { name: 'Photography', emoji: '📸' };
+        if (t.match(/walk|tour|guide|museum|history/)) return { name: 'Walking Tours', emoji: '🚶' };
+        if (t.match(/comedy|improv/)) return { name: 'Comedy & Acting', emoji: '🎭' };
+        if (t.match(/music|singing|choir|dj |djing|instrument/)) return { name: 'Music', emoji: '🎵' };
+
+        return { name: 'Unique & Fun', emoji: '✨' }; // Fallback
+    }
+
+    function renderMarkers(list) {
+        markers.forEach(m => map.removeLayer(m.marker));
+        markers = [];
+        
+        const grouped = {};
+
+        list.forEach((w) => {
+            if (w.lat && w.lng) {
+                const coordKey = `${w.lat.toFixed(4)},${w.lng.toFixed(4)}`; // approx 11m grid
+                const company = w.company_teacher || "Independent";
+                const groupKey = `${coordKey}_${company}`; // GROUP BY COMPANY + LOCATION
+                
+                if (!grouped[groupKey]) {
+                    grouped[groupKey] = {
+                        lat: w.lat,
+                        lng: w.lng,
+                        coordKey: coordKey,
+                        company: company,
+                        location: w.exact_location || w.location,
+                        classes: []
+                    };
+                }
+                grouped[groupKey].classes.push(w);
+            }
+        });
+
+        const seenCoords = {};
+
+        Object.values(grouped).forEach(g => {
+            let finalLat = g.lat;
+            let finalLng = g.lng;
+            
+            // If multiple COMPANIES run at the exact same studio, spiral them slightly outward
+            if (seenCoords[g.coordKey]) {
+                const count = seenCoords[g.coordKey];
+                const angle = count * 2.39996; // Golden angle
+                const radius = 0.0002 * Math.sqrt(count);
+                
+                finalLat += Math.sin(angle) * radius;
+                finalLng += Math.cos(angle) * radius * 1.5;
+                
+                seenCoords[g.coordKey]++;
+            } else {
+                seenCoords[g.coordKey] = 1;
+            }
+
+            const isMulti = g.classes.length > 1;
+            
+            // Determine the pin emoji: if all classes have the same emoji, use it. Otherwise, use 🏢.
+            let uniqueEmojis = new Set();
+            g.classes.forEach(w => uniqueEmojis.add(getCategory(w.title).emoji));
+            
+            let emoji;
+            if (uniqueEmojis.size === 1) {
+                emoji = [...uniqueEmojis][0];
+            } else {
+                emoji = '🏢';
+            }
+            
+            const badgeHtml = isMulti ? `<div style="background:red; color:white; border-radius:50%; width:18px; height:18px; line-height:18px; font-size:11px; position:absolute; top:-8px; right:-8px; font-weight:bold; border:2px solid white;">${g.classes.length}</div>` : '';
+            
+            const icon = L.divIcon({
+                html: `<div style="font-size:24px; text-align:center; filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.4)); position:relative;">${emoji}${badgeHtml}</div>`,
+                className: 'custom-emoji-icon',
+                iconSize: [30, 30],
+                iconAnchor: [15, 15],
+                popupAnchor: [0, -15]
+            });
+            
+            const marker = L.marker([finalLat, finalLng], { icon }).addTo(map);
+            
+            let classesHtml = g.classes.map(w => {
+                const badgeColor = w.source === 'Airbnb' ? 'var(--rose-light)' : 'var(--gold)';
+                const badgeBg = w.source === 'Airbnb' ? 'rgba(255,107,138,0.16)' : 'rgba(230,169,121,0.16)';
+                return `<div style="margin-bottom:12px; text-align:left; border-bottom:1px solid #e1e4e8; padding-bottom:12px;">
+                    <span class="map-popup-badge" style="background:${badgeBg}; color:${badgeColor}; border:1px solid ${badgeBg};">
+                        ${w.source || 'ClassBento'}
+                    </span>
+                    <h4 class="map-popup-title" style="margin-top:4px; font-size:1.05rem;">${w.title}</h4>
+                    <div style="font-size:0.85rem; color:#0f766e; margin:6px 0; font-weight:600;">📅 ${w.activity_patterns || 'Check availability'}</div>
+                    ${w.times && w.times.length > 0 ? `
+                    <div style="font-size:0.75rem; color:#4b5563; background:#f3f4f6; padding:6px; border-radius:6px; margin-top:6px; margin-bottom:8px;">
+                        <strong style="color:#1f2937;">Upcoming Dates:</strong><br>
+                        ${w.times.slice(0, 2).join('<br>')}
+                        ${w.times.length > 2 ? `<br><em style="color:#6b7280;">+ ${w.times.length - 2} more</em>` : ''}
+                    </div>
+                    ` : ''}
+                    <div style="font-size:0.8rem; color:#4b5563; margin-bottom:8px;">💰 £${w.price} &nbsp; ⏱️ ${w.duration || '?'} &nbsp; ⭐ ${w.rating || 'New'}</div>
+                    <a href="${w.url}" target="_blank" class="map-popup-btn">Book for £${w.price}</a>
+                </div>`;
+            }).join('');
+            
+            marker.bindPopup(`
+                <div class="map-popup-card" style="max-height:340px; overflow-y:auto; width:240px; padding-right:4px;">
+                    <div style="position:sticky; top:0; background:#ffffff; padding:4px 0 8px; border-bottom:1px solid #e5e7eb; z-index:10; margin-bottom:12px; margin-top:-4px;">
+                        <span class="map-popup-badge" style="background:#f3f4f6; color:#1f2937; border-color:#e5e7eb; font-size:0.75rem;"><span style="color:var(--gold);">★</span> ${g.company}</span>
+                        <p class="map-popup-desc" style="margin-top:6px; font-size:0.8rem; font-weight:500;">📍 ${g.location}</p>
+                        ${isMulti ? `<div style="font-size:0.75rem; font-weight:700; color:#b91c1c;">${g.classes.length} Activities Here</div>` : ''}
+                    </div>
+                    ${classesHtml}
+                </div>
+            `);
+            
+            // For focus functionality from sidebar
+            g.classes.forEach(w => {
+                markers.push({ id: w.id, marker });
+            });
+        });
+    }
+
+    function focusWorkshop(w) {
+        if (w.lat && w.lng) {
+            map.flyTo([w.lat, w.lng], 15, { duration: 0.5 });
+            const m = markers.find(mark => mark.id === w.id);
+            if (m) m.marker.openPopup();
+        }
+    }
+
+    function renderPills() {
+        const container = document.getElementById('category-pills');
+        const counts = { 'All': workshops.length };
+        const emojis = { 'All': '' };
+        
+        workshops.forEach(w => {
+            const cat = getCategory(w.title);
+            if (!counts[cat.name]) {
+                counts[cat.name] = 0;
+                emojis[cat.name] = cat.emoji;
+            }
+            counts[cat.name]++;
+        });
+        
+        // Sort categories by count (descending)
+        const sortedCats = Object.keys(counts).filter(k => k !== 'All').sort((a,b) => counts[b] - counts[a]);
+        const finalCats = ['All', ...sortedCats];
+        
+        container.innerHTML = finalCats.map(cat => {
+            return `
+                <button class="filter-btn ${cat === activeCategory ? 'active' : ''}" data-category="${cat}" type="button">
+                    ${emojis[cat]} ${cat} <span class="filter-count">${counts[cat]}</span>
+                </button>
+            `;
+        }).join('');
+        
+        container.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                activeCategory = btn.dataset.category;
+                renderPills(); // Re-render to update active styling
+                applyFilters();
+            });
+        });
+        
+        // Leaflet needs to know the container size changed when pills were injected/wrapped
+        setTimeout(() => map.invalidateSize(), 100);
+    }
+
+    function applyFilters() {
+        const term = document.getElementById('search').value.toLowerCase();
+        const filtered = workshops.filter(w => {
+            const matchSearch = 
+                (w.title && w.title.toLowerCase().includes(term)) ||
+                (w.company_teacher && w.company_teacher.toLowerCase().includes(term)) ||
+                (w.location && w.location.toLowerCase().includes(term)) ||
+                (w.exact_location && w.exact_location.toLowerCase().includes(term)) ||
+                (w.description && w.description.toLowerCase().includes(term));
+            
+            const matchCat = activeCategory === 'All' || getCategory(w.title).name === activeCategory;
+            
+            return matchSearch && matchCat;
+        });
+        renderWorkshops(filtered);
+        renderMarkers(filtered);
+    }
+
+    // Search filter
+    document.getElementById('search').addEventListener('input', applyFilters);
+
+</script>
+</body>
+</html>
