@@ -9,13 +9,22 @@
     }).addTo(map);
 
     const markersLayer = L.layerGroup().addTo(map);
-    const transitLayer = L.layerGroup(); // Switched OFF by default (not added to map initially)
+    const primaryTransitLayer = L.layerGroup(); // Switched OFF by default
+    const coreTransitLayer = L.layerGroup();    // Switched OFF by default
+    const tertiaryTransitLayer = L.layerGroup();// Switched OFF by default
+    const stationMarkersLayer = L.layerGroup().addTo(map);
 
     const overlayMaps = {
         "📍 Workshop Venues": markersLayer,
-        "🚆 Train Lines & Stations": transitLayer
+        "🚆 Primary Commute (Great Northern)": primaryTransitLayer,
+        "🚇 Core Tube & Overground": coreTransitLayer,
+        "🟣 Tertiary & Regional Routes": tertiaryTransitLayer
     };
     L.control.layers(null, overlayMaps, { position: 'topright' }).addTo(map);
+
+    map.on('overlayadd overlayremove', function() {
+        updateActiveStations();
+    });
 
     let workshops = [];
     let markers = [];
@@ -24,7 +33,7 @@
     let activeTime = 'Anytime';
 
     // Render transit layer data
-    renderTransitLayer();
+    renderTransitLayers();
 
     // Load offline data directly from JS array
     if (window.WORKSHOPS_DATA) {
@@ -278,16 +287,18 @@
         });
     }
 
-    function renderTransitLayer() {
+    function renderTransitLayers() {
         const data = window.CONTENT && window.CONTENT.dateIdeas;
         const t = data && data.transit;
-        if (!t) return;
-        if (!transitLayer) return;
+        if (!t || !map) return;
 
-        transitLayer.clearLayers();
+        if (primaryTransitLayer) primaryTransitLayer.clearLayers();
+        if (coreTransitLayer) coreTransitLayer.clearLayers();
+        if (tertiaryTransitLayer) tertiaryTransitLayer.clearLayers();
+        if (stationMarkersLayer) stationMarkersLayer.clearLayers();
 
         // 1. Home Base Marker (Welwyn Garden City)
-        if (t.home) {
+        if (t.home && primaryTransitLayer) {
             const homeIcon = L.divIcon({
                 className: 'home-marker-icon',
                 html: `<div class="custom-map-icon" style="background: #e6a979; color: #160d14; width: 36px; height: 36px; font-size: 19px; border: 2.5px solid #fff; box-shadow: 0 4px 12px rgba(230,169,121,0.6);">🏡</div>`,
@@ -303,11 +314,11 @@
                         <p class="map-popup-desc">${t.home.description}</p>
                     </div>
                 `)
-                .addTo(transitLayer);
+                .addTo(primaryTransitLayer);
         }
 
         // 2. Office Marker (Deliveroo HQ)
-        if (t.office) {
+        if (t.office && primaryTransitLayer) {
             const officeIcon = L.divIcon({
                 className: 'office-marker-icon',
                 html: `<div class="custom-map-icon" style="background: #00cdbc; color: #fff; width: 36px; height: 36px; font-size: 19px; border: 2.5px solid #fff; box-shadow: 0 4px 12px rgba(0,205,188,0.6);">💼</div>`,
@@ -323,13 +334,18 @@
                         <p class="map-popup-desc">${t.office.description}</p>
                     </div>
                 `)
-                .addTo(transitLayer);
+                .addTo(primaryTransitLayer);
         }
 
-        // 3. Render all transit lines from transit.lines[]
+        // 3. Draw Polylines into appropriate layer groups
         if (t.lines && t.lines.length > 0) {
-            // Pass 1: Draw all polylines
             t.lines.forEach(line => {
+                let targetLayer = coreTransitLayer;
+                if (line.tier === 'primary') targetLayer = primaryTransitLayer;
+                else if (line.tier === 'tertiary') targetLayer = tertiaryTransitLayer;
+
+                if (!targetLayer) return;
+
                 const branchLists = line.branches || [line.stations];
                 branchLists.forEach(branch => {
                     const coords = branch.map(s => [s.lat, s.lng]);
@@ -339,64 +355,89 @@
                             weight: line.style === 'dashed' ? 4 : 3.5,
                             opacity: 0.82,
                             dashArray: line.style === 'dashed' ? '8, 5' : null
-                        }).addTo(transitLayer);
+                        }).addTo(targetLayer);
                     }
                 });
-            });
-
-            // Pass 2: Index every station by coordinate
-            const stationIndex = {};
-            t.lines.forEach(line => {
-                line.stations.forEach(st => {
-                    const key = `${st.lat},${st.lng}`;
-                    if (!stationIndex[key]) {
-                        stationIndex[key] = { name: st.name, lat: st.lat, lng: st.lng, type: st.type, note: st.note, lines: [] };
-                    }
-                    stationIndex[key].lines.push({ shortName: line.shortName || line.name, color: line.color });
-                    const rank = { origin: 4, terminus: 3, interchange: 2, station: 1 };
-                    if ((rank[st.type] || 0) > (rank[stationIndex[key].type] || 0)) {
-                        stationIndex[key].type = st.type;
-                    }
-                    if (st.note && !stationIndex[key].note) stationIndex[key].note = st.note;
-                    if (st.note && st.note.length > (stationIndex[key].note || '').length) stationIndex[key].note = st.note;
-                });
-            });
-
-            // Pass 3: Render one marker per unique station
-            Object.values(stationIndex).forEach(st => {
-                const isTerminus = st.type === 'terminus' || st.type === 'origin';
-                const isInterchange = st.type === 'interchange';
-                const multiLine = st.lines.length > 1;
-                const primaryColor = st.lines[0].color;
-
-                const size = isTerminus ? 26 : (isInterchange || multiLine) ? 24 : 18;
-                const bg = isTerminus ? primaryColor : '#ffffff';
-                const textCol = isTerminus ? '#ffffff' : primaryColor;
-                const borderCol = multiLine ? '#333' : primaryColor;
-                const borderW = (isInterchange || multiLine) ? 2.5 : 2;
-
-                const stIcon = L.divIcon({
-                    className: 'train-station-icon',
-                    html: `<div class="custom-map-icon" style="background: ${bg}; color: ${textCol}; width: ${size}px; height: ${size}px; font-size: ${size * 0.52}px; border: ${borderW}px solid ${borderCol}; box-shadow: 0 2px 5px rgba(0,0,0,0.18);" title="${st.name}">🚆</div>`,
-                    iconSize: [size, size],
-                    iconAnchor: [size / 2, size / 2]
-                });
-
-                const lineBadges = st.lines.map(l =>
-                    `<span style="display:inline-flex;align-items:center;gap:3px;background:${l.color}14;color:${l.color};border:1px solid ${l.color}40;border-radius:4px;padding:1px 6px;font-size:0.72rem;font-weight:600;"><span style="width:7px;height:7px;border-radius:50%;background:${l.color};"></span>${l.shortName}</span>`
-                ).join(' ');
-
-                L.marker([st.lat, st.lng], { icon: stIcon })
-                    .bindPopup(`
-                        <div class="map-popup-card">
-                            <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;">${lineBadges}</div>
-                            <h4 class="map-popup-title">${st.name}</h4>
-                            <p class="map-popup-desc">${st.note || st.lines.map(l => l.shortName).join(' · ')}</p>
-                        </div>
-                    `)
-                    .addTo(transitLayer);
             });
         }
+
+        updateActiveStations();
+    }
+
+    function updateActiveStations() {
+        const data = window.CONTENT && window.CONTENT.dateIdeas;
+        const t = data && data.transit;
+        if (!t || !stationMarkersLayer || !map) return;
+
+        stationMarkersLayer.clearLayers();
+
+        // Collect lines from active visible layers only
+        const visibleLines = [];
+        if (primaryTransitLayer && map.hasLayer(primaryTransitLayer)) {
+            visibleLines.push(...(t.lines || []).filter(l => l.tier === 'primary'));
+        }
+        if (coreTransitLayer && map.hasLayer(coreTransitLayer)) {
+            visibleLines.push(...(t.lines || []).filter(l => l.tier === 'core' || !l.tier));
+        }
+        if (tertiaryTransitLayer && map.hasLayer(tertiaryTransitLayer)) {
+            visibleLines.push(...(t.lines || []).filter(l => l.tier === 'tertiary'));
+        }
+
+        if (visibleLines.length === 0) return;
+
+        const stationIndex = {};
+        visibleLines.forEach(line => {
+            line.stations.forEach(st => {
+                const key = `${st.lat.toFixed(4)},${st.lng.toFixed(4)}`;
+                if (!stationIndex[key]) {
+                    stationIndex[key] = { name: st.name, lat: st.lat, lng: st.lng, type: st.type, note: st.note, lines: [] };
+                }
+                if (!stationIndex[key].lines.some(l => l.shortName === (line.shortName || line.name))) {
+                    stationIndex[key].lines.push({ shortName: line.shortName || line.name, color: line.color });
+                }
+                const rank = { origin: 4, terminus: 3, interchange: 2, station: 1 };
+                if ((rank[st.type] || 0) > (rank[stationIndex[key].type] || 0)) {
+                    stationIndex[key].type = st.type;
+                }
+                if (st.note && !stationIndex[key].note) stationIndex[key].note = st.note;
+                if (st.note && st.note.length > (stationIndex[key].note || '').length) stationIndex[key].note = st.note;
+            });
+        });
+
+        Object.values(stationIndex).forEach(st => {
+            const isTerminus = st.type === 'terminus' || st.type === 'origin';
+            const isInterchange = st.type === 'interchange';
+            const multiLine = st.lines.length > 1;
+            const primaryColor = st.lines[0].color;
+
+            const size = isTerminus ? 26 : (isInterchange || multiLine) ? 24 : 18;
+            const bg = isTerminus ? primaryColor : '#ffffff';
+            const textCol = isTerminus ? '#ffffff' : primaryColor;
+            const borderCol = multiLine ? '#333' : primaryColor;
+            const borderW = (isInterchange || multiLine) ? 2.5 : 2;
+
+            const stIcon = L.divIcon({
+                className: 'train-station-icon',
+                html: `<div class="custom-map-icon" style="background: ${bg}; color: ${textCol}; width: ${size}px; height: ${size}px; font-size: ${size * 0.52}px; border: ${borderW}px solid ${borderCol}; box-shadow: 0 2px 5px rgba(0,0,0,0.18);" title="${st.name}">🚆</div>`,
+                iconSize: [size, size],
+                iconAnchor: [size / 2, size / 2]
+            });
+
+            // Build line badges for popup
+            const lineBadges = st.lines.map(l =>
+                `<span style="display:inline-flex;align-items:center;gap:3px;background:${l.color}14;color:${l.color};border:1px solid ${l.color}40;border-radius:4px;padding:1px 6px;font-size:0.72rem;font-weight:600;"><span style="width:7px;height:7px;border-radius:50%;background:${l.color};"></span>${l.shortName}</span>`
+            ).join(' ');
+
+            L.marker([st.lat, st.lng], { icon: stIcon })
+                .bindPopup(`
+                    <div class="map-popup-card">
+                        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;">${lineBadges}</div>
+                        <h4 class="map-popup-title">${st.name}</h4>
+                        <p class="map-popup-desc">${st.note || st.lines.map(l => l.shortName).join(' · ')}</p>
+                    </div>
+                `)
+                .addTo(stationMarkersLayer);
+        });
     }
 
     function focusWorkshop(w) {
