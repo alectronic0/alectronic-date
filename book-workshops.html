@@ -79,6 +79,7 @@
         .map-bottom-filters { max-height: 40vh; }
     </style>
     <!-- Load data offline -->
+    <script src="js/content.js"></script>
     <script src="workshops_geo.js"></script>
 </head>
 <body>
@@ -127,11 +128,23 @@
         attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
     }).addTo(map);
 
+    const markersLayer = L.layerGroup().addTo(map);
+    const transitLayer = L.layerGroup().addTo(map);
+
+    const overlayMaps = {
+        "📍 Workshop Venues": markersLayer,
+        "🚆 Train Lines & Stations": transitLayer
+    };
+    L.control.layers(null, overlayMaps, { position: 'topright' }).addTo(map);
+
     let workshops = [];
     let markers = [];
 
     let activeCategory = 'All';
     let activeTime = 'Anytime';
+
+    // Render transit layer from window.CONTENT
+    renderTransitLayer();
 
     // Load offline data directly from JS array
     if (window.WORKSHOPS_DATA) {
@@ -259,7 +272,7 @@
     }
 
     function renderMarkers(list) {
-        markers.forEach(m => map.removeLayer(m.marker));
+        markersLayer.clearLayers();
         markers = [];
         
         const grouped = {};
@@ -331,7 +344,7 @@
                 popupAnchor: [0, -15]
             });
             
-            const marker = L.marker([finalLat, finalLng], { icon }).addTo(map);
+            const marker = L.marker([finalLat, finalLng], { icon }).addTo(markersLayer);
             
             let classesHtml = g.classes.map(w => {
                 const badgeColor = w.source === 'Airbnb' ? 'var(--rose-light)' : 'var(--gold)';
@@ -379,6 +392,127 @@
                 markers.push({ id: w.id, marker });
             });
         });
+    }
+
+    function renderTransitLayer() {
+        const data = window.CONTENT && window.CONTENT.dateIdeas;
+        const t = data && data.transit;
+        if (!t) return;
+        if (!transitLayer) return;
+
+        transitLayer.clearLayers();
+
+        // 1. Home Base Marker (Welwyn Garden City)
+        if (t.home) {
+            const homeIcon = L.divIcon({
+                className: 'home-marker-icon',
+                html: `<div class="custom-map-icon" style="background: #e6a979; color: #160d14; width: 36px; height: 36px; font-size: 19px; border: 2.5px solid #fff; box-shadow: 0 4px 12px rgba(230,169,121,0.6);">🏡</div>`,
+                iconSize: [36, 36],
+                iconAnchor: [18, 18]
+            });
+
+            L.marker([t.home.lat, t.home.lng], { icon: homeIcon, zIndexOffset: 1000 })
+                .bindPopup(`
+                    <div class="map-popup-card">
+                        <span class="map-popup-badge" style="background: #e6a979; color: #160d14;">🏡 Home Base</span>
+                        <h4 class="map-popup-title">${t.home.name}</h4>
+                        <p class="map-popup-desc">${t.home.description}</p>
+                    </div>
+                `)
+                .addTo(transitLayer);
+        }
+
+        // 2. Office Marker (Deliveroo HQ)
+        if (t.office) {
+            const officeIcon = L.divIcon({
+                className: 'office-marker-icon',
+                html: `<div class="custom-map-icon" style="background: #00cdbc; color: #fff; width: 36px; height: 36px; font-size: 19px; border: 2.5px solid #fff; box-shadow: 0 4px 12px rgba(0,205,188,0.6);">💼</div>`,
+                iconSize: [36, 36],
+                iconAnchor: [18, 18]
+            });
+
+            L.marker([t.office.lat, t.office.lng], { icon: officeIcon, zIndexOffset: 1000 })
+                .bindPopup(`
+                    <div class="map-popup-card">
+                        <span class="map-popup-badge" style="background: #ccfbf1; color: #0f766e; border-color: #99f6e4;">💼 Deliveroo Tech HQ</span>
+                        <h4 class="map-popup-title">${t.office.name}</h4>
+                        <p class="map-popup-desc">${t.office.description}</p>
+                    </div>
+                `)
+                .addTo(transitLayer);
+        }
+
+        // 3. Render all transit lines from transit.lines[]
+        if (t.lines && t.lines.length > 0) {
+            // Pass 1: Draw all polylines
+            t.lines.forEach(line => {
+                const branchLists = line.branches || [line.stations];
+                branchLists.forEach(branch => {
+                    const coords = branch.map(s => [s.lat, s.lng]);
+                    if (coords.length > 1) {
+                        L.polyline(coords, {
+                            color: line.color,
+                            weight: line.style === 'dashed' ? 4 : 3.5,
+                            opacity: 0.82,
+                            dashArray: line.style === 'dashed' ? '8, 5' : null
+                        }).addTo(transitLayer);
+                    }
+                });
+            });
+
+            // Pass 2: Index every station by coordinate
+            const stationIndex = {};
+            t.lines.forEach(line => {
+                line.stations.forEach(st => {
+                    const key = `${st.lat},${st.lng}`;
+                    if (!stationIndex[key]) {
+                        stationIndex[key] = { name: st.name, lat: st.lat, lng: st.lng, type: st.type, note: st.note, lines: [] };
+                    }
+                    stationIndex[key].lines.push({ shortName: line.shortName || line.name, color: line.color });
+                    const rank = { origin: 4, terminus: 3, interchange: 2, station: 1 };
+                    if ((rank[st.type] || 0) > (rank[stationIndex[key].type] || 0)) {
+                        stationIndex[key].type = st.type;
+                    }
+                    if (st.note && !stationIndex[key].note) stationIndex[key].note = st.note;
+                    if (st.note && st.note.length > (stationIndex[key].note || '').length) stationIndex[key].note = st.note;
+                });
+            });
+
+            // Pass 3: Render one marker per unique station
+            Object.values(stationIndex).forEach(st => {
+                const isTerminus = st.type === 'terminus' || st.type === 'origin';
+                const isInterchange = st.type === 'interchange';
+                const multiLine = st.lines.length > 1;
+                const primaryColor = st.lines[0].color;
+
+                const size = isTerminus ? 26 : (isInterchange || multiLine) ? 24 : 18;
+                const bg = isTerminus ? primaryColor : '#ffffff';
+                const textCol = isTerminus ? '#ffffff' : primaryColor;
+                const borderCol = multiLine ? '#333' : primaryColor;
+                const borderW = (isInterchange || multiLine) ? 2.5 : 2;
+
+                const stIcon = L.divIcon({
+                    className: 'train-station-icon',
+                    html: `<div class="custom-map-icon" style="background: ${bg}; color: ${textCol}; width: ${size}px; height: ${size}px; font-size: ${size * 0.52}px; border: ${borderW}px solid ${borderCol}; box-shadow: 0 2px 5px rgba(0,0,0,0.18);" title="${st.name}">🚆</div>`,
+                    iconSize: [size, size],
+                    iconAnchor: [size / 2, size / 2]
+                });
+
+                const lineBadges = st.lines.map(l =>
+                    `<span style="display:inline-flex;align-items:center;gap:3px;background:${l.color}14;color:${l.color};border:1px solid ${l.color}40;border-radius:4px;padding:1px 6px;font-size:0.72rem;font-weight:600;"><span style="width:7px;height:7px;border-radius:50%;background:${l.color};"></span>${l.shortName}</span>`
+                ).join(' ');
+
+                L.marker([st.lat, st.lng], { icon: stIcon })
+                    .bindPopup(`
+                        <div class="map-popup-card">
+                            <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;">${lineBadges}</div>
+                            <h4 class="map-popup-title">${st.name}</h4>
+                            <p class="map-popup-desc">${st.note || st.lines.map(l => l.shortName).join(' · ')}</p>
+                        </div>
+                    `)
+                    .addTo(transitLayer);
+            });
+        }
     }
 
     function focusWorkshop(w) {
