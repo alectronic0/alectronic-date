@@ -258,25 +258,27 @@
         const grouped = {};
 
         list.forEach((w) => {
-            if (w.lat && w.lng) {
-                const coordKey = `${w.lat.toFixed(4)},${w.lng.toFixed(4)}`; // approx 11m grid
-                const company = w.company_teacher || "Independent";
-                const groupKey = `${coordKey}_${company}`; // GROUP BY COMPANY + LOCATION
-                
-                if (!grouped[groupKey]) {
-                    grouped[groupKey] = {
-                        lat: w.lat,
-                        lng: w.lng,
-                        coordKey: coordKey,
-                        company: company,
-                        location: w.exact_location || w.location,
-                        exact_coords: w.exact_coords,
-                        location_precision: w.location_precision,
-                        classes: []
-                    };
-                }
-                grouped[groupKey].classes.push(w);
+            if (w.location_precision === 'mobile') return;
+            if (!w.lat) return;
+            if (!w.lng) return;
+
+            const coordKey = `${w.lat.toFixed(4)},${w.lng.toFixed(4)}`; // approx 11m grid
+            const company = w.company_teacher || "Independent";
+            const groupKey = `${coordKey}_${company}`; // GROUP BY COMPANY + LOCATION
+            
+            if (!grouped[groupKey]) {
+                grouped[groupKey] = {
+                    lat: w.lat,
+                    lng: w.lng,
+                    coordKey: coordKey,
+                    company: company,
+                    location: w.exact_location || w.location,
+                    exact_coords: w.exact_coords,
+                    location_precision: w.location_precision,
+                    classes: []
+                };
             }
+            grouped[groupKey].classes.push(w);
         });
 
         const seenCoords = {};
@@ -373,11 +375,13 @@
     }
 
     function focusWorkshop(w) {
-        if (w.lat && w.lng) {
-            map.flyTo([w.lat, w.lng], 15, { duration: 0.5 });
-            const m = markers.find(mark => mark.id === w.id);
-            if (m) m.marker.openPopup();
-        }
+        if (w.location_precision === 'mobile') return;
+        if (!w.lat) return;
+        if (!w.lng) return;
+
+        map.flyTo([w.lat, w.lng], 15, { duration: 0.5 });
+        const m = markers.find(mark => mark.id === w.id);
+        if (m) m.marker.openPopup();
     }
 
     function renderPills() {
