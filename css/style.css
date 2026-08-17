@@ -824,7 +824,7 @@ body:has(dialog[open]) { overflow: hidden; }
 }
 .warning-banner .w-emoji { font-size: 2.2rem; margin-bottom: var(--space-3); }
 .warning-banner h2 { font-size: 1.5rem; color: var(--rose-light); margin-bottom: var(--space-2); }
-.warning-banner p { max-width: 520px; margin: 0 auto; }
+.warning-banner p { margin: 0 auto; }
 
 
 .deep-group-header {
