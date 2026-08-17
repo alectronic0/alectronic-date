@@ -105,6 +105,9 @@
             <div id="category-pills" class="category-pills scrollable-pills">
                 <!-- Pills populated by JS -->
             </div>
+            <div id="time-pills" class="category-pills scrollable-pills" style="margin-top: 8px;">
+                <!-- Time pills populated by JS -->
+            </div>
         </div>
     </main>
 </div>
@@ -121,11 +124,13 @@
     let markers = [];
 
     let activeCategory = 'All';
+    let activeTime = 'Anytime';
 
     // Load offline data directly from JS array
     if (window.WORKSHOPS_DATA) {
         workshops = window.WORKSHOPS_DATA;
         renderPills();
+        renderTimePills();
         renderWorkshops(workshops);
         renderMarkers(workshops);
     } else {
@@ -397,6 +402,61 @@
         setTimeout(() => map.invalidateSize(), 100);
     }
 
+    function hasMatchingTime(w, filter) {
+        if (filter === 'Anytime') return true;
+        
+        // Items without scheduled times (like flexible Airbnb activities) are included
+        // in all filters to avoid artificially hiding them.
+        if (!w.times || w.times.length === 0) return true;
+        
+        for (let t of w.times) {
+            const isWeekend = t.startsWith('Sat') || t.startsWith('Sun');
+            const isWeekday = !isWeekend && /^(Mon|Tue|Wed|Thu|Fri)/.test(t);
+            
+            // Try to extract hour (e.g. "7pm", "11am", "2:30pm")
+            let hour24 = -1;
+            const hourMatch = t.match(/,\s*(\d{1,2})(:\d{2})?(am|pm)/i);
+            if (hourMatch) {
+                let h = parseInt(hourMatch[1], 10);
+                let ampm = hourMatch[3].toLowerCase();
+                if (ampm === 'pm' && h < 12) h += 12;
+                if (ampm === 'am' && h === 12) h = 0;
+                hour24 = h;
+            }
+            
+            if (filter === 'Weekends' && isWeekend) return true;
+            if (filter === 'Weekday Evenings (After 5pm)' && isWeekday && hour24 >= 17) return true;
+            if (filter === 'Weekday Daytimes (Before 5pm)' && isWeekday && hour24 >= 0 && hour24 < 17) return true;
+        }
+        return false;
+    }
+
+    function renderTimePills() {
+        const container = document.getElementById('time-pills');
+        const filters = [
+            { name: 'Anytime', icon: '🕒' },
+            { name: 'Weekends', icon: '🎉' },
+            { name: 'Weekday Evenings (After 5pm)', icon: '🌙' },
+            { name: 'Weekday Daytimes (Before 5pm)', icon: '☀️' }
+        ];
+        
+        container.innerHTML = filters.map(f => {
+            return `
+                <button class="filter-btn ${f.name === activeTime ? 'active' : ''}" data-time="${f.name}" type="button">
+                    ${f.icon} ${f.name}
+                </button>
+            `;
+        }).join('');
+        
+        container.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                activeTime = btn.dataset.time;
+                renderTimePills();
+                applyFilters();
+            });
+        });
+    }
+
     function applyFilters() {
         const term = document.getElementById('search').value.toLowerCase();
         const filtered = workshops.filter(w => {
@@ -408,8 +468,9 @@
                 (w.description && w.description.toLowerCase().includes(term));
             
             const matchCat = activeCategory === 'All' || getCategory(w.title).name === activeCategory;
+            const matchTime = hasMatchingTime(w, activeTime);
             
-            return matchSearch && matchCat;
+            return matchSearch && matchCat && matchTime;
         });
         renderWorkshops(filtered);
         renderMarkers(filtered);
