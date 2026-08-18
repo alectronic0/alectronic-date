@@ -10977,6 +10977,110 @@ window.CONTENT = {
             ]
         },
         {
+            "name": "Lower Marsh Market",
+            "url": "https://wearewaterloo.co.uk/lower-marsh-market/",
+            "category": "Markets & Food Halls",
+            "location": "Lower Marsh, Waterloo (near Waterloo Station)",
+            "region": "Central London",
+            "lat": 51.5015,
+            "lng": -0.1130,
+            "description": "🌯 Waterloo’s vibrant weekday lunch market serving quick-service global street food (pad thai, souvlaki, falafel) alongside indie coffee bars and bohemian shops.",
+            "tags": [
+                "Lower Marsh",
+                "Waterloo",
+                "Street Food",
+                "Lunch Market",
+                "Central London"
+            ]
+        },
+        {
+            "name": "Brick Lane Market & Upmarket",
+            "url": "https://www.trumanbrewery.com/upmarket",
+            "category": "Markets & Food Halls",
+            "location": "Brick Lane & Old Truman Brewery, Shoreditch / Spitalfields",
+            "region": "East London",
+            "lat": 51.5218,
+            "lng": -0.0716,
+            "description": "🌮 East London’s buzzing weekend hub featuring the Old Truman Brewery Upmarket, Boiler House street food hall, vintage clothing hangars, and iconic 24/7 salt beef bagel shops.",
+            "tags": [
+                "Brick Lane",
+                "Upmarket",
+                "Truman Brewery",
+                "Street Food",
+                "Vintage",
+                "East London"
+            ]
+        },
+        {
+            "name": "Berwick Street Market",
+            "url": "https://www.thisissoho.co.uk/berwick-street-market/",
+            "category": "Markets & Food Halls",
+            "location": "Berwick Street, Soho",
+            "region": "Central London",
+            "lat": 51.5144,
+            "lng": -0.1362,
+            "description": "🥙 Historic central London weekday street food market in the heart of Soho since 1778 — artisan wraps, burritos, Afghan street food, fresh produce, and vinyl record shops.",
+            "tags": [
+                "Berwick Street",
+                "Soho",
+                "Street Food",
+                "Central London",
+                "Weekday Market"
+            ]
+        },
+        {
+            "name": "Market Halls Canary Wharf (Cargo)",
+            "url": "https://markethalls.co.uk/venue/canary-wharf",
+            "category": "Markets & Food Halls",
+            "location": "Cargo, 25 North Colonnade, Canary Wharf",
+            "region": "East London",
+            "lat": 51.5050,
+            "lng": -0.0175,
+            "description": "🍹 Two-storey waterside street food destination overlooking Middle Dock with 8 food kitchens, 2 large bars, and expansive outdoor terrace seating.",
+            "tags": [
+                "Market Halls",
+                "Canary Wharf",
+                "Cargo",
+                "Food Hall",
+                "Waterside",
+                "East London"
+            ]
+        },
+        {
+            "name": "Arcade Food Hall (Centre Point)",
+            "url": "https://www.arcadefoodhall.com/centre-point",
+            "category": "Markets & Food Halls",
+            "location": "103-105 New Oxford St, Centre Point (Tottenham Court Road)",
+            "region": "Central London",
+            "lat": 51.5165,
+            "lng": -0.1297,
+            "description": "🥢 High-end global dining hall at Centre Point with curated restaurant kitchens (Southern Thai, Indonesian, smash burgers, Middle Eastern shawarma) and seamless table service.",
+            "tags": [
+                "Arcade Food Hall",
+                "Centre Point",
+                "Tottenham Court Road",
+                "Food Hall",
+                "Central London"
+            ]
+        },
+        {
+            "name": "Arcade Food Hall (Battersea Power Station)",
+            "url": "https://www.arcadefoodhall.com/battersea",
+            "category": "Markets & Food Halls",
+            "location": "Boiler House, Battersea Power Station (Northern Line)",
+            "region": "South London",
+            "lat": 51.4820,
+            "lng": -0.1458,
+            "description": "🌆 Dramatic 500-seat food hall inside the iconic restored Battersea Power Station, featuring 13 global dining concepts, craft cocktails, and direct table ordering.",
+            "tags": [
+                "Arcade Food Hall",
+                "Battersea Power Station",
+                "Food Hall",
+                "South London",
+                "Northern Line"
+            ]
+        },
+        {
             "name": "Flight Club Shoreditch",
             "url": "https://flightclubdarts.com/london/venues/shoreditch",
             "category": "Social Darts",
