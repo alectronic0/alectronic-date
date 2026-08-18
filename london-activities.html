@@ -33,8 +33,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Workshop Bookings & Discovery Map | Date Alec Today</title>
-  <meta name="description" content="Discover and book creative workshops, pottery classes, cooking sessions, and unique activities across London & Hertfordshire.">
+  <title>London Activities & Things To Do Map | Date Alec Today</title>
+  <meta name="description" content="Discover thousands of curated London gigs, art exhibitions, theatre shows, nightlife, popup bars, hidden gems, and free activities across London.">
   <meta name="robots" content="noindex, follow">
   <meta name="author" content="Alec Doran-Twyford">
   <meta name="theme-color" content="#1a1320">
@@ -52,13 +52,96 @@
 
   <!-- Core Design System -->
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .activity-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      margin-bottom: var(--space-3);
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .activity-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow);
+    }
+    .activity-card.selected {
+      border-color: var(--gold);
+      background: var(--surface-2);
+      box-shadow: 0 0 0 2px rgba(230, 169, 121, 0.4);
+    }
+    .activity-thumb {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: var(--surface-2);
+    }
+    .source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .source-dmn {
+      background: rgba(230, 169, 121, 0.16);
+      color: var(--gold);
+      border: 1px solid rgba(230, 169, 121, 0.3);
+    }
+    .source-timeout {
+      background: rgba(255, 107, 138, 0.16);
+      color: var(--rose-light);
+      border: 1px solid rgba(255, 107, 138, 0.3);
+    }
+    .source-secretlondon {
+      background: rgba(78, 205, 196, 0.16);
+      color: var(--mint);
+      border: 1px solid rgba(78, 205, 196, 0.3);
+    }
+    .free-pill {
+      background: rgba(78, 205, 196, 0.2);
+      color: var(--mint);
+      border: 1px solid var(--mint);
+      font-weight: 700;
+    }
+    .leaflet-popup-content {
+      font-family: 'Poppins', sans-serif;
+      color: #1a1320;
+    }
+    .leaflet-popup-content h4 {
+      margin: 0 0 6px 0;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .source-filter-pills {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+  </style>
 </head>
 <body>
 
 <div style="display: flex; flex-direction: column; height: 100vh; width: 100vw; overflow: hidden;">
     <div class="warning-banner" style="padding: 8px 16px; border-radius: 0; border-top: none; border-left: none; border-right: none; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.82rem; z-index: 1000; flex-shrink: 0;">
-        <span style="font-size: 1.1rem; line-height: 1;">⚠️</span>
-        <span style="color: var(--text);"><strong style="color: var(--gold);">Location Note:</strong> Map pins are rough approximations. Please check the booking website for the actual venue location.</span>
+        <span style="font-size: 1.1rem; line-height: 1;">🎡</span>
+        <span style="color: var(--text);"><strong style="color: var(--gold);">London Activities Engine:</strong> Live discovery across DesignMyNight, Time Out London, and Secret London.</span>
     </div>
 
     <div class="app-layout" style="height: 100%; flex: 1; min-height: 0;">
@@ -68,17 +151,26 @@
                     <a href="index.html" class="back-link" aria-label="Return to main profile">← Profile</a>
                     <div style="display: flex; gap: 6px;">
                         <a href="ideas.html" class="back-link" style="color: var(--gold);" aria-label="Date Ideas">💡 Ideas</a>
-                        <a href="london-activities.html" class="back-link" style="color: var(--mint);" aria-label="London Activities">🎡 Activities</a>
-                        <a href="lab.html" class="back-link" style="color: var(--rose-light); border: 1px solid rgba(255,107,138,0.3);" aria-label="Secret Lab">🧪 Lab</a>
+                        <a href="book-workshops.html" class="back-link" style="color: var(--mint);" aria-label="Workshops">🏺 Workshops</a>
+                        <a href="lab.html" class="back-link" style="color: var(--rose-light); border: 1px solid rgba(255,107,138,0.3);" aria-label="Secret Lab">🧪 Secret Lab</a>
                     </div>
                 </div>
-                <h1 style="font-size: 2rem; margin-bottom: 10px; color: var(--text);">Discover Workshops</h1>
+                <h1 style="font-size: 1.85rem; margin-bottom: 8px; color: var(--text);">London Activities</h1>
                 <div class="filter-group">
-                    <input type="text" id="search" placeholder="Search activities, companies, or locations...">
+                    <input type="text" id="search" placeholder="Search events, venues, gigs, or postcodes...">
+                </div>
+                <!-- Source Filter Pills -->
+                <div class="source-filter-pills" id="source-pills">
+                    <button class="pill" data-source="designmynight" type="button">🍸 DesignMyNight</button>
+                    <button class="pill" data-source="timeout" type="button">🎭 Time Out</button>
+                    <button class="pill" data-source="secretlondon" type="button">✨ Secret London</button>
+                </div>
+                <div id="results-count" style="font-size: 0.82rem; color: var(--muted); margin-top: 8px;">
+                    Loading activities...
                 </div>
             </header>
-            <div id="workshop-list" class="drawer-scroll-area">
-                <p style="color: var(--muted); padding: var(--space-4);">Loading workshops...</p>
+            <div id="activity-list" class="drawer-scroll-area">
+                <p style="color: var(--muted); padding: var(--space-4);">Loading London activities...</p>
             </div>
         </aside>
         
@@ -88,8 +180,8 @@
                 <a href="index.html" class="back-link" aria-label="Return to main profile">← Back to Profile</a>
                 <div style="display: flex; gap: 8px; flex-wrap: wrap;">
                     <a href="ideas.html" class="back-link" style="color: var(--gold); border: 1px solid rgba(230,169,121,0.3);" aria-label="Date Ideas Map">💡 Date Ideas</a>
-                    <a href="london-activities.html" class="back-link" style="color: var(--mint); border: 1px solid rgba(78,205,196,0.3);" aria-label="London Activities">🎡 London Activities</a>
-                    <a href="events.html" class="back-link" style="color: var(--rose-light);" aria-label="View singles events">🥂 Singles Events →</a>
+                    <a href="book-workshops.html" class="back-link" style="color: var(--mint); border: 1px solid rgba(78,205,196,0.3);" aria-label="Book Workshops">🏺 Workshops</a>
+                    <a href="events.html" class="back-link" style="color: var(--rose-light);" aria-label="View singles events">🥂 Events →</a>
                     <a href="lab.html" class="back-link" style="color: var(--gold); border: 1px solid rgba(230,169,121,0.4);" aria-label="Secret Lab">🧪 Secret Lab</a>
                 </div>
             </div>
@@ -99,8 +191,8 @@
                 <div id="category-pills" class="category-pills scrollable-pills">
                     <!-- Pills populated by JS -->
                 </div>
-                <div id="time-pills" class="category-pills scrollable-pills" style="margin-top: 8px;">
-                    <!-- Time pills populated by JS -->
+                <div id="price-pills" class="category-pills scrollable-pills" style="margin-top: 8px;">
+                    <!-- Price pills populated by JS -->
                 </div>
             </div>
         </main>
@@ -117,10 +209,9 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <!-- Data Sources -->
-<script src="js/content.js"></script>
-<script src="workshops_geo.js"></script>
+<script src="london_activities_geo.js"></script>
 
 <!-- Application Logic -->
-<script src="js/workshops.js"></script>
+<script src="js/london_activities.js"></script>
 </body>
 </html>
