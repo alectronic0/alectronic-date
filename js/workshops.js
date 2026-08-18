@@ -442,12 +442,18 @@
 
     function focusWorkshop(w) {
         if (w.location_precision === 'mobile') return;
-        if (!w.lat) return;
-        if (!w.lng) return;
+        if (!w.lat || !w.lng) return;
 
-        map.flyTo([w.lat, w.lng], 15, { duration: 0.5 });
-        const m = markers.find(mark => mark.id === w.id);
-        if (m) m.marker.openPopup();
+        if (window.setMobileView) {
+            window.setMobileView('map');
+        }
+
+        setTimeout(() => {
+            map.invalidateSize();
+            map.flyTo([w.lat, w.lng], 15, { duration: 0.5 });
+            const m = markers.find(mark => mark.id === w.id);
+            if (m) m.marker.openPopup();
+        }, 80);
     }
 
     function renderPills() {
@@ -570,5 +576,43 @@
     if (searchInput) {
         searchInput.addEventListener('input', applyFilters);
     }
+
+    // Mobile View Toggle
+    const appLayout = document.querySelector('.app-layout');
+    const toggleMapBtn = document.getElementById('toggle-map-btn');
+    const toggleListBtn = document.getElementById('toggle-list-btn');
+
+    function setMobileView(view) {
+        if (view === 'list') {
+            if (appLayout) appLayout.classList.add('view-list');
+            document.body.classList.add('view-list');
+            if (toggleListBtn) {
+                toggleListBtn.classList.add('active');
+                toggleListBtn.setAttribute('aria-selected', 'true');
+            }
+            if (toggleMapBtn) {
+                toggleMapBtn.classList.remove('active');
+                toggleMapBtn.setAttribute('aria-selected', 'false');
+            }
+        } else {
+            if (appLayout) appLayout.classList.remove('view-list');
+            document.body.classList.remove('view-list');
+            if (toggleMapBtn) {
+                toggleMapBtn.classList.add('active');
+                toggleMapBtn.setAttribute('aria-selected', 'true');
+            }
+            if (toggleListBtn) {
+                toggleListBtn.classList.remove('active');
+                toggleListBtn.setAttribute('aria-selected', 'false');
+            }
+            if (map) {
+                setTimeout(() => map.invalidateSize(), 50);
+            }
+        }
+    }
+    window.setMobileView = setMobileView;
+
+    if (toggleMapBtn) toggleMapBtn.addEventListener('click', () => setMobileView('map'));
+    if (toggleListBtn) toggleListBtn.addEventListener('click', () => setMobileView('list'));
 
 })();

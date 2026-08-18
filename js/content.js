@@ -8745,6 +8745,24 @@ window.CONTENT = {
 },
     "items": [
         {
+            "name": "Pool House",
+            "url": "https://www.pool.house/",
+            "category": "Pool & Billiards",
+            "location": "100 Liverpool Street, London, EC2M 2AT",
+            "region": "Central London",
+            "lat": 51.5186,
+            "lng": -0.0827,
+            "description": "🎱 Premium pool lounge and cocktail club in the heart of the City at Broadgate. Features handcrafted tables, craft cocktails, dining, and late-night vibes.\n\n🕒 Opening Times:\nMon - Tue: 12pm – 11pm\nWed: 12pm – 12am\nThu - Fri: 12pm – 1am\nSat: 11am – 1am\nSun: 11am – 11pm\n(Note: Mon 24th Aug closing at 8pm)",
+            "tags": [
+                "Pool",
+                "Billiards",
+                "Liverpool Street",
+                "Broadgate",
+                "Cocktails",
+                "Late Night"
+            ]
+        },
+        {
             "name": "Mercato Metropolitano",
             "url": "https://mercatometropolitano.com/locations/elephant-and-castle/",
             "category": "Markets & Food Halls",
