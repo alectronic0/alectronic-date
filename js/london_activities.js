@@ -1,9 +1,9 @@
-// London Activities Discovery Map & Engine (High Precision)
+// London Activities Discovery Map & Engine
 (function () {
     'use strict';
 
     // Map Setup
-    const map = L.map('map').setView([51.5136, -0.1365], 13); // Center on Soho / Central London
+    const map = L.map('map').setView([51.5136, -0.1365], 13);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
         maxZoom: 19
@@ -15,9 +15,9 @@
     let activeCategory = 'All';
     let activeSource = 'all';
     let activePrice = 'All';
-    let activeLocationFilter = 'All'; // 'All' vs 'Pinned'
     let searchQuery = '';
     let selectedId = null;
+    let currentRenderLimit = 100;
 
     const categories = [
         { label: '🌟 All Activities', value: 'All' },
@@ -70,15 +70,17 @@
 
         categories.forEach(cat => {
             const btn = document.createElement('button');
-            btn.className = `pill ${activeCategory === cat.value ? 'active' : ''}`;
+            btn.className = `filter-btn pill ${activeCategory === cat.value ? 'active' : ''}`;
             btn.textContent = cat.label;
             btn.type = 'button';
-            btn.onclick = () => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
                 activeCategory = cat.value;
-                document.querySelectorAll('#category-pills .pill').forEach(p => p.classList.remove('active'));
+                container.querySelectorAll('.pill, .filter-btn').forEach(p => p.classList.remove('active'));
                 btn.classList.add('active');
+                currentRenderLimit = 100;
                 applyFilters();
-            };
+            });
             container.appendChild(btn);
         });
     }
@@ -90,15 +92,17 @@
 
         priceTiers.forEach(p => {
             const btn = document.createElement('button');
-            btn.className = `pill ${activePrice === p.value ? 'active' : ''}`;
+            btn.className = `filter-btn pill ${activePrice === p.value ? 'active' : ''}`;
             btn.textContent = p.label;
             btn.type = 'button';
-            btn.onclick = () => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
                 activePrice = p.value;
-                document.querySelectorAll('#price-pills .pill').forEach(el => el.classList.remove('active'));
+                container.querySelectorAll('.pill, .filter-btn').forEach(el => el.classList.remove('active'));
                 btn.classList.add('active');
+                currentRenderLimit = 100;
                 applyFilters();
-            };
+            });
             container.appendChild(btn);
         });
     }
@@ -112,17 +116,20 @@
             clearTimeout(debounceTimer);
             debounceTimer = setTimeout(() => {
                 searchQuery = e.target.value.toLowerCase().trim();
+                currentRenderLimit = 100;
                 applyFilters();
-            }, 200);
+            }, 150);
         });
     }
 
-    let currentRenderLimit = 100;
-
     function setupSourceFilters() {
-        const pills = document.querySelectorAll('#source-pills .pill');
+        const container = document.getElementById('source-pills');
+        if (!container) return;
+
+        const pills = container.querySelectorAll('.pill, .filter-btn');
         pills.forEach(pill => {
-            pill.addEventListener('click', () => {
+            pill.addEventListener('click', (e) => {
+                e.preventDefault();
                 const src = pill.getAttribute('data-source');
                 if (activeSource === src) {
                     pill.classList.remove('active');
@@ -142,8 +149,8 @@
         let filtered = activities;
 
         // Source filter
-        if (activeSource !== 'all') {
-            filtered = filtered.filter(a => a.source.toLowerCase() === activeSource.toLowerCase());
+        if (activeSource && activeSource !== 'all') {
+            filtered = filtered.filter(a => a.source && a.source.toLowerCase() === activeSource.toLowerCase());
         }
 
         // Category filter
@@ -201,7 +208,7 @@
             const card = document.createElement('div');
             card.className = `activity-card ${selectedId === act.id ? 'selected' : ''}`;
             card.id = `card-${act.id}`;
-            card.onclick = () => focusActivity(act);
+            card.addEventListener('click', () => focusActivity(act));
 
             let sourceClass = 'source-dmn';
             let sourceLabel = 'DesignMyNight';
@@ -247,22 +254,23 @@
             container.appendChild(card);
         });
 
-        // Load More button if more items exist
+        // Load More button
         if (list.length > currentRenderLimit) {
             const loadMoreWrapper = document.createElement('div');
             loadMoreWrapper.style.padding = '16px';
             loadMoreWrapper.style.textAlign = 'center';
 
             const loadMoreBtn = document.createElement('button');
-            loadMoreBtn.className = 'pill active';
+            loadMoreBtn.className = 'pill filter-btn active';
             loadMoreBtn.style.cursor = 'pointer';
             loadMoreBtn.style.padding = '8px 20px';
             loadMoreBtn.style.fontSize = '0.9rem';
             loadMoreBtn.textContent = `Load More (${(list.length - currentRenderLimit).toLocaleString()} remaining) ↓`;
-            loadMoreBtn.onclick = () => {
+            loadMoreBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 currentRenderLimit += 100;
                 renderActivityList(list);
-            };
+            });
             loadMoreWrapper.appendChild(loadMoreBtn);
             container.appendChild(loadMoreWrapper);
         }
@@ -324,7 +332,7 @@
 
         // On mobile, switch to map view
         if (window.innerWidth <= 768) {
-            showMobileMap();
+            setMobileView('map');
         }
     }
 
@@ -337,41 +345,43 @@
         }
     }
 
-    function setupMobileToggle() {
-        const toggleMapBtn = document.getElementById('toggle-map-btn');
-        const toggleListBtn = document.getElementById('toggle-list-btn');
-        const sidebar = document.getElementById('sidebar');
-        const mapContainer = document.getElementById('map-view-container');
+    // Mobile View Toggle
+    const appLayout = document.querySelector('.app-layout');
+    const toggleMapBtn = document.getElementById('toggle-map-btn');
+    const toggleListBtn = document.getElementById('toggle-list-btn');
 
-        if (toggleMapBtn && toggleListBtn && sidebar && mapContainer) {
-            toggleMapBtn.onclick = () => showMobileMap();
-            toggleListBtn.onclick = () => showMobileList();
+    function setMobileView(view) {
+        if (view === 'list') {
+            if (appLayout) appLayout.classList.add('view-list');
+            document.body.classList.add('view-list');
+            if (toggleListBtn) {
+                toggleListBtn.classList.add('active');
+                toggleListBtn.setAttribute('aria-selected', 'true');
+            }
+            if (toggleMapBtn) {
+                toggleMapBtn.classList.remove('active');
+                toggleMapBtn.setAttribute('aria-selected', 'false');
+            }
+        } else {
+            if (appLayout) appLayout.classList.remove('view-list');
+            document.body.classList.remove('view-list');
+            if (toggleMapBtn) {
+                toggleMapBtn.classList.add('active');
+                toggleMapBtn.setAttribute('aria-selected', 'true');
+            }
+            if (toggleListBtn) {
+                toggleListBtn.classList.remove('active');
+                toggleListBtn.setAttribute('aria-selected', 'false');
+            }
+            if (map) {
+                setTimeout(() => map.invalidateSize(), 50);
+            }
         }
     }
 
-    function showMobileMap() {
-        const toggleMapBtn = document.getElementById('toggle-map-btn');
-        const toggleListBtn = document.getElementById('toggle-list-btn');
-        const sidebar = document.getElementById('sidebar');
-        const mapContainer = document.getElementById('map-view-container');
-
-        if (toggleMapBtn) toggleMapBtn.classList.add('active');
-        if (toggleListBtn) toggleListBtn.classList.remove('active');
-        if (sidebar) sidebar.style.display = 'none';
-        if (mapContainer) mapContainer.style.display = 'flex';
-        map.invalidateSize();
-    }
-
-    function showMobileList() {
-        const toggleMapBtn = document.getElementById('toggle-map-btn');
-        const toggleListBtn = document.getElementById('toggle-list-btn');
-        const sidebar = document.getElementById('sidebar');
-        const mapContainer = document.getElementById('map-view-container');
-
-        if (toggleListBtn) toggleListBtn.classList.add('active');
-        if (toggleMapBtn) toggleMapBtn.classList.remove('active');
-        if (sidebar) sidebar.style.display = 'flex';
-        if (mapContainer) mapContainer.style.display = 'none';
+    function setupMobileToggle() {
+        if (toggleMapBtn) toggleMapBtn.addEventListener('click', () => setMobileView('map'));
+        if (toggleListBtn) toggleListBtn.addEventListener('click', () => setMobileView('list'));
     }
 
     function getCategoryEmoji(cat) {
