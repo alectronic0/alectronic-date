@@ -171,7 +171,7 @@
         const grouped = {};
 
         list.forEach((w) => {
-            if (w.location_precision === 'mobile') return;
+            if (w.location_precision === 'mobile' || w.location_precision === 'online') return;
             if (!w.lat) return;
             if (!w.lng) return;
 

@@ -180,7 +180,6 @@ NEIGHBORHOOD_COORDS = {
     # Hertfordshire & Surrounding
     "Welwyn Garden City": (51.8005, -0.2052),
     "Welwyn": (51.8005, -0.2052),
-    "Hertfordshire": (51.7800, -0.2400),
     "Hatfield": (51.7644, -0.2185),
     "St Albans": (51.7527, -0.3394),
     "Harpenden": (51.8150, -0.3540),
@@ -202,10 +201,178 @@ NEIGHBORHOOD_COORDS = {
     "Ware": (51.8100, -0.0300),
     "Broxbourne": (51.7500, -0.0200),
     "Hoddesdon": (51.7600, -0.0100),
-    "Bishop's Stortford": (51.8700, 0.1600),
+    # Outer & Suburban London / Border Towns
+    "Walworth": (51.4900, -0.0930),
+    "Seven Dials": (51.5135, -0.1270),
+    "Romford": (51.5750, 0.1800),
+    "Southgate": (51.6318, -0.1280),
+    "Loughton": (51.6480, 0.0570),
+    "Staines-upon-Thames": (51.4330, -0.5130),
+    "Staines": (51.4330, -0.5130),
+    "Eltham": (51.4500, 0.0550),
+    "Pinner": (51.5930, -0.3800),
+    "Caterham": (51.2780, -0.0810),
+    "Chislehurst": (51.4200, 0.0730),
+    "Colindale": (51.5950, -0.2500),
+    "Surrey Quays": (51.4920, -0.0480),
+    "West Drayton": (51.5030, -0.4720),
+    "Edgware": (51.6130, -0.2750),
+    "Teddington": (51.4240, -0.3340),
+    "Maze Hill": (51.4820, 0.0030),
+    "Lee": (51.4480, 0.0020),
+    "Greenford": (51.5300, -0.3470),
+    "Hanwell": (51.5100, -0.3390),
+    "Orpington": (51.3750, 0.0980),
+    "Strand": (51.5115, -0.1200),
+    "Clapton": (51.5550, -0.0550),
+    "Barnes": (51.4740, -0.2400),
+    "Maida Vale": (51.5280, -0.1850),
+    "Chingford": (51.6310, 0.0120),
+    "City Hall": (51.5048, -0.0787),
+    "Stanmore": (51.6180, -0.3150),
+    "Raynes Park": (51.4080, -0.2370),
+    "Forest Gate": (51.5490, 0.0240),
+    "Erith": (51.4800, 0.1770),
+    "Penge": (51.4160, -0.0570),
+    "St. James's": (51.5060, -0.1380),
+    "St James's": (51.5060, -0.1380),
+    "Molesey": (51.4000, -0.3600),
+    "Northolt": (51.5470, -0.3680),
+    "Catford": (51.4450, -0.0200),
+    "Museum Quarter": (51.4960, -0.1730),
+    "Kensal Rise": (51.5330, -0.2240),
+    "West Norwood": (51.4340, -0.1030),
+    "Upper Edmonton": (51.6140, -0.0650),
+    "Blackfriars": (51.5120, -0.1040),
+    "Rush Green": (51.5640, 0.1660),
+    "Cricklewood": (51.5580, -0.2080),
+    "Dartford": (51.4460, 0.2200),
+    "Beckenham": (51.4080, -0.0260),
+    "Ruislip": (51.5760, -0.4240),
+    "Whitehall": (51.5040, -0.1260),
+    "Woodford Green": (51.6050, 0.0240),
+    "Woodford": (51.6050, 0.0240),
+    "Hampton": (51.4140, -0.3700),
+    "Feltham": (51.4480, -0.4240),
+    "Mitcham": (51.4020, -0.1650),
+    "Harrow": (51.5800, -0.3380),
+    "Hounslow": (51.4700, -0.3600),
+    "Uxbridge": (51.5460, -0.4780),
+    "Bromley": (51.4060, 0.0150),
+    "Bexley": (51.4420, 0.1480),
+    "Bexleyheath": (51.4590, 0.1380),
+    "Sutton": (51.3610, -0.1940),
+    "Epsom": (51.3360, -0.2670),
+    "Leatherhead": (51.2960, -0.3270),
+    "Weybridge": (51.3700, -0.4600),
+    "Walton-on-Thames": (51.3860, -0.4150),
+    "Esher": (51.3690, -0.3640),
+    "Sunbury-on-Thames": (51.4080, -0.4100),
+    "Sunbury": (51.4080, -0.4100),
+    "East Ham": (51.5320, 0.0550),
+    "Buckhurst Hill": (51.6260, 0.0440),
+    "Northwood": (51.6110, -0.4240),
+    "Gravesend": (51.4410, 0.3680),
+    "Ickenham": (51.5620, -0.4440),
+    "Cockfosters": (51.6510, -0.1490),
+    "Whitton": (51.4480, -0.3580),
+    "Whetstone": (51.6260, -0.1710),
+    "Marble Arch": (51.5130, -0.1580),
+    "Coulsdon": (51.3210, -0.1380),
+    "Ilford": (51.5580, 0.0700),
+    "Harold Hill": (51.5970, 0.2280),
+    "Southall": (51.5120, -0.3780),
+    "Golders Green": (51.5720, -0.1980),
+    "Abridge": (51.6500, 0.1160),
+    "Oxford Street": (51.5150, -0.1410),
+    "Fenchurch Street": (51.5110, -0.0780),
+    "Dagenham": (51.5400, 0.1470),
+    "Mortlake": (51.4680, -0.2680),
+    "Aldgate": (51.5140, -0.0750),
+    "Purley": (51.3360, -0.1140),
+    "Winchmore Hill": (51.6340, -0.1010),
+    "Surbiton": (51.3930, -0.3060),
+    "St Pancras": (51.5310, -0.1260),
+    "Millwall": (51.4900, -0.0210),
+    "Hendon": (51.5830, -0.2280),
+    "West Brompton": (51.4870, -0.1950),
+    "Lambeth North": (51.4988, -0.1120),
+    "Charlton": (51.4870, 0.0350),
+    "South Norwood": (51.3980, -0.0750),
+    "Thornton Heath": (51.3980, -0.1100),
+    "Long Ditton": (51.3850, -0.3120),
+    "Little Venice": (51.5220, -0.1820),
+    "King’s Cross": (51.5308, -0.1238),
     "Luton": (51.8787, -0.4200),
-    "Leighton Buzzard": (51.9165, -0.6617),
     "Bedford": (52.1386, -0.4667),
+    "Leighton Buzzard": (51.9165, -0.6617),
+    "North West London": (51.5450, -0.1800),
+    "Ellesmere": (51.5350, -0.0450), # Ellesmere Rd / London E3
+}
+
+LANDMARK_COORDS = {
+    "london eye": (51.5033, -0.1195),
+    "madame tussauds": (51.5230, -0.1544),
+    "sea life": (51.5019, -0.1189),
+    "london dungeon": (51.5025, -0.1188),
+    "st paul": (51.5138, -0.0984),
+    "kew gardens": (51.4787, -0.2956),
+    "cutty sark": (51.4828, -0.0096),
+    "royal observatory": (51.4769, 0.0005),
+    "shard": (51.5045, -0.0865),
+    "borough market": (51.5055, -0.0910),
+    "kensington palace": (51.5050, -0.1877),
+    "hyde park": (51.5073, -0.1657),
+    "churchill war rooms": (51.5022, -0.1290),
+    "national gallery": (51.5089, -0.1283),
+    "natural history museum": (51.4967, -0.1764),
+    "science museum": (51.4978, -0.1745),
+    "v&a": (51.4975, -0.1720),
+    "victoria and albert": (51.4975, -0.1720),
+    "british museum": (51.5194, -0.1270),
+    "tate modern": (51.5076, -0.0994),
+    "tate britain": (51.4910, -0.1278),
+    "somerset house": (51.5110, -0.1170),
+    "square mile": (51.5150, -0.0900),
+    "street art and culture": (51.5256, -0.0790),
+    "magic mike": (51.5118, -0.1293),
+    "vegan fish and chips": (51.5180, -0.1760),
+    "kingsgate workshops": (51.5422, -0.1965),
+    "haunted pubs": (51.5135, -0.1080),
+    "smurfs tea": (51.5115, -0.1200),
+    "taylor swift": (51.4965, -0.1444),
+    "walk with witches": (51.5050, -0.0900),
+    "harry potter": (51.5080, -0.1250),
+    "cotswolds": (51.4965, -0.1444),
+    "stonehenge": (51.4965, -0.1444),
+    "oxford": (51.4965, -0.1444),
+    "bath": (51.4965, -0.1444),
+    "windsor": (51.4839, -0.6044),
+    "energy with emily": (51.5129, -0.1243),
+    "heart of 'the city'": (51.5150, -0.0900),
+    "london essentials": (51.5000, -0.1300),
+    "bowie": (51.5137, -0.1360),
+    "trafalgar square": (51.5080, -0.1281),
+    "mayfair": (51.5100, -0.1470),
+    "fitzrovia": (51.5195, -0.1380),
+    "soho": (51.5137, -0.1360),
+    "westminster abbey": (51.4994, -0.1273),
+    "westminster": (51.5000, -0.1300),
+    "arsenal": (51.5549, -0.1084),
+    "emirates stadium": (51.5549, -0.1084),
+    "tottenham": (51.6043, -0.0664),
+    "spurs": (51.6043, -0.0664),
+    "stamford bridge": (51.4816, -0.1910),
+    "chelsea versus": (51.4816, -0.1910),
+    "wembley": (51.5560, -0.2795),
+    "buckingham palace": (51.5014, -0.1419),
+    "tower of london": (51.5081, -0.0759),
+    "tower bridge": (51.5055, -0.0754),
+    "hippodrome": (51.5118, -0.1293),
+    "sound academy": (51.5200, -0.0800),
+    "bam karaoke": (51.4965, -0.1444),
+    "east london liquor": (51.5360, -0.0370),
+    "swift shoreditch": (51.5256, -0.0790),
 }
 
 def clean_postcode(pc):
@@ -265,7 +432,10 @@ def main():
     # 2. Re-geocode each workshop with high accuracy
     stats = {"postcode": 0, "neighborhood": 0, "mobile": 0, "approximate": 0}
     
-    mobile_indicators = re.compile(r'comes to you|mobile|online|virtual|delivered|home kit|anywhere in uk|at your home', re.IGNORECASE)
+    mobile_indicators = re.compile(
+        r'comes to you|mobile|online|virtual|delivered|home kit|anywhere in uk|at your home|via zoom|zoom class|craft kit|materials will be sent|comfort of your own|delivered to your door|live online|live streaming',
+        re.IGNORECASE
+    )
 
     for w in workshops:
         title = w.get("title", "")
@@ -276,14 +446,29 @@ def main():
         
         full_text = f"{exact_loc} {desc} {loc} {title} {comp}"
         
-        # Check if mobile / traveling teacher
+        # Check if mobile / traveling teacher / online / craft kit
         is_mobile = False
-        if loc and ("comes to you" in loc.lower() or "/ mobile" in loc.lower()):
-            is_mobile = True
+        if loc and ("comes to you" in loc.lower() or "/ mobile" in loc.lower() or loc.lower() == "hertfordshire" or loc.lower() == "greater london"):
+            # Check if there is a specific street/studio address
+            if not exact_loc or exact_loc.lower() in ["hertfordshire", "greater london", "comes to you"]:
+                is_mobile = True
         elif exact_loc and ("comes to you" in exact_loc.lower() or "mobile" in exact_loc.lower()):
             is_mobile = True
-        elif mobile_indicators.search(title) or mobile_indicators.search(exact_loc):
-            is_mobile = True
+        elif mobile_indicators.search(title) or mobile_indicators.search(desc) or mobile_indicators.search(exact_loc):
+            # If description mentions zoom, virtual, delivery, or comfort of your own home
+            if any(k in desc.lower() for k in ["zoom", "virtual", "delivered", "craft kit", "live online", "comfort of your own"]):
+                is_mobile = True
+            elif mobile_indicators.search(title):
+                is_mobile = True
+
+        # If it is mobile / online and has no fixed studio venue
+        if is_mobile:
+            w["exact_coords"] = False
+            w["location_precision"] = "mobile"
+            w["lat"] = 51.5074
+            w["lng"] = -0.1278
+            stats["mobile"] += 1
+            continue
 
         # Check for exact postcode match
         resolved_coords = None
@@ -310,27 +495,6 @@ def main():
                 w["exact_coords"] = True
                 w["location_precision"] = "postcode"
                 stats["postcode"] += 1
-                continue
-
-        # If it is mobile and has no fixed studio venue
-        if is_mobile:
-            w["exact_coords"] = False
-            w["location_precision"] = "mobile"
-            # Set default fallback coords
-            w["lat"] = 51.5074
-            w["lng"] = -0.1278
-            stats["mobile"] += 1
-            continue
-
-        # If already has non-default coordinates from scraper with valid precision
-        if w.get("lat") and w.get("lng"):
-            if not (abs(w["lat"] - 51.5074) < 0.001 and abs(w["lng"] - (-0.1278)) < 0.001):
-                if 51.2 <= w["lat"] <= 52.3 and -0.7 <= w["lng"] <= 0.4:
-                    w["exact_coords"] = True
-                    w["location_precision"] = "postcode"
-                    stats["postcode"] += 1
-                    continue
-
         # Check neighborhood dictionary
         matched_nh = None
         # Clean loc string
@@ -367,13 +531,19 @@ def main():
                 found_in_text = nh
                 break
         
-        if found_in_text:
-            lat, lng = NEIGHBORHOOD_COORDS[found_in_text]
-            w["lat"] = lat
-            w["lng"] = lng
-            w["exact_coords"] = False
-            w["location_precision"] = "neighborhood"
-            stats["neighborhood"] += 1
+        # Check LANDMARK_COORDS
+        matched_lm = None
+        for lm, coords in LANDMARK_COORDS.items():
+            if lm in full_text.lower():
+                matched_lm = coords
+                break
+        
+        if matched_lm:
+            w["lat"] = matched_lm[0]
+            w["lng"] = matched_lm[1]
+            w["exact_coords"] = True
+            w["location_precision"] = "postcode"
+            stats["postcode"] += 1
             continue
 
         # Fallback to approximate / Greater London
