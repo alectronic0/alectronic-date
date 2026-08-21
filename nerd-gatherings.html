@@ -91,10 +91,10 @@
 
     .page-main {
       flex: 1;
-      max-width: 1400px; /* Expansive wide container */
+      max-width: min(1680px, 95vw); /* Full expansive wide container */
       width: 100%;
       margin: 0 auto;
-      padding: var(--space-6) var(--space-6) var(--space-8);
+      padding: var(--space-6) var(--space-4) var(--space-8);
     }
 
     .page-header {
@@ -134,11 +134,12 @@
     }
 
     /* ─── Seasonal Timeline Sections ──────────────── */
-    .timeline-container {
+    .gatherings-timeline {
       display: flex;
       flex-direction: column;
       gap: var(--space-7);
       margin-top: var(--space-4);
+      width: 100%;
     }
 
     .season-section {
@@ -548,7 +549,7 @@
         <p class="page-subtitle" id="section-subtitle">Chronological roadmap of major UK comic cons, fantasy balls, video game expos, tabletop conventions, and Discord communities.</p>
       </div>
 
-      <div class="timeline-container" id="timeline-container">
+      <div class="gatherings-timeline" id="timeline-container">
         <!-- Injected via JavaScript by Season -->
       </div>
     </main>
