@@ -591,6 +591,10 @@
       <g id="icon-pin">
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
       </g>
+      <!-- Globe / Website -->
+      <g id="icon-globe">
+        <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38a17.47 17.47 0 0 0 0 4zm.81 2h2.95a15.65 15.65 0 0 0 1.38 3.56A8.03 8.03 0 0 1 5.07 16zm2.95-8H5.07a8.03 8.03 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66a15.42 15.42 0 0 1 0-4h4.68a15.42 15.42 0 0 1 0 4zm.06 5.56a15.65 15.65 0 0 0 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14a17.47 17.47 0 0 0 0-4h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2z"/>
+      </g>
     </defs>
   </svg>
 
@@ -661,10 +665,10 @@
           // Favicon / Logo with fallback
           const logoSrc = item.logo || `https://www.google.com/s2/favicons?domain=${new URL(item.url).hostname}&sz=128`;
 
-          // Primary Button Label
-          const primaryBtnLabel = item.price && item.price.toLowerCase().includes('free')
-            ? 'Open Social & Official Info ↗'
-            : 'Buy Tickets & Official Info ↗';
+          // Primary Button Label & Icon
+          const isFree = item.price && item.price.toLowerCase().includes('free');
+          const primaryBtnLabel = isFree ? 'Official Website ↗' : 'Buy Tickets & Official Info ↗';
+          const primaryBtnIcon = isFree ? '#icon-globe' : '#icon-ticket';
 
           // Discord CTA button (ONLY rendered if valid discordUrl exists)
           let discordBtnMarkup = '';
@@ -767,7 +771,7 @@
               <!-- Bottom Row: Standardized Action Bar -->
               <div class="card-action-bar">
                 <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn-action btn-primary" aria-label="${primaryBtnLabel} for ${item.name}">
-                  <svg class="btn-icon-svg" style="fill: #1a1320;" viewBox="0 0 24 24"><use href="#icon-ticket"/></svg>
+                  <svg class="btn-icon-svg" style="fill: #1a1320;" viewBox="0 0 24 24"><use href="${primaryBtnIcon}"/></svg>
                   <span>${primaryBtnLabel}</span>
                 </a>
                 ${discordBtnMarkup}
