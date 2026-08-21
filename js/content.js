@@ -3009,7 +3009,7 @@ window.CONTENT = {
         location: "ExCeL London, Royal Docks",
         mapUrl: "https://maps.google.com/?q=ExCeL+London+Royal+Victoria+Dock+London+E16+1XL",
         description: "The UK's flagship pop-culture con with massive cosplay competitions, guest panels, voice actors, Artist Alley, and co-located EGX gaming.",
-        logo: "https://www.google.com/s2/favicons?domain=www.mcmcomiccon.com&sz=128",
+        logo: "https://www.mcmcomiccon.com/content/dam/sitebuilder/rna/florida-supercon/2021/_img/graphics/shows/MCM-London-Fall.png/_jcr_content/renditions/original.image_file.134.69.file/044203571/MCM-London-Fall.png",
         instagramUrl: "https://www.instagram.com/mcmcomiccon",
         discordUrl: "https://discord.gg/mcmcomiccon",
         facebookUrl: "https://www.facebook.com/LondonComicCon",
@@ -3032,7 +3032,7 @@ window.CONTENT = {
         location: "ExCeL London, Royal Docks",
         mapUrl: "https://maps.google.com/?q=ExCeL+London+Royal+Victoria+Dock+London+E16+1XL",
         description: "The UK's largest dedicated gaming expo co-located inside MCM London. Hands-on playable upcoming releases, indie Rezzed zone, and esports stages.",
-        logo: "https://www.google.com/s2/favicons?domain=www.egx.net&sz=128",
+        logo: "https://www.mcmcomiccon.com/content/dam/sitebuilder/rna/florida-supercon/2021/_img/graphics/shows/MCM-London-Fall.png/_jcr_content/renditions/original.image_file.134.69.file/044203571/MCM-London-Fall.png",
         instagramUrl: "https://www.instagram.com/egx",
         discordUrl: "https://discord.gg/egx",
         twitterUrl: "https://twitter.com/egx"
