@@ -2999,46 +2999,6 @@ window.CONTENT = {
         location: "Wembley, London",
         description: "Community-run non-profit workshop and maker space for electronics, 3D printing, laser cutting, robotics, woodworking, and tech hacker projects.",
         tags: ["Makers", "3D Printing", "Electronics", "Hackers", "Wembley", "Open Night"]
-      },
-      {
-        name: "WGC Board Game Club",
-        url: null,
-        category: "Tabletop & RPGs",
-        status: "Active",
-        timing: "Bi-Weekly Meetings",
-        location: "Welwyn Garden City, Hertfordshire",
-        description: "Friendly local board gaming club welcoming modern tabletop enthusiasts for strategy games, social deduction, and lighthearted party games.",
-        tags: ["Board Games", "Local", "Welwyn Garden City", "Hertfordshire", "Casual"]
-      },
-      {
-        name: "Fasty Balls & Fast Action Casual Tournaments",
-        url: null,
-        category: "Video Games & Arcades",
-        status: "Future Pipeline",
-        timing: "Community Sessions & Watch Parties",
-        location: "London / Hertfordshire / Online",
-        description: "Fast-paced party games, speed-challenge matchups, speedrunning watch parties, and casual gaming brackets.",
-        tags: ["Party Games", "Fast Action", "Tournaments", "Speedrunning", "Community"]
-      },
-      {
-        name: "Community LAN Party & Retro Tournaments",
-        url: null,
-        category: "Future Plans & Radar",
-        status: "Future Pipeline",
-        timing: "Planned 2026/2027",
-        location: "London / Hertfordshire",
-        description: "Dedicated weekend LAN sessions featuring classic PC LAN titles (Age of Empires II, Halo, Unreal Tournament) and modern co-op games.",
-        tags: ["LAN Party", "PC Gaming", "Retro", "Co-op", "Tournaments"]
-      },
-      {
-        name: "Cosplay & Maker Build Workshops",
-        url: null,
-        category: "Future Plans & Radar",
-        status: "Future Pipeline",
-        timing: "Pre-Con Seasons",
-        location: "London Maker Spaces",
-        description: "Prop-building, EVA foam crafting, electronics integration, and cosplay collaboration sessions leading up to major comic cons.",
-        tags: ["Cosplay", "Prop Making", "3D Printing", "Workshop", "MCM Prep"]
       }
     ]
   },

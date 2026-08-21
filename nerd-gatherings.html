@@ -439,10 +439,7 @@
 
           <!-- Status Filters -->
           <div class="filter-row" id="status-filters" style="margin-top: 4px;">
-            <button class="filter-btn status-filter-btn active" data-status="All">All Statuses</button>
-            <button class="filter-btn status-filter-btn" data-status="Active">🟢 Active / Venues</button>
-            <button class="filter-btn status-filter-btn" data-status="Upcoming">🎯 Upcoming Cons</button>
-            <button class="filter-btn status-filter-btn" data-status="Future Pipeline">🔮 Future Pipeline</button>
+            <!-- Status buttons dynamically rendered -->
           </div>
 
           <div class="results-count" id="results-count"></div>
@@ -498,6 +495,21 @@
           applyFilters();
         });
       });
+
+      const statuses = ['All', ...new Set(data.items.map(i => i.status).filter(Boolean))];
+      statusContainer.innerHTML = statuses.map(st => {
+        let label = st;
+        if (st === 'All') label = 'All Statuses';
+        else if (st === 'Active') label = '🟢 Active & Recurring';
+        else if (st === 'Upcoming') label = '🎯 Upcoming Cons & Expos';
+        else if (st === 'Future Pipeline') label = '🔮 Future Pipeline';
+
+        return `
+          <button class="filter-btn status-filter-btn ${st === activeStatus ? 'active' : ''}" data-status="${st}">
+            ${label}
+          </button>
+        `;
+      }).join('');
 
       statusContainer.querySelectorAll('.status-filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
