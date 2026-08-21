@@ -2955,7 +2955,6 @@ window.CONTENT = {
             "description": "Action-packed weekend of video game tournaments, cosplay masquerades, anime screenings, stage performances, and evening nerd parties.",
             "logo": "img/logos/animeleague.jpg",
             "instagramUrl": "https://www.instagram.com/_animeleague",
-            "discordUrl": "https://discord.gg/SJjHA4y",
             "facebookUrl": "https://www.facebook.com/Animeleague"
         },
         {
