@@ -33,8 +33,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nerd Gatherings & Convention Roadmap | Date Alec Today</title>
-  <meta name="description" content="Chronological timeline of UK comic cons, video game expos, tabletop conventions, ticket prices, and recurring maker meetups across London and the UK.">
+  <title>Nerd Gatherings, Cons & Fantasy Balls | Date Alec Today</title>
+  <meta name="description" content="Chronological timeline of UK comic cons, fantasy balls, video game expos, tabletop conventions, ticket prices, and Discord communities.">
   <meta name="robots" content="noindex, follow">
   <meta name="author" content="Alec Doran-Twyford">
   <meta name="theme-color" content="#1a1320">
@@ -248,7 +248,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      min-width: 120px;
+      min-width: 125px;
       padding: var(--space-3) var(--space-2);
       background: var(--surface-2);
       border: 1px solid var(--border);
@@ -373,10 +373,10 @@
     .timeline-actions {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: stretch;
       justify-content: center;
       gap: 8px;
-      min-width: 170px;
+      min-width: 175px;
       flex-shrink: 0;
     }
 
@@ -395,7 +395,7 @@
       color: #1a1320;
       font-weight: 700;
       font-size: 0.88rem;
-      padding: 10px 18px;
+      padding: 10px 16px;
       border-radius: 10px;
       text-decoration: none;
       transition: background 0.2s ease, transform 0.2s ease;
@@ -407,6 +407,42 @@
       background: #f0be95;
       transform: translateY(-1px);
       text-decoration: none;
+    }
+
+    .timeline-discord-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(88, 101, 242, 0.15);
+      color: #9aa8fc;
+      border: 1px solid rgba(88, 101, 242, 0.35);
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 7px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      width: 100%;
+      text-align: center;
+    }
+
+    .timeline-discord-btn:hover {
+      background: #5865F2;
+      color: #ffffff;
+      border-color: #5865F2;
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .timeline-discord-note {
+      font-size: 0.75rem;
+      color: #9aa8fc;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      text-align: center;
     }
 
     .empty-state {
@@ -475,13 +511,13 @@
     <main class="page-main">
       <div class="page-header">
         <span class="page-tag" id="section-tag">👾 Event Radar & Timeline</span>
-        <h1 class="page-title" id="section-title">Nerd Gatherings & Conventions</h1>
-        <p class="page-subtitle" id="section-subtitle">Chronological roadmap of major UK comic cons, video game expos, tabletop conventions, and recurring community socials.</p>
+        <h1 class="page-title" id="section-title">Nerd Gatherings, Cons & Fantasy Balls</h1>
+        <p class="page-subtitle" id="section-subtitle">Chronological roadmap of major UK comic cons, fantasy balls, video game expos, tabletop conventions, and Discord communities.</p>
 
         <div class="filter-section">
           <div class="search-wrapper">
             <span class="search-icon">🔍</span>
-            <input type="text" id="search-input" class="search-input" placeholder="Search conventions, dates, prices, venues, tags..." aria-label="Search nerd gatherings">
+            <input type="text" id="search-input" class="search-input" placeholder="Search conventions, fantasy balls, prices, venues, tags..." aria-label="Search nerd gatherings">
           </div>
 
           <!-- Category Pills -->
@@ -553,19 +589,19 @@
         let label = st;
         if (st === 'All') label = 'All Statuses';
         else if (st === 'Active') label = '🟢 Active & Recurring';
-        else if (st === 'Upcoming') label = '🎯 Upcoming Cons & Expos';
+        else if (st === 'Upcoming') label = '🎯 Upcoming Dates';
 
         return `
-          <button class="filter-btn ${st === activeStatus ? 'active' : ''}" data-status="${st}">
+          <button class="filter-btn status-filter-btn ${st === activeStatus ? 'active' : ''}" data-status="${st}">
             ${label}
           </button>
         `;
       }).join('');
 
-      statusContainer.querySelectorAll('.filter-btn').forEach(btn => {
+      statusContainer.querySelectorAll('.status-filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           activeStatus = btn.dataset.status;
-          statusContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          statusContainer.querySelectorAll('.status-filter-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           applyFilters();
         });
@@ -614,6 +650,7 @@
           item.price,
           item.location,
           item.description,
+          item.discordNote,
           ...(item.tags || [])
         ].filter(Boolean).join(' ').toLowerCase();
 
@@ -630,48 +667,64 @@
         return;
       }
 
-      grid.innerHTML = filtered.map(item => `
-        <article class="timeline-card">
-          <!-- Left: Date Block -->
-          <div class="timeline-date-block">
-            <span class="timeline-date-badge">${item.dateBadge || 'TBD'}</span>
-            <span class="timeline-date-sub">${item.approxMonth || 'Schedule'}</span>
-          </div>
-
-          <!-- Middle: Content & Metadata -->
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="category-badge">${item.category || 'Convention'}</span>
-              ${getStatusBadge(item.status)}
-            </div>
-            
-            <h2 class="timeline-title">${item.name}</h2>
-
-            <div class="timeline-meta-grid">
-              ${item.timing ? `<span class="timeline-meta-item">🗓️ ${item.timing}</span>` : ''}
-              ${item.days ? `<span class="timeline-meta-item">⏳ ${item.days}</span>` : ''}
-              ${item.location ? `<span class="timeline-meta-item">📍 ${item.location}</span>` : ''}
-              ${item.price ? `<span class="timeline-meta-item timeline-price">🎟️ ${item.price}</span>` : ''}
-            </div>
-
-            <p class="timeline-desc">${item.description || ''}</p>
-
-            ${item.tags && item.tags.length ? `
-              <div class="tags-row">
-                ${item.tags.map(t => `<span class="tag-pill">${t}</span>`).join('')}
-              </div>
-            ` : ''}
-          </div>
-
-          <!-- Right: Actions & CTA -->
-          <div class="timeline-actions">
-            ${item.price ? `<div class="timeline-price-tag">${item.price.split('·')[0].trim()}</div>` : ''}
-            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="timeline-cta-btn">
-              Get Tickets & Info ↗
+      grid.innerHTML = filtered.map(item => {
+        let discordMarkup = '';
+        if (item.discordUrl) {
+          discordMarkup = `
+            <a href="${item.discordUrl}" target="_blank" rel="noopener noreferrer" class="timeline-discord-btn">
+              💬 Community Discord ↗
             </a>
-          </div>
-        </article>
-      `).join('');
+          `;
+        } else if (item.discordNote) {
+          discordMarkup = `
+            <span class="timeline-discord-note">💬 ${item.discordNote}</span>
+          `;
+        }
+
+        return `
+          <article class="timeline-card">
+            <!-- Left: Date Block -->
+            <div class="timeline-date-block">
+              <span class="timeline-date-badge">${item.dateBadge || 'TBD'}</span>
+              <span class="timeline-date-sub">${item.approxMonth || 'Schedule'}</span>
+            </div>
+
+            <!-- Middle: Content & Metadata -->
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <span class="category-badge">${item.category || 'Convention'}</span>
+                ${getStatusBadge(item.status)}
+              </div>
+              
+              <h2 class="timeline-title">${item.name}</h2>
+
+              <div class="timeline-meta-grid">
+                ${item.timing ? `<span class="timeline-meta-item">🗓️ ${item.timing}</span>` : ''}
+                ${item.days ? `<span class="timeline-meta-item">⏳ ${item.days}</span>` : ''}
+                ${item.location ? `<span class="timeline-meta-item">📍 ${item.location}</span>` : ''}
+                ${item.price ? `<span class="timeline-meta-item timeline-price">🎟️ ${item.price}</span>` : ''}
+              </div>
+
+              <p class="timeline-desc">${item.description || ''}</p>
+
+              ${item.tags && item.tags.length ? `
+                <div class="tags-row">
+                  ${item.tags.map(t => `<span class="tag-pill">${t}</span>`).join('')}
+                </div>
+              ` : ''}
+            </div>
+
+            <!-- Right: Actions & CTA -->
+            <div class="timeline-actions">
+              ${item.price ? `<div class="timeline-price-tag">${item.price.split('·')[0].trim()}</div>` : ''}
+              <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="timeline-cta-btn">
+                Get Tickets & Info ↗
+              </a>
+              ${discordMarkup}
+            </div>
+          </article>
+        `;
+      }).join('');
     }
 
     document.addEventListener('DOMContentLoaded', renderGatherings);
