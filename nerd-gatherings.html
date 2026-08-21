@@ -362,6 +362,23 @@
       text-decoration: none;
     }
 
+    .card-action-plan {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      background: var(--surface-2);
+      color: var(--gold);
+      border: 1px dashed var(--border);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: var(--space-3) var(--space-4);
+      border-radius: 10px;
+      width: 100%;
+      text-align: center;
+      user-select: none;
+    }
+
     .empty-state {
       text-align: center;
       padding: var(--space-7) var(--space-4);
@@ -545,35 +562,48 @@
         return;
       }
 
-      grid.innerHTML = filtered.map(item => `
-        <article class="nerd-card">
-          <div>
-            <div class="card-header">
-              <span class="category-badge">${item.category || 'Gathering'}</span>
-              ${getStatusBadge(item.status)}
-            </div>
-            
-            <h2 class="card-title">${item.name}</h2>
-
-            <div class="meta-row">
-              ${item.timing ? `<span class="meta-item">🗓️ ${item.timing}</span>` : ''}
-              ${item.location ? `<span class="meta-item">📍 ${item.location}</span>` : ''}
-            </div>
-
-            <p class="card-desc">${item.description || ''}</p>
-          </div>
-          <div>
-            ${item.tags && item.tags.length ? `
-              <div class="tags-row">
-                ${item.tags.map(t => `<span class="tag-pill">${t}</span>`).join('')}
-              </div>
-            ` : ''}
+      grid.innerHTML = filtered.map(item => {
+        let actionMarkup = '';
+        if (item.url && item.url.startsWith('http') && !item.url.includes('date.alec.today')) {
+          actionMarkup = `
             <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="card-action">
-              ${item.status === 'Future Pipeline' ? 'View Radar Roadmap ↗' : 'Official Info & Tickets ↗'}
+              Official Info & Tickets ↗
             </a>
-          </div>
-        </article>
-      `).join('');
+          `;
+        } else if (item.status === 'Future Pipeline') {
+          actionMarkup = `<div class="card-action-plan">🔮 Planned / On Radar</div>`;
+        } else {
+          actionMarkup = `<div class="card-action-plan">👥 Local Community Group</div>`;
+        }
+
+        return `
+          <article class="nerd-card">
+            <div>
+              <div class="card-header">
+                <span class="category-badge">${item.category || 'Gathering'}</span>
+                ${getStatusBadge(item.status)}
+              </div>
+              
+              <h2 class="card-title">${item.name}</h2>
+
+              <div class="meta-row">
+                ${item.timing ? `<span class="meta-item">🗓️ ${item.timing}</span>` : ''}
+                ${item.location ? `<span class="meta-item">📍 ${item.location}</span>` : ''}
+              </div>
+
+              <p class="card-desc">${item.description || ''}</p>
+            </div>
+            <div>
+              ${item.tags && item.tags.length ? `
+                <div class="tags-row">
+                  ${item.tags.map(t => `<span class="tag-pill">${t}</span>`).join('')}
+                </div>
+              ` : ''}
+              ${actionMarkup}
+            </div>
+          </article>
+        `;
+      }).join('');
     }
 
     document.addEventListener('DOMContentLoaded', renderGatherings);
