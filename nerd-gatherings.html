@@ -216,26 +216,29 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      min-width: 160px;
-      padding: var(--space-4) var(--space-3);
+      width: 140px;
+      flex: 0 0 140px;
+      height: 130px;
+      padding: var(--space-3);
       background: var(--surface-2);
       border: 1px solid var(--border);
       border-radius: 14px;
-      flex-shrink: 0;
-      gap: 8px;
+      gap: 10px;
+      box-sizing: border-box;
     }
 
     /* White container badge for maximum logo visibility & accessibility */
     .card-logo-box {
-      width: 66px;
-      height: 66px;
+      width: 64px;
+      height: 64px;
       background: #ffffff;
-      border-radius: 14px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 6px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+      flex-shrink: 0;
     }
 
     .card-logo {
@@ -246,20 +249,13 @@
     }
 
     .card-date-badge {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 800;
       color: var(--gold);
-      line-height: 1.2;
+      line-height: 1.15;
       letter-spacing: 0.5px;
-      margin-top: 2px;
-    }
-
-    .card-date-sub {
-      font-size: 0.74rem;
-      color: var(--muted-2);
-      font-weight: 600;
-      text-transform: uppercase;
-      line-height: 1.3;
+      text-align: center;
+      white-space: nowrap;
     }
 
     .card-body-col {
@@ -517,6 +513,9 @@
         justify-content: flex-start;
         text-align: left;
         padding: 10px 14px;
+        width: 100%;
+        height: auto;
+        flex: 1 1 auto;
         min-width: unset;
         gap: 14px;
       }
@@ -743,7 +742,6 @@
                     <img src="${logoSrc}" alt="${item.name} logo" class="card-logo" loading="lazy" onerror="this.src='favicon.svg'">
                   </div>
                   <span class="card-date-badge">${item.dateBadge || 'TBD'}</span>
-                  <span class="card-date-sub">${item.days || item.approxMonth || ''}</span>
                 </div>
 
                 <!-- Right: Details -->
