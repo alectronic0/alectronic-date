@@ -3245,7 +3245,7 @@ window.CONTENT = {
         location: "Sudeley Castle, Cotswolds, Gloucestershire",
         mapUrl: "https://maps.google.com/?q=Sudeley+Castle+Winchcombe+Cheltenham+GL54+5JD",
         description: "The UK's largest outdoor fantasy, medieval, steampunk, and cosplay festival set in the grounds of historic Sudeley Castle with live music, artisan market & camping.",
-        logo: "https://www.google.com/s2/favicons?domain=fantasyforest.co.uk&sz=128",
+        logo: "https://fantasyforest.co.uk/wp-content/uploads/2025/08/Logo-2024-web.png",
         instagramUrl: "https://www.instagram.com/fanforfest",
         facebookUrl: "https://www.facebook.com/FanForFest",
         tiktokUrl: "https://www.tiktok.com/@fantasyforestfestival",
