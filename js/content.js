@@ -3053,7 +3053,7 @@ window.CONTENT = {
         location: "Guildhall, City of London",
         mapUrl: "https://maps.google.com/?q=Guildhall+71+Basinghall+St+London+EC2V+7HH",
         description: "Gothic-fantasy and dark romance ball hosted in the medieval Guildhall. Formal ballgowns, armor, waltzing, live orchestra, and theatrical quests.",
-        logo: "https://www.google.com/s2/favicons?domain=gauntletsandgownsevents.com&sz=128",
+        logo: "https://static.wixstatic.com/media/602a86_2afa9d979941410ba3a99b03ce0eb2d3~mv2.png/v1/fill/w_75,h_69,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/602a86_2afa9d979941410ba3a99b03ce0eb2d3~mv2.png",
         instagramUrl: "https://www.instagram.com/gauntletsandgownsevents",
         tiktokUrl: "https://www.tiktok.com/@gauntletsandgownsevents",
         discordNote: "Attendee Group Chat & Outfit Planning"
@@ -3117,7 +3117,7 @@ window.CONTENT = {
         location: "Battersea Arts Centre, London",
         mapUrl: "https://maps.google.com/?q=Battersea+Arts+Centre+Lavender+Hill+London+SW11+5TN",
         description: "Winter court fantasy ball with icy fairy aesthetics, tiaras, ballroom waltzes, immersive characters, and high-craft photography.",
-        logo: "https://www.google.com/s2/favicons?domain=gauntletsandgownsevents.com&sz=128",
+        logo: "https://static.wixstatic.com/media/602a86_2afa9d979941410ba3a99b03ce0eb2d3~mv2.png/v1/fill/w_75,h_69,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/602a86_2afa9d979941410ba3a99b03ce0eb2d3~mv2.png",
         instagramUrl: "https://www.instagram.com/gauntletsandgownsevents",
         tiktokUrl: "https://www.tiktok.com/@gauntletsandgownsevents",
         discordNote: "Attendee Group Chat & Outfit Planning"
