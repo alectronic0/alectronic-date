@@ -2903,12 +2903,12 @@ window.CONTENT = {
         approxMonth: "Weekly",
         days: "Tuesdays (Ongoing)",
         price: "Free entry (Donations welcome)",
-        location: "Wembley, London",
+        location: "London Hackspace, Wembley",
+        mapUrl: "https://maps.google.com/?q=London+Hackspace+4+Parkway+Wembley+HA9+0JT",
         description: "Community-run non-profit workshop for electronics, 3D printing, robotics, laser cutting, and hardware hacking. Open social every Tuesday.",
-        tags: ["Makers", "3D Printing", "Electronics", "Hackers", "Weekly", "Free Entry"],
         logo: "https://www.google.com/s2/favicons?domain=london.hackspace.org.uk&sz=128",
-        instagramUrl: "https://www.instagram.com/londonhackspace/",
-        discordUrl: "https://wiki.london.hackspace.org.uk/"
+        discordUrl: "https://discord.gg/VPqdVsqFX5",
+        twitterUrl: "https://twitter.com/londonhackspace"
       },
       {
         name: "London Anime & Gaming Con (Summer 2026)",
@@ -2924,11 +2924,12 @@ window.CONTENT = {
         days: "3 Days (Fri – Sun)",
         price: "From £9–£18 / day · £29 Weekend Pass",
         location: "Novotel London West, Hammersmith",
+        mapUrl: "https://maps.google.com/?q=Novotel+London+West+1+Shortlands+London+W6+8DR",
         description: "Action-packed weekend of video game tournaments, cosplay masquerades, anime screenings, stage performances, and evening nerd parties.",
-        tags: ["Anime", "Gaming Tournaments", "Cosplay", "Hammersmith", "Summer 2026"],
         logo: "https://www.google.com/s2/favicons?domain=www.londonanimecon.com&sz=128",
-        instagramUrl: "https://www.instagram.com/animeleague/",
-        discordUrl: "https://discord.gg/animeleague"
+        instagramUrl: "https://www.instagram.com/_animeleague",
+        discordUrl: "https://discord.gg/SJjHA4y",
+        facebookUrl: "https://www.facebook.com/Animeleague"
       },
       {
         name: "Mystic Fate — The Arcane Adventurers Ball",
@@ -2944,10 +2945,11 @@ window.CONTENT = {
         days: "Weekend (Sat – Sun)",
         price: "From £210–£340 (Full immersive banquet & gala)",
         location: "Chester Town Hall, Cheshire",
+        mapUrl: "https://maps.google.com/?q=Chester+Town+Hall+33+Northgate+St+Chester+CH1+2HQ",
         description: "High-fantasy immersive ball featuring live interactive actors, grand royal banquets, enchanted ballrooms, and cinematic photo ops.",
-        tags: ["Fantasy Ball", "High Fantasy", "Cosplay", "Banquet", "Immersive"],
         logo: "https://www.google.com/s2/favicons?domain=mysticfateevents.co.uk&sz=128",
-        instagramUrl: "https://www.instagram.com/mysticfateuk/",
+        instagramUrl: "https://www.instagram.com/mysticfateuk",
+        tiktokUrl: "https://www.tiktok.com/@mysticfateuk",
         discordNote: "Guest Discord on Ticket Confirmation"
       },
       {
@@ -2964,11 +2966,12 @@ window.CONTENT = {
         days: "4 Days (Fri – Mon Retreat)",
         price: "From ~£750–£850 (All-inclusive stay, meals & pro DM)",
         location: "Whitby Abbey Manor, North Yorkshire",
+        mapUrl: "https://maps.google.com/?q=Whitby+Abbey+Abbey+Lane+Whitby+YO22+4JT",
         description: "Immersive Gothic D&D holiday in historic Whitby. All-inclusive weekend retreat featuring custom campaigns with professional DMs, meals, and atmospheric storytelling.",
-        tags: ["D&D", "Castle Holidays", "TTRPG", "Whitby", "Gothic", "Retreat"],
         logo: "https://www.google.com/s2/favicons?domain=www.moonshineadventure.co.uk&sz=128",
-        instagramUrl: "https://www.instagram.com/moonshineadventurecompany/",
-        discordUrl: "https://discord.gg/GnvBuz3257"
+        instagramUrl: "https://www.instagram.com/moonshineadventurecompany",
+        discordUrl: "https://discord.gg/GnvBuz3257",
+        tiktokUrl: "https://www.tiktok.com/@moonshineadventure"
       },
       {
         name: "London Comic Mart (Autumn 2026)",
@@ -2984,10 +2987,11 @@ window.CONTENT = {
         days: "1 Day (Sundays, 11 AM – 4 PM)",
         price: "Free after 2 PM · £1 (12–2 PM) · £5 Early Bird",
         location: "Royal National Hotel, Russell Square, London",
+        mapUrl: "https://maps.google.com/?q=Royal+National+Hotel+38+Bedford+Way+London+WC1H+0DG",
         description: "London's longest-running comic book market with 120+ trader tables of vintage comic books, graphic novels, action figures, and collectables.",
-        tags: ["Comics", "Collectables", "Market", "Russell Square", "Vintage"],
         logo: "https://www.google.com/s2/favicons?domain=www.londoncomicmart.co.uk&sz=128",
-        instagramUrl: "https://www.instagram.com/londoncomicmart/"
+        facebookUrl: "https://www.facebook.com/LondonComicMart",
+        twitterUrl: "https://twitter.com/showmasters"
       },
       {
         name: "MCM Comic Con London (Autumn 2026)",
@@ -3003,11 +3007,14 @@ window.CONTENT = {
         days: "3 Days (Fri – Sun)",
         price: "From £27–£39 / day · £85–£98 Weekend Pass",
         location: "ExCeL London, Royal Docks",
+        mapUrl: "https://maps.google.com/?q=ExCeL+London+Royal+Victoria+Dock+London+E16+1XL",
         description: "The UK's flagship pop-culture con with massive cosplay competitions, guest panels, voice actors, Artist Alley, and co-located EGX gaming.",
-        tags: ["Comic Con", "Cosplay", "Anime", "Pop Culture", "ExCeL London", "Major Con"],
         logo: "https://www.google.com/s2/favicons?domain=www.mcmcomiccon.com&sz=128",
-        instagramUrl: "https://www.instagram.com/mcmcomiccon/",
-        discordUrl: "https://discord.gg/mcmcomiccon"
+        instagramUrl: "https://www.instagram.com/mcmcomiccon",
+        discordUrl: "https://discord.gg/mcmcomiccon",
+        facebookUrl: "https://www.facebook.com/LondonComicCon",
+        tiktokUrl: "https://www.tiktok.com/@mcmcomiccon",
+        twitterUrl: "https://twitter.com/MCMComicCon"
       },
       {
         name: "EGX @ MCM Comic Con London",
@@ -3023,11 +3030,12 @@ window.CONTENT = {
         days: "3 Days (Fri – Sun)",
         price: "Included with MCM London Ticket (~£27–£39 / day)",
         location: "ExCeL London, Royal Docks",
+        mapUrl: "https://maps.google.com/?q=ExCeL+London+Royal+Victoria+Dock+London+E16+1XL",
         description: "The UK's largest dedicated gaming expo co-located inside MCM London. Hands-on playable upcoming releases, indie Rezzed zone, and esports stages.",
-        tags: ["Video Games", "EGX", "Indie Games", "Playable Demos", "ExCeL London"],
         logo: "https://www.google.com/s2/favicons?domain=www.egx.net&sz=128",
-        instagramUrl: "https://www.instagram.com/egx/",
-        discordUrl: "https://discord.gg/egx"
+        instagramUrl: "https://www.instagram.com/egx",
+        discordUrl: "https://discord.gg/egx",
+        twitterUrl: "https://twitter.com/egx"
       },
       {
         name: "Gauntlets & Gowns — The Ball of Undying Vows",
@@ -3043,10 +3051,11 @@ window.CONTENT = {
         days: "1 Evening (7:00 PM – Late)",
         price: "~£169–£210 (Welcome cocktails, canapés & dancing)",
         location: "Guildhall, City of London",
+        mapUrl: "https://maps.google.com/?q=Guildhall+71+Basinghall+St+London+EC2V+7HH",
         description: "Gothic-fantasy and dark romance ball hosted in the medieval Guildhall. Formal ballgowns, armor, waltzing, live orchestra, and theatrical quests.",
-        tags: ["Fantasy Ball", "Gothic", "Halloween", "Guildhall", "London", "Armor & Gowns"],
         logo: "https://www.google.com/s2/favicons?domain=gauntletsandgownsevents.com&sz=128",
-        instagramUrl: "https://www.instagram.com/gauntletsandgownsevents/",
+        instagramUrl: "https://www.instagram.com/gauntletsandgownsevents",
+        tiktokUrl: "https://www.tiktok.com/@gauntletsandgownsevents",
         discordNote: "Attendee Group Chat & Outfit Planning"
       },
       {
@@ -3063,10 +3072,12 @@ window.CONTENT = {
         days: "1 Day (Saturday, 9 AM – Midnight)",
         price: "~£15–£20 Day Pass · Concessions £10",
         location: "Novotel London West, Hammersmith",
+        mapUrl: "https://maps.google.com/?q=Novotel+London+West+1+Shortlands+London+W6+8DR",
         description: "London's premier tabletop roleplaying game convention with indie RPG playtests, miniature wargames, trade hall, and seminar panels.",
-        tags: ["TTRPG", "D&D", "Indie RPGs", "Board Games", "London"],
         logo: "https://www.google.com/s2/favicons?domain=www.dragonmeet.co.uk&sz=128",
-        instagramUrl: "https://www.facebook.com/Dragonmeet/"
+        discordUrl: "https://discord.gg/SKQg4Cf2d7",
+        facebookUrl: "https://www.facebook.com/dragonmeetconvention",
+        twitterUrl: "https://x.com/dragonmeet"
       },
       {
         name: "MegaCon Live London 2027",
@@ -3082,10 +3093,13 @@ window.CONTENT = {
         days: "2 Days (Sat – Sun)",
         price: "£24–£30 / day · £50 Weekend Pass (Kids <10 Free)",
         location: "ExCeL London, Royal Docks",
+        mapUrl: "https://maps.google.com/?q=ExCeL+London+Royal+Victoria+Dock+London+E16+1XL",
         description: "High-energy multi-genre convention celebrating anime, gaming, comic books, tabletop, sci-fi, and cosplay stage competitions.",
-        tags: ["Pop Culture", "Anime", "Gaming", "Cosplay", "ExCeL London", "2027"],
         logo: "https://www.google.com/s2/favicons?domain=megaconlive.com&sz=128",
-        instagramUrl: "https://www.instagram.com/megaconlive/"
+        instagramUrl: "https://www.instagram.com/megaconlive",
+        facebookUrl: "https://www.facebook.com/megaconlive",
+        tiktokUrl: "https://www.tiktok.com/@megaconlive",
+        twitterUrl: "https://www.twitter.com/megaconlive"
       },
       {
         name: "Gauntlets & Gowns — The Frost Faerie Ball",
@@ -3101,10 +3115,11 @@ window.CONTENT = {
         days: "1 Evening (7:00 PM – Late)",
         price: "~£169–£199 (Includes welcome drinks, music & photos)",
         location: "Battersea Arts Centre, London",
+        mapUrl: "https://maps.google.com/?q=Battersea+Arts+Centre+Lavender+Hill+London+SW11+5TN",
         description: "Winter court fantasy ball with icy fairy aesthetics, tiaras, ballroom waltzes, immersive characters, and high-craft photography.",
-        tags: ["Fantasy Ball", "Winter Fae", "Romantasy", "Battersea Arts Centre", "London"],
         logo: "https://www.google.com/s2/favicons?domain=gauntletsandgownsevents.com&sz=128",
-        instagramUrl: "https://www.instagram.com/gauntletsandgownsevents/",
+        instagramUrl: "https://www.instagram.com/gauntletsandgownsevents",
+        tiktokUrl: "https://www.tiktok.com/@gauntletsandgownsevents",
         discordNote: "Attendee Group Chat & Outfit Planning"
       },
       {
@@ -3121,11 +3136,13 @@ window.CONTENT = {
         days: "4 Days (Thu – Sun)",
         price: "From £12–£22 / day · £40 4-Day Pass",
         location: "Harrogate Convention Centre, North Yorkshire",
+        mapUrl: "https://maps.google.com/?q=Harrogate+Convention+Centre+Kings+Rd+Harrogate+HG1+5LA",
         description: "One of the UK's largest and most welcoming analogue gaming conventions dedicated to open board gaming libraries, tournaments, and family games.",
-        tags: ["Board Games", "Tabletop", "Open Gaming", "Convention", "2027"],
         logo: "https://www.google.com/s2/favicons?domain=www.airecon.co.uk&sz=128",
-        instagramUrl: "https://www.instagram.com/aireconuk/",
-        discordUrl: "https://discord.gg/airecon"
+        instagramUrl: "https://www.instagram.com/aireconuk",
+        discordUrl: "https://discord.gg/airecon",
+        facebookUrl: "https://www.facebook.com/aireconuk",
+        twitterUrl: "https://twitter.com/aireconuk"
       },
       {
         name: "Fae Club — Seasonal Fantasy Balls & Gatherings",
@@ -3141,11 +3158,12 @@ window.CONTENT = {
         days: "Weekend Evening Balls",
         price: "From £85–£160 per ball",
         location: "Historic Venues Across London & UK",
+        mapUrl: "https://maps.google.com/?q=London+UK",
         description: "Immersive Romantasy, ACOTAR, and fae-inspired grand balls. Live music, beginner-friendly court waltzes, cosplay contests, and active community.",
-        tags: ["Fae Ball", "Romantasy", "ACOTAR", "Cosplay", "Book Club", "Active Discord"],
         logo: "https://www.google.com/s2/favicons?domain=www.fa3club.com&sz=128",
-        instagramUrl: "https://www.instagram.com/faeclubuk/",
-        discordUrl: "https://discord.gg/faeclub"
+        instagramUrl: "https://www.instagram.com/fa3club",
+        discordUrl: "https://discord.com/invite/aXc38Uspr9",
+        tiktokUrl: "https://www.tiktok.com/@fa3club"
       },
       {
         name: "Mystic Fate — The Eternal Throne Ball",
@@ -3161,10 +3179,11 @@ window.CONTENT = {
         days: "1 Evening (Gala & Banquet)",
         price: "~£230–£350 (Full royal banquet, live actors & ballroom)",
         location: "Stowe House, Buckinghamshire",
+        mapUrl: "https://maps.google.com/?q=Stowe+House+Buckingham+MK18+5EH",
         description: "Royal fantasy ball set in the breathtaking 18th-century palace staterooms of Stowe House with immersive storyline and banqueting.",
-        tags: ["Fantasy Ball", "Stowe House", "Royal Gala", "Palace", "Immersive"],
         logo: "https://www.google.com/s2/favicons?domain=mysticfateevents.co.uk&sz=128",
-        instagramUrl: "https://www.instagram.com/mysticfateuk/",
+        instagramUrl: "https://www.instagram.com/mysticfateuk",
+        tiktokUrl: "https://www.tiktok.com/@mysticfateuk",
         discordNote: "Guest Discord on Ticket Confirmation"
       },
       {
@@ -3181,11 +3200,12 @@ window.CONTENT = {
         days: "4 Days (Fri – Mon Retreat)",
         price: "From ~£750–£850 (All-inclusive medieval castle stay)",
         location: "St Briavels Castle, Gloucestershire",
+        mapUrl: "https://maps.google.com/?q=St+Briavels+Castle+Church+St+Lydney+GL15+6RG",
         description: "Play D&D inside an 800-year-old medieval royal hunting lodge and border fortress. Luxury full-board weekend with bespoke character narrative.",
-        tags: ["D&D", "Castle Retreat", "TTRPG", "Gloucestershire", "Medieval Fortress"],
         logo: "https://www.google.com/s2/favicons?domain=www.moonshineadventure.co.uk&sz=128",
-        instagramUrl: "https://www.instagram.com/moonshineadventurecompany/",
-        discordUrl: "https://discord.gg/GnvBuz3257"
+        instagramUrl: "https://www.instagram.com/moonshineadventurecompany",
+        discordUrl: "https://discord.gg/GnvBuz3257",
+        tiktokUrl: "https://www.tiktok.com/@moonshineadventure"
       },
       {
         name: "UK Games Expo (UKGE 2027)",
@@ -3201,11 +3221,13 @@ window.CONTENT = {
         days: "3 Days (Fri – Sun)",
         price: "~£18–£24 / day · £45–£60 3-Day Pass",
         location: "NEC Birmingham & Hilton Metropole",
+        mapUrl: "https://maps.google.com/?q=National+Exhibition+Centre+Pendigo+Way+Birmingham+B40+1NT",
         description: "The UK's ultimate tabletop convention: giant publisher halls, hundreds of open gaming tables, D&D / RPG adventures, and tournaments.",
-        tags: ["Tabletop", "Board Games", "RPGs", "Tournaments", "NEC Birmingham"],
         logo: "https://www.google.com/s2/favicons?domain=www.ukgamesexpo.co.uk&sz=128",
-        instagramUrl: "https://www.instagram.com/ukgamesexpo/",
-        discordUrl: "https://discord.gg/ukgamesexpo"
+        instagramUrl: "https://www.instagram.com/ukgamesexpo",
+        discordUrl: "https://discord.gg/ukgamesexpo",
+        facebookUrl: "https://www.facebook.com/UKGamesExpo",
+        twitterUrl: "https://twitter.com/UKGamesExpo"
       },
       {
         name: "Fantasy Forest Festival 2027",
@@ -3221,10 +3243,12 @@ window.CONTENT = {
         days: "3 Days (Fri – Sun with Camping)",
         price: "From ~£25–£45 / day · ~£85–£120 Weekend Camping",
         location: "Sudeley Castle, Cotswolds, Gloucestershire",
+        mapUrl: "https://maps.google.com/?q=Sudeley+Castle+Winchcombe+Cheltenham+GL54+5JD",
         description: "The UK's largest outdoor fantasy, medieval, steampunk, and cosplay festival set in the grounds of historic Sudeley Castle with live music, artisan market & camping.",
-        tags: ["Fantasy Festival", "Sudeley Castle", "Camping", "Cosplay", "Live Music", "Cotswolds"],
         logo: "https://www.google.com/s2/favicons?domain=fantasyforest.co.uk&sz=128",
-        instagramUrl: "https://www.instagram.com/fantasyforestfestival/",
+        instagramUrl: "https://www.instagram.com/fanforfest",
+        facebookUrl: "https://www.facebook.com/FanForFest",
+        tiktokUrl: "https://www.tiktok.com/@fantasyforestfestival",
         discordNote: "Community Discord & Camp Sharing"
       },
       {
@@ -3241,10 +3265,13 @@ window.CONTENT = {
         days: "3 Days (Fri – Sun)",
         price: "From £28.35 / day · Group passes available",
         location: "Olympia London, Kensington",
+        mapUrl: "https://maps.google.com/?q=Olympia+London+Hammersmith+Rd+London+W14+8UX",
         description: "The UK's premier celebration of Japanese culture, street food, video games, anime, cosplay, and live music performances.",
-        tags: ["Japan", "Anime", "Gaming", "Food", "Culture", "Olympia London"],
         logo: "https://www.google.com/s2/favicons?domain=hyperjapan.co.uk&sz=128",
-        instagramUrl: "https://www.instagram.com/hyperjapanofficial/"
+        instagramUrl: "https://www.instagram.com/hyperjapanofficial",
+        facebookUrl: "https://www.facebook.com/HYPERJAPAN",
+        tiktokUrl: "https://www.tiktok.com/@hyperjapanofficial",
+        twitterUrl: "https://twitter.com/hyperjapanevent"
       },
       {
         name: "London Film & Comic Con (LFCC 2027)",
@@ -3260,10 +3287,12 @@ window.CONTENT = {
         days: "2 Days (Sat – Sun)",
         price: "~£28–£30 / day · £52 Weekend Pass",
         location: "Olympia London, Kensington",
+        mapUrl: "https://maps.google.com/?q=Olympia+London+Hammersmith+Rd+London+W14+8UX",
         description: "Massive convention celebrating cinema, television, comics, and retro gaming with international celebrity guests and autograph sessions.",
-        tags: ["Comic Con", "Film & TV", "Celebrity Guests", "Olympia London", "Cosplay"],
         logo: "https://www.google.com/s2/favicons?domain=londonfilmandcomiccon.com&sz=128",
-        instagramUrl: "https://www.instagram.com/showmastersevents/"
+        instagramUrl: "https://www.instagram.com/showmastersevents",
+        facebookUrl: "https://www.facebook.com/LondonFilmAndComicCon",
+        twitterUrl: "https://twitter.com/showmasters"
       }
     ]
   },
