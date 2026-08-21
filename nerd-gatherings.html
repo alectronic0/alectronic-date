@@ -91,7 +91,7 @@
 
     .page-main {
       flex: 1;
-      max-width: min(1500px, 94vw); /* Expansive, responsive width */
+      max-width: min(1500px, 94vw);
       width: 100%;
       margin: 0 auto;
       padding: var(--space-6) var(--space-4) var(--space-8);
@@ -370,114 +370,90 @@
       margin: 0;
     }
 
-    /* ─── Bottom Row: Wide Action Bar ──────────────── */
+    /* ─── Bottom Row: Standardized Button Action Bar ──────────────── */
     .card-action-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       padding-top: var(--space-4);
       border-top: 1px solid var(--border);
       align-items: center;
     }
 
-    .btn-buy {
-      flex: 2 1 280px;
+    /* Standardized Base Button */
+    .btn-action {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
+      height: 44px;
+      padding: 0 16px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      text-align: center;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+    .btn-action:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    /* Primary CTA (Tickets / Info) */
+    .btn-primary {
+      flex: 2 1 240px;
       background: var(--gold);
       color: #1a1320;
       font-weight: 700;
       font-size: 0.92rem;
-      padding: 12px 20px;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-      text-align: center;
+      padding: 0 20px;
       box-shadow: 0 2px 8px rgba(230, 169, 121, 0.2);
     }
 
-    .btn-buy:hover {
+    .btn-primary:hover {
       background: #f0be95;
-      transform: translateY(-1px);
+      color: #1a1320;
       box-shadow: 0 4px 12px rgba(230, 169, 121, 0.35);
-      text-decoration: none;
     }
 
+    /* Discord CTA */
     .btn-discord {
-      flex: 1 1 180px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      flex: 1 1 150px;
       background: rgba(88, 101, 242, 0.15);
       color: #9aa8fc;
       border: 1px solid rgba(88, 101, 242, 0.35);
-      font-weight: 600;
-      font-size: 0.88rem;
-      padding: 12px 16px;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      text-align: center;
     }
 
     .btn-discord:hover {
       background: #5865F2;
       color: #ffffff;
       border-color: #5865F2;
-      transform: translateY(-1px);
-      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(88, 101, 242, 0.35);
     }
 
-    .btn-discord-note {
-      flex: 1 1 180px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      background: rgba(88, 101, 242, 0.08);
-      color: #9aa8fc;
-      border: 1px dashed rgba(88, 101, 242, 0.25);
-      font-weight: 600;
-      font-size: 0.82rem;
-      padding: 12px 14px;
-      border-radius: 12px;
-      text-align: center;
-      user-select: none;
-    }
-
+    /* Standardized Social Buttons */
     .social-group {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
-    .btn-social-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
+    .btn-social {
       background: var(--surface-2);
       color: var(--text);
       border: 1px solid var(--border);
-      font-weight: 600;
-      font-size: 0.86rem;
-      padding: 12px 14px;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      text-align: center;
+      padding: 0 14px;
     }
 
-    .btn-social-icon:hover {
+    .btn-social:hover {
       background: var(--surface-3);
       border-color: var(--gold);
       color: var(--gold);
-      transform: translateY(-1px);
-      text-decoration: none;
     }
 
     .btn-icon-svg {
@@ -524,15 +500,12 @@
         flex-direction: column;
         align-items: stretch;
       }
-      .btn-buy, .btn-discord, .btn-discord-note, .social-group, .btn-social-icon {
+      .btn-primary, .btn-discord, .social-group, .btn-social {
         flex: 1 1 auto;
         width: 100%;
       }
       .social-group {
         justify-content: stretch;
-      }
-      .btn-social-icon {
-        flex: 1;
       }
       .card-main-row {
         flex-direction: column;
@@ -606,6 +579,10 @@
       <!-- Twitter / X -->
       <g id="icon-twitter">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </g>
+      <!-- YouTube -->
+      <g id="icon-youtube">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
       </g>
       <!-- Ticket / Official Info -->
       <g id="icon-ticket">
@@ -685,55 +662,61 @@
           // Favicon / Logo with fallback
           const logoSrc = item.logo || `https://www.google.com/s2/favicons?domain=${new URL(item.url).hostname}&sz=128`;
 
-          // Discord CTA button
+          // Primary Button Label
+          const primaryBtnLabel = item.price && item.price.toLowerCase().includes('free')
+            ? 'Open Social & Official Info ↗'
+            : 'Buy Tickets & Official Info ↗';
+
+          // Discord CTA button (ONLY rendered if valid discordUrl exists)
           let discordBtnMarkup = '';
-          if (item.discordUrl) {
+          if (item.discordUrl && item.discordUrl.trim()) {
             discordBtnMarkup = `
-              <a href="${item.discordUrl}" target="_blank" rel="noopener noreferrer" class="btn-discord" aria-label="Join ${item.name} Discord">
+              <a href="${item.discordUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-discord" aria-label="Join ${item.name} Discord">
                 <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-discord"/></svg>
                 <span>Join Discord ↗</span>
               </a>
             `;
-          } else if (item.discordNote) {
-            discordBtnMarkup = `
-              <div class="btn-discord-note" title="${item.discordNote}">
-                <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-discord"/></svg>
-                <span>${item.discordNote}</span>
-              </div>
-            `;
           }
 
-          // Social Media Icon Links
+          // Standardized Social Media Buttons (ONLY rendered if valid URL exists)
           let socialBtns = [];
-          if (item.instagramUrl) {
+          if (item.instagramUrl && item.instagramUrl.trim()) {
             socialBtns.push(`
-              <a href="${item.instagramUrl}" target="_blank" rel="noopener noreferrer" class="btn-social-icon" aria-label="${item.name} on Instagram" title="Instagram">
+              <a href="${item.instagramUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on Instagram" title="Instagram">
                 <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-instagram"/></svg>
                 <span>Instagram</span>
               </a>
             `);
           }
-          if (item.tiktokUrl) {
+          if (item.tiktokUrl && item.tiktokUrl.trim()) {
             socialBtns.push(`
-              <a href="${item.tiktokUrl}" target="_blank" rel="noopener noreferrer" class="btn-social-icon" aria-label="${item.name} on TikTok" title="TikTok">
+              <a href="${item.tiktokUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on TikTok" title="TikTok">
                 <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-tiktok"/></svg>
                 <span>TikTok</span>
               </a>
             `);
           }
-          if (item.facebookUrl) {
+          if (item.facebookUrl && item.facebookUrl.trim()) {
             socialBtns.push(`
-              <a href="${item.facebookUrl}" target="_blank" rel="noopener noreferrer" class="btn-social-icon" aria-label="${item.name} on Facebook" title="Facebook">
+              <a href="${item.facebookUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on Facebook" title="Facebook">
                 <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-facebook"/></svg>
                 <span>Facebook</span>
               </a>
             `);
           }
-          if (item.twitterUrl) {
+          if (item.twitterUrl && item.twitterUrl.trim()) {
             socialBtns.push(`
-              <a href="${item.twitterUrl}" target="_blank" rel="noopener noreferrer" class="btn-social-icon" aria-label="${item.name} on X / Twitter" title="X / Twitter">
+              <a href="${item.twitterUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on X / Twitter" title="X / Twitter">
                 <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-twitter"/></svg>
                 <span>𝕏 / Twitter</span>
+              </a>
+            `);
+          }
+          if (item.youtubeUrl && item.youtubeUrl.trim()) {
+            socialBtns.push(`
+              <a href="${item.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on YouTube" title="YouTube">
+                <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-youtube"/></svg>
+                <span>YouTube</span>
               </a>
             `);
           }
@@ -783,11 +766,11 @@
                 </div>
               </div>
 
-              <!-- Bottom Row: Buy Ticket | Discord | Social Channels -->
+              <!-- Bottom Row: Standardized Action Bar -->
               <div class="card-action-bar">
-                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn-buy" aria-label="Buy tickets and official information for ${item.name}">
+                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn-action btn-primary" aria-label="${primaryBtnLabel} for ${item.name}">
                   <svg class="btn-icon-svg" style="fill: #1a1320;" viewBox="0 0 24 24"><use href="#icon-ticket"/></svg>
-                  <span>Buy Tickets & Official Info ↗</span>
+                  <span>${primaryBtnLabel}</span>
                 </a>
                 ${discordBtnMarkup}
                 ${socialMarkup}

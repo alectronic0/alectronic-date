@@ -2949,8 +2949,7 @@ window.CONTENT = {
         description: "High-fantasy immersive ball featuring live interactive actors, grand royal banquets, enchanted ballrooms, and cinematic photo ops.",
         logo: "https://www.google.com/s2/favicons?domain=mysticfateevents.co.uk&sz=128",
         instagramUrl: "https://www.instagram.com/mysticfateuk",
-        tiktokUrl: "https://www.tiktok.com/@mysticfateuk",
-        discordNote: "Guest Discord on Ticket Confirmation"
+        tiktokUrl: "https://www.tiktok.com/@mysticfateuk"
       },
       {
         name: "The Moonshine Adventure Company (Whitby D&D Retreat)",
@@ -3014,7 +3013,8 @@ window.CONTENT = {
         discordUrl: "https://discord.gg/mcmcomiccon",
         facebookUrl: "https://www.facebook.com/LondonComicCon",
         tiktokUrl: "https://www.tiktok.com/@mcmcomiccon",
-        twitterUrl: "https://twitter.com/MCMComicCon"
+        twitterUrl: "https://twitter.com/MCMComicCon",
+        youtubeUrl: "https://www.youtube.com/@MCMComicCon"
       },
       {
         name: "EGX @ MCM Comic Con London",
@@ -3055,8 +3055,7 @@ window.CONTENT = {
         description: "Gothic-fantasy and dark romance ball hosted in the medieval Guildhall. Formal ballgowns, armor, waltzing, live orchestra, and theatrical quests.",
         logo: "https://static.wixstatic.com/media/602a86_2afa9d979941410ba3a99b03ce0eb2d3~mv2.png/v1/fill/w_75,h_69,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/602a86_2afa9d979941410ba3a99b03ce0eb2d3~mv2.png",
         instagramUrl: "https://www.instagram.com/gauntletsandgownsevents",
-        tiktokUrl: "https://www.tiktok.com/@gauntletsandgownsevents",
-        discordNote: "Attendee Group Chat & Outfit Planning"
+        tiktokUrl: "https://www.tiktok.com/@gauntletsandgownsevents"
       },
       {
         name: "Dragonmeet 2026",
@@ -3119,8 +3118,7 @@ window.CONTENT = {
         description: "Winter court fantasy ball with icy fairy aesthetics, tiaras, ballroom waltzes, immersive characters, and high-craft photography.",
         logo: "https://static.wixstatic.com/media/602a86_2afa9d979941410ba3a99b03ce0eb2d3~mv2.png/v1/fill/w_75,h_69,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/602a86_2afa9d979941410ba3a99b03ce0eb2d3~mv2.png",
         instagramUrl: "https://www.instagram.com/gauntletsandgownsevents",
-        tiktokUrl: "https://www.tiktok.com/@gauntletsandgownsevents",
-        discordNote: "Attendee Group Chat & Outfit Planning"
+        tiktokUrl: "https://www.tiktok.com/@gauntletsandgownsevents"
       },
       {
         name: "AireCon 2027 (Analogue Gaming Con)",
@@ -3163,7 +3161,8 @@ window.CONTENT = {
         logo: "https://www.google.com/s2/favicons?domain=www.fa3club.com&sz=128",
         instagramUrl: "https://www.instagram.com/fa3club",
         discordUrl: "https://discord.com/invite/aXc38Uspr9",
-        tiktokUrl: "https://www.tiktok.com/@fa3club"
+        tiktokUrl: "https://www.tiktok.com/@fa3club",
+        youtubeUrl: "https://www.youtube.com/@faeclub"
       },
       {
         name: "Mystic Fate — The Eternal Throne Ball",
@@ -3183,8 +3182,7 @@ window.CONTENT = {
         description: "Royal fantasy ball set in the breathtaking 18th-century palace staterooms of Stowe House with immersive storyline and banqueting.",
         logo: "https://www.google.com/s2/favicons?domain=mysticfateevents.co.uk&sz=128",
         instagramUrl: "https://www.instagram.com/mysticfateuk",
-        tiktokUrl: "https://www.tiktok.com/@mysticfateuk",
-        discordNote: "Guest Discord on Ticket Confirmation"
+        tiktokUrl: "https://www.tiktok.com/@mysticfateuk"
       },
       {
         name: "The Moonshine Adventure Co (St Briavels Castle D&D)",
@@ -3227,7 +3225,8 @@ window.CONTENT = {
         instagramUrl: "https://www.instagram.com/ukgamesexpo",
         discordUrl: "https://discord.gg/ukgamesexpo",
         facebookUrl: "https://www.facebook.com/UKGamesExpo",
-        twitterUrl: "https://twitter.com/UKGamesExpo"
+        twitterUrl: "https://twitter.com/UKGamesExpo",
+        youtubeUrl: "https://www.youtube.com/@ukgamesexpo"
       },
       {
         name: "Fantasy Forest Festival 2027",
@@ -3249,7 +3248,7 @@ window.CONTENT = {
         instagramUrl: "https://www.instagram.com/fanforfest",
         facebookUrl: "https://www.facebook.com/FanForFest",
         tiktokUrl: "https://www.tiktok.com/@fantasyforestfestival",
-        discordNote: "Community Discord & Camp Sharing"
+        youtubeUrl: "https://www.youtube.com/@FanForFest"
       },
       {
         name: "Hyper Japan Festival 2027",
@@ -3271,7 +3270,8 @@ window.CONTENT = {
         instagramUrl: "https://www.instagram.com/hyperjapanofficial",
         facebookUrl: "https://www.facebook.com/HYPERJAPAN",
         tiktokUrl: "https://www.tiktok.com/@hyperjapanofficial",
-        twitterUrl: "https://twitter.com/hyperjapanevent"
+        twitterUrl: "https://twitter.com/hyperjapanevent",
+        youtubeUrl: "https://www.youtube.com/HYPERJAPANOfficial"
       },
       {
         name: "London Film & Comic Con (LFCC 2027)",
