@@ -2594,15 +2594,6 @@ button.CookiebotWidget-logo::before {
     margin: 0 auto;
     padding: 20px 0;
 }
-.timeline-container::before {
-    content: '';
-    position: absolute;
-    top: 24px;
-    bottom: 24px;
-    left: 20px;
-    width: 2px;
-    background: var(--border);
-}
 .timeline-item {
     position: relative;
     padding-left: 56px;
