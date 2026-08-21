@@ -802,6 +802,7 @@ window.CONTENT = {
                     "✈️ Paid holidays (okay, we might need to split the bill)",
                     "🎁 Bonuses paid out on birthdays, anniversaries, and special occasions",
                     "🚗 Company car (passenger princess privileges included)",
+                    "🧥 Company uniform (one of my hoodies you \"borrowed\" right?!)",
                     "🐾 Pet-friendly workspace",
                     "☕ Unlimited tea allowance",
                     "🛋️ Flexible working — sometimes the sofa, sometimes the summit of a mountain",
@@ -2908,7 +2909,7 @@ window.CONTENT = {
         location: "London Hackspace, Wembley",
         mapUrl: "https://maps.google.com/?q=London+Hackspace+4+Parkway+Wembley+HA9+0JT",
         description: "Community-run non-profit workshop for electronics, 3D printing, robotics, laser cutting, and hardware hacking. Open social every Tuesday.",
-        logo: "https://www.google.com/s2/favicons?domain=london.hackspace.org.uk&sz=128",
+        logo: "img/logos/london-hackspace.png",
         discordUrl: "https://discord.gg/VPqdVsqFX5",
         twitterUrl: "https://twitter.com/londonhackspace"
       },
@@ -2952,7 +2953,7 @@ window.CONTENT = {
         location: "Novotel London West, Hammersmith",
         mapUrl: "https://maps.google.com/?q=Novotel+London+West+1+Shortlands+London+W6+8DR",
         description: "Action-packed weekend of video game tournaments, cosplay masquerades, anime screenings, stage performances, and evening nerd parties.",
-        logo: "https://www.google.com/s2/favicons?domain=www.londonanimecon.com&sz=128",
+        logo: "img/logos/animeleague.jpg",
         instagramUrl: "https://www.instagram.com/_animeleague",
         discordUrl: "https://discord.gg/SJjHA4y",
         facebookUrl: "https://www.facebook.com/Animeleague"
@@ -2999,7 +3000,7 @@ window.CONTENT = {
         location: "Rhum Tavern, Central London",
         mapUrl: "https://maps.google.com/?q=Central+London+UK",
         description: "Full-day immersive tabletop session playing Darrington Press's Daggerheart with professional GMs in a characterful central London tavern.",
-        logo: "https://www.google.com/s2/favicons?domain=www.moonshineadventure.co.uk&sz=128",
+        logo: "img/logos/moonshine-adventure.png",
         instagramUrl: "https://www.instagram.com/moonshineadventurecompany",
         discordUrl: "https://discord.gg/GnvBuz3257",
         tiktokUrl: "https://www.tiktok.com/@moonshineadventure"
@@ -3022,7 +3023,7 @@ window.CONTENT = {
         location: "Chester Town Hall, Cheshire",
         mapUrl: "https://maps.google.com/?q=Chester+Town+Hall+33+Northgate+St+Chester+CH1+2HQ",
         description: "High-fantasy immersive ball featuring live interactive actors, grand royal banquets, enchanted ballrooms, and cinematic photo ops.",
-        logo: "https://www.google.com/s2/favicons?domain=mysticfateevents.co.uk&sz=128",
+        logo: "img/logos/mystic-fate.png",
         instagramUrl: "https://www.instagram.com/mysticfateuk",
         tiktokUrl: "https://www.tiktok.com/@mysticfateuk"
       },
@@ -3044,7 +3045,7 @@ window.CONTENT = {
         location: "Whitby Abbey Manor, North Yorkshire",
         mapUrl: "https://maps.google.com/?q=Whitby+Abbey+Abbey+Lane+Whitby+YO22+4JT",
         description: "Immersive Gothic D&D holiday in historic Whitby. All-inclusive weekend retreat featuring custom campaigns with professional DMs, meals, and atmospheric storytelling.",
-        logo: "https://www.google.com/s2/favicons?domain=www.moonshineadventure.co.uk&sz=128",
+        logo: "img/logos/moonshine-adventure.png",
         instagramUrl: "https://www.instagram.com/moonshineadventurecompany",
         discordUrl: "https://discord.gg/GnvBuz3257",
         tiktokUrl: "https://www.tiktok.com/@moonshineadventure"
@@ -3091,7 +3092,7 @@ window.CONTENT = {
         location: "Royal National Hotel, Russell Square, London",
         mapUrl: "https://maps.google.com/?q=Royal+National+Hotel+38+Bedford+Way+London+WC1H+0DG",
         description: "London's longest-running comic book market with 120+ trader tables of vintage comic books, graphic novels, action figures, and collectables.",
-        logo: "https://www.google.com/s2/favicons?domain=www.londoncomicmart.co.uk&sz=128",
+        logo: "img/logos/london-comic-mart.png",
         facebookUrl: "https://www.facebook.com/LondonComicMart",
         twitterUrl: "https://twitter.com/showmasters"
       },
@@ -3208,7 +3209,7 @@ window.CONTENT = {
         location: "Olympia London, Kensington",
         mapUrl: "https://maps.google.com/?q=Olympia+London+Hammersmith+Rd+London+W14+8UX",
         description: "The UK's flagship Young Adult book and Romantasy convention co-located with London Film Fair. Author panels, book signings, writing workshops, and publisher stalls.",
-        logo: "https://www.google.com/s2/favicons?domain=www.londoncomicmart.co.uk&sz=128",
+        logo: "img/logos/london-comic-mart.png",
         facebookUrl: "https://www.facebook.com/ShowmastersEvents",
         twitterUrl: "https://twitter.com/showmasters"
       },
@@ -3321,7 +3322,7 @@ window.CONTENT = {
         location: "Country Manor, North Norfolk",
         mapUrl: "https://maps.google.com/?q=North+Norfolk+UK",
         description: "Luxury countryside D&D retreat in atmospheric North Norfolk. Custom campaigns with professional Game Masters, chef-prepared meals, and cosy fireside roleplay.",
-        logo: "https://www.google.com/s2/favicons?domain=www.moonshineadventure.co.uk&sz=128",
+        logo: "img/logos/moonshine-adventure.png",
         instagramUrl: "https://www.instagram.com/moonshineadventurecompany",
         discordUrl: "https://discord.gg/GnvBuz3257",
         tiktokUrl: "https://www.tiktok.com/@moonshineadventure"
@@ -3392,7 +3393,7 @@ window.CONTENT = {
         location: "Stowe House, Buckinghamshire",
         mapUrl: "https://maps.google.com/?q=Stowe+House+Buckingham+MK18+5EH",
         description: "Royal fantasy ball set in the breathtaking 18th-century palace staterooms of Stowe House with immersive storyline and banqueting.",
-        logo: "https://www.google.com/s2/favicons?domain=mysticfateevents.co.uk&sz=128",
+        logo: "img/logos/mystic-fate.png",
         instagramUrl: "https://www.instagram.com/mysticfateuk",
         tiktokUrl: "https://www.tiktok.com/@mysticfateuk"
       },
@@ -3414,7 +3415,7 @@ window.CONTENT = {
         location: "St Briavels Castle, Gloucestershire",
         mapUrl: "https://maps.google.com/?q=St+Briavels+Castle+Church+St+Lydney+GL15+6RG",
         description: "Play D&D inside an 800-year-old medieval royal hunting lodge and border fortress. Luxury full-board weekend with bespoke character narrative.",
-        logo: "https://www.google.com/s2/favicons?domain=www.moonshineadventure.co.uk&sz=128",
+        logo: "img/logos/moonshine-adventure.png",
         instagramUrl: "https://www.instagram.com/moonshineadventurecompany",
         discordUrl: "https://discord.gg/GnvBuz3257",
         tiktokUrl: "https://www.tiktok.com/@moonshineadventure"
@@ -3534,7 +3535,7 @@ window.CONTENT = {
         location: "Condover Hall, Shropshire",
         mapUrl: "https://maps.google.com/?q=Condover+Hall+Shrewsbury+SY5+7AU",
         description: "Four-day immersive fantasy summer camp at the historic Elizabethan Condover Hall estate. Belongs to houses, live quest actors, banquet feasts, and starlit bonfires.",
-        logo: "https://www.google.com/s2/favicons?domain=mysticfateevents.co.uk&sz=128",
+        logo: "img/logos/mystic-fate.png",
         instagramUrl: "https://www.instagram.com/mysticfateuk",
         tiktokUrl: "https://www.tiktok.com/@mysticfateuk"
       }
