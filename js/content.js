@@ -2930,7 +2930,7 @@ window.CONTENT = {
         location: "Royal National Hotel, Russell Square, London",
         mapUrl: "https://maps.google.com/?q=Royal+National+Hotel+38+Bedford+Way+London+WC1H+0DG",
         description: "London's dedicated retro video games and collectables market running for 11+ years. Specialist traders selling vintage consoles, cartridges (NES, SNES, N64, Game Boy, PS1/PS2), Japanese imports, arcade goods & Bitmap Books.",
-        logo: "https://www.google.com/s2/favicons?domain=www.londongamingmarket.com&sz=128",
+        logo: "img/logos/london-gaming-market.jpg",
         facebookUrl: "https://www.facebook.com/londongamingmarket",
         twitterUrl: "https://twitter.com/londongamingmkt"
       },
@@ -3230,7 +3230,7 @@ window.CONTENT = {
         location: "Royal National Hotel, Russell Square, London",
         mapUrl: "https://maps.google.com/?q=Royal+National+Hotel+38+Bedford+Way+London+WC1H+0DG",
         description: "Autumn edition of London's premier retro gaming market at the Royal National Hotel with dozens of vintage console and classic video game vendors.",
-        logo: "https://www.google.com/s2/favicons?domain=www.londongamingmarket.com&sz=128",
+        logo: "img/logos/london-gaming-market.jpg",
         facebookUrl: "https://www.facebook.com/londongamingmarket",
         twitterUrl: "https://twitter.com/londongamingmkt"
       },
