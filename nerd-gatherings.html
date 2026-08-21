@@ -99,7 +99,7 @@
 
     .page-header {
       text-align: center;
-      margin-bottom: var(--space-7);
+      margin-bottom: var(--space-5);
     }
 
     .page-tag {
@@ -131,6 +131,79 @@
       max-width: 820px;
       margin: 0 auto;
       line-height: 1.6;
+    }
+
+    /* ─── Host Filter Bar ─────────────────────────────── */
+    .host-filter-section {
+      margin: var(--space-4) auto var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .filter-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--muted-2);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .host-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface-2);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      font-family: inherit;
+    }
+
+    .filter-btn:hover {
+      background: var(--surface-3);
+      border-color: var(--gold);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .filter-btn.active {
+      background: var(--gold);
+      color: #1a1320;
+      font-weight: 700;
+      border-color: var(--gold);
+      box-shadow: 0 2px 10px rgba(230, 169, 121, 0.35);
+    }
+
+    .filter-count {
+      font-size: 0.74rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    .filter-btn.active .filter-count {
+      background: rgba(26, 19, 32, 0.25);
+      color: #1a1320;
     }
 
     /* ─── Seasonal Timeline Sections ──────────────── */
@@ -281,6 +354,16 @@
       padding: 3px 12px;
       border-radius: 999px;
       border: 1px solid rgba(230, 169, 121, 0.3);
+    }
+
+    .host-pill {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #9aa8fc;
+      background: rgba(88, 101, 242, 0.12);
+      padding: 3px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(88, 101, 242, 0.25);
     }
 
     .month-pill {
@@ -546,6 +629,14 @@
         <p class="page-subtitle" id="section-subtitle">Chronological roadmap of major UK comic cons, fantasy balls, video game expos, tabletop conventions, and Discord communities.</p>
       </div>
 
+      <!-- Host Filter Navigation -->
+      <div class="host-filter-section">
+        <span class="filter-label">Filter by Event Host / Series:</span>
+        <nav class="host-filter-bar" id="host-filter-bar" aria-label="Filter events by host">
+          <!-- Dynamically populated buttons with counts -->
+        </nav>
+      </div>
+
       <div class="gatherings-timeline" id="timeline-container">
         <!-- Injected via JavaScript by Season -->
       </div>
@@ -602,6 +693,123 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    let currentHost = 'all';
+
+    function initFilters() {
+      const data = window.CONTENT && window.CONTENT.nerdGatherings;
+      if (!data || !data.items) return;
+
+      const filterBar = document.getElementById('host-filter-bar');
+      const items = data.items;
+
+      // Group items by host
+      const hostCounts = {};
+      const hostNames = {};
+
+      items.forEach(item => {
+        const h = item.host || 'other';
+        const name = item.hostName || item.host || 'Other';
+        hostCounts[h] = (hostCounts[h] || 0) + 1;
+        hostNames[h] = name;
+      });
+
+      // Preferred display ordering of hosts (MCM Comic Con & EGX prioritized)
+      const preferredOrder = [
+        'all',
+        'mcm-egx',
+        'fantasy-forest',
+        'gauntlets-gowns',
+        'mystic-fate',
+        'moonshine-adventure',
+        'showmasters',
+        'animeleague',
+        'fae-club',
+        'ukge',
+        'airecon',
+        'hyper-japan',
+        'megacon',
+        'dragonmeet',
+        'london-hackspace'
+      ];
+
+      const hostIcons = {
+        'all': '✨',
+        'mcm-egx': '🎭',
+        'fantasy-forest': '🌲',
+        'gauntlets-gowns': '⚔️',
+        'mystic-fate': '🔮',
+        'moonshine-adventure': '🐉',
+        'showmasters': '💥',
+        'animeleague': '🎮',
+        'fae-club': '🧚',
+        'ukge': '♟️',
+        'airecon': '🎲',
+        'hyper-japan': '🌸',
+        'megacon': '🚀',
+        'dragonmeet': '🧙',
+        'london-hackspace': '⚡'
+      };
+
+      // Check URL hash for initial filter (e.g. #mcm-egx)
+      const hash = window.location.hash ? window.location.hash.replace('#', '').toLowerCase() : '';
+      if (hash && (hostCounts[hash] || hash === 'all')) {
+        currentHost = hash;
+      }
+
+      // Collect available host keys
+      const availableHosts = ['all'];
+      preferredOrder.forEach(k => {
+        if (k !== 'all' && hostCounts[k] && !availableHosts.includes(k)) {
+          availableHosts.push(k);
+        }
+      });
+      Object.keys(hostCounts).forEach(k => {
+        if (!availableHosts.includes(k)) availableHosts.push(k);
+      });
+
+      filterBar.innerHTML = availableHosts.map(hostKey => {
+        const isAll = hostKey === 'all';
+        const count = isAll ? items.length : (hostCounts[hostKey] || 0);
+        const name = isAll ? 'All Events' : (hostNames[hostKey] || hostKey);
+        const icon = hostIcons[hostKey] || '🎟️';
+        const isActive = hostKey === currentHost ? 'active' : '';
+
+        return `
+          <button type="button" class="filter-btn ${isActive}" data-host="${hostKey}">
+            <span>${icon} ${name}</span>
+            <span class="filter-count">${count}</span>
+          </button>
+        `;
+      }).join('');
+
+      // Add click listeners to filter buttons
+      filterBar.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const host = btn.getAttribute('data-host');
+          setHostFilter(host);
+        });
+      });
+    }
+
+    function setHostFilter(host) {
+      currentHost = host;
+      if (window.history && window.history.replaceState) {
+        if (host === 'all') {
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        } else {
+          history.replaceState(null, '', '#' + host);
+        }
+      }
+      document.querySelectorAll('#host-filter-bar .filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-host') === host) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      renderGatherings();
+    }
+
     function renderGatherings() {
       const data = window.CONTENT && window.CONTENT.nerdGatherings;
       const container = document.getElementById('timeline-container');
@@ -614,6 +822,23 @@
       if (data.tag) document.getElementById('section-tag').textContent = data.tag;
       if (data.title) document.getElementById('section-title').textContent = data.title;
       if (data.subtitle) document.getElementById('section-subtitle').textContent = data.subtitle;
+
+      // Filter items based on current active host
+      const filteredItems = currentHost === 'all'
+        ? data.items
+        : data.items.filter(item => item.host === currentHost);
+
+      if (filteredItems.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <p style="font-size:1.1rem; margin-bottom:12px;">No gatherings found for the selected host.</p>
+            <button type="button" onclick="setHostFilter('all')" class="btn-action btn-primary" style="display:inline-flex;">
+              <span>✨ View All Events</span>
+            </button>
+          </div>
+        `;
+        return;
+      }
 
       // Group items by Season
       const seasonOrder = [
@@ -635,7 +860,7 @@
       };
 
       const grouped = {};
-      data.items.forEach(item => {
+      filteredItems.forEach(item => {
         const s = item.season || "Upcoming Events";
         if (!grouped[s]) grouped[s] = [];
         grouped[s].push(item);
@@ -752,6 +977,7 @@
                 <div class="card-body-col">
                   <div class="card-header-meta">
                     <span class="category-badge">${item.category || 'Gathering'}</span>
+                    ${item.hostName ? `<span class="host-pill">🎪 ${item.hostName}</span>` : ''}
                     ${item.month ? `<span class="month-pill">📅 ${item.month}</span>` : ''}
                     ${statusBadge}
                   </div>
@@ -795,7 +1021,10 @@
       }).join('');
     }
 
-    document.addEventListener('DOMContentLoaded', renderGatherings);
+    document.addEventListener('DOMContentLoaded', () => {
+      initFilters();
+      renderGatherings();
+    });
   </script>
 </body>
 </html>

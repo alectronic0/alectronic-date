@@ -2892,6 +2892,8 @@ window.CONTENT = {
     items: [
       {
         name: "London Hackspace — Weekly Open Night",
+        host: "london-hackspace",
+        hostName: "London Hackspace",
         url: "https://london.hackspace.org.uk/",
         category: "Tech & Maker Socials",
         status: "Active",
@@ -2912,6 +2914,8 @@ window.CONTENT = {
       },
       {
         name: "London Anime & Gaming Con (Summer 2026)",
+        host: "animeleague",
+        hostName: "Animeleague",
         url: "https://www.londonanimecon.com/",
         category: "Conventions & Expos",
         status: "Upcoming",
@@ -2933,6 +2937,8 @@ window.CONTENT = {
       },
       {
         name: "Fantasy Forest: Libertalia 2026",
+        host: "fantasy-forest",
+        hostName: "Fantasy Forest",
         url: "https://fantasyforest.co.uk/libertalia/",
         category: "Fantasy Balls & Festivals",
         status: "Upcoming",
@@ -2955,6 +2961,8 @@ window.CONTENT = {
       },
       {
         name: "Mystic Fate — The Arcane Adventurers Ball",
+        host: "mystic-fate",
+        hostName: "Mystic Fate",
         url: "https://mysticfateevents.co.uk/",
         category: "Fantasy Balls & Festivals",
         status: "Upcoming",
@@ -2975,6 +2983,8 @@ window.CONTENT = {
       },
       {
         name: "The Moonshine Adventure Company (Whitby D&D Retreat)",
+        host: "moonshine-adventure",
+        hostName: "Moonshine Adventure",
         url: "https://www.moonshineadventure.co.uk/",
         category: "TTRPG & Castle Retreats",
         status: "Upcoming",
@@ -2996,6 +3006,8 @@ window.CONTENT = {
       },
       {
         name: "London Comic Mart (Autumn 2026)",
+        host: "showmasters",
+        hostName: "Showmasters / Comic Mart",
         url: "https://www.londoncomicmart.co.uk/",
         category: "Conventions & Expos",
         status: "Upcoming",
@@ -3016,6 +3028,8 @@ window.CONTENT = {
       },
       {
         name: "MCM Comic Con London (Autumn 2026)",
+        host: "mcm-egx",
+        hostName: "MCM Comic Con & EGX",
         url: "https://www.mcmcomiccon.com/london/en-us.html",
         category: "Conventions & Expos",
         status: "Upcoming",
@@ -3040,6 +3054,8 @@ window.CONTENT = {
       },
       {
         name: "EGX @ MCM Comic Con London",
+        host: "mcm-egx",
+        hostName: "MCM Comic Con & EGX",
         url: "https://www.egx.net/",
         category: "Conventions & Expos",
         status: "Upcoming",
@@ -3061,6 +3077,8 @@ window.CONTENT = {
       },
       {
         name: "Gauntlets & Gowns — The Ball of Undying Vows",
+        host: "gauntlets-gowns",
+        hostName: "Gauntlets & Gowns",
         url: "https://gauntletsandgownsevents.com/",
         category: "Fantasy Balls & Festivals",
         status: "Upcoming",
@@ -3081,6 +3099,8 @@ window.CONTENT = {
       },
       {
         name: "Dragonmeet 2026",
+        host: "dragonmeet",
+        hostName: "Dragonmeet",
         url: "https://www.dragonmeet.co.uk/",
         category: "Conventions & Expos",
         status: "Upcoming",
@@ -3102,6 +3122,8 @@ window.CONTENT = {
       },
       {
         name: "MegaCon Live London 2027",
+        host: "megacon",
+        hostName: "MegaCon Live",
         url: "https://megaconlive.com/london/",
         category: "Conventions & Expos",
         status: "Upcoming",
@@ -3124,6 +3146,8 @@ window.CONTENT = {
       },
       {
         name: "Gauntlets & Gowns — The Frost Faerie Ball",
+        host: "gauntlets-gowns",
+        hostName: "Gauntlets & Gowns",
         url: "https://gauntletsandgownsevents.com/",
         category: "Fantasy Balls & Festivals",
         status: "Upcoming",
@@ -3144,6 +3168,8 @@ window.CONTENT = {
       },
       {
         name: "AireCon 2027 (Analogue Gaming Con)",
+        host: "airecon",
+        hostName: "AireCon",
         url: "https://www.airecon.co.uk/",
         category: "Conventions & Expos",
         status: "Upcoming",
@@ -3166,6 +3192,8 @@ window.CONTENT = {
       },
       {
         name: "Fae Club — Seasonal Fantasy Balls & Gatherings",
+        host: "fae-club",
+        hostName: "Fae Club",
         url: "https://www.fa3club.com/",
         category: "Fantasy Balls & Festivals",
         status: "Upcoming",
@@ -3188,6 +3216,8 @@ window.CONTENT = {
       },
       {
         name: "Mystic Fate — The Eternal Throne Ball",
+        host: "mystic-fate",
+        hostName: "Mystic Fate",
         url: "https://mysticfateevents.co.uk/",
         category: "Fantasy Balls & Festivals",
         status: "Upcoming",
@@ -3208,6 +3238,8 @@ window.CONTENT = {
       },
       {
         name: "The Moonshine Adventure Co (St Briavels Castle D&D)",
+        host: "moonshine-adventure",
+        hostName: "Moonshine Adventure",
         url: "https://www.moonshineadventure.co.uk/",
         category: "TTRPG & Castle Retreats",
         status: "Upcoming",
@@ -3229,6 +3261,8 @@ window.CONTENT = {
       },
       {
         name: "UK Games Expo (UKGE 2027)",
+        host: "ukge",
+        hostName: "UK Games Expo",
         url: "https://www.ukgamesexpo.co.uk/",
         category: "Conventions & Expos",
         status: "Upcoming",
@@ -3252,6 +3286,8 @@ window.CONTENT = {
       },
       {
         name: "Fantasy Forest Festival 2027",
+        host: "fantasy-forest",
+        hostName: "Fantasy Forest",
         url: "https://fantasyforest.co.uk/",
         category: "Fantasy Balls & Festivals",
         status: "Upcoming",
@@ -3274,6 +3310,8 @@ window.CONTENT = {
       },
       {
         name: "Hyper Japan Festival 2027",
+        host: "hyper-japan",
+        hostName: "Hyper Japan",
         url: "https://hyperjapan.co.uk/",
         category: "Conventions & Expos",
         status: "Upcoming",
@@ -3297,6 +3335,8 @@ window.CONTENT = {
       },
       {
         name: "London Film & Comic Con (LFCC 2027)",
+        host: "showmasters",
+        hostName: "Showmasters / Comic Mart",
         url: "https://londonfilmandcomiccon.com/",
         category: "Conventions & Expos",
         status: "Upcoming",
