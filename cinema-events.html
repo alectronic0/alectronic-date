@@ -680,21 +680,21 @@
         <a href="london-activities.html" class="back-link" style="color: var(--gold);" aria-label="London Activities">🎡 Activities</a>
         <a href="book-workshops.html" class="back-link" style="color: var(--mint);" aria-label="Workshops">🏺 Workshops</a>
         <a href="ideas.html" class="back-link" style="color: var(--rose-light);" aria-label="Date Ideas">💡 Ideas</a>
-        <a href="nerd-gatherings.html" class="back-link" style="color: var(--accent-light); font-weight: 700;" aria-label="Gatherings">🥂 Gatherings</a>
-        <a href="cinema-events.html" class="back-link" style="color: #f4c06e;" aria-label="Cinema">🎬 Cinema</a>
+        <a href="nerd-gatherings.html" class="back-link" style="color: var(--accent-light);" aria-label="Gatherings">🥂 Gatherings</a>
+        <a href="cinema-events.html" class="back-link" style="color: var(--gold); font-weight: 700;" aria-label="Cinema">🎬 Cinema</a>
       </div>
     </header>
 
     <main class="page-main">
       <div class="page-header">
-        <span class="page-tag" id="section-tag">👾 Event Radar & Timeline</span>
-        <h1 class="page-title" id="section-title">Nerd Gatherings, Cons & Fantasy Balls</h1>
-        <p class="page-subtitle" id="section-subtitle">Chronological roadmap of major UK comic cons, fantasy balls, video game expos, tabletop conventions, and Discord communities.</p>
+        <span class="page-tag" id="section-tag">🎬 Pop-Ups, Rooftops & Immersive Screenings</span>
+        <h1 class="page-title" id="section-title">Cinema Events, Rooftops & Immersive Screenings</h1>
+        <p class="page-subtitle" id="section-subtitle">Curated London & UK guide to open-air rooftop cinemas, immersive multi-course dining films, castle estate screenings, and rooftop cultural playgrounds.</p>
       </div>
 
       <!-- Host Filter Navigation -->
       <div class="host-filter-section">
-        <span class="filter-label">Filter by Host / Series:</span>
+        <span class="filter-label">Filter by Provider / Cinema:</span>
         <nav class="host-filter-bar" id="host-filter-bar" aria-label="Filter events by host">
           <!-- Dynamically populated icon buttons with counts -->
         </nav>
@@ -759,81 +759,75 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    let currentHost = 'all';
+    let currentProvider = 'all';
 
-    function initFilters() {
-      const data = window.CONTENT && window.CONTENT.nerdGatherings;
+    function initGatherings() {
+      const data = window.CONTENT && window.CONTENT.cinemaEvents;
       if (!data || !data.items) return;
 
-      const filterBar = document.getElementById('host-filter-bar');
-      const items = data.items;
-
-      // Group items by host and extract primary logo
-      const hostCounts = {};
-      const hostNames = {};
-      const hostLogos = {};
-
-      items.forEach(item => {
-        const h = item.host || 'other';
-        const name = item.hostName || item.host || 'Other';
-        hostCounts[h] = (hostCounts[h] || 0) + 1;
-        hostNames[h] = name;
-        if (!hostLogos[h] && item.logo) {
-          hostLogos[h] = item.logo;
-        }
-      });
-
-      // Preferred display ordering of hosts (MCM Comic Con & EGX prioritized)
-      const preferredOrder = [
-        'all',
-        'mcm-egx',
-        'fantasy-forest',
-        'gauntlets-gowns',
-        'mystic-fate',
-        'moonshine-adventure',
-        'showmasters',
-        'london-gaming-market',
-        'sexy-nerds',
-        'animeleague',
-        'fae-club',
-        'ukge',
-        'airecon',
-        'hyper-japan',
-        'megacon',
-        'dragonmeet',
-        'london-hackspace'
-      ];
-
-      // Check URL hash for initial filter (e.g. #mcm-egx)
-      const hash = window.location.hash ? window.location.hash.replace('#', '').toLowerCase() : '';
-      if (hash && (hostCounts[hash] || hash === 'all')) {
-        currentHost = hash;
+      if (data.title) {
+        document.getElementById('section-title').textContent = data.title;
+      }
+      if (data.subtitle) {
+        document.getElementById('section-subtitle').textContent = data.subtitle;
       }
 
-      // Collect available host keys
-      const availableHosts = ['all'];
-      preferredOrder.forEach(k => {
-        if (k !== 'all' && hostCounts[k] && !availableHosts.includes(k)) {
-          availableHosts.push(k);
+      initFilters(data.items);
+      renderTimeline(data.items);
+    }
+
+    function initFilters(items) {
+      const filterBar = document.getElementById('host-filter-bar');
+      const providerCounts = {};
+      const providerNames = {};
+      const providerLogos = {};
+
+      items.forEach(item => {
+        const p = item.provider || 'other';
+        const name = item.providerName || item.provider || 'Other';
+        providerCounts[p] = (providerCounts[p] || 0) + 1;
+        providerNames[p] = name;
+        if (!providerLogos[p] && item.logo) {
+          providerLogos[p] = item.logo;
         }
       });
-      Object.keys(hostCounts).forEach(k => {
-        if (!availableHosts.includes(k)) availableHosts.push(k);
+
+      const preferredOrder = [
+        'all',
+        'taste-film',
+        'rooftop-film-club',
+        'roof-east',
+        'adventure-cinema'
+      ];
+
+      const hash = window.location.hash ? window.location.hash.replace('#', '').toLowerCase() : '';
+      if (hash && (providerCounts[hash] || hash === 'all')) {
+        currentProvider = hash;
+      }
+
+      const availableProviders = ['all'];
+      preferredOrder.forEach(k => {
+        if (k !== 'all' && providerCounts[k] && !availableProviders.includes(k)) {
+          availableProviders.push(k);
+        }
+      });
+      Object.keys(providerCounts).forEach(k => {
+        if (!availableProviders.includes(k)) availableProviders.push(k);
       });
 
-      filterBar.innerHTML = availableHosts.map(hostKey => {
-        const isAll = hostKey === 'all';
-        const count = isAll ? items.length : (hostCounts[hostKey] || 0);
-        const name = isAll ? 'All Gatherings' : (hostNames[hostKey] || hostKey);
-        const logo = hostLogos[hostKey];
-        const isActive = hostKey === currentHost ? 'active' : '';
+      filterBar.innerHTML = availableProviders.map(providerKey => {
+        const isAll = providerKey === 'all';
+        const count = isAll ? items.length : (providerCounts[providerKey] || 0);
+        const name = isAll ? 'All Cinema Experiences' : (providerNames[providerKey] || providerKey);
+        const logo = providerLogos[providerKey];
+        const isActive = providerKey === currentProvider ? 'active' : '';
 
         const iconContent = isAll
           ? `<div class="filter-icon-all"><span>✨</span><span style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.5px;">ALL</span></div>`
           : `<img src="${logo || 'favicon.svg'}" alt="${name}" class="filter-icon-img" loading="lazy" onerror="this.src='favicon.svg'">`;
 
         return `
-          <button type="button" class="filter-icon-btn ${isActive}" data-host="${hostKey}" title="${name} (${count} ${count === 1 ? 'event' : 'events'})" aria-label="Filter by ${name}">
+          <button type="button" class="filter-icon-btn ${isActive}" data-provider="${providerKey}" title="${name} (${count} ${count === 1 ? 'experience' : 'experiences'})" aria-label="Filter by ${name}">
             <div class="filter-icon-box">
               ${iconContent}
             </div>
@@ -842,271 +836,236 @@
         `;
       }).join('');
 
-      // Add click listeners to filter buttons
       filterBar.querySelectorAll('.filter-icon-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          const host = btn.getAttribute('data-host');
-          setHostFilter(host);
+          const target = btn.dataset.provider;
+          setProviderFilter(target, items);
         });
       });
 
-      updateFilterStatusText(items, hostNames);
+      updateFilterStatusText(currentProvider, providerNames, items.length, providerCounts);
     }
 
-    function updateFilterStatusText(items, hostNames) {
-      const statusEl = document.getElementById('filter-active-status');
-      if (!statusEl) return;
+    function setProviderFilter(providerKey, items) {
+      currentProvider = providerKey;
 
-      const isAll = currentHost === 'all';
-      const name = isAll ? 'All Gatherings' : (hostNames && hostNames[currentHost] ? hostNames[currentHost] : currentHost);
-      const count = isAll
-        ? (items ? items.length : 0)
-        : (items ? items.filter(i => i.host === currentHost).length : 0);
-
-      statusEl.innerHTML = `Showing: <span class="filter-active-name">${name}</span> &middot; <span>${count} ${count === 1 ? 'Event' : 'Events'}</span>`;
-    }
-
-    function setHostFilter(host) {
-      currentHost = host;
-      if (window.history && window.history.replaceState) {
-        if (host === 'all') {
-          history.replaceState(null, '', window.location.pathname + window.location.search);
-        } else {
-          history.replaceState(null, '', '#' + host);
-        }
+      if (providerKey === 'all') {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      } else {
+        history.replaceState(null, '', '#' + providerKey);
       }
-      document.querySelectorAll('#host-filter-bar .filter-icon-btn').forEach(btn => {
-        if (btn.getAttribute('data-host') === host) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
+
+      document.querySelectorAll('.host-filter-bar .filter-icon-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.provider === providerKey);
       });
 
-      const data = window.CONTENT && window.CONTENT.nerdGatherings;
-      const hostNames = {};
-      if (data && data.items) {
-        data.items.forEach(i => { if (i.host) hostNames[i.host] = i.hostName; });
-        updateFilterStatusText(data.items, hostNames);
-      }
+      const providerCounts = {};
+      const providerNames = {};
+      items.forEach(item => {
+        const p = item.provider || 'other';
+        providerCounts[p] = (providerCounts[p] || 0) + 1;
+        providerNames[p] = item.providerName || p;
+      });
 
-      renderGatherings();
+      updateFilterStatusText(providerKey, providerNames, items.length, providerCounts);
+      renderTimeline(items);
     }
 
-    function renderGatherings() {
-      const data = window.CONTENT && window.CONTENT.nerdGatherings;
-      const container = document.getElementById('timeline-container');
-
-      if (!data || !data.items || data.items.length === 0) {
-        container.innerHTML = '<div class="empty-state">No gatherings listed yet. Check back soon!</div>';
-        return;
+    function updateFilterStatusText(providerKey, providerNames, totalCount, providerCounts) {
+      const statusSpan = document.getElementById('filter-status-text') || document.getElementById('filter-active-status');
+      if (providerKey === 'all') {
+        statusSpan.innerHTML = `Showing: <strong style="color: var(--gold);">All Cinema Experiences</strong> &middot; ${totalCount} Locations &amp; Screenings`;
+      } else {
+        const count = providerCounts[providerKey] || 0;
+        const name = providerNames[providerKey] || providerKey;
+        statusSpan.innerHTML = `Showing: <strong style="color: var(--gold);">${name}</strong> &middot; ${count} ${count === 1 ? 'Location &amp; Event' : 'Locations &amp; Events'}`;
       }
+    }
 
-      if (data.tag) document.getElementById('section-tag').textContent = data.tag;
-      if (data.title) document.getElementById('section-title').textContent = data.title;
-      if (data.subtitle) document.getElementById('section-subtitle').textContent = data.subtitle;
+    function renderTimeline(items) {
+      const container = document.getElementById('timeline-container');
+      
+      const filtered = currentProvider === 'all'
+        ? items
+        : items.filter(item => (item.provider || 'other') === currentProvider);
 
-      // Filter items based on current active host
-      const filteredItems = currentHost === 'all'
-        ? data.items
-        : data.items.filter(item => item.host === currentHost);
-
-      if (filteredItems.length === 0) {
+      if (filtered.length === 0) {
         container.innerHTML = `
-          <div class="empty-state">
-            <p style="font-size:1.1rem; margin-bottom:12px;">No gatherings found for the selected host.</p>
-            <button type="button" onclick="setHostFilter('all')" class="btn-action btn-primary" style="display:inline-flex;">
-              <span>✨ View All Events</span>
-            </button>
+          <div style="text-align: center; padding: 4rem 1rem; color: var(--muted);">
+            <p style="font-size: 1.15rem; font-weight: 600;">No cinema experiences found for this filter.</p>
+            <button onclick="setProviderFilter('all', window.CONTENT.cinemaEvents.items)" class="btn-action btn-primary" style="margin-top: 1rem;">Show All Experiences</button>
           </div>
         `;
         return;
       }
 
-      // Group items by Season
-      const seasonOrder = [
-        "Ongoing & Weekly",
-        "Summer '26",
-        "Autumn '26",
-        "Winter '26 / '27",
-        "Spring '27",
-        "Summer '27"
+      const categories = [
+        'Immersive Dining Cinema',
+        'Skyline Rooftop Cinema',
+        'Rooftop Cultural Playgrounds',
+        'Castles & Historic Open Air'
       ];
 
-      const seasonIcons = {
-        "Ongoing & Weekly": "⚡",
-        "Summer '26": "☀️",
-        "Autumn '26": "🍂",
-        "Winter '26 / '27": "❄️",
-        "Spring '27": "🌸",
-        "Summer '27": "☀️"
+      const categoryIcons = {
+        'Immersive Dining Cinema': '🍷',
+        'Skyline Rooftop Cinema': '🌆',
+        'Rooftop Cultural Playgrounds': '🎡',
+        'Castles & Historic Open Air': '🏰'
       };
 
-      const grouped = {};
-      filteredItems.forEach(item => {
-        const s = item.season || "Upcoming Events";
-        if (!grouped[s]) grouped[s] = [];
-        grouped[s].push(item);
-      });
+      let html = '';
 
-      // Sort within each season by sortOrder
-      Object.keys(grouped).forEach(s => {
-        grouped[s].sort((a, b) => (a.sortOrder || 99) - (b.sortOrder || 99));
-      });
+      categories.forEach(cat => {
+        const catItems = filtered.filter(it => it.category === cat);
+        if (catItems.length === 0) return;
 
-      // Render sections in order
-      const seasonsToRender = seasonOrder.filter(s => grouped[s] && grouped[s].length > 0);
-      Object.keys(grouped).forEach(s => {
-        if (!seasonsToRender.includes(s)) seasonsToRender.push(s);
-      });
+        const icon = categoryIcons[cat] || '🎬';
 
-      container.innerHTML = seasonsToRender.map(seasonKey => {
-        const items = grouped[seasonKey];
-        const icon = seasonIcons[seasonKey] || "🗓️";
-
-        const cardsMarkup = items.map(item => {
-          // Status Badge
-          const statusBadge = item.status === 'Active'
-            ? '<span class="status-badge status-active">🟢 Active / Open</span>'
-            : '<span class="status-badge status-upcoming">🎯 Upcoming Date</span>';
-
-          // Favicon / Logo with fallback
-          const logoSrc = item.logo || `https://www.google.com/s2/favicons?domain=${new URL(item.url).hostname}&sz=128`;
-
-          // Primary Button Label & Icon
-          const isFree = item.price && item.price.toLowerCase().includes('free');
-          const primaryBtnLabel = isFree ? 'Official Website ↗' : 'Buy Tickets & Official Info ↗';
-          const primaryBtnIcon = isFree ? '#icon-globe' : '#icon-ticket';
-
-          // Discord CTA button (ONLY rendered if valid discordUrl exists)
-          let discordBtnMarkup = '';
-          if (item.discordUrl && item.discordUrl.trim()) {
-            discordBtnMarkup = `
-              <a href="${item.discordUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-discord" aria-label="Join ${item.name} Discord">
-                <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-discord"/></svg>
-                <span>Join Discord ↗</span>
-              </a>
-            `;
-          }
-
-          // Standardized Social Media Buttons (ONLY rendered if valid URL exists)
-          let socialBtns = [];
-          if (item.instagramUrl && item.instagramUrl.trim()) {
-            socialBtns.push(`
-              <a href="${item.instagramUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on Instagram" title="Instagram">
-                <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-instagram"/></svg>
-                <span>Instagram</span>
-              </a>
-            `);
-          }
-          if (item.tiktokUrl && item.tiktokUrl.trim()) {
-            socialBtns.push(`
-              <a href="${item.tiktokUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on TikTok" title="TikTok">
-                <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-tiktok"/></svg>
-                <span>TikTok</span>
-              </a>
-            `);
-          }
-          if (item.facebookUrl && item.facebookUrl.trim()) {
-            socialBtns.push(`
-              <a href="${item.facebookUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on Facebook" title="Facebook">
-                <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-facebook"/></svg>
-                <span>Facebook</span>
-              </a>
-            `);
-          }
-          if (item.twitterUrl && item.twitterUrl.trim()) {
-            socialBtns.push(`
-              <a href="${item.twitterUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on X / Twitter" title="X / Twitter">
-                <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-twitter"/></svg>
-                <span>𝕏 / Twitter</span>
-              </a>
-            `);
-          }
-          if (item.youtubeUrl && item.youtubeUrl.trim()) {
-            socialBtns.push(`
-              <a href="${item.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on YouTube" title="YouTube">
-                <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-youtube"/></svg>
-                <span>YouTube</span>
-              </a>
-            `);
-          }
-
-          const socialMarkup = socialBtns.length > 0
-            ? `<div class="social-group">${socialBtns.join('')}</div>`
-            : '';
-
-          // Google Maps location link
-          const mapLink = item.mapUrl
-            ? `<a href="${item.mapUrl}" target="_blank" rel="noopener noreferrer" class="card-meta-item meta-map-link" aria-label="Open ${item.location} in Google Maps" title="Open in Google Maps">
-                <svg class="btn-icon-svg" style="width:15px; height:15px; color:var(--gold);" viewBox="0 0 24 24"><use href="#icon-pin"/></svg>
-                <span>${item.location} ↗</span>
-              </a>`
-            : (item.location ? `<span class="card-meta-item">📍 ${item.location}</span>` : '');
-
-          return `
-            <article class="event-card">
-              <!-- Top Row: Logo & Date | Details -->
-              <div class="card-main-row">
-                <!-- Left: Logo & Date Block (White badge for maximum accessibility) -->
-                <div class="card-left-col">
-                  <div class="card-logo-box">
-                    <img src="${logoSrc}" alt="${item.name} logo" class="card-logo" loading="lazy" onerror="this.src='favicon.svg'">
-                  </div>
-                  <span class="card-date-badge">${item.dateBadge || 'TBD'}</span>
-                </div>
-
-                <!-- Right: Details -->
-                <div class="card-body-col">
-                  <div class="card-header-meta">
-                    <span class="category-badge">${item.category || 'Gathering'}</span>
-                    ${item.hostName ? `<span class="host-pill">🎪 ${item.hostName}</span>` : ''}
-                    ${item.month ? `<span class="month-pill">📅 ${item.month}</span>` : ''}
-                    ${statusBadge}
-                  </div>
-
-                  <h2 class="card-title">${item.name}</h2>
-
-                  <div class="card-meta-grid">
-                    ${item.timing ? `<span class="card-meta-item">🗓️ ${item.timing}</span>` : ''}
-                    ${mapLink}
-                    ${item.price ? `<span class="card-meta-item card-price-pill">🎟️ ${item.price}</span>` : ''}
-                  </div>
-
-                  <p class="card-desc">${item.description || ''}</p>
-                </div>
-              </div>
-
-              <!-- Bottom Row: Standardized Action Bar -->
-              <div class="card-action-bar">
-                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn-action btn-primary" aria-label="${primaryBtnLabel} for ${item.name}">
-                  <svg class="btn-icon-svg" style="fill: #1a1320;" viewBox="0 0 24 24"><use href="${primaryBtnIcon}"/></svg>
-                  <span>${primaryBtnLabel}</span>
-                </a>
-                ${discordBtnMarkup}
-                ${socialMarkup}
-              </div>
-            </article>
-          `;
-        }).join('');
-
-        return `
-          <section class="season-section">
+        html += `
+          <section class="season-section" data-category="${cat}">
             <div class="season-header">
-              <h2 class="season-title">${icon} ${seasonKey}</h2>
-              <span class="season-badge">${items.length} ${items.length === 1 ? 'Event' : 'Events'}</span>
+              <h2 class="season-title">${icon} ${cat}</h2>
+              <span class="season-badge">${catItems.length} ${catItems.length === 1 ? 'Experience' : 'Experiences'}</span>
             </div>
             <div class="season-cards">
-              ${cardsMarkup}
+              ${catItems.map(item => renderSingleCard(item)).join('')}
             </div>
           </section>
         `;
-      }).join('');
+      });
+
+      container.innerHTML = html;
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      initFilters();
-      renderGatherings();
+    function renderSingleCard(item) {
+      const websiteLabel = item.provider === 'taste-film'
+        ? 'Book Tickets & Menus ↗'
+        : 'Book Tickets & Info ↗';
+
+      const filmsChipsHtml = item.showingFilms && item.showingFilms.length > 0
+        ? `
+          <div style="background: rgba(0, 0, 0, 0.28); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 12px; padding: 0.75rem 0.9rem; margin-top: 0.35rem;">
+            <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gold); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.35rem;"><span>🍿</span> What's Showing &amp; Experiences</div>
+            <div style="display: flex; gap: 0.45rem; flex-wrap: wrap;">
+              ${item.showingFilms.map(film => `<span style="font-size: 0.75rem; font-weight: 600; color: #ede6f2; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); padding: 0.25rem 0.6rem; border-radius: 6px;">🎬 ${film}</span>`).join('')}
+            </div>
+          </div>
+        `
+        : '';
+
+      let socialBtns = [];
+      if (item.instagramUrl && item.instagramUrl.trim()) {
+        socialBtns.push(`
+          <a href="${item.instagramUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on Instagram" title="Instagram">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-instagram"/></svg>
+            <span>Instagram</span>
+          </a>
+        `);
+      }
+      if (item.tiktokUrl && item.tiktokUrl.trim()) {
+        socialBtns.push(`
+          <a href="${item.tiktokUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on TikTok" title="TikTok">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-tiktok"/></svg>
+            <span>TikTok</span>
+          </a>
+        `);
+      }
+      if (item.facebookUrl && item.facebookUrl.trim()) {
+        socialBtns.push(`
+          <a href="${item.facebookUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on Facebook" title="Facebook">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-facebook"/></svg>
+            <span>Facebook</span>
+          </a>
+        `);
+      }
+      if (item.twitterUrl && item.twitterUrl.trim()) {
+        socialBtns.push(`
+          <a href="${item.twitterUrl}" target="_blank" rel="noopener noreferrer" class="btn-action btn-social" aria-label="${item.name} on X / Twitter" title="X / Twitter">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-twitter"/></svg>
+            <span>𝕏 / Twitter</span>
+          </a>
+        `);
+      }
+
+      const socialMarkup = socialBtns.length > 0
+        ? `<div class="social-group">${socialBtns.join('')}</div>`
+        : '';
+
+      const mapLink = item.mapUrl
+        ? `<a href="${item.mapUrl}" target="_blank" rel="noopener noreferrer" class="card-meta-item meta-map-link" aria-label="Open ${item.location} in Google Maps" title="Open in Google Maps">
+            <svg class="btn-icon-svg" style="width:15px; height:15px; color:var(--gold);" viewBox="0 0 24 24"><use href="#icon-pin"/></svg>
+            <span>${item.location} ↗</span>
+          </a>`
+        : (item.location ? `<span class="card-meta-item">📍 ${item.location}</span>` : '');
+
+      return `
+        <article class="event-card">
+          <!-- Top Row: Logo & Date | Details -->
+          <div class="card-main-row">
+            <!-- Left: Logo & Date Block -->
+            <div class="card-left-col">
+              <div class="card-logo-box">
+                <img src="${item.logo || 'favicon.svg'}" alt="${item.name} logo" class="card-logo" loading="lazy" onerror="this.src='favicon.svg'">
+              </div>
+              <span class="card-date-badge">${item.dateBadge || 'EVENT'}</span>
+            </div>
+
+            <!-- Right: Details -->
+            <div class="card-body-col">
+              <div class="card-header-meta">
+                <span class="category-badge">${item.category || 'Cinema'}</span>
+                ${item.providerName ? `<span class="host-pill">🎬 ${item.providerName}</span>` : ''}
+                ${item.format ? `<span class="month-pill" style="color: #ff6699; border-color: rgba(255, 51, 102, 0.25); background: rgba(255, 51, 102, 0.1);">🍿 ${item.format}</span>` : ''}
+                ${item.status ? `<span class="status-badge status-active">● ${item.status}</span>` : ''}
+              </div>
+
+              <h2 class="card-title">${item.name}</h2>
+
+              <div class="card-meta-grid">
+                ${item.timing ? `<span class="card-meta-item">🗓️ ${item.timing}</span>` : ''}
+                ${mapLink}
+                ${item.price ? `<span class="card-meta-item card-price-pill">🎟️ ${item.price}</span>` : ''}
+              </div>
+
+              <p class="card-desc">${item.description || ''}</p>
+
+              ${filmsChipsHtml}
+            </div>
+          </div>
+
+          <!-- Bottom Row: Action Bar -->
+          <div class="card-action-bar">
+            ${item.url ? `
+              <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn-action btn-primary" aria-label="${websiteLabel}">
+                <svg class="btn-icon-svg" viewBox="0 0 24 24"><use href="#icon-ticket"/></svg>
+                <span>${websiteLabel}</span>
+              </a>
+            ` : ''}
+            ${socialMarkup}
+          </div>
+        </article>
+      `;
+    }
+
+    // Boot
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof window.CONTENT !== 'undefined') {
+        initGatherings();
+      } else {
+        const checkInterval = setInterval(() => {
+          if (typeof window.CONTENT !== 'undefined') {
+            clearInterval(checkInterval);
+            initGatherings();
+          }
+        }, 50);
+      }
+    });
+
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash ? window.location.hash.replace('#', '').toLowerCase() : 'all';
+      if (window.CONTENT && window.CONTENT.cinemaEvents) {
+        setProviderFilter(hash, window.CONTENT.cinemaEvents.items);
+      }
     });
   </script>
 </body>
