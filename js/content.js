@@ -3628,9 +3628,9 @@ window.CONTENT = {
             "description": "Sing along to ABBA hits with panoramic skyline vistas across London from Peckham's iconic Bussey Building rooftop. Wireless headphones, deckchairs, wood-fired pizza, and sunset spritzes.",
             "logo": "img/logos/rooftop-film-club.png",
             "url": "https://rooftopfilmclub.com/london/peckham/",
-            "instagramUrl": "https://www.instagram.com/rooftopfilmclub",
-            "tiktokUrl": "https://www.tiktok.com/@rooftopfilmclub",
-            "facebookUrl": "https://www.facebook.com/rooftopfilmclub"
+            "instagramUrl": "https://www.instagram.com/rooftopcinemaclub/",
+            "tiktokUrl": "https://www.tiktok.com/@rooftopcinemaclub",
+            "facebookUrl": "https://www.facebook.com/RooftopCinemaClub/"
         },
         {
             "id": "rfc-stratford-breakfast-club-aug22",
@@ -3650,9 +3650,9 @@ window.CONTENT = {
             "description": "80s Brat Pack cult classic at East London's vibrant cultural rooftop. Settle into comfy deckchairs with crystal clear audio headphones overlooking Queen Elizabeth Olympic Park.",
             "logo": "img/logos/rooftop-film-club.png",
             "url": "https://rooftopfilmclub.com/london/roof-east/",
-            "instagramUrl": "https://www.instagram.com/rooftopfilmclub",
-            "tiktokUrl": "https://www.tiktok.com/@rooftopfilmclub",
-            "facebookUrl": "https://www.facebook.com/rooftopfilmclub"
+            "instagramUrl": "https://www.instagram.com/rooftopcinemaclub/",
+            "tiktokUrl": "https://www.tiktok.com/@rooftopcinemaclub",
+            "facebookUrl": "https://www.facebook.com/RooftopCinemaClub/"
         },
         {
             "id": "rfc-peckham-la-la-land-aug22",
@@ -3672,9 +3672,9 @@ window.CONTENT = {
             "description": "Emma Stone and Ryan Gosling under the real London twilight! Watch the vibrant musical on a high-spec rooftop LED screen with craft beers and rooftop cocktails.",
             "logo": "img/logos/rooftop-film-club.png",
             "url": "https://rooftopfilmclub.com/london/peckham/",
-            "instagramUrl": "https://www.instagram.com/rooftopfilmclub",
-            "tiktokUrl": "https://www.tiktok.com/@rooftopfilmclub",
-            "facebookUrl": "https://www.facebook.com/rooftopfilmclub"
+            "instagramUrl": "https://www.instagram.com/rooftopcinemaclub/",
+            "tiktokUrl": "https://www.tiktok.com/@rooftopcinemaclub",
+            "facebookUrl": "https://www.facebook.com/RooftopCinemaClub/"
         },
         {
             "id": "rfc-stratford-gatsby-aug22",
@@ -3694,9 +3694,9 @@ window.CONTENT = {
             "description": "Baz Luhrmann's dazzling Roaring Twenties spectacle with champagne, skyline views, street food, and neon lights atop Stratford's rooftop car park.",
             "logo": "img/logos/rooftop-film-club.png",
             "url": "https://rooftopfilmclub.com/london/roof-east/",
-            "instagramUrl": "https://www.instagram.com/rooftopfilmclub",
-            "tiktokUrl": "https://www.tiktok.com/@rooftopfilmclub",
-            "facebookUrl": "https://www.facebook.com/rooftopfilmclub"
+            "instagramUrl": "https://www.instagram.com/rooftopcinemaclub/",
+            "tiktokUrl": "https://www.tiktok.com/@rooftopcinemaclub",
+            "facebookUrl": "https://www.facebook.com/RooftopCinemaClub/"
         },
         {
             "id": "rfc-peckham-practical-magic-aug22",
@@ -3716,9 +3716,9 @@ window.CONTENT = {
             "description": "Midnight margaritas and 90s witchy nostalgia! Sandra Bullock and Nicole Kidman in Practical Magic with special themed cocktails overlooking the London skyline.",
             "logo": "img/logos/rooftop-film-club.png",
             "url": "https://rooftopfilmclub.com/london/peckham/",
-            "instagramUrl": "https://www.instagram.com/rooftopfilmclub",
-            "tiktokUrl": "https://www.tiktok.com/@rooftopfilmclub",
-            "facebookUrl": "https://www.facebook.com/rooftopfilmclub"
+            "instagramUrl": "https://www.instagram.com/rooftopcinemaclub/",
+            "tiktokUrl": "https://www.tiktok.com/@rooftopcinemaclub",
+            "facebookUrl": "https://www.facebook.com/RooftopCinemaClub/"
         },
         {
             "id": "rfc-stratford-sinners-aug22",
@@ -3738,9 +3738,9 @@ window.CONTENT = {
             "description": "Atmospheric late-night horror/thriller screening under the open night sky with craft beers, bao buns, and wireless sound.",
             "logo": "img/logos/rooftop-film-club.png",
             "url": "https://rooftopfilmclub.com/london/roof-east/",
-            "instagramUrl": "https://www.instagram.com/rooftopfilmclub",
-            "tiktokUrl": "https://www.tiktok.com/@rooftopfilmclub",
-            "facebookUrl": "https://www.facebook.com/rooftopfilmclub"
+            "instagramUrl": "https://www.instagram.com/rooftopcinemaclub/",
+            "tiktokUrl": "https://www.tiktok.com/@rooftopcinemaclub",
+            "facebookUrl": "https://www.facebook.com/RooftopCinemaClub/"
         },
         {
             "id": "rfc-stratford-10-things-aug23",
@@ -3760,9 +3760,9 @@ window.CONTENT = {
             "description": "Heath Ledger and Julia Stiles in the definitive 90s Shakespeare rom-com on the sunny Stratford rooftop terrace.",
             "logo": "img/logos/rooftop-film-club.png",
             "url": "https://rooftopfilmclub.com/london/roof-east/",
-            "instagramUrl": "https://www.instagram.com/rooftopfilmclub",
-            "tiktokUrl": "https://www.tiktok.com/@rooftopfilmclub",
-            "facebookUrl": "https://www.facebook.com/rooftopfilmclub"
+            "instagramUrl": "https://www.instagram.com/rooftopcinemaclub/",
+            "tiktokUrl": "https://www.tiktok.com/@rooftopcinemaclub",
+            "facebookUrl": "https://www.facebook.com/RooftopCinemaClub/"
         },
         {
             "id": "rfc-peckham-crazy-stupid-love-aug23",
@@ -3782,9 +3782,9 @@ window.CONTENT = {
             "description": "Steve Carell, Ryan Gosling, and Emma Stone in a hilarious modern rom-com with panoramic South London views.",
             "logo": "img/logos/rooftop-film-club.png",
             "url": "https://rooftopfilmclub.com/london/peckham/",
-            "instagramUrl": "https://www.instagram.com/rooftopfilmclub",
-            "tiktokUrl": "https://www.tiktok.com/@rooftopfilmclub",
-            "facebookUrl": "https://www.facebook.com/rooftopfilmclub"
+            "instagramUrl": "https://www.instagram.com/rooftopcinemaclub/",
+            "tiktokUrl": "https://www.tiktok.com/@rooftopcinemaclub",
+            "facebookUrl": "https://www.facebook.com/RooftopCinemaClub/"
         },
         {
             "id": "adv-salisbury-mamma-mia-aug29",
