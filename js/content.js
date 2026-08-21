@@ -3116,7 +3116,6 @@ window.CONTENT = {
         description: "The UK's flagship pop-culture con with massive cosplay competitions, guest panels, voice actors, Artist Alley, and co-located EGX gaming.",
         logo: "https://www.mcmcomiccon.com/content/dam/sitebuilder/rna/florida-supercon/2021/_img/graphics/shows/MCM-London-Fall.png/_jcr_content/renditions/original.image_file.134.69.file/044203571/MCM-London-Fall.png",
         instagramUrl: "https://www.instagram.com/mcmcomiccon",
-        discordUrl: "https://discord.gg/mcmcomiccon",
         facebookUrl: "https://www.facebook.com/LondonComicCon",
         tiktokUrl: "https://www.tiktok.com/@mcmcomiccon",
         twitterUrl: "https://twitter.com/MCMComicCon",
@@ -3142,7 +3141,6 @@ window.CONTENT = {
         description: "The UK's largest dedicated gaming expo co-located inside MCM London. Hands-on playable upcoming releases, indie Rezzed zone, and esports stages.",
         logo: "https://www.mcmcomiccon.com/content/dam/sitebuilder/rna/florida-supercon/2021/_img/graphics/shows/MCM-London-Fall.png/_jcr_content/renditions/original.image_file.134.69.file/044203571/MCM-London-Fall.png",
         instagramUrl: "https://www.instagram.com/egx",
-        discordUrl: "https://discord.gg/egx",
         twitterUrl: "https://twitter.com/egx"
       },
       {
@@ -3347,7 +3345,6 @@ window.CONTENT = {
         description: "One of the UK's largest and most welcoming analogue gaming conventions dedicated to open board gaming libraries, tournaments, and family games.",
         logo: "https://www.google.com/s2/favicons?domain=www.airecon.co.uk&sz=128",
         instagramUrl: "https://www.instagram.com/aireconuk",
-        discordUrl: "https://discord.gg/airecon",
         facebookUrl: "https://www.facebook.com/aireconuk",
         twitterUrl: "https://twitter.com/aireconuk"
       },
@@ -3440,7 +3437,6 @@ window.CONTENT = {
         description: "The UK's ultimate tabletop convention: giant publisher halls, hundreds of open gaming tables, D&D / RPG adventures, and tournaments.",
         logo: "https://www.google.com/s2/favicons?domain=www.ukgamesexpo.co.uk&sz=128",
         instagramUrl: "https://www.instagram.com/ukgamesexpo",
-        discordUrl: "https://discord.gg/ukgamesexpo",
         facebookUrl: "https://www.facebook.com/UKGamesExpo",
         twitterUrl: "https://twitter.com/UKGamesExpo",
         youtubeUrl: "https://www.youtube.com/@ukgamesexpo"
