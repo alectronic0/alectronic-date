@@ -2885,6 +2885,244 @@ window.CONTENT = {
     ]
   },
 
+  nerdGatherings: {
+    tag: "👾 Nerd Radar & Cons",
+    title: "Nerd Gatherings & Future Plans",
+    subtitle: "Conventions, video game tournaments, tabletop meetups, LANs, arcades, and upcoming community roadmaps.",
+    items: [
+      {
+        name: "MCM Comic Con London",
+        url: "https://www.mcmcomiccon.com/london/en-us.html",
+        category: "Conventions & Expos",
+        status: "Upcoming",
+        timing: "Bi-Annual (May & October)",
+        location: "ExCeL London",
+        description: "The UK's largest pop culture and gaming convention, featuring cosplay competitions, anime showcases, video game previews, and massive creator panels.",
+        tags: ["Comic Con", "Cosplay", "Gaming", "Anime", "ExCeL London", "Major Con"]
+      },
+      {
+        name: "WASD / EGX London",
+        url: "https://www.wasdlive.com/",
+        category: "Conventions & Expos",
+        status: "Upcoming",
+        timing: "Annual (Autumn)",
+        location: "ExCeL London / Truman Brewery",
+        description: "London's premier video games festival showcasing unreleased AAA titles, indie developer pavilions, retro gaming zones, and esports stages.",
+        tags: ["Video Games", "Indie Games", "Esports", "ExCeL London", "Gaming Festival"]
+      },
+      {
+        name: "UK Games Expo (UKGE)",
+        url: "https://www.ukgamesexpo.co.uk/",
+        category: "Conventions & Expos",
+        status: "Upcoming",
+        timing: "Annual (May / June)",
+        location: "NEC Birmingham",
+        description: "The largest tabletop games convention in the UK, featuring vast open gaming halls, massive publisher halls, tournaments, and cosplay.",
+        tags: ["Tabletop", "Board Games", "RPGs", "Tournaments", "Expo"]
+      },
+      {
+        name: "London Film & Comic Con (LFCC)",
+        url: "https://londonfilmandcomiccon.com/",
+        category: "Conventions & Expos",
+        status: "Upcoming",
+        timing: "Annual (Summer)",
+        location: "Olympia London",
+        description: "Massive convention celebrating film, TV, comics, and gaming with celebrity guests, autograph zones, retro gaming setups, and trader stalls.",
+        tags: ["Comic Con", "Film & TV", "Autographs", "Olympia London", "Cosplay"]
+      },
+      {
+        name: "Hyper Japan Festival",
+        url: "https://hyperjapan.co.uk/",
+        category: "Conventions & Expos",
+        status: "Upcoming",
+        timing: "Annual (Summer)",
+        location: "Olympia London",
+        description: "The UK's biggest Japanese culture, food, gaming, anime, and J-pop music celebration with live performances, art stalls, and gaming stages.",
+        tags: ["Japan", "Anime", "Gaming", "Food", "Culture", "Olympia London"]
+      },
+      {
+        name: "London Anime & Gaming Con",
+        url: "https://www.londonanimecon.com/",
+        category: "Conventions & Expos",
+        status: "Upcoming",
+        timing: "Bi-Annual (Winter & Summer)",
+        location: "Novotel London West, Hammersmith",
+        description: "Action-packed weekend of gaming tournaments, cosplay masquerades, anime screenings, stage shows, and parties across multiple stages.",
+        tags: ["Anime", "Gaming Tournaments", "Cosplay", "Hammersmith"]
+      },
+      {
+        name: "Dragonmeet",
+        url: "https://www.dragonmeet.co.uk/",
+        category: "Conventions & Expos",
+        status: "Upcoming",
+        timing: "Annual (Late Autumn / November)",
+        location: "Novotel London West, Hammersmith",
+        description: "London's premier tabletop roleplaying game convention with indie RPGs, miniature wargames, open board games, and seminar panels.",
+        tags: ["TTRPG", "D&D", "Indie RPGs", "Board Games", "London"]
+      },
+      {
+        name: "Loading Bar (Scavenger / Stoke Newington)",
+        url: "https://loading.bar/",
+        category: "Video Games & Arcades",
+        status: "Active",
+        timing: "Open Daily (Evenings)",
+        location: "Stoke Newington, London",
+        description: "Gaming-themed cocktail bar with free-to-play consoles (PS5, Xbox, Switch, retro classics), tabletop games, and community tournament nights.",
+        tags: ["Gaming Bar", "Consoles", "Cocktails", "Social", "Stoke Newington"]
+      },
+      {
+        name: "NQ64 Retro Arcade Bar",
+        url: "https://nq64.co.uk/london-soho/",
+        category: "Video Games & Arcades",
+        status: "Active",
+        timing: "Open Daily (Late Nights)",
+        location: "Soho & Shoreditch, London",
+        description: "Neon-drenched underground arcade bar packed with retro arcade cabinets, pinball, Guitar Hero, Mario Kart, and game-themed craft cocktails.",
+        tags: ["Retro Arcade", "Pinball", "Cocktails", "Soho", "Shoreditch"]
+      },
+      {
+        name: "Platform Gaming Bar",
+        url: "https://experienceplatform.co.uk/",
+        category: "Video Games & Arcades",
+        status: "Active",
+        timing: "Open Tuesday – Sunday",
+        location: "Canary Wharf & Shoreditch, London",
+        description: "Dedicated multiplayer gaming booths, esports setups, pizza, and party gaming for casual tournaments and social gaming sessions.",
+        tags: ["Esports", "Multiplayer", "Gaming Booths", "Canary Wharf", "Shoreditch"]
+      },
+      {
+        name: "Freeplay City",
+        url: "https://www.freeplaycity.com/",
+        category: "Video Games & Arcades",
+        status: "Active",
+        timing: "Weekends (Fri – Sun)",
+        location: "Manor House, North London",
+        description: "London's ultimate Japanese arcade center with 100% free-play entry on rhythm games (Sound Voltex, IIDX, Taiko), fighting games, and retro shmups.",
+        tags: ["Japanese Arcades", "Rhythm Games", "Fighting Games", "Free Play", "Manor House"]
+      },
+      {
+        name: "Red Bull Gaming Sphere London",
+        url: "https://www.redbull.com/gb-en/projects/red-bull-gaming-sphere-london",
+        category: "Video Games & Arcades",
+        status: "Active",
+        timing: "Event Days & Community Tournaments",
+        location: "Shoreditch, London",
+        description: "Cutting-edge esports venue and gaming studio hosting fighting game community (FGC) brackets, LANs, and creator showcases.",
+        tags: ["Esports", "FGC", "Tournaments", "LAN", "Shoreditch"]
+      },
+      {
+        name: "Fasty Balls & Fast Action Casual Tournaments",
+        url: "https://date.alec.today/nerd-gatherings.html",
+        category: "Video Games & Arcades",
+        status: "Active",
+        timing: "Community Sessions & Watch Parties",
+        location: "London / Hertfordshire / Online",
+        description: "Fast-paced party games, speed-challenge matchups, speedrunning watch parties, and casual gaming brackets.",
+        tags: ["Party Games", "Fast Action", "Tournaments", "Speedrunning", "Community"]
+      },
+      {
+        name: "The Arcanist's Tavern",
+        url: "https://arcaniststavern.com/",
+        category: "Tabletop & RPGs",
+        status: "Active",
+        timing: "Open Daily",
+        location: "Shoreditch / Old Street, London",
+        description: "Immersive tavern-style tabletop cafe dedicated to D&D, Warhammer 40k, miniature painting stations, and indie TTRPG campaigns.",
+        tags: ["D&D", "TTRPG", "Warhammer", "Board Games", "Shoreditch", "Tavern"]
+      },
+      {
+        name: "Bad Moon Cafe",
+        url: "https://www.badmooncafe.co.uk/",
+        category: "Tabletop & RPGs",
+        status: "Active",
+        timing: "Open Daily (Late Nights)",
+        location: "Borough / London Bridge, London",
+        description: "London's premier miniature wargaming, Warhammer, Magic: The Gathering, and board gaming cafe with great craft beer and stone-baked pizza.",
+        tags: ["Warhammer", "Board Games", "MTG", "Craft Beer", "London Bridge"]
+      },
+      {
+        name: "WGC Board Game Club",
+        url: "https://date.alec.today/nerd-gatherings.html",
+        category: "Tabletop & RPGs",
+        status: "Active",
+        timing: "Bi-Weekly Meetings",
+        location: "Welwyn Garden City, Hertfordshire",
+        description: "Friendly local board gaming club welcoming modern tabletop enthusiasts for strategy games, social deduction, and lighthearted party games.",
+        tags: ["Board Games", "Local", "Welwyn Garden City", "Hertfordshire", "Casual"]
+      },
+      {
+        name: "Draughts Board Game Cafe",
+        url: "https://www.draughtslondon.com/",
+        category: "Tabletop & RPGs",
+        status: "Active",
+        timing: "Open Daily",
+        location: "Waterloo (Leake St) & Hackney, London",
+        description: "Iconic board game cafes with libraries of 1,000+ games, game gurus to teach rules, craft beers, and delicious burgers in converted railway arches.",
+        tags: ["Board Games", "1000+ Games", "Waterloo", "Hackney", "Date Spot"]
+      },
+      {
+        name: "Dark Sphere",
+        url: "https://www.darksphere.co.uk/",
+        category: "Tabletop & RPGs",
+        status: "Active",
+        timing: "Open Daily (Events Schedule)",
+        location: "Shepherd's Bush / Waterloo, London",
+        description: "Huge gaming center running regular Friday Night Magic (MTG), Yu-Gi-Oh!, Pokémon TCG, Digimon, and Warhammer tournament leagues.",
+        tags: ["TCG", "MTG", "Pokemon", "Tournaments", "Tabletop"]
+      },
+      {
+        name: "London Hackspace",
+        url: "https://london.hackspace.org.uk/",
+        category: "Tech & Maker Socials",
+        status: "Active",
+        timing: "Weekly Open Nights (Tuesdays)",
+        location: "Wembley, London",
+        description: "Community-run non-profit workshop and maker space for electronics, 3D printing, laser cutting, robotics, woodworking, and tech hacker projects.",
+        tags: ["Makers", "3D Printing", "Electronics", "Hackers", "Wembley", "Open Night"]
+      },
+      {
+        name: "Date Like A Nerd",
+        url: "https://datelikeanerd.com/",
+        category: "Tech & Maker Socials",
+        status: "Active",
+        timing: "Community Discord & Periodic Meetups",
+        location: "Online / London",
+        description: "Community dedicated to finding friends and romantic partners through shared geek passions, gaming sessions, and low-pressure social outings.",
+        tags: ["Nerd Dating", "Community", "Gaming", "Social", "London"]
+      },
+      {
+        name: "Charity Speedrunning Marathon Watch Parties",
+        url: "https://gamesdonequick.com/",
+        category: "Future Plans & Radar",
+        status: "Future Pipeline",
+        timing: "Winter & Summer (GDQ / ESA)",
+        location: "London / Hertfordshire / Discord",
+        description: "Group watch parties, live reaction streams, and speedrun challenge nights coinciding with Games Done Quick and European Speedrunner Assembly.",
+        tags: ["Speedrunning", "GDQ", "ESA", "Watch Party", "Charity"]
+      },
+      {
+        name: "Community LAN Party & Retro Tournaments",
+        url: "https://date.alec.today/nerd-gatherings.html",
+        category: "Future Plans & Radar",
+        status: "Future Pipeline",
+        timing: "Planned 2026/2027",
+        location: "London / Hertfordshire",
+        description: "Dedicated weekend LAN sessions featuring classic PC LAN titles (Age of Empires II, Halo, Unreal Tournament) and modern co-op games.",
+        tags: ["LAN Party", "PC Gaming", "Retro", "Co-op", "Tournaments"]
+      },
+      {
+        name: "Cosplay & Maker Build Workshops",
+        url: "https://date.alec.today/nerd-gatherings.html",
+        category: "Future Plans & Radar",
+        status: "Future Pipeline",
+        timing: "Pre-Con Seasons",
+        location: "London Maker Spaces",
+        description: "Prop-building, EVA foam crafting, electronics integration, and cosplay collaboration sessions leading up to major comic cons.",
+        tags: ["Cosplay", "Prop Making", "3D Printing", "Workshop", "MCM Prep"]
+      }
+    ]
+  },
+
   dateIdeas: {
     "tag": "💡 Date Ideas & Map",
     "title": "Recommended Date Ideas & Map",
