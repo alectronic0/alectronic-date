@@ -45,7 +45,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <style>
@@ -58,7 +58,7 @@
     }
 
     .top-bar {
-      padding: var(--space-4) var(--space-5);
+      padding: var(--space-4) var(--space-6);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -91,10 +91,10 @@
 
     .page-main {
       flex: 1;
-      max-width: var(--maxw);
+      max-width: 1400px; /* Expansive wide container */
       width: 100%;
       margin: 0 auto;
-      padding: var(--space-6) var(--space-4) var(--space-8);
+      padding: var(--space-6) var(--space-6) var(--space-8);
     }
 
     .page-header {
@@ -110,24 +110,25 @@
       letter-spacing: 1px;
       color: var(--gold);
       background: var(--surface-2);
-      padding: var(--space-1) var(--space-3);
+      padding: var(--space-1) var(--space-4);
       border-radius: 999px;
       border: 1px solid var(--border);
       margin-bottom: var(--space-3);
     }
 
     .page-title {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 800;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
       color: var(--text);
-      line-height: 1.2;
+      line-height: 1.15;
       margin-bottom: var(--space-2);
+      letter-spacing: -0.5px;
     }
 
     .page-subtitle {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: var(--muted);
-      max-width: 680px;
+      max-width: 820px;
       margin: 0 auto;
       line-height: 1.6;
     }
@@ -149,28 +150,28 @@
     .season-header {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: var(--space-3);
-      padding-bottom: var(--space-2);
-      border-bottom: 2px solid var(--border);
-      margin-bottom: var(--space-2);
+      padding: 0 var(--space-2) var(--space-2);
+      border-bottom: 2px solid rgba(230, 169, 121, 0.25);
     }
 
     .season-title {
-      font-size: 1.4rem;
+      font-size: 1.55rem;
       font-weight: 800;
       color: var(--gold);
       letter-spacing: -0.3px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     .season-badge {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--muted);
       background: var(--surface-2);
-      padding: 3px 10px;
+      padding: 4px 14px;
       border-radius: 999px;
       border: 1px solid var(--border);
     }
@@ -181,12 +182,12 @@
       gap: var(--space-4);
     }
 
-    /* ─── Horizontal Event Card ──────────────── */
+    /* ─── Full-Width Horizontal Event Card ──────────────── */
     .event-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: var(--space-5);
+      padding: var(--space-5) var(--space-6);
       display: flex;
       flex-direction: column;
       gap: var(--space-4);
@@ -204,7 +205,7 @@
     /* Top Row: [LOGO & DATE] + [DETAILS] */
     .card-main-row {
       display: flex;
-      gap: var(--space-5);
+      gap: var(--space-6);
       align-items: flex-start;
     }
 
@@ -214,28 +215,29 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      min-width: 130px;
-      padding: var(--space-3) var(--space-2);
+      min-width: 155px;
+      padding: var(--space-4) var(--space-3);
       background: var(--surface-2);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       flex-shrink: 0;
-      gap: 6px;
+      gap: 8px;
     }
 
     .card-logo {
-      width: 52px;
-      height: 52px;
-      border-radius: 10px;
+      width: 58px;
+      height: 58px;
+      border-radius: 12px;
       background: var(--surface);
       border: 1px solid var(--border);
       object-fit: cover;
-      padding: 4px;
+      padding: 5px;
       display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
     }
 
     .card-date-badge {
-      font-size: 0.95rem;
+      font-size: 1.02rem;
       font-weight: 800;
       color: var(--gold);
       line-height: 1.2;
@@ -244,7 +246,7 @@
     }
 
     .card-date-sub {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       color: var(--muted-2);
       font-weight: 600;
       text-transform: uppercase;
@@ -255,7 +257,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
       min-width: 0;
     }
 
@@ -267,29 +269,29 @@
     }
 
     .category-badge {
-      font-size: 0.75rem;
-      font-weight: 600;
+      font-size: 0.76rem;
+      font-weight: 700;
       color: var(--gold);
       background: rgba(230, 169, 121, 0.12);
-      padding: 3px 10px;
+      padding: 3px 12px;
       border-radius: 999px;
       border: 1px solid rgba(230, 169, 121, 0.3);
     }
 
     .month-pill {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       font-weight: 700;
       color: var(--muted);
       background: var(--surface-2);
-      padding: 2px 8px;
+      padding: 3px 10px;
       border-radius: 6px;
       border: 1px solid var(--border);
     }
 
     .status-badge {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       font-weight: 700;
-      padding: 2px 8px;
+      padding: 3px 10px;
       border-radius: 999px;
     }
 
@@ -306,42 +308,43 @@
     }
 
     .card-title {
-      font-size: 1.25rem;
+      font-size: 1.45rem;
       font-weight: 800;
       color: var(--text);
       line-height: 1.3;
-      margin: 2px 0;
+      margin: 0;
+      letter-spacing: -0.2px;
     }
 
     .card-meta-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 16px;
-      font-size: 0.84rem;
+      gap: 10px 20px;
+      font-size: 0.88rem;
       color: var(--muted);
-      margin: 2px 0 6px 0;
+      margin: 2px 0 4px 0;
     }
 
     .card-meta-item {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
 
     .card-price-pill {
       color: var(--mint);
       font-weight: 700;
       background: rgba(127, 194, 166, 0.12);
-      padding: 2px 8px;
+      padding: 2px 10px;
       border-radius: 6px;
       border: 1px solid rgba(127, 194, 166, 0.25);
     }
 
     .card-desc {
-      font-size: 0.9rem;
+      font-size: 0.94rem;
       color: var(--muted);
-      line-height: 1.55;
-      margin: 0 0 6px 0;
+      line-height: 1.6;
+      margin: 0 0 4px 0;
     }
 
     .tags-row {
@@ -351,58 +354,63 @@
     }
 
     .tag-pill {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       background: var(--surface-2);
-      color: var(--muted);
+      color: var(--muted-2);
       border: 1px solid var(--border);
-      padding: 2px 7px;
+      padding: 3px 9px;
       border-radius: 6px;
+      font-weight: 500;
     }
 
-    /* Bottom Row: [BUY TICKET] | [DISCORD] | [SOCIAL MEDIA] */
+    /* Bottom Row: Wide [BUY TICKET] | [DISCORD] | [SOCIAL MEDIA] */
     .card-action-bar {
-      display: grid;
-      grid-template-columns: 2fr 1.2fr 1fr;
-      gap: 10px;
-      padding-top: var(--space-3);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: var(--space-4);
       border-top: 1px solid var(--border);
       align-items: center;
     }
 
     .btn-buy {
+      flex: 2 1 280px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 8px;
       background: var(--gold);
       color: #1a1320;
       font-weight: 700;
-      font-size: 0.88rem;
-      padding: 10px 16px;
-      border-radius: 10px;
+      font-size: 0.92rem;
+      padding: 12px 20px;
+      border-radius: 12px;
       text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
       text-align: center;
+      box-shadow: 0 2px 8px rgba(230, 169, 121, 0.2);
     }
 
     .btn-buy:hover {
       background: #f0be95;
       transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(230, 169, 121, 0.35);
       text-decoration: none;
     }
 
     .btn-discord {
+      flex: 1 1 180px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 8px;
       background: rgba(88, 101, 242, 0.15);
       color: #9aa8fc;
       border: 1px solid rgba(88, 101, 242, 0.35);
       font-weight: 600;
-      font-size: 0.84rem;
-      padding: 10px 14px;
-      border-radius: 10px;
+      font-size: 0.88rem;
+      padding: 12px 16px;
+      border-radius: 12px;
       text-decoration: none;
       transition: all 0.2s ease;
       text-align: center;
@@ -416,34 +424,36 @@
       text-decoration: none;
     }
 
-    .btn-discord-disabled {
+    .btn-discord-note {
+      flex: 1 1 180px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      background: var(--surface-2);
-      color: var(--muted-2);
-      border: 1px dashed var(--border);
-      font-weight: 500;
-      font-size: 0.78rem;
-      padding: 10px 12px;
-      border-radius: 10px;
+      background: rgba(88, 101, 242, 0.08);
+      color: #9aa8fc;
+      border: 1px dashed rgba(88, 101, 242, 0.25);
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 12px 14px;
+      border-radius: 12px;
       text-align: center;
       user-select: none;
     }
 
     .btn-social {
+      flex: 1 1 150px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 8px;
       background: var(--surface-2);
       color: var(--text);
       border: 1px solid var(--border);
       font-weight: 600;
-      font-size: 0.84rem;
-      padding: 10px 14px;
-      border-radius: 10px;
+      font-size: 0.88rem;
+      padding: 12px 16px;
+      border-radius: 12px;
       text-decoration: none;
       transition: all 0.2s ease;
       text-align: center;
@@ -483,26 +493,37 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 860px) {
+      .page-main {
+        padding: var(--space-5) var(--space-3) var(--space-7);
+      }
+      .event-card {
+        padding: var(--space-4);
+      }
       .card-action-bar {
-        grid-template-columns: 1fr;
-        gap: 8px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn-buy, .btn-discord, .btn-discord-note, .btn-social {
+        flex: 1 1 auto;
+        width: 100%;
       }
       .card-main-row {
         flex-direction: column;
         align-items: stretch;
+        gap: var(--space-4);
       }
       .card-left-col {
         flex-direction: row;
         justify-content: flex-start;
         text-align: left;
-        padding: 8px 14px;
+        padding: 10px 14px;
         min-width: unset;
-        gap: 12px;
+        gap: 14px;
       }
       .card-logo {
-        width: 44px;
-        height: 44px;
+        width: 48px;
+        height: 48px;
       }
     }
   </style>
@@ -587,7 +608,6 @@
 
       // Render sections in order
       const seasonsToRender = seasonOrder.filter(s => grouped[s] && grouped[s].length > 0);
-      // Append any unlisted seasons
       Object.keys(grouped).forEach(s => {
         if (!seasonsToRender.includes(s)) seasonsToRender.push(s);
       });
@@ -605,7 +625,7 @@
           // Favicon / Logo with fallback
           const logoSrc = item.logo || `https://www.google.com/s2/favicons?domain=${new URL(item.url).hostname}&sz=128`;
 
-          // Discord CTA button
+          // Discord CTA button (only rendered if discord exists)
           let discordBtnMarkup = '';
           if (item.discordUrl) {
             discordBtnMarkup = `
@@ -615,14 +635,8 @@
             `;
           } else if (item.discordNote) {
             discordBtnMarkup = `
-              <div class="btn-discord-disabled" title="${item.discordNote}">
+              <div class="btn-discord-note" title="${item.discordNote}">
                 💬 ${item.discordNote}
-              </div>
-            `;
-          } else {
-            discordBtnMarkup = `
-              <div class="btn-discord-disabled">
-                💬 No Public Discord
               </div>
             `;
           }
