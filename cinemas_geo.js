@@ -1,5 +1,3 @@
-// High-Precision UK Cinema Discovery Dataset
-// Compiled with 939 verified venues (936 geocoded)
 window.CINEMAS_DATA = [
   {
     "id": "indie-bfi-imax",
@@ -76,7 +74,7 @@ window.CINEMAS_DATA = [
     "lat": 57.150283,
     "lng": -2.077981,
     "screens": 9,
-    "url": "https://www.cineworld.co.uk/cinemas/aberdeen",
+    "url": "https://www.cineworld.co.uk/cinemas/aberdeen-union-square/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -110,7 +108,7 @@ window.CINEMAS_DATA = [
     "lat": 57.143568,
     "lng": -2.09692,
     "screens": 10,
-    "url": "https://www.cineworld.co.uk/cinemas/aberdeen-union-square",
+    "url": "https://www.cineworld.co.uk/cinemas/aberdeen-union-square/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -212,7 +210,7 @@ window.CINEMAS_DATA = [
     "lat": 53.489044,
     "lng": -2.111594,
     "screens": 14,
-    "url": "https://www.cineworld.co.uk/cinemas/ashton",
+    "url": "https://www.cineworld.co.uk/cinemas/ashton-under-lyne/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -450,7 +448,7 @@ window.CINEMAS_DATA = [
     "lat": 54.946794,
     "lng": -1.466334,
     "screens": 11,
-    "url": "https://www.cineworld.co.uk/cinemas/boldon-tyne-wear",
+    "url": "https://www.cineworld.co.uk/cinemas/boldon-tyne-and-wear/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -688,7 +686,7 @@ window.CINEMAS_DATA = [
     "lat": 52.806023,
     "lng": -1.631762,
     "screens": 9,
-    "url": "https://www.cineworld.co.uk/cinemas/burton-on-trent",
+    "url": "https://www.cineworld.co.uk/cinemas/burton-upon-trent/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -1198,7 +1196,7 @@ window.CINEMAS_DATA = [
     "lat": 51.650918,
     "lng": -0.06123,
     "screens": 15,
-    "url": "https://www.cineworld.co.uk/cinemas/enfield",
+    "url": "https://www.cineworld.co.uk/cinemas/london-enfield/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -1266,7 +1264,7 @@ window.CINEMAS_DATA = [
     "lat": 51.443598,
     "lng": -0.40646,
     "screens": 14,
-    "url": "https://www.cineworld.co.uk/cinemas/feltham",
+    "url": "https://www.cineworld.co.uk/cinemas/london-feltham/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -1368,7 +1366,7 @@ window.CINEMAS_DATA = [
     "lat": 51.783887,
     "lng": 0.108051,
     "screens": 6,
-    "url": "https://www.cineworld.co.uk/cinemas/harlow",
+    "url": "https://www.cineworld.co.uk/cinemas/harlow-harveys-centre/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -1402,7 +1400,7 @@ window.CINEMAS_DATA = [
     "lat": 51.7692,
     "lng": 0.093569,
     "screens": 6,
-    "url": "https://www.cineworld.co.uk/cinemas/harlow-harvey-centre",
+    "url": "https://www.cineworld.co.uk/cinemas/harlow-harveys-centre/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -1572,7 +1570,7 @@ window.CINEMAS_DATA = [
     "lat": 51.46996,
     "lng": -0.3615,
     "screens": 10,
-    "url": "https://www.cineworld.co.uk/cinemas/hounslow",
+    "url": "https://www.cineworld.co.uk/cinemas/london-hounslow/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -1674,7 +1672,7 @@ window.CINEMAS_DATA = [
     "lat": 51.563407,
     "lng": 0.069125,
     "screens": 11,
-    "url": "https://www.cineworld.co.uk/cinemas/ilford",
+    "url": "https://www.cineworld.co.uk/cinemas/london-ilford/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -1980,7 +1978,7 @@ window.CINEMAS_DATA = [
     "lat": 54.97142,
     "lng": -1.61505,
     "screens": 16,
-    "url": "https://www.cineworld.co.uk/cinemas/newcastle",
+    "url": "https://www.cineworld.co.uk/cinemas/newcastle-upon-tyne/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -2014,7 +2012,7 @@ window.CINEMAS_DATA = [
     "lat": 51.577578,
     "lng": -2.943595,
     "screens": 13,
-    "url": "https://www.cineworld.co.uk/cinemas/newport",
+    "url": "https://www.cineworld.co.uk/cinemas/newport-friars-walk/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -2320,7 +2318,7 @@ window.CINEMAS_DATA = [
     "lat": 51.560527,
     "lng": -0.401424,
     "screens": 11,
-    "url": "https://www.cineworld.co.uk/cinemas/south-ruislip",
+    "url": "https://www.cineworld.co.uk/cinemas/london-south-ruislip/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -2736,7 +2734,7 @@ window.CINEMAS_DATA = [
     "lat": 51.55671,
     "lng": -0.279677,
     "screens": 9,
-    "url": "https://www.cineworld.co.uk/cinemas/wembley",
+    "url": "https://www.cineworld.co.uk/cinemas/london-wembley/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -2940,7 +2938,7 @@ window.CINEMAS_DATA = [
     "lat": 51.594543,
     "lng": -0.108562,
     "screens": 12,
-    "url": "https://www.cineworld.co.uk/cinemas/wood-green",
+    "url": "https://www.cineworld.co.uk/cinemas/london-wood-green/",
     "features": [
       "IMAX / 4DX / ScreenX Options",
       "Standard & Laser Digital",
@@ -6384,10 +6382,10 @@ window.CINEMAS_DATA = [
     "chain": "Film Society",
     "chainName": "Film Society & Club",
     "icon": "\ud83c\udf9f\ufe0f",
-    "location": "Creative Arts Film Society, Tower Hamlets",
+    "location": "Queen Mary University, Mile End Rd, London, E1 4NS",
     "url": "https://www.qmsu.org/groups/film/",
-    "lat": 51.128863,
-    "lng": 1.298669,
+    "lat": 51.524075,
+    "lng": -0.040375,
     "what3words": "///paths.trade.crown",
     "screens": 1,
     "features": [
@@ -7321,7 +7319,7 @@ window.CINEMAS_DATA = [
     "chainName": "Film Society & Club",
     "icon": "\ud83c\udf9f\ufe0f",
     "location": "11 South Grove, Highgate, London, N6 6BS",
-    "url": "http://www.hlsi.net/whats-on/film-society/",
+    "url": "https://hlsi.net/groups/film-society/",
     "lat": 51.570743,
     "lng": -0.149364,
     "what3words": "///noble.trade.spill",
@@ -9089,7 +9087,7 @@ window.CINEMAS_DATA = [
     "chainName": "Film Society & Club",
     "icon": "\ud83c\udf9f\ufe0f",
     "location": "The Campus, Welwyn Garden City, AL8 6BX",
-    "url": "http://www.wgcfs.org.uk",
+    "url": "https://www.wgcfilmsociety.org/",
     "lat": 51.805566,
     "lng": -0.208117,
     "what3words": "///punch.fame.tones",
@@ -9324,7 +9322,7 @@ window.CINEMAS_DATA = [
     "lat": 52.244061,
     "lng": 0.714414,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Abbeygate%20Cinema%20cinema%20Bury%20St%20Edmunds",
+    "url": "https://www.abbeygatecinema.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -9371,31 +9369,7 @@ window.CINEMAS_DATA = [
     "lat": 52.417016,
     "lng": -4.083002,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Aberystwyth%20Commodore%20cinema%20Aberystwyth",
-    "features": [
-      "Independent / Arthouse",
-      "Special Screenings & Film Events"
-    ],
-    "foodAndDrink": [
-      "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "indie-act-one-acton",
-    "name": "Act One Acton",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "favicon.svg",
-    "location": "Acton Centre, The Old Library, High St, London, W3 6NA",
-    "postcode": "W3 6NA",
-    "lat": 51.50695,
-    "lng": -0.27008,
-    "screens": 2,
-    "url": "https://www.google.com/search?q=Act%20One%20Acton%20cinema%20London",
+    "url": "https://www.commodorecinema.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -9493,7 +9467,7 @@ window.CINEMAS_DATA = [
     "lat": 52.153452,
     "lng": 1.601372,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Aldeburgh%20Cinema%20cinema%20Aldeburgh",
+    "url": "https://aldeburghsuffolk.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -9540,7 +9514,7 @@ window.CINEMAS_DATA = [
     "lat": 54.431918,
     "lng": -2.964696,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Ambleside%20Zeffirellis%20cinema%20Ambleside",
+    "url": "https://www.visitlakedistrict.com/explore/ambleside",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -9564,7 +9538,7 @@ window.CINEMAS_DATA = [
     "lat": 53.81677,
     "lng": -3.0521,
     "screens": 9,
-    "url": "https://www.google.com/search?q=Arc%20Backlot%20Blackpool%20cinema%20Blackpool",
+    "url": "https://www.arenaracingcompany.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -9588,7 +9562,7 @@ window.CINEMAS_DATA = [
     "lat": 51.47642,
     "lng": -0.17464,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Arch%20Light%20Cinemas%20Limited%20cinema%20London%20South",
+    "url": "https://archlinux.org/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -9664,7 +9638,7 @@ window.CINEMAS_DATA = [
     "lat": 51.14769,
     "lng": 0.869611,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Ashford%20Cinema%20cinema%20Kent",
+    "url": "https://theashfordcinema.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -9688,7 +9662,7 @@ window.CINEMAS_DATA = [
     "lat": 51.20606,
     "lng": -3.47666,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Avenue%20Cinema%20Minehead%20cinema%20Minehead",
+    "url": "https://dictionary.cambridge.org/dictionary/english/avenue",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -9813,7 +9787,7 @@ window.CINEMAS_DATA = [
     "lat": 51.796015,
     "lng": -0.07913,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Beam%20Hertford%20cinema%20Hertford",
+    "url": "https://beam.org/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -9860,7 +9834,7 @@ window.CINEMAS_DATA = [
     "lat": 55.769187,
     "lng": -2.004264,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Berwick%20The%20Maltings%20Theatre%20%26%20Cinema%20cinema%20Berwick-upon-tweed",
+    "url": "https://www.visitberwick.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -9930,7 +9904,7 @@ window.CINEMAS_DATA = [
     "lat": 53.790566,
     "lng": -1.756475,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Bradford%20National%20Media%20Museum%20cinema%20Bradford",
+    "url": "https://www.scienceandmediamuseum.org.uk/cinema",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -10000,7 +9974,7 @@ window.CINEMAS_DATA = [
     "lat": 55.01317,
     "lng": -7.324498,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Brunswick%20Moviebowl%20cinema%20Derry",
+    "url": "https://www.brunswickgroup.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -10024,7 +9998,7 @@ window.CINEMAS_DATA = [
     "lat": 51.809675,
     "lng": -3.86997,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Brynamman%20Public%20Hall%20cinema%20Ammanford",
+    "url": "https://black-mountain.org.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -10048,7 +10022,7 @@ window.CINEMAS_DATA = [
     "lat": 52.150201,
     "lng": -3.399511,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Builth%20Wells%20Wyeside%20Arts%20Centre%20cinema%20Builth%20Wells",
+    "url": "https://support.google.com/translate/?hl=en",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -10072,7 +10046,7 @@ window.CINEMAS_DATA = [
     "lat": 51.238425,
     "lng": -2.997445,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Burnham%20Ritz%20cinema%20Burnham%20On%20Sea",
+    "url": "https://www.bbc.com/news/live/cxly5nv8j2zyt",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -10095,29 +10069,6 @@ window.CINEMAS_DATA = [
     "url": "http://www.cellb.org",
     "lat": 52.994705,
     "lng": -3.933257,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-cameo-cinema",
-    "name": "Cameo Cinema",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Cameo Cinema, Edinburgh",
-    "url": "https://www.picturehouses.com/cinema/Cameo_Picturehouse",
-    "lat": 55.942784,
-    "lng": -3.203927,
     "screens": 1,
     "features": [
       "Independent Cinema / Arts Centre",
@@ -10195,7 +10146,7 @@ window.CINEMAS_DATA = [
     "lat": 52.086273,
     "lng": -4.659637,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Cardigan%20Theatre%20Mwldan%20cinema%20Cardigan",
+    "url": "https://www.marksandspencer.com/l/women/knitwear/cardigans?msockid=385e16ec8e1c6249206e012a8f456324",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -10316,7 +10267,7 @@ window.CINEMAS_DATA = [
     "lat": 51.708042,
     "lng": -0.61233,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Chesham%20Elgiva%20cinema%20Chesham",
+    "url": "https://visitchesham.org.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -10363,7 +10314,7 @@ window.CINEMAS_DATA = [
     "lat": 51.94368,
     "lng": -1.544835,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Chipping%20Norton%20Theatre%20cinema%20Chipping%20Norton",
+    "url": "https://www.visitribblevalley.co.uk/places/village-life/chipping/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -10674,7 +10625,7 @@ window.CINEMAS_DATA = [
     "lat": 54.851273,
     "lng": -1.832605,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Consett%20Empire%20cinema%20Consett",
+    "url": "https://visitconsett.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -10767,7 +10718,7 @@ window.CINEMAS_DATA = [
     "lat": 54.995027,
     "lng": -1.441013,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Customs%20House%20South%20Shields%20cinema%20South%20Shields",
+    "url": "https://maps.google.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -10936,7 +10887,7 @@ window.CINEMAS_DATA = [
     "lat": 54.1628,
     "lng": -4.47152,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Douglas%20Palace%20cinema%20Douglas",
+    "url": "https://douglascuddletoy.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -10960,7 +10911,7 @@ window.CINEMAS_DATA = [
     "lat": 55.951114,
     "lng": -4.927334,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Dunoon%20Studio%20cinema%20Dunoon",
+    "url": "https://www.wildaboutargyll.co.uk/blogs/discover-dunoon-8-things-to-do-in-dunoon/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -10984,7 +10935,7 @@ window.CINEMAS_DATA = [
     "lat": 54.777997,
     "lng": -1.574616,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Durham%20Gala%20Theatre%20cinema%20Durham",
+    "url": "https://galadurham.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11031,7 +10982,7 @@ window.CINEMAS_DATA = [
     "lat": 52.470932,
     "lng": 1.747067,
     "screens": 4,
-    "url": "https://www.google.com/search?q=East%20Coast%20Cinema%20cinema%20Lowestoft",
+    "url": "https://www.monsoon.co.uk/east/?msockid=385e16ec8e1c6249206e012a8f456324",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11055,36 +11006,13 @@ window.CINEMAS_DATA = [
     "lat": 51.587995,
     "lng": -0.16395,
     "screens": 2,
-    "url": "https://www.google.com/search?q=East%20Finchley%20Phoenix%20cinema%20London%20North",
+    "url": "https://www.monsoon.co.uk/east/?msockid=385e16ec8e1c6249206e012a8f456324",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
     ],
     "foodAndDrink": [
       "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-electric-cinema-shoreditch-formerly-the-aubin-cinema",
-    "name": "Electric Cinema (Shoreditch) (formerly The Aubin Cinema)",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Tower Hamlets, UK",
-    "url": "https://www.electriccinema.co.uk/shoreditch",
-    "lat": 51.128863,
-    "lng": 1.298669,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
     ],
     "accessibility": [
       "Wheelchair Accessible",
@@ -11183,7 +11111,7 @@ window.CINEMAS_DATA = [
     "lat": 57.648302,
     "lng": -3.319336,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Elgin%20Playhouse%20cinema%20Elgin",
+    "url": "https://www.elgin.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11230,36 +11158,13 @@ window.CINEMAS_DATA = [
     "lat": 53.01817,
     "lng": -1.73213,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Elite%20Cinema%20And%20Theatre%20cinema%20Ashbourne",
+    "url": "https://www.bbc.co.uk/iplayer",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
     ],
     "foodAndDrink": [
       "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-embassy-cinema",
-    "name": "Embassy Cinema",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Embassy Cinema, Ilfracombe",
-    "url": "http://ilfracombe.merlincinemas.co.uk/",
-    "lat": 51.208396,
-    "lng": -4.121889,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
     ],
     "accessibility": [
       "Wheelchair Accessible",
@@ -11277,7 +11182,7 @@ window.CINEMAS_DATA = [
     "lat": 51.94474,
     "lng": 0.63236,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Empire%20Theatre%20cinema%20Halstead",
+    "url": "https://www.msn.com/es-es/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11320,29 +11225,6 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "ico-falkirk-town-hall-cinema",
-    "name": "Falkirk Town Hall Cinema",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Falkirk, UK",
-    "url": "http://www.falkirkcommunitytrust.org/venues/fth/default.aspx",
-    "lat": 55.999196,
-    "lng": -3.784376,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
     "id": "indie-filmhouse-edinburgh",
     "name": "Filmhouse Edinburgh",
     "chain": "Independent",
@@ -11353,7 +11235,7 @@ window.CINEMAS_DATA = [
     "lat": 55.94643,
     "lng": -3.20622,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Filmhouse%20Edinburgh%20cinema%20Edinburgh",
+    "url": "https://www.filmhouse.org.uk/home/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11400,7 +11282,7 @@ window.CINEMAS_DATA = [
     "lat": 51.231703,
     "lng": -2.322598,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Frome%20Westway%20cinema%20Frome",
+    "url": "https://www.discoverfrome.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11424,36 +11306,13 @@ window.CINEMAS_DATA = [
     "lat": 54.550352,
     "lng": -3.587479,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Gaiety%20Cinema%20cinema%20Whitehaven",
+    "url": "https://thegaiety.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
     ],
     "foodAndDrink": [
       "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-gate-picturehouse",
-    "name": "Gate Picturehouse",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Kensington and Chelsea, UK",
-    "url": "https://www.picturehouses.com/cinema/Gate_Picturehouse",
-    "lat": 51.503795,
-    "lng": -0.200789,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
     ],
     "accessibility": [
       "Wheelchair Accessible",
@@ -11502,7 +11361,7 @@ window.CINEMAS_DATA = [
     "lat": 55.865447,
     "lng": -4.261268,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Glasgow%20Film%20Theatre%20cinema%20Glasgow",
+    "url": "https://www.visitscotland.com/places-to-go/glasgow/things-to-do",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11526,7 +11385,7 @@ window.CINEMAS_DATA = [
     "lat": 51.865057,
     "lng": -2.24496,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Gloucester%20Guildhall%20cinema%20Gloucester",
+    "url": "https://www.gloucesterguildhall.co.uk/cinema",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11596,7 +11455,7 @@ window.CINEMAS_DATA = [
     "lat": 55.949732,
     "lng": -4.756264,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Greenock%20Waterfront%20Cinema%20cinema%20Greenock",
+    "url": "https://www.bookwidgets.com/widget-library/quiz",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11620,7 +11479,7 @@ window.CINEMAS_DATA = [
     "lat": 55.874629,
     "lng": -4.292992,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Grosvenor%20Picture%20Theatre%20cinema%20Glasgow",
+    "url": "https://www.grosvenorcasinos.com/?msockid=385e16ec8e1c6249206e012a8f456324",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11667,7 +11526,7 @@ window.CINEMAS_DATA = [
     "lat": 51.662348,
     "lng": -3.803731,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Gwyn%20Hall%20cinema%20Neath",
+    "url": "https://stackoverflow.com/questions/38333569/adding-nocache-1-to-every-url-including-the-assets-like-stylesheet-behind-the",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11737,7 +11596,7 @@ window.CINEMAS_DATA = [
     "lat": 51.946644,
     "lng": 1.28867,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Harwich%20Electric%20Palace%20cinema%20Harwich",
+    "url": "https://visitharwich.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11761,7 +11620,7 @@ window.CINEMAS_DATA = [
     "lat": 52.081052,
     "lng": 0.440364,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Haverhill%20Arts%20Centre%20cinema%20Haverhill",
+    "url": "https://choosewhere.com/haverhill-visitor-guide",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11785,36 +11644,13 @@ window.CINEMAS_DATA = [
     "lat": 55.420864,
     "lng": -2.788556,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Hawick%20Tower%20Mill%20cinema%20Hawick",
+    "url": "https://choosewhere.com/hawick-visitor-guide",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
     ],
     "foodAndDrink": [
       "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-heart-of-hawick",
-    "name": "Heart of Hawick",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Heart of Hawick, Hawick",
-    "url": "http://www.heartofhawick.co.uk/site/index.php",
-    "lat": 55.421085,
-    "lng": -2.787971,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
     ],
     "accessibility": [
       "Wheelchair Accessible",
@@ -11832,7 +11668,7 @@ window.CINEMAS_DATA = [
     "lat": 53.74023,
     "lng": -2.01038,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Hebden%20Bridge%20Picture%20House%20cinema%20Hebden%20Bridge",
+    "url": "https://onlybokep.org/category/indonesia/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11856,7 +11692,7 @@ window.CINEMAS_DATA = [
     "lat": 52.062449,
     "lng": -2.718016,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Hereford%20The%20Courtyard%20%26%20Studio%20cinema%20Hereford",
+    "url": "https://www.visitherefordshire.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11880,7 +11716,7 @@ window.CINEMAS_DATA = [
     "lat": 54.97152,
     "lng": -2.10127,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Hexham%20Forum%20cinema%20Hexham",
+    "url": "https://www.visitnorthumberland.com/explore/destinations/towns-villages/hexham",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11927,7 +11763,7 @@ window.CINEMAS_DATA = [
     "lat": 56.017381,
     "lng": -3.608259,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Hippodrome%20Cinema%2C%20Bo%E2%80%99ness%20cinema%20Bo%27ness",
+    "url": "https://www.birminghamhippodrome.com/whats-on/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11951,7 +11787,7 @@ window.CINEMAS_DATA = [
     "lat": 53.312561,
     "lng": -4.633134,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Holyhead%20Empire%20cinema%20Holyhead",
+    "url": "https://www.visitanglesey.co.uk/en-gb/explore/towns/holyhead",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -11975,7 +11811,7 @@ window.CINEMAS_DATA = [
     "lat": 53.472824,
     "lng": -2.246523,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Home%20Manchester%20cinema%20Manchester",
+    "url": "https://www.home.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12022,7 +11858,7 @@ window.CINEMAS_DATA = [
     "lat": 57.44755,
     "lng": -2.78582,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Huntly%20Cinema%20At%20Number%2030%20cinema%20Huntly",
+    "url": "https://www.experiencehuntly.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12075,7 +11911,7 @@ window.CINEMAS_DATA = [
     "lat": 54.861742,
     "lng": -6.268373,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Imc%20Ballymena%20cinema%20Ballymena",
+    "url": "https://www.cfauk.org/learn/qualifications/investment-management-certificate",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12099,7 +11935,7 @@ window.CINEMAS_DATA = [
     "lat": 54.3497,
     "lng": -6.2715,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Imc%20Banbridge%20cinema%20Banbridge",
+    "url": "https://www.cfauk.org/learn/qualifications/investment-management-certificate",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12123,7 +11959,7 @@ window.CINEMAS_DATA = [
     "lat": 54.349896,
     "lng": -7.631637,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Imc%20Enniskillen%20cinema%20Enniskillen",
+    "url": "https://www.cfauk.org/learn/qualifications/investment-management-certificate",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12147,7 +11983,7 @@ window.CINEMAS_DATA = [
     "lat": 54.592962,
     "lng": -5.709502,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Imc%20Newtownards%20cinema%20Newtownards",
+    "url": "https://www.cfauk.org/learn/qualifications/investment-management-certificate",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12171,7 +12007,7 @@ window.CINEMAS_DATA = [
     "lat": 57.473094,
     "lng": -4.230842,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Inverness%20Eden%20Court%20cinema%20Inverness",
+    "url": "https://www.visitscotland.com/places-to-go/inverness/things-to-do",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12225,7 +12061,7 @@ window.CINEMAS_DATA = [
     "lat": 55.04229,
     "lng": -1.44633,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Jam%20Jar%20Cinema%20cinema%20Whitley%20Bay",
+    "url": "https://www.bbc.co.uk/food/jam",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12249,31 +12085,7 @@ window.CINEMAS_DATA = [
     "lat": 52.044832,
     "lng": -0.36316,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Jitg%20Theatre%20Chicksands%20cinema%20Shefford",
-    "features": [
-      "Independent / Arthouse",
-      "Special Screenings & Film Events"
-    ],
-    "foodAndDrink": [
-      "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "indie-jw3-finchley-road-jewish-community-centre",
-    "name": "Jw3 Finchley Road Jewish Community Centre",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "favicon.svg",
-    "location": "341-351 Finchley Road, London, NW3 6ET",
-    "postcode": "NW3 6ET",
-    "lat": 51.5512,
-    "lng": -0.18478,
-    "screens": 1,
-    "url": "https://www.google.com/search?q=Jw3%20Finchley%20Road%20Jewish%20Community%20Centre%20cinema%20London",
+    "url": "https://www.update-fitness.ch/wil-kraftwerk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12320,7 +12132,7 @@ window.CINEMAS_DATA = [
     "lat": 54.325355,
     "lng": -2.748075,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Kendal%20Brewery%20Arts%20Centre%20cinema%20Kendal",
+    "url": "https://visit-kendal.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12344,7 +12156,7 @@ window.CINEMAS_DATA = [
     "lat": 54.60014,
     "lng": -3.13598,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Keswick%20Alhambra%20cinema%20Keswick",
+    "url": "https://www.keswick.org/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12363,10 +12175,10 @@ window.CINEMAS_DATA = [
     "chain": "Independent",
     "chainName": "Independent",
     "icon": "\u2728",
-    "location": "Brent, UK",
-    "url": "https://kilntheatre.com",
-    "lat": 52.018892,
-    "lng": -0.723504,
+    "location": "269 Kilburn High Rd, London, NW6 7JR",
+    "url": "https://kilntheatre.com/",
+    "lat": 51.543725,
+    "lng": -0.200394,
     "screens": 1,
     "features": [
       "Independent Cinema / Arts Centre",
@@ -12378,7 +12190,8 @@ window.CINEMAS_DATA = [
     "accessibility": [
       "Wheelchair Accessible",
       "CEA Card Accepted"
-    ]
+    ],
+    "what3words": "///frost.valve.trade"
   },
   {
     "id": "ico-king-s-lynn-arts-centre",
@@ -12414,7 +12227,7 @@ window.CINEMAS_DATA = [
     "lat": 52.2436,
     "lng": 0.40083,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Kings%20Cinema%20cinema%20Newmarket",
+    "url": "https://www.kingscinema.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12438,7 +12251,7 @@ window.CINEMAS_DATA = [
     "lat": 56.19641,
     "lng": -3.166785,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Kino%20Glenrothes%20cinema%20Glenrothes",
+    "url": "https://www.kinodigital.co.uk/now-showing",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12485,7 +12298,7 @@ window.CINEMAS_DATA = [
     "lat": 57.4062,
     "lng": -6.200681,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Las%20Portree%20cinema%20Portreee",
+    "url": "https://www.lasaero.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12509,7 +12322,7 @@ window.CINEMAS_DATA = [
     "lat": 51.294642,
     "lng": -0.328705,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Leatherhead%20Theatre%20cinema%20Leatherhead",
+    "url": "https://www.visitsurrey.com/listing/leatherhead/49745101/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12533,7 +12346,7 @@ window.CINEMAS_DATA = [
     "lat": 52.635957,
     "lng": -1.124504,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Leicester%20Phoenix%20cinema%20Leicester",
+    "url": "https://www.lcfc.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12580,7 +12393,7 @@ window.CINEMAS_DATA = [
     "lat": 51.914877,
     "lng": -0.65896,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Leighton%20Buzzard%20Theatre%20cinema%20Leighton%20Buzzard",
+    "url": "https://translate.google.it/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12604,7 +12417,7 @@ window.CINEMAS_DATA = [
     "lat": 51.977854,
     "lng": -0.228341,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Letchworth%20Broadway%20cinema%20Letchworth%20Garden%20City",
+    "url": "https://loveletchworth.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12628,7 +12441,7 @@ window.CINEMAS_DATA = [
     "lat": 53.477549,
     "lng": -3.023383,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Liverpool%20Crosby%20Plaza%20cinema%20Liverpool",
+    "url": "https://www.liverpoolfc.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12652,7 +12465,7 @@ window.CINEMAS_DATA = [
     "lat": 51.94398,
     "lng": -1.55394,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Living%20Room%20Cinema%20Chipping%20Norton%20cinema%20Chipping%20Norton",
+    "url": "https://www.imdb.com/title/tt9051908/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12676,7 +12489,7 @@ window.CINEMAS_DATA = [
     "lat": 51.077151,
     "lng": -0.802922,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Living%20Room%20Cinema%20Liphook%20cinema%20Liphook",
+    "url": "https://www.imdb.com/title/tt9051908/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12700,7 +12513,7 @@ window.CINEMAS_DATA = [
     "lat": 53.34927,
     "lng": 0.25684,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Loewen%20Cinema%20cinema%20Mablethorpe",
+    "url": "https://www.xvideos.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12724,7 +12537,7 @@ window.CINEMAS_DATA = [
     "lat": 51.49487,
     "lng": -0.1732,
     "screens": 1,
-    "url": "https://www.google.com/search?q=London%20Imax%20At%20Science%20Museum%20cinema%20London%20West",
+    "url": "https://www.visitlondon.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12748,7 +12561,7 @@ window.CINEMAS_DATA = [
     "lat": 53.367626,
     "lng": -0.005117,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Louth%20Playhouse%20cinema%20Louth",
+    "url": "https://capturetheatlas.com/lanzarote-map/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12795,7 +12608,7 @@ window.CINEMAS_DATA = [
     "lat": 52.366566,
     "lng": -2.720516,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Ludlow%20Community%20Cinema%20cinema%20Ludlow",
+    "url": "https://www.ludlow.org.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12819,7 +12632,7 @@ window.CINEMAS_DATA = [
     "lat": 51.57943,
     "lng": 0.18567,
     "screens": 8,
-    "url": "https://www.google.com/search?q=Lumiere%20Romford%20cinema%20London",
+    "url": "https://lumierehome.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12866,7 +12679,7 @@ window.CINEMAS_DATA = [
     "lat": 50.760402,
     "lng": -1.542905,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Lymington%20Cinema%20cinema%20Lymington",
+    "url": "https://www.thenewforest.co.uk/explore/towns-and-villages/lymington/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12913,7 +12726,7 @@ window.CINEMAS_DATA = [
     "lat": 53.257734,
     "lng": -2.127088,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Macclesfield%20Cinemac%20cinema%20Macclesfield",
+    "url": "https://cinemac.org.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12937,7 +12750,7 @@ window.CINEMAS_DATA = [
     "lat": 49.43664,
     "lng": -2.59109,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Mallard%20Cinema%20cinema%20Forest",
+    "url": "https://www.rspb.org.uk/birds-and-wildlife/mallard",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12961,7 +12774,7 @@ window.CINEMAS_DATA = [
     "lat": 52.110674,
     "lng": -2.326792,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Malvern%20Festival%20Cinema%20cinema%20Worcester",
+    "url": "https://www.visitthemalverns.org/things-to-do/towns/malvern/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -12985,7 +12798,7 @@ window.CINEMAS_DATA = [
     "lat": 52.8606,
     "lng": -3.05614,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Maona%20Cinema%20cinema%20Oswestry",
+    "url": "https://www.maono.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13055,7 +12868,7 @@ window.CINEMAS_DATA = [
     "lat": 54.978298,
     "lng": -1.599623,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Market%20Pavilion%20Blyth%20cinema%20Northumberland",
+    "url": "https://www.storage.com/self-storage/utah/centerville/extra-space-storage-7075-centerville-1155-west-annex-235886/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13102,7 +12915,7 @@ window.CINEMAS_DATA = [
     "lat": 51.404106,
     "lng": -3.275353,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Memo%20Arts%20Centre%20cinema%20",
+    "url": "https://helpforum.sky.com/t5/Broadband-Talk/Accessing-your-router-settings-page-192-168-0-1/ba-p/2649511",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13126,7 +12939,7 @@ window.CINEMAS_DATA = [
     "lat": 55.458,
     "lng": -4.62781,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Merlin%20Ayr%20Astoria%20cinema%20Strathclyde",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13150,7 +12963,7 @@ window.CINEMAS_DATA = [
     "lat": 50.47122,
     "lng": -4.72143,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Merlin%20Bodmin%20cinema%20Bodmin",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13174,7 +12987,7 @@ window.CINEMAS_DATA = [
     "lat": 51.792822,
     "lng": -2.617709,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Merlin%20Coleford%20Studio%20cinema%20Coleford",
+    "url": "https://www.radioforum.nl/viewtopic.php?t=5828",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13198,7 +13011,7 @@ window.CINEMAS_DATA = [
     "lat": 52.930461,
     "lng": 1.300621,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Merlin%20Cromer%20Regal%20cinema%20Cromer",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13222,7 +13035,7 @@ window.CINEMAS_DATA = [
     "lat": 50.15417,
     "lng": -5.07397,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Merlin%20Falmouth%20Phoenix%20cinema%20Falmouth",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13246,7 +13059,7 @@ window.CINEMAS_DATA = [
     "lat": 55.615834,
     "lng": -2.805295,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Merlin%20Galashiels%20cinema%20Galashiels",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13270,7 +13083,7 @@ window.CINEMAS_DATA = [
     "lat": 50.101631,
     "lng": -5.272677,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Merlin%20Helston%20Flora%20cinema%20Helston",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13294,7 +13107,7 @@ window.CINEMAS_DATA = [
     "lat": 51.208721,
     "lng": -4.120917,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Merlin%20Ilfracombe%20Embassy%20cinema%20Ilfracombe",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13318,7 +13131,7 @@ window.CINEMAS_DATA = [
     "lat": 50.286298,
     "lng": -3.778156,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Merlin%20Kingsbridge%20cinema%20Kingsbridge",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13342,7 +13155,7 @@ window.CINEMAS_DATA = [
     "lat": 50.739274,
     "lng": -4.001522,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Merlin%20Okehampton%20Carlton%20cinema%20Okehampton",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13366,7 +13179,7 @@ window.CINEMAS_DATA = [
     "lat": 50.119148,
     "lng": -5.538237,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Merlin%20Penzance%20Savoy%20cinema%20Penzance",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13390,7 +13203,7 @@ window.CINEMAS_DATA = [
     "lat": 51.346641,
     "lng": -2.976576,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Merlin%20Plaza%20Weston-super-mare%20cinema%20Weston-super-mare",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13414,7 +13227,7 @@ window.CINEMAS_DATA = [
     "lat": 53.335133,
     "lng": -3.404473,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Merlin%20Prestatyn%20Scala%20cinema%20Prestatyn",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13438,7 +13251,7 @@ window.CINEMAS_DATA = [
     "lat": 54.6203,
     "lng": -1.07157,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Merlin%20Redcar%20Regent%20cinema%20Newcomen%20Terrace",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13462,7 +13275,7 @@ window.CINEMAS_DATA = [
     "lat": 50.233068,
     "lng": -5.229503,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Merlin%20Redruth%20Regal%20cinema%20Redruth",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13486,7 +13299,7 @@ window.CINEMAS_DATA = [
     "lat": 50.11727,
     "lng": -5.53633,
     "screens": 8,
-    "url": "https://www.google.com/search?q=Merlin%20Ritz%20Penzance%20cinema%20Penzance",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13510,7 +13323,7 @@ window.CINEMAS_DATA = [
     "lat": 50.211314,
     "lng": -5.481886,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Merlin%20St%20Ives%20Royal%20cinema%20St%20Ives",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13534,7 +13347,7 @@ window.CINEMAS_DATA = [
     "lat": 53.32147,
     "lng": -3.49251,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Merlin%20Strand%20Rhyl%20cinema%20Rhyl",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13558,7 +13371,7 @@ window.CINEMAS_DATA = [
     "lat": 58.586195,
     "lng": -3.538079,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Merlin%20Thurso%20cinema%20Thurso",
+    "url": "https://www.swimwear365.co.uk/products/black-una-bikini-bottoms-by-monsoon/_/A-41B457_22",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13582,7 +13395,7 @@ window.CINEMAS_DATA = [
     "lat": 50.90294,
     "lng": -3.487124,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Merlin%20Tiverton%20Tivoli%20cinema%20Tiverton",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13606,7 +13419,7 @@ window.CINEMAS_DATA = [
     "lat": 50.465568,
     "lng": -3.529438,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Merlin%20Torquay%20Central%20cinema%20Torquay",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13630,7 +13443,7 @@ window.CINEMAS_DATA = [
     "lat": 50.97588,
     "lng": -3.231605,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Merlin%20Wellesley%20Wellington%20cinema%20Wellington",
+    "url": "https://www.merlinannualpass.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13654,31 +13467,7 @@ window.CINEMAS_DATA = [
     "lat": 51.58634,
     "lng": -0.33367,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Metro%20Cinema%20Harrow%20cinema%20Harrow",
-    "features": [
-      "Independent / Arthouse",
-      "Special Screenings & Film Events"
-    ],
-    "foodAndDrink": [
-      "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "indie-mile-end-genesis",
-    "name": "Mile End Genesis",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "favicon.svg",
-    "location": "93-95 Mile End Road, London, E1 4UJ",
-    "postcode": "E1 4UJ",
-    "lat": 51.521476,
-    "lng": -0.051251,
-    "screens": 5,
-    "url": "https://www.google.com/search?q=Mile%20End%20Genesis%20cinema%20London",
+    "url": "https://metro.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13702,7 +13491,7 @@ window.CINEMAS_DATA = [
     "lat": 52.47536,
     "lng": -1.88416,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Mockingbird%20Cinema%20cinema%20Digbeth",
+    "url": "https://bokeplot.com/category/bokep-indo/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13841,7 +13630,7 @@ window.CINEMAS_DATA = [
     "lat": 51.17097,
     "lng": -4.20566,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Neo%20Woolacombe%20Cinema%20cinema%20Woolacombe",
+    "url": "https://www.neo.space/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13888,7 +13677,7 @@ window.CINEMAS_DATA = [
     "lat": 51.400883,
     "lng": -1.322638,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Newbury%20Corn%20Exchange%20cinema%20Newbury",
+    "url": "https://cornexchangenew.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13935,7 +13724,7 @@ window.CINEMAS_DATA = [
     "lat": 50.106913,
     "lng": -5.551184,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Newlyn%20Filmhouse%20cinema%20Penzance",
+    "url": "https://www.newlynplc.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -13959,7 +13748,7 @@ window.CINEMAS_DATA = [
     "lat": 52.51631,
     "lng": -3.316402,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Newtown%20Regent%20Cinema%20cinema%20Newtown",
+    "url": "https://newtown.org.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14029,7 +13818,7 @@ window.CINEMAS_DATA = [
     "lat": 53.42577,
     "lng": -2.31673,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Northern%20Light%20Sale%20cinema%20Sale",
+    "url": "https://www.northernrailway.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14053,7 +13842,7 @@ window.CINEMAS_DATA = [
     "lat": 53.4469,
     "lng": -2.30993,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Northern%20Light%20Stretford%20cinema%20Stretford",
+    "url": "https://www.northernrailway.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14077,7 +13866,7 @@ window.CINEMAS_DATA = [
     "lat": 52.953709,
     "lng": -1.1439,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Nottingham%20Broadway%20cinema%20Nottingham",
+    "url": "https://www.broadway.org.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14101,7 +13890,7 @@ window.CINEMAS_DATA = [
     "lat": 51.31949,
     "lng": -0.56087,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Nova%20Cinema%20cinema%20Woking",
+    "url": "https://www.novacinema.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14223,7 +14012,7 @@ window.CINEMAS_DATA = [
     "lat": 51.754674,
     "lng": -1.259453,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Oxford%20Cinema%20%26%20Cafe%20cinema%20Oxford",
+    "url": "https://uppcinema.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14270,7 +14059,7 @@ window.CINEMAS_DATA = [
     "lat": 51.4215,
     "lng": -1.72942,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Parade%20Marlborough%20cinema%20Marlborough",
+    "url": "https://www.stradivarius.com/es/mujer/ropa/jeans-n1953",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14294,7 +14083,7 @@ window.CINEMAS_DATA = [
     "lat": 53.55384,
     "lng": -1.479268,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Parkway%20Barnsley%20cinema%20Barnsley",
+    "url": "https://www.parkwaycinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14318,7 +14107,7 @@ window.CINEMAS_DATA = [
     "lat": 53.839976,
     "lng": -0.423701,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Parkway%20Beverley%20cinema%20Beverley",
+    "url": "https://www.parkwaycinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14342,7 +14131,7 @@ window.CINEMAS_DATA = [
     "lat": 53.547347,
     "lng": -0.015437,
     "screens": 9,
-    "url": "https://www.google.com/search?q=Parkway%20Cleethorpes%20cinema%20Cleethorpes",
+    "url": "https://www.parkwaycinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14366,7 +14155,7 @@ window.CINEMAS_DATA = [
     "lat": 54.656904,
     "lng": -3.553435,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Parkway%20Workington%20cinema%20Workington",
+    "url": "https://www.parkwaycinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14390,7 +14179,7 @@ window.CINEMAS_DATA = [
     "lat": 50.810134,
     "lng": -0.368467,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Pdj%20Dome%20Worthing%20cinema%20Worthing",
+    "url": "https://www.vibratoryfinishing.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14414,7 +14203,7 @@ window.CINEMAS_DATA = [
     "lat": 51.58487,
     "lng": -0.02047,
     "screens": 9,
-    "url": "https://www.google.com/search?q=Pdj%20Forest%20Cinemas%20Walthamstow%20cinema%20Walthamstow",
+    "url": "https://www.vibratoryfinishing.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14438,7 +14227,7 @@ window.CINEMAS_DATA = [
     "lat": 52.752492,
     "lng": 0.397707,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Pdj%20Kings%20Lynn%20Majestic%20cinema%20Kings%20Lynn",
+    "url": "https://www.vibratoryfinishing.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14462,7 +14251,7 @@ window.CINEMAS_DATA = [
     "lat": 52.587069,
     "lng": -2.123473,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Pdj%20Lockworks%20Wolverhampton%20cinema%20Fryer%20Street",
+    "url": "https://www.vibratoryfinishing.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14486,7 +14275,7 @@ window.CINEMAS_DATA = [
     "lat": 52.55718,
     "lng": -1.82598,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Pdj%20Royal%20Cinemas%20Sutton%20Coldfield%20cinema%20Sutton%20Coldfield",
+    "url": "https://www.vibratoryfinishing.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14510,7 +14299,7 @@ window.CINEMAS_DATA = [
     "lat": 53.746509,
     "lng": -3.033816,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Pdj%20The%20Island%20Lytham%20St%20Annes%20cinema%20Lytham%20St%20Annes",
+    "url": "https://www.vibratoryfinishing.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14585,7 +14374,7 @@ window.CINEMAS_DATA = [
     "lat": 53.525786,
     "lng": -1.628209,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Penistone%20Paramount%20Cinema%20cinema%20Penistone",
+    "url": "https://www.jornaldocomercio.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14609,7 +14398,7 @@ window.CINEMAS_DATA = [
     "lat": 56.39779,
     "lng": -3.434051,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Perth%20Playhouse%20cinema%20Perth",
+    "url": "https://visitperth.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14662,7 +14451,7 @@ window.CINEMAS_DATA = [
     "lat": 50.785505,
     "lng": -0.677737,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Picturedrome%20Bognor%20Regis%20cinema%20Bognor%20Regis",
+    "url": "https://www.picturedrome.net/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14686,7 +14475,7 @@ window.CINEMAS_DATA = [
     "lat": 51.791701,
     "lng": 1.149697,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Picturedrome%20Clacton%20On%20Sea%20cinema%20Clacton-on-sea",
+    "url": "https://www.picturedrome.net/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14710,7 +14499,7 @@ window.CINEMAS_DATA = [
     "lat": 50.714097,
     "lng": -2.438119,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Picturedrome%20Dorchester%20Plaza%20cinema%20Dorchester",
+    "url": "https://www.picturedrome.net/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14734,31 +14523,7 @@ window.CINEMAS_DATA = [
     "lat": 51.664771,
     "lng": -3.194229,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Picturedrome%20Maxime%20cinema%20Blackwood",
-    "features": [
-      "Independent / Arthouse",
-      "Special Screenings & Film Events"
-    ],
-    "foodAndDrink": [
-      "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "indie-picturedrome-the-wisbech-luxe",
-    "name": "Picturedrome The Wisbech Luxe",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "favicon.svg",
-    "location": "Alexandra Road, Wisbech, PE13 1HQ",
-    "postcode": "PE13 1HQ",
-    "lat": 52.663765,
-    "lng": 0.15862,
-    "screens": 1,
-    "url": "https://www.google.com/search?q=Picturedrome%20The%20Wisbech%20Luxe%20cinema%20Wisbech",
+    "url": "https://www.picturedrome.net/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14782,7 +14547,7 @@ window.CINEMAS_DATA = [
     "lat": 51.382106,
     "lng": 1.336643,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Picturedrome%20Westgate%20Carlton%20cinema%20Westgate-on-sea",
+    "url": "https://www.picturedrome.net/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14852,7 +14617,7 @@ window.CINEMAS_DATA = [
     "lat": 56.716599,
     "lng": -2.466214,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Playhouse%20Montrose%20cinema%20Angus",
+    "url": "https://www.argos.co.uk/browse/toys/large-play-equipment/playhouses-and-activity-centres/c:30362/?msockid=385e16ec8e1c6249206e012a8f456324",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14876,7 +14641,7 @@ window.CINEMAS_DATA = [
     "lat": 51.055356,
     "lng": -2.410847,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Plaza%20Cinema%20Wincanton%20cinema%20Wincanton",
+    "url": "https://maps.google.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14900,7 +14665,7 @@ window.CINEMAS_DATA = [
     "lat": 53.930289,
     "lng": -0.77854,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Pocklington%20Arts%20Centre%20cinema%20York",
+    "url": "https://www.yorkshire.com/pocklington",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14947,7 +14712,7 @@ window.CINEMAS_DATA = [
     "lat": 51.71928,
     "lng": -3.849834,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Pontardawe%20Arts%20Centre%20cinema%20Swansea",
+    "url": "https://www.pontardaweartscentre.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14971,7 +14736,7 @@ window.CINEMAS_DATA = [
     "lat": 51.515541,
     "lng": -0.205101,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Portobello%20Electric%20Cinema%20cinema%20London%20West",
+    "url": "https://www.myportobello.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -14995,7 +14760,7 @@ window.CINEMAS_DATA = [
     "lat": 50.79906,
     "lng": -1.107187,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Portsmouth%20No%206%20cinema%20Portsmouth",
+    "url": "https://notamify.com/notams/LGAL/aef3138c-9532-4ddf-bb79-033a8684632b",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15065,7 +14830,7 @@ window.CINEMAS_DATA = [
     "lat": 50.76217,
     "lng": -4.542015,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Rebel%20Cinemas%20Limited%20cinema%20Cornwall",
+    "url": "https://www.instagram.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15089,7 +14854,7 @@ window.CINEMAS_DATA = [
     "lat": 52.462673,
     "lng": -2.014761,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Reel%20Birmingham%20Quinton%20cinema%20Birmingham",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15113,7 +14878,7 @@ window.CINEMAS_DATA = [
     "lat": 54.63874,
     "lng": -1.689082,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Reel%20Bishop%20Auckland%20cinema%20Bishop%20Auckland",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15137,7 +14902,7 @@ window.CINEMAS_DATA = [
     "lat": 53.74865,
     "lng": -2.48819,
     "screens": 8,
-    "url": "https://www.google.com/search?q=Reel%20Blackburn%20cinema%20Blackburn",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15161,7 +14926,7 @@ window.CINEMAS_DATA = [
     "lat": 51.655622,
     "lng": -0.275833,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Reel%20Borehamwood%20cinema%20Borehamwood",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15185,7 +14950,7 @@ window.CINEMAS_DATA = [
     "lat": 52.535863,
     "lng": -2.422042,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Reel%20Bridgnorth%20Majestic%20cinema%20Bridgnorth",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15209,7 +14974,7 @@ window.CINEMAS_DATA = [
     "lat": 53.79153,
     "lng": -2.24414,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Reel%20Burnley%20cinema%20Burnley",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15233,7 +14998,7 @@ window.CINEMAS_DATA = [
     "lat": 51.462362,
     "lng": -2.121897,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Reel%20Chippenham%20cinema%20Chippenham",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15257,7 +15022,7 @@ window.CINEMAS_DATA = [
     "lat": 53.65319,
     "lng": -2.62946,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Reel%20Chorley%20cinema%20Chorley",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15281,7 +15046,7 @@ window.CINEMAS_DATA = [
     "lat": 50.85214,
     "lng": -1.178866,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Reel%20Fareham%20cinema%20Fareham",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15305,7 +15070,7 @@ window.CINEMAS_DATA = [
     "lat": 51.218514,
     "lng": -0.783878,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Reel%20Farnham%20cinema%20Farnham",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15329,7 +15094,7 @@ window.CINEMAS_DATA = [
     "lat": 53.745451,
     "lng": -0.34757,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Reel%20Hull%20cinema%20Hull",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15353,7 +15118,7 @@ window.CINEMAS_DATA = [
     "lat": 54.071058,
     "lng": -2.873572,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Reel%20Morecambe%20cinema%20Morecambe",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15377,7 +15142,7 @@ window.CINEMAS_DATA = [
     "lat": 51.588244,
     "lng": -3.808892,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Reel%20Port%20Talbot%20cinema%20Port%20Talbot",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15401,7 +15166,7 @@ window.CINEMAS_DATA = [
     "lat": 53.62825,
     "lng": -2.13663,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Reel%20Rochdale%20cinema%20Rochdale",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15425,7 +15190,7 @@ window.CINEMAS_DATA = [
     "lat": 53.68154,
     "lng": -1.49528,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Reel%20Wakefield%20cinema%20Wakefield",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15449,7 +15214,7 @@ window.CINEMAS_DATA = [
     "lat": 53.36148,
     "lng": -2.724378,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Reel%20Widnes%20cinema%20Widnes",
+    "url": "https://reelcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15597,35 +15362,6 @@ window.CINEMAS_DATA = [
     "parking": "Gillet Square Car Park"
   },
   {
-    "id": "indie-rio-cinema-dalston",
-    "name": "Rio Cinema (Dalston)",
-    "chain": "Independent",
-    "chainName": "Rio Cinema",
-    "icon": "\u2728",
-    "location": "107 Kingsland High St, Dalston, London, E8 2PB",
-    "postcode": "E8 2PB",
-    "lat": 51.549468,
-    "lng": -0.075546,
-    "url": "https://riocinema.org.uk/",
-    "what3words": "///valve.noble.trade",
-    "parking": "Bentley Road Car Park",
-    "screens": 2,
-    "features": [
-      "Historic 1915 Art Deco Community Cinema",
-      "35mm, 70mm & 4K Laser Projection",
-      "Late-Night Cult Classics"
-    ],
-    "foodAndDrink": [
-      "Rio Basement Lounge & Cafe",
-      "Craft Beers, Natural Wines & Artisan Pastries"
-    ],
-    "accessibility": [
-      "Step-Free Foyer & Screen 2",
-      "Hearing Loops",
-      "CEA Card Accepted"
-    ]
-  },
-  {
     "id": "indie-ritz-multiplex-cookstown",
     "name": "Ritz Multiplex Cookstown",
     "chain": "Independent",
@@ -15636,7 +15372,7 @@ window.CINEMAS_DATA = [
     "lat": 54.655606,
     "lng": -6.746394,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Ritz%20Multiplex%20Cookstown%20cinema%20Cookstown",
+    "url": "https://translate.google.com/?hl=es",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15660,36 +15396,13 @@ window.CINEMAS_DATA = [
     "lat": 54.644428,
     "lng": -3.5433,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Ritz%20Workington%20cinema%20Workington",
+    "url": "https://www.tiktok.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
     ],
     "foodAndDrink": [
       "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-ritzy-picturehouse",
-    "name": "Ritzy Picturehouse",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Ritzy Picturehouse, Lambeth",
-    "url": "http://www.picturehouses.co.uk/cinema/Ritzy_Picturehouse",
-    "lat": 51.46115,
-    "lng": -0.114961,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
     ],
     "accessibility": [
       "Wheelchair Accessible",
@@ -15782,7 +15495,7 @@ window.CINEMAS_DATA = [
     "lat": 51.86726,
     "lng": 0.16225,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Roxy%20Movies%20Bishop%27s%20Stortford%20cinema%20Bishop%27s%20Shortford",
+    "url": "https://www.roxy-uk.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15806,7 +15519,7 @@ window.CINEMAS_DATA = [
     "lat": 54.57546,
     "lng": -1.23892,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Roxy%20Movies%20Middlesbrough%20cinema%20Middlesbrough",
+    "url": "https://www.roxy-uk.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15829,7 +15542,7 @@ window.CINEMAS_DATA = [
     "postcode": "SG8 7DA",
     "lat": 52.050478,
     "lng": -0.02425,
-    "url": "https://www.roystonpicturepalace.org.uk/",
+    "url": "https://roystonpicturepalace.org.uk/",
     "what3words": "///spill.crown.paths",
     "parking": "Town Hall Car Park (Melbourn Street)",
     "screens": 1,
@@ -15859,36 +15572,13 @@ window.CINEMAS_DATA = [
     "lat": 50.72758,
     "lng": -1.162257,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Ryde%20Commodore%20cinema%20Ryde",
+    "url": "https://www.visitisleofwight.co.uk/explore/towns/ryde",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
     ],
     "foodAndDrink": [
       "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-safari-cinema",
-    "name": "Safari Cinema",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Safari Cinema, Harrow",
-    "url": "http://www.safaricinema.com",
-    "lat": 51.586563,
-    "lng": -0.332264,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
     ],
     "accessibility": [
       "Wheelchair Accessible",
@@ -15929,7 +15619,7 @@ window.CINEMAS_DATA = [
     "lat": 52.976028,
     "lng": -0.025496,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Savoy%20Boston%20West%20End%20cinema%20Boston",
+    "url": "https://www.thesavoylondon.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -15953,36 +15643,13 @@ window.CINEMAS_DATA = [
     "lat": 54.37629,
     "lng": -1.72428,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Savoy%20Catterick%20cinema%20Catterick%20Garrison",
+    "url": "https://www.thesavoylondon.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
     ],
     "foodAndDrink": [
       "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-savoy-cinema-penzance",
-    "name": "Savoy Cinema (Penzance)",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Savoy Cinema (Penzance), Penzance",
-    "url": "http://penzance.merlincinemas.co.uk",
-    "lat": 50.119726,
-    "lng": -5.538722,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
     ],
     "accessibility": [
       "Wheelchair Accessible",
@@ -16000,7 +15667,7 @@ window.CINEMAS_DATA = [
     "lat": 52.487418,
     "lng": -0.70443,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Savoy%20Corby%20cinema%20Northamptonshire",
+    "url": "https://www.thesavoylondon.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16024,7 +15691,7 @@ window.CINEMAS_DATA = [
     "lat": 53.51959,
     "lng": -1.13337,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Savoy%20Doncaster%20cinema%20Doncaster",
+    "url": "https://www.thesavoylondon.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16048,7 +15715,7 @@ window.CINEMAS_DATA = [
     "lat": 53.399,
     "lng": -0.77525,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Savoy%20Gainsborough%20cinema%20Gainsborough",
+    "url": "https://www.thesavoylondon.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16072,7 +15739,7 @@ window.CINEMAS_DATA = [
     "lat": 52.90978,
     "lng": -0.63913,
     "screens": 5,
-    "url": "https://www.google.com/search?q=Savoy%20Grantham%20cinema%20Grantham",
+    "url": "https://www.thesavoylondon.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16096,7 +15763,7 @@ window.CINEMAS_DATA = [
     "lat": 52.951116,
     "lng": -1.174135,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Savoy%20Nottingham%20cinema%20Nottingham",
+    "url": "https://www.thesavoylondon.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16120,36 +15787,13 @@ window.CINEMAS_DATA = [
     "lat": 53.301164,
     "lng": -1.123478,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Savoy%20Worksop%20cinema%20Worksop",
+    "url": "https://www.thesavoylondon.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
     ],
     "foodAndDrink": [
       "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-scala-cinema",
-    "name": "Scala Cinema",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Scala Cinema, Prestatyn",
-    "url": "http://prestatyn.merlincinemas.co.uk",
-    "lat": 53.33545,
-    "lng": -3.404632,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
     ],
     "accessibility": [
       "Wheelchair Accessible",
@@ -16167,7 +15811,7 @@ window.CINEMAS_DATA = [
     "lat": 52.971399,
     "lng": -1.309955,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Scala%20Ilkeston%20cinema%20Ilkeston",
+    "url": "https://www.scala-lang.org/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16191,7 +15835,7 @@ window.CINEMAS_DATA = [
     "lat": 54.281104,
     "lng": -0.404455,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Scarborough%20Mccarthy%20Theatre%20cinema%20Scarborough",
+    "url": "https://www.visitscarborough.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16215,7 +15859,7 @@ window.CINEMAS_DATA = [
     "lat": 55.9527,
     "lng": -3.18915,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Scotsman%20Picturehouse%20cinema%20Old%20Town",
+    "url": "https://www.scotsman.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16331,7 +15975,7 @@ window.CINEMAS_DATA = [
     "lat": 50.081771,
     "lng": -5.257846,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Seahawk%20Cinema%20Culdrose%20cinema%20Helston",
+    "url": "https://www.reddit.com/r/Telegram/comments/molsxy/no_longer_have_an_option_for_sms_verification_on/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16378,7 +16022,7 @@ window.CINEMAS_DATA = [
     "lat": 53.377136,
     "lng": -1.465446,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Sheffield%20Showroom%20cinema%20Sheffield",
+    "url": "https://www.showroomworkstation.org.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16448,7 +16092,7 @@ window.CINEMAS_DATA = [
     "lat": 53.143596,
     "lng": 0.337345,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Skegness%20Tower%20cinema%20Skegness",
+    "url": "https://www.visitlincolnshire.com/destinations/skegness/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16570,7 +16214,7 @@ window.CINEMAS_DATA = [
     "lat": 56.14922,
     "lng": -3.926813,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Stirling%20Macrobert%20Arts%20Centre%20cinema%20Stirling",
+    "url": "https://www.yourstirling.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16640,7 +16284,7 @@ window.CINEMAS_DATA = [
     "lat": 52.185091,
     "lng": 0.998875,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Stowmarket%20Regal%20Cinema%20cinema%20Stowmarket",
+    "url": "https://www.eadt.co.uk/news/25934402.guide-visiting-stowmarket-top-things-see/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16723,29 +16367,6 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "ico-studio-cinema",
-    "name": "Studio Cinema",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Coleford, UK",
-    "url": "http://coleford.merlincinemas.co.uk/",
-    "lat": 51.793879,
-    "lng": -2.618324,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
     "id": "indie-taliesin-arts-centre",
     "name": "Taliesin Arts Centre",
     "chain": "Independent",
@@ -16756,7 +16377,7 @@ window.CINEMAS_DATA = [
     "lat": 51.610397,
     "lng": -3.979087,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Taliesin%20Arts%20Centre%20cinema%20Swansea",
+    "url": "https://www.taliesinartscentre.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16799,7 +16420,7 @@ window.CINEMAS_DATA = [
     "chainName": "Independent",
     "icon": "\u2728",
     "location": "Thameside Theatre, Grays",
-    "url": "https://www.thurrock.gov.uk/thameside-theatre",
+    "url": "https://thamesidetheatre.com/",
     "lat": 51.479226,
     "lng": 0.324594,
     "screens": 1,
@@ -16849,7 +16470,7 @@ window.CINEMAS_DATA = [
     "lat": 51.12644,
     "lng": -0.00862,
     "screens": 3,
-    "url": "https://www.google.com/search?q=The%20Atrium%20East%20Grinstead%20cinema%20East%20Grinstead",
+    "url": "https://www.atrium.ltd.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16985,30 +16606,6 @@ window.CINEMAS_DATA = [
     ],
     "accessibility": [
       "Full Step-Free Lift Access to all 5 screens",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "indie-the-cinema-at-selfridges",
-    "name": "The Cinema At Selfridges",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "favicon.svg",
-    "location": "4700 Oxford Street, London West End, W1A 1AB",
-    "postcode": "W1A 1AB",
-    "lat": 51.51458,
-    "lng": -0.15284,
-    "screens": 3,
-    "url": "https://www.google.com/search?q=The%20Cinema%20At%20Selfridges%20cinema%20London%20West%20End",
-    "features": [
-      "Independent / Arthouse",
-      "Special Screenings & Film Events"
-    ],
-    "foodAndDrink": [
-      "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
       "CEA Card Accepted"
     ]
   },
@@ -17167,29 +16764,6 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "ico-the-forum-hexham",
-    "name": "The Forum (Hexham)",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "The Forum (Hexham), Hexham",
-    "url": "http://forumhexham.com/ForumHexham.dll/Home",
-    "lat": 54.972059,
-    "lng": -2.100769,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
     "id": "indie-the-forum-cinema-blandford",
     "name": "The Forum Cinema Blandford",
     "chain": "Independent",
@@ -17200,7 +16774,7 @@ window.CINEMAS_DATA = [
     "lat": 50.868303,
     "lng": -2.125112,
     "screens": 1,
-    "url": "https://www.google.com/search?q=The%20Forum%20Cinema%20Blandford%20cinema%20Blandford%20Forum",
+    "url": "https://www.theforum365.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -17538,30 +17112,6 @@ window.CINEMAS_DATA = [
     "region": "London"
   },
   {
-    "id": "indie-the-prince-charles-cinema",
-    "name": "The Prince Charles Cinema",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "favicon.svg",
-    "location": "7 Leicester Place, London, WC2H 7BY",
-    "postcode": "WC2H 7BY",
-    "lat": 51.51149,
-    "lng": -0.13024,
-    "screens": 2,
-    "url": "https://www.google.com/search?q=The%20Prince%20Charles%20Cinema%20cinema%20London",
-    "features": [
-      "Independent / Arthouse",
-      "Special Screenings & Film Events"
-    ],
-    "foodAndDrink": [
-      "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
     "id": "indie-the-red-carpet-cinema",
     "name": "The Red Carpet Cinema",
     "chain": "Independent",
@@ -17572,7 +17122,7 @@ window.CINEMAS_DATA = [
     "lat": 52.760112,
     "lng": -1.708879,
     "screens": 2,
-    "url": "https://www.google.com/search?q=The%20Red%20Carpet%20Cinema%20cinema%20Barton%20Under%20Needwood",
+    "url": "https://www.reddit.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -17694,7 +17244,7 @@ window.CINEMAS_DATA = [
     "lat": 51.99608,
     "lng": -2.15543,
     "screens": 2,
-    "url": "https://www.google.com/search?q=The%20Roses%20Theatre%20cinema%20Tewkesbury",
+    "url": "https://www.davidaustinroses.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -17741,36 +17291,13 @@ window.CINEMAS_DATA = [
     "lat": 51.749966,
     "lng": -1.24005,
     "screens": 1,
-    "url": "https://www.google.com/search?q=The%20Ultimate%20Picture%20Palace%20cinema%20Oxford",
+    "url": "https://www.ultimate-guitar.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
     ],
     "foodAndDrink": [
       "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-the-waterfront-cinema",
-    "name": "The Waterfront Cinema",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Greenock, UK",
-    "url": "http://www.waterfrontcinema.co.uk",
-    "lat": 55.947342,
-    "lng": -4.756472,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
     ],
     "accessibility": [
       "Wheelchair Accessible",
@@ -17788,7 +17315,7 @@ window.CINEMAS_DATA = [
     "lat": 51.440051,
     "lng": 0.368506,
     "screens": 1,
-    "url": "https://www.google.com/search?q=The%20Woodville%20cinema%20Gravesend",
+    "url": "https://www.woodville.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -17835,36 +17362,13 @@ window.CINEMAS_DATA = [
     "lat": 54.231032,
     "lng": -1.344151,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Thirsk%20Ritz%20cinema%20Thirsk",
+    "url": "https://visitthirsktown.com/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
     ],
     "foodAndDrink": [
       "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-tivoli-cinema-tiverton",
-    "name": "Tivoli Cinema (Tiverton)",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Tivoli Cinema (Tiverton), Tiverton",
-    "url": "http://tiverton.merlincinemas.co.uk/",
-    "lat": 50.902157,
-    "lng": -3.486439,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
     ],
     "accessibility": [
       "Wheelchair Accessible",
@@ -17905,7 +17409,7 @@ window.CINEMAS_DATA = [
     "lat": 50.952477,
     "lng": -4.142843,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Torrington%20Plough%20Arts%20Centre%20cinema%20Torrington",
+    "url": "https://www.great-torrington.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -17975,54 +17479,7 @@ window.CINEMAS_DATA = [
     "lat": 53.48408,
     "lng": -2.2463,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Treehouse%20Manchester%20cinema%20Blackfriars%20Street",
-    "features": [
-      "Independent / Arthouse",
-      "Special Screenings & Film Events"
-    ],
-    "foodAndDrink": [
-      "Independent Cafe / Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-tricycle-cinema",
-    "name": "Tricycle Cinema",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Brent, UK",
-    "url": "http://www.tricycle.co.uk",
-    "lat": 52.018892,
-    "lng": -0.723504,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "indie-twitchen-woolacombe",
-    "name": "Twitchen Woolacombe",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "favicon.svg",
-    "location": "Woolacombe Bay Cinema, Woolacombe Bay Holiday Village, Woolacombe, EX34 7AH",
-    "postcode": "EX34 7AH",
-    "lat": 51.17568,
-    "lng": -4.19437,
-    "screens": 1,
-    "url": "https://www.google.com/search?q=Twitchen%20Woolacombe%20cinema%20Woolacombe",
+    "url": "https://www.forumconstruire.com/construire/topic-19760.php",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -18046,7 +17503,7 @@ window.CINEMAS_DATA = [
     "lat": 54.973819,
     "lng": -1.611809,
     "screens": 4,
-    "url": "https://www.google.com/search?q=Tyneside%20Cinema%20cinema%20Newcastle%20Upon%20Tyne",
+    "url": "https://tynesidecinema.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -18070,7 +17527,7 @@ window.CINEMAS_DATA = [
     "lat": 50.972638,
     "lng": 0.096587,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Uckfield%20Picture%20House%20cinema%20Uckfield",
+    "url": "https://forum-en.msi.com/index.php?threads/update-msi-center-m-v2-0-2509-0201-released.414909/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -18094,7 +17551,7 @@ window.CINEMAS_DATA = [
     "lat": 52.901424,
     "lng": -1.854741,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Uttoxeter%20Cinebowl%20cinema%20Uttoxeter",
+    "url": "https://www.uttoxeter-racecourse.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -18118,7 +17575,7 @@ window.CINEMAS_DATA = [
     "lat": 52.37574,
     "lng": -1.5595,
     "screens": 3,
-    "url": "https://www.google.com/search?q=Warwick%20Arts%20Centre%20cinema%20Coventry",
+    "url": "https://www.warwickartscentre.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -18201,29 +17658,6 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "ico-wellesley-cinema",
-    "name": "Wellesley Cinema",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Mantle Street, UK",
-    "url": "http://wellington.merlincinemas.co.uk/",
-    "lat": 50.976947,
-    "lng": -3.229987,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "CEA Card Accepted"
-    ]
-  },
-  {
     "id": "ico-wellington-orbit",
     "name": "Wellington Orbit",
     "chain": "Independent",
@@ -18280,7 +17714,7 @@ window.CINEMAS_DATA = [
     "lat": 54.64742,
     "lng": -2.78108,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Westmorland%20Rheged%20Cinema%20cinema%20Penrith",
+    "url": "https://rheged.com/cinema/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -18378,7 +17812,7 @@ window.CINEMAS_DATA = [
     "lat": 50.801358,
     "lng": -1.98872,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Wimborne%20Minster%20Tivoli%20cinema%20Wimborne",
+    "url": "https://wimborne.info/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -18402,7 +17836,7 @@ window.CINEMAS_DATA = [
     "lat": 52.091025,
     "lng": 1.318924,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Woodbridge%20Riverside%20cinema%20Quayside",
+    "url": "https://www.thesuffolkcoast.co.uk/suffolk-coast-towns-and-villages/woodbridge",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -18426,7 +17860,7 @@ window.CINEMAS_DATA = [
     "lat": 51.17568,
     "lng": -4.19437,
     "screens": 1,
-    "url": "https://www.google.com/search?q=Woolacombe%20Bay%20cinema%20Woolacombe",
+    "url": "https://www.woolacombetourism.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -18450,7 +17884,7 @@ window.CINEMAS_DATA = [
     "lat": 50.814177,
     "lng": -0.368837,
     "screens": 2,
-    "url": "https://www.google.com/search?q=Worthing%20Connaught%20%26%20Ritz%20cinema%20Worthing",
+    "url": "https://www.visitsoutheastengland.com/places-to-visit/worthing-p196681",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -18491,7 +17925,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-acton-luxe",
+    "id": "odeon-acton",
     "name": "Odeon Acton Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -18501,7 +17935,7 @@ window.CINEMAS_DATA = [
     "lat": 51.5253,
     "lng": -0.28134,
     "screens": 9,
-    "url": "https://www.odeon.co.uk/cinemas/acton-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/acton/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -18561,7 +17995,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-aylesbury-luxe",
+    "id": "odeon-aylesbury",
     "name": "Odeon Aylesbury Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -18571,7 +18005,7 @@ window.CINEMAS_DATA = [
     "lat": 51.815434,
     "lng": -0.810454,
     "screens": 6,
-    "url": "https://www.odeon.co.uk/cinemas/aylesbury-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/aylesbury/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -18771,7 +18205,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-birmingham-broadway-plaza-luxe",
+    "id": "odeon-birmingham-broadway-plaza",
     "name": "Odeon Birmingham Broadway Plaza Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -18781,7 +18215,7 @@ window.CINEMAS_DATA = [
     "lat": 52.473526,
     "lng": -1.921693,
     "screens": 12,
-    "url": "https://www.odeon.co.uk/cinemas/birmingham-broadway-plaza-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/birmingham-broadway-plaza/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -18806,7 +18240,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-bournemouth-bh2-luxe",
+    "id": "odeon-bournemouth-bh2",
     "name": "Odeon Bournemouth Bh2 Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -18816,7 +18250,7 @@ window.CINEMAS_DATA = [
     "lat": 50.718358,
     "lng": -1.879271,
     "screens": 10,
-    "url": "https://www.odeon.co.uk/cinemas/bournemouth-bh2-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/bournemouth-bh2/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -18841,7 +18275,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-bradford-luxe",
+    "id": "odeon-bradford",
     "name": "Odeon Bradford Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -18851,7 +18285,7 @@ window.CINEMAS_DATA = [
     "lat": 53.800017,
     "lng": -1.702811,
     "screens": 13,
-    "url": "https://www.odeon.co.uk/cinemas/bradford-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/bradford/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -18911,7 +18345,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-bridgend-luxe",
+    "id": "odeon-bridgend",
     "name": "Odeon Bridgend Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -18921,7 +18355,7 @@ window.CINEMAS_DATA = [
     "lat": 51.529482,
     "lng": -3.57494,
     "screens": 9,
-    "url": "https://www.odeon.co.uk/cinemas/bridgend-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/bridgend/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -18981,7 +18415,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-bristol-luxe",
+    "id": "odeon-bristol",
     "name": "Odeon Bristol Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -18991,7 +18425,7 @@ window.CINEMAS_DATA = [
     "lat": 51.45851,
     "lng": -2.58456,
     "screens": 8,
-    "url": "https://www.odeon.co.uk/cinemas/bristol-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/bristol/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -19016,7 +18450,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-bromborough-luxe",
+    "id": "odeon-bromborough",
     "name": "Odeon Bromborough Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -19026,7 +18460,7 @@ window.CINEMAS_DATA = [
     "lat": 53.340848,
     "lng": -2.975724,
     "screens": 11,
-    "url": "https://www.odeon.co.uk/cinemas/bromborough-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/bromborough/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -19261,7 +18695,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-derby-meteor-centre-luxe",
+    "id": "odeon-derby-meteor-centre",
     "name": "Odeon Derby Meteor Centre Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -19271,7 +18705,7 @@ window.CINEMAS_DATA = [
     "lat": 52.941077,
     "lng": -1.465119,
     "screens": 10,
-    "url": "https://www.odeon.co.uk/cinemas/derby-meteor-centre-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/derby-meteor-centre/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -19366,7 +18800,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-dundee-douglasfield-luxe",
+    "id": "odeon-dundee-douglasfield",
     "name": "Odeon Dundee Douglasfield Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -19376,7 +18810,7 @@ window.CINEMAS_DATA = [
     "lat": 56.480106,
     "lng": -2.923752,
     "screens": 10,
-    "url": "https://www.odeon.co.uk/cinemas/dundee-douglasfield-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/dundee-douglasfield/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -19436,7 +18870,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-durham-luxe",
+    "id": "odeon-durham",
     "name": "Odeon Durham Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -19446,7 +18880,7 @@ window.CINEMAS_DATA = [
     "lat": 54.77933,
     "lng": -1.57736,
     "screens": 6,
-    "url": "https://www.odeon.co.uk/cinemas/durham-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/durham/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -19471,7 +18905,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-east-kilbride-luxe",
+    "id": "odeon-east-kilbride",
     "name": "Odeon East Kilbride Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -19481,7 +18915,7 @@ window.CINEMAS_DATA = [
     "lat": 55.759757,
     "lng": -4.176533,
     "screens": 9,
-    "url": "https://www.odeon.co.uk/cinemas/east-kilbride-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/east-kilbride/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -19576,7 +19010,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-edinburgh-wester-hailes-luxe",
+    "id": "odeon-edinburgh-wester-hailes",
     "name": "Odeon Edinburgh Wester Hailes Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -19586,7 +19020,7 @@ window.CINEMAS_DATA = [
     "lat": 55.914122,
     "lng": -3.285551,
     "screens": 8,
-    "url": "https://www.odeon.co.uk/cinemas/edinburgh-wester-hailes-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/edinburgh-wester-hailes/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -19611,7 +19045,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-epsom-luxe",
+    "id": "odeon-epsom",
     "name": "Odeon Epsom Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -19621,7 +19055,7 @@ window.CINEMAS_DATA = [
     "lat": 51.334186,
     "lng": -0.261576,
     "screens": 8,
-    "url": "https://www.odeon.co.uk/cinemas/epsom-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/epsom/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -19716,7 +19150,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-glasgow-luxe",
+    "id": "odeon-glasgow",
     "name": "Odeon Glasgow Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -19726,7 +19160,7 @@ window.CINEMAS_DATA = [
     "lat": 55.855302,
     "lng": -4.274804,
     "screens": 12,
-    "url": "https://www.odeon.co.uk/cinemas/glasgow-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/glasgow/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -19891,7 +19325,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-hatfield-luxe",
+    "id": "odeon-hatfield",
     "name": "Odeon Hatfield Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -19901,7 +19335,7 @@ window.CINEMAS_DATA = [
     "lat": 51.763621,
     "lng": -0.239058,
     "screens": 9,
-    "url": "https://www.odeon.co.uk/cinemas/hatfield-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/hatfield/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -19996,7 +19430,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-holloway-luxe",
+    "id": "odeon-holloway",
     "name": "Odeon Holloway Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20006,7 +19440,7 @@ window.CINEMAS_DATA = [
     "lat": 51.558701,
     "lng": -0.122687,
     "screens": 8,
-    "url": "https://www.odeon.co.uk/cinemas/holloway-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/holloway/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -20066,7 +19500,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-hull-luxe",
+    "id": "odeon-hull",
     "name": "Odeon Hull Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20076,7 +19510,7 @@ window.CINEMAS_DATA = [
     "lat": 53.738669,
     "lng": -0.345319,
     "screens": 10,
-    "url": "https://www.odeon.co.uk/cinemas/hull-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/hull/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -20101,7 +19535,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-islington-luxe",
+    "id": "odeon-islington",
     "name": "Odeon Islington Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20111,7 +19545,7 @@ window.CINEMAS_DATA = [
     "lat": 51.53893,
     "lng": -0.10385,
     "screens": 6,
-    "url": "https://www.odeon.co.uk/cinemas/islington-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/islington/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -20171,7 +19605,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-kingston-luxe",
+    "id": "odeon-kingston",
     "name": "Odeon Kingston Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20181,7 +19615,7 @@ window.CINEMAS_DATA = [
     "lat": 51.411717,
     "lng": -0.299375,
     "screens": 15,
-    "url": "https://www.odeon.co.uk/cinemas/kingston-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/kingston/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -20206,7 +19640,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-lee-valley-luxe",
+    "id": "odeon-lee-valley",
     "name": "Odeon Lee Valley Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20216,7 +19650,7 @@ window.CINEMAS_DATA = [
     "lat": 51.628357,
     "lng": -0.039103,
     "screens": 12,
-    "url": "https://www.odeon.co.uk/cinemas/lee-valley-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/lee-valley/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -20241,7 +19675,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-leeds-thorpe-park-luxe",
+    "id": "odeon-leeds-thorpe-park",
     "name": "Odeon Leeds Thorpe Park Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20251,7 +19685,7 @@ window.CINEMAS_DATA = [
     "lat": 53.796831,
     "lng": -1.426515,
     "screens": 10,
-    "url": "https://www.odeon.co.uk/cinemas/leeds-thorpe-park-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/leeds-thorpe-park/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -20276,7 +19710,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-leicester-luxe",
+    "id": "odeon-leicester",
     "name": "Odeon Leicester Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20286,7 +19720,7 @@ window.CINEMAS_DATA = [
     "lat": 52.620792,
     "lng": -1.135561,
     "screens": 12,
-    "url": "https://www.odeon.co.uk/cinemas/leicester-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/leicester/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -20416,7 +19850,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-liverpool-switch-island-luxe",
+    "id": "odeon-liverpool-switch-island",
     "name": "Odeon Liverpool Switch Island Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20426,7 +19860,7 @@ window.CINEMAS_DATA = [
     "lat": 53.485019,
     "lng": -2.963809,
     "screens": 12,
-    "url": "https://www.odeon.co.uk/cinemas/liverpool-switch-island-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/liverpool-switch-island/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -20521,7 +19955,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-maidenhead-luxe",
+    "id": "odeon-maidenhead",
     "name": "Odeon Maidenhead Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20531,7 +19965,7 @@ window.CINEMAS_DATA = [
     "lat": 51.520599,
     "lng": -0.722532,
     "screens": 8,
-    "url": "https://www.odeon.co.uk/cinemas/maidenhead-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/maidenhead/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -20556,7 +19990,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-maidstone-luxe",
+    "id": "odeon-maidstone",
     "name": "Odeon Maidstone Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20566,7 +20000,7 @@ window.CINEMAS_DATA = [
     "lat": 51.269888,
     "lng": 0.519213,
     "screens": 8,
-    "url": "https://www.odeon.co.uk/cinemas/maidstone-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/maidstone/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -20696,7 +20130,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-middlesbrough-luxe",
+    "id": "odeon-middlesbrough",
     "name": "Odeon Middlesbrough Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20706,7 +20140,7 @@ window.CINEMAS_DATA = [
     "lat": 54.57434,
     "lng": -1.22626,
     "screens": 11,
-    "url": "https://www.odeon.co.uk/cinemas/middlesbrough-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/middlesbrough/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -20836,7 +20270,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-northampton-luxe",
+    "id": "odeon-northampton",
     "name": "Odeon Northampton Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20846,7 +20280,7 @@ window.CINEMAS_DATA = [
     "lat": 52.23522,
     "lng": -0.93663,
     "screens": 9,
-    "url": "https://www.odeon.co.uk/cinemas/northampton-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/northampton/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -20941,7 +20375,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-nuneaton-luxe",
+    "id": "odeon-nuneaton",
     "name": "Odeon Nuneaton Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -20951,7 +20385,7 @@ window.CINEMAS_DATA = [
     "lat": 52.497725,
     "lng": -1.479807,
     "screens": 8,
-    "url": "https://www.odeon.co.uk/cinemas/nuneaton-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/nuneaton/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -21046,7 +20480,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-peterborough-luxe",
+    "id": "odeon-peterborough",
     "name": "Odeon Peterborough Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -21056,7 +20490,7 @@ window.CINEMAS_DATA = [
     "lat": 52.573386,
     "lng": -0.248461,
     "screens": 8,
-    "url": "https://www.odeon.co.uk/cinemas/peterborough-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/peterborough/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -21213,7 +20647,7 @@ window.CINEMAS_DATA = [
     "what3words": "///prove.noble.paths"
   },
   {
-    "id": "odeon-putney-cinema-luxe",
+    "id": "odeon-putney",
     "name": "Odeon Putney Cinema Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -21223,7 +20657,7 @@ window.CINEMAS_DATA = [
     "lat": 51.465156,
     "lng": -0.213932,
     "screens": 3,
-    "url": "https://www.odeon.co.uk/cinemas/putney-cinema-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/putney/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -21388,7 +20822,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-sheffield-luxe",
+    "id": "odeon-sheffield",
     "name": "Odeon Sheffield Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -21398,7 +20832,7 @@ window.CINEMAS_DATA = [
     "lat": 53.380597,
     "lng": -1.465493,
     "screens": 10,
-    "url": "https://www.odeon.co.uk/cinemas/sheffield-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/sheffield/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -21458,7 +20892,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-stafford-luxe",
+    "id": "odeon-stafford",
     "name": "Odeon Stafford Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -21468,7 +20902,7 @@ window.CINEMAS_DATA = [
     "lat": 52.80404,
     "lng": -2.11403,
     "screens": 6,
-    "url": "https://www.odeon.co.uk/cinemas/stafford-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/stafford/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -21668,7 +21102,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-tamworth-luxe",
+    "id": "odeon-tamworth",
     "name": "Odeon Tamworth Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -21678,7 +21112,7 @@ window.CINEMAS_DATA = [
     "lat": 52.632152,
     "lng": -1.69049,
     "screens": 10,
-    "url": "https://www.odeon.co.uk/cinemas/tamworth-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/tamworth/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -21738,7 +21172,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-telford-luxe",
+    "id": "odeon-telford",
     "name": "Odeon Telford Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -21748,7 +21182,7 @@ window.CINEMAS_DATA = [
     "lat": 52.681237,
     "lng": -2.446577,
     "screens": 10,
-    "url": "https://www.odeon.co.uk/cinemas/telford-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/telford/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -21913,7 +21347,7 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "odeon-warrington-luxe",
+    "id": "odeon-warrington",
     "name": "Odeon Warrington Luxe",
     "chain": "ODEON",
     "chainName": "ODEON Luxe",
@@ -21923,7 +21357,7 @@ window.CINEMAS_DATA = [
     "lat": 53.407213,
     "lng": -2.633094,
     "screens": 10,
-    "url": "https://www.odeon.co.uk/cinemas/warrington-luxe/",
+    "url": "https://www.odeon.co.uk/cinemas/warrington/",
     "features": [
       "Recliner Luxe Seats",
       "Dolby Digital Sound",
@@ -22133,7 +21567,7 @@ window.CINEMAS_DATA = [
     "lat": 54.730627,
     "lng": -6.237614,
     "screens": 10,
-    "url": "https://www.google.com/search?q=Omniplex%20Antrim%20cinema%20Antrim",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22157,7 +21591,7 @@ window.CINEMAS_DATA = [
     "lat": 54.331205,
     "lng": -6.276775,
     "screens": 8,
-    "url": "https://www.google.com/search?q=Omniplex%20Banbridge%20cinema%20Banbridge",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22181,7 +21615,7 @@ window.CINEMAS_DATA = [
     "lat": 54.652576,
     "lng": -5.664078,
     "screens": 8,
-    "url": "https://www.google.com/search?q=Omniplex%20Bangor%20cinema%20Bangor",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22205,7 +21639,7 @@ window.CINEMAS_DATA = [
     "lat": 54.589333,
     "lng": -5.822377,
     "screens": 11,
-    "url": "https://www.google.com/search?q=Omniplex%20Belfast%20-%20Dundonald%20cinema%20Dundonald",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22229,7 +21663,7 @@ window.CINEMAS_DATA = [
     "lat": 54.581147,
     "lng": -5.98033,
     "screens": 8,
-    "url": "https://www.google.com/search?q=Omniplex%20Belfast%20-%20Kennedy%20Centre%20cinema%20Belfast",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22253,7 +21687,7 @@ window.CINEMAS_DATA = [
     "lat": 54.6009,
     "lng": -5.936,
     "screens": 9,
-    "url": "https://www.google.com/search?q=Omniplex%20Belfast%20-%20The%20Avenue%20cinema%20Belfast",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22277,7 +21711,7 @@ window.CINEMAS_DATA = [
     "lat": 52.394786,
     "lng": -2.013496,
     "screens": 13,
-    "url": "https://www.google.com/search?q=Omniplex%20Birmingham%20-%20Great%20Park%20cinema%20Birmingham",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22301,7 +21735,7 @@ window.CINEMAS_DATA = [
     "lat": 54.711418,
     "lng": -5.812593,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Omniplex%20Carrickfergus%20cinema%20Carrickfergus",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22325,7 +21759,7 @@ window.CINEMAS_DATA = [
     "lat": 54.449305,
     "lng": -6.397624,
     "screens": 8,
-    "url": "https://www.google.com/search?q=Omniplex%20Craigavon%20cinema%20Craigavon",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22349,7 +21783,7 @@ window.CINEMAS_DATA = [
     "lat": 55.000248,
     "lng": -7.321407,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Omniplex%20Derry%20cinema%20Derry",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22373,7 +21807,7 @@ window.CINEMAS_DATA = [
     "lat": 54.323386,
     "lng": -5.713818,
     "screens": 9,
-    "url": "https://www.google.com/search?q=Omniplex%20Downpatrick%20cinema%20Downpatrick",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22397,7 +21831,7 @@ window.CINEMAS_DATA = [
     "lat": 54.510199,
     "lng": -6.766062,
     "screens": 6,
-    "url": "https://www.google.com/search?q=Omniplex%20Dungannon%20cinema%20Dungannon",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22421,7 +21855,7 @@ window.CINEMAS_DATA = [
     "lat": 55.904246,
     "lng": -4.40273,
     "screens": 10,
-    "url": "https://www.google.com/search?q=Omniplex%20Glasgow%20-%20Clydebank%20cinema%20Clydebank",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22445,7 +21879,7 @@ window.CINEMAS_DATA = [
     "lat": 55.8649,
     "lng": -4.25518,
     "screens": 14,
-    "url": "https://www.google.com/search?q=Omniplex%20Glasgow%20-%20Renfrew%20cinema%20Glasgow",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22469,7 +21903,7 @@ window.CINEMAS_DATA = [
     "lat": 51.612033,
     "lng": -0.774461,
     "screens": 8,
-    "url": "https://www.google.com/search?q=Omniplex%20High%20Wycombe%20cinema%20High%20Wycombe",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22493,7 +21927,7 @@ window.CINEMAS_DATA = [
     "lat": 52.056758,
     "lng": 1.153919,
     "screens": 14,
-    "url": "https://www.google.com/search?q=Omniplex%20Ipswich%20cinema%20Ipswich",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22517,7 +21951,7 @@ window.CINEMAS_DATA = [
     "lat": 54.846561,
     "lng": -5.808086,
     "screens": 8,
-    "url": "https://www.google.com/search?q=Omniplex%20Larne%20cinema%20Larne",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22541,7 +21975,7 @@ window.CINEMAS_DATA = [
     "lat": 54.506909,
     "lng": -6.051222,
     "screens": 14,
-    "url": "https://www.google.com/search?q=Omniplex%20Lisburn%20cinema%20Lisburn",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22565,7 +21999,7 @@ window.CINEMAS_DATA = [
     "lat": 54.169153,
     "lng": -6.339888,
     "screens": 10,
-    "url": "https://www.google.com/search?q=Omniplex%20Newry%20cinema%20Newry",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22589,7 +22023,7 @@ window.CINEMAS_DATA = [
     "lat": 54.595734,
     "lng": -7.301079,
     "screens": 7,
-    "url": "https://www.google.com/search?q=Omniplex%20Omagh%20cinema%20Omagh",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22613,7 +22047,7 @@ window.CINEMAS_DATA = [
     "lat": 54.907882,
     "lng": -1.379006,
     "screens": 13,
-    "url": "https://www.google.com/search?q=Omniplex%20Sunderland%20cinema%20Sunderland",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22637,7 +22071,7 @@ window.CINEMAS_DATA = [
     "lat": 51.364651,
     "lng": -0.195528,
     "screens": 12,
-    "url": "https://www.google.com/search?q=Omniplex%20Sutton%20Surrey%20cinema%20Sutton",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -22661,7 +22095,7 @@ window.CINEMAS_DATA = [
     "lat": 53.546426,
     "lng": -2.656405,
     "screens": 11,
-    "url": "https://www.google.com/search?q=Omniplex%20Wigan%20cinema%20Wigan",
+    "url": "https://www.omniplexcinemas.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -23788,7 +23222,7 @@ window.CINEMAS_DATA = [
     "lat": 51.3708,
     "lng": -0.48987,
     "screens": 6,
-    "url": "https://www.google.com/search?q=The%20Light%20Addlestone%20cinema%20Addlestone",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -23812,7 +23246,7 @@ window.CINEMAS_DATA = [
     "lat": 52.06351,
     "lng": -1.33275,
     "screens": 8,
-    "url": "https://www.google.com/search?q=The%20Light%20Banbury%20cinema%20Banbury",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -23836,7 +23270,7 @@ window.CINEMAS_DATA = [
     "lat": 53.58131,
     "lng": -2.42965,
     "screens": 9,
-    "url": "https://www.google.com/search?q=The%20Light%20Bolton%20cinema%20Bolton",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -23860,7 +23294,7 @@ window.CINEMAS_DATA = [
     "lat": 53.79279,
     "lng": -1.75055,
     "screens": 6,
-    "url": "https://www.google.com/search?q=The%20Light%20Bradford%20cinema%20Bradford",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -23884,7 +23318,7 @@ window.CINEMAS_DATA = [
     "lat": 52.19016,
     "lng": 0.13715,
     "screens": 9,
-    "url": "https://www.google.com/search?q=The%20Light%20Cambridge%20cinema%20Cambridge",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -23908,7 +23342,7 @@ window.CINEMAS_DATA = [
     "lat": 53.645492,
     "lng": -1.779379,
     "screens": 6,
-    "url": "https://www.google.com/search?q=The%20Light%20Huddersfield%20cinema%20Huddersfield",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -23932,7 +23366,7 @@ window.CINEMAS_DATA = [
     "lat": 53.4396,
     "lng": -3.05332,
     "screens": 8,
-    "url": "https://www.google.com/search?q=The%20Light%20New%20Brighton%20cinema%20Wallasey",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -23956,7 +23390,7 @@ window.CINEMAS_DATA = [
     "lat": 51.34141,
     "lng": 0.73415,
     "screens": 6,
-    "url": "https://www.google.com/search?q=The%20Light%20Redhill%20cinema%20Redhill",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -23980,7 +23414,7 @@ window.CINEMAS_DATA = [
     "lat": 53.37635,
     "lng": -1.47303,
     "screens": 9,
-    "url": "https://www.google.com/search?q=The%20Light%20Sheffield%20cinema%20Sheffield",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -24004,7 +23438,7 @@ window.CINEMAS_DATA = [
     "lat": 52.41337,
     "lng": 0.74583,
     "screens": 8,
-    "url": "https://www.google.com/search?q=The%20Light%20Sittingbourne%20cinema%20Sittingbourne",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -24028,7 +23462,7 @@ window.CINEMAS_DATA = [
     "lat": 53.41181,
     "lng": -2.16209,
     "screens": 12,
-    "url": "https://www.google.com/search?q=The%20Light%20Stockport%20cinema%20Stockport",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -24052,7 +23486,7 @@ window.CINEMAS_DATA = [
     "lat": 52.41337,
     "lng": 0.74583,
     "screens": 3,
-    "url": "https://www.google.com/search?q=The%20Light%20Thetford%20cinema%20Thetford",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -24076,7 +23510,7 @@ window.CINEMAS_DATA = [
     "lat": 52.586609,
     "lng": -1.992828,
     "screens": 8,
-    "url": "https://www.google.com/search?q=The%20Light%20Walsall%20cinema%20Walsall",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -24100,7 +23534,7 @@ window.CINEMAS_DATA = [
     "lat": 52.65193,
     "lng": 0.1434,
     "screens": 8,
-    "url": "https://www.google.com/search?q=The%20Light%20Wisbech%20cinema%20Wisbech",
+    "url": "https://thelight.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -24272,7 +23706,7 @@ window.CINEMAS_DATA = [
     "lat": 51.265519,
     "lng": -1.084493,
     "screens": 10,
-    "url": "https://www.myvue.com/cinema/basingstoke/whats-on",
+    "url": "https://www.myvue.com/cinema/basingstoke-festival-place/whats-on",
     "features": [
       "Sony 4K Digital",
       "Recliner Lux Seats Available",
@@ -24531,7 +23965,7 @@ window.CINEMAS_DATA = [
     "lat": 51.52307,
     "lng": -2.602793,
     "screens": 12,
-    "url": "https://www.myvue.com/cinema/bristol-cribbs/whats-on",
+    "url": "https://www.myvue.com/cinema/bristol-cribbs-causeway/whats-on",
     "features": [
       "Sony 4K Digital",
       "Recliner Lux Seats Available",
@@ -25160,7 +24594,7 @@ window.CINEMAS_DATA = [
     "lat": 55.980066,
     "lng": -3.179687,
     "screens": 12,
-    "url": "https://www.myvue.com/cinema/edinburgh-ocean/whats-on",
+    "url": "https://www.myvue.com/cinema/edinburgh-ocean-terminal/whats-on",
     "features": [
       "Sony 4K Digital",
       "Recliner Lux Seats Available",
@@ -25382,7 +24816,7 @@ window.CINEMAS_DATA = [
     "lat": 51.547954,
     "lng": -0.181427,
     "screens": 12,
-    "url": "https://www.myvue.com/cinema/finchley-road-o2/whats-on",
+    "url": "https://www.myvue.com/cinema/london-finchley-road-o2/whats-on",
     "features": [
       "Sony 4K Digital",
       "Recliner Lux Seats Available",
@@ -25900,7 +25334,7 @@ window.CINEMAS_DATA = [
     "lat": 53.804372,
     "lng": -1.583356,
     "screens": 10,
-    "url": "https://www.myvue.com/cinema/leeds-kirkstall/whats-on",
+    "url": "https://www.myvue.com/cinema/leeds-kirkstall-road/whats-on",
     "features": [
       "Sony 4K Digital",
       "Recliner Lux Seats Available",
@@ -26048,7 +25482,7 @@ window.CINEMAS_DATA = [
     "lat": 53.47076,
     "lng": -2.293076,
     "screens": 9,
-    "url": "https://www.myvue.com/cinema/manchester-lowry/whats-on",
+    "url": "https://www.myvue.com/cinema/manchester-the-lowry/whats-on",
     "features": [
       "Sony 4K Digital",
       "Recliner Lux Seats Available",
@@ -26566,7 +26000,7 @@ window.CINEMAS_DATA = [
     "lat": 51.378132,
     "lng": -0.124537,
     "screens": 8,
-    "url": "https://www.myvue.com/cinema/purley-way/whats-on",
+    "url": "https://www.myvue.com/cinema/croydon-purley-way/whats-on",
     "features": [
       "Sony 4K Digital",
       "Recliner Lux Seats Available",
@@ -27287,7 +26721,7 @@ window.CINEMAS_DATA = [
     "lat": 51.544345,
     "lng": -0.006359,
     "screens": 20,
-    "url": "https://www.myvue.com/cinema/westfield-stratford/whats-on",
+    "url": "https://www.myvue.com/cinema/london-westfield-stratford-city/whats-on",
     "features": [
       "Sony 4K Digital",
       "Recliner Lux Seats Available",
