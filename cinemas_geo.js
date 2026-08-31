@@ -5179,35 +5179,6 @@ window.CINEMAS_DATA = [
     "region": "London"
   },
   {
-    "id": "everyman-st-albans",
-    "name": "Everyman St Albans",
-    "chain": "Everyman",
-    "chainName": "Everyman",
-    "icon": "img/logos/everyman.png",
-    "location": "74-76 St Peter's St, St Albans, AL1 3GW",
-    "postcode": "AL1 3GW",
-    "lat": 51.747786,
-    "lng": -0.32605,
-    "url": "https://www.everymancinema.com/venues-list/g01e6-everyman-st-albans/",
-    "what3words": "///wants.shaky.spits",
-    "parking": "Dagnall Street / Civic Centre Multi-Storey",
-    "screens": 2,
-    "features": [
-      "Velvet Sofa Seating with Footrests",
-      "At-Seat Food & Drink Service",
-      "Boutique Screening Rooms"
-    ],
-    "foodAndDrink": [
-      "Spielburger Kitchen & Bar",
-      "Cocktails & Milkshakes"
-    ],
-    "accessibility": [
-      "Lift Access",
-      "Wheelchair Spaces",
-      "CEA Card Accepted"
-    ]
-  },
-  {
     "id": "everyman-g029x-everyman-stratford-international",
     "name": "Everyman Stratford International",
     "chain": "Everyman",
@@ -8717,32 +8688,6 @@ window.CINEMAS_DATA = [
     ]
   },
   {
-    "id": "soc-st-albans-film-festival",
-    "name": "St Albans Film Festival",
-    "chain": "Film Society",
-    "chainName": "Film Society & Club",
-    "icon": "\ud83c\udf9f\ufe0f",
-    "location": "St Albans Film Festival, St Albans",
-    "url": "http://www.stalbansfilmfestival.com",
-    "lat": 51.753051,
-    "lng": -0.337967,
-    "what3words": "///paths.trade.crown",
-    "screens": 1,
-    "features": [
-      "Community Film Society",
-      "Regular Film Screenings & Discussions",
-      "Member & Guest Tickets Available"
-    ],
-    "foodAndDrink": [
-      "Club Refreshments & Bar"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
-      "Hearing Loop System",
-      "CEA Card / Guest Concessions"
-    ]
-  },
-  {
     "id": "soc-star-shadow-cinema-co-op",
     "name": "Star & Shadow Cinema Co-op",
     "chain": "Film Society",
@@ -11428,7 +11373,7 @@ window.CINEMAS_DATA = [
     "chainName": "Independent",
     "icon": "\u2728",
     "location": "Ramsgate, UK",
-    "url": "http://www.granvilletheatre.com/",
+    "url": "https://www.thegranvilletheatre.com/",
     "lat": 51.333473,
     "lng": 1.419648,
     "screens": 1,
@@ -11479,7 +11424,7 @@ window.CINEMAS_DATA = [
     "lat": 55.874629,
     "lng": -4.292992,
     "screens": 2,
-    "url": "https://www.grosvenorcasinos.com/?msockid=385e16ec8e1c6249206e012a8f456324",
+    "url": "https://grosvenorpicturetheatre.co.uk/",
     "features": [
       "Independent / Arthouse",
       "Special Screenings & Film Events"
@@ -16813,29 +16758,6 @@ window.CINEMAS_DATA = [
     "accessibility": [
       "Step-Free Lift Access",
       "Wheelchair Spaces",
-      "CEA Card Accepted"
-    ]
-  },
-  {
-    "id": "ico-the-grosvenor",
-    "name": "The Grosvenor",
-    "chain": "Independent",
-    "chainName": "Independent",
-    "icon": "\u2728",
-    "location": "Glasgow, UK",
-    "url": "http://www.grosvenorcinema.co.uk",
-    "lat": 55.861155,
-    "lng": -4.250169,
-    "screens": 1,
-    "features": [
-      "Independent Cinema / Arts Centre",
-      "Specialist Screenings & World Cinema"
-    ],
-    "foodAndDrink": [
-      "Cafe-Bar & Refreshments"
-    ],
-    "accessibility": [
-      "Wheelchair Accessible",
       "CEA Card Accepted"
     ]
   },
