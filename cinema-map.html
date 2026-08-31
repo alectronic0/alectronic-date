@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Consent Mode Defaults -->
+  <script data-cookieconsent="ignore">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+    });
+  </script>
+
+  <!-- Vanilla CookieConsent v3 -->
+  <script src="js/cookie.js" defer></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4Q5KJSLNK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N4Q5KJSLNK', {
+      'url_passthrough': true,
+      'ads_data_redaction': true
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>London & UK Cinema Map | Date Alec Today</title>
+  <meta name="description" content="Interactive map of boutique, independent, and rooftop cinemas across London & the UK with addresses, screen counts, and booking links.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="author" content="Alec Doran-Twyford">
+  <meta name="theme-color" content="#1a1320">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- Core Design System -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .activity-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      margin-bottom: var(--space-3);
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .activity-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow);
+    }
+    .activity-card.selected {
+      border-color: var(--gold);
+      background: var(--surface-2);
+      box-shadow: 0 0 0 2px rgba(230, 169, 121, 0.4);
+    }
+    .cinema-card-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 2px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    }
+    .source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .leaflet-popup-content {
+      font-family: 'Poppins', sans-serif;
+      color: #1a1320;
+    }
+    .leaflet-popup-content h4 {
+      margin: 0 0 6px 0;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .chain-filter-pills {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div style="display: flex; flex-direction: column; height: 100vh; width: 100vw; overflow: hidden;">
+    <div class="warning-banner" style="padding: 8px 16px; border-radius: 0; border-top: none; border-left: none; border-right: none; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.82rem; z-index: 1000; flex-shrink: 0;">
+        <span style="font-size: 1.1rem; line-height: 1;">🎬</span>
+        <span style="color: var(--text);"><strong style="color: var(--gold);">Cinema Map:</strong> Interactive map of boutique, independent, and rooftop cinemas.</span>
+    </div>
+
+    <div class="app-layout" style="height: 100%; flex: 1; min-height: 0;">
+        <aside class="sidebar-drawer" id="sidebar">
+            <header class="drawer-header">
+                <div class="top-links" style="display: flex; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 6px;">
+                    <a href="index.html" class="back-link" aria-label="Return to main profile">← Profile</a>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                        <a href="cinema-events.html" class="back-link" style="color: var(--gold); border: 1px solid rgba(230,169,121,0.3);" aria-label="Cinema Events">🍿 Screenings</a>
+                        <a href="ideas.html" class="back-link" style="color: var(--rose-light);" aria-label="Date Ideas">💡 Ideas</a>
+                        <a href="london-activities.html" class="back-link" style="color: var(--mint);" aria-label="London Activities">🎡 Activities</a>
+                        <a href="lab.html" class="back-link" style="color: var(--accent-light);" aria-label="Secret Lab">🧪 Lab</a>
+                    </div>
+                </div>
+                <h1 style="font-size: 1.85rem; margin-bottom: 8px; color: var(--text);">Cinema Map</h1>
+                <div class="filter-group">
+                    <input type="text" id="search" placeholder="Search cinemas, chains, postcodes, or areas...">
+                </div>
+                <!-- Dynamic Chain Filter Pills -->
+                <div class="chain-filter-pills" id="chain-pills">
+                    <!-- Populated dynamically by JS -->
+                </div>
+                <div id="results-count" style="font-size: 0.82rem; color: var(--muted); margin-top: 8px;">
+                    Loading cinemas...
+                </div>
+            </header>
+            <div id="cinema-list" class="drawer-scroll-area">
+                <p style="color: var(--muted); padding: var(--space-4);">Loading cinema locations...</p>
+            </div>
+        </aside>
+        
+        <main id="map-view-container" class="map-area" style="display: flex; flex-direction: column;">
+            <!-- Floating Top Nav on Map View -->
+            <div class="map-top-bar">
+                <a href="index.html" class="back-link" aria-label="Return to main profile">← Back to Profile</a>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <a href="cinema-events.html" class="back-link" style="color: var(--gold); border: 1px solid rgba(230,169,121,0.3);" aria-label="Cinema Events Timeline">🍿 Screenings Timeline</a>
+                    <a href="ideas.html" class="back-link" style="color: var(--rose-light); border: 1px solid rgba(255,107,138,0.3);" aria-label="Date Ideas Map">💡 Date Ideas</a>
+                    <a href="london-activities.html" class="back-link" style="color: var(--mint); border: 1px solid rgba(78,205,196,0.3);" aria-label="London Activities">🎡 Activities</a>
+                    <a href="lab.html" class="back-link" style="color: var(--accent-light); border: 1px solid rgba(153,78,168,0.4);" aria-label="Secret Lab">🧪 Lab</a>
+                </div>
+            </div>
+
+            <div id="map" style="flex: 1; z-index: 1;"></div>
+            <div class="map-bottom-filters">
+                <div id="bottom-chain-pills" class="category-pills scrollable-pills">
+                    <!-- Chain pills populated by JS -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Floating View Switcher (Map <-> List) -->
+    <div class="mobile-view-toggle" id="mobile-view-toggle" role="tablist" aria-label="View switcher">
+        <button class="mobile-toggle-btn active" id="toggle-map-btn" type="button" role="tab" aria-selected="true">🗺️ Map</button>
+        <button class="mobile-toggle-btn" id="toggle-list-btn" type="button" role="tab" aria-selected="false">📋 List</button>
+    </div>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<!-- Content & Transit Layers -->
+<script src="js/content.js"></script>
+<script src="js/canals.js"></script>
+
+<!-- Data Sources -->
+<script src="cinemas_geo.js"></script>
+
+<!-- Application Logic -->
+<script src="js/cinemas.js"></script>
+</body>
+</html>

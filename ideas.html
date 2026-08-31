@@ -565,11 +565,10 @@
         scrollWheelZoom: true
       }).setView([51.6500, -0.1500], 10);
 
-      // Light-themed CartoDB Voyager tiles (crisp, beautiful, high-contrast roads, waters, and greenery)
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://carto.com/" target="_blank">CARTO</a> &middot; <a href="https://www.openstreetmap.org/copyright" target="_blank">OSM</a>',
-        maxZoom: 19,
-        subdomains: 'abcd'
+      // OpenStreetMap standard key-free tiles
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
+        maxZoom: 19
       }).addTo(map);
 
       markersLayer = L.layerGroup().addTo(map);

@@ -680,8 +680,8 @@
         <a href="london-activities.html" class="back-link" style="color: var(--gold);" aria-label="London Activities">🎡 Activities</a>
         <a href="book-workshops.html" class="back-link" style="color: var(--mint);" aria-label="Workshops">🏺 Workshops</a>
         <a href="ideas.html" class="back-link" style="color: var(--rose-light);" aria-label="Date Ideas">💡 Ideas</a>
-        <a href="nerd-gatherings.html" class="back-link" style="color: var(--accent-light);" aria-label="Gatherings">🥂 Gatherings</a>
-        <a href="cinema-events.html" class="back-link" style="color: var(--gold); font-weight: 700;" aria-label="Cinema">🎬 Cinema</a>
+        <a href="cinema-events.html" class="back-link" style="color: var(--gold); font-weight: 700;" aria-label="Cinema Screenings">🍿 Screenings</a>
+        <a href="cinema-map.html" class="back-link" style="color: var(--gold); border: 1px solid rgba(230,169,121,0.3);" aria-label="Cinema Map">🗺️ Cinema Map</a>
       </div>
     </header>
 
@@ -706,6 +706,30 @@
       <div class="gatherings-timeline" id="timeline-container">
         <!-- Injected via JavaScript by Season -->
       </div>
+
+      <!-- Independent Film Festivals, Societies & Film Clubs Directory -->
+      <section class="festivals-directory-section" id="festivals-directory" style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--border);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-4); flex-wrap: wrap; gap: var(--space-3);">
+          <div>
+            <span class="page-tag" style="background: rgba(255,107,138,0.12); color: var(--rose-light); border: 1px solid rgba(255,107,138,0.3);">🎪 Film Festivals, Societies & Clubs</span>
+            <h2 style="font-size: 1.5rem; color: var(--text); margin-top: 6px; font-weight: 800;">UK Film Festivals, Societies & Pop-Up Collectives</h2>
+            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 4px;">Comprehensive directory of independent film festivals, community film societies, pop-up collectives, and specialist film clubs across London and the UK.</p>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <input type="text" id="fest-search" placeholder="Search festivals, clubs or regions..." style="padding: 8px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 0.85rem; width: 280px; max-width: 100%; outline: none;">
+          </div>
+        </div>
+
+        <!-- Regional Filter Pills for Festivals -->
+        <div class="scrollable-pills" id="fest-region-pills" style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; margin-bottom: var(--space-4);">
+          <!-- Populated by JS -->
+        </div>
+
+        <div id="festivals-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-3);">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
     </main>
 
     <footer class="footer-note">
@@ -1038,11 +1062,13 @@
     window.addEventListener('DOMContentLoaded', () => {
       if (typeof window.CONTENT !== 'undefined') {
         initGatherings();
+        initFestivalsDirectory();
       } else {
         const checkInterval = setInterval(() => {
           if (typeof window.CONTENT !== 'undefined') {
             clearInterval(checkInterval);
             initGatherings();
+        initFestivalsDirectory();
           }
         }, 50);
       }
@@ -1054,6 +1080,907 @@
         setProviderFilter(hash, window.CONTENT.cinemaEvents.items);
       }
     });
-  </script>
+  
+    // Film Festivals & Societies Directory
+    const FESTIVALS_DATA = [
+  {
+    "name": "London Socialist Film Co-op",
+    "url": "http://socialistfilm.blogspot.co.uk",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "Fashion in Film Festival",
+    "url": "http://www.fashioninfilm.com/festivals",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "Highgate Film Society",
+    "url": "http://www.hlsi.net/whats-on/film-society/",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "CineMediterra Film Festival",
+    "url": "https://www.cinemediterra.co.uk",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "TAPE Collective",
+    "url": "http://www.tapecollective.co.uk",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "BFI London Film Festival",
+    "url": "http://www.bfi.org.uk/lff/",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "Human Rights Watch International Film Festival",
+    "url": "http://www.hrw.org/iff",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "BFI Flare: London LGBT Film Festival",
+    "url": "http://www.bfi.org.uk/flare",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "Wimbledon Film Club",
+    "url": "https://wimbledonfilmclub.co.uk",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "East End Film Festival",
+    "url": "http://www.eastendfilmfestival.com",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "Kennington Bioscope",
+    "url": "http://www.kenningtonbioscope.com/",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "Rooftop Film Club - Bussey Building",
+    "url": "http://rooftopfilmclub.com",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "Raindance Film Festival",
+    "url": "https://www.raindance.org/festival",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "Creative Arts Film Society",
+    "url": "https://www.qmsu.org/groups/film/",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "McGuffin Film & TV Society",
+    "url": "http://www.mcguffin.info/",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "British Academy Film & Television Awards (BAFTA)",
+    "url": "http://www.bafta.org",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "Fright Fest",
+    "url": "http://www.frightfest.co.uk",
+    "region": "london",
+    "regionLabel": "\ud83c\udfaa London Festivals & Societies"
+  },
+  {
+    "name": "Flatpack Festival",
+    "url": "http://flatpackfestival.org.uk/",
+    "region": "midlands",
+    "regionLabel": "\ud83c\udfed Midlands & Central"
+  },
+  {
+    "name": "Derby Film Festival",
+    "url": "http://derbyfilmfestival.co.uk/",
+    "region": "midlands",
+    "regionLabel": "\ud83c\udfed Midlands & Central"
+  },
+  {
+    "name": "Lincoln Film Society",
+    "url": "http://www.lincolnfilmsociety.com",
+    "region": "midlands",
+    "regionLabel": "\ud83c\udfed Midlands & Central"
+  },
+  {
+    "name": "Louth Film Club",
+    "url": "http://www.louthfilmclub.com",
+    "region": "midlands",
+    "regionLabel": "\ud83c\udfed Midlands & Central"
+  },
+  {
+    "name": "Oswestry Film Society",
+    "url": "http://www.oswestryfilmsociety.com",
+    "region": "midlands",
+    "regionLabel": "\ud83c\udfed Midlands & Central"
+  },
+  {
+    "name": "Deaffest",
+    "url": "https://deaffest.co.uk",
+    "region": "midlands",
+    "regionLabel": "\ud83c\udfed Midlands & Central"
+  },
+  {
+    "name": "Winter Gardens Film Festival",
+    "url": "http://www.wintergardensfilm.co.uk",
+    "region": "north",
+    "regionLabel": "\u26a1 North & Yorkshire"
+  },
+  {
+    "name": "Holmfirth Film Festival",
+    "url": "http://www.holmfirthfilmfestival.co.uk/",
+    "region": "north",
+    "regionLabel": "\u26a1 North & Yorkshire"
+  },
+  {
+    "name": "Keswick Film Festival",
+    "url": "http://www.keswickfilmclub.org/festival/home",
+    "region": "north",
+    "regionLabel": "\u26a1 North & Yorkshire"
+  },
+  {
+    "name": "Keswick Film Club",
+    "url": "http://www.keswickfilmclub.org/kfc/index.php",
+    "region": "north",
+    "regionLabel": "\u26a1 North & Yorkshire"
+  },
+  {
+    "name": "Leeds International Film Festival",
+    "url": "https://www.leedsfilm.com/",
+    "region": "north",
+    "regionLabel": "\u26a1 North & Yorkshire"
+  },
+  {
+    "name": "Leeds Young Film Festival",
+    "url": "http://www.leedsyoungfilm.com",
+    "region": "north",
+    "regionLabel": "\u26a1 North & Yorkshire"
+  },
+  {
+    "name": "Leeds Queer Film Festival",
+    "url": "http://www.leedsqueerfilmfestival.co.uk",
+    "region": "north",
+    "regionLabel": "\u26a1 North & Yorkshire"
+  },
+  {
+    "name": "Wigan & Leigh Short Film Festival",
+    "url": "https://www.wiganleighfilmfestival.org.uk",
+    "region": "north",
+    "regionLabel": "\u26a1 North & Yorkshire"
+  },
+  {
+    "name": "Star & Shadow Cinema Co-op",
+    "url": "http://www.starandshadow.org.uk",
+    "region": "north",
+    "regionLabel": "\u26a1 North & Yorkshire"
+  },
+  {
+    "name": "Otley Film Society",
+    "url": "http://www.otleyfilmsociety.org.uk/",
+    "region": "north",
+    "regionLabel": "\u26a1 North & Yorkshire"
+  },
+  {
+    "name": "Sheffield Doc/Fest",
+    "url": "https://www.sheffdocfest.com",
+    "region": "north",
+    "regionLabel": "\u26a1 North & Yorkshire"
+  },
+  {
+    "name": "Aesthetica Short Film Festival",
+    "url": "http://www.asff.co.uk",
+    "region": "north",
+    "regionLabel": "\u26a1 North & Yorkshire"
+  },
+  {
+    "name": "Belfast Film Festival",
+    "url": "https://belfastfilmfestival.org",
+    "region": "northern-ireland",
+    "regionLabel": "\u2618\ufe0f Northern Ireland & Ireland"
+  },
+  {
+    "name": "Cinemagic International Film Festival",
+    "url": "http://www.cinemagic.org.uk",
+    "region": "northern-ireland",
+    "regionLabel": "\u2618\ufe0f Northern Ireland & Ireland"
+  },
+  {
+    "name": "Foyle Film Festival",
+    "url": "http://foylefilmfestival.org",
+    "region": "northern-ireland",
+    "regionLabel": "\u2618\ufe0f Northern Ireland & Ireland"
+  },
+  {
+    "name": "Galway Film Society",
+    "url": "http://gfs.ie/",
+    "region": "northern-ireland",
+    "regionLabel": "\u2618\ufe0f Northern Ireland & Ireland"
+  },
+  {
+    "name": "Newry Film Club",
+    "url": "http://newryfilmclub.com/",
+    "region": "northern-ireland",
+    "regionLabel": "\u2618\ufe0f Northern Ireland & Ireland"
+  },
+  {
+    "name": "Cork Film Festival",
+    "url": "http://corkfilmfest.org",
+    "region": "republic-of-ireland",
+    "regionLabel": "\ud83c\udfaa Film Festivals & Societies"
+  },
+  {
+    "name": "Audi Dublin International Film Festival",
+    "url": "http://www.diff.ie/",
+    "region": "republic-of-ireland",
+    "regionLabel": "\ud83c\udfaa Film Festivals & Societies"
+  },
+  {
+    "name": "Heartland Film Society",
+    "url": "http://www.heartlandfilmsociety.org.uk/",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Tullynessle Hall Film Club",
+    "url": "http://www.tullynessleandforbeshall.co.uk/filmclub.asp",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Cove and Kilcreggan Film Society",
+    "url": "http://coveburghhall.org.uk/what-s-on/film/cove-and-kilcreggan-film-society/",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Cromarty and Resolis Film Society",
+    "url": "https://cromartycinema.com",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Loch Ness Film Festival",
+    "url": "https://lochnessfilmfestival.co.uk",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Dunbar Film Society",
+    "url": "https://dunbarfilm.org.uk/",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Dundee Mountain Film Festival",
+    "url": "http://www.dundeemountainfilm.org.uk",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Discovery Film Festival",
+    "url": "http://www.discoveryfilmfestival.org.uk/",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Dunoon Film Festival",
+    "url": "http://www.dunoonfilmfestival.org",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Edinburgh Short Film Festival",
+    "url": "http://www.edinburghshortfilmfestival.com/",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Napier University Film Society",
+    "url": "https://www.napierstudents.com/organisation/societies/napierfilm/",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Edinburgh International Film Festival",
+    "url": "https://www.edfilmfest.org",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Glasgow Youth Film Festival",
+    "url": "https://glasgowfilm.org/what-we-do/festivals/glasgow-youth-film-festival",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Scottish Mental Health Arts and Film Festival",
+    "url": "https://www.mhfestival.com",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Document Festival",
+    "url": "http://documentfilmfestival.org",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Africa in Motion Film Festival",
+    "url": "https://www.africa-in-motion.org.uk",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Glasgow Film Festival",
+    "url": "http://www.glasgowfilm.org/festival",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Alchemy Film and Moving Image Festival",
+    "url": "http://alchemyfilmfestival.org.uk/",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Inverness Film Festival",
+    "url": "http://2017.invernessfilmfestival.com/welcome/",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Linlithgow Film Society",
+    "url": "http://www.linlithgowfilmsociety.org.uk/",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Selkirk Film Club",
+    "url": "http://www.selkirkfilmclub.com/",
+    "region": "scotland",
+    "regionLabel": "\ud83c\udff4 Scotland & Highlands"
+  },
+  {
+    "name": "Abingdon College and District (ABCD) Film Society",
+    "url": "http://abfilms.org.uk/",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Egerton Film Society",
+    "url": "http://www.egerton-kent.co.uk/film-club/",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Highclere Film Club",
+    "url": "http://highclerefilmclub.co.uk/wp",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Beaconsfield Film Society",
+    "url": "http://beaconsfieldfilmsociety.com",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Bedford Film Society",
+    "url": "http://www.bedfordfilmsociety.org.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Berkhamsted Film Society",
+    "url": "http://berkhamstedfilmsociety.co.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Bracknell Film Society",
+    "url": "http://www.bracknellfilmsoc.org",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Women Over 50 Film Festival",
+    "url": "http://wofff.co.uk/",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Fabrica Film Club",
+    "url": "https://www.fabrica.org.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Oska Bright Film Festival",
+    "url": "https://www.carousel.org.uk/oska-bright-film-festival",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "CINECITY - The Brighton Film Festival",
+    "url": "http://www.cine-city.co.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Thanet Film Society",
+    "url": "http://www.thanetfilm.co.uk/",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Cambridge Film Festival",
+    "url": "https://www.cambridgefilmfestival.org.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Kent Film Festival",
+    "url": "http://www.kentfilmfestival.com",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Chelmsford Film Club",
+    "url": "http://www.chelmsford-filmclub.co.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Chertsey Film Society",
+    "url": "http://www.chertseyfilm.org.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Chiltern Film Society",
+    "url": "https://www.chilternfilmsociety.org.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Chichester Film Festival",
+    "url": "http://chichestercinema.org/festival",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Wivenhoe Film Club",
+    "url": "http://www.nottagemaritimeinstitute.org.uk/film-home.php",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Colchester Film Society",
+    "url": "http://colchesterfilmsociety.org.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Cranbrook Film Society",
+    "url": "http://www.cranbrookfilmsociety.org",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Cranleigh Film Club",
+    "url": "http://www.cranleighfilmclub.org.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Eastbourne Film Society",
+    "url": "http://www.eastbournefilmsociety.co.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Forest Row Film Society",
+    "url": "http://forestrowvillagehall.org",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Godalming Film Society",
+    "url": "http://www.godalmingfilmsoc.org.uk/godalming-film-society/about-us/",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Ditchling Film Society",
+    "url": "https://www.ditchling.com/DitchlingFilm",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Hitchin Film Club",
+    "url": "https://www.hitchinfilms.co.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Hook Norton Film Society",
+    "url": "https://hook-norton.org.uk/groups/film-society/film-society-programme/",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Valley Film Society",
+    "url": "http://www.valleyfilmsociety.org",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Ipswich Film Society",
+    "url": "http://www.ipswichfilmsociety.org.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Letchworth Film Club",
+    "url": "https://www.broadway-letchworth.com/cinema/whats-on#/list/0000000017",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Lewes Film Club",
+    "url": "https://www.lewes-filmclub.com",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Long Crendon Film Club",
+    "url": "http://www.longcrendonfilmclub.com",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Lowestoft Film Festival",
+    "url": "https://lowestoftfilmfestival.co.uk/",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Maidstone Film Society",
+    "url": "http://www.maidstone-film-society.org.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Maldon Film Club",
+    "url": "http://maldonfilmclub.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "The Open Film Society",
+    "url": "https://openfilmsociety.co.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Northrepps Film Society",
+    "url": "http://www.northreppsfilmsociety.co.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Norwich Film Festival",
+    "url": "http://www.norwichfilmfestival.co.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Ropetackle Film Club",
+    "url": "http://www.ropetacklecentre.co.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Slough Co-Operative Film Society",
+    "url": "http://www.sloughfilmsoc.org.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "The Phoenix Film Society",
+    "url": "http://www.thephoenix.org.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Southend-on-Sea Film Festival",
+    "url": "https://www.southendfilmfestival.com",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Southwold Film Society",
+    "url": "http://www.southwoldcinema.co.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "St Albans Film Festival",
+    "url": "http://www.stalbansfilmfestival.com",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Uckfield Film Society",
+    "url": "https://www.picturehouseuckfield.com/uckfield-film-society",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Ventnor Film Society",
+    "url": "http://ventnorfilmsociety.wix.com/vfilms",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Walton & Weybridge Film Society",
+    "url": "http://www.wawfs.com",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Welwyn Garden City Film Society",
+    "url": "http://www.wgcfs.org.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Winchester Film Society",
+    "url": "http://www.winchesterfilmsociety.co.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Otherfield Film Festival",
+    "url": "http://otherfield.uk",
+    "region": "south-east",
+    "regionLabel": "\ud83c\udf0a South East & Coast"
+  },
+  {
+    "name": "Bath Film Festival",
+    "url": "https://filmbath.org.uk/",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Blandford Forum Film Society",
+    "url": "http://blandfordfilm.org",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Bridport Film Society",
+    "url": "http://www.bridportfilmsociety.co.uk",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Afrika Eye Film Festival",
+    "url": "https://www.afrikaeye.org.uk",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Bristol Film Festival",
+    "url": "http://www.bristolfilmfestival.com",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Encounters Short Film & Animation Festival",
+    "url": "http://encounters-festival.org.uk",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Dorchester Film Society",
+    "url": "http://www.dorchesterfilmsociety.org.uk",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Frome Film Club",
+    "url": "http://www.fromefilm.co.uk",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Hayle Film Club",
+    "url": "http://haylefilmclub.org.uk/",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Lyme Regis Film Society",
+    "url": "http://www.lymefilm.org",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Cornwall Film Festival",
+    "url": "http://cornwallfilmfestival.com",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Glastonbury Festival Events Ltd",
+    "url": "http://www.glastonburyfestivals.co.uk/areas/pilton-palais-cinema",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Portsmouth Film Society",
+    "url": "http://www.portsmouthfilmsociety.org.uk",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Sherborne International Film Festival",
+    "url": "http://shiff.org.uk",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Swindon Film Society",
+    "url": "http://www.swindonfilm.co.uk",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Tetbury Film Society",
+    "url": "https://www.tetburyfilm.org.uk/",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Purbeck Film Festival",
+    "url": "http://www.purbeckfilm.com",
+    "region": "south-west",
+    "regionLabel": "\ud83c\udf3f South West & West Country"
+  },
+  {
+    "name": "Abergavenny Film Society",
+    "url": "http://www.abergavennyfilmsociety.com",
+    "region": "wales",
+    "regionLabel": "\ud83d\udc09 Wales & Borders"
+  },
+  {
+    "name": "Abertoir Horror Festival",
+    "url": "http://www.abertoir.co.uk",
+    "region": "wales",
+    "regionLabel": "\ud83d\udc09 Wales & Borders"
+  },
+  {
+    "name": "Haverfordwest Film Society",
+    "url": "http://www.haverfordwest-film-society.org.uk",
+    "region": "wales",
+    "regionLabel": "\ud83d\udc09 Wales & Borders"
+  },
+  {
+    "name": "Pontardawe Film Society",
+    "url": "http://www.pontardawefilm.co.uk/en",
+    "region": "wales",
+    "regionLabel": "\ud83d\udc09 Wales & Borders"
+  },
+  {
+    "name": "Wales One World Film Festival",
+    "url": "http://www.wowfilmfestival.com/en",
+    "region": "wales",
+    "regionLabel": "\ud83d\udc09 Wales & Borders"
+  }
+];
+    let activeFestRegion = 'All';
+    let festSearchQuery = '';
+
+    function initFestivalsDirectory() {
+      const grid = document.getElementById('festivals-grid');
+      const pillsContainer = document.getElementById('fest-region-pills');
+      const searchInput = document.getElementById('fest-search');
+      if (!grid || !pillsContainer) return;
+
+      const regionCounts = {};
+      FESTIVALS_DATA.forEach(f => {
+        const r = f.regionLabel || 'Other';
+        regionCounts[r] = (regionCounts[r] || 0) + 1;
+      });
+
+      const regions = Object.keys(regionCounts).sort();
+      const allPills = [
+        { label: '🌟 All (' + FESTIVALS_DATA.length + ')', value: 'All' },
+        ...regions.map(r => ({ label: r + ' (' + regionCounts[r] + ')', value: r }))
+      ];
+
+      pillsContainer.innerHTML = allPills.map(p => `
+        <button type="button" class="filter-btn pill ${activeFestRegion === p.value ? 'active' : ''}" data-region="${p.value}" style="white-space: nowrap; font-size: 0.78rem; padding: 4px 10px;">
+          ${p.label}
+        </button>
+      `).join('');
+
+      pillsContainer.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeFestRegion = btn.dataset.region;
+          pillsContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.region === activeFestRegion));
+          renderFestivals();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          festSearchQuery = e.target.value.trim().toLowerCase();
+          renderFestivals();
+        });
+      }
+
+      renderFestivals();
+    }
+
+    function renderFestivals() {
+      const grid = document.getElementById('festivals-grid');
+      if (!grid) return;
+
+      let filtered = FESTIVALS_DATA;
+      if (activeFestRegion !== 'All') {
+        filtered = filtered.filter(f => (f.regionLabel || '') === activeFestRegion);
+      }
+      if (festSearchQuery !== '') {
+        filtered = filtered.filter(f => f.name.toLowerCase().includes(festSearchQuery) || (f.region || '').toLowerCase().includes(festSearchQuery) || (f.regionLabel || '').toLowerCase().includes(festSearchQuery));
+      }
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1 / -1; padding: 20px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--border); border-radius: 8px;">No festivals or societies found matching your search.</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(f => `
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; transition: transform 0.2s, border-color 0.2s;">
+          <div>
+            <span style="font-size: 0.7rem; color: var(--rose-light); background: rgba(255,107,138,0.1); border: 1px solid rgba(255,107,138,0.25); padding: 2px 6px; border-radius: 4px; font-weight: 600;">
+              ${f.regionLabel}
+            </span>
+            <h4 style="margin: 6px 0 2px 0; color: var(--text); font-size: 0.95rem; font-weight: 700; line-height: 1.3;">
+              ${f.name}
+            </h4>
+          </div>
+          <div style="display: flex; justify-content: flex-end;">
+            <a href="${f.url}" target="_blank" rel="noopener noreferrer" style="font-size: 0.76rem; color: var(--accent-light); text-decoration: none; font-weight: 600; background: rgba(153,78,168,0.12); border: 1px solid rgba(153,78,168,0.3); padding: 4px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;">
+              Visit Website ↗
+            </a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+</script>
 </body>
 </html>

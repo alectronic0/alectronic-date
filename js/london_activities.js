@@ -4,8 +4,8 @@
 
     // Map Setup
     const map = L.map('map').setView([51.5136, -0.1365], 13);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19
     }).addTo(map);
 
@@ -346,11 +346,11 @@
     }
 
     // Mobile View Toggle
-    const appLayout = document.querySelector('.app-layout');
-    const toggleMapBtn = document.getElementById('toggle-map-btn');
-    const toggleListBtn = document.getElementById('toggle-list-btn');
-
     function setMobileView(view) {
+        const appLayout = document.querySelector('.app-layout');
+        const toggleMapBtn = document.getElementById('toggle-map-btn');
+        const toggleListBtn = document.getElementById('toggle-list-btn');
+
         if (view === 'list') {
             if (appLayout) appLayout.classList.add('view-list');
             document.body.classList.add('view-list');
@@ -373,13 +373,15 @@
                 toggleListBtn.classList.remove('active');
                 toggleListBtn.setAttribute('aria-selected', 'false');
             }
-            if (map) {
-                setTimeout(() => map.invalidateSize(), 50);
-            }
+            setTimeout(() => {
+                map.invalidateSize();
+            }, 200);
         }
     }
 
     function setupMobileToggle() {
+        const toggleMapBtn = document.getElementById('toggle-map-btn');
+        const toggleListBtn = document.getElementById('toggle-list-btn');
         if (toggleMapBtn) toggleMapBtn.addEventListener('click', () => setMobileView('map'));
         if (toggleListBtn) toggleListBtn.addEventListener('click', () => setMobileView('list'));
     }
