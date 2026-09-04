@@ -2498,7 +2498,7 @@ window.CONTENT = {
                       "icon": "✨",
                       "action": "modal",
                       "target": "allCausesModal",
-                      "title": "Explore all 95 causes, charities and grassroots I care about"
+                      "title": "Explore all 123 causes, charities and grassroots I care about"
                     }
                   ]
                 }
