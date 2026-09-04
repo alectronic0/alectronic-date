@@ -1174,6 +1174,46 @@ body:has(dialog[open]) { overflow: hidden; }
   color: var(--muted);
 }
 
+.charity-tile-btn {
+  font-family: inherit;
+  cursor: pointer;
+  background: var(--surface-2, rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+}
+
+.charity-logo-emoji {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  border-radius: 6px;
+  background: var(--surface-3, rgba(255, 255, 255, 0.07));
+}
+
+.causes-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 18px 0 24px;
+}
+
+.causes-category-block {
+  margin-bottom: 24px;
+}
+
+.causes-category-block h4 {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 /* ─── Tags / pills rows ─────────────────────── */
 .tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; margin-bottom: 14px; }
 .tag-item {

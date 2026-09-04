@@ -2492,6 +2492,13 @@ window.CONTENT = {
                     {
                       "label": "Fight for the Future",
                       "url": "https://www.fightforthefuture.org/"
+                    },
+                    {
+                      "label": "More Causes...",
+                      "icon": "✨",
+                      "action": "modal",
+                      "target": "allCausesModal",
+                      "title": "Explore all 95 causes, charities and grassroots I care about"
                     }
                   ]
                 }

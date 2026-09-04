@@ -498,7 +498,12 @@
       `<div class="charity-grid">${b.tiles
         .map(
           (t) =>
-            `<a class="charity-tile" href="${esc(t.url)}" target="_blank" rel="noopener noreferrer" title="Donate / support ${esc(t.label)}">
+            t.action === 'modal' || t.onclick ?
+              `<button type="button" class="charity-tile charity-tile-btn" onclick="${esc(t.onclick || `document.getElementById('${t.target || 'allCausesModal'}').showModal()`)}" title="${esc(t.title || t.label)}">
+                            <span class="charity-logo-emoji">${esc(t.icon || '✨')}</span>
+                            <span class="charity-name">${esc(t.label)}</span>
+                        </button>` :
+              `<a class="charity-tile${t.scope ? ' cause-item' : ''}" ${t.scope ? `data-scope="${esc(t.scope)}"` : ''} href="${esc(t.url)}" target="_blank" rel="noopener noreferrer" title="${esc(t.title || `Donate / support ${t.label}`)}">
                             <img class="charity-logo" src="${esc(t.logo || faviconFor(t.url))}" alt="${esc(t.label)} logo" loading="lazy">
                             <span class="charity-name">${esc(t.label)}</span>
                         </a>`
@@ -2570,6 +2575,7 @@
       }, 100);
     }
   }
+  window.openDeepModal = openDeepModal;
 
   // Copy text to the clipboard, with a tiny ✓ flash on the 🔗 button.
   function copyLink(url, el) {
@@ -2590,9 +2596,40 @@
   function initDeepDive() {
     if (document._deepDiveDelegated) return;
     document.addEventListener('click', (e) => {
+      const charityBtn = e.target.closest('.charity-tile-btn');
+      if (charityBtn) {
+        openDeepModal('allCausesModal');
+        return;
+      }
       const card = e.target.closest('.deep-card');
       if (card) {
         openDeepModal(card.getAttribute('data-modal'));
+        return;
+      }
+      const pill = e.target.closest('.causes-filter-bar button[data-filter-scope]');
+      if (pill) {
+        const bar = pill.closest('.causes-filter-bar');
+        if (bar) {
+          bar.querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+          pill.classList.add('selected');
+          const scope = pill.getAttribute('data-filter-scope');
+          const modal = pill.closest('.deep-modal');
+          if (modal) {
+            modal.querySelectorAll('.causes-category-block').forEach(block => {
+              let visible = 0;
+              block.querySelectorAll('.cause-item').forEach(item => {
+                const s = item.getAttribute('data-scope');
+                if (scope === 'all' || s === scope) {
+                  item.style.display = '';
+                  visible++;
+                } else {
+                  item.style.display = 'none';
+                }
+              });
+              block.style.display = visible > 0 ? '' : 'none';
+            });
+          }
+        }
         return;
       }
       const dlg = e.target.closest('.deep-modal');
