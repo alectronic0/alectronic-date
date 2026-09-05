@@ -11,7 +11,6 @@ import os
 
 JSON_PATH = "/home/alectronic/go/github.com/alectronic0/alectronic-date/workshops_geo.json"
 JS_PATH = "/home/alectronic/go/github.com/alectronic0/alectronic-date/workshops_geo.js"
-MIN_JS_PATH = "/home/alectronic/go/github.com/alectronic0/alectronic-date/workshops_geo.min.js"
 
 SEARCH_URLS = [
     "https://classbento.co.uk/workshops-welwyn-garden-city",
@@ -171,9 +170,6 @@ def main():
 
     with open(JS_PATH, "w", encoding="utf-8") as f:
         f.write("window.WORKSHOPS_DATA = " + json.dumps(all_workshops, indent=2, ensure_ascii=False) + ";\n")
-
-    with open(MIN_JS_PATH, "w", encoding="utf-8") as f:
-        f.write("window.WORKSHOPS_DATA=" + json.dumps(all_workshops, separators=(',', ':'), ensure_ascii=False) + ";\n")
 
     print("Successfully wrote updated JSON and JS datasets.")
 

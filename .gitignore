@@ -5,3 +5,4 @@ node_modules/
 *.log
 dist/
 .aider.tags.cache.v4/
+__pycache__/

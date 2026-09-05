@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Scrape exact GPS coordinates and meeting locations from Airbnb experience pages.
-Updates workshops_geo.json, workshops_geo.js, and workshops_geo.min.js.
+Updates workshops_geo.json and workshops_geo.js.
 """
 
 import json
@@ -12,7 +12,6 @@ import os
 
 JSON_PATH = "/home/alectronic/go/github.com/alectronic0/alectronic-date/workshops_geo.json"
 JS_PATH = "/home/alectronic/go/github.com/alectronic0/alectronic-date/workshops_geo.js"
-MIN_JS_PATH = "/home/alectronic/go/github.com/alectronic0/alectronic-date/workshops_geo.min.js"
 
 def main():
     with open(JSON_PATH, "r", encoding="utf-8") as f:
@@ -103,10 +102,7 @@ def main():
     with open(JS_PATH, "w", encoding="utf-8") as f:
         f.write("window.WORKSHOPS_DATA = " + json.dumps(data, indent=2, ensure_ascii=False) + ";\n")
 
-    with open(MIN_JS_PATH, "w", encoding="utf-8") as f:
-        f.write("window.WORKSHOPS_DATA=" + json.dumps(data, separators=(',', ':'), ensure_ascii=False) + ";\n")
-
-    print("All datasets successfully written and minified!")
+    print("All datasets successfully written!")
 
 if __name__ == "__main__":
     main()

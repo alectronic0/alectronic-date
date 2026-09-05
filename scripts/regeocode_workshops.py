@@ -407,7 +407,6 @@ def bulk_lookup_postcodes(postcodes_list):
 def main():
     json_path = "/home/alectronic/go/github.com/alectronic0/alectronic-date/workshops_geo.json"
     js_path = "/home/alectronic/go/github.com/alectronic0/alectronic-date/workshops_geo.js"
-    min_js_path = "/home/alectronic/go/github.com/alectronic0/alectronic-date/workshops_geo.min.js"
 
     with open(json_path, "r", encoding="utf-8") as f:
         workshops = json.load(f)
@@ -567,10 +566,6 @@ def main():
     print("Writing workshops_geo.js...")
     with open(js_path, "w", encoding="utf-8") as f:
         f.write("window.WORKSHOPS_DATA = " + json.dumps(workshops, indent=2, ensure_ascii=False) + ";\n")
-
-    print("Writing workshops_geo.min.js...")
-    with open(min_js_path, "w", encoding="utf-8") as f:
-        f.write("window.WORKSHOPS_DATA=" + json.dumps(workshops, separators=(',', ':'), ensure_ascii=False) + ";\n")
 
     print("All files successfully updated!")
 
