@@ -1409,7 +1409,7 @@
         <p>&copy; <span class="year">${new Date().getFullYear()}</span> Alec &middot; alec.today &middot; All rights reserved.</p>
         <p class="powered-by-text"><a href="https://alec.today/" target="_blank" rel="noopener" class="powered-by-link">${C.footer.credit}</a></p>
         <p class="footer-sublink">
-          <a href="lab.html" class="wishlist-link" style="color: var(--gold); font-weight: 600;">🧪 Secret Lab</a>
+          <a href="labs/" class="wishlist-link" style="color: var(--gold); font-weight: 600;">🧪 Secret Lab</a>
         </p>
       `;
     }

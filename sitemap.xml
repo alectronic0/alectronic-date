@@ -7,43 +7,49 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://date.alec.today/london-activities.html</loc>
+    <loc>https://date.alec.today/labs/london-activities.html</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://date.alec.today/lab.html</loc>
+    <loc>https://date.alec.today/labs/</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://date.alec.today/book-workshops.html</loc>
+    <loc>https://date.alec.today/labs/workshops.html</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://date.alec.today/ideas.html</loc>
+    <loc>https://date.alec.today/labs/ideas.html</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://date.alec.today/events.html</loc>
+    <loc>https://date.alec.today/labs/events.html</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://date.alec.today/cinema-events.html</loc>
+    <loc>https://date.alec.today/labs/nerd-gatherings.html</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://date.alec.today/labs/cinema-events.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://date.alec.today/cinema-map.html</loc>
+    <loc>https://date.alec.today/labs/cinema-map.html</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

@@ -30,17 +30,21 @@
         'The Light': '#48cae4'
     };
 
+    // Scraped icon paths are relative to the site root; this page lives in labs/.
+    const LOCAL_ASSET = /^(?![a-z]+:|\/|\.\.\/)[\w./-]+\.(png|svg|webp|jpe?g|ico)$/i;
+    const assetUrl = (src) => (src && LOCAL_ASSET.test(src) ? `../${src}` : src);
+
     const CHAIN_LOGOS = {
-        'Everyman': 'img/logos/everyman.png',
-        'Curzon': 'img/logos/curzon.png',
-        'Picturehouse': 'img/logos/picturehouse.png',
-        'BFI': 'img/logos/bfi.svg',
-        'Rooftop Film Club': 'img/logos/rooftop-film-club.png',
-        'ODEON': 'img/logos/odeon.png',
-        'Cineworld': 'img/logos/cineworld.png',
-        'Vue': 'img/logos/vue.png',
-        'Omniplex': 'img/logos/omniplex.png',
-        'The Light': 'img/logos/the-light.png'
+        'Everyman': '../img/logos/everyman.png',
+        'Curzon': '../img/logos/curzon.png',
+        'Picturehouse': '../img/logos/picturehouse.png',
+        'BFI': '../img/logos/bfi.svg',
+        'Rooftop Film Club': '../img/logos/rooftop-film-club.png',
+        'ODEON': '../img/logos/odeon.png',
+        'Cineworld': '../img/logos/cineworld.png',
+        'Vue': '../img/logos/vue.png',
+        'Omniplex': '../img/logos/omniplex.png',
+        'The Light': '../img/logos/the-light.png'
     };
 
     const PREFERRED_CHAIN_ORDER = [
@@ -444,7 +448,7 @@
             const chainColor = CHAIN_COLORS[c.chain] || 'var(--gold)';
             const isIndie = (c.chain || 'Independent') === 'Independent';
             const isSoc = c.chain === 'Film Society';
-            const iconSrc = c.icon || CHAIN_LOGOS[c.chain];
+            const iconSrc = assetUrl(c.icon) || CHAIN_LOGOS[c.chain];
 
             let badgeIconHTML = '';
             if (isSoc) {
@@ -544,7 +548,7 @@
             const chainColor = CHAIN_COLORS[c.chain] || '#e6a979';
             const isIndie = (c.chain || 'Independent') === 'Independent';
             const isSoc = c.chain === 'Film Society';
-            const iconSrc = c.icon || CHAIN_LOGOS[c.chain];
+            const iconSrc = assetUrl(c.icon) || CHAIN_LOGOS[c.chain];
 
             let pinInner = '';
             if (isSoc) {

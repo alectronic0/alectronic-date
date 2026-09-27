@@ -1171,7 +1171,7 @@ TRANSIT_LINES = [
 ]
 
 def update_content_js():
-    content_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "js", "content.js"))
+    content_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "js", "labs-content.js"))
     with open(content_file, "r", encoding="utf-8") as f:
         content_text = f.read()
 
@@ -1187,7 +1187,7 @@ def update_content_js():
     pattern = r'("transit":\s*\{[\s\S]*?\n\s*\}),\s*\n(\s*"items":\s*\[)'
     match = re.search(pattern, content_text)
     if not match:
-        print("ERROR: could not find transit block in content.js")
+        print("ERROR: could not find transit block in labs-content.js")
         return False
 
     new_content = content_text[:match.start()] + f'"transit": {transit_json},\n    "items": [' + content_text[match.end():]
@@ -1195,7 +1195,7 @@ def update_content_js():
     with open(content_file, "w", encoding="utf-8") as f:
         f.write(new_content)
 
-    print("Successfully updated js/content.js with updated transit dataset!")
+    print("Successfully updated js/labs-content.js with updated transit dataset!")
     return True
 
 if __name__ == "__main__":

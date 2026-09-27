@@ -17,7 +17,7 @@
   </script>
 
   <!-- Vanilla CookieConsent v3 -->
-  <script src="js/cookie.js" defer></script>
+  <script src="../js/cookie.js" defer></script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4Q5KJSLNK"></script>
@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
   <!-- Core Design System -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 
   <style>
     .activity-card {
@@ -128,12 +128,12 @@
         <aside class="sidebar-drawer" id="sidebar">
             <header class="drawer-header">
                 <div class="top-links" style="display: flex; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 6px;">
-                    <a href="index.html" class="back-link" aria-label="Return to main profile">← Profile</a>
+                    <a href="../index.html" class="back-link" aria-label="Return to main profile">← Profile</a>
                     <div style="display: flex; gap: 6px; flex-wrap: wrap;">
                         <a href="cinema-events.html" class="back-link" style="color: var(--gold); border: 1px solid rgba(230,169,121,0.3);" aria-label="Cinema Events">🍿 Screenings</a>
                         <a href="ideas.html" class="back-link" style="color: var(--rose-light);" aria-label="Date Ideas">💡 Ideas</a>
                         <a href="london-activities.html" class="back-link" style="color: var(--mint);" aria-label="London Activities">🎡 Activities</a>
-                        <a href="lab.html" class="back-link" style="color: var(--accent-light);" aria-label="Secret Lab">🧪 Lab</a>
+                        <a href="index.html" class="back-link" style="color: var(--accent-light);" aria-label="Secret Lab">🧪 Lab</a>
                     </div>
                 </div>
                 <h1 style="font-size: 1.85rem; margin-bottom: 8px; color: var(--text);">Cinema Map</h1>
@@ -156,12 +156,12 @@
         <main id="map-view-container" class="map-area" style="display: flex; flex-direction: column;">
             <!-- Floating Top Nav on Map View -->
             <div class="map-top-bar">
-                <a href="index.html" class="back-link" aria-label="Return to main profile">← Back to Profile</a>
+                <a href="../index.html" class="back-link" aria-label="Return to main profile">← Back to Profile</a>
                 <div style="display: flex; gap: 8px; flex-wrap: wrap;">
                     <a href="cinema-events.html" class="back-link" style="color: var(--gold); border: 1px solid rgba(230,169,121,0.3);" aria-label="Cinema Events Timeline">🍿 Screenings Timeline</a>
                     <a href="ideas.html" class="back-link" style="color: var(--rose-light); border: 1px solid rgba(255,107,138,0.3);" aria-label="Date Ideas Map">💡 Date Ideas</a>
                     <a href="london-activities.html" class="back-link" style="color: var(--mint); border: 1px solid rgba(78,205,196,0.3);" aria-label="London Activities">🎡 Activities</a>
-                    <a href="lab.html" class="back-link" style="color: var(--accent-light); border: 1px solid rgba(153,78,168,0.4);" aria-label="Secret Lab">🧪 Lab</a>
+                    <a href="index.html" class="back-link" style="color: var(--accent-light); border: 1px solid rgba(153,78,168,0.4);" aria-label="Secret Lab">🧪 Lab</a>
                 </div>
             </div>
 
@@ -185,13 +185,14 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <!-- Content & Transit Layers -->
-<script src="js/content.js"></script>
-<script src="js/canals.js"></script>
+<script src="../js/content.js"></script>
+  <script src="../js/labs-content.js"></script>
+<script src="../js/canals.js"></script>
 
 <!-- Data Sources -->
-<script src="cinemas_geo.js"></script>
+<script src="../cinemas_geo.js"></script>
 
 <!-- Application Logic -->
-<script src="js/cinemas.js"></script>
+<script src="../js/cinemas.js"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@
   </script>
 
   <!-- Vanilla CookieConsent v3 -->
-  <script src="js/cookie.js" defer></script>
+  <script src="../js/cookie.js" defer></script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4Q5KJSLNK"></script>
@@ -46,7 +46,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 
   <style>
     .page-layout {
@@ -674,11 +674,11 @@
 <body>
   <div class="page-layout">
     <header class="top-bar">
-      <a href="lab.html" class="back-link" aria-label="Return to secret lab">← Secret Lab</a>
+      <a href="index.html" class="back-link" aria-label="Return to secret lab">← Secret Lab</a>
       <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-        <a href="index.html" class="back-link" style="color: var(--text);" aria-label="Main Profile">💘 Profile</a>
+        <a href="../index.html" class="back-link" style="color: var(--text);" aria-label="Main Profile">💘 Profile</a>
         <a href="london-activities.html" class="back-link" style="color: var(--gold);" aria-label="London Activities">🎡 Activities</a>
-        <a href="book-workshops.html" class="back-link" style="color: var(--mint);" aria-label="Workshops">🏺 Workshops</a>
+        <a href="workshops.html" class="back-link" style="color: var(--mint);" aria-label="Workshops">🏺 Workshops</a>
         <a href="ideas.html" class="back-link" style="color: var(--rose-light);" aria-label="Date Ideas">💡 Ideas</a>
         <a href="nerd-gatherings.html" class="back-link" style="color: var(--accent-light); font-weight: 700;" aria-label="Gatherings">🥂 Gatherings</a>
         <a href="cinema-events.html" class="back-link" style="color: #f4c06e;" aria-label="Cinema">🎬 Cinema</a>
@@ -755,7 +755,8 @@
     </defs>
   </svg>
 
-  <script src="js/content.js"></script>
+  <script src="../js/content.js"></script>
+  <script src="../js/labs-content.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -898,7 +899,7 @@
       const container = document.getElementById('timeline-container');
 
       if (!data || !data.items || data.items.length === 0) {
-        container.innerHTML = '<div class="empty-state">No gatherings listed yet. Check back soon!</div>';
+        container.innerHTML = '<div class="empty-state">🎲 New gatherings dropping soon — check back shortly!</div>';
         return;
       }
 
