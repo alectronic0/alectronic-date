@@ -354,10 +354,8 @@ window.CONTENT = {
       },
       {
         "label": "WhatsApp",
-        "sublabel": "(coming soon)",
         "icon": "whatsapp",
-        "href": "javascript:void(0)",
-        "disabled": true
+        "href": "https://wa.me/alectronic0"
       },
       {
         "label": "Telegram",
@@ -2016,7 +2014,7 @@ window.CONTENT = {
               "icon": "💻",
               "title": "Work",
               "text": "Doing the tippy-tappy and trying to break production... wait, I mean trying NOT to break production.",
-              "src": "img/gifs/maNB0qAiRVAty.gif",
+              "src": "img/gifs/maNB0qAiRVAty.webp",
               "alt": "Cat typing rapidly"
             }
           ]
@@ -4911,7 +4909,7 @@ window.CONTENT = {
               "alt": "A GIF that describes my life"
             },
             {
-              "src": "img/gifs/maNB0qAiRVAty.gif",
+              "src": "img/gifs/maNB0qAiRVAty.webp",
               "alt": "A GIF that describes my life"
             },
             {

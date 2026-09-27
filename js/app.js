@@ -3731,6 +3731,7 @@
         photo.dataset.rot = rot;
 
         const img = document.createElement('img');
+        img.decoding = 'async';
         img.src = imgData.src;
         img.alt = imgData.alt || '';
         photo.appendChild(img);
@@ -3754,18 +3755,34 @@
         }, lifespan);
       };
 
-      // Gradual build-up over 25 seconds for a slower, more deliberate rendering
-      for (let i = 0; i < maxPhotosOnScreen; i++) {
-        setTimeout(spawnImage, Math.random() * 25000);
-      }
+      // Only download and spawn photos while the collage is near the viewport — it holds
+      // 142 images, and spawning off-screen cost ~2MB on mobile before anyone scrolled to it.
+      let isVisible = false;
+      let hasStarted = false;
 
-      // aggressive spawn rate to keep it fully populated, slightly slower
-      setInterval(() => {
-        const currentCount = container.querySelectorAll('.scattered-photo').length;
-        if (currentCount < maxPhotosOnScreen + 10) {
-          spawnImage();
+      const start = () => {
+        hasStarted = true;
+        // Gradual build-up over 25 seconds for a slower, more deliberate rendering
+        for (let i = 0; i < maxPhotosOnScreen; i++) {
+          setTimeout(() => { if (isVisible) spawnImage(); }, Math.random() * 25000);
         }
-      }, 300);
+
+        // aggressive spawn rate to keep it fully populated, slightly slower
+        setInterval(() => {
+          if (!isVisible) return;
+          const currentCount = container.querySelectorAll('.scattered-photo').length;
+          if (currentCount < maxPhotosOnScreen + 10) {
+            spawnImage();
+          }
+        }, 300);
+      };
+
+      new IntersectionObserver((entries) => {
+        isVisible = entries[0].isIntersecting;
+        if (!isVisible) return;
+        if (hasStarted) return;
+        start();
+      }, { rootMargin: '200px 0px' }).observe(container);
     });
   }
 

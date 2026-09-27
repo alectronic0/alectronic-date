@@ -62,11 +62,21 @@ server.listen(0, async () => {
         new Promise(r => setTimeout(r, 5000))
       ]);
 
+      // The collage is rebuilt client-side once it scrolls into view; baking its random
+      // snapshot into the HTML would only add markup and image requests.
+      document.querySelectorAll(".fading-collage").forEach(el => el.replaceChildren());
+
       // Optimize images: add lazy loading and explicit dimensions
       images.forEach(img => {
         const rect = img.getBoundingClientRect();
-        // Add lazy loading for images below the fold
-        if (rect.top > window.innerHeight && !img.hasAttribute("loading")) {
+        // Lazy-load images below the fold and hidden ones (e.g. inside closed <dialog>s),
+        // which report rect.top 0 and would otherwise download at page load
+        const needsLazy = () => {
+          if (img.hasAttribute("loading")) return false;
+          if (rect.top > window.innerHeight) return true;
+          return !img.checkVisibility();
+        };
+        if (needsLazy()) {
           img.setAttribute("loading", "lazy");
         }
         
