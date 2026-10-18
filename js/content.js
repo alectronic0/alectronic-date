@@ -97,7 +97,7 @@ window.CONTENT = {
     "tag": "📋 Who I Am",
     "name": "Alec Doran-Twyford",
     "tagline": "",
-    "evolvingNote": "🚧 Like me, this site is a work in progress — it continues to evolve and won't always be perfect. The odd bug, glitch, or typo might sneak through, but it's trying its best anyway. 💜",
+    "evolvingNote": "🚧 Like me, this site is a work in progress. It continues to evolve and won't always be perfect. The odd bug, glitch, or typo might sneak through, but it's trying its best anyway. 💜",
     "intro": [
       "Hi, I'm Alec! 👋 A few years ago, after focusing on my career and buying a house 🏠, I decided it was time to start dating. But let's face it: <strong style=\"color: var(--rose-light);\">dating apps suck</strong> 💔.",
       "I also noticed that some people I talked to seemed to lose sight of who they were in and out of a relationship, so to stay grounded, I wrote a list of the thing I liked and valued that list became the <a href=\"https://docs.google.com/presentation/d/18JFwBTN1VRsoGH6tOqM4yJ1veaQtP5MZ8SpdJPSWVTE/edit?usp=sharing\" target=\"_blank\" style=\"color: #80c0ff; text-decoration: underline;\">\"boyfriend application\"</a>, which eventually became this interactive webstie you are now reading.",
@@ -151,7 +151,7 @@ window.CONTENT = {
         "label": "Living in",
         "value": "Welwyn Garden City",
         "href": "https://www.google.com/maps/place/Welwyn+Garden+City",
-        "toast": "Welwyn Garden City — a lovely garden city in Hertfordshire! 🗺️"
+        "toast": "Welwyn Garden City, a lovely garden city in Hertfordshire! 🗺️"
       },
       {
         "icon": "🪪",
@@ -181,7 +181,7 @@ window.CONTENT = {
           "Long-term",
           "monogamous"
         ],
-        "toast": "Here for the real deal — building a long-term life together 💖"
+        "toast": "Here for the real deal: building a long-term life together 💖"
       },
       {
         "icon": "👶",
@@ -218,7 +218,7 @@ window.CONTENT = {
       "lead": "You've made it this far! Do you want to shoot your shot?<br>I've worked to make this as easy as possible: Tell me your <span class='text-purple'>name</span>, set your rough <span class=\"text-red\">location</span>, pick your <span class=\"text-green\">adventure</span>, answer a few <span class=\"text-blue\">ice breakers</span>, and <span class=\"text-gold\">leave the rest to me!</span>",
       "shootIcon": "💘",
       "shootLabel": "Shoot Your Shot",
-      "shootSub": "Start the quest — let's go on a date!",
+      "shootSub": "Start the quest, let's go on a date!",
       "shareLabel": "Share with a Friend",
       "shareSub": "Know someone who'd be a better match?"
     },
@@ -366,7 +366,7 @@ window.CONTENT = {
   "share": {
     "tag": "🍄 Not Your Vibe?",
     "heading": "Maybe My Princess Is in Another Castle 🏰",
-    "lead": "No hard feelings if I'm not the one for you — but maybe you know someone who is. Send this their way:",
+    "lead": "No hard feelings if I'm not the one for you, but maybe you know someone who is. Send this their way:",
     "text": "Check out Alec's dating application 🎮❤️",
     "options": [
       {
@@ -413,16 +413,16 @@ window.CONTENT = {
     "emailSubject": "My responses to Alec's questions 🎮❤️",
     "emailIntro": "Hi Alec!\nHere are my responses to your questions:",
     "questions": [
-      "What are your top three favourite countries — and what made them special?",
+      "What are your top three favourite countries, and what made them special?",
       "If you had to pick a favourite god or goddess, who would it be and why?",
       "What's your favourite food or cuisine?",
       "What's your favourite Pokemon?",
       "Favourite TV show or video game right now?",
       "What did you want to be when you grew up?",
-      "What do you do for work — and do you genuinely enjoy it?",
+      "What do you do for work, and do you genuinely enjoy it?",
       "Where's the next place you'd love to travel to?",
       "What's a hobby or interest you could talk about for hours?",
-      "Tea or coffee — and how do you take it?",
+      "Tea or coffee, and how do you take it?",
       "What's the best meal you've ever had?",
       "Cats, dogs, or something more exotic?",
       "What does your perfect lazy Sunday look like?",
@@ -437,7 +437,7 @@ window.CONTENT = {
   },
   "soundtrack": {
     "label": "Site soundtrack",
-    "title": "🎧 Cosy gaming lofi — press play & scroll",
+    "title": "🎧 Cosy gaming lofi: press play & scroll",
     "embed": "https://open.spotify.com/embed/playlist/37i9dQZF1FwX0A5pnDZILw?utm_source=generator&theme=0",
     "url": "https://open.spotify.com/playlist/37i9dQZF1FwX0A5pnDZILw",
     "height": 152
@@ -754,7 +754,7 @@ window.CONTENT = {
     "title": "Seriously?!",
     "teaseText": "Did you really think I'd just leave the highly sensitive material lying around for anyone to click?",
     "unlockButton": "🔓🔑 Let me see anyway 😏",
-    "punchlineTitle": "You're Cheeky — I Like That!",
+    "punchlineTitle": "You're Cheeky, I Like That!",
     "punchlineBody": "Wow, you actually clicked it. I respect the curiosity 😉. If you really want to get to know me, you know what to do..."
   },
   "sections": {
@@ -789,7 +789,7 @@ window.CONTENT = {
               "icon": "😋",
               "label": "Foodie",
               "value": "Foodie",
-              "toast": "Om nom nom nom! 🤤 Nom nom nom nom! Eating, cooking, baking—I love enjoying all aspects of food! 🍕🍰🥖"
+              "toast": "Om nom nom nom! 🤤 Nom nom nom nom! Eating, cooking, baking, I love enjoying all aspects of food! 🍕🍰🥖"
             },
             {
               "icon": "💚",
@@ -801,7 +801,7 @@ window.CONTENT = {
               "icon": "🧝",
               "label": "Fantasy",
               "value": "Fantasy",
-              "toast": "Getting lost in the Shire or going on a noble quest in D&D—fantasy allows me to escape 🗡️🛡️✨"
+              "toast": "Getting lost in the Shire or going on a noble quest in D&D, fantasy allows me to escape 🗡️🛡️✨"
             },
             {
               "icon": "🚀",
@@ -819,7 +819,7 @@ window.CONTENT = {
               "icon": "💪",
               "label": "Gym Goer",
               "value": "Gym Goer",
-              "toast": "I go to the gym to get stronger—and so I can enjoy more food! 🏋️‍♂️🥐🍕"
+              "toast": "I go to the gym to get stronger, and so I can enjoy more food! 🏋️‍♂️🥐🍕"
             },
             {
               "icon": "🪛",
@@ -873,7 +873,7 @@ window.CONTENT = {
               "icon": "🧶",
               "label": "Crafter",
               "value": "Crafter",
-              "toast": "Making, painting, or crafting things by hand—there's nothing better than bringing ideas to life 🎨✂️🖌️"
+              "toast": "Making, painting, or crafting things by hand, there's nothing better than bringing ideas to life 🎨✂️🖌️"
             }
           ]
         },
@@ -1472,7 +1472,7 @@ window.CONTENT = {
       "tag": "❤️ Boyfriend mode in Action",
       "tagClass": "tag-rose",
       "heading": "What Dating Me Could Look Like",
-      "lead": "A peek at \"boyfriend mode\" — the little things I love doing for the person I'm with. There is no 'bare minimum' with me, only princess treatment! 👑",
+      "lead": "A peek at \"boyfriend mode\": the little things I love doing for the person I'm with. There is no 'bare minimum' with me, only princess treatment! 👑",
       "blocks": [
         {
           "type": "featureGrid",
@@ -1481,7 +1481,7 @@ window.CONTENT = {
               "src": "img/boyfriend-mode/couple-hugging.webp",
               "alt": "A couple hugging",
               "title": "🤗 Emotional Support Nerd",
-              "text": "Always supportive and caring — there through the good and bad times, with great hugs, forehead kisses, and massages."
+              "text": "Always supportive and caring, there through the good and bad times, with great hugs, forehead kisses, and massages."
             },
             {
               "src": "img/boyfriend-mode/passenger-princess.webp",
@@ -1517,7 +1517,7 @@ window.CONTENT = {
         },
         {
           "type": "paragraph",
-          "html": "\n                    <div style=\"text-align: center; margin-top: 32px;\">\n                        <button onclick=\"document.getElementById('bfExtrasModal').showModal()\" class=\"share-btn primary\" style=\"background: var(--surface-2); border: 1px solid var(--border); color: var(--text); font-weight: 600; padding: 12px 24px; border-radius: 8px; cursor: pointer; display: inline-block;\">✨ And so much more...</button>\n                    </div>\n                    <dialog id=\"bfExtrasModal\" class=\"deep-modal\">\n                        <div class=\"deep-modal-inner\">\n                            <div class=\"deep-modal-head\">\n                                <h3 class=\"deep-modal-title\">✨ And so much more...</h3>\n                                <span class=\"deep-link\" role=\"button\" tabindex=\"0\" data-anchor=\"bfExtrasModal\" title=\"Copy link to this section\">🔗</span>\n                                <button class=\"deep-modal-close\" aria-label=\"Close modal\" onclick=\"this.closest('dialog').close()\">&times;</button>\n                            </div>\n                            <div class=\"deep-modal-body\">\n                                <div class=\"interest-cards\">\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🫂</span><span class=\"interest-card-title\">Expert Hugger</span></div>\n                                <p class=\"interest-card-body\">Always ready to wrap you up in a big, comforting hug exactly when you need it most</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">☕</span><span class=\"interest-card-title\">Pre-Loaded Coffee Order</span></div>\n                                <p class=\"interest-card-body\">Never having to repeat your coffee order, plus a constant supply of your favourite snacks</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🪛</span><span class=\"interest-card-title\">Certified IKEA Flatpack Builder</span></div>\n                                <p class=\"interest-card-body\">Never worry about missing screws or confusing instruction manuals again</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🐧</span><span class=\"interest-card-title\">Certified Meme Dealer</span></div>\n                                <p class=\"interest-card-body\">Pebbling you with hundreds of perfectly curated memes</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">📖</span><span class=\"interest-card-title\">Book Boyfriend Roleplayer</span></div>\n                                <p class=\"interest-card-body\">BookTok girls will know exactly what this means 😉 <em>(Willing to supply 'who did this to you?' energy on demand)</em></p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🧑‍🍳</span><span class=\"interest-card-title\">Personal Chef / Baker</span></div>\n                                <p class=\"interest-card-body\">Fresh cookies and a meal fit for a queen at a moment's notice</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🛠️</span><span class=\"interest-card-title\">Handler of the \"Blue Jobs\"</span></div>\n                                <p class=\"interest-card-body\">From taking out the bins to heavy lifting and DIY—I've got all the gross and heavy stuff covered</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\"><img src=\"https://cdn.simpleicons.org/deliveroo/00CC99\" style=\"width: 24px; height: 24px; display: block;\" alt=\"Deliveroo\"></span><span class=\"interest-card-title\">Deliveroo on Speed Dial</span></div>\n                                <p class=\"interest-card-body\">When cooking isn't the vibe, your favourite takeout is just a tap away</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">💻</span><span class=\"interest-card-title\">24/7 Tech Support</span></div>\n                                <p class=\"interest-card-body\">Your personal tech support for all devices* <em>(Printer excluded)</em></p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🛍️</span><span class=\"interest-card-title\">Errands Helper</span></div>\n                                <p class=\"interest-card-body\">Always happy to run errands to make your day easier</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🕷️</span><span class=\"interest-card-title\">Designated Bug Relocator</span></div>\n                                <p class=\"interest-card-body\">Bravely capturing and releasing any 8-legged intruders so you don't have to <em>(Fully accredited via the Australian Outback 🦘)</em></p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🍷</span><span class=\"interest-card-title\">Guaranteed to age like fine wine</span></div>\n                                <p class=\"interest-card-body\">If my dad is any indicator, I will age like fine wine <em>(or your money back)</em></p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">📱</span><span class=\"interest-card-title\">Daily Check-Ins</span></div>\n                                <p class=\"interest-card-body\">Good morning and good night texts as standard—waking up and falling asleep with a sweet message 🌅🌙</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🚨</span><span class=\"interest-card-title\">Priority Emergency Contact</span></div>\n                                <p class=\"interest-card-body\">24/7 designated emergency contact status—always in your corner whenever you need someone 📞❤️</p>\n                            </div>\n                                </div>\n                                <div style=\"margin-top: 24px; text-align: center; font-size: 0.85rem; color: var(--muted-2);\">\n                                    <p style=\"margin: 0;\"><em>*Batteries not included (except for the phone charger battery pack he always carries around with him)</em></p>\n                                    <div style=\"margin-top: 16px; background: var(--surface-3); padding: 20px; border-radius: 12px; border: 1px dashed var(--accent);\">\n                                        <h4 style=\"margin: 0 0 8px; font-size: 1.1rem; color: var(--text);\">💍 Upgrade to Husband Mode™</h4>\n                                        <p style=\"margin: 0 0 16px; font-size: 0.95rem; color: var(--muted);\">Currently in closed beta. Subject to a successful trial period.</p>\n                                        <button onclick=\"this.closest('dialog').close(); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'}), 100);\" class=\"share-btn primary\" style=\"padding: 10px 20px; font-size: 0.95rem; display: inline-block; cursor: pointer; border: none; font-weight: 600;\">Take for a test drive 🚗💨</button>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </dialog>\n                    <div style=\"text-align: center; margin-top: 32px;\">\n                        <a href=\"#contact\" class=\"share-btn primary\" style=\"text-decoration: none;\">Heard enough? Skip the scroll and jump straight to my contact details ⏭️</a>\n                    </div>\n                    "
+          "html": "\n                    <div style=\"text-align: center; margin-top: 32px;\">\n                        <button onclick=\"document.getElementById('bfExtrasModal').showModal()\" class=\"share-btn primary\" style=\"background: var(--surface-2); border: 1px solid var(--border); color: var(--text); font-weight: 600; padding: 12px 24px; border-radius: 8px; cursor: pointer; display: inline-block;\">✨ And so much more...</button>\n                    </div>\n                    <dialog id=\"bfExtrasModal\" class=\"deep-modal\">\n                        <div class=\"deep-modal-inner\">\n                            <div class=\"deep-modal-head\">\n                                <h3 class=\"deep-modal-title\">✨ And so much more...</h3>\n                                <span class=\"deep-link\" role=\"button\" tabindex=\"0\" data-anchor=\"bfExtrasModal\" title=\"Copy link to this section\">🔗</span>\n                                <button class=\"deep-modal-close\" aria-label=\"Close modal\" onclick=\"this.closest('dialog').close()\">&times;</button>\n                            </div>\n                            <div class=\"deep-modal-body\">\n                                <div class=\"interest-cards\">\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🫂</span><span class=\"interest-card-title\">Expert Hugger</span></div>\n                                <p class=\"interest-card-body\">Always ready to wrap you up in a big, comforting hug exactly when you need it most</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">☕</span><span class=\"interest-card-title\">Pre-Loaded Coffee Order</span></div>\n                                <p class=\"interest-card-body\">Never having to repeat your coffee order, plus a constant supply of your favourite snacks</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🪛</span><span class=\"interest-card-title\">Certified IKEA Flatpack Builder</span></div>\n                                <p class=\"interest-card-body\">Never worry about missing screws or confusing instruction manuals again</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🐧</span><span class=\"interest-card-title\">Certified Meme Dealer</span></div>\n                                <p class=\"interest-card-body\">Pebbling you with hundreds of perfectly curated memes</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">📖</span><span class=\"interest-card-title\">Book Boyfriend Roleplayer</span></div>\n                                <p class=\"interest-card-body\">BookTok girls will know exactly what this means 😉 <em>(Willing to supply 'who did this to you?' energy on demand)</em></p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🧑‍🍳</span><span class=\"interest-card-title\">Personal Chef / Baker</span></div>\n                                <p class=\"interest-card-body\">Fresh cookies and a meal fit for a queen at a moment's notice</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🛠️</span><span class=\"interest-card-title\">Handler of the \"Blue Jobs\"</span></div>\n                                <p class=\"interest-card-body\">From taking out the bins to heavy lifting and DIY, I've got all the gross and heavy stuff covered</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\"><img src=\"https://cdn.simpleicons.org/deliveroo/00CC99\" style=\"width: 24px; height: 24px; display: block;\" alt=\"Deliveroo\"></span><span class=\"interest-card-title\">Deliveroo on Speed Dial</span></div>\n                                <p class=\"interest-card-body\">When cooking isn't the vibe, your favourite takeout is just a tap away</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">💻</span><span class=\"interest-card-title\">24/7 Tech Support</span></div>\n                                <p class=\"interest-card-body\">Your personal tech support for all devices* <em>(Printer excluded)</em></p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🛍️</span><span class=\"interest-card-title\">Errands Helper</span></div>\n                                <p class=\"interest-card-body\">Always happy to run errands to make your day easier</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🕷️</span><span class=\"interest-card-title\">Designated Bug Relocator</span></div>\n                                <p class=\"interest-card-body\">Bravely capturing and releasing any 8-legged intruders so you don't have to <em>(Fully accredited via the Australian Outback 🦘)</em></p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🍷</span><span class=\"interest-card-title\">Guaranteed to age like fine wine</span></div>\n                                <p class=\"interest-card-body\">If my dad is any indicator, I will age like fine wine <em>(or your money back)</em></p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">📱</span><span class=\"interest-card-title\">Daily Check-Ins</span></div>\n                                <p class=\"interest-card-body\">Good morning and good night texts as standard, waking up and falling asleep with a sweet message 🌅🌙</p>\n                            </div>\n                            <div class=\"interest-card\">\n                                <div class=\"interest-card-head\"><span class=\"interest-card-icon\">🚨</span><span class=\"interest-card-title\">Priority Emergency Contact</span></div>\n                                <p class=\"interest-card-body\">24/7 designated emergency contact status, always in your corner whenever you need someone 📞❤️</p>\n                            </div>\n                                </div>\n                                <div style=\"margin-top: 24px; text-align: center; font-size: 0.85rem; color: var(--muted-2);\">\n                                    <p style=\"margin: 0;\"><em>*Batteries not included (except for the phone charger battery pack he always carries around with him)</em></p>\n                                    <div style=\"margin-top: 16px; background: var(--surface-3); padding: 20px; border-radius: 12px; border: 1px dashed var(--accent);\">\n                                        <h4 style=\"margin: 0 0 8px; font-size: 1.1rem; color: var(--text);\">💍 Upgrade to Husband Mode™</h4>\n                                        <p style=\"margin: 0 0 16px; font-size: 0.95rem; color: var(--muted);\">Currently in closed beta. Subject to a successful trial period.</p>\n                                        <button onclick=\"this.closest('dialog').close(); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'}), 100);\" class=\"share-btn primary\" style=\"padding: 10px 20px; font-size: 0.95rem; display: inline-block; cursor: pointer; border: none; font-weight: 600;\">Take for a test drive 🚗💨</button>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </dialog>\n                    <div style=\"text-align: center; margin-top: 32px;\">\n                        <a href=\"#contact\" class=\"share-btn primary\" style=\"text-decoration: none;\">Heard enough? Skip the scroll and jump straight to my contact details ⏭️</a>\n                    </div>\n                    "
         }
       ]
     },
@@ -1525,7 +1525,7 @@ window.CONTENT = {
       "tag": "📋 Now Hiring: Player 2 (Permanent Role)",
       "tagClass": "tag-gold",
       "heading": "What I'm Looking For in My Player 2 for Life!",
-      "lead": "No previous experience required. Just curiosity, good vibes, and a willingness to get stuck in — below are just a few things my perfect partner might have!",
+      "lead": "No previous experience required. Just curiosity, good vibes, and a willingness to get stuck in. Below are just a few things my perfect partner might have!",
       "blocks": [
         {
           "type": "heading",
@@ -1538,7 +1538,7 @@ window.CONTENT = {
               "src": "img/looking-for/couple-going-exploring-nature.webp",
               "alt": "A couple exploring nature",
               "title": "⛰️💚 Adventurous Heart",
-              "text": "New places, new food, new cultures — exploring the world one Google Maps pin at a time."
+              "text": "New places, new food, new cultures, exploring the world one Google Maps pin at a time."
             },
             {
               "src": "img/looking-for/couple-watching-movie-together.webp",
@@ -1550,19 +1550,19 @@ window.CONTENT = {
               "src": "img/looking-for/couple-playing-video-games.webp",
               "alt": "A couple gaming",
               "title": "🎮💛 Playful Spirit",
-              "text": "Controller in hand — competitive or co-op. Board games, fantasy, anime, sci-fi… I'll happily dive into your world if you'll dive into mine."
+              "text": "Controller in hand, competitive or co-op. Board games, fantasy, anime, sci-fi… I'll happily dive into your world if you'll dive into mine."
             },
             {
               "src": "img/looking-for/couple-cooking.webp",
               "alt": "A couple cooking",
               "title": "🎨🧠 Creative Mind",
-              "text": "Making a mess in the kitchen, dancing to the music — I always want to be trying something new, exciting, and fun."
+              "text": "Making a mess in the kitchen, dancing to the music, I always want to be trying something new, exciting, and fun."
             },
             {
               "src": "img/looking-for/couple-enjoying-tea-on-the-couch.webp",
               "alt": "A couple enjoying tea",
               "title": "🫂🩷 Safe Space",
-              "text": "Each other's safe space — no conversation too difficult, no walls up, and the trust that you'll always be listened to and heard."
+              "text": "Each other's safe space: no conversation too difficult, no walls up, and the trust that you'll always be listened to and heard."
             },
             {
               "src": "img/looking-for/couple-at-the-gym-working-out.webp",
@@ -1579,7 +1579,7 @@ window.CONTENT = {
               "cards": [
                 {
                   "title": "⚡ Suggested Previous Experience",
-                  "text": "A plus, not a prerequisite — on-the-job experience is provided.",
+                  "text": "A plus, not a prerequisite, on-the-job experience is provided.",
                   "tags": [
                     {
                       "label": "🍜 Foodie",
@@ -1587,11 +1587,11 @@ window.CONTENT = {
                     },
                     {
                       "label": "🤓 Nerd",
-                      "hint": "Embracing all things nerdy — tech, sci-fi, and deep rabbit holes! 🤓"
+                      "hint": "Embracing all things nerdy: tech, sci-fi, and deep rabbit holes! 🤓"
                     },
                     {
                       "label": "🎮 Gamer girl",
-                      "hint": "Cosy gamer or co-op partner — playing a game together will always be fun! 🎮☕"
+                      "hint": "Cosy gamer or co-op partner, playing a game together will always be fun! 🎮☕"
                     },
                     {
                       "label": "📚 Fantasy book girly",
@@ -1625,7 +1625,7 @@ window.CONTENT = {
                     },
                     {
                       "label": "🍕 Must be an omnivore",
-                      "hint": "🍖 Omnnomnomnivore 🥩 — I love food sooooo much! Sharing meal times, exploring new cuisines, and eating together is a huge part of how I connect, so I hope you enjoy all foods too! 🍕"
+                      "hint": "🍖 Omnnomnomnivore 🥩 I love food sooooo much! Sharing meal times, exploring new cuisines, and eating together is a huge part of how I connect, so I hope you enjoy all foods too! 🍕"
                     },
                     {
                       "label": "👶 No kids",
@@ -1656,10 +1656,10 @@ window.CONTENT = {
                     "🧥 Company uniform (one of my hoodies you \"borrowed\" right?!)",
                     "🐾 Pet-friendly workspace",
                     "☕ Unlimited tea allowance",
-                    "🛋️ Flexible working — sometimes the sofa, sometimes the summit of a mountain",
+                    "🛋️ Flexible working: sometimes the sofa, sometimes the summit of a mountain",
                     "🚨 24/7 Priority Emergency Contact privileges",
                     {
-                      "html": "<span>✨ …and so much more — check out the <a href=\"#bfExtrasModal\" style=\"white-space: nowrap;\">Boyfriend Mode Extras 👆</a></span>"
+                      "html": "<span>✨ …and so much more, check out the <a href=\"#bfExtrasModal\" style=\"white-space: nowrap;\">Boyfriend Mode Extras 👆</a></span>"
                     }
                   ]
                 }
@@ -1677,7 +1677,7 @@ window.CONTENT = {
       "tag": "🗺️ Date Ideas",
       "tagClass": "tag-purple",
       "heading": "Choose your own adventure",
-      "lead": "Tell me your rough location and what you'd be up for trying — I'll sort out a time and a place.",
+      "lead": "Tell me your rough location and what you'd be up for trying, and I'll sort out a time and a place.",
       "blocks": [
         {
           "type": "dateCards",
@@ -1870,7 +1870,7 @@ window.CONTENT = {
         {
           "type": "note",
           "variant": "section-intro",
-          "text": "I can handle these — I just won't go seeking them out. Mostly it adds up to a preference for calm, intimate settings."
+          "text": "I can handle these, I just won't go seeking them out. Mostly it adds up to a preference for calm, intimate settings."
         },
         {
           "type": "cardGrid",
@@ -1885,7 +1885,7 @@ window.CONTENT = {
               "src": "img/dislikes/person-covering-ear-from-loud-noises.webp",
               "icon": "🔊",
               "title": "Loud noises",
-              "caption": "Makes it hard to hear myself — noise-cancelling headphones to the rescue."
+              "caption": "Makes it hard to hear myself. Noise-cancelling headphones to the rescue."
             },
             {
               "src": "img/dislikes/large-crowd.webp",
@@ -1909,7 +1909,7 @@ window.CONTENT = {
               "src": "img/dislikes/hot-sunny-weather.webp",
               "icon": "☀️",
               "title": "Super hot weather",
-              "caption": "Tbh, who really likes melting in the sun? Doesn't mean I don't like tropical holidays — just let me chill in the shade."
+              "caption": "Tbh, who really likes melting in the sun? Doesn't mean I don't like tropical holidays, just let me chill in the shade."
             }
           ]
         }
@@ -2315,7 +2315,7 @@ window.CONTENT = {
               "src": "img/moments/trophy-of-most-enthusiastic-google-city-expert-now-google-local-guides.webp",
               "icon": "📍",
               "title": "Most Enthusiastic City Expert",
-              "caption": "Google's award — now Local Guides."
+              "caption": "Google's award, now Local Guides."
             },
             {
               "src": "img/moments/alec-completing-a-10k-run.webp",
@@ -2350,18 +2350,18 @@ window.CONTENT = {
         {
           "type": "note",
           "variant": "growth-banner",
-          "text": "💬 No one is perfect, at least I am being honest! None of this defines me — it's just the honest stuff I'm actively working on, and I'd rather you know me fully."
+          "text": "💬 No one is perfect, at least I am being honest! None of this defines me, it's just the honest stuff I'm actively working on, and I'd rather you know me fully."
         },
         {
           "type": "detailCols",
           "columns": [
             {
-              "title": "💪 Physical Health — On the Up",
+              "title": "💪 Physical Health: On the Up",
               "items": [
                 {
                   "icon": "🩺",
                   "title": "Health Management",
-                  "description": "Actively managing high blood pressure & diabetes — steadily improving."
+                  "description": "Actively managing high blood pressure & diabetes, steadily improving."
                 },
                 {
                   "icon": "🏋️‍♂️",
@@ -2376,7 +2376,7 @@ window.CONTENT = {
               ]
             },
             {
-              "title": "🧠 Mind & Emotions — Self-Aware",
+              "title": "🧠 Mind & Emotions: Self-Aware",
               "items": [
                 {
                   "icon": "🧩",
@@ -2615,7 +2615,7 @@ window.CONTENT = {
               "src": "img/bucket-list/cpr-first-aid-training.webp",
               "icon": "🩹",
               "title": "Learn First Aid",
-              "caption": "Mental & physical — handy things to know."
+              "caption": "Mental & physical, handy things to know."
             },
             {
               "src": "img/bucket-list/couple-on-vespas-italy.webp",
@@ -2686,7 +2686,7 @@ window.CONTENT = {
         {
           "type": "note",
           "variant": "section-intro",
-          "text": "I've hit my main milestones — good job, a house, great friends. Still working on my health, and finding my life partner."
+          "text": "I've hit my main milestones: good job, a house, great friends. Still working on my health, and finding my life partner."
         },
         {
           "type": "listCols",
@@ -2713,7 +2713,7 @@ window.CONTENT = {
                   "items": [
                     "1–3 kids (70–80% sure, with the right person)",
                     "1–2 dogs (open to a cat, but need at least one dog)",
-                    "Marriage — no rush; sign the papers when we're sure, big wedding later",
+                    "Marriage: no rush; sign the papers when we're sure, big wedding later",
                     "Maybe: digital nomad life, or a few years in New Zealand"
                   ]
                 }
@@ -2785,7 +2785,7 @@ window.CONTENT = {
         {
           "type": "note",
           "variant": "section-intro",
-          "text": "A bit of everything, honestly — making things, learning things, and getting outdoors. Here's what I actually spend my free time on, and why."
+          "text": "A bit of everything, honestly: making things, learning things, and getting outdoors. Here's what I actually spend my free time on, and why."
         },
         {
           "type": "interestCards",
@@ -2793,7 +2793,7 @@ window.CONTENT = {
             {
               "icon": "🎨",
               "title": "Making things",
-              "body": "I'm always itching to build something with my hands — I've crocheted a Snorlax, thrown my own pottery, and I'm forever dabbling with different yarns and rope (shibari included). Lego and general DIY scratch the same itch.",
+              "body": "I'm always itching to build something with my hands. I've crocheted a Snorlax, thrown my own pottery, and I'm forever dabbling with different yarns and rope (shibari included). Lego and general DIY scratch the same itch.",
               "images": [
                 {
                   "src": "img/hobbies/alec-crochet-snorlax.webp",
@@ -2842,7 +2842,7 @@ window.CONTENT = {
             {
               "icon": "📷",
               "title": "Photography",
-              "body": "Photography threads through nearly everything else I do — nature, food, landscapes, my shibari art, fire and LED staff after dark, the stars, and my friends. I shoot on a Google Pixel 10 Pro (edited in Snapseed) and fly a DJI drone; I've got a Polaroid I'm still figuring out, and I'm dreaming of a proper camera — or even a telescope rig for night shots.",
+              "body": "Photography threads through nearly everything else I do: nature, food, landscapes, my shibari art, fire and LED staff after dark, the stars, and my friends. I shoot on a Google Pixel 10 Pro (edited in Snapseed) and fly a DJI drone; I've got a Polaroid I'm still figuring out, and I'm dreaming of a proper camera, or even a telescope rig for night shots.",
               "imageGroups": [
                 {
                   "title": "Night Photography 🌌",
@@ -3214,7 +3214,7 @@ window.CONTENT = {
             {
               "icon": "🎮",
               "title": "Fun & Games",
-              "body": "My home-office battle station is ready to work hard and play hard, no matter the day — and I've still got a soft spot for the classics, with original NES carts and a Game Boy in rotation. Off-screen it's board game nights and D&D campaigns.",
+              "body": "My home-office battle station is ready to work hard and play hard, no matter the day, and I've still got a soft spot for the classics, with original NES carts and a Game Boy in rotation. Off-screen it's board game nights and D&D campaigns.",
               "images": [
                 {
                   "src": "img/hobbies/alec-gaming-setup-triple-monitors.webp",
@@ -3255,7 +3255,7 @@ window.CONTENT = {
             {
               "icon": "🍜",
               "title": "Food",
-              "body": "I love experimenting in the kitchen to make something delicious from time to time — from fresh cookies out of the oven to gastronomy, fermentation (kimchi, kombucha, sourdough), and brewing/distilling — alongside a proper brew from an embarrassingly large tea collection.",
+              "body": "I love experimenting in the kitchen to make something delicious from time to time, from fresh cookies out of the oven to gastronomy, fermentation (kimchi, kombucha, sourdough), and brewing/distilling, alongside a proper brew from an embarrassingly large tea collection.",
               "images": [
                 {
                   "src": "img/hobbies/homemade-chocolate-chip-cookies.webp",
@@ -3308,7 +3308,7 @@ window.CONTENT = {
             {
               "icon": "🏃",
               "title": "Active",
-              "body": "Outdoorsy stuff that doesn't feel like a workout — long countryside walks (ideally with a dog), getting out on the bike, archery, and the showy one: spinning fire and LED staffs after dark.",
+              "body": "Outdoorsy stuff that doesn't feel like a workout: long countryside walks (ideally with a dog), getting out on the bike, archery, and the showy one: spinning fire and LED staffs after dark.",
               "images": [
                 {
                   "src": "img/hobbies/autumn-walk-with-dachshund-dog.webp",
@@ -3611,7 +3611,7 @@ window.CONTENT = {
         {
           "type": "note",
           "variant": "section-intro",
-          "text": "I'm always chasing the best food in London and around the world — favourites are Asian (mostly Japanese) & Mexican, from street food to Michelin stars."
+          "text": "I'm always chasing the best food in London and around the world. Favourites are Asian (mostly Japanese) & Mexican, from street food to Michelin stars."
         },
         {
           "type": "heading",
@@ -4302,7 +4302,7 @@ window.CONTENT = {
         {
           "type": "note",
           "variant": "section-intro",
-          "text": "I'm not a huge reader — but if you love books I'll happily read your favourites. Roald Dahl is my favourite childhood author."
+          "text": "I'm not a huge reader, but if you love books I'll happily read your favourites. Roald Dahl is my favourite childhood author."
         },
         {
           "type": "link",
@@ -4543,7 +4543,7 @@ window.CONTENT = {
         {
           "type": "note",
           "variant": "section-intro",
-          "text": "On long car journeys I'll dip into a few of these — a mix of nerdy, thoughtful and dating-curious:"
+          "text": "On long car journeys I'll dip into a few of these, a mix of nerdy, thoughtful and dating-curious:"
         },
         {
           "type": "podcastCards",
@@ -4653,7 +4653,7 @@ window.CONTENT = {
         {
           "type": "note",
           "variant": "section-intro",
-          "text": "Not really a sporty person, but I keep fit with cycling, long walks, and the gym — and dabble in bouldering, archery, and basketball. I don't really watch sports, but I support a few teams (mostly thanks to friends & family)."
+          "text": "Not really a sporty person, but I keep fit with cycling, long walks, and the gym, and dabble in bouldering, archery, and basketball. I don't really watch sports, but I support a few teams (mostly thanks to friends & family)."
         },
         {
           "type": "heading",
@@ -4935,61 +4935,61 @@ window.CONTENT = {
           "type": "featureGrid",
           "features": [
             {
-              "src": "https://media1.tenor.com/m/OLVsLLBhDr8AAAAC/brooklyn-nine-nine-amy-santiago.gif",
+              "src": "img/couples/brooklyn-nine-nine-amy-santiago.webp",
               "alt": "Jake & Amy (Brooklyn Nine-Nine)",
               "title": "Jake & Amy (Brooklyn Nine-Nine)",
               "html": "<em>\"I love you and I treasure you... and you bore me.\"</em> (Okay, maybe not the bore me part! 😉)<br><br>Competitive, silly, and deeply supportive. Dorks who push each other to grow while having endless fun together."
             },
             {
-              "src": "https://media1.tenor.com/m/O1-UR5lORTgAAAAC/doctor-who-whovian.gif",
+              "src": "img/couples/doctor-who-whovian.webp",
               "alt": "The Doctor & River Song (Doctor Who)",
               "title": "The Doctor & River Song (Doctor Who)",
               "html": "<em>\"When you love the Doctor, it's like loving the stars themselves. You don't expect a sunset to admire you back.\"</em><br><br>Cross-time adventures, unfailing loyalty, and a romance that spans space and time."
             },
             {
-              "src": "https://media1.tenor.com/m/MPCQRMAcpHUAAAAC/ceceisthebest.gif",
+              "src": "img/couples/ceceisthebest.webp",
               "alt": "Tom Holland and Zendaya",
               "title": "Tom Holland & Zendaya",
               "text": "The ultimate real-life couple goals. Beyond the chemistry, what makes them special is how they unabashedly celebrate each other's wins."
             },
             {
-              "src": "https://media1.tenor.com/m/OGqyw4P1bgUAAAAd/fitzsimmons-fitzs.gif",
+              "src": "img/couples/fitzsimmons-fitzs.webp",
               "alt": "Fitzsimmons (Agents of S.H.I.E.L.D.)",
               "title": "Fitzsimmons (Agents of S.H.I.E.L.D.)",
               "html": "<em>\"You know, I realized something. The universe can't stop us. 'Cause we have crossed galaxies, we traveled through time, we survived the bottom of the Atlantic just so we could be together. Now, a love like that, that is stronger than any curse, and you and I, we are unstoppable together.\"</em>"
             },
             {
-              "src": "https://media1.tenor.com/m/Ye9HTo8O6wcAAAAC/roy-mustang-and-riza-hawkeye-roy-mustang.gif",
+              "src": "img/couples/roy-mustang-and-riza-hawkeye-roy-mustang.webp",
               "alt": "Roy & Hawkeye (Fullmetal Alchemist)",
               "title": "Roy & Hawkeye (Fullmetal Alchemist)",
               "text": "Unshakable trust and quiet loyalty. Having each other's back through thick and thin, keeping each other grounded and accountable."
             },
             {
-              "src": "https://media1.tenor.com/m/m2wUr4fJm_8AAAAC/hotfuzz-hot.gif",
+              "src": "img/couples/hotfuzz-hot.webp",
               "alt": "Simon Pegg & Nick Frost",
               "title": "Simon Pegg & Nick Frost",
               "text": "Iconic friendship and partner-in-crime energy. Ride-or-die duo through alien invasions and village mysteries."
             },
             {
-              "src": "https://media1.tenor.com/m/K-ssHUtHo0kAAAAC/kaguya-sama-love-is-war-kaguya-sama.gif",
+              "src": "img/couples/kaguya-sama-love-is-war-kaguya-sama.webp",
               "alt": "Miyuki & Kaguya (Love is War)",
               "title": "Miyuki & Kaguya (Love is War)",
               "text": "Matching each other's wit and intellect while secretly caring for each other deeply."
             },
             {
-              "src": "https://media1.tenor.com/m/6vTGcjFMzHcAAAAC/tsukasa-tsukasita.gif",
+              "src": "img/couples/tsukasa-tsukasita.webp",
               "alt": "Nasa & Tsukasa (Tonikawa)",
               "title": "Nasa & Tsukasa (Tonikawa)",
               "text": "Wholesome, earnest love navigating life's everyday moments with devotion."
             },
             {
-              "src": "https://media1.tenor.com/m/v0MKqyPA8BsAAAAC/doctorwho-mattsmith.gif",
+              "src": "img/couples/doctorwho-mattsmith.webp",
               "alt": "Rory & Amy (Doctor Who)",
               "title": "Rory & Amy (Doctor Who)",
               "text": "The Centurion and his girl. Unconditional, unbreakable devotion across two millennia."
             },
             {
-              "src": "https://media1.tenor.com/m/RmcPflelHv0AAAAC/aziraphale-crowley.gif",
+              "src": "img/couples/aziraphale-crowley.webp",
               "alt": "Crowley & Aziraphale (Good Omens)",
               "title": "Crowley & Aziraphale (Good Omens)",
               "text": "Ineffable partners across millennia. Opposites who balance each other perfectly."
@@ -5011,7 +5011,7 @@ window.CONTENT = {
   "outro": {
     "tag": "🎉 One Last Thing",
     "heading": "Thanks for Getting This Far!",
-    "lead": "If you've liked what you've seen, please reach out — I'd love to hear from you and put together a fun first date.",
+    "lead": "If you've liked what you've seen, please reach out, I'd love to hear from you and put together a fun first date.",
     "links": [
       {
         "label": "Shoot your shot! 💘",

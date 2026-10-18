@@ -48,6 +48,33 @@ server.listen(0, async () => {
       if (cc) cc.remove();
       document.querySelectorAll("noscript").forEach(el => el.remove());
 
+      // The photo rotator has been shuffling for seconds by now; bake its first frame
+      // instead, so the static hero matches the LCP preload and the post-JS render.
+      clearInterval(window._cyclingImagesInterval);
+      const cyclingSlot = (photo, attrs) => {
+        const slot = document.createElement('div');
+        slot.className = 'cycling-images';
+        const el = document.createElement('img');
+        el.src = photo.src;
+        el.alt = photo.alt;
+        if (photo.w && photo.h) {
+          el.width = photo.w;
+          el.height = photo.h;
+        }
+        Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+        el.className = 'active';
+        slot.appendChild(el);
+        return slot;
+      };
+      const { hero, profile } = window.CONTENT;
+      const heroMedia = document.querySelector('[data-hero="media"]');
+      if (heroMedia) {
+        heroMedia.replaceChildren(...hero.images.map((photo, idx) =>
+          cyclingSlot(photo, idx === 0 ? { fetchpriority: 'high' } : {})));
+      }
+      const profilePhoto = document.querySelector('[data-profile="photo"]');
+      if (profilePhoto) profilePhoto.replaceChildren(cyclingSlot(profile.photo, {}));
+
       // Wait for all images to load (max 5s) to ensure naturalWidth is available
       const images = Array.from(document.querySelectorAll("img"));
       const loadPromises = images.map(img => {
@@ -91,6 +118,10 @@ server.listen(0, async () => {
     });
     
     let html = await page.content();
+    // Non-blocking stylesheets flip themselves to media="all" once loaded in the
+    // capture browser; put them back to "print" or the snapshot ships them render-blocking.
+    html = html.replace(/<link\b[^>]*onload="this\.media='all'"[^>]*>/g,
+      tag => tag.replace('media="all"', 'media="print"'));
     fs.writeFileSync('index.html', html);
     console.log('Successfully pre-rendered index.html');
     

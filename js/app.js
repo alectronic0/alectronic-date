@@ -338,7 +338,7 @@
                         d.icon
                       )}</span><span class="ic-text"><strong>${esc(
                         d.label
-                      )}</strong>${d.note ? ` — ${esc(d.note)}` : ''}</span></div>`
+                      )}</strong>${d.note ? `: ${esc(d.note)}` : ''}</span></div>`
                   )
                   .join('')}</div>`
                 : ''
@@ -605,7 +605,7 @@
       '<div class="construction-banner">' +
       (b.gif ? `<img class="c-gif" src="${esc(b.gif)}" alt="${esc(b.title || 'Under construction')}" loading="lazy">` : '<div class="c-emoji">🚧</div>') +
       `<strong>${esc(b.title || 'Under Construction')}</strong>` +
-      `<p>${esc(b.text || 'This section is still being built — check back soon!')}</p></div>`,
+      `<p>${esc(b.text || 'This section is still being built, check back soon!')}</p></div>`,
 
     calloutBanner: (b) =>
       `<div class="callout-banner">` +
@@ -1093,7 +1093,7 @@
                         <h3>${esc(q.steps[1].title)}</h3>
                         <p>${esc(q.steps[1].sub)}</p>
                     </div>
-                    <p class="location-subtext" style="text-align: center; margin-bottom: 14px;">No tracking — I only see your location when you send the email.</p>
+                    <p class="location-subtext" style="text-align: center; margin-bottom: 14px;">No tracking, I only see your location when you send the email.</p>
                     <div class="input-row">
                         <input type="text" class="quest-input" id="rough-location" placeholder="e.g. Postcode, town, or train station" aria-label="What is your rough location?" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                         <button type="button" class="clear-input-btn" id="clear-location-btn" aria-label="Clear location" title="Clear location" style="display:none">×</button>
@@ -1583,7 +1583,7 @@
                         <button type="button" class="letter-edit-link" onclick="questGoTo(2, 'rough-location')">Edit location ✏️</button>
                     </div>
                     <div class="letter-location-val" onclick="questGoTo(2, 'rough-location')" style="cursor: pointer;">
-                        ${locationVal ? `📍 <strong>${esc(locationVal)}</strong> ✏️` : `no location set — (click to add location ➕)`}
+                        ${locationVal ? `📍 <strong>${esc(locationVal)}</strong> ✏️` : `no location set (click to add location ➕)`}
                     </div>
                 </div>
 
@@ -1599,7 +1599,7 @@
                                 <button type="button" class="remove-adventure-btn" data-idea="${esc(a)}" onclick="removeAdventureFromPreview('${esc(a)}')" aria-label="Remove ${esc(a)}">×</button>
                             </span>
                         `).join('') : `
-                            <span class="empty" style="cursor:pointer;" onclick="questGoTo(3)">🫣 Surprise me!  — (click to add adventures ➕)</span>
+                            <span class="empty" style="cursor:pointer;" onclick="questGoTo(3)">🫣 Surprise me! (click to add adventures ➕)</span>
                         `}
                     </div>
                 </div>
@@ -1615,7 +1615,7 @@
       return `
                                 <div class="preview-riddle-item" onclick="questGoTo(4)" title="Click to edit answer">
                                     <div class="preview-riddle-q"><strong>${i + 1}. ${esc(q)}</strong></div>
-                                    <div class="preview-riddle-a ${ans ? 'answered' : ''}">${ans ? `→ ${esc(ans)} ✏️` : `<em>not answered yet — (click to answer✏️)</em>`}</div>
+                                    <div class="preview-riddle-a ${ans ? 'answered' : ''}">${ans ? `→ ${esc(ans)} ✏️` : `<em>not answered yet (click to answer✏️)</em>`}</div>
                                 </div>
                             `;
     }).join('')}
@@ -1989,6 +1989,34 @@
     return "Are you an alien? 👽 Because you are out of this world far away!";
   }
 
+  // Leaflet is only needed once someone picks a location in the quest form,
+  // so it stays off the critical path until then.
+  let leafletPromise = null;
+  function loadLeaflet() {
+    if (window.L) return Promise.resolve();
+    if (leafletPromise) return leafletPromise;
+    const base = 'https://unpkg.com/leaflet@1.9.4/dist/';
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = base + 'leaflet.css';
+    css.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+    css.crossOrigin = '';
+    document.head.appendChild(css);
+    leafletPromise = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = base + 'leaflet.js';
+      script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+      script.crossOrigin = '';
+      script.onload = resolve;
+      script.onerror = () => {
+        leafletPromise = null;
+        reject(new Error('leaflet failed to load'));
+      };
+      document.head.appendChild(script);
+    });
+    return leafletPromise;
+  }
+
   function renderLocationDisplay() {
     const container = document.getElementById('quest-location-display');
     if (!container) return;
@@ -2032,8 +2060,8 @@
             </div>
         `;
 
-    if (lat && lon && typeof L !== 'undefined') {
-      setTimeout(() => {
+    if (!lat || !lon) return;
+    loadLeaflet().then(() => {
         const mapEl = document.getElementById('dist-map');
         if (mapEl && !mapEl._leaflet_id) {
           const map = L.map(mapEl, {zoomControl: false, attributionControl: false, dragging: false, scrollWheelZoom: false, doubleClickZoom: false});
@@ -2065,8 +2093,7 @@
             ], maxZoom: 14
           });
         }
-      }, 50);
-    }
+    }).catch(() => {});
   }
 
   function renderSelectedAdventures() {
@@ -2117,7 +2144,7 @@
 
     const subtextEl = document.querySelector('.location-subtext');
     if (subtextEl) {
-      subtextEl.innerHTML = 'No tracking — I only see your location when you send the email.';
+      subtextEl.innerHTML = 'No tracking, I only see your location when you send the email.';
       subtextEl.style.color = '';
       subtextEl.style.fontWeight = '';
     }
@@ -2427,6 +2454,8 @@
   function renderSoundtrack() {
     if (!C || !C.soundtrack) return;
     const s = C.soundtrack;
+    // The prerendered snapshot already contains a listener-less copy; replace it, don't stack another.
+    document.querySelectorAll('body > .soundtrack').forEach(el => el.remove());
     const wrap = document.createElement('div');
     wrap.className = 'soundtrack';
     wrap.innerHTML =
