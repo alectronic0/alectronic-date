@@ -1,0 +1,5 @@
+{
+  "maxCountDrop": 0.3,
+  "bannedSubstrings": ["—", "🔞", "sexy photos", "nsfw", "xxx", "porn", "escort", "strip club"],
+  "okStatus": [200, 301, 302]
+}
