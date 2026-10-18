@@ -849,7 +849,7 @@
 
         const iconContent = isAll
           ? `<div class="filter-icon-all"><span>✨</span><span style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.5px;">ALL</span></div>`
-          : `<img src="${logo || 'favicon.svg'}" alt="${name}" class="filter-icon-img" loading="lazy" onerror="this.src='favicon.svg'">`;
+          : `<img src="${logo || '../favicon.svg'}" alt="${name}" class="filter-icon-img" loading="lazy" onerror="this.src='../favicon.svg'">`;
 
         return `
           <button type="button" class="filter-icon-btn ${isActive}" data-provider="${providerKey}" title="${name} (${count} ${count === 1 ? 'experience' : 'experiences'})" aria-label="Filter by ${name}">
@@ -930,22 +930,20 @@
       }
 
       // Group by chronological months / seasons
-      const seasons = [
-        'August 2026',
-        'September 2026',
-        'October 2026'
-      ];
+      const seasons = [...new Set(
+        [...filtered]
+          .sort((a, b) => (a.endDate || '').localeCompare(b.endDate || ''))
+          .map(it => it.season)
+          .filter(Boolean)
+      )].sort((a, b) => new Date(`1 ${a}`) - new Date(`1 ${b}`));
 
-      const seasonIcons = {
-        'August 2026': '☀️',
-        'September 2026': '🍂',
-        'October 2026': '🎃'
-      };
+      const monthIcons = ['❄️', '💘', '🌱', '🌷', '🌸', '☀️', '🏖️', '☀️', '🍂', '🎃', '🍁', '🎄'];
+      const seasonIcons = Object.fromEntries(seasons.map(s => [s, monthIcons[new Date(`1 ${s}`).getMonth()]]));
 
       let html = '';
 
       seasons.forEach(seasonName => {
-        const seasonItems = filtered.filter(it => it.season === seasonName);
+        const seasonItems = filtered.filter(it => it.season === seasonName).sort((a, b) => (a.endDate || '').localeCompare(b.endDate || ''));
         if (seasonItems.length === 0) return;
 
         const icon = seasonIcons[seasonName] || '🎬';
@@ -1023,7 +1021,7 @@
             <!-- Left: Logo & Date Block -->
             <div class="card-left-col">
               <div class="card-logo-box">
-                <img src="${item.logo || 'favicon.svg'}" alt="${item.providerName} logo" class="card-logo" loading="lazy" onerror="this.src='favicon.svg'">
+                <img src="${item.logo || '../favicon.svg'}" alt="${item.providerName} logo" class="card-logo" loading="lazy" onerror="this.src='../favicon.svg'">
               </div>
               <span class="card-date-badge">${item.dateBadge || 'TBD'}</span>
             </div>

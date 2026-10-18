@@ -831,7 +831,7 @@
 
         const iconContent = isAll
           ? `<div class="filter-icon-all"><span>✨</span><span style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.5px;">ALL</span></div>`
-          : `<img src="${logo || 'favicon.svg'}" alt="${name}" class="filter-icon-img" loading="lazy" onerror="this.src='favicon.svg'">`;
+          : `<img src="${logo || '../favicon.svg'}" alt="${name}" class="filter-icon-img" loading="lazy" onerror="this.src='../favicon.svg'">`;
 
         return `
           <button type="button" class="filter-icon-btn ${isActive}" data-host="${hostKey}" title="${name} (${count} ${count === 1 ? 'event' : 'events'})" aria-label="Filter by ${name}">
@@ -924,24 +924,8 @@
         return;
       }
 
-      // Group items by Season
-      const seasonOrder = [
-        "Ongoing & Weekly",
-        "Summer '26",
-        "Autumn '26",
-        "Winter '26 / '27",
-        "Spring '27",
-        "Summer '27"
-      ];
-
-      const seasonIcons = {
-        "Ongoing & Weekly": "⚡",
-        "Summer '26": "☀️",
-        "Autumn '26": "🍂",
-        "Winter '26 / '27": "❄️",
-        "Spring '27": "🌸",
-        "Summer '27": "☀️"
-      };
+      const seasonIcons = { Ongoing: "⚡", Spring: "🌸", Summer: "☀️", Autumn: "🍂", Winter: "❄️" };
+      const seasonIcon = (name) => seasonIcons[Object.keys(seasonIcons).find(k => name.startsWith(k))];
 
       const grouped = {};
       filteredItems.forEach(item => {
@@ -950,20 +934,14 @@
         grouped[s].push(item);
       });
 
-      // Sort within each season by sortOrder
-      Object.keys(grouped).forEach(s => {
-        grouped[s].sort((a, b) => (a.sortOrder || 99) - (b.sortOrder || 99));
-      });
-
-      // Render sections in order
-      const seasonsToRender = seasonOrder.filter(s => grouped[s] && grouped[s].length > 0);
-      Object.keys(grouped).forEach(s => {
-        if (!seasonsToRender.includes(s)) seasonsToRender.push(s);
-      });
+      // Undated (weekly) items first, then each group by its earliest end date
+      const byDate = (a, b) => (a.endDate || '').localeCompare(b.endDate || '') || (a.sortOrder || 99) - (b.sortOrder || 99);
+      Object.keys(grouped).forEach(s => grouped[s].sort(byDate));
+      const seasonsToRender = Object.keys(grouped).sort((a, b) => byDate(grouped[a][0], grouped[b][0]));
 
       container.innerHTML = seasonsToRender.map(seasonKey => {
         const items = grouped[seasonKey];
-        const icon = seasonIcons[seasonKey] || "🗓️";
+        const icon = seasonIcon(seasonKey) || "🗓️";
 
         const cardsMarkup = items.map(item => {
           // Status Badge
@@ -1052,7 +1030,7 @@
                 <!-- Left: Logo & Date Block (White badge for maximum accessibility) -->
                 <div class="card-left-col">
                   <div class="card-logo-box">
-                    <img src="${logoSrc}" alt="${item.name} logo" class="card-logo" loading="lazy" onerror="this.src='favicon.svg'">
+                    <img src="${logoSrc}" alt="${item.name} logo" class="card-logo" loading="lazy" onerror="this.src='../favicon.svg'">
                   </div>
                   <span class="card-date-badge">${item.dateBadge || 'TBD'}</span>
                 </div>

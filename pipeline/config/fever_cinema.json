@@ -1,0 +1,16 @@
+[
+  {
+    "listing": "https://feverup.com/en/london/taste-film",
+    "stripPrefix": "Taste Film presents ",
+    "record": {
+      "provider": "taste-film",
+      "providerName": "Taste Film",
+      "category": "Immersive Dining Cinema",
+      "format": "Movie-Synced Dining",
+      "logo": "../img/logos/taste-film.png",
+      "instagramUrl": "https://www.instagram.com/tastefilm",
+      "tiktokUrl": "https://www.tiktok.com/@tastefilm",
+      "facebookUrl": "https://www.facebook.com/tastefilm"
+    }
+  }
+]

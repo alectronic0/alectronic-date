@@ -5,6 +5,7 @@
     python3 pipeline/refresh.py --only cinema,nerd
     python3 pipeline/refresh.py --dry-run           # report only, no writes
     python3 pipeline/refresh.py --no-push           # write + commit, no push
+    python3 pipeline/refresh.py --no-commit         # write + smoke test only
 """
 
 import argparse
@@ -71,11 +72,21 @@ class Store:
             self.labs.save()
 
 
+def hand_over(existing, module):
+    """Hand-added records a working source is authoritative for become scraped records."""
+    if not hasattr(module, "owns"):
+        return
+    for record in existing:
+        if record.get("origin") != "auto" and module.owns(record):
+            record["origin"] = "auto"
+
+
 def collect(bucket, existing):
     scraped, health, errors = [], {}, []
     for module in SOURCES[bucket.name]:
         try:
             scraped += module.fetch()
+            hand_over(existing, module)
             if hasattr(module, "health"):
                 health.update(module.health(existing, bucket))
         except Exception as err:  # one broken source must not sink the bucket
@@ -85,7 +96,7 @@ def collect(bucket, existing):
 
 
 def run_bucket(bucket, store, today, write):
-    existing = store.load(bucket)
+    existing = [dict(r) for r in store.load(bucket)]
     result = {"bucket": bucket.name, "before": len(existing), "after": len(existing), "changes": Changes(),
               "source_errors": [], "gate_errors": [], "status": "no sources"}
     if not SOURCES[bucket.name]:
@@ -97,11 +108,12 @@ def run_bucket(bucket, store, today, write):
     result.update(changes=changes, after=len(merged))
 
     added_keys = {bucket.key(r) for r in merged if r.get("firstSeen") == today and r.get("origin") == "auto"}
-    result["gate_errors"] = gates.check(bucket, existing, merged, added_keys)
+    live_before = [r for r in existing if not r.get("endDate") or r["endDate"] >= today]
+    result["gate_errors"] = gates.check(bucket, live_before, merged, added_keys)
     if result["gate_errors"]:
         result["status"] = "blocked"
         return result
-    if merged == existing:
+    if merged == store.load(bucket):
         result["status"] = "no change"
         return result
     if write:
@@ -112,7 +124,7 @@ def run_bucket(bucket, store, today, write):
 
 def wait_for_port(port, attempts=50):
     for _ in range(attempts):
-        with contextlib.suppress(OSError), socket.create_connection(("localhost", port), timeout=0.2):
+        with contextlib.suppress(OSError), socket.create_connection(("127.0.0.1", port), timeout=0.2):
             return
         time.sleep(0.1)
     raise RuntimeError(f"static server never opened port {port}")
@@ -120,11 +132,11 @@ def wait_for_port(port, attempts=50):
 
 @contextlib.contextmanager
 def static_server():
-    server = subprocess.Popen([sys.executable, "-m", "http.server", str(SMOKE_PORT)], cwd=REPO,
+    server = subprocess.Popen([sys.executable, "-m", "http.server", "--bind", "127.0.0.1", str(SMOKE_PORT)], cwd=REPO,
                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     try:
         wait_for_port(SMOKE_PORT)
-        yield f"http://localhost:{SMOKE_PORT}/"
+        yield f"http://127.0.0.1:{SMOKE_PORT}/"
     finally:
         server.terminate()
 
@@ -143,6 +155,9 @@ def smoke_regressions(baseline, after):
         new_errors = set(now["errors"]) - set(was.get("errors", []))
         if new_errors:
             problems.append(f"{path or '/'}: new console errors {sorted(new_errors)[:3]}")
+        new_failed = set(now["failed"]) - set(was.get("failed", []))
+        if new_failed:
+            problems.append(f"{path or '/'}: new failed requests {sorted(new_failed)[:3]}")
         if was.get("counts", {}).get("cards", 0) > 0 and now["counts"]["cards"] == 0:
             problems.append(f"{path or '/'}: cards dropped to 0")
     return problems
@@ -164,6 +179,7 @@ def main():
     parser.add_argument("--only", default=",".join(BUCKETS), help="comma list of buckets")
     parser.add_argument("--dry-run", action="store_true", help="report only, write nothing")
     parser.add_argument("--no-push", action="store_true", help="commit but do not push")
+    parser.add_argument("--no-commit", action="store_true", help="write and smoke-test, leave changes uncommitted")
     parser.add_argument("--no-smoke", action="store_true", help="skip the headless page check")
     args = parser.parse_args()
 
@@ -200,7 +216,9 @@ def main():
             written, outcome = [], "smoke test failed, reverted"
 
     path = report.write(today, results)
-    if written:
+    if written and args.no_commit:
+        outcome = "written, not committed"
+    elif written:
         outcome = publish(files + [path.relative_to(REPO).as_posix()], written, today, push=not args.no_push)
 
     print(path.read_text(encoding="utf-8"))
