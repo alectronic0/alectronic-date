@@ -3602,13 +3602,21 @@
       const children = Array.from(container.children);
       if (children.length <= 1) return;
 
+      // cloneNode() fetches every <img> immediately, ignoring loading="lazy", so grids
+      // inside closed modals would download everything. Template content is inert:
+      // its images only start loading (lazily) once inserted into the page.
+      const cloneLazily = (child) => {
+        const tpl = document.createElement('template');
+        tpl.innerHTML = child.outerHTML;
+        return tpl.content.firstElementChild;
+      };
       const clonesPre = children.map(child => {
-        const clone = child.cloneNode(true);
+        const clone = cloneLazily(child);
         clone.dataset.clonePre = 'true';
         return clone;
       });
       const clonesPost = children.map(child => {
-        const clone = child.cloneNode(true);
+        const clone = cloneLazily(child);
         clone.dataset.clonePost = 'true';
         return clone;
       });
