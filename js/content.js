@@ -111,7 +111,7 @@ window.CONTENT = {
       "w": 900,
       "h": 1200
     },
-    "viewPhotosLabel": "⤢ View all photos",
+    "viewPhotosLabel": "📸 View all {count} photos",
     "facts": [
       {
         "icon": "🎂",

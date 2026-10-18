@@ -3553,7 +3553,11 @@
         setHtml('#profile-tag-container', `<div class="section-tag tag-purple">${esc(C.profile.tag)}</div>`);
       }
       if (C.faces && C.faces.photos && C.faces.photos.length > 0) {
-        setHtml('#faces-expand-btn', esc(C.profile.viewPhotosLabel));
+        const btn = document.getElementById('faces-expand-btn');
+        const label = C.profile.viewPhotosLabel.replace('{count}', C.faces.photos.length);
+        setHtml('#faces-expand-btn', esc(label));
+        // Clear any display:none a past prerender baked into the snapshot.
+        if (btn) btn.style.display = '';
       } else {
         const btn = document.getElementById('faces-expand-btn');
         if (btn) btn.style.display = 'none';
