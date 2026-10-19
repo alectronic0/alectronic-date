@@ -4,6 +4,7 @@ import datetime
 import functools
 import html
 import http.client
+import ipaddress
 import json
 import math
 import re
@@ -28,7 +29,37 @@ class PublicOnlyRedirects(urllib.request.HTTPRedirectHandler):
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
-OPENER = urllib.request.build_opener(PublicOnlyRedirects)
+def require_public_peer(sock):
+    """The pre-fetch DNS check can be raced (DNS rebinding), so vet the address actually dialled."""
+    peer = ipaddress.ip_address(sock.getpeername()[0].split("%")[0])
+    if not peer.is_global:
+        sock.close()
+        raise OSError(f"refusing connection to non-public address {peer}")
+
+
+class PublicHTTPConnection(http.client.HTTPConnection):
+    def connect(self):
+        super().connect()
+        require_public_peer(self.sock)
+
+
+class PublicHTTPSConnection(http.client.HTTPSConnection):
+    def connect(self):
+        super().connect()
+        require_public_peer(self.sock)
+
+
+class PublicHTTPHandler(urllib.request.HTTPHandler):
+    def http_open(self, req):
+        return self.do_open(PublicHTTPConnection, req)
+
+
+class PublicHTTPSHandler(urllib.request.HTTPSHandler):
+    def https_open(self, req):
+        return self.do_open(PublicHTTPSConnection, req, context=self._context)
+
+
+OPENER = urllib.request.build_opener(PublicOnlyRedirects, PublicHTTPHandler, PublicHTTPSHandler)
 RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 MAX_BACKOFF_SECONDS = 60
 

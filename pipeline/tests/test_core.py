@@ -229,6 +229,22 @@ class GatesTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             common.get_text("http://127.0.0.1:8765/")
 
+    def test_connection_to_private_peer_is_refused_even_if_dns_check_passed(self):
+        import http.server
+        import threading
+        from unittest import mock
+
+        from sources import common
+
+        server = http.server.HTTPServer(("127.0.0.1", 0), http.server.SimpleHTTPRequestHandler)
+        threading.Thread(target=server.serve_forever, daemon=True).start()
+        try:
+            with mock.patch.object(gates, "is_public_http", return_value=True):
+                with self.assertRaises(OSError):
+                    common.get_text(f"http://127.0.0.1:{server.server_port}/", retries=0)
+        finally:
+            server.shutdown()
+
     def test_never_fetches_private_hosts(self):
         self.assertIsNone(gates.url_status("http://127.0.0.1:8765/"))
         self.assertIsNone(gates.url_status("http://169.254.169.254/latest/meta-data/"))
