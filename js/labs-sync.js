@@ -10,15 +10,15 @@ window.LABS_SYNC = {
   },
   "designmynight": {
     "lastSynced": "2026-10-19",
-    "records": 6353
+    "records": 7901
   },
   "eventbrite": {
-    "lastSynced": "2026-10-18",
-    "records": 11
+    "lastSynced": "2026-10-19",
+    "records": 981
   },
   "fever": {
     "lastSynced": "2026-10-19",
-    "records": 776
+    "records": 793
   },
   "secretlondon": {
     "lastSynced": "2026-10-19",
@@ -26,6 +26,6 @@ window.LABS_SYNC = {
   },
   "timeout": {
     "lastSynced": "2026-10-19",
-    "records": 2380
+    "records": 2382
   }
 };
