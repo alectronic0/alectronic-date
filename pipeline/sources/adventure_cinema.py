@@ -7,6 +7,7 @@ import re
 
 from sources import common
 
+VERIFIES_URLS = True
 NAME = "adventure-cinema"
 BASE = "https://adventurecinema.co.uk"
 CARD = re.compile(

@@ -1,14 +1,20 @@
 {
   "maxCountDrop": 0.3,
   "bannedSubstrings": [
-    "\u2014",
-    "\ud83d\udd1e",
+    "—",
+    "🔞",
     "sexy photos",
     "nsfw",
     "xxx",
     "porn",
     "escort",
-    "strip club"
+    "strip club",
+    "fuck",
+    "f*ck",
+    "f**k",
+    "sex party",
+    "fetish",
+    "kink"
   ],
   "okStatus": [
     200,

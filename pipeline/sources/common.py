@@ -3,10 +3,12 @@
 import datetime
 import functools
 import html
+import http.client
 import json
 import math
 import re
 import time
+import urllib.error
 import urllib.request
 
 import io_content
@@ -16,29 +18,54 @@ RULES = json.loads((io_content.REPO / "pipeline" / "config" / "rules.json").read
 REQUEST_GAP_SECONDS = 0.5
 
 
-def get_text(url, timeout=20, retries=2):
+RETRYABLE_STATUS = {429, 500, 502, 503, 504}
+MAX_BACKOFF_SECONDS = 60
+
+
+def backoff_seconds(err, attempt):
+    retry_after = getattr(err, "headers", None) and err.headers.get("Retry-After")
+    if retry_after and retry_after.isdigit():
+        return min(int(retry_after), MAX_BACKOFF_SECONDS)
+    return min(5 * 2 ** attempt, MAX_BACKOFF_SECONDS)
+
+
+def get_text(url, timeout=20, retries=3):
+    """GET with polite pacing; backs off on rate limits, 5xx and truncated reads."""
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept-Language": "en-GB"})
     for attempt in range(retries + 1):
         try:
             with urllib.request.urlopen(request, timeout=timeout) as response:
                 time.sleep(REQUEST_GAP_SECONDS)
                 return response.read().decode("utf-8", errors="replace")
-        except OSError:
-            if attempt == retries:
+        except urllib.error.HTTPError as err:
+            if err.code not in RETRYABLE_STATUS or attempt == retries:
                 raise
-            time.sleep(2 ** attempt)
+            time.sleep(backoff_seconds(err, attempt))
+        except (OSError, http.client.HTTPException) as err:
+            if attempt == retries:
+                raise OSError(f"{url}: {err}") from err
+            time.sleep(backoff_seconds(err, attempt))
 
 
 def get_json(url, **kwargs):
     return json.loads(get_text(url, **kwargs))
 
 
+def post_json(url, payload, timeout=30):
+    request = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), method="POST",
+                                     headers={"User-Agent": USER_AGENT, "Content-Type": "application/json"})
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
 def text(fragment):
     """Strip tags and collapse whitespace. Output never contains < > " or `: labs pages
-    interpolate it raw into markup and double-quoted attributes (see gates.unsafe_hits)."""
+    interpolate it raw into markup and double-quoted attributes (see gates.unsafe_hits).
+    Em/en dashes become " - " (the site's no-em-dash copy rule)."""
     visible = re.sub(r"<(script|style)\b.*?</\1>", " ", fragment or "", flags=re.S | re.I)
     plain = html.unescape(re.sub(r"<[^>]+>", " ", visible))
     safe = plain.replace("<", "").replace(">", "").replace('"', "'").replace("`", "'")
+    safe = safe.replace("\u2014", " - ").replace("\u2013", " - ")
     return re.sub(r"\s+", " ", safe).strip()
 
 
@@ -95,3 +122,27 @@ def meteorological_season(day):
         return f"Winter '{start % 100:02d} / '{(start + 1) % 100:02d}"
     name = {3: "Spring", 4: "Spring", 5: "Spring", 6: "Summer", 7: "Summer", 8: "Summer"}.get(day.month, "Autumn")
     return f"{name} '{yy}"
+
+
+UK_POSTCODE = re.compile(r"\b([A-Z]{1,2}\d[A-Z\d]?) ?(\d[A-Z]{2})\b")
+
+
+def find_postcode(text_value):
+    match = UK_POSTCODE.search(text_value or "")
+    return f"{match.group(1)} {match.group(2)}" if match else ""
+
+
+def geocode_postcodes(postcodes):
+    """{postcode: (lat, lng)} via Postcodes.io bulk lookup (100 per request)."""
+    wanted = sorted({p.strip().upper() for p in postcodes if p})
+    found = {}
+    for start in range(0, len(wanted), 100):
+        response = post_json("https://api.postcodes.io/postcodes", {"postcodes": wanted[start:start + 100]})
+        for row in response.get("result") or []:
+            if row.get("result"):
+                found[row["query"].upper()] = (row["result"]["latitude"], row["result"]["longitude"])
+    return found
+
+
+def pounds(amount):
+    return f"£{amount:.0f}" if float(amount).is_integer() else f"£{amount:.2f}"

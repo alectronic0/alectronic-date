@@ -11,6 +11,7 @@ import re
 import io_content
 from sources import common
 
+VERIFIES_URLS = True
 NAME = "fever"
 CONFIG = io_content.REPO / "pipeline" / "config" / "fever_cinema.json"
 PLAN_LINK = re.compile(r'"url":\s*"https://feverup\.com/m/(\d+)"')
@@ -24,7 +25,11 @@ def plan_ids(listing_url):
 def plan_detail(plan_id):
     page = common.get_text(f"https://feverup.com/m/{plan_id}")
     state = json.loads(STATE.search(page).group(1))
-    return state[f"PlanService.getPlanDetail.{plan_id}"]
+    if f"PlanService.getPlanDetail.{plan_id}" in state:
+        return state[f"PlanService.getPlanDetail.{plan_id}"]
+    # "Immersive" plan pages only carry the same object under this key.
+    immersive = next(k for k in state if k.startswith(f"immersive-plan-detail:{plan_id}:"))
+    return state[immersive]
 
 
 def date_range(first, last):
@@ -59,7 +64,7 @@ def to_record(plan, provider, today):
         "timing": date_range(first, last),
         "endDate": last.isoformat(),
         "dateBadge": first.strftime("%b %d %Y").upper(),
-        **({"price": f"From £{price['amount']:g} / person"} if price.get("amount") else {}),
+        **({"price": f"From {common.pounds(price['amount'])} / person"} if price.get("amount") else {}),
         "venue": common.text(place.get("name")),
         "location": common.text(place.get("address")),
         "mapUrl": common.map_url(lat, lng),

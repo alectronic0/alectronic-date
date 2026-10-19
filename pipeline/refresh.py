@@ -82,34 +82,39 @@ def hand_over(existing, module):
 
 
 def collect(bucket, existing):
-    scraped, health, errors = [], {}, []
+    scraped, health, errors, verified = [], {}, [], set()
     for module in SOURCES[bucket.name]:
         try:
-            scraped += module.fetch()
+            records = module.fetch()
+            scraped += records
+            if getattr(module, "VERIFIES_URLS", False):
+                verified |= {bucket.key(r) for r in records}
             hand_over(existing, module)
             if hasattr(module, "health"):
                 health.update(module.health(existing, bucket))
         except Exception as err:  # one broken source must not sink the bucket
             errors.append(f"{module.NAME}: {err}")
             traceback.print_exc()
-    return scraped, health, errors
+    return scraped, health, errors, verified
 
 
 def run_bucket(bucket, store, today, write):
     existing = [dict(r) for r in store.load(bucket)]
     result = {"bucket": bucket.name, "before": len(existing), "after": len(existing), "changes": Changes(),
-              "source_errors": [], "gate_errors": [], "status": "no sources"}
+              "source_errors": [], "gate_errors": [], "held_back": [], "status": "no sources"}
     if not SOURCES[bucket.name]:
         return result
 
-    scraped, health, result["source_errors"] = collect(bucket, existing)
+    scraped, health, result["source_errors"], verified = collect(bucket, existing)
     scrape_ran = bool(scraped) and not result["source_errors"]
     merged, changes = merge(bucket, existing, scraped, today, scrape_ran=scrape_ran, health=health)
     result.update(changes=changes, after=len(merged))
 
     added_keys = {bucket.key(r) for r in merged if r.get("firstSeen") == today and r.get("origin") == "auto"}
-    live_before = [r for r in existing if not r.get("endDate") or r["endDate"] >= today]
-    result["gate_errors"] = gates.check(bucket, live_before, merged, added_keys)
+    live_before = [r for r in existing if not r.get(bucket.end_field) or r[bucket.end_field][:10] >= today]
+    merged, result["held_back"] = gates.quarantine(bucket, live_before, merged, added_keys, verified=verified)
+    result["after"] = len(merged)
+    result["gate_errors"] = gates.check(bucket, live_before, merged)
     if result["gate_errors"]:
         result["status"] = "blocked"
         return result

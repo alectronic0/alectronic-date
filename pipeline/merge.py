@@ -64,8 +64,10 @@ def _clear_strikes(record):
     record.pop("flag", None)
 
 
-def _refresh_auto(old, new, today):
+def _refresh_auto(bucket, old, new, today):
     merged = {**new, "origin": "auto", "firstSeen": old.get("firstSeen", today), "lastSeen": today}
+    if old.get("exact_coords") and not new.get("exact_coords"):
+        merged.update({k: old[k] for k in bucket.pin_fields if k in old})
     changed = {k: v for k, v in merged.items() if k not in TRACKING} != {k: v for k, v in old.items() if k not in TRACKING}
     return merged, changed
 
@@ -97,7 +99,7 @@ def merge(bucket, existing, scraped, today, scrape_ran=True, health=None):
             continue
         if is_manual(old):
             continue
-        by_key[key], changed = _refresh_auto(old, record, today)
+        by_key[key], changed = _refresh_auto(bucket, old, record, today)
         if changed:
             changes.updated.append(label(record))
 
@@ -118,7 +120,8 @@ def merge(bucket, existing, scraped, today, scrape_ran=True, health=None):
     kept = []
     for key in order:
         record = by_key[key]
-        if record.get("endDate") and record["endDate"] < today:
+        end = record.get(bucket.end_field)
+        if end and end[:10] < today:
             changes.expired.append(label(record))
             continue
         if record.get("misses", 0) >= MAX_MISSES:

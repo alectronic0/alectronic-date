@@ -112,56 +112,85 @@ class MergeTest(unittest.TestCase):
         self.assertEqual(changes.expired, ["old"])
 
 
+    def test_refresh_never_downgrades_an_exact_pin(self):
+        classes = BUCKETS["classes"]
+        old = {"id": "1", "title": "Pottery", "url": "https://x/1", "origin": "auto", "lat": 51.47, "lng": -0.12,
+               "exact_coords": True, "location_precision": "postcode", "exact_location": "132 Wandsworth Rd"}
+        new = {"id": "1", "title": "Pottery!", "url": "https://x/1", "lat": 51.48, "lng": -0.13,
+               "exact_coords": False, "location_precision": "neighborhood", "exact_location": "Nine Elms"}
+
+        merged, _ = merge(classes, [old], [new], TODAY)
+
+        self.assertEqual(merged[0]["title"], "Pottery!")
+        self.assertEqual((merged[0]["lat"], merged[0]["exact_location"]), (51.47, "132 Wandsworth Rd"))
+
+
 class GatesTest(unittest.TestCase):
+    def test_bad_new_record_is_dropped_not_the_bucket(self):
+        good, bad = event("good", origin="auto"), event("bad", origin="auto", description="<script>")
+
+        kept, held = gates.quarantine(CINEMA, [], [good, bad], set(), status=always_ok)
+
+        self.assertEqual(kept, [good])
+        self.assertEqual(len(held), 1)
+
+    def test_bad_refresh_reverts_to_previous_version(self):
+        old = event("film", origin="auto", description="fine")
+        new = {**old, "description": "<b>bold</b>"}
+
+        kept, _ = gates.quarantine(CINEMA, [old], [new], set(), status=always_ok)
+
+        self.assertEqual(kept, [old])
+
     def test_rejects_em_dash_in_scraped_copy(self):
         record = event("dash", origin="auto", description="great — film")
 
-        errors = gates.check(CINEMA, [], [record], set(), status=always_ok)
+        _, errors = gates.quarantine(CINEMA, [], [record], set(), status=always_ok)
 
         self.assertTrue(any("banned" in e for e in errors))
 
     def test_ignores_em_dash_in_manual_copy(self):
         record = event("dash", description="great — film")
 
-        self.assertEqual(gates.check(CINEMA, [record], [record], set(), status=always_ok), [])
+        self.assertEqual(gates.quarantine(CINEMA, [record], [record], set(), status=always_ok)[1], [])
 
     def test_rejects_large_count_drop(self):
         before = [event(str(i)) for i in range(10)]
 
-        errors = gates.check(CINEMA, before, before[:6], set(), status=always_ok)
+        errors = gates.check(CINEMA, before, before[:6])
 
         self.assertTrue(any("count dropped 40%" in e for e in errors))
 
     def test_rejects_dead_url_on_new_record(self):
         record = event("dead", origin="auto")
 
-        errors = gates.check(CINEMA, [], [record], {CINEMA.key(record)}, status=lambda _u: 404)
+        _, errors = gates.quarantine(CINEMA, [], [record], {CINEMA.key(record)}, status=lambda _u: 404)
 
         self.assertTrue(any("returned 404" in e for e in errors))
 
     def test_rejects_markup_in_scraped_copy(self):
         record = event("xss", origin="auto", description="<img src=x onerror=alert(1)>")
 
-        errors = gates.check(CINEMA, [], [record], set(), status=always_ok)
+        _, errors = gates.quarantine(CINEMA, [], [record], set(), status=always_ok)
 
         self.assertTrue(any("markup or quote" in e for e in errors))
 
     def test_rejects_attribute_breakout(self):
         record = event('x" onmouseover="alert(1)', origin="auto")
 
-        errors = gates.check(CINEMA, [], [record], set(), status=always_ok)
+        _, errors = gates.quarantine(CINEMA, [], [record], set(), status=always_ok)
 
         self.assertTrue(any("markup or quote" in e for e in errors))
 
     def test_allows_apostrophes(self):
         record = event("Tim Burton's Film", origin="auto")
 
-        self.assertEqual(gates.check(CINEMA, [], [record], set(), status=always_ok), [])
+        self.assertEqual(gates.quarantine(CINEMA, [], [record], set(), status=always_ok)[1], [])
 
     def test_rejects_non_http_link(self):
         record = event("js", origin="auto", mapUrl="javascript:alert(1)")
 
-        errors = gates.check(CINEMA, [], [record], set(), status=always_ok)
+        _, errors = gates.quarantine(CINEMA, [], [record], set(), status=always_ok)
 
         self.assertTrue(any("mapUrl is not http(s)" in e for e in errors))
 
@@ -169,9 +198,17 @@ class GatesTest(unittest.TestCase):
         old = event("moved", origin="auto")
         new = {**old, "url": "https://example.com/elsewhere"}
 
-        errors = gates.check(CINEMA, [old], [new], set(), status=lambda _u: 404)
+        _, errors = gates.quarantine(CINEMA, [old], [new], set(), status=lambda _u: 404)
 
         self.assertTrue(any("returned 404" in e for e in errors))
+
+    def test_skips_urls_the_source_already_fetched(self):
+        record = event("fetched", origin="auto")
+        key = CINEMA.key(record)
+
+        _, errors = gates.quarantine(CINEMA, [], [record], {key}, status=lambda _u: 404, verified={key})
+
+        self.assertEqual(errors, [])
 
     def test_never_fetches_private_hosts(self):
         self.assertIsNone(gates.url_status("http://127.0.0.1:8765/"))

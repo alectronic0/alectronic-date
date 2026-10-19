@@ -14,7 +14,9 @@ LABS_PREFIX = "Object.assign(window.CONTENT, "
 
 GEO_DATASETS = {
     "workshops": ("workshops_geo.json", "workshops_geo.js", "WORKSHOPS_DATA"),
+    "activities": ("london_activities_geo.json", "london_activities_geo.js", "LONDON_ACTIVITIES_DATA"),
 }
+GEO_HEADERS = {"activities": "// High-Precision London Activities Dataset\n"}
 
 
 def dumps(obj):
@@ -52,4 +54,5 @@ def save_geo(name, records):
     json_name, js_name, var = GEO_DATASETS[name]
     body = dumps(records)
     (REPO / json_name).write_text(body, encoding="utf-8")
-    (REPO / js_name).write_text(f"window.{var} = {body};\n", encoding="utf-8")
+    header = GEO_HEADERS.get(name, "")
+    (REPO / js_name).write_text(f"{header}window.{var} = {body};\n", encoding="utf-8")

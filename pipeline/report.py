@@ -3,7 +3,7 @@
 from pathlib import Path
 
 REPORTS = Path(__file__).parent / "reports"
-LIST_CAP = 25
+LIST_CAP = 60
 
 
 def _section(title, names):
@@ -17,12 +17,12 @@ def _section(title, names):
 
 
 def render(today, results):
-    lines = [f"# Labs refresh {today}", "", "| Bucket | Status | Before | After | +Added | -Removed | Expired | Flagged |", "|---|---|---|---|---|---|---|---|"]
+    lines = [f"# Labs refresh {today}", "", "| Bucket | Status | Before | After | +Added | -Removed | Expired | Flagged | Held |", "|---|---|---|---|---|---|---|---|---|"]
     for r in results:
         c = r["changes"]
         lines.append(
             f"| {r['bucket']} | {r['status']} | {r['before']} | {r['after']} | "
-            f"{len(c.added)} | {len(c.removed)} | {len(c.expired)} | {len(c.flagged)} |"
+            f"{len(c.added)} | {len(c.removed)} | {len(c.expired)} | {len(c.flagged)} | {len(r.get('held_back', []))} |"
         )
     lines.append("")
     for r in results:
@@ -30,6 +30,7 @@ def render(today, results):
         lines += [f"## {r['bucket']}", ""]
         lines += _section("Source errors", r["source_errors"])
         lines += _section("Gate failures (bucket not written)", r["gate_errors"])
+        lines += _section("Held back (failed a record check, not published)", r.get("held_back", []))
         lines += _section("Added", c.added)
         lines += _section("Updated", c.updated)
         lines += _section("Removed", c.removed)

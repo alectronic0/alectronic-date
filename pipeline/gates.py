@@ -1,4 +1,5 @@
-"""Checks that must pass before a bucket is written. Any failure blocks that bucket only.
+"""Checks before a bucket is written. Record-level failures hold back just that record;
+bucket-level failures (count drop) block the bucket's write.
 
 Copy rules apply to scraped (`origin: auto`) records; hand-curated text is Alec's call.
 """
@@ -69,34 +70,50 @@ def unsafe_hits(record):
     if any(ch in text for text in strings(record) for ch in '<>"`'):
         hits.append("contains markup or quote characters")
     for key, value in record.items():
-        is_link = key == "url" or key.endswith("Url")
+        is_link = key == "url" or key.endswith(("Url", "_url"))
         if is_link and value and not str(value).startswith(("https://", "http://")):
             hits.append(f"{key} is not http(s)")
     return hits
 
 
-def check(bucket, before, after, added_keys, status=url_status):
-    errors = []
-    old_urls = {bucket.key(r): r.get("url") for r in before}
-    if before:
-        drop = 1 - len(after) / len(before)
-        if drop > RULES["maxCountDrop"]:
-            errors.append(f"count dropped {drop:.0%} ({len(before)} -> {len(after)})")
-
-    for record in after:
-        if record.get("origin") != "auto":
-            continue
-        name = record.get("name") or record.get("title")
-        for problem in bucket.errors(record):
-            errors.append(f"{name}: {problem}")
-        for word in banned_hits(record):
-            errors.append(f"{name}: banned text {word!r}")
-        for problem in unsafe_hits(record):
-            errors.append(f"{name}: {problem}")
-        key = bucket.key(record)
-        if key not in added_keys and old_urls.get(key) == record.get("url"):
-            continue
+def record_problems(bucket, record, check_url, status):
+    problems = list(bucket.errors(record))
+    problems += [f"banned text {word!r}" for word in banned_hits(record)]
+    problems += unsafe_hits(record)
+    if check_url and not problems:
         code = status(record["url"])
         if code not in RULES["okStatus"]:
-            errors.append(f"{name}: url {record['url']} returned {code}")
-    return errors
+            problems.append(f"url {record['url']} returned {code}")
+    return problems
+
+
+def quarantine(bucket, before, after, added_keys, status=url_status, verified=frozenset()):
+    """Hold back scraped records that fail a check: new ones are dropped, refreshed ones
+    revert to their previous version. Returns (records to publish, held-back reasons)."""
+    previous = {bucket.key(r): r for r in before}
+    kept, held = [], []
+    for record in after:
+        if record.get("origin") != "auto":
+            kept.append(record)
+            continue
+        key = bucket.key(record)
+        url_changed = previous.get(key, {}).get("url") != record.get("url")
+        check_url = key not in verified and (key in added_keys or url_changed)
+        problems = record_problems(bucket, record, check_url, status)
+        if not problems:
+            kept.append(record)
+            continue
+        held.append(f"{record.get('name') or record.get('title')}: {'; '.join(problems)}")
+        if key in previous:
+            kept.append(previous[key])
+    return kept, held
+
+
+def check(bucket, before, after):
+    """Bucket-level gate: blocks the whole write."""
+    if not before:
+        return []
+    drop = 1 - len(after) / len(before)
+    if drop > RULES["maxCountDrop"]:
+        return [f"count dropped {drop:.0%} ({len(before)} -> {len(after)})"]
+    return []
