@@ -14,6 +14,14 @@
     let activities = [];
     let activeCategory = 'All';
     let activeSource = 'all';
+    const SOURCE_BADGES = {
+        designmynight: { sourceClass: 'source-dmn', sourceLabel: 'DesignMyNight' },
+        timeout: { sourceClass: 'source-timeout', sourceLabel: 'Time Out' },
+        secretlondon: { sourceClass: 'source-secretlondon', sourceLabel: 'Secret London' },
+        fever: { sourceClass: 'source-fever', sourceLabel: 'Fever' },
+        fatsoma: { sourceClass: 'source-fatsoma', sourceLabel: 'Fatsoma' },
+        eventbrite: { sourceClass: 'source-eventbrite', sourceLabel: 'Eventbrite' },
+    };
     let activePrice = 'All';
     let searchQuery = '';
     let selectedId = null;
@@ -127,7 +135,10 @@
         if (!container) return;
 
         const pills = container.querySelectorAll('.pill, .filter-btn');
+        const liveSources = new Set(activities.map(a => a.source));
         pills.forEach(pill => {
+            // A source whose last sync failed has no records yet; don't offer an empty filter.
+            pill.hidden = !liveSources.has(pill.getAttribute('data-source'));
             pill.addEventListener('click', (e) => {
                 e.preventDefault();
                 const src = pill.getAttribute('data-source');
@@ -210,15 +221,7 @@
             card.id = `card-${act.id}`;
             card.addEventListener('click', () => focusActivity(act));
 
-            let sourceClass = 'source-dmn';
-            let sourceLabel = 'DesignMyNight';
-            if (act.source === 'timeout') {
-                sourceClass = 'source-timeout';
-                sourceLabel = 'Time Out';
-            } else if (act.source === 'secretlondon') {
-                sourceClass = 'source-secretlondon';
-                sourceLabel = 'Secret London';
-            }
+            const { sourceClass, sourceLabel } = SOURCE_BADGES[act.source] || SOURCE_BADGES.designmynight;
 
             const imgHTML = act.image_url ? `<img src="${act.image_url}" alt="${escapeHTML(act.title)}" class="activity-thumb" loading="lazy" onerror="this.style.display='none'">` : '';
 

@@ -25,6 +25,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import gates  # noqa: E402
 import io_content  # noqa: E402
 import report  # noqa: E402
+import sync  # noqa: E402
 from merge import Changes, merge  # noqa: E402
 from schema import BUCKETS  # noqa: E402
 from sources import SOURCES  # noqa: E402
@@ -221,6 +222,8 @@ def main():
             written, outcome = [], "smoke test failed, reverted"
 
     path = report.write(today, results)
+    if written:
+        files.append(sync.write().relative_to(REPO).as_posix())
     if written and args.no_commit:
         outcome = "written, not committed"
     elif written:

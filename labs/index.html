@@ -285,6 +285,14 @@
       line-height: 1.4;
       margin: 0;
     }
+    .source-synced {
+      font-size: 0.74rem;
+      color: var(--muted-2);
+      margin-top: 2px;
+    }
+    .source-synced.is-synced {
+      color: var(--mint);
+    }
     .source-tag-live {
       color: var(--mint);
       background: rgba(78, 205, 196, 0.15);
@@ -329,14 +337,13 @@
       <div class="sources-header">
         <span class="page-tag" style="display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gold); background: var(--surface-2); padding: 3px 10px; border-radius: 999px; border: 1px solid var(--border); margin-bottom: 8px;">Provenance & Inspiration</span>
         <h2><span>📡</span> Sources & Useful Links</h2>
-        <p>A transparent breakdown of where our live data comes from, the platforms we scrape and geocode, future ingestion targets, and where we source our date & event ideas.</p>
+        <p>Where the live data comes from. Every source below is scraped, checked and geocoded by the refresh pipeline; each card shows when it last synced and how many live records it feeds.</p>
       </div>
 
       <div class="sources-grid">
-        <!-- Column 1: Live Scraped Engines -->
         <div class="sources-column">
           <div class="sources-column-title">
-            <span style="display: flex; align-items: center; gap: 6px; color: var(--mint);">🟢 Live Scraped Engines</span>
+            <span style="display: flex; align-items: center; gap: 6px; color: var(--mint);">🟢 Events & Nightlife</span>
             <span class="lab-tag source-tag-live">Active</span>
           </div>
           <div class="sources-list">
@@ -345,72 +352,73 @@
                 <span class="source-item-name">DesignMyNight ↗</span>
                 <span class="lab-tag" style="font-size: 0.68rem; padding: 2px 6px;">Nightlife</span>
               </div>
-              <p class="source-item-desc">Nightlife, pop-up cocktail bars, secret clubs, comedy nights & immersive events.</p>
+              <p class="source-item-desc">Bars, restaurants, pop-up cocktail bars, comedy nights & immersive events.</p>
+              <span class="source-synced" data-source="designmynight">Awaiting first sync</span>
             </a>
-
-            <a href="https://www.timeout.com/london" target="_blank" rel="noopener noreferrer" class="source-item">
-              <div class="source-item-top">
-                <span class="source-item-name">Time Out London ↗</span>
-                <span class="lab-tag" style="font-size: 0.68rem; padding: 2px 6px;">Culture</span>
-              </div>
-              <p class="source-item-desc">Art exhibitions, West End theatre, museum lates, food festivals & city highlights.</p>
-            </a>
-
-            <a href="https://secretldn.com/" target="_blank" rel="noopener noreferrer" class="source-item">
-              <div class="source-item-top">
-                <span class="source-item-name">Secret London ↗</span>
-                <span class="lab-tag" style="font-size: 0.68rem; padding: 2px 6px;">Hidden Gems</span>
-              </div>
-              <p class="source-item-desc">Quirky exhibitions, viral aesthetic popups, hidden rooftops & unusual things to do.</p>
-            </a>
-
-            <a href="https://www.airbnb.co.uk/s/London--United-Kingdom/experiences" target="_blank" rel="noopener noreferrer" class="source-item">
-              <div class="source-item-top">
-                <span class="source-item-name">Airbnb Experiences ↗</span>
-                <span class="lab-tag" style="font-size: 0.68rem; padding: 2px 6px;">Workshops</span>
-              </div>
-              <p class="source-item-desc">Artisan craft masterclasses, food tasting walking tours, cooking classes & unique hosts.</p>
-            </a>
-
-            <a href="https://classbento.co.uk/" target="_blank" rel="noopener noreferrer" class="source-item">
-              <div class="source-item-top">
-                <span class="source-item-name">ClassBento ↗</span>
-                <span class="lab-tag" style="font-size: 0.68rem; padding: 2px 6px;">Crafts</span>
-              </div>
-              <p class="source-item-desc">Pottery wheel throwing, rug tufting, mosaic making, terrarium building & baking.</p>
-            </a>
-          </div>
-        </div>
-
-        <!-- Column 2: Upcoming Scrape Targets -->
-        <div class="sources-column">
-          <div class="sources-column-title">
-            <span style="display: flex; align-items: center; gap: 6px; color: var(--gold);">🔮 Upcoming Scrapers & Inspo</span>
-            <span class="lab-tag source-tag-target">Pipeline</span>
-          </div>
-          <div class="sources-list">
             <a href="https://feverup.com/en/london" target="_blank" rel="noopener noreferrer" class="source-item">
               <div class="source-item-top">
                 <span class="source-item-name">Fever London ↗</span>
                 <span class="lab-tag" style="font-size: 0.68rem; padding: 2px 6px;">Experiences</span>
               </div>
-              <p class="source-item-desc">Candlelight concerts, immersive art spaces, viral dining popups & themed interactive experiences.</p>
+              <p class="source-item-desc">Candlelight concerts, immersive art, dining-cinema feasts & themed experiences.</p>
+              <span class="source-synced" data-source="fever">Awaiting first sync</span>
             </a>
-
             <a href="https://www.fatsoma.com/" target="_blank" rel="noopener noreferrer" class="source-item">
               <div class="source-item-top">
                 <span class="source-item-name">Fatsoma ↗</span>
                 <span class="lab-tag" style="font-size: 0.68rem; padding: 2px 6px;">Ticketing</span>
               </div>
-              <p class="source-item-desc">Independent nightlife ticketing, university & student events, music gigs & live club sessions.</p>
+              <p class="source-item-desc">Independent nightlife, club nights, gigs & student events across London.</p>
+              <span class="source-synced" data-source="fatsoma">Awaiting first sync</span>
             </a>
-
             <a href="https://www.eventbrite.co.uk/d/united-kingdom--london/events/" target="_blank" rel="noopener noreferrer" class="source-item">
               <div class="source-item-top">
                 <span class="source-item-name">Eventbrite London ↗</span>
                 <span class="lab-tag" style="font-size: 0.68rem; padding: 2px 6px;">Community</span>
               </div>
-              <p class="source-item-desc">Independent community meetups, creative panels, outdoor socials & niche special interest events.</p>
+              <p class="source-item-desc">Community meetups, conventions, creative panels & niche special-interest events.</p>
+              <span class="source-synced" data-source="eventbrite">Awaiting first sync</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="sources-column">
+          <div class="sources-column-title">
+            <span style="display: flex; align-items: center; gap: 6px; color: var(--mint);">🟢 Culture & Classes</span>
+            <span class="lab-tag source-tag-live">Active</span>
+          </div>
+          <div class="sources-list">
+            <a href="https://www.timeout.com/london" target="_blank" rel="noopener noreferrer" class="source-item">
+              <div class="source-item-top">
+                <span class="source-item-name">Time Out London ↗</span>
+                <span class="lab-tag" style="font-size: 0.68rem; padding: 2px 6px;">Culture</span>
+              </div>
+              <p class="source-item-desc">Theatre, exhibitions, restaurant reviews, comedy & city highlights.</p>
+              <span class="source-synced" data-source="timeout">Awaiting first sync</span>
+            </a>
+            <a href="https://secretldn.com/" target="_blank" rel="noopener noreferrer" class="source-item">
+              <div class="source-item-top">
+                <span class="source-item-name">Secret London ↗</span>
+                <span class="lab-tag" style="font-size: 0.68rem; padding: 2px 6px;">Hidden Gems</span>
+              </div>
+              <p class="source-item-desc">Quirky exhibitions, viral pop-ups, food openings & unusual things to do.</p>
+              <span class="source-synced" data-source="secretlondon">Awaiting first sync</span>
+            </a>
+            <a href="https://classbento.co.uk/" target="_blank" rel="noopener noreferrer" class="source-item">
+              <div class="source-item-top">
+                <span class="source-item-name">ClassBento ↗</span>
+                <span class="lab-tag" style="font-size: 0.68rem; padding: 2px 6px;">Crafts</span>
+              </div>
+              <p class="source-item-desc">Pottery, rug tufting, mosaic, terrarium, cooking & baking classes.</p>
+              <span class="source-synced" data-source="classbento">Awaiting first sync</span>
+            </a>
+            <a href="https://www.airbnb.co.uk/london-united-kingdom/things-to-do" target="_blank" rel="noopener noreferrer" class="source-item">
+              <div class="source-item-top">
+                <span class="source-item-name">Airbnb Experiences ↗</span>
+                <span class="lab-tag" style="font-size: 0.68rem; padding: 2px 6px;">Workshops</span>
+              </div>
+              <p class="source-item-desc">Craft masterclasses, food tours, cooking classes & hosted experiences.</p>
+              <span class="source-synced" data-source="airbnb">Awaiting first sync</span>
             </a>
           </div>
         </div>
@@ -502,5 +510,18 @@
   <p>© 2026 Alec · <a href="https://alec.today/" target="_blank" rel="noopener" style="color: var(--gold);">alec.today</a> · All rights reserved.</p>
 </footer>
 
+<script src="../js/labs-sync.js"></script>
+<script>
+  (function showSourceSync() {
+    const sync = window.LABS_SYNC || {};
+    const day = (iso) => new Date(`${iso}T00:00:00`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    document.querySelectorAll('.source-synced').forEach((el) => {
+      const entry = sync[el.dataset.source];
+      if (!entry) return;
+      el.textContent = `Synced ${day(entry.lastSynced)} · ${entry.records.toLocaleString('en-GB')} live`;
+      el.classList.add('is-synced');
+    });
+  })();
+</script>
 </body>
 </html>
