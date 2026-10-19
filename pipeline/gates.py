@@ -4,6 +4,7 @@ bucket-level failures (count drop) block the bucket's write.
 Copy rules apply to scraped (`origin: auto`) records; hand-curated text is Alec's call.
 """
 
+import functools
 import ipaddress
 import json
 import socket
@@ -21,15 +22,20 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         return None
 
 
+@functools.lru_cache(maxsize=4096)
+def host_is_public(hostname):
+    try:
+        addresses = {info[4][0] for info in socket.getaddrinfo(hostname, None)}
+    except OSError:
+        return False
+    return bool(addresses) and all(ipaddress.ip_address(a.split("%")[0]).is_global for a in addresses)
+
+
 def is_public_http(url):
     parts = urlsplit(url or "")
     if parts.scheme not in ("http", "https") or not parts.hostname:
         return False
-    try:
-        addresses = {info[4][0] for info in socket.getaddrinfo(parts.hostname, None)}
-    except OSError:
-        return False
-    return all(ipaddress.ip_address(a.split("%")[0]).is_global for a in addresses)
+    return host_is_public(parts.hostname)
 
 
 def url_status(url, timeout=8):
@@ -76,8 +82,10 @@ def unsafe_hits(record):
     return hits
 
 
-def record_problems(bucket, record, check_url, status):
+def record_problems(bucket, record, check_url, status, public=is_public_http):
     problems = list(bucket.errors(record))
+    if record.get("url") and not public(record["url"]):
+        problems.append(f"url {record['url']} is not a public http(s) address")
     problems += [f"banned text {word!r}" for word in banned_hits(record)]
     problems += unsafe_hits(record)
     if check_url and not problems:
@@ -87,7 +95,7 @@ def record_problems(bucket, record, check_url, status):
     return problems
 
 
-def quarantine(bucket, before, after, added_keys, status=url_status, verified=frozenset()):
+def quarantine(bucket, before, after, added_keys, status=url_status, verified=frozenset(), public=is_public_http):
     """Hold back scraped records that fail a check: new ones are dropped, refreshed ones
     revert to their previous version. Returns (records to publish, held-back reasons)."""
     previous = {bucket.key(r): r for r in before}
@@ -99,7 +107,7 @@ def quarantine(bucket, before, after, added_keys, status=url_status, verified=fr
         key = bucket.key(record)
         url_changed = previous.get(key, {}).get("url") != record.get("url")
         check_url = key not in verified and (key in added_keys or url_changed)
-        problems = record_problems(bucket, record, check_url, status)
+        problems = record_problems(bucket, record, check_url, status, public)
         if not problems:
             kept.append(record)
             continue

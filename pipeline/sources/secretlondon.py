@@ -23,7 +23,7 @@ def pages(after):
     page, total = 1, 1
     while page <= total:
         request = urllib.request.Request(f"{API}?{query}&page={page}", headers={"User-Agent": common.USER_AGENT})
-        with urllib.request.urlopen(request, timeout=30) as response:
+        with common.OPENER.open(request, timeout=30) as response:
             total = int(response.headers.get("X-WP-TotalPages", "1"))
             yield json.loads(response.read().decode("utf-8"))
         page += 1

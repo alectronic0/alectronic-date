@@ -11,6 +11,7 @@ import time
 import urllib.error
 import urllib.request
 
+import gates
 import io_content
 
 USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
@@ -18,6 +19,16 @@ RULES = json.loads((io_content.REPO / "pipeline" / "config" / "rules.json").read
 REQUEST_GAP_SECONDS = 0.5
 
 
+class PublicOnlyRedirects(urllib.request.HTTPRedirectHandler):
+    """Scraped pages choose what gets fetched next, so every hop must stay on the public web."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if not gates.is_public_http(newurl):
+            raise urllib.error.URLError(f"refusing redirect to non-public {newurl}")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+OPENER = urllib.request.build_opener(PublicOnlyRedirects)
 RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 MAX_BACKOFF_SECONDS = 60
 
@@ -30,11 +41,14 @@ def backoff_seconds(err, attempt):
 
 
 def get_text(url, timeout=20, retries=3):
-    """GET with polite pacing; backs off on rate limits, 5xx and truncated reads."""
+    """GET with polite pacing; backs off on rate limits, 5xx and truncated reads.
+    Only public http(s) hosts are fetched, including every redirect hop."""
+    if not gates.is_public_http(url):
+        raise ValueError(f"refusing to fetch non-public {url}")
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept-Language": "en-GB"})
     for attempt in range(retries + 1):
         try:
-            with urllib.request.urlopen(request, timeout=timeout) as response:
+            with OPENER.open(request, timeout=timeout) as response:
                 time.sleep(REQUEST_GAP_SECONDS)
                 return response.read().decode("utf-8", errors="replace")
         except urllib.error.HTTPError as err:
@@ -52,9 +66,11 @@ def get_json(url, **kwargs):
 
 
 def post_json(url, payload, timeout=30):
+    if not gates.is_public_http(url):
+        raise ValueError(f"refusing to fetch non-public {url}")
     request = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), method="POST",
                                      headers={"User-Agent": USER_AGENT, "Content-Type": "application/json"})
-    with urllib.request.urlopen(request, timeout=timeout) as response:
+    with OPENER.open(request, timeout=timeout) as response:
         return json.loads(response.read().decode("utf-8"))
 
 
