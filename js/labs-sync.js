@@ -9,23 +9,27 @@ window.LABS_SYNC = {
     "records": 5860
   },
   "designmynight": {
-    "lastSynced": "2026-10-19",
-    "records": 7901
+    "lastSynced": "2026-10-20",
+    "records": 8457
   },
   "eventbrite": {
-    "lastSynced": "2026-10-19",
-    "records": 981
+    "lastSynced": "2026-10-20",
+    "records": 1032
+  },
+  "fatsoma": {
+    "lastSynced": "2026-10-20",
+    "records": 3325
   },
   "fever": {
-    "lastSynced": "2026-10-19",
-    "records": 793
+    "lastSynced": "2026-10-20",
+    "records": 817
   },
   "secretlondon": {
-    "lastSynced": "2026-10-19",
-    "records": 1075
+    "lastSynced": "2026-10-20",
+    "records": 1079
   },
   "timeout": {
-    "lastSynced": "2026-10-19",
-    "records": 2382
+    "lastSynced": "2026-10-20",
+    "records": 2387
   }
 };
