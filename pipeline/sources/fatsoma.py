@@ -1,10 +1,12 @@
 """Fatsoma: every active UK event, kept when the venue is in London (activities bucket).
 
-The JSON:API has no working location filter, so all ~490 pages are walked and venues come
-from the `included` locations (with coordinates and postcode).
+The JSON:API has no working location filter, so every active event is walked and venues come
+from the `included` locations (with coordinates and postcode). Deep pages 500 past ~10k
+results, so the walk restarts from the last start time seen once a window hits that cap.
 """
 
 import datetime
+import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 
 from sources import activity, common
@@ -13,6 +15,8 @@ VERIFIES_URLS = False
 NAME = "fatsoma"
 API = ("https://api.fatsoma.com/v1/events?filter%5Bstatus%5D=active&filter%5Bhealth%5D=null,active,postponed"
        "&include=location,categories&page%5Bsize%5D=52&sort=starts-at&page%5Bnumber%5D={page}")
+SINCE = "&filter%5Bstarts-at%5D%5Bgte%5D={since}"
+MAX_PAGE = 190
 WORKERS = 3
 
 
@@ -59,13 +63,36 @@ def page_records(payload, today):
     return records
 
 
+def window(since):
+    url = API + (SINCE.format(since=urllib.parse.quote(since)) if since else "")
+    first = common.get_json(url.format(page=1))
+    total = first["meta"]["total-pages"]
+    last = min(total, MAX_PAGE)
+    with ThreadPoolExecutor(WORKERS) as pool:
+        rest = list(pool.map(lambda n: common.get_json(url.format(page=n)), range(2, last + 1)))
+    return [first, *rest], last < total
+
+
+def payloads():
+    since = None
+    while True:
+        batch, more = window(since)
+        yield from batch
+        if not more:
+            return
+        cursor = batch[-1]["data"][-1]["attributes"]["starts-at"]
+        if cursor == since:
+            raise RuntimeError(f"fatsoma: over {MAX_PAGE} pages start at {since}")
+        since = cursor
+
+
 def fetch():
     today = datetime.date.today().isoformat()
-    first = common.get_json(API.format(page=1))
-    pages = first["meta"]["total-pages"]
-    with ThreadPoolExecutor(WORKERS) as pool:
-        rest = list(pool.map(lambda n: common.get_json(API.format(page=n)), range(2, pages + 1)))
-    return [r for payload in [first, *rest] for r in page_records(payload, today)]
+    records = {}
+    for payload in payloads():
+        for record in page_records(payload, today):
+            records.setdefault(record["id"], record)
+    return list(records.values())
 
 
 def owns(record):
