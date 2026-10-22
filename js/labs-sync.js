@@ -4,9 +4,13 @@ window.LABS_SYNC = {
     "lastSynced": "2026-10-18",
     "records": 3
   },
+  "airbnb": {
+    "lastSynced": "2026-10-22",
+    "records": 262
+  },
   "classbento": {
-    "lastSynced": "2026-10-19",
-    "records": 5860
+    "lastSynced": "2026-10-22",
+    "records": 5893
   },
   "designmynight": {
     "lastSynced": "2026-10-20",
