@@ -13,6 +13,8 @@ import urllib.request
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from merge import TRACKING
+
 RULES = json.loads((Path(__file__).parent / "config" / "rules.json").read_text(encoding="utf-8"))
 USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
 
@@ -95,6 +97,10 @@ def record_problems(bucket, record, check_url, status, public=is_public_http):
     return problems
 
 
+def content(record):
+    return {k: v for k, v in record.items() if k not in TRACKING}
+
+
 def quarantine(bucket, before, after, added_keys, status=url_status, verified=frozenset(), public=is_public_http):
     """Hold back scraped records that fail a check: new ones are dropped, refreshed ones
     revert to their previous version. Returns (records to publish, held-back reasons)."""
@@ -105,6 +111,10 @@ def quarantine(bucket, before, after, added_keys, status=url_status, verified=fr
             kept.append(record)
             continue
         key = bucket.key(record)
+        # Unseen records keep their old content; reverting them would be a no-op.
+        if content(previous.get(key, {})) == content(record):
+            kept.append(record)
+            continue
         url_changed = previous.get(key, {}).get("url") != record.get("url")
         check_url = key not in verified and (key in added_keys or url_changed)
         problems = record_problems(bucket, record, check_url, status, public)

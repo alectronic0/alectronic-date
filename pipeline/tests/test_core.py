@@ -153,6 +153,14 @@ class GatesTest(unittest.TestCase):
 
         self.assertTrue(any("banned" in e for e in errors))
 
+    def test_unchanged_record_is_not_held(self):
+        old = event("dash", origin="auto", description="great — film")
+        unseen = {**old, "misses": 1}
+
+        kept, held = quarantine(CINEMA, [old], [unseen], set(), status=always_ok)
+
+        self.assertEqual((kept, held), ([unseen], []))
+
     def test_ignores_em_dash_in_manual_copy(self):
         record = event("dash", description="great — film")
 
