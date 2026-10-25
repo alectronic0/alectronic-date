@@ -4,7 +4,7 @@
   const RECENT_YEARS = 3;
 
   const RATINGS = {
-    trusted: { label: 'Trusted', icon: '✅' },
+    checked: { label: 'AI-checked: no red flags', icon: '🔍' },
     caution: { label: 'Caution', icon: '⚠️' },
     avoid: { label: 'Avoid', icon: '⛔' },
   };
@@ -39,7 +39,7 @@
     const reasons = reasonsFor(service, today);
     if (reasons.some((r) => r.rating === 'avoid')) return { rating: 'avoid', byHand: false, reasons };
     if (reasons.length) return { rating: 'caution', byHand: false, reasons };
-    return { rating: 'trusted', byHand: false, reasons };
+    return { rating: 'checked', byHand: false, reasons };
   }
 
   const api = { RATINGS, RECENT_YEARS, ratingFor };

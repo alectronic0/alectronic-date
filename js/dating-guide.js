@@ -83,7 +83,7 @@
   }
 
   function reasonsHtml(verdict) {
-    if (verdict.rating === 'trusted' && !verdict.byHand) return '';
+    if (verdict.rating === 'checked' && !verdict.byHand) return '';
     const label = verdict.byHand ? 'Rated by hand' : 'Why';
     return `<ul class="why">${verdict.reasons.map((r) => `<li><strong>${label}:</strong> ${esc(r.text)}</li>`).join('')}</ul>`;
   }
@@ -98,6 +98,13 @@
     const tp = service.trustpilot;
     if (!tp) return null;
     return `${tp.score} from ${tp.reviews.toLocaleString('en-GB')} reviews (${monthYear(tp.checked)})`;
+  }
+
+  function storeLinks(service) {
+    const links = [];
+    if (service.appStoreId) links.push(['App Store', `https://apps.apple.com/gb/app/id${encodeURIComponent(service.appStoreId)}`]);
+    if (service.playStoreId) links.push(['Google Play', `https://play.google.com/store/apps/details?id=${encodeURIComponent(service.playStoreId)}&hl=en_GB`]);
+    return links.map(([label, href]) => `<a href="${esc(href)}" target="_blank" rel="noopener noreferrer" class="card-action secondary store">${label} ↗</a>`).join('');
   }
 
   function card(service, events) {
@@ -123,7 +130,10 @@
         <div>
           <div class="card-header">
             <span class="category-badge">${esc(CATEGORIES[service.category] || service.category)}</span>
-            ${ratingPill(verdict.rating, verdict.byHand ? ' · by hand' : '')}
+            <span class="card-pills">
+              ${service.alecTrusts ? '<span class="alec-badge">💙 Alec uses this</span>' : ''}
+              ${ratingPill(verdict.rating, verdict.byHand ? ' · by hand' : '')}
+            </span>
           </div>
           <div class="platform-head">
             ${logoHtml(service.name, safeAsset(service.logo), 'platform-logo')}
@@ -140,7 +150,8 @@
         </div>
         <div class="card-actions">
           ${upcoming ? `<a href="../events.html#schedule" class="card-action secondary">🗓️ ${upcoming} upcoming event${upcoming === 1 ? '' : 's'}</a>` : ''}
-          <a href="${esc(safeUrl(service.url))}" target="_blank" rel="noopener noreferrer" class="card-action">Visit website ↗</a>
+          <a href="${esc(safeUrl(service.url))}" target="_blank" rel="noopener noreferrer" class="card-action">Website ↗</a>
+          ${storeLinks(service)}
         </div>
       </article>`;
   }
@@ -173,7 +184,7 @@
   }
 
   function bindList(services) {
-    const order = { trusted: 0, caution: 1, avoid: 2 };
+    const order = { checked: 0, caution: 1, avoid: 2 };
     services.sort((a, b) => order[a.verdict.rating] - order[b.verdict.rating] || a.name.localeCompare(b.name));
     const owners = [...new Set(services.map((s) => s.ownerId).filter(Boolean))]
       .map((id) => [id, (ownersById[id] || { name: id }).name]).sort((a, b) => a[1].localeCompare(b[1]));
@@ -195,7 +206,7 @@
   // ---------- Hub ----------
 
   function tally(services) {
-    const counts = { trusted: 0, caution: 0, avoid: 0 };
+    const counts = { checked: 0, caution: 0, avoid: 0 };
     services.forEach((s) => { counts[s.verdict.rating] += 1; });
     return Object.entries(counts).map(([rating, n]) => ratingPill(rating, ` ${n}`)).join(' ');
   }

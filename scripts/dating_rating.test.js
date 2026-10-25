@@ -7,15 +7,15 @@ const TODAY = '2026-10-25';
 const verified = ['selfie/photo verification'];
 
 const cases = {
-  'clean and verified is trusted': [{ verification: verified }, 'trusted', false],
+  'clean and verified is checked': [{ verification: verified }, 'checked', false],
   'critical entry is avoid however old': [{ verification: verified, track: [{ date: '2016-12-14', severity: 'critical', summary: 'x' }] }, 'avoid', false],
   'recent major entry is caution': [{ verification: verified, track: [{ date: '2025-08-12', severity: 'major', summary: 'x' }] }, 'caution', false],
-  'major entry over three years old is trusted': [{ verification: verified, track: [{ date: '2020-12-01', severity: 'major', summary: 'x' }] }, 'trusted', false],
-  'minor entry is trusted': [{ verification: verified, track: [{ date: '2025-01-01', severity: 'minor', summary: 'x' }] }, 'trusted', false],
+  'major entry over three years old is checked': [{ verification: verified, track: [{ date: '2020-12-01', severity: 'major', summary: 'x' }] }, 'checked', false],
+  'minor entry is checked': [{ verification: verified, track: [{ date: '2025-01-01', severity: 'minor', summary: 'x' }] }, 'checked', false],
   'no verification is caution': [{ verification: [] }, 'caution', false],
-  'unconfirmed verification is not held against it': [{ verification: null }, 'trusted', false],
+  'unconfirmed verification is not held against it': [{ verification: null }, 'checked', false],
   'pay-per-message is caution': [{ verification: verified, pricingModel: 'pay-per-message credits' }, 'caution', false],
-  'override wins': [{ verification: [], ratingOverride: { rating: 'trusted', reason: 'Vetted by application' } }, 'trusted', true],
+  'override wins': [{ verification: [], ratingOverride: { rating: 'checked', reason: 'Vetted by application' } }, 'checked', true],
 };
 
 for (const [name, [service, want, byHand]] of Object.entries(cases)) {
@@ -26,7 +26,7 @@ for (const [name, [service, want, byHand]] of Object.entries(cases)) {
   });
 }
 
-test('every non-trusted rating explains itself', () => {
+test('every non-checked rating explains itself', () => {
   const got = ratingFor({ verification: [], track: [{ date: '2025-08-12', severity: 'major', summary: 'FTC settlement' }] }, TODAY);
   assert.deepEqual(got.reasons.map((r) => r.text), ['FTC settlement', 'No photo, ID or application check on members.']);
 });

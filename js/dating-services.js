@@ -104,6 +104,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "The biggest swipe app, with the widest mix of people and intentions.",
       "appStoreId": 547702041,
+      "playStoreId": "com.tinder",
       "track": [
         {
           "date": "2025-02-13",
@@ -145,6 +146,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Prompt-led profiles for people looking for something serious.",
       "appStoreId": 595287172,
+      "playStoreId": "co.hinge.app",
       "track": [
         {
           "date": "2025-02-13",
@@ -169,7 +171,8 @@ window.DATING_SERVICES = {
         "checked": "2026-10-25",
         "url": "https://uk.trustpilot.com/review/hinge.co"
       },
-      "myTake": "One of the two apps I've had the most luck on, though it loves to vacuum up my money."
+      "myTake": "One of the two apps I've had the most luck on, though it loves to vacuum up my money.",
+      "alecTrusts": true
     },
     {
       "slug": "bumble",
@@ -190,6 +193,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Women message first in matches between men and women.",
       "appStoreId": 930441707,
+      "playStoreId": "com.bumble.app",
       "track": [],
       "sources": [],
       "trustpilot": {
@@ -198,7 +202,8 @@ window.DATING_SERVICES = {
         "checked": "2026-10-25",
         "url": "https://uk.trustpilot.com/review/bumble.com"
       },
-      "myTake": "One of the two apps I've had the most luck on."
+      "myTake": "One of the two apps I've had the most luck on.",
+      "alecTrusts": true
     },
     {
       "slug": "badoo",
@@ -215,6 +220,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "A large, casual app popular across Europe; you can choose to chat only with verified members.",
       "appStoreId": 351331194,
+      "playStoreId": "com.badoo.mobile",
       "track": [],
       "sources": [],
       "trustpilot": {
@@ -243,6 +249,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "One of the longest-running paid dating sites, aimed at relationships.",
       "appStoreId": 444823469,
+      "playStoreId": "com.match.android.matchmobile",
       "track": [
         {
           "date": "2025-08-12",
@@ -276,6 +283,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "A large free-to-use app with a broad audience.",
       "appStoreId": 389638243,
+      "playStoreId": "com.pof.android",
       "track": [
         {
           "date": "2025-02-13",
@@ -309,6 +317,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Question-based matching with inclusive gender and relationship options.",
       "appStoreId": 338701294,
+      "playStoreId": "com.okcupid.okcupid",
       "track": [
         {
           "date": "2025-02-13",
@@ -353,6 +362,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Dating for people over 50.",
       "appStoreId": 1447263334,
+      "playStoreId": "net.ilius.android.dating.ourtime.match",
       "track": [],
       "sources": [],
       "trustpilot": {
@@ -379,6 +389,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Long questionnaire and compatibility matching for long-term relationships.",
       "appStoreId": 458272450,
+      "playStoreId": "com.eharmony",
       "track": [],
       "sources": [
         "https://www.eharmony.co.uk/tour/faq/whats-sms-verification-and-why-should-i-participate/"
@@ -408,6 +419,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Shows people you've crossed paths with in real life.",
       "appStoreId": 489185828,
+      "playStoreId": "com.ftw_and_co.happn",
       "track": [],
       "sources": [
         "https://support.happn.fr/hc/en-us/p/privacy"
@@ -434,6 +446,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Location-based app for gay, bi, trans and queer people.",
       "appStoreId": 319881193,
+      "playStoreId": "com.grindrapp.android",
       "track": [
         {
           "date": "2025-10-21",
@@ -473,6 +486,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Dating and community app for lesbian, bi and queer women and non-binary people.",
       "appStoreId": 573328837,
+      "playStoreId": "com.weareher.her",
       "track": [],
       "sources": [
         "https://weareher.com"
@@ -504,6 +518,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "For open, curious and non-monogamous dating, singles and couples.",
       "appStoreId": 887914690,
+      "playStoreId": "co.feeld",
       "track": [
         {
           "date": "2024-09-13",
@@ -536,6 +551,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Muslim singles looking for marriage.",
       "appStoreId": 969997496,
+      "playStoreId": "com.muzmatch.muzmatchapp",
       "track": [],
       "sources": [],
       "trustpilot": {
@@ -560,6 +576,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Christian singles looking for a relationship.",
       "appStoreId": 1158866595,
+      "playStoreId": "com.christianconnection.fishtank",
       "track": [],
       "sources": [],
       "trustpilot": {
@@ -584,6 +601,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Invite and application only, known for creative and well-known members.",
       "appStoreId": 957215308,
+      "playStoreId": null,
       "track": [],
       "sources": []
     },
@@ -602,6 +620,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Application-only app for ambitious professionals.",
       "appStoreId": 838136374,
+      "playStoreId": "com.theinnercircle",
       "track": [],
       "sources": [],
       "trustpilot": {
@@ -626,6 +645,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "UK countryside and rural singles.",
       "appStoreId": 1621060181,
+      "playStoreId": "com.muddymatches",
       "track": [],
       "sources": [],
       "trustpilot": {
@@ -651,6 +671,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Personality-type matching, with an option to chat only with verified members.",
       "appStoreId": 1498407272,
+      "playStoreId": "enterprises.dating.boo",
       "track": [],
       "sources": [],
       "trustpilot": {
@@ -676,6 +697,7 @@ window.DATING_SERVICES = {
       "pricingModel": "pay-per-date",
       "suits": "No chatting: matches go straight to a first date at a partner venue.",
       "appStoreId": 1478108023,
+      "playStoreId": "social.breeze.breeze_app",
       "track": [],
       "sources": [],
       "trustpilot": {
@@ -684,7 +706,8 @@ window.DATING_SERVICES = {
         "checked": "2026-10-25",
         "url": "https://uk.trustpilot.com/review/breeze.social"
       },
-      "myTake": "It's OK, but I always seem to match with someone at the worst time in my life."
+      "myTake": "It's OK, but I always seem to match with someone at the worst time in my life.",
+      "alecTrusts": true
     },
     {
       "slug": "sofiadate",
@@ -699,6 +722,7 @@ window.DATING_SERVICES = {
       "pricingModel": "pay-per-message credits",
       "suits": "International dating with women mainly in Eastern Europe, paid for with credits.",
       "appStoreId": null,
+      "playStoreId": null,
       "track": [
         {
           "date": "2022-07-13",
@@ -734,6 +758,7 @@ window.DATING_SERVICES = {
       "pricingModel": "pay-per-message credits",
       "suits": "International dating with women mainly in Eastern Europe, paid for with credits.",
       "appStoreId": null,
+      "playStoreId": null,
       "track": [],
       "sources": [
         "https://www.anastasiadate.com/"
@@ -760,6 +785,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Marketed for affairs and discreet dating.",
       "appStoreId": 359478823,
+      "playStoreId": "com.ashleymadison.mobile",
       "track": [
         {
           "date": "2016-12-14",
@@ -803,6 +829,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "Sugar dating: arrangements marketed around a luxury lifestyle.",
       "appStoreId": null,
+      "playStoreId": "com.infostream.seekingarrangement",
       "track": [
         {
           "date": "2024-10-16",
@@ -836,6 +863,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "An AI matchmaker, Robyn, gets to know you and introduces people worth meeting, for dating or friendship.",
       "appStoreId": null,
+      "playStoreId": null,
       "track": [],
       "sources": [
         "https://want.london"
@@ -857,6 +885,7 @@ window.DATING_SERVICES = {
       "pricingModel": "subscription",
       "suits": "A swipe app that uses AI to suggest matches.",
       "appStoreId": 1250946975,
+      "playStoreId": "com.hily.app",
       "track": [
         {
           "date": "2024-09-01",

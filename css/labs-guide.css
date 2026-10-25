@@ -883,7 +883,7 @@
   white-space: nowrap;
   border: 1px solid currentColor;
 }
-.trust-trusted { color: var(--mint); background: rgba(127, 194, 166, 0.12); }
+.trust-checked { color: var(--mint); background: rgba(127, 194, 166, 0.12); }
 .trust-caution { color: #f5a623; background: rgba(245, 166, 35, 0.12); }
 .trust-avoid { color: #ff6b6b; background: rgba(229, 72, 77, 0.14); }
 .dating-card.trust-border-caution { border-color: rgba(245, 166, 35, 0.45); }
@@ -1009,3 +1009,16 @@
   border-radius: var(--radius);
 }
 .checklist li { color: var(--muted); }
+.alec-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #8ab4ff;
+  background: rgba(138, 180, 255, 0.12);
+  border: 1px solid currentColor;
+}
+.card-action.store { width: auto; flex: 1 1 0; }
+.card-pills { display: inline-flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
