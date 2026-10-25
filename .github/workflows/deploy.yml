@@ -36,6 +36,9 @@ jobs:
           npm install puppeteer
           node scripts/prerender.js
 
+      - name: Cache-bust assets
+        run: node scripts/cache_bust.js "${GITHUB_SHA::7}"
+
       - name: Install Minifiers
         run: npm install -g terser clean-css-cli
 

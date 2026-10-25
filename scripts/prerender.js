@@ -4,7 +4,8 @@ const http = require('http');
 const path = require('path');
 
 const requestHandler = (request, response) => {
-  let filePath = '.' + request.url;
+  // Strip ?v= cache-busting tags, or tagged assets 404 and the snapshot ships empty
+  let filePath = '.' + decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
   if (filePath == './') filePath = './index.html';
   const extname = String(path.extname(filePath)).toLowerCase();
   const mimeTypes = {
@@ -35,6 +36,10 @@ server.listen(0, async () => {
     const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     const page = await browser.newPage();
     page.on('console', msg => console.log('PAGE LOG:', msg.text()));
+    const failedAssets = [];
+    page.on('response', res => {
+      if (res.status() >= 400 && /\.(js|css)$/.test(new URL(res.url()).pathname)) failedAssets.push(`${res.status()} ${res.url()}`);
+    });
     
     await page.evaluateOnNewDocument(() => {
       window.gtag = function() {};
@@ -117,6 +122,8 @@ server.listen(0, async () => {
       });
     });
     
+    if (failedAssets.length) throw new Error(`Pre-render aborted, scripts or styles failed to load:\n${failedAssets.join('\n')}`);
+
     let html = await page.content();
     // Non-blocking stylesheets flip themselves to media="all" once loaded in the
     // capture browser; put them back to "print" or the snapshot ships them render-blocking.
