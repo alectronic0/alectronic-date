@@ -63,5 +63,8 @@ BUCKETS = {
         "activities", "geo:activities", ("id", "title", "url", "source"), ("url",),
         end_field="end_date", key_by_url=True,
     ),
+    "singles": Bucket(
+        "singles", "labs:singlesGuide", ("name", "url", "hostName", "startDate"), ("name", "startDate"), dated=True,
+    ),
     "spots": Bucket("spots", "labs:dateIdeas", ("name", "url", "category"), ("name", "location")),
 }

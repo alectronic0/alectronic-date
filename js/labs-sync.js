@@ -32,6 +32,10 @@ window.LABS_SYNC = {
     "lastSynced": "2026-10-20",
     "records": 1079
   },
+  "singles": {
+    "lastSynced": "2026-10-25",
+    "records": 142
+  },
   "timeout": {
     "lastSynced": "2026-10-20",
     "records": 2387

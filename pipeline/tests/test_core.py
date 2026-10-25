@@ -259,5 +259,128 @@ class GatesTest(unittest.TestCase):
         self.assertIsNone(gates.url_status("file:///etc/passwd"))
 
 
+class SinglesTicketStatusTest(unittest.TestCase):
+    def setUp(self):
+        from sources import eventbrite_singles as singles
+        self.singles = singles
+
+    def test_statuses(self):
+        cases = {
+            "sold out sales": ({}, "sold_out", set(), "sold_out"),
+            "sales ended": ({}, "sales_ended", {"InStock"}, "sold_out"),
+            "sold out offer": ({}, "on_sale", {"SoldOut"}, "sold_out"),
+            "few tickets signal": ({"urgency_signals": {"messages": ["fewTickets"]}}, "on_sale", {"InStock"}, "limited"),
+            "limited offer": ({}, "on_sale", {"LimitedAvailability"}, "limited"),
+            "on sale": ({}, "on_sale", {"InStock"}, "plenty"),
+            "not yet on sale": ({}, "not_yet_on_sale", {"InStock"}, "unknown"),
+        }
+        for name, (event, sales, availability, want) in cases.items():
+            with self.subTest(name):
+                self.assertEqual(self.singles.ticket_status(event, sales, availability), want)
+
+    def test_page_details_reads_organiser_and_sales(self):
+        page = '"organizer":{"@type":"Organization","name":"True Dating","url":"x"} "availability":"InStock" "salesStatus":{"salesStatus":"on_sale"}'
+        self.assertEqual(self.singles.page_details(page), ("on_sale", {"InStock"}, "True Dating"))
+
+    def test_page_details_falls_back_when_organiser_is_null(self):
+        page = '"organizer":{"@type":"Organization","name":null,"url":"x"}'
+        self.assertEqual(self.singles.page_details(page), ("", set(), "Eventbrite"))
+
+    def test_organiser_logo_keeps_signed_url(self):
+        page = '<meta property="og:image" content="https://img.evbuc.com/x%2Foriginal?w=2000&amp;auto=format&amp;s=abc" />'
+        self.assertEqual(self.singles.organiser_logo(page), "https://img.evbuc.com/x%2Foriginal?w=2000&auto=format&s=abc")
+        self.assertIsNone(self.singles.organiser_logo("<html></html>"))
+
+    def test_excludes_networking(self):
+        self.assertFalse(self.singles.is_singles({"name": "Property Speed Networking Event in London"}))
+        self.assertTrue(self.singles.is_singles({"name": "Speed Dating in The City | Ages 50 to 65"}))
+
+
+
+class SinglesHostParsingTest(unittest.TestCase):
+    def setUp(self):
+        from sources import art_dating_club, fig, haystack, singles_common
+        self.adc, self.fig, self.haystack, self.common = art_dating_club, fig, haystack, singles_common
+
+    def test_text_date_and_time(self):
+        import datetime
+        today = datetime.date(2026, 10, 25)
+        cases = {
+            "explicit year": ("Tuesday 27 October 2026 From 7:30pm", datetime.date(2026, 10, 27), "19:30"),
+            "ordinal no year": ("Wednesday, 28th October 7:30pm", datetime.date(2026, 10, 28), "19:30"),
+            "rolls into next year": ("Friday 9th January 8pm", datetime.date(2027, 1, 9), "20:00"),
+            "noon": ("Sunday 1st November 12pm", datetime.date(2026, 11, 1), "12:00"),
+            "range borrows pm": ("Monday 26th October, 6:30-8:30pm", datetime.date(2026, 10, 26), "18:30"),
+            "range both pm": ("Friday 20th November, 7:30pm – 10:30pm", datetime.date(2026, 11, 20), "19:30"),
+        }
+        for name, (text, want_day, want_time) in cases.items():
+            with self.subTest(name):
+                self.assertEqual(self.common.text_date(text, today), want_day)
+                self.assertEqual(self.common.text_time(text), want_time)
+
+    def test_status_from_spots(self):
+        cases = {
+            "unknown": (None, None, "unknown"),
+            "none left": (0, 100, "sold_out"),
+            "under a fifth": (15, 100, "limited"),
+            "plenty": (60, 100, "plenty"),
+            "few left no capacity": (3, None, "limited"),
+            "many left no capacity": (44, None, "plenty"),
+        }
+        for name, (spots, capacity, want) in cases.items():
+            with self.subTest(name):
+                self.assertEqual(self.common.status_from_spots(spots, capacity), want)
+
+    def test_adc_venue_text(self):
+        cases = {
+            "postcode then weekday": ("📍 John the Unicorn, Peckham, SE15 4TL Tuesday 27 October 2026 From 7:30pm", "John the Unicorn, Peckham, SE15 4TL"),
+            "clock emoji separator": ("📍 Tower Bridge Collective 🕢 Wednesday, 28th October 7:30pm", "Tower Bridge Collective"),
+            "no pin": ("Gift card", ""),
+        }
+        for name, (text, want) in cases.items():
+            with self.subTest(name):
+                self.assertEqual(self.adc.venue_text(text), want)
+
+    def test_fig_sold_out_title(self):
+        page = "<title>Sold out – The Dinner Date • Supper Club – Sir Devonshire Square Hotel</title> Fri 6 Nov 2026 7:00 PM - 10:30 PM"
+        record = self.fig.to_record("1", page)
+        self.assertEqual((record["name"], record["venue"], record["ticketStatus"], record["startTime"]),
+                         ("The Dinner Date • Supper Club", "Sir Devonshire Square Hotel", "sold_out", "19:00"))
+        self.assertIsNotNone(record.get("lat"))
+
+    def test_haystack_spaces_left(self):
+        def option(amount, status="available", **extra):
+            return {"type": "ticket-options", "attributes": {"amount-available": amount, "on-sale-status": status, "visible": True, **extra}}
+        cases = {
+            "sums on-sale options": ([option(9), option(9)], 18),
+            "ignores addons": ([option(9), option(50, addon=True)], 9),
+            "all off sale": ([option(0, "sold-out")], 0),
+            "no options": ([], None),
+        }
+        for name, (included, want) in cases.items():
+            with self.subTest(name):
+                self.assertEqual(self.haystack.spaces_left(included), want)
+
+    def test_bdb_event_details(self):
+        import datetime
+        from sources import be_dating_beautiful as bdb
+        today = datetime.date(2026, 10, 25)
+        cases = {
+            "pin after time": ("Fun night. Event Details 📅 Wednesday 16th December, 7:30pm till late 📍 Ronnie’s Bar, 4–6 Jury Street, Warwick, CV34 4EW Who Is It For?",
+                               datetime.date(2026, 12, 16), "19:30", "Ronnie’s Bar, 4–6 Jury Street, Warwick, CV34 4EW"),
+            "no pin": ("Event Details Wednesday 23rd December, 7:30pm The Anchor, 84 Cambridge Road , Walsworth , Hitchin, SG4 0JH Tickets",
+                       datetime.date(2026, 12, 23), "19:30", "The Anchor, 84 Cambridge Road, Walsworth, Hitchin, SG4 0JH"),
+            "new year's eve": ("Event Details 🎆 New Year’s Eve 📍 Boom Battle Bar Stevenage, Kings Way, Stevenage, SG1 2UA 🕗 Start times from 8pm",
+                               datetime.date(2026, 12, 31), "20:00", "Boom Battle Bar Stevenage, Kings Way, Stevenage, SG1 2UA"),
+            "address before details": ("Venue Address: Campion School , Sydenham Drive, Leamington Spa, CV31 1QH Event Details Campion School 📅 Monday 26th October, 6:30-8:30pm Limited to 24 places, long blurb about the UK and fitness and friends and more and more words until a code like AB1 2CD",
+                              datetime.date(2026, 10, 26), "18:30", "Campion School, Sydenham Drive, Leamington Spa, CV31 1QH"),
+        }
+        for name, (text, want_day, want_time, want_address) in cases.items():
+            with self.subTest(name):
+                block = bdb.details(text)
+                self.assertEqual(bdb.event_date(block, today), want_day)
+                self.assertEqual(self.common.text_time(block), want_time)
+                self.assertEqual(bdb.event_address(text), want_address)
+
 if __name__ == "__main__":
     unittest.main()

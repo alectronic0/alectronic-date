@@ -81,10 +81,7 @@
             scrollWheelZoom: true
         }).setView([51.5074, -0.1278], 11);
 
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 19
-        }).addTo(map);
+        addBaseTiles(map);
 
         markersLayer = L.layerGroup().addTo(map);
         societyMarkersLayer = L.layerGroup().addTo(map); // Hybrid Film Society Layer (On by default)

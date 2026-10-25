@@ -18,6 +18,8 @@ def source_of(dataset, record):
         return CINEMA_PROVIDERS.get(record.get("provider"))
     if dataset == "nerdGatherings":
         return NERD_HOSTS.get(record.get("host"))
+    if dataset == "singlesGuide":
+        return "singles"
     return None
 
 
@@ -25,7 +27,7 @@ def scraped_records(labs):
     for name in ("activities", "workshops"):
         for record in io_content.load_geo(name):
             yield name, record
-    for section in ("cinemaEvents", "nerdGatherings"):
+    for section in ("cinemaEvents", "nerdGatherings", "singlesGuide"):
         for record in labs.items(section):
             yield section, record
 

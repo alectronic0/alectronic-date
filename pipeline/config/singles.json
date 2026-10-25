@@ -1,0 +1,35 @@
+{
+  "eventbriteKeywords": [
+    "speed-dating",
+    "singles-events",
+    "singles-mixer",
+    "singles-party",
+    "singles-social",
+    "dating-events"
+  ],
+  "singlesTerms": [
+    "speed dat",
+    "singles",
+    "dating",
+    "date night",
+    "matchmak",
+    "mixer"
+  ],
+  "excludeTerms": [
+    "networking",
+    "property",
+    "business",
+    "masterclass",
+    "online"
+  ],
+  "venues": {
+    "Sir Devonshire Square": [
+      51.5163954,
+      -0.0778156
+    ],
+    "Tower Bridge Collective": [
+      51.5040646,
+      -0.0757618
+    ]
+  }
+}
