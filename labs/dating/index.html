@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Consent Mode Defaults -->
+  <script data-cookieconsent="ignore">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500,
+    });
+  </script>
+
+  <!-- Vanilla CookieConsent v3 -->
+  <script src="../../js/cookie.js" defer></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4Q5KJSLNK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N4Q5KJSLNK', {
+      'url_passthrough': true,
+      'ads_data_redaction': true
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dating Apps & Matchmakers | Date Alec Today</title>
+  <meta name="description" content="A guide to UK dating apps and matchmakers: who owns them, how safe they are, and how to spot a romance scam.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="author" content="Alec Doran-Twyford">
+  <meta name="theme-color" content="#1a1320">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/labs-guide.css">
+</head>
+<body>
+  <div class="page-layout">
+    <header class="top-bar">
+      <a href="../../index.html" class="back-link" aria-label="Return to main profile">← Profile</a>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="index.html" class="back-link" style="color: var(--rose-light);" aria-label="Dating guide hub">💘 Guide</a>
+        <a href="apps.html" class="back-link" style="color: var(--mint);" aria-label="Dating apps">📱 Apps</a>
+        <a href="matchmakers.html" class="back-link" style="color: var(--gold);" aria-label="Matchmakers">🤝 Matchmakers</a>
+        <a href="../events.html" class="back-link" style="color: var(--rose-light);" aria-label="Singles events">🗓️ Events</a>
+        <a href="../index.html" class="back-link" style="color: var(--gold); border: 1px solid rgba(230,169,121,0.4);" aria-label="Secret Lab">🧪 Secret Lab</a>
+      </div>
+    </header>
+
+    <main class="page-main" data-kind="hub">
+      <div class="page-header">
+        <span class="page-tag">💘 Dating Guide</span>
+        <h1 class="page-title">Dating Apps &amp; Matchmakers</h1>
+        <p class="page-subtitle">Which services check who you're talking to, who really owns them, and what regulators, courts and journalists have found.</p>
+      </div>
+
+      <section class="hub-cards">
+        <a href="apps.html" class="lab-card hub-card">
+          <h2>📱 Dating apps</h2>
+          <p>Mainstream, LGBTQ+, faith, open relationships, over 50s and paid-chat sites.</p>
+          <div class="hub-tally" id="apps-tally"></div>
+          <span class="card-action">Browse apps →</span>
+        </a>
+        <a href="matchmakers.html" class="lab-card hub-card">
+          <h2>🤝 Matchmakers</h2>
+          <p>UK introduction agencies, their fees and contracts, and what to ask before you sign.</p>
+          <div class="hub-tally" id="matchmakers-tally"></div>
+          <span class="card-action">Browse matchmakers →</span>
+        </a>
+        <a href="../events.html" class="lab-card hub-card">
+          <h2>🗓️ Singles events</h2>
+          <p>Prefer meeting in person? Speed dating, supper clubs and singles nights near London.</p>
+          <span class="card-action">Open the event guide →</span>
+        </a>
+      </section>
+
+      <section class="guide-section" id="how-ratings-work">
+        <h2>How ratings work</h2>
+        <p>Each rating comes from a published rule applied to sourced facts. Every card shows its full track record with links, so you can judge for yourself.</p>
+        <ul class="rule-list">
+          <li><span class="trust-pill trust-avoid">⛔ Avoid</span> A regulator or court took action over fake or staff-run profiles, or found the service deceived customers.</li>
+          <li><span class="trust-pill trust-caution">⚠️ Caution</span> A serious fine, lawsuit, data exposure or investigation in the last <span id="recent-years"></span> years; or members aren't verified; or it charges per message.</li>
+          <li><span class="trust-pill trust-trusted">✅ Trusted</span> Members can be verified and nothing serious is on record recently.</li>
+        </ul>
+        <p>A rating can be set by hand only with a written reason, and the card then says <em>"by hand"</em>. App Store and Trustpilot scores are shown for context but never decide a rating: almost every big app scores 4+ on the App Store, and Trustpilot reviews skew towards complaints.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Who owns what</h2>
+        <p>Many apps you might think of as rivals belong to the same company.</p>
+        <div class="owner-map" id="owner-map"></div>
+      </section>
+
+      <section class="guide-section">
+        <h2>Spotting a romance scam</h2>
+        <ul class="red-flags">
+          <li>They want to move off the app to WhatsApp or Telegram straight away.</li>
+          <li>They always have a reason not to video call or meet.</li>
+          <li>The conversation turns to money: an emergency, a travel cost, a "sure thing" crypto or trading investment.</li>
+          <li>They ask for gift cards, bank transfers or access to your accounts.</li>
+          <li>They ask you to keep the relationship secret from friends and family.</li>
+          <li>Their photos turn up under other names in a reverse image search.</li>
+        </ul>
+        <h3>Where to report</h3>
+        <ul>
+          <li><strong>Lost money?</strong> Call your bank first, then <a href="https://www.actionfraud.police.uk/a-z-of-fraud/romance-scams" target="_blank" rel="noopener noreferrer">Action Fraud</a> on 0300 123 2040. In Scotland, call Police Scotland on 101.</li>
+          <li><strong>A profile or message on an app:</strong> use the app's own report button so the account can be banned.</li>
+          <li><strong>An app not dealing with illegal content:</strong> the <a href="https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/dating-and-social-discovery-know-the-online-safety-risks-rules-and-how-to-comply" target="_blank" rel="noopener noreferrer">Online Safety Act</a> requires dating services to act on it, and Ofcom enforces this.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer-note">
+      <p>Facts last checked <span id="checked-date"></span>. Spotted something wrong or out of date? <a href="../../index.html#contact">Tell Alec</a> and it gets fixed.</p>
+      <p>&copy; <span id="year"></span> Alec &middot; <a href="../../index.html">date.alec.today</a> &middot; All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="../../js/dating-services.js"></script>
+  <script src="../../js/dating-ratings.js"></script>
+  <script src="../../js/labs-ui.js"></script>
+  <script src="../../js/dating-rating.js"></script>
+  <script src="../../js/dating-guide.js"></script>
+</body>
+</html>

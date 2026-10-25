@@ -5,6 +5,7 @@ const puppeteer = require('puppeteer');
 const DEFAULT_PATHS = [
   '', 'labs/', 'labs/events.html', 'labs/ideas.html', 'labs/nerd-gatherings.html',
   'labs/cinema-events.html', 'labs/cinema-map.html', 'labs/london-activities.html', 'labs/workshops.html',
+  'labs/dating/', 'labs/dating/apps.html', 'labs/dating/matchmakers.html',
 ];
 
 const COUNTED = {

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Consent Mode Defaults -->
+  <script data-cookieconsent="ignore">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500,
+    });
+  </script>
+
+  <!-- Vanilla CookieConsent v3 -->
+  <script src="../../js/cookie.js" defer></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4Q5KJSLNK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N4Q5KJSLNK', {
+      'url_passthrough': true,
+      'ads_data_redaction': true
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dating Apps | Date Alec Today</title>
+  <meta name="description" content="Which UK dating apps check who you're talking to, who owns them, and their track record on safety, privacy and billing.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="author" content="Alec Doran-Twyford">
+  <meta name="theme-color" content="#1a1320">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/labs-guide.css">
+</head>
+<body>
+  <div class="page-layout">
+    <header class="top-bar">
+      <a href="../../index.html" class="back-link" aria-label="Return to main profile">← Profile</a>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="index.html" class="back-link" style="color: var(--rose-light);" aria-label="Dating guide hub">💘 Guide</a>
+        <a href="apps.html" class="back-link" style="color: var(--mint);" aria-label="Dating apps">📱 Apps</a>
+        <a href="matchmakers.html" class="back-link" style="color: var(--gold);" aria-label="Matchmakers">🤝 Matchmakers</a>
+        <a href="../events.html" class="back-link" style="color: var(--rose-light);" aria-label="Singles events">🗓️ Events</a>
+        <a href="../index.html" class="back-link" style="color: var(--gold); border: 1px solid rgba(230,169,121,0.4);" aria-label="Secret Lab">🧪 Secret Lab</a>
+      </div>
+    </header>
+
+    <main class="page-main" data-kind="apps">
+      <div class="page-header">
+        <span class="page-tag">📱 Dating Apps</span>
+        <h1 class="page-title">Dating Apps</h1>
+        <p class="page-subtitle">Every app gets a rating from a published rule: whether members are verified, and what regulators, courts and investigations have found. <a href="index.html#how-ratings-work">How ratings work</a>.</p>
+      </div>
+
+      <div class="guide-controls">
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="dating-search" class="search-input" placeholder="Search apps, owners, features..." aria-label="Search">
+        </div>
+        <button class="filter-btn active" data-rating="">All</button>
+        <button class="filter-btn" data-rating="trusted">✅ Trusted</button>
+        <button class="filter-btn" data-rating="caution">⚠️ Caution</button>
+        <button class="filter-btn" data-rating="avoid">⛔ Avoid</button>
+          <select id="owner-select" class="guide-select" aria-label="Filter by owner"></select>
+          <select id="category-select" class="guide-select" aria-label="Filter by type"></select>
+          <label class="guide-check"><input type="checkbox" id="verified-only"> Verified members only</label>
+      </div>
+      <div class="results-count" id="dating-count"></div>
+      <div class="card-grid" id="dating-grid"></div>
+    </main>
+
+    <footer class="footer-note">
+      <p>Facts last checked <span id="checked-date"></span>. Spotted something wrong or out of date? <a href="../../index.html#contact">Tell Alec</a> and it gets fixed.</p>
+      <p>&copy; <span id="year"></span> Alec &middot; <a href="../../index.html">date.alec.today</a> &middot; All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="../../js/content.js"></script>
+  <script src="../../js/labs-content.js"></script>
+  <script src="../../js/dating-services.js"></script>
+  <script src="../../js/dating-ratings.js"></script>
+  <script src="../../js/labs-ui.js"></script>
+  <script src="../../js/dating-rating.js"></script>
+  <script src="../../js/dating-guide.js"></script>
+</body>
+</html>

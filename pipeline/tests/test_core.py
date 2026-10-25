@@ -382,5 +382,18 @@ class SinglesHostParsingTest(unittest.TestCase):
                 self.assertEqual(self.common.text_time(block), want_time)
                 self.assertEqual(bdb.event_address(text), want_address)
 
+
+class DatingRatingsTest(unittest.TestCase):
+    def test_parse_keeps_rated_listed_apps(self):
+        import dating_ratings
+        payload = {"results": [
+            {"trackId": 547702041, "averageUserRating": 4.18234, "userRatingCount": 274402},
+            {"trackId": 595287172, "averageUserRating": None, "userRatingCount": 0},
+            {"trackId": 111, "averageUserRating": 4.9, "userRatingCount": 5},
+        ]}
+        ids = {"547702041": "tinder", "595287172": "hinge"}
+        self.assertEqual(dating_ratings.parse(payload, ids, "2026-10-25"),
+                         {"tinder": {"rating": 4.2, "count": 274402, "checked": "2026-10-25"}})
+
 if __name__ == "__main__":
     unittest.main()

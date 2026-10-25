@@ -22,6 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import dating_ratings  # noqa: E402
 import gates  # noqa: E402
 import io_content  # noqa: E402
 import report  # noqa: E402
@@ -191,7 +192,7 @@ def main():
 
     today = datetime.date.today().isoformat()
     selected = [BUCKETS[name] for name in args.only.split(",")]
-    files = sorted({f for b in selected for f in target_files(b)})
+    files = sorted({f for b in selected for f in target_files(b)} | {dating_ratings.RATINGS_JS.relative_to(REPO).as_posix()})
     write = not args.dry_run
 
     dirty = git("status", "--porcelain", "--", *files).strip()
@@ -209,6 +210,10 @@ def main():
     store.flush()
 
     written = [r["bucket"] for r in results if r["status"] == "written"]
+    ratings_path = dating_ratings.write(today) if write else None
+    if ratings_path:
+        files.append(ratings_path.relative_to(REPO).as_posix())
+        written.append("dating")
     outcome = "dry run" if args.dry_run else "nothing to publish"
     if written and smoke_enabled:
         with static_server() as base:
