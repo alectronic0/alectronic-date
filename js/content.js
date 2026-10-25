@@ -45,6 +45,10 @@ window.CONTENT = {
       {
         "label": "🔬 Deep Dive ↓",
         "href": "#deep-dive"
+      },
+      {
+        "label": "🧪 Secret Lab",
+        "href": "labs/"
       }
     ]
   },

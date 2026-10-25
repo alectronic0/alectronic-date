@@ -2502,9 +2502,9 @@
 
   function renderNav() {
     if (!C || !C.nav || !C.nav.links) return;
-    // Only render links if their target section actually exists on the page
+    // Only render links if their target section actually exists on the page (or non-hash links)
     const html = C.nav.links
-      .filter(l => document.getElementById(l.href.replace('#', '')))
+      .filter(l => (l.href.startsWith('#') ? document.getElementById(l.href.replace('#', '')) : true))
       .map(l => `<a href="${esc(l.href)}">${esc(l.label)}</a>`)
       .join('');
     setHtml('#nav-menu', html);
@@ -3890,7 +3890,10 @@
           <span class="burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
           <span class="burger-label" id="nav-burger-label">Menu</span>
         </button>
-        <div id="nav-cta-container"></div>
+        <div class="nav-actions">
+          <a href="labs/" class="nav-lab" aria-label="Secret Lab" title="Secret Lab">🧪</a>
+          <div id="nav-cta-container"></div>
+        </div>
       </div>
       <div class="nav-inner" id="nav-menu"></div>
     `;

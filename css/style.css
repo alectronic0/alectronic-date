@@ -250,6 +250,30 @@ nav {
 nav.open .burger-lines i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 nav.open .burger-lines i:nth-child(2) { opacity: 0; }
 nav.open .burger-lines i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav-actions {
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.nav-lab {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; min-height: 40px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1.15rem;
+  text-decoration: none;
+  line-height: 1;
+  transition: background 0.2s, transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+}
+.nav-lab:hover {
+  background: rgba(230, 169, 121, 0.18);
+  border-color: var(--gold);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(230, 169, 121, 0.25);
+}
+.nav-lab:active {
+  transform: translateY(0);
+}
 .nav-contact {
   display: inline-flex; align-items: center; gap: 6px;
   background: var(--accent); color: #fff;
