@@ -362,6 +362,101 @@ Object.assign(window.CONTENT, {
           }
         ],
         "logo": "../img/logos/platforms/its-a-date.png"
+      },
+      {
+        "id": "original-dating",
+        "name": "Original Dating",
+        "people": [
+          "Original Dating Team"
+        ],
+        "blurb": "London's premier speed dating and singles party organizers since 2003, hosting regular events across top central venues.",
+        "links": [
+          {
+            "label": "🌐 Website",
+            "url": "https://www.originaldating.com/"
+          },
+          {
+            "label": "📸 Instagram",
+            "url": "https://www.instagram.com/originaldating/"
+          }
+        ],
+        "logo": "../img/logos/platforms/original-dating.png"
+      },
+      {
+        "id": "boda",
+        "name": "Bored of Dating Apps (BODA)",
+        "people": [
+          "Jess"
+        ],
+        "blurb": "Casual, zero-pressure singles bar takeovers, mixers, and community socials across London and the UK for singles exhausted by the swipe apps.",
+        "links": [
+          {
+            "label": "🌐 Website",
+            "url": "https://boredofdatingapps.com/"
+          },
+          {
+            "label": "📸 Instagram",
+            "url": "https://www.instagram.com/boredofdatingapps/"
+          }
+        ],
+        "logo": "../img/logos/platforms/boda.png"
+      },
+      {
+        "id": "skip-the-small-talk",
+        "name": "Skip The Small Talk",
+        "people": [
+          "Ashley Kirsner"
+        ],
+        "blurb": "Research-backed structured conversation events and speed dating designed to spark deeper, meaningful IRL connections without superficial small talk.",
+        "links": [
+          {
+            "label": "🌐 Website",
+            "url": "https://www.skipthesmalltalk.com/"
+          },
+          {
+            "label": "📸 Instagram",
+            "url": "https://www.instagram.com/skipthesmalltalk/"
+          }
+        ],
+        "logo": "https://images.squarespace-cdn.com/content/v1/59239bb49f7456d25287f34f/1495497914092-2T0B0P89ZNYTY3BVRJ9O/STST-Logo-Square-Color.png"
+      },
+      {
+        "id": "my-plus-one",
+        "name": "PlusOne Social",
+        "people": [
+          "PlusOne Team"
+        ],
+        "blurb": "Modern London singles mixers, interactive dating shows, and social connection events paired with in-app post-event matching.",
+        "links": [
+          {
+            "label": "🌐 Website",
+            "url": "https://myplusone.social/"
+          },
+          {
+            "label": "📸 Instagram",
+            "url": "https://www.instagram.com/myplusone.social/"
+          }
+        ],
+        "logo": "https://myplusone.social/favicon.ico"
+      },
+      {
+        "id": "beyond-30",
+        "name": "Beyond 30 Events",
+        "people": [
+          "Beyond 30 Team"
+        ],
+        "blurb": "Day clubbing, retro 80s & 90s parties, and high-energy social dance events specifically curated for the 30+ crowd.",
+        "links": [
+          {
+            "label": "🌐 Website",
+            "url": "https://beyond30events.com/"
+          },
+          {
+            "label": "📸 Instagram",
+            "url": "https://www.instagram.com/beyond30events/"
+          }
+        ],
+        "logo": "https://beyond30events.com/favicon.ico"
       }
     ],
     "items": [
@@ -3890,7 +3985,10 @@ Object.assign(window.CONTENT, {
         "price": "£17",
         "origin": "auto",
         "firstSeen": "2026-10-26",
-        "lastSeen": "2026-10-26"
+        "lastSeen": "2026-10-26",
+        "lat": 51.5169755,
+        "lng": -0.0783952,
+        "mapUrl": "https://maps.google.com/?q=51.5169755,-0.0783952"
       },
       {
         "id": "sunday-park-walk-41",
@@ -4948,6 +5046,69 @@ Object.assign(window.CONTENT, {
     "subtitle": "Chronological roadmap of major UK comic cons, fantasy balls, video game expos, tabletop conventions, and Discord communities.",
     "items": [
       {
+        "name": "Renaissance Faire UK",
+        "host": "renaissance-faire-uk",
+        "hostName": "Renaissance Faire UK",
+        "url": "https://www.renaissancefaireuk.co.uk/",
+        "category": "Historical & Fantasy Festivals",
+        "status": "Active",
+        "season": "Summer Annual",
+        "month": "July / August",
+        "timing": "Weekend Daytime (10:00 AM – 6:00 PM)",
+        "dateBadge": "ANNUAL FESTIVAL",
+        "sortOrder": 15,
+        "approxMonth": "Summer",
+        "days": "Annual Weekend",
+        "price": "Tickets from £25",
+        "location": "Surrey / South East UK",
+        "mapUrl": "https://maps.google.com/?q=Guildford+Surrey",
+        "description": "The UK's dedicated Renaissance festival featuring jousting tournaments, medieval banquet feasts, costumed artisans, live bardic music, craft ales, and immersive fantasy roleplay.",
+        "logo": "../img/logos/platforms/its-a-date.png",
+        "instagramUrl": "https://www.instagram.com/renaissance_faire_uk/"
+      },
+      {
+        "name": "D&D in a Castle (Lumley Castle UK)",
+        "host": "dnd-in-a-castle",
+        "hostName": "D&D in a Castle",
+        "url": "https://dndinacastle.com/",
+        "category": "Tabletop RPG & Castle Retreats",
+        "status": "Active",
+        "season": "Spring & Autumn",
+        "month": "Spring / Autumn Retreats",
+        "timing": "4-Day All-Inclusive Retreat",
+        "dateBadge": "EPIC RETREAT",
+        "sortOrder": 16,
+        "approxMonth": "Seasonal",
+        "days": "4-Day Immersive Stay",
+        "price": "Luxury all-inclusive package",
+        "location": "Lumley Castle, County Durham, UK",
+        "mapUrl": "https://maps.google.com/?q=Lumley+Castle+Hotel+Chester-le-Street+DH3+4NX",
+        "description": "World-class 4-day tabletop D&D campaign retreat inside a genuine 600-year-old medieval castle, helmed by celebrity Dungeon Masters with banquet feasts and private gaming chambers.",
+        "logo": "../img/logos/moonshine-adventure.png",
+        "instagramUrl": "https://www.instagram.com/dndinacastle/"
+      },
+      {
+        "name": "Second Star Events — Immersive Fantasy Balls",
+        "host": "second-star-events",
+        "hostName": "Second Star Events",
+        "url": "https://www.secondstarevents.com/",
+        "category": "Fantasy Romance & Themed Balls",
+        "status": "Active",
+        "season": "Seasonal Throughout Year",
+        "month": "Quarterly Galas",
+        "timing": "Evening Gala (7:00 PM – Midnight)",
+        "dateBadge": "FANTASY BALL",
+        "sortOrder": 17,
+        "approxMonth": "Seasonal",
+        "days": "Select Saturdays",
+        "price": "Tickets from £75",
+        "location": "Historic Grand Venues across UK",
+        "mapUrl": "https://maps.google.com/?q=London+UK",
+        "description": "Story-driven, high-fantasy formal balls inspired by romantasy literature, fairy tales, and Bridgerton aesthetics, complete with live orchestral waltzes and interactive quests.",
+        "logo": "../img/logos/mystic-fate.png",
+        "instagramUrl": "https://www.instagram.com/secondstarevents_/"
+      },
+      {
         "name": "London Hackspace — Weekly Open Night",
         "host": "london-hackspace",
         "hostName": "London Hackspace",
@@ -4991,80 +5152,6 @@ Object.assign(window.CONTENT, {
         "logo": "../img/logos/london-comic-mart.png",
         "facebookUrl": "https://www.facebook.com/LondonComicMart",
         "twitterUrl": "https://twitter.com/showmasters"
-      },
-      {
-        "name": "MCM Comic Con London (Autumn 2026)",
-        "host": "mcm-egx",
-        "hostName": "MCM Comic Con & EGX",
-        "url": "https://www.mcmcomiccon.com/london/en-us.html",
-        "category": "Conventions & Expos",
-        "status": "Upcoming",
-        "season": "Autumn '26",
-        "month": "October",
-        "timing": "23–25 October 2026",
-        "endDate": "2026-10-25",
-        "dateBadge": "OCT 23–25",
-        "sortOrder": 10,
-        "approxMonth": "October 2026",
-        "days": "3 Days (Fri – Sun)",
-        "price": "From £27–£39 / day · £85–£98 Weekend Pass",
-        "location": "ExCeL London, Royal Docks",
-        "mapUrl": "https://maps.google.com/?q=ExCeL+London+Royal+Victoria+Dock+London+E16+1XL",
-        "description": "The UK's flagship pop-culture con with massive cosplay competitions, guest panels, voice actors, Artist Alley, and co-located EGX gaming.",
-        "logo": "https://www.mcmcomiccon.com/content/dam/sitebuilder/rna/florida-supercon/2021/_img/graphics/shows/MCM-London-Fall.png/_jcr_content/renditions/original.image_file.134.69.file/044203571/MCM-London-Fall.png",
-        "instagramUrl": "https://www.instagram.com/mcmcomiccon",
-        "facebookUrl": "https://www.facebook.com/LondonComicCon",
-        "tiktokUrl": "https://www.tiktok.com/@mcmcomiccon",
-        "twitterUrl": "https://twitter.com/MCMComicCon",
-        "youtubeUrl": "https://www.youtube.com/@MCMComicCon"
-      },
-      {
-        "name": "EGX @ MCM Comic Con London",
-        "host": "mcm-egx",
-        "hostName": "MCM Comic Con & EGX",
-        "url": "https://www.egx.net/",
-        "category": "Conventions & Expos",
-        "status": "Upcoming",
-        "season": "Autumn '26",
-        "month": "October",
-        "timing": "23–25 October 2026",
-        "endDate": "2026-10-25",
-        "dateBadge": "OCT 23–25",
-        "sortOrder": 11,
-        "approxMonth": "October 2026",
-        "days": "3 Days (Fri – Sun)",
-        "price": "Included with MCM London Ticket (~£27–£39 / day)",
-        "location": "ExCeL London, Royal Docks",
-        "mapUrl": "https://maps.google.com/?q=ExCeL+London+Royal+Victoria+Dock+London+E16+1XL",
-        "description": "The UK's largest dedicated gaming expo co-located inside MCM London. Hands-on playable upcoming releases, indie Rezzed zone, and esports stages.",
-        "logo": "https://www.mcmcomiccon.com/content/dam/sitebuilder/rna/florida-supercon/2021/_img/graphics/shows/MCM-London-Fall.png/_jcr_content/renditions/original.image_file.134.69.file/044203571/MCM-London-Fall.png",
-        "instagramUrl": "https://www.instagram.com/egx",
-        "twitterUrl": "https://twitter.com/egx"
-      },
-      {
-        "name": "Sexy Nerds London Homecoming (MCM Weekend Party)",
-        "host": "sexy-nerds",
-        "hostName": "Sexy Nerds",
-        "url": "https://sexynerds.net/london-10-24",
-        "category": "Conventions & Expos",
-        "status": "Upcoming",
-        "season": "Autumn '26",
-        "month": "October",
-        "timing": "Saturday, 24 October 2026 (Doors 10:00 PM – Late)",
-        "endDate": "2026-10-24",
-        "dateBadge": "OCT 24 2026",
-        "approxMonth": "October 2026",
-        "days": "1 Night (Saturday, 10 PM – Late)",
-        "price": "From ~£15–£25 (Advance Entry)",
-        "location": "28 Hancock Rd, Bow, London E3 3DA",
-        "mapUrl": "https://maps.google.com/?q=28+Hancock+Rd+London+E3+3DA",
-        "description": "The premier cosplay and nerd nightlife party during MCM London Comic Con weekend! Console gaming setups, cosplay showcase, live DJs, dancing, and inclusive gaming community.",
-        "logo": "../img/logos/sexy-nerds.png",
-        "discordUrl": "https://discord.com/invite/YC7DSGuSr3",
-        "instagramUrl": "https://instagram.com/s3xynerds",
-        "twitterUrl": "https://twitter.com/sexynerds",
-        "youtubeUrl": "https://youtube.com/s3xynerds",
-        "sortOrder": 12
       },
       {
         "name": "Fae Club — The Night Club (Halloween Rave)",
@@ -5350,7 +5437,8 @@ Object.assign(window.CONTENT, {
         "mapUrl": "https://maps.google.com/?q=Stowe+House+Buckingham+MK18+5EH",
         "description": "Royal fantasy ball set in the breathtaking 18th-century palace staterooms of Stowe House with immersive storyline and banqueting.",
         "logo": "../img/logos/mystic-fate.png",
-        "instagramUrl": "https://www.instagram.com/mysticfateuk",
+        "instagramUrl": "https://www.instagram.com/campfablewood/",
+        "websiteUrl": "https://campfablewood.com/",
         "tiktokUrl": "https://www.tiktok.com/@mysticfateuk"
       },
       {
@@ -5501,7 +5589,7 @@ Object.assign(window.CONTENT, {
         "twitterUrl": "https://twitter.com/showmasters"
       },
       {
-        "name": "Mystic Fate — Camp Fablewood (Fantasy Summer Camp)",
+        "name": "Camp Fablewood — Fantasy Summer Camp",
         "host": "mystic-fate",
         "hostName": "Mystic Fate",
         "url": "https://mysticfateevents.co.uk/events/",
@@ -6105,78 +6193,6 @@ Object.assign(window.CONTENT, {
         "mapUrl": "https://maps.google.com/?q=51.5190369,-0.09013779999999998",
         "description": "Taste the cinema at the Pulp Fiction (1994) dining experience in London! Enjoy a multi-course menu timed with iconic moments from the film. Get your tickets now!",
         "url": "https://feverup.com/m/696845",
-        "origin": "auto",
-        "firstSeen": "2026-10-18",
-        "lastSeen": "2026-10-18"
-      },
-      {
-        "id": "adv-wollaton-hall-scream-oct23",
-        "name": "Scream at Wollaton Hall",
-        "provider": "adventure-cinema",
-        "providerName": "Adventure Cinema",
-        "category": "Castles & Historic Open Air",
-        "format": "Open Air Screening",
-        "logo": "../img/logos/adventure-cinema.png",
-        "instagramUrl": "https://www.instagram.com/adventurecinema",
-        "facebookUrl": "https://www.facebook.com/adventurecinemauk",
-        "status": "Close To Selling Out!",
-        "season": "October 2026",
-        "timing": "Friday, 23 October 2026 (Gates 6:00 PM)",
-        "endDate": "2026-10-23",
-        "dateBadge": "OCT 23 2026",
-        "venue": "Wollaton Hall, Nottingham",
-        "location": "Wollaton, Nottingham, NG8 2AE",
-        "mapUrl": "https://maps.google.com/?q=52.9514874,-1.2079374",
-        "description": "Do you like scary movies? Join the ultimate Scream outdoor cinema experience for a night of thrills, chills, and iconic horror!",
-        "url": "https://adventurecinema.co.uk/event/scream-at-wollaton-hall/",
-        "origin": "auto",
-        "firstSeen": "2026-10-18",
-        "lastSeen": "2026-10-18"
-      },
-      {
-        "id": "adv-wollaton-hall-the-nightmare-before-christmas-oct25",
-        "name": "The Nightmare Before Christmas at Wollaton Hall",
-        "provider": "adventure-cinema",
-        "providerName": "Adventure Cinema",
-        "category": "Castles & Historic Open Air",
-        "format": "Open Air Screening",
-        "logo": "../img/logos/adventure-cinema.png",
-        "instagramUrl": "https://www.instagram.com/adventurecinema",
-        "facebookUrl": "https://www.facebook.com/adventurecinemauk",
-        "status": "Close To Selling Out!",
-        "season": "October 2026",
-        "timing": "Sunday, 25 October 2026 (Gates 5:00 PM)",
-        "endDate": "2026-10-25",
-        "dateBadge": "OCT 25 2026",
-        "venue": "Wollaton Hall, Nottingham",
-        "location": "Wollaton, Nottingham, NG8 2AE",
-        "mapUrl": "https://maps.google.com/?q=52.9514874,-1.2079374",
-        "description": "Step into Halloween Town and join the ultimate The Nightmare Before Christmas outdoor cinema experience for a magical night of music, mischief, and spooky holiday fun!",
-        "url": "https://adventurecinema.co.uk/event/the-nightmare-before-christmas-at-wollaton-hall/",
-        "origin": "auto",
-        "firstSeen": "2026-10-18",
-        "lastSeen": "2026-10-18"
-      },
-      {
-        "id": "adv-wollaton-hall-hocus-pocus-spooktacular-oct24",
-        "name": "Hocus Pocus Spooktacular at Wollaton Hall",
-        "provider": "adventure-cinema",
-        "providerName": "Adventure Cinema",
-        "category": "Castles & Historic Open Air",
-        "format": "Open Air Screening",
-        "logo": "../img/logos/adventure-cinema.png",
-        "instagramUrl": "https://www.instagram.com/adventurecinema",
-        "facebookUrl": "https://www.facebook.com/adventurecinemauk",
-        "status": "Close To Selling Out!",
-        "season": "October 2026",
-        "timing": "Saturday, 24 October 2026 (Gates 5:00 PM)",
-        "endDate": "2026-10-24",
-        "dateBadge": "OCT 24 2026",
-        "venue": "Wollaton Hall, Nottingham",
-        "location": "Wollaton, Nottingham, NG8 2AE",
-        "mapUrl": "https://maps.google.com/?q=52.9514874,-1.2079374",
-        "description": "Grab your broomsticks and enjoy the Halloween classic, Hocus Pocus on a huge open-air cinema screen!",
-        "url": "https://adventurecinema.co.uk/event/hocus-pocus-spooktacular-at-wollaton-hall/",
         "origin": "auto",
         "firstSeen": "2026-10-18",
         "lastSeen": "2026-10-18"
@@ -12043,6 +12059,80 @@ Object.assign(window.CONTENT, {
     },
     "items": [
       {
+        "name": "The Rhum Tavern",
+        "url": "https://rhumtavern.com/",
+        "category": "Bars & Speakeasies",
+        "location": "48 Margaret Street, Fitzrovia, London, W1W 8SE",
+        "region": "Central London",
+        "lat": 51.5168,
+        "lng": -0.1418,
+        "description": "🏴‍☠️ Intimate, candlelit pirate-ship inspired cocktail tavern in Fitzrovia. Features 150+ rums from around the world, treasure-map cocktail journeys, grog punch bowls, and hands-on rum masterclasses.",
+        "tags": [
+          "Cocktails",
+          "Rum",
+          "Fitzrovia",
+          "Immersive Bar",
+          "Date Night",
+          "Masterclasses"
+        ],
+        "instagram": "https://www.instagram.com/rhumtavern/"
+      },
+      {
+        "name": "SWITCH Games Bar",
+        "url": "https://thatgamesbarswitch.co.uk/",
+        "category": "Video Games & Arcades",
+        "location": "21-23 Queens Road, Southend-on-Sea, SS1 1LT",
+        "region": "Day Trips & Coast",
+        "lat": 51.5385,
+        "lng": 0.7107,
+        "description": "🕹️ Inclusive retro gaming & cocktail bar by the coast. Features arcade cabinets, tabletop board games, pool tables, Nintendo Switch stations, artisan pizza, craft wings, and themed trivia nights.",
+        "tags": [
+          "Arcade",
+          "Board Games",
+          "Retro Gaming",
+          "Southend",
+          "Cocktails",
+          "Day Trip"
+        ],
+        "instagram": "https://www.instagram.com/thatgamesbar_/"
+      },
+      {
+        "name": "Valemark Tables",
+        "url": "https://valemark.co/",
+        "category": "Dinner & Dining",
+        "location": "Central London Venues & Secret Popups",
+        "region": "Central London",
+        "lat": 51.5136,
+        "lng": -0.1265,
+        "description": "🍷 Curated intimate dining experiences, secret chef pop-ups, and communal social supper clubs designed for meaningful conversation over seasonal tasting menus.",
+        "tags": [
+          "Fine Dining",
+          "Supper Club",
+          "Pop-up",
+          "Social Dining",
+          "Date Night"
+        ],
+        "instagram": "https://www.instagram.com/thevalemark/"
+      },
+      {
+        "name": "Boneyard London — Knife Forging & Blacksmithing",
+        "url": "https://classbento.co.uk/boneyard-london",
+        "category": "Art & Workshops",
+        "location": "Boneyard Forge, Wimbledon, London, SW19",
+        "region": "South London",
+        "lat": 51.4183,
+        "lng": -0.1983,
+        "description": "🔨 Hands-on blade forging and blacksmithing workshops in Wimbledon. Spend a creative date forging Viking knives, Damascus steel chef knives, or decorative ironwork at the anvil over hot coals.",
+        "tags": [
+          "Blacksmithing",
+          "Knife Making",
+          "Maker Workshop",
+          "Wimbledon",
+          "Hands-On Date"
+        ],
+        "instagram": "https://www.instagram.com/boneyardlondon/"
+      },
+      {
         "name": "Pool House",
         "url": "https://www.pool.house/",
         "category": "Pool & Billiards",
@@ -15920,13 +16010,3 @@ Object.assign(window.CONTENT, {
     ]
   }
 });
-
-// Hide events once their endDate has passed so the listings never advertise finished events.
-// Items without an endDate (weekly/recurring) always stay.
-(function pruneFinishedEvents() {
-  const today = new Date().toISOString().slice(0, 10);
-  ['cinemaEvents', 'nerdGatherings', 'singlesGuide'].forEach((key) => {
-    const section = window.CONTENT[key];
-    section.items = section.items.filter((item) => !item.endDate || item.endDate >= today);
-  });
-})();
