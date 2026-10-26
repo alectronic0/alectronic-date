@@ -1119,6 +1119,42 @@ window.DATING_SERVICES = {
         "https://thepairproject.co.uk/",
         "https://abia.org.uk/agencies/the-pair-project/"
       ]
+    },
+    {
+      "slug": "maclynn-international",
+      "name": "Maclynn International",
+      "url": "https://maclynninternational.com/",
+      "logo": null,
+      "abia": false,
+      "founded": 2011,
+      "price": "Not published",
+      "consultation": null,
+      "contractLength": null,
+      "areas": "London, plus offices in Dubai and the US",
+      "suits": "Psychology-led matchmaking and coaching for professionals; formerly known as Vida Consultancy.",
+      "track": [],
+      "sources": [
+        "https://maclynninternational.com/"
+      ]
+    },
+    {
+      "slug": "cavendish-introductions",
+      "name": "Cavendish Introductions",
+      "url": "https://cavendishintroductions.co.uk/",
+      "logo": "../../img/logos/dating/cavendish-introductions.png",
+      "abia": true,
+      "founded": 2024,
+      "price": "Not published for men; women pay a one-time £450 registration fee",
+      "consultation": "In-depth consultation before joining",
+      "contractLength": null,
+      "areas": "London",
+      "suits": "Men as the paying clients, introduced to women from a vetted ladies' club.",
+      "track": [],
+      "sources": [
+        "https://cavendishintroductions.co.uk/our-ladies-club/",
+        "https://cavendishintroductions.co.uk/steps-to-success/",
+        "https://abia.org.uk/agencies/cavendish-introductions/"
+      ]
     }
   ]
 };
