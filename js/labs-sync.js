@@ -33,8 +33,8 @@ window.LABS_SYNC = {
     "records": 1079
   },
   "singles": {
-    "lastSynced": "2026-10-25",
-    "records": 142
+    "lastSynced": "2026-10-26",
+    "records": 205
   },
   "timeout": {
     "lastSynced": "2026-10-20",

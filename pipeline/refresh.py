@@ -188,6 +188,7 @@ def main():
     parser.add_argument("--no-push", action="store_true", help="commit but do not push")
     parser.add_argument("--no-commit", action="store_true", help="write and smoke-test, leave changes uncommitted")
     parser.add_argument("--no-smoke", action="store_true", help="skip the headless page check")
+    parser.add_argument("--allow-dirty", action="store_true", help="allow running when target files have uncommitted edits")
     args = parser.parse_args()
 
     today = datetime.date.today().isoformat()
@@ -196,7 +197,7 @@ def main():
     write = not args.dry_run
 
     dirty = git("status", "--porcelain", "--", *files).strip()
-    if write and dirty:
+    if write and dirty and not args.allow_dirty:
         sys.exit(f"Refusing to run: target files have uncommitted changes:\n{dirty}")
 
     smoke_enabled = write and not args.no_smoke

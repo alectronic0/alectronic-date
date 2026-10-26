@@ -342,6 +342,26 @@ Object.assign(window.CONTENT, {
           }
         ],
         "logo": "../img/logos/be-dating-beautiful.png"
+      },
+      {
+        "id": "its-a-date",
+        "name": "It's a Date Club",
+        "people": [
+          "James",
+          "Ollie"
+        ],
+        "blurb": "London's leading activity-led speed dating: board games at Draughts Waterloo, singles parties in Kings Cross, boules socials and coffee dates.",
+        "links": [
+          {
+            "label": "🌐 Website",
+            "url": "https://itsadate.club/events/"
+          },
+          {
+            "label": "📸 Instagram",
+            "url": "https://www.instagram.com/itsadate.club/"
+          }
+        ],
+        "logo": "../img/logos/platforms/its-a-date.png"
       }
     ],
     "items": [
@@ -363,7 +383,7 @@ Object.assign(window.CONTENT, {
         "description": "Are you ready to meet someone new? Same intentions, no pressure. Grown and ready.",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1997137408751",
@@ -384,7 +404,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F272810829%2F49508719976%2F1%2Foriginal.20220425-194229?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C4500%2C4500&s=b658cc61b7a0dd63549b215a199e92d3",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2000598693547",
@@ -405,7 +425,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F693715439%2F2004168134353%2F1%2Foriginal.20240209-130538?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=644%2C0%2C2576%2C2576&s=618bf2a415986291664f5340b7640c47",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1994843867708",
@@ -426,7 +446,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F155114599%2F21832503166%2F1%2Foriginal.20210923-203356?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=223%2C0%2C554%2C554&s=53d82c806df71807ac65e2fef339dd6e",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1989108512105",
@@ -447,7 +467,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1184131339%2F194455792448%2F1%2Foriginal.20260508-155701?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=5e02b3cfea5633fc7fd560780a040f33",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1994801501991",
@@ -468,7 +488,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F486883079%2F21832503166%2F1%2Foriginal.20230406-131839?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=f1589e8f68903f859c852d0b0c862998",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1996969433332",
@@ -484,12 +504,12 @@ Object.assign(window.CONTENT, {
         "lat": 51.5267393,
         "lng": -0.08086960000000001,
         "mapUrl": "https://maps.google.com/?q=51.5267393,-0.08086960000000001",
-        "ticketStatus": "plenty",
+        "ticketStatus": "limited",
         "description": "Speed dating in Shoreditch for ages 30-45 at Be At One - meet fun London singles and enjoy a fast-paced night of real connections.",
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F272810829%2F49508719976%2F1%2Foriginal.20220425-194229?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C4500%2C4500&s=b658cc61b7a0dd63549b215a199e92d3",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1994805010485",
@@ -510,7 +530,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F155114599%2F21832503166%2F1%2Foriginal.20210923-203356?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=223%2C0%2C554%2C554&s=53d82c806df71807ac65e2fef339dd6e",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1976641424711",
@@ -531,7 +551,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F35343078%2F172713724931%2F2%2Foriginal.jpg?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=c6bbc3993cb7ae1b62b86ea4254d2b7e",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1990114453904",
@@ -552,7 +572,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F252944579%2F21832503166%2F1%2Foriginal.20220323-123159?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=4e89c07c107ef2c89950537e51bf41ba",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2000258791892",
@@ -573,7 +593,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F272810829%2F49508719976%2F1%2Foriginal.20220425-194229?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C4500%2C4500&s=b658cc61b7a0dd63549b215a199e92d3",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2001389609197",
@@ -594,7 +614,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F61910879%2F107520587225%2F1%2Foriginal.jpg?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=64d6e60a793af716c0e2f5270255725d",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1976528449800",
@@ -615,7 +635,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F35343078%2F172713724931%2F2%2Foriginal.jpg?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=c6bbc3993cb7ae1b62b86ea4254d2b7e",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2000460854266",
@@ -636,7 +656,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1184131339%2F194455792448%2F1%2Foriginal.20260508-155701?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=5e02b3cfea5633fc7fd560780a040f33",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1989111857110",
@@ -657,7 +677,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1184131339%2F194455792448%2F1%2Foriginal.20260508-155701?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=5e02b3cfea5633fc7fd560780a040f33",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003401044454",
@@ -678,7 +698,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F693715439%2F2004168134353%2F1%2Foriginal.20240209-130538?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=644%2C0%2C2576%2C2576&s=618bf2a415986291664f5340b7640c47",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2001555420142",
@@ -700,7 +720,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F531934419%2F1493533057%2F1%2Foriginal.20230608-124934?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1024%2C1024&s=60d53d594eb3a66396e5e4fcedbe0c4c",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2002158327454",
@@ -720,7 +740,7 @@ Object.assign(window.CONTENT, {
         "description": "Build purposeful connections, gain powerful finance insights, enjoy fun games, great food, dynamic Q&A, inspiring conversations & God’s Word",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003781374030",
@@ -740,7 +760,7 @@ Object.assign(window.CONTENT, {
         "description": "A social for music loving singles!",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003720275282",
@@ -760,7 +780,7 @@ Object.assign(window.CONTENT, {
         "description": "A Social for music loving singles!",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1993377734464",
@@ -781,7 +801,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F514178839%2F1508161130723%2F1%2Foriginal.20230513-170951?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=b4e4fc4ebf5609e9149055d275499b45",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003056632308",
@@ -802,7 +822,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1185446235%2F212846219571%2F1%2Foriginal.20260526-161003?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C375%2C1920%2C330&s=bc81181b2e0edda48962338e6dbbde73",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003144193205",
@@ -823,7 +843,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1070565803%2F2575918107161%2F1%2Foriginal.20250710-084501?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=11e02b11b1992c2923610d2305ea5559",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1994873950687",
@@ -844,7 +864,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F486883079%2F21832503166%2F1%2Foriginal.20230406-131839?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=f1589e8f68903f859c852d0b0c862998",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2002341016883",
@@ -864,7 +884,7 @@ Object.assign(window.CONTENT, {
         "description": "Help you create a healthy loving relationship and meeting incredible singles a Diwali themed event - Age range: 25-45",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1993211054921",
@@ -885,7 +905,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F859969889%2F356737611649%2F1%2Foriginal.20240926-122634?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C500%2C500&s=530fe5f0e56932968bb510430c6f1ebc",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2000963366293",
@@ -906,7 +926,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F252944579%2F21832503166%2F1%2Foriginal.20220323-123159?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=4e89c07c107ef2c89950537e51bf41ba",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2000033962421",
@@ -926,7 +946,7 @@ Object.assign(window.CONTENT, {
         "description": "Meet new people, have fun, and maybe find your match at THE WEST LONDON SINGLES CLUB!",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1992620338071",
@@ -947,7 +967,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F859969889%2F356737611649%2F1%2Foriginal.20240926-122634?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C500%2C500&s=530fe5f0e56932968bb510430c6f1ebc",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1995683989535",
@@ -968,7 +988,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F666817319%2F1954557524103%2F1%2Foriginal.20240103-172507?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2000%2C2000&s=f3a841408a73910169c2b03478b7e742",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1994681567263",
@@ -989,7 +1009,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F859969889%2F356737611649%2F1%2Foriginal.20240926-122634?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C500%2C500&s=530fe5f0e56932968bb510430c6f1ebc",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003706539197",
@@ -1009,7 +1029,7 @@ Object.assign(window.CONTENT, {
         "description": "Singles nights with a difference",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2000187598952",
@@ -1030,7 +1050,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F212943179%2F600405602853%2F1%2Foriginal.20220115-175428?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C44%2C892%2C892&s=b1303645aefd94950a1c9da6c9048828",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1987927370278",
@@ -1050,7 +1070,7 @@ Object.assign(window.CONTENT, {
         "description": "Strictly Singles Christmas Ball - Are you a member of Across the Room? Please call to register 01449 722800 Find Love @ our Exclusive Event",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2000199951900",
@@ -1071,7 +1091,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1184131339%2F194455792448%2F1%2Foriginal.20260508-155701?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=5e02b3cfea5633fc7fd560780a040f33",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003739413525",
@@ -1093,7 +1113,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192788519%2F775346637573%2F1%2Foriginal.20260905-204336?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=7%2C102%2C2165%2C372&s=bf1f047f3d2455ca72be681ff9b83cf3",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1991550112999",
@@ -1114,7 +1134,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1193435388%2F2748217831231%2F1%2Foriginal.20260914-112556?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C423%2C6034%2C1037&s=32238647e3f1278f7cbcb5faaa26fca7",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2000994434218",
@@ -1135,7 +1155,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F252944579%2F21832503166%2F1%2Foriginal.20220323-123159?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=4e89c07c107ef2c89950537e51bf41ba",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003444749176",
@@ -1156,7 +1176,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190534505%2F190904825467%2F1%2Foriginal.20260807-105443?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C109%2C1356%2C233&s=45ca9d5b4afc9ae03b5cc5dcb42c3512",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2000995150360",
@@ -1177,7 +1197,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F252944579%2F21832503166%2F1%2Foriginal.20220323-123159?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=4e89c07c107ef2c89950537e51bf41ba",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003399417588",
@@ -1198,7 +1218,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180551253%2F121327755555%2F1%2Foriginal.20260324-112332?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2000%2C2000&s=1bd9fcad11f06ed2dc6ad8309b5899f7",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1993211379893",
@@ -1219,7 +1239,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F859969889%2F356737611649%2F1%2Foriginal.20240926-122634?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C500%2C500&s=530fe5f0e56932968bb510430c6f1ebc",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003784964770",
@@ -1240,7 +1260,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190534505%2F190904825467%2F1%2Foriginal.20260807-105443?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C109%2C1356%2C233&s=45ca9d5b4afc9ae03b5cc5dcb42c3512",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1994680605386",
@@ -1261,7 +1281,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F859969889%2F356737611649%2F1%2Foriginal.20240926-122634?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C500%2C500&s=530fe5f0e56932968bb510430c6f1ebc",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003254266437",
@@ -1282,7 +1302,9 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F42969178%2F193460318570%2F2%2Foriginal.jpg?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=eca1f17d925c73dba0d0f7c67580798c",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-25",
+        "misses": 1,
+        "flag": "not seen in latest scrape"
       },
       {
         "id": "2002099867599",
@@ -1303,7 +1325,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F859969889%2F356737611649%2F1%2Foriginal.20240926-122634?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C500%2C500&s=530fe5f0e56932968bb510430c6f1ebc",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2001558797243",
@@ -1324,7 +1346,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1191195795%2F2994480318662%2F1%2Foriginal.20260816-201338?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C484%2C2560%2C440&s=0b3775afb651e25b8ae05e49f4252349",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2002991659974",
@@ -1345,7 +1367,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180551253%2F121327755555%2F1%2Foriginal.20260324-112332?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2000%2C2000&s=1bd9fcad11f06ed2dc6ad8309b5899f7",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003346470221",
@@ -1365,7 +1387,7 @@ Object.assign(window.CONTENT, {
         "description": "Join us at BRIX in Central London for an 11/11 singles night featuring love coaching, tarot readings, icebreakers, and manifestations!",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2002420927899",
@@ -1386,7 +1408,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F693715439%2F2004168134353%2F1%2Foriginal.20240209-130538?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=644%2C0%2C2576%2C2576&s=618bf2a415986291664f5340b7640c47",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1997452195286",
@@ -1407,7 +1429,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F272810829%2F49508719976%2F1%2Foriginal.20220425-194229?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C4500%2C4500&s=b658cc61b7a0dd63549b215a199e92d3",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003402065508",
@@ -1428,7 +1450,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1195264250%2F27986126095%2F1%2Foriginal.20261007-104023?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=15%2C1641%2C5056%2C869&s=ecfacca3b23eee57a3d992970d0cdd85",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1998999283669",
@@ -1449,7 +1471,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F230651649%2F810672237853%2F1%2Foriginal.20220215-215338?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=160%2C0%2C640%2C640&s=fd321c1de82060a224897134e027c335",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003579078960",
@@ -1470,7 +1492,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F486883079%2F21832503166%2F1%2Foriginal.20230406-131839?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=f1589e8f68903f859c852d0b0c862998",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1999151687513",
@@ -1491,7 +1513,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F272810829%2F49508719976%2F1%2Foriginal.20220425-194229?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C4500%2C4500&s=b658cc61b7a0dd63549b215a199e92d3",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2002197076353",
@@ -1511,7 +1533,7 @@ Object.assign(window.CONTENT, {
         "description": "Get to know them before you get to KNOW them. Low stakes speed dating with games, drinks, and good lighting.",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003306323140",
@@ -1532,7 +1554,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1189508925%2F20943199312%2F1%2Foriginal.20260723-215730?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C225%2C225&s=f2519bc37a2338773f7fbb840ec857d5",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1992616446431",
@@ -1553,7 +1575,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F859969889%2F356737611649%2F1%2Foriginal.20240926-122634?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C500%2C500&s=530fe5f0e56932968bb510430c6f1ebc",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003774943797",
@@ -1573,7 +1595,7 @@ Object.assign(window.CONTENT, {
         "description": "Single people mixing & mingling , enjoying conversations &keeping their eyes open trying to spot that special one",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003774109301",
@@ -1593,7 +1615,7 @@ Object.assign(window.CONTENT, {
         "description": "Single people mixing & mingling , enjoying conversations &keeping their eyes open trying to spot that special one",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003669420173",
@@ -1613,7 +1635,7 @@ Object.assign(window.CONTENT, {
         "description": "New pals, new community, new love...",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003482582336",
@@ -1633,7 +1655,7 @@ Object.assign(window.CONTENT, {
         "description": "Single people mixing & mingling , enjoying conversations &keeping their eyes open trying to spot that special one",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003446778245",
@@ -1654,7 +1676,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190975535%2F190904825467%2F1%2Foriginal.20260813-130807?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=687%2C362%2C818%2C818&s=ccf7bb728a75d3a5db67f06db6cccc1e",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003230967750",
@@ -1675,7 +1697,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F272810829%2F49508719976%2F1%2Foriginal.20220425-194229?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C4500%2C4500&s=b658cc61b7a0dd63549b215a199e92d3",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003447595690",
@@ -1696,7 +1718,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190975535%2F190904825467%2F1%2Foriginal.20260813-130807?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=687%2C362%2C818%2C818&s=ccf7bb728a75d3a5db67f06db6cccc1e",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1998543679946",
@@ -1717,7 +1739,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190975535%2F190904825467%2F1%2Foriginal.20260813-130807?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=687%2C362%2C818%2C818&s=ccf7bb728a75d3a5db67f06db6cccc1e",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003446314859",
@@ -1738,27 +1760,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190975535%2F190904825467%2F1%2Foriginal.20260813-130807?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=687%2C362%2C818%2C818&s=ccf7bb728a75d3a5db67f06db6cccc1e",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
-      },
-      {
-        "id": "2000485553141",
-        "source": "eventbrite",
-        "name": "Good Company - The Millennial Mixer Part 2 - 90’s Fine",
-        "hostName": "NL PR AGENCY",
-        "url": "https://www.eventbrite.com/e/good-company-the-millennial-mixer-part-2-90s-fine-tickets-2000485553141",
-        "startDate": "2026-10-25",
-        "startTime": "18:00",
-        "endDate": "2026-10-25",
-        "venue": "The Little Neon Door",
-        "location": "91-92 Great Eastern Street, London, EC2A 3HZ",
-        "lat": 51.5258603,
-        "lng": -0.08352820000000001,
-        "mapUrl": "https://maps.google.com/?q=51.5258603,-0.08352820000000001",
-        "ticketStatus": "limited",
-        "description": "Part 1 hasn’t even happened yet, but demand has been so high that we’re releasing Part 2 tickets now.",
-        "origin": "auto",
-        "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1999016241390",
@@ -1779,7 +1781,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F679754259%2F16838152735%2F1%2Foriginal.20240122-132911?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2362%2C2362&s=0bf3d39d4833ed86f4604de6da5ae183",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1994871408082",
@@ -1800,7 +1802,9 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F252944579%2F21832503166%2F1%2Foriginal.20220323-123159?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=4e89c07c107ef2c89950537e51bf41ba",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-25",
+        "misses": 1,
+        "flag": "not seen in latest scrape"
       },
       {
         "id": "1998990863484",
@@ -1821,7 +1825,9 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F230651649%2F810672237853%2F1%2Foriginal.20220215-215338?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=160%2C0%2C640%2C640&s=fd321c1de82060a224897134e027c335",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-25",
+        "misses": 1,
+        "flag": "not seen in latest scrape"
       },
       {
         "id": "1999016532260",
@@ -1842,7 +1848,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F230651649%2F810672237853%2F1%2Foriginal.20220215-215338?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=160%2C0%2C640%2C640&s=fd321c1de82060a224897134e027c335",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1996197302869",
@@ -1863,7 +1869,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F272810829%2F49508719976%2F1%2Foriginal.20220425-194229?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C4500%2C4500&s=b658cc61b7a0dd63549b215a199e92d3",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003257709736",
@@ -1883,7 +1889,7 @@ Object.assign(window.CONTENT, {
         "description": "Speed date your way to a meaningful Sikh connection, with great food, relaxed vibes and an evening filled with new faces, good conversation",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1994880143209",
@@ -1904,7 +1910,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F252944579%2F21832503166%2F1%2Foriginal.20220323-123159?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=4e89c07c107ef2c89950537e51bf41ba",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1999653219609",
@@ -1925,7 +1931,9 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F272810829%2F49508719976%2F1%2Foriginal.20220425-194229?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C4500%2C4500&s=b658cc61b7a0dd63549b215a199e92d3",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-25",
+        "misses": 1,
+        "flag": "not seen in latest scrape"
       },
       {
         "id": "2003199795513",
@@ -1946,7 +1954,9 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1188528113%2F1015679180943%2F1%2Foriginal.20260709-111217?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=077367b8a85d629087031dde93db8a62",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-25",
+        "misses": 1,
+        "flag": "not seen in latest scrape"
       },
       {
         "id": "1994865327896",
@@ -1967,7 +1977,9 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F252944579%2F21832503166%2F1%2Foriginal.20220323-123159?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=4e89c07c107ef2c89950537e51bf41ba",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-25",
+        "misses": 1,
+        "flag": "not seen in latest scrape"
       },
       {
         "id": "1998994509389",
@@ -1988,7 +2000,9 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F230651649%2F810672237853%2F1%2Foriginal.20220215-215338?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=160%2C0%2C640%2C640&s=fd321c1de82060a224897134e027c335",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-25",
+        "misses": 1,
+        "flag": "not seen in latest scrape"
       },
       {
         "id": "1989102645558",
@@ -2009,7 +2023,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1184131339%2F194455792448%2F1%2Foriginal.20260508-155701?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=5e02b3cfea5633fc7fd560780a040f33",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1998997135243",
@@ -2030,7 +2044,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F230651649%2F810672237853%2F1%2Foriginal.20220215-215338?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=160%2C0%2C640%2C640&s=fd321c1de82060a224897134e027c335",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2001619731499",
@@ -2051,7 +2065,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F501858739%2F1524916019663%2F1%2Foriginal.20230426-221540?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1024%2C1024&s=c3f357167777d7f56a284f9e1f388fd8",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2001385415654",
@@ -2072,7 +2086,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F230651649%2F810672237853%2F1%2Foriginal.20220215-215338?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=160%2C0%2C640%2C640&s=fd321c1de82060a224897134e027c335",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2000415462498",
@@ -2093,7 +2107,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F274772139%2F534252381277%2F1%2Foriginal.20220428-084034?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=125%2C0%2C350%2C350&s=7c7a3965c0308da9470f463487ac3639",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003399611167",
@@ -2114,7 +2128,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180551253%2F121327755555%2F1%2Foriginal.20260324-112332?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2000%2C2000&s=1bd9fcad11f06ed2dc6ad8309b5899f7",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2001621407512",
@@ -2135,7 +2149,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F501858739%2F1524916019663%2F1%2Foriginal.20230426-221540?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1024%2C1024&s=c3f357167777d7f56a284f9e1f388fd8",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003581663691",
@@ -2156,7 +2170,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1184131339%2F194455792448%2F1%2Foriginal.20260508-155701?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=5e02b3cfea5633fc7fd560780a040f33",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1999420948881",
@@ -2177,7 +2191,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F501858739%2F1524916019663%2F1%2Foriginal.20230426-221540?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1024%2C1024&s=c3f357167777d7f56a284f9e1f388fd8",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "139141cd-158f-42a5-8b84-35456fa61066",
@@ -2203,7 +2217,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "3b257a80-1261-4bb2-80d8-7ff4669a5891",
@@ -2229,7 +2243,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "a9a90204-3212-497f-96ea-5d80fce12db1",
@@ -2249,13 +2263,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1446221,
         "mapUrl": "https://maps.google.com/?q=51.4818707,-0.1446221",
         "price": "From £16.88",
-        "attending": 0,
+        "attending": 1,
         "capacity": 320,
-        "spotsLeft": 320,
+        "spotsLeft": 319,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "27bdc869-ec7f-45ba-9d79-c2ed629f534f",
@@ -2275,13 +2289,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.084147,
         "mapUrl": "https://maps.google.com/?q=51.5266031,-0.0841470",
         "price": "From £20.25",
-        "attending": 10,
+        "attending": 12,
         "capacity": 320,
-        "spotsLeft": 310,
+        "spotsLeft": 308,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2ad264ff-e309-4c02-902c-6ecc9835e0c6",
@@ -2307,7 +2321,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "a95fb23e-00fa-479d-84f0-98ee0fd1ca2a",
@@ -2327,13 +2341,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.2166632,
         "mapUrl": "https://maps.google.com/?q=51.4608397,-0.2166632",
         "price": "From £13.50",
-        "attending": 1,
+        "attending": 2,
         "capacity": 90,
-        "spotsLeft": 89,
+        "spotsLeft": 88,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "44de17ef-f765-40cc-8078-29ac9fe296ed",
@@ -2353,13 +2367,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.0397258,
         "mapUrl": "https://maps.google.com/?q=51.5310833,-0.0397258",
         "price": "From £16.88",
-        "attending": 5,
+        "attending": 9,
         "capacity": 80,
-        "spotsLeft": 75,
+        "spotsLeft": 71,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "286fe310-9c75-412d-bee0-b6de1e53f304",
@@ -2385,7 +2399,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "614ca483-7a76-482c-810f-9a494fc06f29",
@@ -2411,7 +2425,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "053d3b73-3522-46d6-9b77-4c3df948a60b",
@@ -2431,13 +2445,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1399605,
         "mapUrl": "https://maps.google.com/?q=51.5113149,-0.1399605",
         "price": "From £13.50",
-        "attending": 15,
+        "attending": 18,
         "capacity": 230,
-        "spotsLeft": 215,
+        "spotsLeft": 212,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "4a9c6877-b1bf-4ecc-be05-7aab2bf56939",
@@ -2457,13 +2471,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1485074,
         "mapUrl": "https://maps.google.com/?q=51.4938005,-0.1485074",
         "price": "From £33.75",
-        "attending": 7,
+        "attending": 8,
         "capacity": 57,
-        "spotsLeft": 50,
+        "spotsLeft": 49,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "0cd9075f-cb59-4a2f-9f5b-7c74590353e2",
@@ -2483,13 +2497,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1241311,
         "mapUrl": "https://maps.google.com/?q=51.5297508,-0.1241311",
         "price": "From £16.88",
-        "attending": 15,
+        "attending": 16,
         "capacity": 155,
-        "spotsLeft": 140,
+        "spotsLeft": 139,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "42b2d69f-4f78-4b5a-85a6-7af8bfd6b6b9",
@@ -2509,13 +2523,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1042803,
         "mapUrl": "https://maps.google.com/?q=51.5355862,-0.1042803",
         "price": "From £13.50",
-        "attending": 18,
+        "attending": 21,
         "capacity": 260,
-        "spotsLeft": 242,
+        "spotsLeft": 239,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "90b20c73-63f6-4be0-ad61-f90463d06822",
@@ -2535,13 +2549,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.2032841,
         "mapUrl": "https://maps.google.com/?q=51.5176359,-0.2032841",
         "price": "From £13.50",
-        "attending": 14,
+        "attending": 19,
         "capacity": 170,
-        "spotsLeft": 156,
+        "spotsLeft": 151,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2086c196-cc04-46ae-b78c-8ee168f5496c",
@@ -2567,7 +2581,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "24d52bd6-74e6-4aba-8bdc-6650755a15d7",
@@ -2587,13 +2601,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1311785,
         "mapUrl": "https://maps.google.com/?q=51.5156599,-0.1311785",
         "price": "From £16.88",
-        "attending": 14,
+        "attending": 15,
         "capacity": 100,
-        "spotsLeft": 86,
+        "spotsLeft": 85,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "39ebb6dd-93b5-41d0-9ae2-00b915db9488",
@@ -2613,13 +2627,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.17218,
         "mapUrl": "https://maps.google.com/?q=51.4966392,-0.1721800",
         "price": "From £22.50",
-        "attending": 35,
+        "attending": 44,
         "capacity": 72,
-        "spotsLeft": 37,
+        "spotsLeft": 28,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "0d6c046e-a74b-49d8-b3ba-b4e2769baac6",
@@ -2639,13 +2653,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1923357,
         "mapUrl": "https://maps.google.com/?q=51.4590120,-0.1923357",
         "price": "From £10.13",
-        "attending": 13,
+        "attending": 14,
         "capacity": 20,
-        "spotsLeft": 7,
+        "spotsLeft": 6,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "ed1cfde9-546c-4ab5-9784-bb386d4a6c7c",
@@ -2665,13 +2679,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.0666577,
         "mapUrl": "https://maps.google.com/?q=51.5238936,-0.0666577",
         "price": "From £31.50",
-        "attending": 25,
+        "attending": 28,
         "capacity": 70,
-        "spotsLeft": 45,
+        "spotsLeft": 42,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "9f97519b-d858-4167-9d15-390d8b775370",
@@ -2691,13 +2705,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1311785,
         "mapUrl": "https://maps.google.com/?q=51.5156599,-0.1311785",
         "price": "From £13.50",
-        "attending": 8,
+        "attending": 10,
         "capacity": 100,
-        "spotsLeft": 92,
+        "spotsLeft": 90,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "006c90fd-c7e7-4ded-8d84-5f7c73802a25",
@@ -2723,7 +2737,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "13e28b8e-d39e-4559-80b6-fbc3d899ae16",
@@ -2749,7 +2763,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "05af90fc-9dac-4361-a6b2-4cf18edec2d1",
@@ -2769,13 +2783,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.0782091,
         "mapUrl": "https://maps.google.com/?q=51.5260601,-0.0782091",
         "price": "From £13.50",
-        "attending": 59,
+        "attending": 60,
         "capacity": 190,
-        "spotsLeft": 131,
+        "spotsLeft": 130,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "ea8c573a-19ec-498e-927a-f7a5647ac231",
@@ -2795,13 +2809,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1383577,
         "mapUrl": "https://maps.google.com/?q=51.4611064,-0.1383577",
         "price": "From £13.50",
-        "attending": 51,
+        "attending": 53,
         "capacity": 170,
-        "spotsLeft": 119,
+        "spotsLeft": 117,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "fcd071b0-1294-4609-8176-422df3388dd5",
@@ -2821,13 +2835,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1311785,
         "mapUrl": "https://maps.google.com/?q=51.5156599,-0.1311785",
         "price": "From £16.88",
-        "attending": 2,
+        "attending": 3,
         "capacity": 65,
-        "spotsLeft": 63,
+        "spotsLeft": 62,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "da86051b-97ea-4ed4-bb24-7e8de3a07d91",
@@ -2847,13 +2861,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1645609,
         "mapUrl": "https://maps.google.com/?q=51.4554113,-0.1645609",
         "price": "From £16.88",
-        "attending": 15,
+        "attending": 18,
         "capacity": 60,
-        "spotsLeft": 45,
+        "spotsLeft": 42,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "9391c506-2d16-4a60-88df-be49c42cd641",
@@ -2873,13 +2887,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1311785,
         "mapUrl": "https://maps.google.com/?q=51.5156599,-0.1311785",
         "price": "From £16.88",
-        "attending": 10,
+        "attending": 16,
         "capacity": 100,
-        "spotsLeft": 90,
+        "spotsLeft": 84,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "0b766cad-94bf-4db2-ac29-dcde41d6ff19",
@@ -2900,12 +2914,12 @@ Object.assign(window.CONTENT, {
         "mapUrl": "https://maps.google.com/?q=51.5611339,-0.1136635",
         "price": "From £39.38",
         "attending": 25,
-        "capacity": 72,
-        "spotsLeft": 47,
+        "capacity": 56,
+        "spotsLeft": 31,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "f8aff863-ea15-4794-a6b9-08dea9fc7c59",
@@ -2925,13 +2939,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.129755,
         "mapUrl": "https://maps.google.com/?q=51.5161012,-0.1297550",
         "price": "From £13.50",
-        "attending": 42,
+        "attending": 43,
         "capacity": 370,
-        "spotsLeft": 328,
+        "spotsLeft": 327,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "946174ad-6b8c-4cae-b4eb-28deaf2e3b6b",
@@ -2951,13 +2965,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1446221,
         "mapUrl": "https://maps.google.com/?q=51.4818707,-0.1446221",
         "price": "From £13.50",
-        "attending": 124,
+        "attending": 138,
         "capacity": 487,
-        "spotsLeft": 363,
+        "spotsLeft": 349,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "b5f75c71-a017-4050-9816-46c976e4db06",
@@ -2977,13 +2991,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1359428,
         "mapUrl": "https://maps.google.com/?q=51.4627537,-0.1359428",
         "price": "From £13.50",
-        "attending": 54,
+        "attending": 57,
         "capacity": 309,
-        "spotsLeft": 255,
+        "spotsLeft": 252,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "d677e142-c182-4203-a0d4-2877ace3409e",
@@ -3003,13 +3017,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1241311,
         "mapUrl": "https://maps.google.com/?q=51.5297508,-0.1241311",
         "price": "From £13.50",
-        "attending": 71,
+        "attending": 74,
         "capacity": 195,
-        "spotsLeft": 124,
+        "spotsLeft": 121,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "8f5b24d3-d761-434e-88f5-7b3c1307c1ed",
@@ -3029,13 +3043,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.0796504,
         "mapUrl": "https://maps.google.com/?q=51.5077414,-0.0796504",
         "price": "From £28.13",
-        "attending": 88,
+        "attending": 93,
         "capacity": 451,
-        "spotsLeft": 363,
+        "spotsLeft": 358,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "a7d8c50a-38ad-463c-a01d-92c567746863",
@@ -3055,13 +3069,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1436691,
         "mapUrl": "https://maps.google.com/?q=51.5161347,-0.1436691",
         "price": "From £16.88",
-        "attending": 37,
+        "attending": 40,
         "capacity": 104,
-        "spotsLeft": 67,
+        "spotsLeft": 64,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1ff6c837-392f-4329-8c2d-437df2599273",
@@ -3087,7 +3101,9 @@ Object.assign(window.CONTENT, {
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-25",
+        "misses": 1,
+        "flag": "not seen in latest scrape"
       },
       {
         "id": "63530264-0664-4dd3-be69-178a3c1c2912",
@@ -3107,13 +3123,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.0835282,
         "mapUrl": "https://maps.google.com/?q=51.5258603,-0.0835282",
         "price": "From £20.25",
-        "attending": 68,
+        "attending": 71,
         "capacity": 180,
-        "spotsLeft": 112,
+        "spotsLeft": 109,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "fd1b61ef-c4e7-4e39-96d2-06cef55c62bc",
@@ -3133,13 +3149,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1311785,
         "mapUrl": "https://maps.google.com/?q=51.5156599,-0.1311785",
         "price": "From £16.88",
-        "attending": 24,
+        "attending": 26,
         "capacity": 70,
-        "spotsLeft": 46,
+        "spotsLeft": 44,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "9556d080-5616-455a-913a-d30645236e9b",
@@ -3159,13 +3175,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1645609,
         "mapUrl": "https://maps.google.com/?q=51.4554113,-0.1645609",
         "price": "From £16.88",
-        "attending": 22,
+        "attending": 23,
         "capacity": 45,
-        "spotsLeft": 23,
+        "spotsLeft": 22,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "ff14de33-df72-473b-ab50-c7aaf46d06f9",
@@ -3185,10 +3201,10 @@ Object.assign(window.CONTENT, {
         "lng": -0.1450016,
         "mapUrl": "https://maps.google.com/?q=51.5152964,-0.1450016",
         "price": "From £60.50",
-        "spotsLeft": 3,
+        "spotsLeft": 2,
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "116321c4-02b6-4b26-8ffe-5cce17fc29d7",
@@ -3211,7 +3227,7 @@ Object.assign(window.CONTENT, {
         "spotsLeft": 58,
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "6a97891e-c460-4495-a3d7-ea1d29c91a15",
@@ -3234,7 +3250,7 @@ Object.assign(window.CONTENT, {
         "spotsLeft": 44,
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2429973",
@@ -3255,7 +3271,7 @@ Object.assign(window.CONTENT, {
         "mapUrl": "https://maps.google.com/?q=51.5163954,-0.0778156",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "121696845",
@@ -3277,7 +3293,7 @@ Object.assign(window.CONTENT, {
         "price": "From £5",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "121697403",
@@ -3299,7 +3315,7 @@ Object.assign(window.CONTENT, {
         "price": "From £8",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "1996623310068",
@@ -3320,7 +3336,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F501858739%2F1524916019663%2F1%2Foriginal.20230426-221540?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1024%2C1024&s=c3f357167777d7f56a284f9e1f388fd8",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003579514262",
@@ -3341,7 +3357,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F230651649%2F810672237853%2F1%2Foriginal.20220215-215338?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=160%2C0%2C640%2C640&s=fd321c1de82060a224897134e027c335",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "208c42b6-1cb8-45fa-be26-e7ebe54ef22a",
@@ -3361,13 +3377,13 @@ Object.assign(window.CONTENT, {
         "lng": -0.1311785,
         "mapUrl": "https://maps.google.com/?q=51.5156599,-0.1311785",
         "price": "From £16.88",
-        "attending": 25,
+        "attending": 28,
         "capacity": 70,
-        "spotsLeft": 45,
+        "spotsLeft": 42,
         "hostLogo": "../img/logos/thursday.jpg",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "2003580212350",
@@ -3388,7 +3404,7 @@ Object.assign(window.CONTENT, {
         "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F501858739%2F1524916019663%2F1%2Foriginal.20230426-221540?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1024%2C1024&s=c3f357167777d7f56a284f9e1f388fd8",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "8776",
@@ -3410,7 +3426,7 @@ Object.assign(window.CONTENT, {
         "price": "From £20",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "8713",
@@ -3433,7 +3449,7 @@ Object.assign(window.CONTENT, {
         "spotsLeft": 1,
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "8676",
@@ -3455,7 +3471,7 @@ Object.assign(window.CONTENT, {
         "price": "From £15",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "8650",
@@ -3477,7 +3493,7 @@ Object.assign(window.CONTENT, {
         "price": "From £20",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "8472",
@@ -3499,7 +3515,7 @@ Object.assign(window.CONTENT, {
         "price": "From £15",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
       },
       {
         "id": "8146",
@@ -3521,7 +3537,1408 @@ Object.assign(window.CONTENT, {
         "price": "From £15",
         "origin": "auto",
         "firstSeen": "2026-10-25",
-        "lastSeen": "2026-10-25"
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "6794e62b-0681-4dcf-bd74-95ff726d9d75",
+        "source": "thursday",
+        "hostId": "thursday",
+        "name": "Monday | Pub Quiz Night 30-40 | Soho",
+        "hostName": "Thursday",
+        "url": "https://www.thursday.com/events/london/monday-pub-quiz-night-25-35-soho-copy-3",
+        "startDate": "2026-11-23",
+        "startTime": "19:00",
+        "endDate": "2026-11-23",
+        "venue": "21Soho",
+        "location": "3-5 Sutton Row, London W1D 4NR, UK",
+        "ticketStatus": "plenty",
+        "description": "Just a pub quiz, everyone single. Because the world in 2026 is all about meeting IRL, not dating apps! Hello London! 🌟 Forget the dating apps for a night, we’re bringing London’s singles together at 21Soho for a pub quiz packed with cheeky questions, good vibes and even better company! Whether you’re a walking Wikipedia, know every word to a 90s classic, or usually just guess your way through the ",
+        "lat": 51.5156599,
+        "lng": -0.1311785,
+        "mapUrl": "https://maps.google.com/?q=51.5156599,-0.1311785",
+        "price": "From £16.88",
+        "attending": 0,
+        "capacity": 90,
+        "spotsLeft": 90,
+        "hostLogo": "../img/logos/thursday.jpg",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "boules-night-social-01",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Boules Night Social (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/boules-night-social-01/",
+        "startDate": "2026-11-06",
+        "startTime": "19:15",
+        "endDate": "2026-11-06",
+        "venue": "Boulebar South Bank",
+        "location": "Boulebar South Bank, 101 Upper Ground, London SE1 9PP",
+        "ticketStatus": "plenty",
+        "description": "Meet people, play boules, and make connections. A fun, free-flowing and relaxed social evening with games, good company and no Pétanquers!",
+        "lat": 51.507533,
+        "lng": -0.110257,
+        "mapUrl": "https://maps.google.com/?q=51.507533,-0.110257",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "singles-party-in-kings-cross-30",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Singles Party in Kings Cross (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/singles-party-in-kings-cross-30/",
+        "startDate": "2026-11-07",
+        "startTime": "19:30",
+        "endDate": "2026-11-07",
+        "venue": "Drake & Morgan at Kings Cross",
+        "location": "Drake & Morgan at Kings Cross, 6 Pancras Sq, London N1C 4AG",
+        "ticketStatus": "plenty",
+        "description": "Grab your free drink and ease into a relaxed singles night in Kings Cross, with 160+ guests, a stylish venue, and plenty of chances to meet someone new.",
+        "lat": 51.533481,
+        "lng": -0.125043,
+        "mapUrl": "https://maps.google.com/?q=51.533481,-0.125043",
+        "price": "£22",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "games-themed-speed-dating-65",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Games Themed Speed Dating (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/games-themed-speed-dating-65/",
+        "startDate": "2026-10-26",
+        "startTime": "19:15",
+        "endDate": "2026-10-26",
+        "venue": "Draughts",
+        "location": "Draughts, Arch 16 Leake St, London SE1 7NN",
+        "ticketStatus": "limited",
+        "description": "Get your game face on and prepare to Connect(4) with a fun-loving group of single guests, playing new and nostalgic table games in an awesome London venue.",
+        "lat": 51.501779,
+        "lng": -0.115913,
+        "mapUrl": "https://maps.google.com/?q=51.501779,-0.115913",
+        "price": "£22",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "christian-speed-dating-11",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Christian Speed Dating (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/christian-speed-dating-11/",
+        "startDate": "2026-10-27",
+        "startTime": "19:30",
+        "endDate": "2026-10-27",
+        "venue": "The Anthologist",
+        "location": "The Anthologist, 58 Gresham St, London EC2V 7BB",
+        "ticketStatus": "limited",
+        "description": "Single, Christian, and 30 - 45? Perfect! Join us for 15 fun, fast-paced dates with like-minded Christians looking for genuine connections.",
+        "lat": 51.514843,
+        "lng": -0.090756,
+        "mapUrl": "https://maps.google.com/?q=51.514843,-0.090756",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-soho-46",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Soho (25-38 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-soho-46/",
+        "startDate": "2026-10-28",
+        "startTime": "19:30",
+        "endDate": "2026-10-28",
+        "venue": "Be At One",
+        "location": "Be At One, 10 Beak St, London W1F 9RA",
+        "ticketStatus": "sold_out",
+        "description": "Meet 30 like-minded single guests with London's #1-rated dating events team for a fun, fast-paced evening of real-life connections in the heart of Soho.",
+        "lat": 51.511878,
+        "lng": -0.138454,
+        "mapUrl": "https://maps.google.com/?q=51.511878,-0.138454",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "human-bingo-in-the-city-8",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Human Bingo in The City (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/human-bingo-in-the-city-8/",
+        "startDate": "2026-10-29",
+        "startTime": "19:30",
+        "endDate": "2026-10-29",
+        "venue": "The Star By Liverpool Street",
+        "location": "The Star By Liverpool Street, 94 Middlesex St, London E1 7EZ",
+        "ticketStatus": "plenty",
+        "description": "Single and ready to mingle, but over small talk? We’ve got you. Join 40 other singles for a fun night of Human Bingo - laughs, connections, no awkward chat.",
+        "lat": 51.516552,
+        "lng": -0.076488,
+        "mapUrl": "https://maps.google.com/?q=51.516552,-0.076488",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-the-city-195",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in The City (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-the-city-195/",
+        "startDate": "2026-10-30",
+        "startTime": "19:30",
+        "endDate": "2026-10-30",
+        "venue": "The Otherist",
+        "location": "The Otherist, 111 Old Broad St, London EC2N 1AP",
+        "ticketStatus": "plenty",
+        "description": "Spend your Friday evening at The Otherist, meeting up to 18 potential matches in a relaxed, fun, and fast-moving format.",
+        "lat": 51.515346,
+        "lng": -0.084653,
+        "mapUrl": "https://maps.google.com/?q=51.515346,-0.084653",
+        "price": "£17",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "coffee-club-speed-dating-25",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Coffee Club Speed Dating (60-75 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/coffee-club-speed-dating-25/",
+        "startDate": "2026-10-31",
+        "startTime": "10:00",
+        "endDate": "2026-10-31",
+        "venue": "Drake & Morgan at Kings Cross",
+        "location": "Drake & Morgan at Kings Cross, 6 Pancras Sq, London N1C 4AG",
+        "ticketStatus": "limited",
+        "description": "Don’t be chai! Join us for the perfect blend of coffee, new connections, and fun conversation - all designed to help you meet your matcha.",
+        "lat": 51.533481,
+        "lng": -0.125043,
+        "mapUrl": "https://maps.google.com/?q=51.533481,-0.125043",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-waterloo-5",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Waterloo (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-waterloo-5/",
+        "startDate": "2026-11-02",
+        "startTime": "19:30",
+        "endDate": "2026-11-02",
+        "venue": "BrewDog Waterloo",
+        "location": "BrewDog Waterloo, Unit G, Waterloo Station, 01 The Sidings, London SE1 7BH",
+        "ticketStatus": "plenty",
+        "description": "Are you 30-45? Single? Fancy a fun evening, a FREE drink, and meeting new people? This one’s for you. Join us for Speed Dating in Waterloo!",
+        "lat": 51.503364,
+        "lng": -0.112692,
+        "mapUrl": "https://maps.google.com/?q=51.503364,-0.112692",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-the-city-196",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in The City (50-65 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-the-city-196/",
+        "startDate": "2026-11-03",
+        "startTime": "19:30",
+        "endDate": "2026-11-03",
+        "venue": "The Anthologist",
+        "location": "The Anthologist, 58 Gresham St, London EC2V 7BB",
+        "ticketStatus": "plenty",
+        "description": "This popular mid-week event always draws a great crowd as we host you for an evening of mixing, mingling, and matching at The Anthologist.",
+        "lat": 51.514843,
+        "lng": -0.090756,
+        "mapUrl": "https://maps.google.com/?q=51.514843,-0.090756",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-paddington-28",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Paddington (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-paddington-28/",
+        "startDate": "2026-11-06",
+        "startTime": "19:30",
+        "endDate": "2026-11-06",
+        "venue": "Smith's Bar and Grill",
+        "location": "Smith's Bar and Grill, 25 Sheldon Square, London W2 6EY",
+        "ticketStatus": "plenty",
+        "description": "A super-stylish venue, 36 outgoing single guests, and an awesome host are all set for your fun and fast-paced evening of introductions in Paddington.",
+        "lat": 51.519142,
+        "lng": -0.178993,
+        "mapUrl": "https://maps.google.com/?q=51.519142,-0.178993",
+        "price": "£17",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "coffee-club-speed-dating-21",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Coffee Club Speed Dating (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/coffee-club-speed-dating-21/",
+        "startDate": "2026-11-07",
+        "startTime": "14:00",
+        "endDate": "2026-11-07",
+        "venue": "The Happenstance",
+        "location": "The Happenstance, 10 Paternoster Square, London EC4M 7DX",
+        "ticketStatus": "plenty",
+        "description": "Don’t be chai! Join us for a perfect blend of coffee, conversation, and new connections - come and meet your matcha at Coffee Club Speed Dating!",
+        "lat": 51.514603,
+        "lng": -0.098636,
+        "mapUrl": "https://maps.google.com/?q=51.514603,-0.098636",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-clapham-8",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Clapham (25-38 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-clapham-8/",
+        "startDate": "2026-11-10",
+        "startTime": "19:30",
+        "endDate": "2026-11-10",
+        "venue": "Botanica Hall",
+        "location": "Botanica Hall, 1 St John's Rd, London SW11 1QN",
+        "ticketStatus": "plenty",
+        "description": "Single, up for a date in South London, and love a good time? Join us and 30 guests for an evening of introductions in Clapham!",
+        "lat": 51.462803,
+        "lng": -0.167416,
+        "mapUrl": "https://maps.google.com/?q=51.462803,-0.167416",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-soho-47",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Soho (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-soho-47/",
+        "startDate": "2026-11-11",
+        "startTime": "19:30",
+        "endDate": "2026-11-11",
+        "venue": "All Bar One",
+        "location": "All Bar One, 108 New Oxford St, Greater, London WC1A 1HD",
+        "ticketStatus": "plenty",
+        "description": "Join London's #1 rated dating events company and 30 lovely single guests for this super-fun and fast-paced evening of introductions in Soho.",
+        "lat": 51.51673,
+        "lng": -0.129176,
+        "mapUrl": "https://maps.google.com/?q=51.51673,-0.129176",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-the-city-198",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in The City (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-the-city-198/",
+        "startDate": "2026-11-13",
+        "startTime": "19:30",
+        "endDate": "2026-11-13",
+        "venue": "Devonshire Terrace",
+        "location": "Devonshire Terrace, Devonshire Square, London EC2M 4WY",
+        "ticketStatus": "plenty",
+        "description": "Join London’s #1 dating events team and 36 outgoing single guests for an action-packed evening of Speed Dating in the City.",
+        "price": "£17",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "sunday-park-walk-41",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Sunday Park Walk (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/sunday-park-walk-41/",
+        "startDate": "2026-11-15",
+        "startTime": "10:00",
+        "endDate": "2026-11-15",
+        "venue": "Regent's Bar & Kitchen",
+        "location": "Regent's Bar & Kitchen, The Regent's Park, Inner Cir, London NW1 4NU, United Kingdom",
+        "ticketStatus": "plenty",
+        "description": "Swap scrolling for strolling during this 6.5k park walk where you will connect with a fun bunch of single, active, and social Londoners.",
+        "lat": 51.528336,
+        "lng": -0.154449,
+        "mapUrl": "https://maps.google.com/?q=51.528336,-0.154449",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-kings-cross-30",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Kings Cross (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-kings-cross-30/",
+        "startDate": "2026-11-17",
+        "startTime": "19:30",
+        "endDate": "2026-11-17",
+        "venue": "Drake & Morgan at Kings Cross",
+        "location": "Drake & Morgan at Kings Cross, 6 Pancras Sq, London N1C 4AG",
+        "ticketStatus": "plenty",
+        "description": "Think relaxed vibes, interesting people, and a format designed to keep things fun and flowing - meeting someone new has never felt easier.",
+        "lat": 51.533481,
+        "lng": -0.125043,
+        "mapUrl": "https://maps.google.com/?q=51.533481,-0.125043",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "human-bingo-in-the-city-9",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Human Bingo in The City (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/human-bingo-in-the-city-9/",
+        "startDate": "2026-11-19",
+        "startTime": "19:30",
+        "endDate": "2026-11-19",
+        "venue": "The Star By Liverpool Street",
+        "location": "The Star By Liverpool Street, 94 Middlesex St, London E1 7EZ",
+        "ticketStatus": "plenty",
+        "description": "Single and ready to mingle, but over small talk? We’ve got you. Join 40 other singles for a fun night of Human Bingo - laughs, connections, no awkward chat.",
+        "lat": 51.516552,
+        "lng": -0.076488,
+        "mapUrl": "https://maps.google.com/?q=51.516552,-0.076488",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "cocktail-chemistry-masterclass-16",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Cocktail Chemistry Masterclass (25-38 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/cocktail-chemistry-masterclass-16/",
+        "startDate": "2026-11-20",
+        "startTime": "19:30",
+        "endDate": "2026-11-20",
+        "venue": "The Alchemist",
+        "location": "The Alchemist, 6 Bevis Marks, Aldgate, London EC3A 7BA",
+        "ticketStatus": "limited",
+        "description": "Meet creative single Londoners and shake up something special at this Cocktail Chemistry Masterclass, hosted in partnership with the mixology magicians at The Alchemist.",
+        "lat": 51.514974,
+        "lng": -0.079466,
+        "mapUrl": "https://maps.google.com/?q=51.514974,-0.079466",
+        "price": "£32",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "singles-party-in-the-city-16",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Singles Party in The City (40-65 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/singles-party-in-the-city-16/",
+        "startDate": "2026-11-21",
+        "startTime": "19:30",
+        "endDate": "2026-11-21",
+        "venue": "The Folly",
+        "location": "The Folly, 41 Gracechurch St, London EC3V 0BT",
+        "ticketStatus": "plenty",
+        "description": "Enjoy a complimentary drink and join 140 guests for a lively but relaxed singles evening in the City, designed to make meeting new people feel easy.",
+        "lat": 51.511371,
+        "lng": -0.085714,
+        "mapUrl": "https://maps.google.com/?q=51.511371,-0.085714",
+        "price": "£22",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "sunday-park-walk-42",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Sunday Park Walk (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/sunday-park-walk-42/",
+        "startDate": "2026-11-22",
+        "startTime": "10:00",
+        "endDate": "2026-11-22",
+        "venue": "Regent's Bar & Kitchen",
+        "location": "Regent's Bar & Kitchen, The Regent's Park, Inner Cir, London NW1 4NU, United Kingdom",
+        "ticketStatus": "plenty",
+        "description": "Swap scrolling for strolling during this 6.5k park walk where you will connect with a fun bunch of single, active, and social Londoners.",
+        "lat": 51.528336,
+        "lng": -0.154449,
+        "mapUrl": "https://maps.google.com/?q=51.528336,-0.154449",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-waterloo-6",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Waterloo (25-38 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-waterloo-6/",
+        "startDate": "2026-11-23",
+        "startTime": "19:30",
+        "endDate": "2026-11-23",
+        "venue": "BrewDog Waterloo",
+        "location": "BrewDog Waterloo, Unit G, Waterloo Station, 01 The Sidings, London SE1 7BH",
+        "ticketStatus": "plenty",
+        "description": "Are you 25-38? Single? Fancy a fun evening, a FREE drink, and meeting new people? This one’s for you. Join us for Speed Dating in Waterloo!",
+        "lat": 51.503364,
+        "lng": -0.112692,
+        "mapUrl": "https://maps.google.com/?q=51.503364,-0.112692",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-the-city-200",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in The City (50-65 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-the-city-200/",
+        "startDate": "2026-11-24",
+        "startTime": "19:30",
+        "endDate": "2026-11-24",
+        "venue": "The Otherist",
+        "location": "The Otherist, 111 Old Broad St, London EC2N 1AP",
+        "ticketStatus": "plenty",
+        "description": "Are you 50-65 and single? Great - this one’s for you! Join 30 other outgoing, available guests for an evening of fun, friendly, and fast-paced introductions in the City.",
+        "lat": 51.515346,
+        "lng": -0.084653,
+        "mapUrl": "https://maps.google.com/?q=51.515346,-0.084653",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-tooting-10",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Tooting (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-tooting-10/",
+        "startDate": "2026-11-26",
+        "startTime": "19:30",
+        "endDate": "2026-11-26",
+        "venue": "And Then",
+        "location": "And Then, 54a Tooting High St, London SW17 0RN",
+        "ticketStatus": "plenty",
+        "description": "A chilled evening in a private rooftop space at And Then - easy introductions, good vibes, and a crowd that’s actually here to meet people.",
+        "lat": 51.42737,
+        "lng": -0.169092,
+        "mapUrl": "https://maps.google.com/?q=51.42737,-0.169092",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "friday-night-human-bingo-01",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Friday Night Human Bingo (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/friday-night-human-bingo-01/",
+        "startDate": "2026-11-27",
+        "startTime": "19:30",
+        "endDate": "2026-11-27",
+        "venue": "The Refinery Regent's Place",
+        "location": "The Refinery Regent's Place, 5 Brock St, London NW1 3FG",
+        "ticketStatus": "plenty",
+        "description": "Single and ready to mingle, but over small talk? We’ve got you. Join 40 other singles for a fun night of Human Bingo - laughs, connections, no awkward chat.",
+        "lat": 51.525783,
+        "lng": -0.139155,
+        "mapUrl": "https://maps.google.com/?q=51.525783,-0.139155",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-canary-wharf",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Canary Wharf (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-canary-wharf/",
+        "startDate": "2026-11-27",
+        "startTime": "19:30",
+        "endDate": "2026-11-27",
+        "venue": "The Parlour",
+        "location": "The Parlour, 40 Canada Square, London E14 5FW",
+        "ticketStatus": "plenty",
+        "description": "Ready to meet someone new? Join 36 single guests for a fun-filled evening of Speed Dating in Canary Wharf with London’s #1 dating events team.",
+        "lat": 51.504864,
+        "lng": -0.018822,
+        "mapUrl": "https://maps.google.com/?q=51.504864,-0.018822",
+        "price": "£17",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-the-city-202",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in The City (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-the-city-202/",
+        "startDate": "2026-12-01",
+        "startTime": "19:30",
+        "endDate": "2026-12-01",
+        "venue": "The Anthologist",
+        "location": "The Anthologist, 58 Gresham St, London EC2V 7BB",
+        "ticketStatus": "plenty",
+        "description": "This popular mid-week event always brings a great crowd together for an easy-going evening of mixing, mingling, and matching at The Anthologist.",
+        "lat": 51.514843,
+        "lng": -0.090756,
+        "mapUrl": "https://maps.google.com/?q=51.514843,-0.090756",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "coffee-club-speed-dating-26",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Coffee Club Speed Dating (25-38 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/coffee-club-speed-dating-26/",
+        "startDate": "2026-12-05",
+        "startTime": "10:00",
+        "endDate": "2026-12-05",
+        "venue": "Drake & Morgan at Kings Cross",
+        "location": "Drake & Morgan at Kings Cross, 6 Pancras Sq, London N1C 4AG",
+        "ticketStatus": "plenty",
+        "description": "Don’t be chai! Join us for the perfect blend of coffee, new connections, and fun conversation - all designed to help you meet your matcha.",
+        "lat": 51.533481,
+        "lng": -0.125043,
+        "mapUrl": "https://maps.google.com/?q=51.533481,-0.125043",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "sunday-park-walk-43",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Sunday Park Walk (50-65 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/sunday-park-walk-43/",
+        "startDate": "2026-12-06",
+        "startTime": "10:00",
+        "endDate": "2026-12-06",
+        "venue": "Regent's Bar & Kitchen",
+        "location": "Regent's Bar & Kitchen, The Regent's Park, Inner Cir, London NW1 4NU, United Kingdom",
+        "ticketStatus": "plenty",
+        "description": "Swap scrolling for strolling during this 6.5k park walk where you will connect with a fun bunch of single, active, and social people.",
+        "lat": 51.528336,
+        "lng": -0.154449,
+        "mapUrl": "https://maps.google.com/?q=51.528336,-0.154449",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-kings-cross-31",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Kings Cross (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-kings-cross-31/",
+        "startDate": "2026-12-07",
+        "startTime": "19:30",
+        "endDate": "2026-12-07",
+        "venue": "Drake & Morgan at Kings Cross",
+        "location": "Drake & Morgan at Kings Cross, 6 Pancras Sq, London N1C 4AG",
+        "ticketStatus": "plenty",
+        "description": "A relaxed venue, great people, and a fun, fast-paced format - the perfect setting for an evening of easy conversation and new connections.",
+        "lat": 51.533481,
+        "lng": -0.125043,
+        "mapUrl": "https://maps.google.com/?q=51.533481,-0.125043",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-tooting-11",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Tooting (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-tooting-11/",
+        "startDate": "2026-12-10",
+        "startTime": "19:30",
+        "endDate": "2026-12-10",
+        "venue": "And Then",
+        "location": "And Then, 54a Tooting High St, London SW17 0RN",
+        "ticketStatus": "plenty",
+        "description": "A chilled evening in a private rooftop space at And Then - easy introductions, good vibes, and a crowd that’s actually here to meet people.",
+        "lat": 51.42737,
+        "lng": -0.169092,
+        "mapUrl": "https://maps.google.com/?q=51.42737,-0.169092",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "singles-party-in-kings-cross-31",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Singles Party in Kings Cross (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/singles-party-in-kings-cross-31/",
+        "startDate": "2026-12-12",
+        "startTime": "19:30",
+        "endDate": "2026-12-12",
+        "venue": "Drake & Morgan at Kings Cross",
+        "location": "Drake & Morgan at Kings Cross, 6 Pancras Sq, London N1C 4AG",
+        "ticketStatus": "plenty",
+        "description": "Grab your free drink and ease into a relaxed singles night in Kings Cross, with 160+ guests, a stylish venue, and plenty of chances to meet someone new.",
+        "lat": 51.533481,
+        "lng": -0.125043,
+        "mapUrl": "https://maps.google.com/?q=51.533481,-0.125043",
+        "price": "£22",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-waterloo-7",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Waterloo (25-38 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-waterloo-7/",
+        "startDate": "2026-12-14",
+        "startTime": "19:30",
+        "endDate": "2026-12-14",
+        "venue": "BrewDog Waterloo",
+        "location": "BrewDog Waterloo, Unit G, Waterloo Station, 01 The Sidings, London SE1 7BH",
+        "ticketStatus": "plenty",
+        "description": "Are you 25-38? Single? Fancy a fun evening, a FREE drink, and meeting new people? This one’s for you. Join us for Speed Dating in Waterloo!",
+        "lat": 51.503364,
+        "lng": -0.112692,
+        "mapUrl": "https://maps.google.com/?q=51.503364,-0.112692",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "coffee-club-speed-dating-27",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Coffee Club Speed Dating (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/coffee-club-speed-dating-27/",
+        "startDate": "2026-12-19",
+        "startTime": "10:00",
+        "endDate": "2026-12-19",
+        "venue": "Drake & Morgan at Kings Cross",
+        "location": "Drake & Morgan at Kings Cross, 6 Pancras Sq, London N1C 4AG",
+        "ticketStatus": "plenty",
+        "description": "Don’t be chai! Join us for the perfect blend of coffee, new connections, and fun conversation - all designed to help you meet your matcha.",
+        "lat": 51.533481,
+        "lng": -0.125043,
+        "mapUrl": "https://maps.google.com/?q=51.533481,-0.125043",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "singles-party-in-the-city-17",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Singles Party in The City (40-65 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/singles-party-in-the-city-17/",
+        "startDate": "2026-12-19",
+        "startTime": "19:30",
+        "endDate": "2026-12-19",
+        "venue": "The Folly",
+        "location": "The Folly, 41 Gracechurch St, London EC3V 0BT",
+        "ticketStatus": "plenty",
+        "description": "Enjoy a complimentary drink and join 140 guests for a lively but relaxed singles evening in the City, designed to make meeting new people feel easy.",
+        "lat": 51.511371,
+        "lng": -0.085714,
+        "mapUrl": "https://maps.google.com/?q=51.511371,-0.085714",
+        "price": "£22",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "sunday-park-walk-44",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Sunday Park Walk (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/sunday-park-walk-44/",
+        "startDate": "2026-12-20",
+        "startTime": "10:00",
+        "endDate": "2026-12-20",
+        "venue": "Regent's Bar & Kitchen",
+        "location": "Regent's Bar & Kitchen, The Regent's Park, Inner Cir, London NW1 4NU, United Kingdom",
+        "ticketStatus": "plenty",
+        "description": "Swap scrolling for strolling during this 6.5k park walk where you will connect with a fun bunch of single, active, and social Londoners.",
+        "lat": 51.528336,
+        "lng": -0.154449,
+        "mapUrl": "https://maps.google.com/?q=51.528336,-0.154449",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "games-themed-speed-dating-67",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Games Themed Speed Dating (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/games-themed-speed-dating-67/",
+        "startDate": "2027-01-04",
+        "startTime": "19:15",
+        "endDate": "2027-01-04",
+        "venue": "Draughts",
+        "location": "Draughts, Arch 16 Leake St, London SE1 7NN",
+        "ticketStatus": "plenty",
+        "description": "Get your game face on and prepare to Connect(4) with a fun-loving group of single guests, playing new and nostalgic table games in an awesome London venue.",
+        "lat": 51.501779,
+        "lng": -0.115913,
+        "mapUrl": "https://maps.google.com/?q=51.501779,-0.115913",
+        "price": "£22",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-kings-cross-33",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Kings Cross (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-kings-cross-33/",
+        "startDate": "2027-01-05",
+        "startTime": "19:30",
+        "endDate": "2027-01-05",
+        "venue": "Drake & Morgan at Kings Cross",
+        "location": "Drake & Morgan at Kings Cross, 6 Pancras Sq, London N1C 4AG",
+        "ticketStatus": "plenty",
+        "description": "Think relaxed vibes, interesting people, and a format designed to keep things fun and flowing - meeting someone new has never felt easier.",
+        "lat": 51.533481,
+        "lng": -0.125043,
+        "mapUrl": "https://maps.google.com/?q=51.533481,-0.125043",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-soho-48",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Soho (25-38 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-soho-48/",
+        "startDate": "2027-01-06",
+        "startTime": "19:30",
+        "endDate": "2027-01-06",
+        "venue": "All Bar One",
+        "location": "All Bar One, 108 New Oxford St, Greater, London WC1A 1HD",
+        "ticketStatus": "plenty",
+        "description": "Join London's #1 rated dating events company and 30 lovely single guests for this super-fun and fast-paced evening of introductions in Soho.",
+        "lat": 51.51673,
+        "lng": -0.129176,
+        "mapUrl": "https://maps.google.com/?q=51.51673,-0.129176",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "boules-night-social",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Boules Night Social (25-38 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/boules-night-social/",
+        "startDate": "2027-01-08",
+        "startTime": "19:15",
+        "endDate": "2027-01-08",
+        "venue": "Boulebar South Bank",
+        "location": "Boulebar South Bank, 101 Upper Ground, London SE1 9PP",
+        "ticketStatus": "plenty",
+        "description": "Meet people, play boules, and make connections. A fun, free-flowing and relaxed social evening with games, good company and no Pétanquers!",
+        "lat": 51.507533,
+        "lng": -0.110257,
+        "mapUrl": "https://maps.google.com/?q=51.507533,-0.110257",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-the-city-203",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in The City (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-the-city-203/",
+        "startDate": "2027-01-08",
+        "startTime": "19:30",
+        "endDate": "2027-01-08",
+        "venue": "The Anthologist",
+        "location": "The Anthologist, 58 Gresham St, London EC2V 7BB",
+        "ticketStatus": "plenty",
+        "description": "This super-fun Friday night event attracts a fresh crowd each week, bringing you an evening of mixing, mingling and matching at The Anthologist.",
+        "lat": 51.514843,
+        "lng": -0.090756,
+        "mapUrl": "https://maps.google.com/?q=51.514843,-0.090756",
+        "price": "£17",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "singles-party-in-the-city-18",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Singles Party in The City (40-65 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/singles-party-in-the-city-18/",
+        "startDate": "2027-01-09",
+        "startTime": "19:30",
+        "endDate": "2027-01-09",
+        "venue": "The Folly",
+        "location": "The Folly, 41 Gracechurch St, London EC3V 0BT",
+        "ticketStatus": "plenty",
+        "description": "Enjoy a complimentary drink and join 140 guests for a lively but relaxed singles evening in the City, designed to make meeting new people feel easy.",
+        "lat": 51.511371,
+        "lng": -0.085714,
+        "mapUrl": "https://maps.google.com/?q=51.511371,-0.085714",
+        "price": "£22",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-the-city-205",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in The City (50-65 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-the-city-205/",
+        "startDate": "2027-01-12",
+        "startTime": "19:30",
+        "endDate": "2027-01-12",
+        "venue": "The Anthologist",
+        "location": "The Anthologist, 58 Gresham St, London EC2V 7BB",
+        "ticketStatus": "plenty",
+        "description": "This popular mid-week event always draws a great crowd as we host you for an evening of mixing, mingling, and matching at The Anthologist.",
+        "lat": 51.514843,
+        "lng": -0.090756,
+        "mapUrl": "https://maps.google.com/?q=51.514843,-0.090756",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "cocktail-chemistry-masterclass-9",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Cocktail Chemistry Masterclass (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/cocktail-chemistry-masterclass-9/",
+        "startDate": "2027-01-14",
+        "startTime": "19:30",
+        "endDate": "2027-01-14",
+        "venue": "The Alchemist",
+        "location": "The Alchemist, 52 Grosvenor Gardens, London SW1W 0AU",
+        "ticketStatus": "plenty",
+        "description": "Craft killer cocktails and meet creative singles at this Cocktail Chemistry Masterclass for fun-loving Londoners with great taste and a flair for something new.",
+        "lat": 51.495815,
+        "lng": -0.145722,
+        "mapUrl": "https://maps.google.com/?q=51.495815,-0.145722",
+        "price": "£32",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-paddington-29",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Paddington (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-paddington-29/",
+        "startDate": "2027-01-15",
+        "startTime": "19:30",
+        "endDate": "2027-01-15",
+        "venue": "Smith's Bar and Grill",
+        "location": "Smith's Bar and Grill, 25 Sheldon Square, London W2 6EY",
+        "ticketStatus": "plenty",
+        "description": "A super-stylish venue, 36 outgoing single guests, and an awesome host are all set for your fun and fast-paced evening of introductions in Paddington.",
+        "lat": 51.519142,
+        "lng": -0.178993,
+        "mapUrl": "https://maps.google.com/?q=51.519142,-0.178993",
+        "price": "£17",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "coffee-club-speed-dating-29",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Coffee Club Speed Dating (60-75 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/coffee-club-speed-dating-29/",
+        "startDate": "2027-01-16",
+        "startTime": "10:00",
+        "endDate": "2027-01-16",
+        "venue": "Drake & Morgan at Kings Cross",
+        "location": "Drake & Morgan at Kings Cross, 6 Pancras Sq, London N1C 4AG",
+        "ticketStatus": "plenty",
+        "description": "Don’t be chai! Join us for the perfect blend of coffee, new connections, and fun conversation - all designed to help you meet your matcha.",
+        "lat": 51.533481,
+        "lng": -0.125043,
+        "mapUrl": "https://maps.google.com/?q=51.533481,-0.125043",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "singles-party-in-kings-cross-32",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Singles Party in Kings Cross (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/singles-party-in-kings-cross-32/",
+        "startDate": "2027-01-16",
+        "startTime": "19:30",
+        "endDate": "2027-01-16",
+        "venue": "Drake & Morgan at Kings Cross",
+        "location": "Drake & Morgan at Kings Cross, 6 Pancras Sq, London N1C 4AG",
+        "ticketStatus": "plenty",
+        "description": "Grab your free drink and ease into a relaxed singles night in Kings Cross, with 160+ guests, a stylish venue, and plenty of chances to meet someone new.",
+        "lat": 51.533481,
+        "lng": -0.125043,
+        "mapUrl": "https://maps.google.com/?q=51.533481,-0.125043",
+        "price": "£22",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "sunday-park-walk-45",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Sunday Park Walk (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/sunday-park-walk-45/",
+        "startDate": "2027-01-17",
+        "startTime": "10:00",
+        "endDate": "2027-01-17",
+        "venue": "Regent's Bar & Kitchen",
+        "location": "Regent's Bar & Kitchen, The Regent's Park, Inner Cir, London NW1 4NU, United Kingdom",
+        "ticketStatus": "plenty",
+        "description": "Swap scrolling for strolling during this 6.5k park walk where you will connect with a fun bunch of single, active, and social Londoners.",
+        "lat": 51.528336,
+        "lng": -0.154449,
+        "mapUrl": "https://maps.google.com/?q=51.528336,-0.154449",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "games-themed-speed-dating-68",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Games Themed Speed Dating (25-38 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/games-themed-speed-dating-68/",
+        "startDate": "2027-01-18",
+        "startTime": "19:15",
+        "endDate": "2027-01-18",
+        "venue": "Draughts",
+        "location": "Draughts, Arch 16 Leake St, London SE1 7NN",
+        "ticketStatus": "plenty",
+        "description": "Good games, great people, and zero awkward energy - hang out with a fun singles crowd at one of London’s coolest venues.",
+        "lat": 51.501779,
+        "lng": -0.115913,
+        "mapUrl": "https://maps.google.com/?q=51.501779,-0.115913",
+        "price": "£22",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-soho-49",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Soho (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-soho-49/",
+        "startDate": "2027-01-20",
+        "startTime": "19:30",
+        "endDate": "2027-01-20",
+        "venue": "All Bar One",
+        "location": "All Bar One, 108 New Oxford St, Greater, London WC1A 1HD",
+        "ticketStatus": "plenty",
+        "description": "Join London's #1 rated dating events company and 30 lovely single guests for this super-fun and fast-paced evening of introductions in Soho.",
+        "lat": 51.51673,
+        "lng": -0.129176,
+        "mapUrl": "https://maps.google.com/?q=51.51673,-0.129176",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-the-city-207",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in The City (25-38 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-the-city-207/",
+        "startDate": "2027-01-22",
+        "startTime": "19:30",
+        "endDate": "2027-01-22",
+        "venue": "The Anthologist",
+        "location": "The Anthologist, 58 Gresham St, London EC2V 7BB",
+        "ticketStatus": "plenty",
+        "description": "This super-fun Friday night event attracts a fresh crowd each week, bringing you an evening of mixing, mingling and matching at The Anthologist.",
+        "lat": 51.514843,
+        "lng": -0.090756,
+        "mapUrl": "https://maps.google.com/?q=51.514843,-0.090756",
+        "price": "£17",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "friday-night-human-bingo",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Friday Night Human Bingo (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/friday-night-human-bingo/",
+        "startDate": "2027-01-22",
+        "startTime": "19:30",
+        "endDate": "2027-01-22",
+        "venue": "Drake & Morgan at Kings Cross",
+        "location": "Drake & Morgan at Kings Cross, 6 Pancras Sq, London N1C 4AG",
+        "ticketStatus": "plenty",
+        "description": "Single and ready to mingle, but over small talk? We’ve got you. Join 40 other singles for a fun night of Human Bingo - laughs, connections, no awkward chat.",
+        "lat": 51.533481,
+        "lng": -0.125043,
+        "mapUrl": "https://maps.google.com/?q=51.533481,-0.125043",
+        "price": "£17",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-clapham-9",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Clapham (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-clapham-9/",
+        "startDate": "2027-01-26",
+        "startTime": "19:30",
+        "endDate": "2027-01-26",
+        "venue": "Botanica Hall",
+        "location": "Botanica Hall, 1 St John's Rd, London SW11 1QN",
+        "ticketStatus": "plenty",
+        "description": "Single, up for a date in South London, and love a good time? Join us and 30 guests for an evening of introductions in Clapham!",
+        "lat": 51.462803,
+        "lng": -0.167416,
+        "mapUrl": "https://maps.google.com/?q=51.462803,-0.167416",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "speed-dating-in-tooting-12",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Speed Dating in Tooting (25-38 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/speed-dating-in-tooting-12/",
+        "startDate": "2027-01-28",
+        "startTime": "19:30",
+        "endDate": "2027-01-28",
+        "venue": "And Then",
+        "location": "And Then, 54a Tooting High St, London SW17 0RN",
+        "ticketStatus": "plenty",
+        "description": "A chilled evening in a private rooftop space at And Then - easy introductions, good vibes, and a crowd that’s actually here to meet people.",
+        "lat": 51.42737,
+        "lng": -0.169092,
+        "mapUrl": "https://maps.google.com/?q=51.42737,-0.169092",
+        "price": "£15",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "singles-party-in-the-city-19",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Singles Party in The City (40-55 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/singles-party-in-the-city-19/",
+        "startDate": "2027-01-29",
+        "startTime": "19:30",
+        "endDate": "2027-01-29",
+        "venue": "The Folly",
+        "location": "The Folly, 41 Gracechurch St, London EC3V 0BT",
+        "ticketStatus": "plenty",
+        "description": "A great crowd, a complimentary drink and an energetic host to keep the introductions flowing - sound like fun? Join our popular Singles Party in the City!",
+        "lat": 51.511371,
+        "lng": -0.085714,
+        "mapUrl": "https://maps.google.com/?q=51.511371,-0.085714",
+        "price": "£22",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "sunday-park-walk-46",
+        "source": "itsadate",
+        "hostId": "its-a-date",
+        "name": "Sunday Park Walk (30-45 yrs)",
+        "hostName": "It's a Date Club",
+        "url": "https://itsadate.club/event/sunday-park-walk-46/",
+        "startDate": "2027-01-31",
+        "startTime": "10:00",
+        "endDate": "2027-01-31",
+        "venue": "Regent's Bar & Kitchen",
+        "location": "Regent's Bar & Kitchen, The Regent's Park, Inner Cir, London NW1 4NU, United Kingdom",
+        "ticketStatus": "plenty",
+        "description": "Swap scrolling for strolling during this 6.5k park walk where you will connect with a fun bunch of single, active, and social Londoners.",
+        "lat": 51.528336,
+        "lng": -0.154449,
+        "mapUrl": "https://maps.google.com/?q=51.528336,-0.154449",
+        "price": "£20",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "2003789435141",
+        "source": "eventbrite",
+        "name": "All I Want for Christmas Is You - Knightsbridge Singles Mixer | Ages 35+",
+        "hostName": "Dating Events",
+        "url": "https://www.eventbrite.co.uk/e/all-i-want-for-christmas-is-you-knightsbridge-singles-mixer-ages-35-tickets-2003789435141",
+        "startDate": "2026-12-05",
+        "startTime": "20:00",
+        "endDate": "2026-12-06",
+        "venue": "The Aubrey",
+        "location": "66 Knightsbridge, London, SW1X 7LA",
+        "lat": 51.50207140000001,
+        "lng": -0.1602489,
+        "mapUrl": "https://maps.google.com/?q=51.50207140000001,-0.1602489",
+        "ticketStatus": "plenty",
+        "description": "Meet London singles aged 35+ for a festive evening at The Aubrey, Mandarin Oriental Hyde Park.",
+        "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190975535%2F190904825467%2F1%2Foriginal.20260813-130807?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=687%2C362%2C818%2C818&s=ccf7bb728a75d3a5db67f06db6cccc1e",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "1998864966924",
+        "source": "eventbrite",
+        "name": "Singles Party @ The Wren Tavern, Bank (Ages: 35-55)",
+        "hostName": "True Dating",
+        "url": "https://www.eventbrite.co.uk/e/singles-party-the-wren-tavern-bank-ages-35-55-tickets-1998864966924",
+        "startDate": "2026-11-21",
+        "startTime": "19:30",
+        "endDate": "2026-11-21",
+        "venue": "The Wren Tavern",
+        "location": "67-69 Watling Street, London, EC4M 9DT",
+        "lat": 51.51303050000001,
+        "lng": -0.09327440000000002,
+        "mapUrl": "https://maps.google.com/?q=51.51303050000001,-0.09327440000000002",
+        "ticketStatus": "plenty",
+        "description": "Meet London singles aged 35-55 at our Singles Party at The Wren Tavern - enjoy a free welcome drink and spark real connections.",
+        "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F272810829%2F49508719976%2F1%2Foriginal.20220425-194229?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C4500%2C4500&s=b658cc61b7a0dd63549b215a199e92d3",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "2000414819575",
+        "source": "eventbrite",
+        "name": "7 Deadly Sins: Halloween Singles Party @ The Devonshire Terrace (All Ages)",
+        "hostName": "the best singles parties in london",
+        "url": "https://www.eventbrite.co.uk/e/7-deadly-sins-halloween-singles-party-the-devonshire-terrace-all-ages-tickets-2000414819575",
+        "startDate": "2026-10-31",
+        "startTime": "19:30",
+        "endDate": "2026-10-31",
+        "venue": "Devonshire Terrace",
+        "location": "Devonshire Square, London, EC2M 4WY",
+        "lat": 51.5170998,
+        "lng": -0.0781852,
+        "mapUrl": "https://maps.google.com/?q=51.5170998,-0.0781852",
+        "ticketStatus": "plenty",
+        "description": "Get ready to mix, mingle, and sin a little at the wildest Halloween singles bash around!",
+        "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F274772139%2F534252381277%2F1%2Foriginal.20220428-084034?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=125%2C0%2C350%2C350&s=7c7a3965c0308da9470f463487ac3639",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "1996410432345",
+        "source": "eventbrite",
+        "name": "Speed Dating in London Bridge @ Amazing Grace | Ages 30-55 yrs",
+        "hostName": "London Speed Dating",
+        "url": "https://www.eventbrite.co.uk/e/speed-dating-in-london-bridge-amazing-grace-ages-30-55-yrs-tickets-1996410432345",
+        "startDate": "2026-11-07",
+        "startTime": "18:00",
+        "endDate": "2026-11-07",
+        "venue": "Amazing Grace",
+        "location": "9A St Thomas Street, London, SE1 9RY.",
+        "lat": 51.5049991,
+        "lng": -0.0884359,
+        "mapUrl": "https://maps.google.com/?q=51.5049991,-0.0884359",
+        "ticketStatus": "plenty",
+        "description": "Meet up to 20 singles, then enjoy live music, drinks and dancing at Amazing Grace.",
+        "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1184131339%2F194455792448%2F1%2Foriginal.20260508-155701?w=2000&auto=format%2Ccompress&q=75&sharp=10&s=5e02b3cfea5633fc7fd560780a040f33",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "2002748923944",
+        "source": "eventbrite",
+        "name": "LESBIAN SPEED DATING AGES 30-39",
+        "hostName": "Lesbian Island",
+        "url": "https://www.eventbrite.co.uk/e/lesbian-speed-dating-ages-30-39-tickets-2002748923944",
+        "startDate": "2026-11-08",
+        "startTime": "19:00",
+        "endDate": "2026-11-08",
+        "venue": "Antro",
+        "location": "30 Acre Lane, London, SW2 5SG",
+        "lat": 51.4607603,
+        "lng": -0.1184218,
+        "mapUrl": "https://maps.google.com/?q=51.4607603,-0.1184218",
+        "ticketStatus": "plenty",
+        "description": "Londons most loved WLW speed dating event comes to Brixton! Matches sent via text",
+        "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F960263583%2F199597558616%2F1%2Foriginal.20250213-194416?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C292%2C1415%2C1415&s=a4bcac5a04f00576f841f552e5f348b4",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "1998483628330",
+        "source": "eventbrite",
+        "name": "SPEEDY DATING",
+        "hostName": "Francesca Allen",
+        "url": "https://www.eventbrite.co.uk/e/speedy-dating-tickets-1998483628330",
+        "startDate": "2026-10-29",
+        "startTime": "20:00",
+        "endDate": "2026-10-29",
+        "venue": "The Crown",
+        "location": "223 Grove Road, London, E3 5SN",
+        "lat": 51.53293,
+        "lng": -0.0415831,
+        "mapUrl": "https://maps.google.com/?q=51.53293,-0.0415831",
+        "ticketStatus": "limited",
+        "description": "Cupid's gone corporate baby! Bringing you the hottest speed dating nights in London.",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
+      },
+      {
+        "id": "2002739847797",
+        "source": "eventbrite",
+        "name": "South Asian Halloween Masquerade Ball",
+        "hostName": "Asian Single Solution",
+        "url": "https://www.eventbrite.co.uk/e/south-asian-halloween-masquerade-ball-tickets-2002739847797",
+        "startDate": "2026-10-31",
+        "startTime": "19:15",
+        "endDate": "2026-10-31",
+        "venue": "Secret venue will be revealed to ticket holders",
+        "location": "Chancery Lane, London, Ec4A",
+        "lat": 51.5139114,
+        "lng": -0.1110601,
+        "mapUrl": "https://maps.google.com/?q=51.5139114,-0.1110601",
+        "ticketStatus": "plenty",
+        "description": "Meet up to 200 Hindu, Sikh and Christian South Asian singles at this very special event",
+        "hostLogo": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1187031260%2F568393707263%2F1%2Foriginal.20260616-144950?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=6%2C134%2C1327%2C228&s=887b11a391f6ead6c28fa92dd060daef",
+        "origin": "auto",
+        "firstSeen": "2026-10-26",
+        "lastSeen": "2026-10-26"
       }
     ]
   },

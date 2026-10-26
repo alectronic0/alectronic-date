@@ -11,14 +11,14 @@ A module may also expose:
 
 from sources import (
     adventure_cinema, airbnb, art_dating_club, be_dating_beautiful, classbento, designmynight, eventbrite, eventbrite_london,
-    eventbrite_singles, fatsoma, fever, fever_london, fig, haystack, secretlondon, thursday, timeout,
+    eventbrite_singles, fatsoma, fever, fever_london, fig, haystack, its_a_date, secretlondon, thursday, timeout,
 )
 
 SOURCES = {
     "classes": [classbento, airbnb],
     "cinema": [fever, adventure_cinema],
     "nerd": [eventbrite],
-    "singles": [thursday, haystack, fig, art_dating_club, be_dating_beautiful, eventbrite_singles],
+    "singles": [thursday, haystack, fig, art_dating_club, be_dating_beautiful, its_a_date, eventbrite_singles],
     "spots": [],
     "activities": [designmynight, timeout, secretlondon, fever_london, fatsoma, eventbrite_london],
 }
