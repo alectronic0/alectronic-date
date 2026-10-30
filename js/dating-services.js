@@ -1155,6 +1155,59 @@ window.DATING_SERVICES = {
         "https://cavendishintroductions.co.uk/steps-to-success/",
         "https://abia.org.uk/agencies/cavendish-introductions/"
       ]
+    },
+    {
+      "slug": "bowes-lyon-partnership",
+      "name": "Bowes-Lyon Partnership",
+      "url": "https://www.bowes-lyonpartnership.co.uk/",
+      "logo": null,
+      "abia": false,
+      "founded": 2009,
+      "price": "£10,000 + VAT (Classic) to £15,000 + VAT (Premium)",
+      "consultation": null,
+      "contractLength": "9 to 21 months",
+      "areas": "London, with members across the UK",
+      "suits": "Bespoke introductions for professionals looking for a committed relationship.",
+      "track": [],
+      "sources": [
+        "https://www.bowes-lyonpartnership.co.uk/membership-packages",
+        "https://www.bowes-lyonpartnership.co.uk/our-approach"
+      ]
+    },
+    {
+      "slug": "the-matchmaker-uk",
+      "name": "The Matchmaker UK",
+      "url": "https://thematchmaker.uk/",
+      "logo": null,
+      "abia": false,
+      "founded": null,
+      "price": "Not published",
+      "consultation": null,
+      "contractLength": null,
+      "areas": "Manchester and London, with a UK and international service",
+      "suits": "Bespoke introductions for clients after a curated, members-only network.",
+      "track": [],
+      "sources": [
+        "https://thematchmaker.uk/"
+      ]
+    },
+    {
+      "slug": "selective-search",
+      "name": "Selective Search",
+      "url": "https://www.selectivesearch.com/",
+      "logo": null,
+      "abia": false,
+      "founded": null,
+      "price": "Client fees not published; the candidate programme is free",
+      "consultation": null,
+      "contractLength": null,
+      "areas": "US-based",
+      "suits": "Human-led matchmaking, with a free candidate programme for people not ready to become paying clients.",
+      "track": [],
+      "sources": [
+        "https://www.selectivesearch.com/",
+        "https://www.selectivesearch.com/candidate-program/"
+      ]
     }
   ]
 };
