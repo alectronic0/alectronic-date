@@ -2840,6 +2840,10 @@ window.CONTENT = {
                 {
                   "label": "✂️ Crafts",
                   "hint": "Always up for getting crafty 😏✂️"
+                },
+                {
+                  "label": "🖌️ Warhammer (Want to try)",
+                  "hint": "If I had infinite time, I'd be painting a tiny army 🖌️"
                 }
               ]
             },
@@ -3312,7 +3316,7 @@ window.CONTENT = {
             {
               "icon": "🏃",
               "title": "Active",
-              "body": "Outdoorsy stuff that doesn't feel like a workout: long countryside walks (ideally with a dog), getting out on the bike, archery, and the showy one: spinning fire and LED staffs after dark.",
+              "body": "Outdoorsy stuff that doesn't feel like a workout: long countryside walks (ideally with a dog), hikes with a good view at the top, getting out on the bike, and the showy one: spinning fire and LED staffs after dark.",
               "images": [
                 {
                   "src": "img/hobbies/autumn-walk-with-dachshund-dog.webp",
@@ -3337,12 +3341,16 @@ window.CONTENT = {
                   "hint": "Best paired with a dog and a cosy pub finish 🐶"
                 },
                 {
+                  "label": "⛰️ Hiking",
+                  "hint": "Happy to earn the view, as long as there's food at the top ⛰️"
+                },
+                {
                   "label": "🚴 Cycling",
                   "hint": "Getting out on two wheels for a scenic ride 🚴"
                 },
                 {
-                  "label": "🏹 Archery",
-                  "hint": "Hitting the bullseye with bow and arrow 🏹"
+                  "label": "🏹 Archery (Dabbling)",
+                  "hint": "If I had infinite time, I'd be hitting a lot more bullseyes 🏹"
                 },
                 {
                   "label": "🔥 Fire & LED Staff",
