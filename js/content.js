@@ -2842,8 +2842,8 @@ window.CONTENT = {
                   "hint": "Always up for getting crafty 😏✂️"
                 },
                 {
-                  "label": "🖌️ Warhammer (Want to try)",
-                  "hint": "If I had infinite time, I'd be painting a tiny army 🖌️"
+                  "label": "🖌️ Warhammer",
+                  "hint": "The lore, the factions, the tiny armies 🖌️"
                 }
               ]
             },
@@ -3349,8 +3349,8 @@ window.CONTENT = {
                   "hint": "Getting out on two wheels for a scenic ride 🚴"
                 },
                 {
-                  "label": "🏹 Archery (Dabbling)",
-                  "hint": "If I had infinite time, I'd be hitting a lot more bullseyes 🏹"
+                  "label": "🏹 Archery",
+                  "hint": "Hitting the bullseye with bow and arrow 🏹"
                 },
                 {
                   "label": "🔥 Fire & LED Staff",
