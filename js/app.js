@@ -2743,13 +2743,17 @@
   // opens the tease modal, whose 🔓 button swaps it for the punchline
   // modal — which is really just the contact + share cards.
   function initCheekyGag() {
-    const banner = document.querySelector('.locked-banner');
-    if (banner) banner.addEventListener('click', () => openDeepModal('secretContent'));
     document.addEventListener('click', (e) => {
-      if (!e.target.closest('.cheeky-unlock')) return;
-      const open = e.target.closest('dialog.deep-modal');
-      if (open && open.id !== 'cheeky-modal') open.close();
-      openDeepModal('cheeky-modal');
+      if (e.target.closest('.locked-banner')) {
+        openDeepModal('secretContent');
+        return;
+      }
+      if (e.target.closest('.cheeky-unlock')) {
+        const open = e.target.closest('dialog.deep-modal');
+        if (open && open.id !== 'cheeky-modal') open.close();
+        openDeepModal('cheeky-modal');
+        return;
+      }
     });
 
     // "Shoot Your Shot" button — close modal, scroll to contact section
