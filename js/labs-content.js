@@ -364,6 +364,29 @@ Object.assign(window.CONTENT, {
         "logo": "../img/logos/platforms/its-a-date.png"
       },
       {
+        "id": "sparked-connection",
+        "name": "Sparked Connection",
+        "people": [
+          "Anna"
+        ],
+        "blurb": "London boutique matchmaking and curated singles events: Soho speakeasy parties, wine tastings, pub quizzes and mixers for professionals aged 25+.",
+        "links": [
+          {
+            "label": "🌐 Website",
+            "url": "https://sparkedconnection.com"
+          },
+          {
+            "label": "🎟️ Fatsoma",
+            "url": "https://www.fatsoma.com/p/sparked-connection"
+          },
+          {
+            "label": "📸 Instagram",
+            "url": "https://www.instagram.com/sparked_connection/"
+          }
+        ],
+        "logo": "../img/logos/platforms/sparked-connection.png"
+      },
+      {
         "id": "original-dating",
         "name": "Original Dating",
         "people": [
