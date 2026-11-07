@@ -160,6 +160,8 @@
     });
     $('host-select').innerHTML = '<option value="">All hosts</option>' +
       names.map((n) => `<option value="${esc(n)}">${spotlight.has(n) ? '⭐ ' : ''}${esc(n)} (${counts[n]})</option>`).join('');
+    if (!names.includes(state.host)) state.host = '';
+    $('host-select').value = state.host;
   }
 
   // ---------- Schedule: list ----------
@@ -490,6 +492,15 @@
     window.addEventListener('hashchange', () => showTab(location.hash.slice(1)));
   }
 
+  async function mergeLiveEvents() {
+    if (!window.EventsApi) return;
+    const liveItems = await window.EventsApi.load();
+    if (!liveItems.length) return;
+    guide = { ...guide, items: window.EventsApi.mergeBySource(guide.items, liveItems) };
+    renderHostOptions();
+    render();
+  }
+
   function init() {
     const content = window.CONTENT || {};
     guide = content.singlesGuide || guide;
@@ -502,6 +513,7 @@
     bindLogoFallback();
     bind();
     showTab(location.hash.slice(1));
+    mergeLiveEvents().catch((err) => console.warn(`Could not show live events: ${err.message}`));
   }
 
   document.addEventListener('DOMContentLoaded', init);
