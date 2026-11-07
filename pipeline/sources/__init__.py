@@ -10,17 +10,16 @@ A module may also expose:
 """
 
 from sources import (
-    adventure_cinema, airbnb, art_dating_club, classbento, designmynight, eventbrite, eventbrite_london,
-    fatsoma, fever, fever_london, fig, haystack, its_a_date, secretlondon, sparked_connection, timeout,
+    adventure_cinema, airbnb, classbento, designmynight, eventbrite, eventbrite_london,
+    fatsoma, fever, fever_london, secretlondon, timeout,
 )
 
 SOURCES = {
     "classes": [classbento, airbnb],
     "cinema": [fever, adventure_cinema],
     "nerd": [eventbrite],
-    # Eventbrite, Thursday and Be Dating Beautiful are not cleared for scraping (terms ban it, or permission is pending).
-    # Their modules stay on disk but must not return to this list until that is resolved.
-    "singles": [haystack, fig, art_dating_club, its_a_date, sparked_connection],
+    # Singles events now come from the events API; scraping them here would repopulate the saved list.
+    "singles": [],
     "spots": [],
     "activities": [designmynight, timeout, secretlondon, fever_london, fatsoma, eventbrite_london],
 }

@@ -1,4 +1,4 @@
-// Live singles events from our own events API, mapped to the item shape of window.CONTENT.singlesGuide.items.
+// Live singles events and source health from our own events API; events are mapped to the item shape the guide renders.
 // Loaded by labs/events.html (window.EventsApi) and by node --test (module.exports).
 (function (root) {
   // Temporary workers.dev URL until the API has its own domain.
@@ -18,10 +18,23 @@
     return value != null;
   }
 
+  // Same thresholds the saved list used: 10 spaces or fewer, or 20% of a known capacity.
+  const LOW_STOCK_SPOTS = 10;
+  const LOW_STOCK_SHARE = 0.2;
+
+  function isLowStock(apiEvent) {
+    const left = apiEvent.meta?.spacesLeft;
+    if (left == null) return false;
+    if (apiEvent.spacesMax) return left / apiEvent.spacesMax <= LOW_STOCK_SHARE;
+    return left <= LOW_STOCK_SPOTS;
+  }
+
+  // Hosts word "limited" differently ("men: sold out, women: limited"), so the note is matched, not compared.
   function ticketStatusOf(apiEvent) {
     if (apiEvent.hasSpaces === false) return 'sold_out';
     if (apiEvent.hasSpaces !== true) return 'unknown';
-    return apiEvent.availabilityNote === 'limited' ? 'limited' : 'plenty';
+    if (/limited/i.test(apiEvent.availabilityNote || '')) return 'limited';
+    return isLowStock(apiEvent) ? 'limited' : 'plenty';
   }
 
   // Optional legacy fields are left off rather than set to null, so the UI's `== null` and truthiness checks hold.
@@ -66,18 +79,6 @@
     return Boolean(apiEvent.source);
   }
 
-  function byStart(a, b) {
-    return (a.startDate || '').localeCompare(b.startDate || '') || (a.startTime || '').localeCompare(b.startTime || '');
-  }
-
-  // The API is authoritative for every source it returns; sources it says nothing about keep their snapshot items.
-  function mergeBySource(snapshotItems, apiItems) {
-    if (!apiItems.length) return snapshotItems;
-    const apiSources = new Set(apiItems.map((item) => item.source));
-    const kept = snapshotItems.filter((item) => !apiSources.has(item.source));
-    return [...kept, ...apiItems].sort(byStart);
-  }
-
   // A hanging fetch may ignore the abort signal, so the timeout also rejects the race itself.
   async function fetchJson(fetchImpl, url, timeoutMs) {
     const controller = new AbortController();
@@ -97,18 +98,36 @@
     }
   }
 
-  async function load(fetchImpl = fetch, timeoutMs = DEFAULT_TIMEOUT_MS) {
+  // Callers tell a failed request from an empty one by `ok`; neither case throws.
+  async function request(fetchImpl, path, timeoutMs, read) {
     try {
-      const payload = await fetchJson(fetchImpl, `${API_BASE}/events?limit=${EVENTS_LIMIT}`, timeoutMs);
-      if (!Array.isArray(payload?.events)) throw new Error('response has no events array');
-      return payload.events.filter(isMappable).map(mapEvent);
+      const payload = await fetchJson(fetchImpl, `${API_BASE}${path}`, timeoutMs);
+      return { ok: true, ...read(payload) };
     } catch (err) {
-      console.warn(`Live events unavailable, showing the saved list: ${err.message}`);
-      return [];
+      console.warn(`Events API ${path} unavailable: ${err.message}`);
+      return { ok: false, error: err.message };
     }
   }
 
-  const api = { API_BASE, load, mapEvent, mergeBySource };
+  function readEvents(payload) {
+    if (!Array.isArray(payload?.events)) throw new Error('response has no events array');
+    return { items: payload.events.filter(isMappable).map(mapEvent) };
+  }
+
+  function readHealth(payload) {
+    if (!Array.isArray(payload?.sources)) throw new Error('response has no sources array');
+    return { sources: payload.sources };
+  }
+
+  function load(fetchImpl = fetch, timeoutMs = DEFAULT_TIMEOUT_MS) {
+    return request(fetchImpl, `/events?limit=${EVENTS_LIMIT}`, timeoutMs, readEvents);
+  }
+
+  function loadHealth(fetchImpl = fetch, timeoutMs = DEFAULT_TIMEOUT_MS) {
+    return request(fetchImpl, '/health', timeoutMs, readHealth);
+  }
+
+  const api = { API_BASE, load, loadHealth, mapEvent };
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.EventsApi = api;
 })(typeof window !== 'undefined' ? window : globalThis);

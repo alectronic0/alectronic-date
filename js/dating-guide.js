@@ -54,12 +54,22 @@
 
   // ---------- Event cross-link: services that also host nights in the singles guide ----------
 
-  function eventCounts() {
-    const items = (window.CONTENT && window.CONTENT.singlesGuide && window.CONTENT.singlesGuide.items) || [];
+  let upcomingByHost = {};
+
+  function countUpcomingByHost(items) {
     const counts = {};
     const now = today();
     items.filter((e) => e.hostId && e.startDate >= now).forEach((e) => { counts[e.hostId] = (counts[e.hostId] || 0) + 1; });
     return counts;
+  }
+
+  // Counts are an extra: when the API is down the cards simply show no event link.
+  async function loadUpcomingCounts(services, render) {
+    if (!services.some((s) => s.eventsHostId)) return;
+    const result = await window.EventsApi.load();
+    if (!result.ok) return;
+    upcomingByHost = countUpcomingByHost(result.items);
+    render();
   }
 
   // ---------- Cards ----------
@@ -170,11 +180,10 @@
   }
 
   function renderList(services) {
-    const events = eventCounts();
     const shown = services.filter(matches);
     $('dating-count').textContent = `Showing ${shown.length} of ${services.length}`;
     $('dating-grid').innerHTML = shown.length
-      ? shown.map((s) => card(s, events)).join('')
+      ? shown.map((s) => card(s, upcomingByHost)).join('')
       : '<div class="empty-state">Nothing matches. Try clearing a filter.</div>';
   }
 
@@ -201,6 +210,7 @@
     if ($('category-select')) $('category-select').addEventListener('change', (e) => { state.category = e.target.value; renderList(services); });
     if ($('verified-only')) $('verified-only').addEventListener('change', (e) => { state.verifiedOnly = e.target.checked; renderList(services); });
     renderList(services);
+    loadUpcomingCounts(services, () => renderList(services));
   }
 
   // ---------- Hub ----------

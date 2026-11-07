@@ -1,5 +1,5 @@
 // Singles event guide (labs/events.html): Schedule (list + calendar), Map and Platforms tabs.
-// Data: window.CONTENT.singlesGuide ({hosts, items}) and window.CONTENT.singlesEvents (platforms).
+// Data: events and source health come from window.EventsApi; window.CONTENT.singlesGuide.hosts (spotlights) and window.CONTENT.singlesEvents (platforms) are hand-curated.
 (function () {
   const TABS = ['schedule', 'map', 'platforms'];
   const DAY_MS = 86400000;
@@ -26,13 +26,21 @@
     month: null,
     day: null,
   };
+  const STATUS_MESSAGES = {
+    loading: 'Loading events...',
+    empty: 'No events are listed right now. Please check back soon.',
+    error: 'Oops, we had an issue pulling the events data. Please try again soon.',
+  };
   let guide = { hosts: [], items: [] };
+  let feedStatus = 'loading';
+  let refreshedAgeHours = null;
   let hostsById = {};
   let map = null;
   let markerLayer = null;
 
   const $ = (id) => document.getElementById(id);
   const { esc, safeUrl, safeAsset, monogram, logoHtml, bindLogoFallback } = window.LabsUI;
+  const { groupSources, chipModel, freshestAgeHours, ageText } = window.SourceStatus;
 
   function todayISO() {
     const now = new Date();
@@ -109,10 +117,10 @@
 
   function renderHosts() {
     const strip = $('host-strip');
-    if (!guide.hosts.length) {
-      strip.hidden = true;
-      return;
-    }
+    strip.hidden = true;
+    if (!guide.hosts.length) return;
+    if (feedStatus !== 'ready') return;
+    strip.hidden = false;
     strip.innerHTML = guide.hosts.map((host) => {
       const next = nextEventFor(host);
       const people = (host.people || []).join(' & ');
@@ -432,14 +440,32 @@
     const events = filtered();
     const full = events.filter((e) => ticketStatus(e) === 'sold_out').length;
     const nearly = events.filter((e) => ticketStatus(e) === 'limited').length;
-    const synced = window.LABS_SYNC && window.LABS_SYNC.singles;
-    $('guide-count').textContent = `${events.length} ${events.length === 1 ? 'event' : 'events'} · ${nearly} nearly sold out · ${full} full` +
-      (synced ? ` · synced ${dayLabel(synced.lastSynced, { day: 'numeric', month: 'short' })}` : '');
+    const refreshed = refreshedAgeHours == null ? '' : ` · refreshed ${ageText(refreshedAgeHours)}`;
+    $('guide-count').textContent = `${events.length} ${events.length === 1 ? 'event' : 'events'} · ${nearly} nearly sold out · ${full} full${refreshed}`;
+  }
+
+  function renderStatus() {
+    const box = $('events-status');
+    box.hidden = true;
+    if (feedStatus === 'ready') return;
+    if (state.tab === 'platforms') return;
+    box.className = `events-status events-status-${feedStatus}`;
+    const retry = feedStatus === 'error' ? '<button class="filter-btn" type="button" data-retry>Try again</button>' : '';
+    box.innerHTML = `<p>${STATUS_MESSAGES[feedStatus]}</p>${retry}`;
+    box.hidden = false;
+  }
+
+  function applyFeedVisibility() {
+    const eventsReady = feedStatus === 'ready';
+    $('guide-filters').hidden = state.tab === 'platforms' || !eventsReady;
+    TABS.forEach((t) => { $(`panel-${t}`).hidden = t !== state.tab || (t !== 'platforms' && !eventsReady); });
+    renderStatus();
   }
 
   function render() {
     renderHosts();
     renderCount();
+    if (feedStatus !== 'ready') return;
     if (state.tab === 'schedule') renderSchedule();
     if (state.tab === 'map') renderMap();
   }
@@ -451,8 +477,7 @@
       b.classList.toggle('active', on);
       b.setAttribute('aria-selected', on ? 'true' : 'false');
     });
-    TABS.forEach((t) => { $(`panel-${t}`).hidden = t !== state.tab; });
-    $('guide-filters').hidden = state.tab === 'platforms';
+    applyFeedVisibility();
     if (location.hash !== `#${state.tab}`) history.replaceState(null, '', `#${state.tab}`);
     if (state.tab === 'platforms') renderPlatforms();
     render();
@@ -489,31 +514,98 @@
       platformQuery = e.target.value.trim().toLowerCase();
       renderPlatforms();
     });
+    $('events-status').addEventListener('click', (e) => {
+      if (e.target.closest('[data-retry]')) loadEvents();
+    });
     window.addEventListener('hashchange', () => showTab(location.hash.slice(1)));
   }
 
-  async function mergeLiveEvents() {
-    if (!window.EventsApi) return;
-    const liveItems = await window.EventsApi.load();
-    if (!liveItems.length) return;
-    guide = { ...guide, items: window.EventsApi.mergeBySource(guide.items, liveItems) };
+  // ---------- Live data ----------
+
+  function setFeedStatus(status) {
+    feedStatus = status;
     renderHostOptions();
+    applyFeedVisibility();
     render();
+  }
+
+  async function loadEvents() {
+    guide.items = [];
+    setFeedStatus('loading');
+    const result = await window.EventsApi.load();
+    if (!result.ok) return setFeedStatus('error');
+    guide.items = result.items;
+    setFeedStatus(result.items.length ? 'ready' : 'empty');
+  }
+
+  function chipHtml(source) {
+    const chip = chipModel(source);
+    return `
+      <li>
+        <a class="source-chip source-${chip.state}" href="${esc(safeUrl(chip.url))}" target="_blank" rel="noopener noreferrer" aria-label="${esc(chip.ariaLabel)}">
+          ${logoHtml(chip.name, safeAsset(chip.logo), 'logo-sm')}
+          <span class="source-name">${esc(chip.name)}</span>
+          <span class="source-status"><span class="source-icon" aria-hidden="true">${chip.icon}</span>${esc(chip.label)}</span>
+        </a>
+      </li>`;
+  }
+
+  function sourceGroupHtml(title, sources) {
+    if (!sources.length) return '';
+    return `
+      <div class="source-group">
+        <h3 class="source-group-title">${title}</h3>
+        <ul class="source-chips">${sources.filter((s) => safeUrl(s.url)).map(chipHtml).join('')}</ul>
+      </div>`;
+  }
+
+  function sourceLegendHtml() {
+    return `
+      <ul class="source-legend" aria-label="Status key">
+        <li><span class="source-icon source-ok" aria-hidden="true">✓</span> refreshed recently</li>
+        <li><span class="source-icon source-warning" aria-hidden="true">⚠</span> issue or overdue</li>
+        <li><span class="source-icon source-stale" aria-hidden="true">✕</span> stale or paused</li>
+        <li><span class="source-icon source-pending" aria-hidden="true">⏳</span> not connected yet</li>
+      </ul>`;
+  }
+
+  function renderSources(health) {
+    const strip = $('source-strip');
+    strip.hidden = false;
+    if (!health.ok) {
+      strip.innerHTML = '<p class="source-unavailable">Source status is unavailable right now.</p>';
+      return;
+    }
+    const { live, notConnected } = groupSources(health.sources);
+    strip.innerHTML = `
+      <h2 class="source-title">Where these events come from</h2>
+      <p class="source-hint">Click a logo to visit the official site.</p>
+      ${sourceGroupHtml('Live feeds', live)}
+      ${sourceGroupHtml('Not connected yet', notConnected)}
+      ${sourceLegendHtml()}`;
+  }
+
+  async function loadSources() {
+    const health = await window.EventsApi.loadHealth();
+    if (health.ok) refreshedAgeHours = freshestAgeHours(health.sources);
+    renderSources(health);
+    renderCount();
   }
 
   function init() {
     const content = window.CONTENT || {};
-    guide = content.singlesGuide || guide;
+    const { tag, title, subtitle, hosts = [] } = content.singlesGuide || {};
+    guide = { hosts, items: [] };
     hostsById = Object.fromEntries((guide.hosts || []).map((h) => [h.id, h]));
-    if (guide.tag) $('section-tag').textContent = guide.tag;
-    if (guide.title) $('section-title').textContent = guide.title;
-    if (guide.subtitle) $('section-subtitle').textContent = guide.subtitle;
+    if (tag) $('section-tag').textContent = tag;
+    if (title) $('section-title').textContent = title;
+    if (subtitle) $('section-subtitle').textContent = subtitle;
     $('year').textContent = new Date().getFullYear();
-    renderHostOptions();
     bindLogoFallback();
     bind();
     showTab(location.hash.slice(1));
-    mergeLiveEvents().catch((err) => console.warn(`Could not show live events: ${err.message}`));
+    loadEvents();
+    loadSources();
   }
 
   document.addEventListener('DOMContentLoaded', init);
