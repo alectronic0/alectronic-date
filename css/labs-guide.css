@@ -1102,3 +1102,10 @@
   border: 1px solid rgba(229, 72, 77, 0.6);
   border-radius: 999px;
 }
+
+.group-heading {
+  grid-column: 1 / -1;
+  font-size: 1.1rem;
+  margin: var(--space-4) 0 0;
+  color: var(--gold);
+}
