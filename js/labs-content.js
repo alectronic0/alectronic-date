@@ -7249,7 +7249,12 @@ Object.assign(window.CONTENT, {
           "Date Night",
           "Masterclasses"
         ],
-        "instagram": "https://www.instagram.com/rhumtavern/"
+        "instagram": "https://www.instagram.com/rhumtavern/",
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 30,
+        "costChecked": "2026-11-08",
+        "costSource": "https://rhumtavern.com/our-menu/"
       },
       {
         "name": "SWITCH Games Bar",
@@ -7268,7 +7273,8 @@ Object.assign(window.CONTENT, {
           "Cocktails",
           "Day Trip"
         ],
-        "instagram": "https://www.instagram.com/thatgamesbar_/"
+        "instagram": "https://www.instagram.com/thatgamesbar_/",
+        "indoor": true
       },
       {
         "name": "Valemark Tables",
@@ -7286,7 +7292,8 @@ Object.assign(window.CONTENT, {
           "Social Dining",
           "Date Night"
         ],
-        "instagram": "https://www.instagram.com/thevalemark/"
+        "instagram": "https://www.instagram.com/thevalemark/",
+        "indoor": true
       },
       {
         "name": "Boneyard London — Knife Forging & Blacksmithing",
@@ -7304,7 +7311,8 @@ Object.assign(window.CONTENT, {
           "Wimbledon",
           "Hands-On Date"
         ],
-        "instagram": "https://www.instagram.com/boneyardlondon/"
+        "instagram": "https://www.instagram.com/boneyardlondon/",
+        "indoor": true
       },
       {
         "name": "Pool House",
@@ -7322,7 +7330,8 @@ Object.assign(window.CONTENT, {
           "Broadgate",
           "Cocktails",
           "Late Night"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Mercato Metropolitano",
@@ -7338,7 +7347,8 @@ Object.assign(window.CONTENT, {
           "Street Food",
           "Craft Beer",
           "Elephant & Castle"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Seven Dials Market",
@@ -7354,7 +7364,8 @@ Object.assign(window.CONTENT, {
           "Cheese Bar",
           "Covent Garden",
           "Food Hall"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Borough Market",
@@ -7370,7 +7381,8 @@ Object.assign(window.CONTENT, {
           "Artisan",
           "London Bridge",
           "Street Food"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Columbia Road Flower Market",
@@ -7388,7 +7400,8 @@ Object.assign(window.CONTENT, {
           "East London",
           "Coffee",
           "Walk"
-        ]
+        ],
+        "indoor": false
       },
       {
         "name": "Maltby Street Market",
@@ -7404,7 +7417,8 @@ Object.assign(window.CONTENT, {
           "Bermondsey",
           "Weekend Market",
           "Hidden Gem"
-        ]
+        ],
+        "indoor": false
       },
       {
         "name": "Market Halls Oxford Street",
@@ -7420,7 +7434,8 @@ Object.assign(window.CONTENT, {
           "Oxford Street",
           "Central London",
           "Drinks"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Market Halls Victoria",
@@ -7436,7 +7451,8 @@ Object.assign(window.CONTENT, {
           "Victoria",
           "Rooftop Bar",
           "Street Food"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Victoria Park Market",
@@ -7452,7 +7468,8 @@ Object.assign(window.CONTENT, {
           "Food Market",
           "Victoria Park",
           "East London"
-        ]
+        ],
+        "indoor": false
       },
       {
         "name": "Brockley Market",
@@ -7468,7 +7485,8 @@ Object.assign(window.CONTENT, {
           "Saturday",
           "Brockley",
           "Speciality Food"
-        ]
+        ],
+        "indoor": false
       },
       {
         "name": "Udderly Fresh Raw Milk",
@@ -7484,7 +7502,8 @@ Object.assign(window.CONTENT, {
           "Raw Milk",
           "Hertfordshire",
           "Local"
-        ]
+        ],
+        "indoor": false
       },
       {
         "name": "Stepney City Farm",
@@ -7500,7 +7519,12 @@ Object.assign(window.CONTENT, {
           "Animals",
           "East London",
           "Cafe"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://stepneycityfarm.org/"
       },
       {
         "name": "Orcs Nest",
@@ -7517,7 +7541,8 @@ Object.assign(window.CONTENT, {
           "Tabletop",
           "Covent Garden",
           "Nerd Culture"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "IKEA Milton Keynes",
@@ -7534,7 +7559,11 @@ Object.assign(window.CONTENT, {
           "Swedish Deli",
           "Meatballs",
           "Showroom Date"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "Lunar Coven Cove at Everchange Emporium",
@@ -7550,7 +7579,8 @@ Object.assign(window.CONTENT, {
           "Crystals",
           "Tarot",
           "Quirky"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Twinings — Tea Masterclass & Tasting Experience",
@@ -7567,7 +7597,12 @@ Object.assign(window.CONTENT, {
           "The Strand",
           "Sensory Experience",
           "Historic"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 50,
+        "costChecked": "2026-11-08",
+        "costSource": "https://twinings.co.uk/pages/tea-masterclass-tasting-experience"
       },
       {
         "name": "NQ64 Arcade Bar",
@@ -7583,7 +7618,8 @@ Object.assign(window.CONTENT, {
           "Video Games",
           "Cocktails",
           "Shoreditch"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Four Quarters East",
@@ -7599,7 +7635,8 @@ Object.assign(window.CONTENT, {
           "Craft Beer",
           "Pizza",
           "Hackney Wick"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Lucia's",
@@ -7615,7 +7652,8 @@ Object.assign(window.CONTENT, {
           "Mezcal",
           "Hackney Wick",
           "Dinner"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Electric Shuffle",
@@ -7632,7 +7670,8 @@ Object.assign(window.CONTENT, {
           "Cocktails",
           "Canary Wharf",
           "London Bridge"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Lane7 (Victoria & Camden)",
@@ -7649,7 +7688,13 @@ Object.assign(window.CONTENT, {
           "Beer Pong",
           "Victoria",
           "Camden"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://lane7.com/",
+        "costBand": "££",
+        "costPP": 13,
+        "costChecked": "2026-11-08",
+        "costSource": "http://lane7.com/"
       },
       {
         "name": "Bloomsbury Lanes",
@@ -7665,7 +7710,12 @@ Object.assign(window.CONTENT, {
           "Karaoke",
           "Diner",
           "Bloomsbury"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 10,
+        "costChecked": "2026-11-08",
+        "costSource": "https://bloomsburybowling.com/bowling"
       },
       {
         "name": "The Pixel Bunker & Sci-Fi Museum",
@@ -7682,7 +7732,12 @@ Object.assign(window.CONTENT, {
           "Retro Arcade Museum",
           "Classic Gaming",
           "Exhibition"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 17,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.thepixelbunker.com/"
       },
       {
         "name": "Library Pot Board Game Cafe",
@@ -7697,7 +7752,12 @@ Object.assign(window.CONTENT, {
           "Board Games",
           "Cafe",
           "Richmond"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 22,
+        "costChecked": "2026-11-08",
+        "costSource": "https://librarypot.uk/"
       },
       {
         "name": "Junkyard Golf Club",
@@ -7713,7 +7773,9 @@ Object.assign(window.CONTENT, {
           "Mini Golf",
           "Cocktails",
           "Shoreditch"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://tedscrazygolf.co.uk/london/"
       },
       {
         "name": "Ballie Ballerson",
@@ -7729,7 +7791,12 @@ Object.assign(window.CONTENT, {
           "Cocktails",
           "Party",
           "Shoreditch"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 12,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.ballieballerson.com/london/"
       },
       {
         "name": "Cernamic Dalston",
@@ -7745,7 +7812,12 @@ Object.assign(window.CONTENT, {
           "Creative",
           "Hands-on",
           "Dalston"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 47,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.cernamic.com/classes/dalston"
       },
       {
         "name": "SkandiHus Pottery Studio",
@@ -7761,7 +7833,8 @@ Object.assign(window.CONTENT, {
           "Ceramics",
           "Creative",
           "Hackney"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "London Terrariums",
@@ -7777,7 +7850,8 @@ Object.assign(window.CONTENT, {
           "Plants",
           "Workshop",
           "Hands-on"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Botanical Boys",
@@ -7793,7 +7867,12 @@ Object.assign(window.CONTENT, {
           "Plants",
           "King's Cross",
           "Creative"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 70,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.botanicalboys.com/"
       },
       {
         "name": "Columbia Road Clay",
@@ -7808,7 +7887,8 @@ Object.assign(window.CONTENT, {
           "Pottery",
           "Clay",
           "East London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Colour and Clay Studio",
@@ -7825,7 +7905,8 @@ Object.assign(window.CONTENT, {
           "ACAVA Studios",
           "Latimer Road",
           "North Kensington"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Maison S.Sommet Studio",
@@ -7840,7 +7921,8 @@ Object.assign(window.CONTENT, {
           "Pottery",
           "Ceramics",
           "Studio"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "The Slightly Curious Studio",
@@ -7855,7 +7937,12 @@ Object.assign(window.CONTENT, {
           "Pottery",
           "Creative",
           "Ceramics"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 60,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.theslightlycurious.studio/"
       },
       {
         "name": "The Murdér Express Part Deux",
@@ -7871,7 +7958,9 @@ Object.assign(window.CONTENT, {
           "Murder Mystery",
           "Theatre",
           "Bethnal Green"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://themurderexpress.com/"
       },
       {
         "name": "Gingerline: The Grand Expedition",
@@ -7887,7 +7976,8 @@ Object.assign(window.CONTENT, {
           "Storytelling",
           "Gourmet",
           "London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Phantom Peak (Canada Water)",
@@ -7904,7 +7994,8 @@ Object.assign(window.CONTENT, {
           "Steampunk",
           "Canada Water",
           "Windrush Line"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Dans le Noir ? London",
@@ -7920,7 +8011,12 @@ Object.assign(window.CONTENT, {
           "Pitch Black",
           "Clerkenwell",
           "Unique"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 58,
+        "costChecked": "2026-11-08",
+        "costSource": "https://london.danslenoir.com/"
       },
       {
         "name": "Bob Bob Ricard (Soho)",
@@ -7937,7 +8033,8 @@ Object.assign(window.CONTENT, {
           "Soho",
           "Romantic Dinner",
           "Piccadilly Line"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Lightroom",
@@ -7952,7 +8049,12 @@ Object.assign(window.CONTENT, {
           "Immersive Art",
           "Digital Exhibition",
           "King's Cross"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 25,
+        "costChecked": "2026-11-08",
+        "costSource": "https://lightroom.uk/your-visit/ticketinfo/"
       },
       {
         "name": "Ronnie Scott's Jazz Club",
@@ -7969,7 +8071,8 @@ Object.assign(window.CONTENT, {
           "Soho",
           "Cocktails",
           "Historic"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "The Faltering Fullback",
@@ -7985,7 +8088,8 @@ Object.assign(window.CONTENT, {
           "Pub",
           "Thai Food",
           "Finsbury Park"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "The Jamie Oliver Cookery School",
@@ -8002,7 +8106,12 @@ Object.assign(window.CONTENT, {
           "Handmade Pasta",
           "Oxford Street",
           "Victoria Line"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 75,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.jamieolivercookeryschool.com/"
       },
       {
         "name": "Horizon 22",
@@ -8018,7 +8127,12 @@ Object.assign(window.CONTENT, {
           "Free",
           "Bishopsgate",
           "City Views"
-        ]
+        ],
+        "indoor": "mixed",
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://horizon22.co.uk/"
       },
       {
         "name": "Sky Garden",
@@ -8034,7 +8148,11 @@ Object.assign(window.CONTENT, {
           "Views",
           "Cocktails",
           "City of London"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "Rooftop Cinema Club (Peckham & Stratford)",
@@ -8051,7 +8169,12 @@ Object.assign(window.CONTENT, {
           "Cocktails",
           "Peckham",
           "Stratford"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "££",
+        "costPP": 14,
+        "costChecked": "2026-11-08",
+        "costSource": "https://rooftopcinemaclub.com/uk/london/peckham"
       },
       {
         "name": "Circe's Rooftop",
@@ -8067,7 +8190,8 @@ Object.assign(window.CONTENT, {
           "Cocktails",
           "Waterloo",
           "Views"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Archery Fit",
@@ -8083,7 +8207,12 @@ Object.assign(window.CONTENT, {
           "Active",
           "Greenwich",
           "Indoor Sports"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 35,
+        "costChecked": "2026-11-08",
+        "costSource": "https://archeryfit.com/services-rates.html"
       },
       {
         "name": "Axeperience Axe Throwing",
@@ -8099,7 +8228,12 @@ Object.assign(window.CONTENT, {
           "Active",
           "Tower Hill",
           "Fun"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 30,
+        "costChecked": "2026-11-08",
+        "costSource": "https://axeperience.co.uk/pricing/"
       },
       {
         "name": "Revolution Karting",
@@ -8115,7 +8249,12 @@ Object.assign(window.CONTENT, {
           "Racing",
           "Mile End",
           "Outdoors"
-        ]
+        ],
+        "indoor": "mixed",
+        "costBand": "££",
+        "costPP": 29,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.revolutionkarting.com/"
       },
       {
         "name": "The Regent's Park & Rose Gardens",
@@ -8132,7 +8271,12 @@ Object.assign(window.CONTENT, {
           "Boating Lake",
           "Walk",
           "Central London"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.royalparks.org.uk/parks/the-regents-park"
       },
       {
         "name": "Greenwich Park & Royal Observatory",
@@ -8149,7 +8293,12 @@ Object.assign(window.CONTENT, {
           "Greenwich",
           "Walk",
           "Observatory"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.royalparks.org.uk/parks/greenwich-park"
       },
       {
         "name": "Victoria Park & Pavilion Cafe",
@@ -8165,7 +8314,12 @@ Object.assign(window.CONTENT, {
           "Boating Lake",
           "East London",
           "Walk"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.towerhamlets.gov.uk/lgnl/leisure_and_culture/parks_and_open_spaces/victoria_park/victoria_park.aspx"
       },
       {
         "name": "The Postal Museum & Mail Rail",
@@ -8181,7 +8335,8 @@ Object.assign(window.CONTENT, {
           "Underground Train",
           "Clerkenwell",
           "Hidden Gem"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Charles Dickens Museum",
@@ -8197,7 +8352,12 @@ Object.assign(window.CONTENT, {
           "Literature",
           "Bloomsbury",
           "Historic House"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 14,
+        "costChecked": "2026-11-08",
+        "costSource": "https://dickensmuseum.com/pages/admissions"
       },
       {
         "name": "The Crypt Gallery",
@@ -8213,7 +8373,8 @@ Object.assign(window.CONTENT, {
           "Underground Crypt",
           "Euston",
           "Atmospheric"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Wellcome Collection",
@@ -8229,7 +8390,12 @@ Object.assign(window.CONTENT, {
           "Science & Art",
           "Euston",
           "Free"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://wellcomecollection.org/"
       },
       {
         "name": "Tate Modern & Tate Britain",
@@ -8245,7 +8411,12 @@ Object.assign(window.CONTENT, {
           "Tate",
           "Bankside",
           "Millbank"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.tate.org.uk/"
       },
       {
         "name": "London Transport Museum",
@@ -8261,7 +8432,8 @@ Object.assign(window.CONTENT, {
           "Transport",
           "Covent Garden",
           "Interactive"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Bletchley Park",
@@ -8278,7 +8450,8 @@ Object.assign(window.CONTENT, {
           "Computing Museum",
           "Alan Turing",
           "Day Trip"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Green Park",
@@ -8295,7 +8468,12 @@ Object.assign(window.CONTENT, {
           "Walk",
           "Piccadilly",
           "Central London"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.royalparks.org.uk/parks/green-park"
       },
       {
         "name": "Hyde Park & Serpentine",
@@ -8312,7 +8490,12 @@ Object.assign(window.CONTENT, {
           "Walk",
           "Serpentine",
           "Central London"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.royalparks.org.uk/parks/hyde-park"
       },
       {
         "name": "St James's Park",
@@ -8329,7 +8512,12 @@ Object.assign(window.CONTENT, {
           "Buckingham Palace",
           "Walk",
           "Westminster"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.royalparks.org.uk/parks/st-jamess-park"
       },
       {
         "name": "Hampstead Heath",
@@ -8346,7 +8534,12 @@ Object.assign(window.CONTENT, {
           "Swimming Ponds",
           "Skyline Views",
           "North London"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.cityoflondon.gov.uk/things-to-do/green-spaces/hampstead-heath"
       },
       {
         "name": "Primrose Hill",
@@ -8363,7 +8556,12 @@ Object.assign(window.CONTENT, {
           "Skyline Views",
           "Walk",
           "North London"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.royalparks.org.uk/parks/the-regents-park/things-to-see-and-do/primrose-hill"
       },
       {
         "name": "Battersea Park",
@@ -8380,7 +8578,12 @@ Object.assign(window.CONTENT, {
           "Boating Lake",
           "Go Ape",
           "South London"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.wandsworth.gov.uk/batterseapark"
       },
       {
         "name": "Holland Park & Kyoto Garden",
@@ -8397,7 +8600,12 @@ Object.assign(window.CONTENT, {
           "Peacocks",
           "Romantic Walk",
           "Kensington"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.rbkc.gov.uk/parks-leisure-and-culture/parks/holland-park"
       },
       {
         "name": "Richmond Park & Isabella Plantation",
@@ -8414,7 +8622,12 @@ Object.assign(window.CONTENT, {
           "Nature Reserve",
           "Panoramic Views",
           "Richmond"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.royalparks.org.uk/parks/richmond-park"
       },
       {
         "name": "Kensington Gardens & Italian Gardens",
@@ -8431,7 +8644,12 @@ Object.assign(window.CONTENT, {
           "Peter Pan",
           "Kensington Palace",
           "Central London"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.royalparks.org.uk/parks/kensington-gardens"
       },
       {
         "name": "Alexandra Park & Palace Parkland",
@@ -8448,7 +8666,12 @@ Object.assign(window.CONTENT, {
           "Great Northern Line",
           "Farmers Market",
           "North London"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.alexandrapalace.com/park/"
       },
       {
         "name": "St Dunstan in the East Church Garden",
@@ -8465,7 +8688,11 @@ Object.assign(window.CONTENT, {
           "Hidden Gem",
           "Romantic Spot",
           "City of London"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "London Fields & Regent's Canal Walk",
@@ -8482,7 +8709,12 @@ Object.assign(window.CONTENT, {
           "Regent's Canal",
           "Wildflowers",
           "East London"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://hackney.gov.uk/london-fields"
       },
       {
         "name": "Chiswick House & Gardens",
@@ -8499,7 +8731,12 @@ Object.assign(window.CONTENT, {
           "Lake Walk",
           "Camellia Conservatory",
           "Chiswick"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://chiswickhouseandgardens.org.uk/"
       },
       {
         "name": "Bushy Park & Water Gardens",
@@ -8516,7 +8753,12 @@ Object.assign(window.CONTENT, {
           "Baroque Water Gardens",
           "Diana Fountain",
           "South West London"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.royalparks.org.uk/parks/bushy-park"
       },
       {
         "name": "Kuro Coffee (Notting Hill)",
@@ -8533,7 +8775,8 @@ Object.assign(window.CONTENT, {
           "Japanese Coffee",
           "Notting Hill Gate",
           "Specialty Coffee"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Pavilion Bakery & Cafe (Victoria Park)",
@@ -8550,7 +8793,9 @@ Object.assign(window.CONTENT, {
           "Victoria Park",
           "Specialty Coffee",
           "East London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://pavilionbread.com"
       },
       {
         "name": "Pophams Bakery (Islington & London Fields)",
@@ -8567,7 +8812,8 @@ Object.assign(window.CONTENT, {
           "Islington",
           "Coffee & Walk",
           "North London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Jolene Bakery & Restaurant (Newington Green)",
@@ -8584,7 +8830,9 @@ Object.assign(window.CONTENT, {
           "Natural Wine",
           "Newington Green",
           "North London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.jolenebakery.com/"
       },
       {
         "name": "The Dusty Knuckle Bakery (Dalston)",
@@ -8601,7 +8849,8 @@ Object.assign(window.CONTENT, {
           "Dalston",
           "Courtyard",
           "East London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Fortitude Bakehouse (Bloomsbury / Russell Square)",
@@ -8618,7 +8867,8 @@ Object.assign(window.CONTENT, {
           "Bloomsbury",
           "King's Cross",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "The Castle Climbing Centre",
@@ -8635,7 +8885,12 @@ Object.assign(window.CONTENT, {
           "Victorian Castle",
           "Active Date",
           "North London"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 18,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.castle-climbing.co.uk/prices"
       },
       {
         "name": "Substation Brixton (Bouldering)",
@@ -8652,7 +8907,9 @@ Object.assign(window.CONTENT, {
           "Brixton",
           "Victoria Line",
           "South London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://brixton.substation.co.uk/"
       },
       {
         "name": "Nightjar (Old Street)",
@@ -8669,7 +8926,8 @@ Object.assign(window.CONTENT, {
           "Old Street Station",
           "Cocktails",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Discount Suit Company (Spitalfields / Liverpool St)",
@@ -8686,7 +8944,8 @@ Object.assign(window.CONTENT, {
           "Spitalfields",
           "Liverpool Street",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Bar Termini (Soho / Leicester Square)",
@@ -8703,7 +8962,12 @@ Object.assign(window.CONTENT, {
           "Candlelit Bar",
           "Piccadilly Line",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 31,
+        "costChecked": "2026-11-08",
+        "costSource": "https://bar-termini-soho.com/menu"
       },
       {
         "name": "Gordon's Wine Bar (Embankment)",
@@ -8720,7 +8984,12 @@ Object.assign(window.CONTENT, {
           "Cheese Boards",
           "Embankment",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 27,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.gordonswinebar.com/wine-food/"
       },
       {
         "name": "Cahoots London (Soho / Oxford Circus)",
@@ -8737,7 +9006,9 @@ Object.assign(window.CONTENT, {
           "Soho",
           "Victoria Line",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.cahoots.co.uk/"
       },
       {
         "name": "Trullo (Highbury & Islington)",
@@ -8754,7 +9025,8 @@ Object.assign(window.CONTENT, {
           "Highbury Station",
           "Italian",
           "North London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Coal Office (King's Cross)",
@@ -8771,7 +9043,8 @@ Object.assign(window.CONTENT, {
           "King's Cross",
           "Middle Eastern",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Dishoom King's Cross",
@@ -8788,7 +9061,8 @@ Object.assign(window.CONTENT, {
           "Black Daal",
           "Granary Square",
           "King's Cross"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Blacklock City (Moorgate / Bank)",
@@ -8805,7 +9079,8 @@ Object.assign(window.CONTENT, {
           "Moorgate Station",
           "Bank",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Duck & Waffle (Liverpool Street / Moorgate)",
@@ -8822,7 +9097,8 @@ Object.assign(window.CONTENT, {
           "Liverpool Street",
           "Moorgate",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Royal Botanic Gardens, Kew",
@@ -8839,7 +9115,8 @@ Object.assign(window.CONTENT, {
           "UNESCO World Heritage",
           "Mildmay Line",
           "Romantic Walk"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Knoops (King's Cross)",
@@ -8856,7 +9133,13 @@ Object.assign(window.CONTENT, {
           "King's Cross Station",
           "Milkshakes",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://knoops.com/",
+        "costBand": "£",
+        "costPP": 6,
+        "costChecked": "2026-11-08",
+        "costSource": "https://knoops.com/pages/our-menu"
       },
       {
         "name": "Knoops (Covent Garden)",
@@ -8873,7 +9156,13 @@ Object.assign(window.CONTENT, {
           "Covent Garden",
           "Piccadilly Line",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://knoops.com/",
+        "costBand": "£",
+        "costPP": 6,
+        "costChecked": "2026-11-08",
+        "costSource": "https://knoops.com/pages/our-menu"
       },
       {
         "name": "Knoops (Richmond)",
@@ -8890,7 +9179,13 @@ Object.assign(window.CONTENT, {
           "Richmond Park",
           "Mildmay Line",
           "River Walk"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://knoops.com/",
+        "costBand": "£",
+        "costPP": 6,
+        "costChecked": "2026-11-08",
+        "costSource": "https://knoops.com/pages/our-menu"
       },
       {
         "name": "Knoops (Kensington)",
@@ -8907,7 +9202,13 @@ Object.assign(window.CONTENT, {
           "Kensington Gardens",
           "Holland Park",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://knoops.com/",
+        "costBand": "£",
+        "costPP": 6,
+        "costChecked": "2026-11-08",
+        "costSource": "https://knoops.com/pages/our-menu"
       },
       {
         "name": "IKEA Oxford Street",
@@ -8924,7 +9225,11 @@ Object.assign(window.CONTENT, {
           "Swedish Deli",
           "Meatballs",
           "Showroom Date"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "IKEA Hammersmith",
@@ -8941,7 +9246,11 @@ Object.assign(window.CONTENT, {
           "Swedish Deli",
           "Meatballs",
           "Showroom Date"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "IKEA Greenwich",
@@ -8958,7 +9267,11 @@ Object.assign(window.CONTENT, {
           "Swedish Deli",
           "Meatballs",
           "Showroom Date"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "Darlish (Bloomsbury / British Museum)",
@@ -8975,7 +9288,9 @@ Object.assign(window.CONTENT, {
           "Persian Ice Cream",
           "Bloomsbury",
           "British Museum"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://darlish.com/"
       },
       {
         "name": "Darlish (St Albans Flagship)",
@@ -8992,7 +9307,8 @@ Object.assign(window.CONTENT, {
           "Baklava Sandwich",
           "Hertfordshire Local",
           "Ice Cream Parlour"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Darlish (Spitalfields)",
@@ -9009,7 +9325,8 @@ Object.assign(window.CONTENT, {
           "Baklava Sandwich",
           "Liverpool Street",
           "East London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Darlish (Notting Hill)",
@@ -9026,7 +9343,8 @@ Object.assign(window.CONTENT, {
           "Portobello Road",
           "Baklava",
           "Date Walk"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Buns from Home (Covent Garden)",
@@ -9043,7 +9361,9 @@ Object.assign(window.CONTENT, {
           "Pistachio Bun",
           "Covent Garden",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.bunsfromhome.com/"
       },
       {
         "name": "Buns from Home (Notting Hill Original)",
@@ -9060,7 +9380,9 @@ Object.assign(window.CONTENT, {
           "Original Bakery",
           "Portobello Road",
           "Coffee & Bun"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.bunsfromhome.com/"
       },
       {
         "name": "Buns from Home (The Royal Exchange / Bank)",
@@ -9077,7 +9399,9 @@ Object.assign(window.CONTENT, {
           "Bank Station",
           "Moorgate",
           "City of London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.bunsfromhome.com/"
       },
       {
         "name": "Buns from Home (Camden Market)",
@@ -9094,7 +9418,9 @@ Object.assign(window.CONTENT, {
           "Regent's Canal",
           "Primrose Hill",
           "North London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.bunsfromhome.com/"
       },
       {
         "name": "Buns from Home (Piccadilly)",
@@ -9111,7 +9437,9 @@ Object.assign(window.CONTENT, {
           "Green Park Walk",
           "West End",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.bunsfromhome.com/"
       },
       {
         "name": "Buns from Home (Victoria)",
@@ -9128,7 +9456,9 @@ Object.assign(window.CONTENT, {
           "Strutton Ground",
           "Victoria Line",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.bunsfromhome.com/"
       },
       {
         "name": "Buns from Home (Richmond)",
@@ -9145,7 +9475,9 @@ Object.assign(window.CONTENT, {
           "Mildmay Line",
           "Richmond Park",
           "Bakery Date"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.bunsfromhome.com/"
       },
       {
         "name": "Victoria and Albert Museum (V&A)",
@@ -9162,7 +9494,12 @@ Object.assign(window.CONTENT, {
           "Design Museum",
           "Courtyard Cafe",
           "Friday Lates"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.vam.ac.uk/"
       },
       {
         "name": "National Gallery & Portrait Gallery",
@@ -9179,7 +9516,12 @@ Object.assign(window.CONTENT, {
           "Masterpieces",
           "National Portrait Gallery",
           "Piccadilly Line"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.nationalgallery.org.uk/"
       },
       {
         "name": "Natural History Museum",
@@ -9196,7 +9538,12 @@ Object.assign(window.CONTENT, {
           "Hintze Hall",
           "Dinosaurs",
           "Architecture"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.nhm.ac.uk/"
       },
       {
         "name": "Science Museum",
@@ -9213,7 +9560,12 @@ Object.assign(window.CONTENT, {
           "Wonderlab",
           "IMAX",
           "Space Exploration"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.sciencemuseum.org.uk/"
       },
       {
         "name": "Sir John Soane's Museum",
@@ -9230,7 +9582,12 @@ Object.assign(window.CONTENT, {
           "Hidden Gem",
           "Holborn",
           "Eccentric Townhouse"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.soane.org/"
       },
       {
         "name": "The Wallace Collection",
@@ -9247,7 +9604,12 @@ Object.assign(window.CONTENT, {
           "Courtyard Restaurant",
           "Old Masters",
           "Romantic Museum"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.wallacecollection.org/"
       },
       {
         "name": "Saatchi Gallery",
@@ -9264,7 +9626,12 @@ Object.assign(window.CONTENT, {
           "King's Road",
           "Contemporary Art",
           "Sloane Square"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.saatchigallery.com/"
       },
       {
         "name": "Royal Academy of Arts",
@@ -9281,7 +9648,8 @@ Object.assign(window.CONTENT, {
           "Summer Exhibition",
           "Blockbuster Art",
           "Green Park"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Somerset House & The Courtauld Gallery",
@@ -9298,7 +9666,8 @@ Object.assign(window.CONTENT, {
           "Impressionism",
           "Courtyard Fountains",
           "Strand"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Whitechapel Gallery",
@@ -9315,7 +9684,12 @@ Object.assign(window.CONTENT, {
           "Contemporary Art",
           "Townsend Restaurant",
           "East London"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.whitechapelgallery.org/visit/"
       },
       {
         "name": "Hayward Gallery & Southbank Centre",
@@ -9332,7 +9706,8 @@ Object.assign(window.CONTENT, {
           "Thames Walk",
           "Brutalist Architecture",
           "Waterloo"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Barbican Art Gallery & Conservatory",
@@ -9349,7 +9724,13 @@ Object.assign(window.CONTENT, {
           "Tropical Plants",
           "Moorgate Station",
           "Brutalist Icon"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.barbican.org.uk/",
+        "costBand": "££",
+        "costPP": 20,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.barbican.org.uk/whats-on/2026/event/robert-ryman-the-real-thing"
       },
       {
         "name": "Design Museum",
@@ -9366,7 +9747,12 @@ Object.assign(window.CONTENT, {
           "Holland Park",
           "Modern Architecture",
           "Date Walk"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://designmuseum.org/"
       },
       {
         "name": "The Photographers' Gallery",
@@ -9383,7 +9769,12 @@ Object.assign(window.CONTENT, {
           "Oxford Circus",
           "Victoria Line",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 14,
+        "costChecked": "2026-11-08",
+        "costSource": "https://thephotographersgallery.org.uk/visit"
       },
       {
         "name": "Old Spitalfields Market",
@@ -9400,7 +9791,8 @@ Object.assign(window.CONTENT, {
           "Artisan Market",
           "Liverpool Street",
           "Moorgate"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Broadway Market & Schoolyard Market",
@@ -9417,7 +9809,8 @@ Object.assign(window.CONTENT, {
           "London Fields",
           "Regent's Canal",
           "East London"
-        ]
+        ],
+        "indoor": false
       },
       {
         "name": "Greenwich Market",
@@ -9434,7 +9827,8 @@ Object.assign(window.CONTENT, {
           "Street Food",
           "Greenwich Park",
           "South London"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Camden Market & Hawley Wharf",
@@ -9451,7 +9845,8 @@ Object.assign(window.CONTENT, {
           "Canalside",
           "Street Food",
           "North London"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Southbank Centre Food Market",
@@ -9468,7 +9863,8 @@ Object.assign(window.CONTENT, {
           "Waterloo",
           "Thames Riverside",
           "Central London"
-        ]
+        ],
+        "indoor": false
       },
       {
         "name": "Mercato Mayfair",
@@ -9485,7 +9881,8 @@ Object.assign(window.CONTENT, {
           "Mayfair",
           "Roof Terrace",
           "Central London"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Brixton Village & Market Row",
@@ -9502,7 +9899,8 @@ Object.assign(window.CONTENT, {
           "Victoria Line",
           "Caribbean Food",
           "South London"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Vinegar Yard & Flat Iron Square",
@@ -9519,7 +9917,8 @@ Object.assign(window.CONTENT, {
           "The Shard",
           "Outdoor Beer Garden",
           "Central London"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Exmouth Market",
@@ -9536,7 +9935,8 @@ Object.assign(window.CONTENT, {
           "Farringdon",
           "Fairy Lights",
           "Street Food"
-        ]
+        ],
+        "indoor": false
       },
       {
         "name": "Lower Marsh Market",
@@ -9553,7 +9953,8 @@ Object.assign(window.CONTENT, {
           "Street Food",
           "Lunch Market",
           "Central London"
-        ]
+        ],
+        "indoor": false
       },
       {
         "name": "Brick Lane Market & Upmarket",
@@ -9571,7 +9972,9 @@ Object.assign(window.CONTENT, {
           "Street Food",
           "Vintage",
           "East London"
-        ]
+        ],
+        "indoor": "mixed",
+        "venueUrl": "https://www.trumanbrewery.com/"
       },
       {
         "name": "Berwick Street Market",
@@ -9588,7 +9991,8 @@ Object.assign(window.CONTENT, {
           "Street Food",
           "Central London",
           "Weekday Market"
-        ]
+        ],
+        "indoor": false
       },
       {
         "name": "Market Halls Canary Wharf (Cargo)",
@@ -9606,7 +10010,8 @@ Object.assign(window.CONTENT, {
           "Food Hall",
           "Waterside",
           "East London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Arcade Food Hall (Centre Point)",
@@ -9623,7 +10028,9 @@ Object.assign(window.CONTENT, {
           "Tottenham Court Road",
           "Food Hall",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.arcade-london.com/"
       },
       {
         "name": "Arcade Food Hall (Battersea Power Station)",
@@ -9640,7 +10047,9 @@ Object.assign(window.CONTENT, {
           "Food Hall",
           "South London",
           "Northern Line"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.arcade-london.com/"
       },
       {
         "name": "Flight Club Shoreditch",
@@ -9657,7 +10066,12 @@ Object.assign(window.CONTENT, {
           "Old Street",
           "Moorgate",
           "Active Date"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 10,
+        "costChecked": "2026-11-08",
+        "costSource": "https://flightclubdarts.com/london/venues/shoreditch"
       },
       {
         "name": "Flight Club Bloomsbury",
@@ -9674,7 +10088,12 @@ Object.assign(window.CONTENT, {
           "Social Darts",
           "Central London",
           "Active Date"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 10,
+        "costChecked": "2026-11-08",
+        "costSource": "https://flightclubdarts.com/london/venues/bloomsbury"
       },
       {
         "name": "Flight Club Victoria",
@@ -9691,7 +10110,12 @@ Object.assign(window.CONTENT, {
           "Victoria Line",
           "Carousel Bar",
           "Social Darts"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 10,
+        "costChecked": "2026-11-08",
+        "costSource": "https://flightclubdarts.com/london/venues/victoria"
       },
       {
         "name": "Flight Club Islington",
@@ -9708,7 +10132,8 @@ Object.assign(window.CONTENT, {
           "Upper Street",
           "Angel Station",
           "Social Darts"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Swingers City",
@@ -9725,7 +10150,8 @@ Object.assign(window.CONTENT, {
           "City of London",
           "Cocktail Caddies",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Swingers West End",
@@ -9742,7 +10168,8 @@ Object.assign(window.CONTENT, {
           "Oxford Circus",
           "Victoria Line",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Puttshack Bank",
@@ -9759,7 +10186,12 @@ Object.assign(window.CONTENT, {
           "Bank Station",
           "Moorgate",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 14,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.puttshack.com/uk/locations/bank"
       },
       {
         "name": "Puttshack White City",
@@ -9776,7 +10208,12 @@ Object.assign(window.CONTENT, {
           "Westfield",
           "H&C Line",
           "Tech Mini Golf"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 13,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.puttshack.com/uk/locations/white-city"
       },
       {
         "name": "Plonk Golf (Camden Market)",
@@ -9793,7 +10230,8 @@ Object.assign(window.CONTENT, {
           "Camden Market",
           "Stables Tunnels",
           "North London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Rowans Tenpin Bowl (Finsbury Park)",
@@ -9810,7 +10248,8 @@ Object.assign(window.CONTENT, {
           "Great Northern Line",
           "Retro Bowling",
           "Karaoke"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "All Star Lanes Holborn",
@@ -9827,7 +10266,12 @@ Object.assign(window.CONTENT, {
           "Holborn",
           "Bloomsbury",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 14,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.allstarlanes.co.uk/play/bowling"
       },
       {
         "name": "All Star Lanes Brick Lane",
@@ -9844,7 +10288,12 @@ Object.assign(window.CONTENT, {
           "Shoreditch",
           "Windrush Line",
           "Boutique Bowling"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 14,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.allstarlanes.co.uk/play/bowling"
       },
       {
         "name": "All Star Lanes Stratford",
@@ -9861,7 +10310,12 @@ Object.assign(window.CONTENT, {
           "Mildmay Line",
           "Westfield",
           "Boutique Bowling"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 14,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.allstarlanes.co.uk/play/bowling"
       },
       {
         "name": "Hon's BBQ (Bloomsbury / West End)",
@@ -9878,7 +10332,8 @@ Object.assign(window.CONTENT, {
           "Roast Duck",
           "New Oxford St",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Zapote (Shoreditch)",
@@ -9895,7 +10350,12 @@ Object.assign(window.CONTENT, {
           "Charcoal Grill",
           "Old Street Station",
           "Shoreditch"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 36,
+        "costChecked": "2026-11-08",
+        "costSource": "https://zapote.co.uk/menus/"
       },
       {
         "name": "Yeast Bakery (Broadway Market / Regent's Canal)",
@@ -9912,7 +10372,8 @@ Object.assign(window.CONTENT, {
           "Regent's Canal",
           "Broadway Market",
           "Coffee & Walk"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Los Mochis (Notting Hill)",
@@ -9929,7 +10390,9 @@ Object.assign(window.CONTENT, {
           "Cocktail Den",
           "Notting Hill",
           "Date Night"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.losmochis.co.uk/"
       },
       {
         "name": "Suzi Tros (Notting Hill)",
@@ -9946,7 +10409,13 @@ Object.assign(window.CONTENT, {
           "Natural Wines",
           "Hillgate Village",
           "Notting Hill"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://suzitros.com/",
+        "costBand": "££",
+        "costPP": 25,
+        "costChecked": "2026-11-08",
+        "costSource": "https://suzitros.com/a-la-carte-menu/"
       },
       {
         "name": "Dishoom Covent Garden",
@@ -9963,7 +10432,8 @@ Object.assign(window.CONTENT, {
           "West End",
           "Black Daal",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Dishoom Shoreditch",
@@ -9980,7 +10450,8 @@ Object.assign(window.CONTENT, {
           "Verandah",
           "Bacon Naan",
           "East London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Dishoom Carnaby (Soho)",
@@ -9997,7 +10468,8 @@ Object.assign(window.CONTENT, {
           "Soho",
           "Kingly Court",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Dishoom Kensington",
@@ -10014,7 +10486,8 @@ Object.assign(window.CONTENT, {
           "Art Deco",
           "High St Kensington",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Dishoom Battersea",
@@ -10031,7 +10504,8 @@ Object.assign(window.CONTENT, {
           "Northern Line",
           "Electric Blvd",
           "South London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Dishoom Canary Wharf",
@@ -10048,7 +10522,8 @@ Object.assign(window.CONTENT, {
           "Wood Wharf",
           "Terrace",
           "East London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Darlish (Hatfield House Stable Yard)",
@@ -10066,7 +10541,8 @@ Object.assign(window.CONTENT, {
           "Baklava Sandwich",
           "Hertfordshire Local",
           "Great Northern Line"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Knoops (St Albans)",
@@ -10083,7 +10559,13 @@ Object.assign(window.CONTENT, {
           "Hot Chocolate",
           "Market Place",
           "Hertfordshire Local"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://knoops.com/",
+        "costBand": "£",
+        "costPP": 6,
+        "costChecked": "2026-11-08",
+        "costSource": "https://knoops.com/pages/our-menu"
       },
       {
         "name": "Pavilion Bakery (Broadway Market)",
@@ -10100,7 +10582,9 @@ Object.assign(window.CONTENT, {
           "Cardamom Buns",
           "Sourdough",
           "East London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://pavilionbread.com"
       },
       {
         "name": "Pavilion Bakery (Columbia Road)",
@@ -10117,7 +10601,9 @@ Object.assign(window.CONTENT, {
           "Flower Market",
           "Shoreditch",
           "Central London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://pavilionbread.com"
       },
       {
         "name": "Pavilion Bakery (Newington Green)",
@@ -10134,7 +10620,9 @@ Object.assign(window.CONTENT, {
           "Clissold Park",
           "Coffee & Bun",
           "North London"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://pavilionbread.com"
       },
       {
         "name": "Paulie's London (Shoreditch)",
@@ -10151,7 +10639,9 @@ Object.assign(window.CONTENT, {
           "Pastrami",
           "Commercial Street",
           "Shoreditch"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://paulieslondon.com/"
       },
       {
         "name": "Dark Sugars Chocolates (Brick Lane)",
@@ -10168,7 +10658,8 @@ Object.assign(window.CONTENT, {
           "Shaved Chocolate",
           "Brick Lane",
           "Shoreditch"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Dark Sugars Cocoa House (Greenwich)",
@@ -10185,7 +10676,8 @@ Object.assign(window.CONTENT, {
           "Greenwich Market",
           "Greenwich Park",
           "Hot Chocolate"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Dark Sugars Ice Creams (Greenwich)",
@@ -10202,7 +10694,8 @@ Object.assign(window.CONTENT, {
           "Chocolate Gelato",
           "Greenwich Park",
           "South London"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "The Arch Climbing Wall (Bermondsey / London Bridge)",
@@ -10219,7 +10712,13 @@ Object.assign(window.CONTENT, {
           "Bermondsey",
           "Biscuit Factory",
           "Active Date"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://climbingdistrict.uk/",
+        "costBand": "££",
+        "costPP": 15,
+        "costChecked": "2026-11-08",
+        "costSource": "https://climbingdistrict.uk/"
       },
       {
         "name": "VauxWall Climbing Centre (Vauxhall Station)",
@@ -10236,7 +10735,13 @@ Object.assign(window.CONTENT, {
           "Vauxhall Station",
           "Victoria Line",
           "Railway Arches"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://londonclimbingcentres.co.uk/centre/vauxwest/",
+        "costBand": "££",
+        "costPP": 17,
+        "costChecked": "2026-11-08",
+        "costSource": "https://londonclimbingcentres.co.uk/prices/"
       },
       {
         "name": "Yonder Climbing & Cafe (Blackhorse Road)",
@@ -10253,7 +10758,8 @@ Object.assign(window.CONTENT, {
           "Blackhorse Road",
           "Victoria Line",
           "Bakery & Climbing"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Topgolf Watford",
@@ -10270,7 +10776,12 @@ Object.assign(window.CONTENT, {
           "Driving Range",
           "Target Golf",
           "Hertfordshire Local"
-        ]
+        ],
+        "indoor": "mixed",
+        "costBand": "££",
+        "costPP": 10,
+        "costChecked": "2026-11-08",
+        "costSource": "https://topgolf.com/uk/watford/"
       },
       {
         "name": "Topgolf Chigwell (Essex)",
@@ -10287,7 +10798,12 @@ Object.assign(window.CONTENT, {
           "Essex",
           "Tech Golf",
           "Heated Bays"
-        ]
+        ],
+        "indoor": "mixed",
+        "costBand": "££",
+        "costPP": 10,
+        "costChecked": "2026-11-08",
+        "costSource": "https://topgolf.com/uk/chigwell/"
       },
       {
         "name": "WatchHouse (Covent Garden & Seven Dials)",
@@ -10304,7 +10820,8 @@ Object.assign(window.CONTENT, {
           "Covent Garden",
           "Micro-lot",
           "Piccadilly Line"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Monmouth Coffee Company (Borough & Covent Garden)",
@@ -10321,7 +10838,8 @@ Object.assign(window.CONTENT, {
           "Specialty Coffee",
           "Pioneer",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Omotesando Koffee (Fitzrovia)",
@@ -10338,7 +10856,8 @@ Object.assign(window.CONTENT, {
           "Iced Cappuccino",
           "Fitzrovia",
           "Central London"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Kiss the Hippo Coffee (Fitzrovia & King's Cross)",
@@ -10355,7 +10874,8 @@ Object.assign(window.CONTENT, {
           "Oxford Circus",
           "Victoria Line",
           "Specialty Coffee"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "The Comedy Store (Leicester Square)",
@@ -10371,7 +10891,8 @@ Object.assign(window.CONTENT, {
           "Stand Up",
           "Leicester Square",
           "Live Comedy"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Top Secret Comedy Club (Covent Garden)",
@@ -10387,7 +10908,8 @@ Object.assign(window.CONTENT, {
           "Comedy",
           "Covent Garden",
           "Stand Up"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Up the Creek Comedy Club (Greenwich)",
@@ -10403,7 +10925,9 @@ Object.assign(window.CONTENT, {
           "Comedy",
           "Greenwich",
           "Stand Up"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.up-the-creek.com/"
       },
       {
         "name": "Ann's Smart School of Cookery",
@@ -10418,7 +10942,8 @@ Object.assign(window.CONTENT, {
           "Cooking Class",
           "Canary Wharf",
           "Food Experience"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "ZSL London Zoo (Regent's Park)",
@@ -10434,7 +10959,8 @@ Object.assign(window.CONTENT, {
           "Animals",
           "Regent's Park",
           "Nature"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "SEA LIFE London Aquarium",
@@ -10450,7 +10976,12 @@ Object.assign(window.CONTENT, {
           "Sea Life",
           "South Bank",
           "Marine Biology"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 28,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.visitsealife.com/london/"
       },
       {
         "name": "Hertfordshire Zoo (Paradise Wildlife Park)",
@@ -10467,7 +10998,8 @@ Object.assign(window.CONTENT, {
           "Big Cats",
           "Animals",
           "Broxbourne"
-        ]
+        ],
+        "indoor": "mixed"
       },
       {
         "name": "Arcadia Games",
@@ -10481,7 +11013,8 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Board Games",
           "Gaming"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Draughts - Waterloo",
@@ -10496,7 +11029,8 @@ Object.assign(window.CONTENT, {
           "Board Games",
           "Cafe",
           "Waterloo"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Otter Chaos",
@@ -10510,7 +11044,12 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Board Games",
           "Gaming"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£",
+        "costPP": 5,
+        "costChecked": "2026-11-08",
+        "costSource": "https://otterchaos.co.uk"
       },
       {
         "name": "Stonecutters Lane",
@@ -10523,7 +11062,8 @@ Object.assign(window.CONTENT, {
         "description": "🛍️ Shopping Centre.",
         "tags": [
           "Shopping"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Anatomie Studio London",
@@ -10537,7 +11077,9 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Gym",
           "Fitness"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.anatomiestudio.com/"
       },
       {
         "name": "Four Quarters Peckham",
@@ -10552,7 +11094,12 @@ Object.assign(window.CONTENT, {
           "Arcade",
           "Bar",
           "Peckham"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 10,
+        "costChecked": "2026-11-08",
+        "costSource": "https://fourquarters.bar/faqs/"
       },
       {
         "name": "Four Quarters Elephant & Castle",
@@ -10567,7 +11114,12 @@ Object.assign(window.CONTENT, {
           "Arcade",
           "Bar",
           "Elephant & Castle"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 10,
+        "costChecked": "2026-11-08",
+        "costSource": "https://fourquarters.bar/faqs/"
       },
       {
         "name": "Cable Street Studios",
@@ -10581,7 +11133,8 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Studios",
           "Creative"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Daunt Books Marylebone",
@@ -10595,7 +11148,11 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Books",
           "Marylebone"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "Cecil Court",
@@ -10609,7 +11166,11 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Books",
           "History"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "Foyles",
@@ -10623,7 +11184,11 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Books",
           "Reading"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "BookBar Islington",
@@ -10638,7 +11203,11 @@ Object.assign(window.CONTENT, {
           "Books",
           "Wine",
           "Islington"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "Bad Moon Cafe",
@@ -10653,7 +11222,8 @@ Object.assign(window.CONTENT, {
           "Board Games",
           "Cafe",
           "Tabletop"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Loading Bar",
@@ -10668,7 +11238,12 @@ Object.assign(window.CONTENT, {
           "Arcade",
           "Bar",
           "Gaming"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£",
+        "costPP": 4,
+        "costChecked": "2026-11-08",
+        "costSource": "https://loading.bar/location/stoke-newington/"
       },
       {
         "name": "The Brotherhood Games Cafe",
@@ -10682,7 +11257,8 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Trading Cards",
           "Games"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Zombie Games Cafe & Bar",
@@ -10696,7 +11272,8 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Trading Cards",
           "Games"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Dark Sphere Shepherd's Bush Gaming Centre",
@@ -10711,7 +11288,8 @@ Object.assign(window.CONTENT, {
           "Hobby",
           "Tabletop",
           "Shepherd's Bush"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Notting Hill Book & Comic Exchange",
@@ -10726,7 +11304,11 @@ Object.assign(window.CONTENT, {
           "Comics",
           "Books",
           "Notting Hill"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "Gosh! Comics",
@@ -10740,7 +11322,11 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Comics",
           "Soho"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "Forbidden Planet London Megastore",
@@ -10754,7 +11340,11 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Comics",
           "Collectibles"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "The Thieves",
@@ -10768,7 +11358,8 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Pub",
           "Drinks"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Ink@84 Books",
@@ -10782,7 +11373,11 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Books",
           "Independent"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "The Arcanist's Tavern: Gaming Café",
@@ -10796,7 +11391,12 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Board Games",
           "Tavern"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£",
+        "costPP": 7,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.arcaniststavern.uk/booking"
       },
       {
         "name": "Plonk Golf (Hackney & Borough Market)",
@@ -10811,7 +11411,8 @@ Object.assign(window.CONTENT, {
           "Crazy Golf",
           "Hackney",
           "Borough Market"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Swingers (West End & City)",
@@ -10826,7 +11427,8 @@ Object.assign(window.CONTENT, {
           "Crazy Golf",
           "West End",
           "City"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Puttshack (White City & Bank)",
@@ -10841,7 +11443,12 @@ Object.assign(window.CONTENT, {
           "Crazy Golf",
           "White City",
           "Bank"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 14,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.puttshack.com/uk/locations/bank"
       },
       {
         "name": "Junkyard Golf Club (Shoreditch)",
@@ -10855,7 +11462,9 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Crazy Golf",
           "Shoreditch"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://tedscrazygolf.co.uk/london/"
       },
       {
         "name": "Putt In The Park",
@@ -10869,7 +11478,12 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Crazy Golf",
           "Outdoors"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "££",
+        "costPP": 14,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.puttinthepark.com/"
       },
       {
         "name": "Birdies at Roof East (Stratford)",
@@ -10884,7 +11498,8 @@ Object.assign(window.CONTENT, {
           "Crazy Golf",
           "Stratford",
           "Roof East"
-        ]
+        ],
+        "indoor": false
       },
       {
         "name": "Minigolf by Craig & Karl (Canary Wharf)",
@@ -10898,7 +11513,8 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Crazy Golf",
           "Canary Wharf"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Axeperience Axe Throwing (Tower Hill)",
@@ -10912,7 +11528,12 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Axe Throwing",
           "Tower Hill"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 30,
+        "costChecked": "2026-11-08",
+        "costSource": "https://axeperience.co.uk/pricing/"
       },
       {
         "name": "Game of Throwing (Hammersmith)",
@@ -10926,7 +11547,9 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Axe Throwing",
           "Hammersmith"
-        ]
+        ],
+        "indoor": true,
+        "venueUrl": "https://www.gameofthrowinglondon.co.uk"
       },
       {
         "name": "Boom Battle Bar (Liverpool Street)",
@@ -10940,7 +11563,12 @@ Object.assign(window.CONTENT, {
         "tags": [
           "Axe Throwing",
           "Liverpool Street"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 28,
+        "costChecked": "2026-11-08",
+        "costSource": "https://boombattlebar.com/uk/london-liverpool-street"
       },
       {
         "name": "Rogues Quarter",
@@ -10955,7 +11583,12 @@ Object.assign(window.CONTENT, {
           "Board Games",
           "Coffee",
           "Kentish Town"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£",
+        "costPP": 6,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.roguesquarter.com/menu2"
       },
       {
         "name": "Aguamiel Churros Mexicanos",
@@ -10971,7 +11604,8 @@ Object.assign(window.CONTENT, {
           "Mexican",
           "Dessert",
           "Covent Garden"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Waxy O'Connor's",
@@ -10987,7 +11621,8 @@ Object.assign(window.CONTENT, {
           "Irish",
           "Drinks",
           "Soho"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Kiln",
@@ -11003,7 +11638,8 @@ Object.assign(window.CONTENT, {
           "Dinner",
           "Counter Dining",
           "Soho"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Carnaby Street",
@@ -11019,7 +11655,11 @@ Object.assign(window.CONTENT, {
           "Walking",
           "Fashion",
           "Soho"
-        ]
+        ],
+        "indoor": false,
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08"
       },
       {
         "name": "The British Museum",
@@ -11035,7 +11675,8 @@ Object.assign(window.CONTENT, {
           "History",
           "Free",
           "Bloomsbury"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Jusu Brothers",
@@ -11051,7 +11692,8 @@ Object.assign(window.CONTENT, {
           "Matcha",
           "Healthy",
           "Notting Hill"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Sumi",
@@ -11067,7 +11709,8 @@ Object.assign(window.CONTENT, {
           "Japanese",
           "Dinner",
           "Notting Hill"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Social Pottery",
@@ -11083,7 +11726,12 @@ Object.assign(window.CONTENT, {
           "Art",
           "BYOB",
           "Kentish Town"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "££",
+        "costPP": 23,
+        "costChecked": "2026-11-08",
+        "costSource": "https://socialpottery.com/"
       },
       {
         "name": "Token Studio",
@@ -11099,7 +11747,8 @@ Object.assign(window.CONTENT, {
           "Masterclass",
           "Art",
           "Southwark"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Eataly London",
@@ -11115,7 +11764,8 @@ Object.assign(window.CONTENT, {
           "Masterclass",
           "Food Market",
           "Bishopsgate"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "TT Liquor",
@@ -11131,7 +11781,8 @@ Object.assign(window.CONTENT, {
           "Masterclass",
           "Speakeasy",
           "Shoreditch"
-        ]
+        ],
+        "indoor": true
       },
       {
         "name": "Jar and Fern",
@@ -11147,7 +11798,12 @@ Object.assign(window.CONTENT, {
           "Plants",
           "Workshop",
           "Peckham"
-        ]
+        ],
+        "indoor": true,
+        "costBand": "£££",
+        "costPP": 40,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.jarandfern.co.uk/workshops"
       },
       {
         "name": "Tropical Glass",
@@ -11163,7 +11819,415 @@ Object.assign(window.CONTENT, {
           "Plants",
           "Workshop",
           "Wood Green"
-        ]
+        ],
+        "indoor": true
+      },
+      {
+        "name": "Horniman Museum and Gardens",
+        "url": "https://www.horniman.ac.uk/",
+        "category": "Museums & Culture",
+        "location": "100 London Road, Forest Hill, London, SE23 3PQ",
+        "region": "South London",
+        "lat": 51.441131,
+        "lng": -0.060737,
+        "description": "🦋 A free, quirky museum of natural history and world cultures with an aquarium and butterfly house, set in hilltop gardens with a view over London. Cafes on site make it easy to talk over a coffee.",
+        "tags": [
+          "Museum",
+          "Indoor",
+          "Quirky",
+          "Gardens",
+          "Cafe"
+        ],
+        "instagram": "https://www.instagram.com/hornimanmuseumgardens/",
+        "indoor": "mixed",
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.horniman.ac.uk/"
+      },
+      {
+        "name": "V&A East Museum (Stratford)",
+        "url": "https://www.vam.ac.uk/east",
+        "category": "Museums & Culture",
+        "location": "East Bank, 107 Carpenters Road, Queen Elizabeth Olympic Park, Stratford, London, E20 2AR",
+        "region": "East London",
+        "lat": 51.541598,
+        "lng": -0.012871,
+        "description": "🎨 A free, bright new museum of design and creativity, open late on Thursdays and Saturdays. Easy to wander and chat, with the park and canal right outside.",
+        "tags": [
+          "Museum",
+          "Indoor",
+          "Free",
+          "Design",
+          "Late Opening"
+        ],
+        "instagram": "https://www.instagram.com/vam_east",
+        "indoor": "indoor",
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.vam.ac.uk/east"
+      },
+      {
+        "name": "The Cartoon Museum",
+        "url": "https://cartoonmuseum.org/",
+        "category": "Museums & Culture",
+        "location": "63 Wells Street, Fitzrovia, London, W1A 3AE",
+        "region": "Central London",
+        "lat": 51.517612,
+        "lng": -0.138797,
+        "description": "😄 Small and funny, with British comic art and political cartoons that give you plenty to laugh about together. Easy hour or so in Fitzrovia before dinner.",
+        "tags": [
+          "Museum",
+          "Indoor",
+          "Comics",
+          "Quirky",
+          "Date Night"
+        ],
+        "instagram": "https://www.instagram.com/thecartoonmuseum",
+        "indoor": "indoor"
+      },
+      {
+        "name": "Museum of Brands",
+        "url": "https://museumofbrands.com/",
+        "category": "Museums & Culture",
+        "location": "111-117 Lancaster Road, Notting Hill, London, W11 1QT",
+        "region": "West London",
+        "lat": 51.516212,
+        "lng": -0.211222,
+        "description": "🛒 A nostalgic walk through 200 years of packaging, toys and adverts, full of 'I remember that' moments. There is a cafe on site for a post-visit chat.",
+        "tags": [
+          "Museum",
+          "Indoor",
+          "Nostalgia",
+          "Cafe",
+          "Date Night"
+        ],
+        "instagram": "https://www.instagram.com/museumofbrands",
+        "indoor": "indoor",
+        "costBand": "££",
+        "costPP": 14,
+        "costChecked": "2026-11-08",
+        "costSource": "https://museumofbrands.com/"
+      },
+      {
+        "name": "Freud Museum London",
+        "url": "https://www.freud.org.uk/",
+        "category": "Museums & Culture",
+        "location": "20 Maresfield Gardens, Hampstead, London, NW3 5SX",
+        "region": "North London",
+        "lat": 51.548838,
+        "lng": -0.177417,
+        "description": "🛋️ Sigmund Freud's last home, with his famous couch and antiquities collection. Quiet and intimate, with plenty to talk about, and Hampstead's cafes nearby.",
+        "tags": [
+          "Museum",
+          "Indoor",
+          "History",
+          "Hampstead",
+          "Date Night"
+        ],
+        "indoor": "indoor",
+        "costBand": "££",
+        "costPP": 14.9,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.freud.org.uk/"
+      },
+      {
+        "name": "Hunterian Museum",
+        "url": "https://hunterianmuseum.org/",
+        "category": "Museums & Culture",
+        "location": "Royal College of Surgeons, 38-43 Lincoln's Inn Fields, London, WC2A 3PE",
+        "region": "Central London",
+        "lat": 51.515285,
+        "lng": -0.115874,
+        "description": "🦴 A free, slightly macabre gallery of anatomy and medical history, great for curious conversation. Lincoln's Inn Fields is just outside for a stroll.",
+        "tags": [
+          "Museum",
+          "Indoor",
+          "Free",
+          "Quirky",
+          "Science"
+        ],
+        "instagram": "https://www.instagram.com/hunterianmuseum",
+        "indoor": "indoor",
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://hunterianmuseum.org/visit/"
+      },
+      {
+        "name": "Foundling Museum",
+        "url": "https://foundlingmuseum.org.uk/",
+        "category": "Museums & Culture",
+        "location": "40 Brunswick Square, Bloomsbury, London, WC1N 1AZ",
+        "region": "Central London",
+        "lat": 51.525481,
+        "lng": -0.120758,
+        "description": "🎻 A moving, small museum of art, music and the story of London's first children's charity, tucked beside Coram's Fields. A gentle, thoughtful date in Bloomsbury.",
+        "tags": [
+          "Museum",
+          "Indoor",
+          "Art",
+          "History",
+          "Date Night"
+        ],
+        "instagram": "https://www.instagram.com/foundlingmuseum",
+        "indoor": "indoor",
+        "costBand": "££",
+        "costPP": 14.5,
+        "costChecked": "2026-11-08",
+        "costSource": "https://foundlingmuseum.org.uk/"
+      },
+      {
+        "name": "Kenwood House",
+        "url": "https://www.english-heritage.org.uk/visit/places/kenwood/",
+        "category": "Museums & Culture",
+        "location": "Hampstead Lane, Hampstead, London, NW3 7JR",
+        "region": "North London",
+        "lat": 51.571328,
+        "lng": -0.1676,
+        "description": "🏛️ A free Georgian house with a Rembrandt self-portrait and Gainsborough, then a stroll across Hampstead Heath. A cosy, wintery date, with tea nearby afterwards.",
+        "tags": [
+          "Stately Home",
+          "Indoor",
+          "Free",
+          "Heath Walk",
+          "Date Night"
+        ],
+        "instagram": "https://instagram.com/englishheritage",
+        "indoor": "mixed",
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.english-heritage.org.uk/visit/places/kenwood/"
+      },
+      {
+        "name": "Estorick Collection of Modern Italian Art",
+        "url": "https://www.estorickcollection.com/",
+        "category": "Museums & Culture",
+        "location": "39a Canonbury Square, Islington, London, N1 2AN",
+        "region": "North London",
+        "lat": 51.543993,
+        "lng": -0.099891,
+        "description": "🇮🇹 A small, calm Georgian house of Italian modern art, with Caffe Estorick on site for coffee and cake. Easy to see in an hour and talk afterwards.",
+        "tags": [
+          "Gallery",
+          "Indoor",
+          "Art",
+          "Cafe",
+          "Date Night"
+        ],
+        "instagram": "https://www.instagram.com/estorickcollection",
+        "indoor": "indoor",
+        "costBand": "£",
+        "costPP": 9.5,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.estorickcollection.com/visitor-information"
+      },
+      {
+        "name": "Museum of the Home",
+        "url": "https://museumofthehome.org.uk/",
+        "category": "Museums & Culture",
+        "location": "136 Kingsland Road, Hoxton, London, E2 8EA",
+        "region": "East London",
+        "lat": 51.531557,
+        "lng": -0.076244,
+        "description": "🏠 A free museum of homes through the ages, with period rooms to wander through and a garden outside. Good conversation starter about where you each grew up.",
+        "tags": [
+          "Museum",
+          "Indoor",
+          "Free",
+          "History",
+          "Hoxton"
+        ],
+        "instagram": "https://www.instagram.com/museumofthehome",
+        "indoor": "mixed",
+        "costBand": "Free",
+        "costPP": 0,
+        "costChecked": "2026-11-08",
+        "costSource": "https://museumofthehome.org.uk/"
+      },
+      {
+        "name": "Imperfect Art Cafe (Angel)",
+        "url": "https://www.imperfectart.co.uk/",
+        "category": "Workshops & Classes",
+        "location": "Studio 2B, 5 Torrens Street, Angel, London, EC1V 1NQ",
+        "region": "North London",
+        "lat": 51.532224,
+        "lng": -0.105053,
+        "description": "🎨 A relaxed two-hour painting and drawing session with tea, coffee and biscuits, no experience needed. A low-pressure way to chat while you both make something.",
+        "tags": [
+          "Art Cafe",
+          "Indoor",
+          "Creative",
+          "Date Night",
+          "Beginner Friendly"
+        ],
+        "instagram": "https://www.instagram.com/imperfect_art_london",
+        "indoor": "indoor",
+        "costBand": "££",
+        "costPP": 11,
+        "costChecked": "2026-11-08",
+        "costSource": "https://www.imperfectart.co.uk/"
+      },
+      {
+        "name": "The Palomar (Soho)",
+        "url": "https://thepalomar.co.uk/",
+        "category": "Dinner & Dining",
+        "location": "34 Rupert Street, Soho, London, W1D 6DN",
+        "region": "Central London",
+        "lat": 51.511237,
+        "lng": -0.132629,
+        "description": "🔥 Lively modern Jerusalem cooking at a buzzing counter around the open kitchen. Great for sharing plates and a night with energy.",
+        "tags": [
+          "Dinner",
+          "Indoor",
+          "Sharing Plates",
+          "Counter Dining",
+          "Date Night"
+        ],
+        "instagram": "https://www.instagram.com/palomarsoho",
+        "indoor": "indoor"
+      },
+      {
+        "name": "Arros QD (Fitzrovia)",
+        "url": "https://www.arrosqd.com/",
+        "category": "Dinner & Dining",
+        "location": "64 Eastcastle Street, Fitzrovia, London, W1W 8NQ",
+        "region": "Central London",
+        "lat": 51.516676,
+        "lng": -0.137062,
+        "description": "🥘 Spanish wood-fire cooking and crispy Valencian paella by a 6m open stove. A warm, special-feeling dinner for two.",
+        "tags": [
+          "Dinner",
+          "Indoor",
+          "Spanish",
+          "Paella",
+          "Date Night"
+        ],
+        "instagram": "https://www.instagram.com/arrosqd",
+        "indoor": "indoor"
+      },
+      {
+        "name": "Speedboat Bar (Soho)",
+        "url": "https://speedboatbar.co.uk/",
+        "category": "Dinner & Dining",
+        "location": "30 Rupert Street, Soho, London, W1D 6DL",
+        "region": "Central London",
+        "lat": 51.5112,
+        "lng": -0.132573,
+        "description": "🌶️ A loud, fun Thai canteen and bar with big flavours and a pool table. Informal and playful, good for a second or third date.",
+        "tags": [
+          "Thai",
+          "Indoor",
+          "Pool Table",
+          "Casual",
+          "Date Night"
+        ],
+        "instagram": "https://www.instagram.com/speedboatbar",
+        "indoor": "indoor"
+      },
+      {
+        "name": "Mareida (Fitzrovia)",
+        "url": "https://www.mareida.co.uk/",
+        "category": "Dinner & Dining",
+        "location": "160 Great Portland Street, Fitzrovia, London, W1W 5QA",
+        "region": "Central London",
+        "lat": 51.520669,
+        "lng": -0.142737,
+        "description": "🍷 Modern Chilean cooking with South American wines in a stylish dining room. A smart, relaxed dinner for two.",
+        "tags": [
+          "Dinner",
+          "Indoor",
+          "Chilean",
+          "Wine",
+          "Date Night"
+        ],
+        "instagram": "https://www.instagram.com/mareida.london",
+        "indoor": "indoor"
+      },
+      {
+        "name": "Kricket Soho",
+        "url": "https://kricketrestaurants.com/",
+        "category": "Dinner & Dining",
+        "location": "12 Denman Street, Soho, London, W1D 7HJ",
+        "region": "Central London",
+        "lat": 51.510837,
+        "lng": -0.135182,
+        "description": "🍛 Small plates of modern British-Indian food made for sharing, with a £20 lunch thali if you fancy something earlier. Neat spot to combine with a drink next door at Soma.",
+        "tags": [
+          "Dinner",
+          "Indoor",
+          "British-Indian",
+          "Sharing Plates",
+          "Date Night"
+        ],
+        "instagram": "https://www.instagram.com/kricketlondon",
+        "indoor": "indoor",
+        "costBand": "££",
+        "costPP": 20,
+        "costChecked": "2026-11-08",
+        "costSource": "https://kricketrestaurants.com/"
+      },
+      {
+        "name": "SOMA (Soho)",
+        "url": "https://soma.london/",
+        "category": "Bars & Speakeasies",
+        "location": "14 Denman Street, Soho, London, W1D 7HJ",
+        "region": "Central London",
+        "lat": 51.510837,
+        "lng": -0.135182,
+        "description": "🍸 A moody basement speakeasy with Indian-accented cocktails, right beside Kricket. Dark, intimate and made for a proper chat.",
+        "tags": [
+          "Cocktails",
+          "Indoor",
+          "Speakeasy",
+          "Soho",
+          "Date Night"
+        ],
+        "instagram": "https://www.instagram.com/soma__ldn",
+        "indoor": "indoor"
+      },
+      {
+        "name": "Nécco (Exmouth Market)",
+        "url": "https://www.necco.london/",
+        "category": "Dinner & Dining",
+        "location": "52-54 Exmouth Market, Clerkenwell, London, EC1R 4QE",
+        "region": "Central London",
+        "lat": 51.525848,
+        "lng": -0.108893,
+        "description": "🍣 Japanese comfort food, sushi and sake on lively Exmouth Market. Cosy and easy, with lots to wander past afterwards.",
+        "tags": [
+          "Japanese",
+          "Indoor",
+          "Sushi",
+          "Sake",
+          "Date Night"
+        ],
+        "instagram": "https://www.instagram.com/necco.london",
+        "indoor": "indoor"
+      },
+      {
+        "name": "Half Cut Market (York Way)",
+        "url": "https://halfcut.world/",
+        "category": "Bars & Speakeasies",
+        "location": "396 York Way, Islington, London, N7 9LW",
+        "region": "North London",
+        "lat": 51.5485,
+        "lng": -0.127944,
+        "description": "🍷 A neighbourhood restaurant, natural wine bar and shop with a £24 two-course set menu on Tuesdays and Wednesdays. Relaxed and unfussy, good for a midweek date.",
+        "tags": [
+          "Wine Bar",
+          "Indoor",
+          "Natural Wine",
+          "Set Menu",
+          "Date Night"
+        ],
+        "indoor": "indoor",
+        "costBand": "££",
+        "costPP": 24,
+        "costChecked": "2026-11-08",
+        "costSource": "https://halfcut.world/"
       }
     ]
   }
