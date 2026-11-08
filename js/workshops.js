@@ -66,9 +66,9 @@
             const div = document.createElement('div');
             div.className = 'workshop-card';
             div.onclick = () => focusWorkshop(w);
-            const badgeColor = w.source === 'Airbnb' ? 'var(--rose-light)' : 'var(--gold)';
-            const badgeBg = w.source === 'Airbnb' ? 'rgba(255,107,138,0.16)' : 'rgba(230,169,121,0.16)';
-            
+            const badgeColor = 'var(--gold)';
+            const badgeBg = 'rgba(230,169,121,0.16)';
+
             div.innerHTML = `
                 <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
                     <span style="background:${badgeBg}; color:${badgeColor}; padding:3px 10px; border-radius:999px; font-size:0.75rem; font-weight:600; border:1px solid ${badgeBg}; text-transform:uppercase; letter-spacing:1px;">
@@ -238,8 +238,8 @@
             const marker = L.marker([finalLat, finalLng], { icon }).addTo(markersLayer);
             
             let classesHtml = g.classes.map(w => {
-                const badgeColor = w.source === 'Airbnb' ? 'var(--rose-light)' : 'var(--gold)';
-                const badgeBg = w.source === 'Airbnb' ? 'rgba(255,107,138,0.16)' : 'rgba(230,169,121,0.16)';
+                const badgeColor = 'var(--gold)';
+                const badgeBg = 'rgba(230,169,121,0.16)';
                 return `<div style="margin-bottom:12px; text-align:left; border-bottom:1px solid #e1e4e8; padding-bottom:12px;">
                     <span class="map-popup-badge" style="background:${badgeBg}; color:${badgeColor}; border:1px solid ${badgeBg};">
                         ${w.source || 'ClassBento'}

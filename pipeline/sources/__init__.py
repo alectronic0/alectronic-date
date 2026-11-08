@@ -7,19 +7,20 @@ A module may also expose:
   so the gate skips re-checking it.
 - `health(items, bucket) -> {key: None | "reason"}` to strike records it has checked
   (used by spots to catch closed venues).
+
+An empty list means the bucket is not refreshed. ClassBento, Eventbrite, Fever, DesignMyNight,
+Time Out, Secret London and Fatsoma forbid automated collection in their terms (audit 2026-11-07),
+so their modules are kept for reference but deliberately not registered.
 """
 
-from sources import (
-    adventure_cinema, airbnb, classbento, designmynight, eventbrite, eventbrite_london,
-    fatsoma, fever, fever_london, secretlondon, timeout,
-)
+from sources import adventure_cinema
 
 SOURCES = {
-    "classes": [classbento, airbnb],
-    "cinema": [fever, adventure_cinema],
-    "nerd": [eventbrite],
+    "classes": [],
+    "cinema": [adventure_cinema],
+    "nerd": [],
     # Singles events now come from the events API; scraping them here would repopulate the saved list.
     "singles": [],
     "spots": [],
-    "activities": [designmynight, timeout, secretlondon, fever_london, fatsoma, eventbrite_london],
+    "activities": [],
 }
