@@ -847,8 +847,10 @@
       gap: 4px;
     }
 
-    .ticket-pill {
-      justify-self: start;
+    .guide-side {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .cal-cell {
@@ -1037,53 +1039,51 @@
 .events-status-error { border: 1px solid rgba(229, 72, 77, 0.6); color: var(--text); }
 .events-status-error .filter-btn { margin-top: var(--space-3); }
 
-.source-strip {
-  --source-ok: #7fc2a6;
-  --source-warning: #f5a623;
-  --source-stale: #e5484d;
-  --source-pending: var(--muted-2);
-  margin-bottom: var(--space-5);
-}
-.source-title { font-size: 1.1rem; margin: 0 0 var(--space-1); }
-.source-hint, .source-unavailable { margin: 0 0 var(--space-3); font-size: 0.85rem; color: var(--muted-2); }
-.source-group { margin-bottom: var(--space-3); }
-.source-group-title {
-  margin: 0 0 var(--space-2);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.source-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
-.source-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: 6px 12px;
+/* Whole-card click target: the title link's ::after covers the card, so the map link needs its own layer above it. */
+.guide-event { position: relative; }
+.guide-event.is-link { cursor: pointer; transition: border-color 0.2s ease, background 0.2s ease; }
+.guide-event.is-link:hover, .guide-event.is-link:focus-within { border-color: var(--accent); background: var(--surface-2); }
+.guide-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.guide-link:focus-visible { outline: none; }
+.guide-event:has(.guide-link:focus-visible) { outline: 2px solid var(--accent-light); outline-offset: 2px; }
+.guide-inner-link { position: relative; z-index: 1; }
+.guide-side { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-2); }
+.guide-go { font-size: 0.8rem; font-weight: 700; color: var(--accent-light); }
+.guide-event.is-link:hover .guide-go, .guide-event.is-link:focus-within .guide-go { text-decoration: underline; }
+
+/* Platforms tab: is this platform feeding the schedule yet? */
+.integration-chip {
+  display: inline-block;
+  margin: 0 0 var(--space-3);
+  padding: 3px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 999px;
-  color: var(--text);
-  text-decoration: none;
-  transition: border-color 0.2s ease, background 0.2s ease;
 }
-.source-chip:hover, .source-chip:focus-visible { background: var(--surface-3); border-color: var(--accent); text-decoration: none; }
-.source-name { font-weight: 600; font-size: 0.9rem; }
-.source-status { display: inline-flex; align-items: center; gap: 4px; font-size: 0.78rem; color: var(--muted); }
-.source-icon { font-weight: 700; }
-.source-ok .source-icon, .source-icon.source-ok { color: var(--source-ok); }
-.source-warning .source-icon, .source-icon.source-warning { color: var(--source-warning); }
-.source-stale .source-icon, .source-icon.source-stale { color: var(--source-stale); }
-.source-pending .source-icon, .source-icon.source-pending { color: var(--source-pending); }
-.source-warning { border-color: rgba(245, 166, 35, 0.45); }
-.source-stale { border-color: rgba(229, 72, 77, 0.6); }
-.source-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1) var(--space-4);
-  margin: 0;
+.integration-ok { border-color: #7fc2a6; }
+.integration-warning { border-color: rgba(245, 166, 35, 0.6); }
+.integration-stale { border-color: rgba(229, 72, 77, 0.6); }
+.integration-pending { color: var(--muted); border-style: dashed; }
+
+/* The site-wide `section` rule (padding and a bottom hairline for the homepage's page sections) was leaking onto every day group. */
+.guide-day {
   padding: 0;
-  list-style: none;
-  font-size: 0.78rem;
-  color: var(--muted-2);
+  border-bottom: 0;
+}
+
+/* Full-width rows are hard to scan on a wide screen, so on desktop the schedule reads as one centred column.
+   Map, calendar and platforms keep the full width; phones are untouched. */
+@media (min-width: 900px) {
+  .page-main:has(#panel-schedule:not([hidden])) :is(#guide-filters, #events-status, #panel-schedule) {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+
+  .guide-event {
+    grid-template-columns: 56px 1fr auto;
+    padding: var(--space-2) var(--space-3);
+  }
 }

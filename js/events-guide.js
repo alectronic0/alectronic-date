@@ -34,13 +34,14 @@
   let guide = { hosts: [], items: [] };
   let feedStatus = 'loading';
   let refreshedAgeHours = null;
+  let healthSources = null;
   let hostsById = {};
   let map = null;
   let markerLayer = null;
 
   const $ = (id) => document.getElementById(id);
   const { esc, safeUrl, safeAsset, monogram, logoHtml, bindLogoFallback } = window.LabsUI;
-  const { groupSources, chipModel, freshestAgeHours, ageText } = window.SourceStatus;
+  const { platformChip, freshestAgeHours, ageText } = window.SourceStatus;
 
   function todayISO() {
     const now = new Date();
@@ -195,25 +196,29 @@
       </div>`;
   }
 
+  // The title link is stretched over the whole card (see .guide-link in labs-guide.css), so one click or tap anywhere books.
   function eventRow(event) {
     const status = TICKET[ticketStatus(event)];
     const spotlight = hostsById[event.hostId];
     const url = safeUrl(event.url);
-    const title = url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(event.name)}</a>` : esc(event.name);
+    const title = url ? `<a class="guide-link" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(event.name)}<span class="sr-only"> (opens the booking page in a new tab)</span></a>` : esc(event.name);
     const mapLink = safeUrl(event.mapUrl);
     return `
-      <article class="guide-event${spotlight ? ' is-spotlight' : ''}">
+      <article class="guide-event${spotlight ? ' is-spotlight' : ''}${url ? ' is-link' : ''}">
         <div class="guide-time">${esc(event.startTime || 'TBC')}</div>
         <div class="guide-main">
           <h3 class="guide-title">${title}</h3>
           <div class="guide-meta">
             <span class="host-badge${spotlight ? ' spotlight' : ''}">${logoHtml(hostLabel(event), logoUrl(event), 'logo-sm')}${esc(hostLabel(event))}</span>
-            ${event.venue || event.location ? `<span>📍 ${mapLink ? `<a href="${esc(mapLink)}" target="_blank" rel="noopener noreferrer">${esc(event.venue || event.location)}</a>` : esc(event.venue || event.location)}</span>` : ''}
+            ${event.venue || event.location ? `<span>📍 ${mapLink ? `<a class="guide-inner-link" href="${esc(mapLink)}" target="_blank" rel="noopener noreferrer">${esc(event.venue || event.location)}</a>` : esc(event.venue || event.location)}</span>` : ''}
             ${event.price ? `<span>🎟️ ${esc(event.price)}</span>` : ''}
           </div>
           ${attendanceBar(event)}
         </div>
-        <span class="ticket-pill" style="--pill:${status.color}">${status.icon} ${status.label}</span>
+        <div class="guide-side">
+          <span class="ticket-pill" style="--pill:${status.color}">${status.icon} ${status.label}</span>
+          ${url ? '<span class="guide-go" aria-hidden="true">Book ↗</span>' : ''}
+        </div>
       </article>`;
   }
 
@@ -393,6 +398,13 @@
   let platformCategory = 'All';
   let platformQuery = '';
 
+  // Hidden until the status feed answers, so a failed feed shows no chip rather than a wrong one.
+  function integrationChipHtml(item) {
+    if (!healthSources) return '';
+    const chip = platformChip(item.url, healthSources);
+    return `<p class="integration-chip integration-${chip.state}"><span aria-hidden="true">${chip.icon}</span> ${chip.state === 'ok' || chip.state === 'warning' ? 'Live feed: ' : ''}${esc(chip.label)}</p>`;
+  }
+
   function renderPlatforms() {
     const data = window.CONTENT && window.CONTENT.singlesEvents;
     const grid = $('events-grid');
@@ -421,6 +433,7 @@
             <span class="category-badge">${esc(item.category || 'Event')}</span>
             ${item.location ? `<span class="location-badge">📍 ${esc(item.location)}</span>` : ''}
           </div>
+          ${integrationChipHtml(item)}
           <div class="platform-head">
             ${logoHtml(item.name, safeAsset(item.logo), 'platform-logo')}
             <h2 class="card-title">${esc(item.name)}</h2>
@@ -538,58 +551,13 @@
     setFeedStatus(result.items.length ? 'ready' : 'empty');
   }
 
-  function chipHtml(source) {
-    const chip = chipModel(source);
-    return `
-      <li>
-        <a class="source-chip source-${chip.state}" href="${esc(safeUrl(chip.url))}" target="_blank" rel="noopener noreferrer" aria-label="${esc(chip.ariaLabel)}">
-          ${logoHtml(chip.name, safeAsset(chip.logo), 'logo-sm')}
-          <span class="source-name">${esc(chip.name)}</span>
-          <span class="source-status"><span class="source-icon" aria-hidden="true">${chip.icon}</span>${esc(chip.label)}</span>
-        </a>
-      </li>`;
-  }
-
-  function sourceGroupHtml(title, sources) {
-    if (!sources.length) return '';
-    return `
-      <div class="source-group">
-        <h3 class="source-group-title">${title}</h3>
-        <ul class="source-chips">${sources.filter((s) => safeUrl(s.url)).map(chipHtml).join('')}</ul>
-      </div>`;
-  }
-
-  function sourceLegendHtml() {
-    return `
-      <ul class="source-legend" aria-label="Status key">
-        <li><span class="source-icon source-ok" aria-hidden="true">✓</span> refreshed recently</li>
-        <li><span class="source-icon source-warning" aria-hidden="true">⚠</span> issue or overdue</li>
-        <li><span class="source-icon source-stale" aria-hidden="true">✕</span> stale or paused</li>
-        <li><span class="source-icon source-pending" aria-hidden="true">⏳</span> not connected yet</li>
-      </ul>`;
-  }
-
-  function renderSources(health) {
-    const strip = $('source-strip');
-    strip.hidden = false;
-    if (!health.ok) {
-      strip.innerHTML = '<p class="source-unavailable">Source status is unavailable right now.</p>';
-      return;
-    }
-    const { live, notConnected } = groupSources(health.sources);
-    strip.innerHTML = `
-      <h2 class="source-title">Where these events come from</h2>
-      <p class="source-hint">Click a logo to visit the official site.</p>
-      ${sourceGroupHtml('Live feeds', live)}
-      ${sourceGroupHtml('Not connected yet', notConnected)}
-      ${sourceLegendHtml()}`;
-  }
-
   async function loadSources() {
     const health = await window.EventsApi.loadHealth();
-    if (health.ok) refreshedAgeHours = freshestAgeHours(health.sources);
-    renderSources(health);
+    if (!health.ok) return;
+    healthSources = health.sources;
+    refreshedAgeHours = freshestAgeHours(health.sources);
     renderCount();
+    if (state.tab === 'platforms') renderPlatforms();
   }
 
   function init() {

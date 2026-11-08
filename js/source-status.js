@@ -1,21 +1,8 @@
-// Pure helpers for the "Where these events come from" strip on labs/events.html (no DOM).
-// The API decides each source's state; this file only groups, orders and words it.
+// Pure helpers for the status chips on the Platforms tab of labs/events.html (no DOM).
+// The API decides each source's state; this file only matches it to a platform and words it.
 // Loaded by labs/events.html (window.SourceStatus) and by node --test (module.exports).
 (function (root) {
-  const LOGOS = {
-    dateinadash: '../img/logos/platforms/date-in-a-dash.png',
-    itsadate: '../img/logos/platforms/its-a-date.png',
-    artdatingclub: '../img/logos/art-dating-club.png',
-    boda: '../img/logos/platforms/boda.png',
-    fig: '../img/logos/fig.png',
-    haystack: '../img/logos/haystack.jpg',
-    truedating: '../img/logos/platforms/true-dating.png',
-    originaldating: '../img/logos/platforms/original-dating.png',
-    bedatingbeautiful: '../img/logos/be-dating-beautiful.png',
-    thursday: '../img/logos/thursday.jpg',
-  };
   const ICONS = { ok: '✓', warning: '⚠', stale: '✕', pending: '⏳', unknown: '?' };
-  const LIVE_ORDER = ['ok', 'warning', 'stale'];
   const HOURS_PER_DAY = 24;
   const MINUTES_PER_HOUR = 60;
 
@@ -30,26 +17,6 @@
     const hours = Math.floor(ageHours);
     if (hours < HOURS_PER_DAY) return `${plural(hours, 'hour')} ago`;
     return `${plural(Math.floor(ageHours / HOURS_PER_DAY), 'day')} ago`;
-  }
-
-  function byName(a, b) {
-    return a.name.localeCompare(b.name);
-  }
-
-  function liveRank(source) {
-    const rank = LIVE_ORDER.indexOf(source.state);
-    return rank === -1 ? LIVE_ORDER.length : rank;
-  }
-
-  function byLiveState(a, b) {
-    return liveRank(a) - liveRank(b) || byName(a, b);
-  }
-
-  function groupSources(healthSources) {
-    return {
-      live: healthSources.filter((s) => s.permission === 'cleared').sort(byLiveState),
-      notConnected: healthSources.filter((s) => s.permission === 'pending').sort(byName),
-    };
   }
 
   function freshestAgeHours(healthSources) {
@@ -77,7 +44,7 @@
   const LIVE_LABELS = { ok: okLabel, warning: warningLabel, stale: staleLabel };
 
   function statusOf(source) {
-    if (source.permission === 'pending') return { state: 'pending', label: 'Not connected yet' };
+    if (source.permission === 'pending') return { state: 'pending', label: 'Working on connecting' };
     const labelFor = LIVE_LABELS[source.state];
     if (!labelFor) return { state: 'unknown', label: 'Status unknown' };
     return { state: source.state, label: labelFor(source) };
@@ -85,20 +52,26 @@
 
   function chipModel(source) {
     const { state, label } = statusOf(source);
-    const spokenLabel = label.charAt(0).toLowerCase() + label.slice(1);
-    return {
-      id: source.id,
-      name: source.name,
-      url: source.url,
-      logo: LOGOS[source.id] || '',
-      state,
-      icon: ICONS[state],
-      label,
-      ariaLabel: `${source.name}: ${spokenLabel}. Opens the official site.`,
-    };
+    return { state, icon: ICONS[state], label };
   }
 
-  const api = { groupSources, ageText, chipModel, freshestAgeHours };
+  function hostOf(url) {
+    try {
+      return new URL(url).hostname.replace(/^www\./, '');
+    } catch (error) {
+      return '';
+    }
+  }
+
+  // A platform is live only when its source is cleared; everything else is on the way.
+  function platformChip(platformUrl, healthSources) {
+    const host = hostOf(platformUrl);
+    const match = host && healthSources.find((s) => s.permission === 'cleared' && hostOf(s.url) === host);
+    if (match) return chipModel(match);
+    return { state: 'pending', icon: ICONS.pending, label: 'Working on connecting' };
+  }
+
+  const api = { ageText, chipModel, platformChip, freshestAgeHours };
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.SourceStatus = api;
 })(typeof window !== 'undefined' ? window : globalThis);

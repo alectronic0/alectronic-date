@@ -1,7 +1,7 @@
 // node --test scripts/source_status.test.js
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { groupSources, ageText, chipModel, freshestAgeHours } = require('../js/source-status.js');
+const { ageText, chipModel, platformChip, freshestAgeHours } = require('../js/source-status.js');
 
 const source = (overrides) => ({
   id: 'fig', name: 'Fig', url: 'https://figdating.com', enabled: true, permission: 'cleared',
@@ -24,46 +24,6 @@ for (const [name, [hours, want]] of Object.entries(ageCases)) {
   test(`ageText: ${name}`, () => assert.equal(ageText(hours), want));
 }
 
-const ids = (sources) => sources.map((s) => s.id);
-
-const groupCases = {
-  'live ordered ok, warning, stale then A to Z': [
-    [
-      source({ id: 'z-ok', name: 'Zed', state: 'ok' }),
-      source({ id: 'stale', name: 'Alpha', state: 'stale' }),
-      source({ id: 'warn', name: 'Mid', state: 'warning' }),
-      source({ id: 'a-ok', name: 'Able', state: 'ok' }),
-    ],
-    { live: ['a-ok', 'z-ok', 'warn', 'stale'], notConnected: [] },
-  ],
-  'pending go to not connected A to Z': [
-    [
-      source({ id: 'thursday', name: 'Thursday', permission: 'pending', state: 'waiting' }),
-      source({ id: 'original', name: 'Original Dating', permission: 'pending', state: 'waiting' }),
-    ],
-    { live: [], notConnected: ['original', 'thursday'] },
-  ],
-  'permission none is dropped': [
-    [source({ id: 'eventbrite', permission: 'none', state: 'none' }), source({ id: 'fig' })],
-    { live: ['fig'], notConnected: [] },
-  ],
-  'nothing in, nothing out': [[], { live: [], notConnected: [] }],
-};
-
-for (const [name, [input, want]] of Object.entries(groupCases)) {
-  test(`groupSources: ${name}`, () => {
-    const got = groupSources(input);
-    assert.deepEqual(ids(got.live), want.live);
-    assert.deepEqual(ids(got.notConnected), want.notConnected);
-  });
-}
-
-test('groupSources: does not mutate the input order', () => {
-  const input = [source({ id: 'b', name: 'B' }), source({ id: 'a', name: 'A' })];
-  groupSources(input);
-  assert.deepEqual(ids(input), ['b', 'a']);
-});
-
 const chipCases = {
   'ok': [source({ ageHours: 0.25 }), { state: 'ok', icon: '✓', label: 'Refreshed 15 minutes ago' }],
   'ok without an age': [source({ ageHours: null }), { state: 'ok', label: 'Not refreshed yet' }],
@@ -74,7 +34,7 @@ const chipCases = {
   'stale and paused': [source({ id: 'dateinadash', name: 'DateinaDash', state: 'stale', enabled: false, ageHours: null }), { state: 'stale', icon: '✕', label: 'Paused after an error' }],
   'stale and enabled': [source({ state: 'stale', ageHours: 80 }), { state: 'stale', label: 'Not refreshed for 3 days' }],
   'stale for under a day says one day': [source({ state: 'stale', ageHours: 20 }), { label: 'Not refreshed for 1 day' }],
-  'pending': [source({ permission: 'pending', state: 'waiting', enabled: false, ageHours: null }), { state: 'pending', icon: '⏳', label: 'Not connected yet' }],
+  'pending': [source({ permission: 'pending', state: 'waiting', enabled: false, ageHours: null }), { state: 'pending', icon: '⏳', label: 'Working on connecting' }],
   'unknown live state': [source({ state: 'mystery' }), { state: 'unknown', label: 'Status unknown' }],
 };
 
@@ -85,32 +45,23 @@ for (const [name, [input, want]] of Object.entries(chipCases)) {
   });
 }
 
-const ariaCases = {
-  'paused': [source({ name: 'DateinaDash', state: 'stale', enabled: false }), 'DateinaDash: paused after an error. Opens the official site.'],
-  'refreshed': [source({ name: 'Fig', ageHours: 2 }), 'Fig: refreshed 2 hours ago. Opens the official site.'],
-  'pending': [source({ name: 'Thursday', permission: 'pending', state: 'waiting' }), 'Thursday: not connected yet. Opens the official site.'],
+const platformCases = {
+  'cleared source matched by host, www ignored': ['https://figdating.com/events/', [source({ url: 'https://www.figdating.com' })], { state: 'ok', label: 'Refreshed 15 minutes ago' }],
+  'cleared but stale keeps its own state': ['https://dateinadash.com/', [source({ url: 'https://dateinadash.com', state: 'stale', enabled: false, ageHours: null })], { state: 'stale', label: 'Paused after an error' }],
+  'pending source is still on the way': ['https://truedating.co.uk/events/x', [source({ url: 'https://truedating.co.uk', permission: 'pending', state: 'waiting' })], { state: 'pending', label: 'Working on connecting' }],
+  'permission none is on the way': ['https://eventbrite.co.uk/', [source({ url: 'https://www.eventbrite.co.uk', permission: 'none', state: 'none' })], { state: 'pending', label: 'Working on connecting' }],
+  'no matching source is on the way': ['https://cityswoon.com/uk/', [source()], { state: 'pending', label: 'Working on connecting' }],
+  'same host, different subdomain is not a match': ['https://events.figdating.com/', [source({ url: 'https://figdating.com' })], { state: 'pending' }],
+  'bad url is on the way': ['not a url', [source()], { state: 'pending' }],
+  'empty source list is on the way': ['https://figdating.com/', [], { state: 'pending' }],
 };
 
-for (const [name, [input, want]] of Object.entries(ariaCases)) {
-  test(`chipModel aria label: ${name}`, () => assert.equal(chipModel(input).ariaLabel, want));
+for (const [name, [url, sources, want]] of Object.entries(platformCases)) {
+  test(`platformChip: ${name}`, () => {
+    const got = platformChip(url, sources);
+    for (const [key, value] of Object.entries(want)) assert.equal(got[key], value, key);
+  });
 }
-
-const logoCases = {
-  'known source has a repo logo': ['thursday', '../img/logos/thursday.jpg'],
-  'platform logo lives under platforms': ['dateinadash', '../img/logos/platforms/date-in-a-dash.png'],
-  'source without a logo is empty so the monogram shows': ['rendezvous', ''],
-};
-
-for (const [name, [id, want]] of Object.entries(logoCases)) {
-  test(`chipModel logo: ${name}`, () => assert.equal(chipModel(source({ id })).logo, want));
-}
-
-test('chipModel: carries the official site url, id and name for the link', () => {
-  const got = chipModel(source({ id: 'thursday', name: 'Thursday', url: 'https://www.thursday.com', permission: 'pending', state: 'waiting' }));
-  assert.equal(got.url, 'https://www.thursday.com');
-  assert.equal(got.id, 'thursday');
-  assert.equal(got.name, 'Thursday');
-});
 
 const freshestCases = {
   'smallest age wins': [[source({ ageHours: 5 }), source({ ageHours: 0.5 }), source({ ageHours: 9 })], 0.5],
