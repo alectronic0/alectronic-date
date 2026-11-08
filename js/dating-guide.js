@@ -124,10 +124,12 @@
     const facts = service.kind === 'matchmaker' ? [
       factRow('Trade body', service.abia ? 'ABIA member' : 'Not an ABIA member'),
       factRow('Price', service.price),
+      factRow('Free list', service.freeList),
       factRow('Consultation', service.consultation),
       factRow('Contract', service.contractLength),
       factRow('Areas', service.areas),
       factRow('Trustpilot', trustpilotText(service)),
+      factRow('Checked', service.checked ? monthYear(service.checked) : null),
     ] : [
       factRow('Verification', service.verification == null ? 'Not confirmed' : service.verification.length ? service.verification : 'None'),
       factRow('Safety tools', service.safety),
@@ -179,11 +181,22 @@
       .join(' ').toLowerCase().includes(state.query);
   }
 
+  function filtering() {
+    return Boolean(state.query || state.rating || state.owner || state.category || state.verifiedOnly);
+  }
+
+  function groupedHtml(shown) {
+    return window.MatchmakerOrder.groupMatchmakers(shown).map((group) => `
+      <h2 class="group-heading">${esc(group.title)}</h2>
+      ${group.items.map((s) => card(s, upcomingByHost)).join('')}`).join('');
+  }
+
   function renderList(services) {
     const shown = services.filter(matches);
     $('dating-count').textContent = `Showing ${shown.length} of ${services.length}`;
+    const grouped = !filtering() && window.MatchmakerOrder && shown.some((s) => s.group);
     $('dating-grid').innerHTML = shown.length
-      ? shown.map((s) => card(s, upcomingByHost)).join('')
+      ? (grouped ? groupedHtml(shown) : shown.map((s) => card(s, upcomingByHost)).join(''))
       : '<div class="empty-state">Nothing matches. Try clearing a filter.</div>';
   }
 

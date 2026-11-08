@@ -117,46 +117,18 @@
       .join('');
   }
 
-  function renderHosts() {
-    const strip = $('host-strip');
-    strip.hidden = true;
-    if (!guide.hosts.length) return;
-    if (feedStatus !== 'ready') return;
-    strip.hidden = false;
-    strip.innerHTML = guide.hosts.map((host) => {
-      const next = nextEventFor(host);
-      const people = (host.people || []).join(' & ');
-      const active = state.host === host.name ? ' active' : '';
-      const logo = logoHtml(host.name, safeAsset(host.logo), 'host-logo');
-      return `
-        <article class="host-card${active}" data-host="${esc(host.name)}" tabindex="0" role="button" aria-pressed="${active ? 'true' : 'false'}">
-          ${logo}
-          <div class="host-body">
-            <span class="host-kicker">Host spotlight</span>
-            <h2 class="host-name">${esc(host.name)}</h2>
-            ${people ? `<p class="host-people">with ${esc(people)}</p>` : ''}
-            <p class="host-blurb">${esc(host.blurb)}</p>
-            <p class="host-next">${next ? `Next: <strong>${esc(dayLabel(next.startDate))}</strong>` : 'Dates coming soon'}</p>
-            <div class="host-links">${hostLinks(host)}</div>
-          </div>
-        </article>`;
-    }).join('');
-    strip.querySelectorAll('.host-card').forEach((card) => {
-      const toggle = () => {
-        state.host = state.host === card.dataset.host ? '' : card.dataset.host;
-        $('host-select').value = state.host;
-        render();
-      };
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('a')) return;
-        toggle();
-      });
-      card.addEventListener('keydown', (e) => {
-        if (e.key !== 'Enter' && e.key !== ' ') return;
-        e.preventDefault();
-        toggle();
-      });
-    });
+  // Shown on a platform card that has a host: people, next date, socials and a jump to their events.
+  function hostBlock(host) {
+    const next = feedStatus === 'ready' ? nextEventFor(host) : null;
+    const people = (host.people || []).join(' & ');
+    const links = PlatformHosts.socialLinks(host).filter((link) => safeUrl(link.url))
+      .map((link) => `<a href="${esc(link.url)}" target="_blank" rel="noopener noreferrer">${esc(link.label)}</a>`).join('');
+    const nextLine = feedStatus === 'ready' ? `<p class="host-next">${next ? `Next: <strong>${esc(dayLabel(next.startDate))}</strong>` : 'Dates coming soon'}</p>` : '';
+    return `
+      ${people ? `<p class="host-people">with ${esc(people)}</p>` : ''}
+      ${nextLine}
+      ${links ? `<div class="host-links">${links}</div>` : ''}
+      ${next ? `<button class="filter-btn host-events" type="button" data-host="${esc(host.name)}">See their events</button>` : ''}`;
   }
 
   function renderHostOptions() {
@@ -418,19 +390,20 @@
       grid.innerHTML = '<div class="empty-state">No platforms listed yet.</div>';
       return;
     }
-    const categories = ['All', ...new Set(data.items.map((i) => i.category).filter(Boolean))];
+    const all = PlatformHosts.mergePlatforms(data.items, guide.hosts);
+    const categories = ['All', ...new Set(all.map((i) => i.category).filter(Boolean))];
     filters.innerHTML = categories.map((cat) => `<button class="filter-btn ${cat === platformCategory ? 'active' : ''}" data-category="${esc(cat)}">${esc(cat)}</button>`).join('');
     filters.querySelectorAll('.filter-btn').forEach((btn) => btn.addEventListener('click', () => {
       platformCategory = btn.dataset.category;
       renderPlatforms();
     }));
 
-    const items = data.items.filter((item) => {
+    const items = all.filter((item) => {
       if (platformCategory !== 'All' && item.category !== platformCategory) return false;
       if (!platformQuery) return true;
-      return [item.name, item.category, item.location, item.description, ...(item.tags || [])].join(' ').toLowerCase().includes(platformQuery);
+      return [item.name, item.category, item.location, item.description, ...(item.tags || []), ...(item.host ? [...(item.host.people || []), item.host.blurb] : [])].join(' ').toLowerCase().includes(platformQuery);
     });
-    $('platform-count').textContent = `Showing ${items.length} of ${data.items.length} platforms`;
+    $('platform-count').textContent = `Showing ${items.length} of ${all.length} platforms`;
     grid.innerHTML = items.length ? items.map((item) => `
       <article class="event-card">
         <div>
@@ -444,12 +417,18 @@
             <h2 class="card-title">${esc(item.name)}</h2>
           </div>
           <p class="card-desc">${esc(item.description)}</p>
+          ${item.host ? hostBlock(item.host) : ''}
         </div>
         <div>
           ${item.tags && item.tags.length ? `<div class="tags-row">${item.tags.map((t) => `<span class="tag-pill">${esc(t)}</span>`).join('')}</div>` : ''}
-          <a href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer" class="card-action">Visit Website ↗</a>
+          ${safeUrl(item.url) ? `<a href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer" class="card-action">Visit Website ↗</a>` : ''}
         </div>
       </article>`).join('') : '<div class="empty-state">No matching platforms. Try a different search term or category.</div>';
+    grid.querySelectorAll('.host-events').forEach((btn) => btn.addEventListener('click', () => {
+      state.host = btn.dataset.host;
+      $('host-select').value = state.host;
+      showTab('schedule');
+    }));
   }
 
   // ---------- Shell ----------
@@ -481,11 +460,11 @@
   }
 
   function render() {
-    renderHosts();
     renderCount();
     if (feedStatus !== 'ready') return;
     if (state.tab === 'schedule') renderSchedule();
     if (state.tab === 'map') renderMap();
+    if (state.tab === 'platforms') renderPlatforms();
   }
 
   function showTab(tab) {

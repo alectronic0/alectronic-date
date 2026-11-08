@@ -908,15 +908,19 @@ window.DATING_SERVICES = {
       "logo": "../../img/logos/dating/drawing-down-the-moon.png",
       "abia": true,
       "founded": 1984,
-      "price": "Not published",
+      "price": "From £12,000 + VAT (ABIA register)",
       "consultation": null,
-      "contractLength": null,
+      "contractLength": "6 months minimum (ABIA register)",
       "areas": "London",
       "suits": "Personal matchmaking and introductions for professionals.",
       "track": [],
       "sources": [
-        "https://drawingdownthemoon.co.uk/"
-      ]
+        "https://drawingdownthemoon.co.uk/",
+        "https://abia.org.uk/agencies/drawing-down-the-moon/"
+      ],
+      "group": "paid",
+      "sortPrice": 12000,
+      "checked": "2026-11-08"
     },
     {
       "slug": "berkeley-international",
@@ -924,17 +928,20 @@ window.DATING_SERVICES = {
       "url": "https://www.berkeley-international.com",
       "logo": "../../img/logos/dating/berkeley-international.png",
       "abia": true,
-      "founded": null,
-      "price": "Not published",
+      "founded": 1998,
+      "price": "From £18,000 (ABIA register)",
       "consultation": null,
-      "contractLength": null,
+      "contractLength": "1 year minimum (ABIA register)",
       "areas": "UK, Europe and worldwide",
       "suits": "High-end matchmaking for affluent professionals.",
       "track": [],
       "sources": [
         "https://www.berkeley-international.com",
         "https://abia.org.uk/agencies/berkeley-international/"
-      ]
+      ],
+      "group": "paid",
+      "sortPrice": 18000,
+      "checked": "2026-11-08"
     },
     {
       "slug": "gray-and-farrar",
@@ -942,17 +949,20 @@ window.DATING_SERVICES = {
       "url": "https://www.grayandfarrar.com",
       "logo": "../../img/logos/dating/gray-and-farrar.png",
       "abia": true,
-      "founded": null,
-      "price": "Not published",
+      "founded": 2005,
+      "price": "£15,000 + VAT where applicable (ABIA register)",
       "consultation": null,
-      "contractLength": null,
-      "areas": "Worldwide, based in Mayfair",
+      "contractLength": "6 months minimum (ABIA register)",
+      "areas": "London, UK regions, Europe and worldwide",
       "suits": "Discreet, high-end international matchmaking.",
       "track": [],
       "sources": [
         "https://www.grayandfarrar.com",
         "https://abia.org.uk/agencies/gray-and-farrar/"
-      ]
+      ],
+      "group": "paid",
+      "sortPrice": 15000,
+      "checked": "2026-11-08"
     },
     {
       "slug": "bond-the-agency",
@@ -963,13 +973,16 @@ window.DATING_SERVICES = {
       "founded": 2023,
       "price": "Not published",
       "consultation": null,
-      "contractLength": null,
+      "contractLength": "6 months minimum (ABIA register)",
       "areas": "London",
       "suits": "Professionals looking for a long-term relationship.",
       "track": [],
       "sources": [
         "https://www.bondtheagency.com/"
-      ]
+      ],
+      "group": "paid",
+      "sortPrice": null,
+      "checked": "2026-11-08"
     },
     {
       "slug": "little-black-book",
@@ -977,16 +990,20 @@ window.DATING_SERVICES = {
       "url": "https://www.littleblackbooklondon.co.uk/",
       "logo": "../../img/logos/dating/little-black-book.png",
       "abia": true,
-      "founded": null,
-      "price": "Not published",
+      "founded": 2016,
+      "price": "£3,500 (ABIA register)",
       "consultation": null,
-      "contractLength": null,
+      "contractLength": "6 months minimum (ABIA register)",
       "areas": "London",
       "suits": "Single professionals looking for a committed relationship.",
       "track": [],
       "sources": [
-        "https://www.littleblackbooklondon.co.uk/"
-      ]
+        "https://www.littleblackbooklondon.co.uk/",
+        "https://abia.org.uk/agencies/little-black-book-london/"
+      ],
+      "group": "free",
+      "freeList": "Free list by application",
+      "checked": "2026-11-08"
     },
     {
       "slug": "cupid-in-the-city",
@@ -995,15 +1012,19 @@ window.DATING_SERVICES = {
       "logo": "../../img/logos/dating/cupid-in-the-city.png",
       "abia": true,
       "founded": 2013,
-      "price": "Not published",
+      "price": "£5,000 (ABIA register)",
       "consultation": "Free",
-      "contractLength": null,
+      "contractLength": "6 or 12 months",
       "areas": "London",
       "suits": "Professionals looking for a long-term partner.",
       "track": [],
       "sources": [
-        "https://www.cupidinthecity.com/"
-      ]
+        "https://www.cupidinthecity.com/",
+        "https://abia.org.uk/agencies/cupid-in-the-city/"
+      ],
+      "group": "paid",
+      "sortPrice": 5000,
+      "checked": "2026-11-08"
     },
     {
       "slug": "latham-international",
@@ -1014,7 +1035,7 @@ window.DATING_SERVICES = {
       "founded": null,
       "price": "Memberships from £15,000",
       "consultation": "£247",
-      "contractLength": null,
+      "contractLength": "3 months minimum (ABIA register)",
       "areas": "London and New York",
       "suits": "High-achieving people who value privacy.",
       "track": [],
@@ -1026,7 +1047,10 @@ window.DATING_SERVICES = {
         "reviews": 96,
         "checked": "2026-10-25",
         "url": "https://uk.trustpilot.com/review/latham-international.com"
-      }
+      },
+      "group": "paid",
+      "sortPrice": 15000,
+      "checked": "2026-11-08"
     },
     {
       "slug": "simantov",
@@ -1035,15 +1059,19 @@ window.DATING_SERVICES = {
       "logo": null,
       "abia": true,
       "founded": 1975,
-      "price": "Not published",
+      "price": "£300 to £12,000 across five levels (ABIA register)",
       "consultation": "Free",
-      "contractLength": null,
+      "contractLength": "6 months minimum (ABIA register)",
       "areas": "Worldwide, based in London",
       "suits": "Jewish singles looking for a Jewish partner.",
       "track": [],
       "sources": [
-        "https://simantov-international.com/"
-      ]
+        "https://simantov-international.com/",
+        "https://abia.org.uk/agencies/simantov-international/"
+      ],
+      "group": "paid",
+      "sortPrice": 300,
+      "checked": "2026-11-08"
     },
     {
       "slug": "muslim-matrimonial-coach",
@@ -1060,7 +1088,10 @@ window.DATING_SERVICES = {
       "track": [],
       "sources": [
         "https://www.muslimmatrimonialcoach.com/"
-      ]
+      ],
+      "group": "paid",
+      "sortPrice": 499,
+      "checked": "2026-11-08"
     },
     {
       "slug": "across-the-room",
@@ -1069,21 +1100,25 @@ window.DATING_SERVICES = {
       "logo": null,
       "abia": true,
       "founded": 1991,
-      "price": "Not published",
+      "price": "Three packages, 595 to 1,995 (ABIA register; currency not stated)",
       "consultation": "Free",
-      "contractLength": null,
+      "contractLength": "1 year minimum (ABIA register)",
       "areas": "East of England, Hertfordshire, Surrey and London",
       "suits": "People aged 30 to 80+ wanting personal introductions.",
       "track": [],
       "sources": [
-        "https://www.acrosstheroom.co.uk/"
+        "https://www.acrosstheroom.co.uk/",
+        "https://abia.org.uk/agencies/across-the-room/"
       ],
       "trustpilot": {
-        "score": 4.1,
-        "reviews": 66,
-        "checked": "2026-10-25",
+        "score": 4.3,
+        "reviews": 65,
+        "checked": "2026-11-08",
         "url": "https://uk.trustpilot.com/review/acrosstheroom.co.uk"
-      }
+      },
+      "group": "paid",
+      "sortPrice": 595,
+      "checked": "2026-11-08"
     },
     {
       "slug": "alva",
@@ -1092,7 +1127,7 @@ window.DATING_SERVICES = {
       "logo": "../../img/logos/dating/alva.png",
       "abia": false,
       "founded": null,
-      "price": "Not published",
+      "price": "Free to try",
       "consultation": null,
       "contractLength": null,
       "areas": "UK",
@@ -1100,7 +1135,10 @@ window.DATING_SERVICES = {
       "track": [],
       "sources": [
         "https://alvaaaa.com/"
-      ]
+      ],
+      "group": "free",
+      "freeList": "Free to try; only people introduced to you see your profile",
+      "checked": "2026-11-08"
     },
     {
       "slug": "the-pair-project",
@@ -1109,16 +1147,19 @@ window.DATING_SERVICES = {
       "logo": null,
       "abia": true,
       "founded": 2025,
-      "price": "Not published",
+      "price": "£380 to £2,500 (ABIA register)",
       "consultation": null,
-      "contractLength": null,
-      "areas": "UK-wide",
+      "contractLength": "12 months minimum (ABIA register)",
+      "areas": "UK-wide, based in the North West",
       "suits": "Professionals looking for a relationship, with guaranteed in-person dates.",
       "track": [],
       "sources": [
         "https://thepairproject.co.uk/",
         "https://abia.org.uk/agencies/the-pair-project/"
-      ]
+      ],
+      "group": "paid",
+      "sortPrice": 380,
+      "checked": "2026-11-08"
     },
     {
       "slug": "maclynn-international",
@@ -1130,12 +1171,15 @@ window.DATING_SERVICES = {
       "price": "Not published",
       "consultation": null,
       "contractLength": null,
-      "areas": "London, plus offices in Dubai and the US",
+      "areas": "London, plus offices in New York, Dubai and other cities",
       "suits": "Psychology-led matchmaking and coaching for professionals; formerly known as Vida Consultancy.",
       "track": [],
       "sources": [
         "https://maclynninternational.com/"
-      ]
+      ],
+      "group": "free",
+      "freeList": "Open membership list by application",
+      "checked": "2026-11-08"
     },
     {
       "slug": "cavendish-introductions",
@@ -1144,9 +1188,9 @@ window.DATING_SERVICES = {
       "logo": "../../img/logos/dating/cavendish-introductions.png",
       "abia": true,
       "founded": 2024,
-      "price": "Not published for men; women pay a one-time £450 registration fee",
+      "price": "Gentlemen £6,000; ladies £450 (ABIA register)",
       "consultation": "In-depth consultation before joining",
-      "contractLength": null,
+      "contractLength": "12 months minimum (ABIA register)",
       "areas": "London",
       "suits": "Men as the paying clients, introduced to women from a vetted ladies' club.",
       "track": [],
@@ -1154,7 +1198,10 @@ window.DATING_SERVICES = {
         "https://cavendishintroductions.co.uk/our-ladies-club/",
         "https://cavendishintroductions.co.uk/steps-to-success/",
         "https://abia.org.uk/agencies/cavendish-introductions/"
-      ]
+      ],
+      "group": "paid",
+      "sortPrice": 6000,
+      "checked": "2026-11-08"
     },
     {
       "slug": "bowes-lyon-partnership",
@@ -1172,7 +1219,10 @@ window.DATING_SERVICES = {
       "sources": [
         "https://www.bowes-lyonpartnership.co.uk/membership-packages",
         "https://www.bowes-lyonpartnership.co.uk/our-approach"
-      ]
+      ],
+      "group": "paid",
+      "sortPrice": 10000,
+      "checked": "2026-11-08"
     },
     {
       "slug": "the-matchmaker-uk",
@@ -1189,7 +1239,10 @@ window.DATING_SERVICES = {
       "track": [],
       "sources": [
         "https://thematchmaker.uk/"
-      ]
+      ],
+      "group": "paid",
+      "sortPrice": null,
+      "checked": "2026-11-08"
     },
     {
       "slug": "selective-search",
@@ -1201,13 +1254,158 @@ window.DATING_SERVICES = {
       "price": "Client fees not published; the candidate programme is free",
       "consultation": null,
       "contractLength": null,
-      "areas": "US-based",
+      "areas": "US-based (Chicago)",
       "suits": "Human-led matchmaking, with a free candidate programme for people not ready to become paying clients.",
       "track": [],
       "sources": [
         "https://www.selectivesearch.com/",
         "https://www.selectivesearch.com/candidate-program/"
-      ]
+      ],
+      "group": "free",
+      "freeList": "Free candidate programme",
+      "checked": "2026-11-08"
+    },
+    {
+      "slug": "graft-dating",
+      "name": "Graft Dating",
+      "url": "https://graftdating.com/",
+      "logo": null,
+      "abia": false,
+      "founded": null,
+      "price": "£150 per introduction; the network is free to join, with £25 only if a match is made",
+      "consultation": null,
+      "contractLength": "No subscription; pay per introduction",
+      "areas": "London",
+      "suits": "Human-led matchmaking for London singles: vetted blind dates, plus a matchmaker-reviewed network.",
+      "group": "featured",
+      "rank": 1,
+      "sources": [
+        "https://graftdating.com/"
+      ],
+      "checked": "2026-11-08",
+      "track": []
+    },
+    {
+      "slug": "elect-club",
+      "name": "Elect Club",
+      "url": "https://electclub.co.uk/",
+      "logo": null,
+      "abia": false,
+      "founded": null,
+      "price": "Not published",
+      "consultation": null,
+      "contractLength": null,
+      "areas": "UK-wide, including London",
+      "suits": "Introduction agency for city professionals: interviews, vetting, bespoke memberships and social events.",
+      "group": "featured",
+      "rank": 2,
+      "sources": [
+        "https://electclub.co.uk/"
+      ],
+      "checked": "2026-11-08",
+      "track": []
+    },
+    {
+      "slug": "sparked-connection",
+      "name": "Sparked Connection",
+      "url": "https://sparkedconnection.com/",
+      "logo": null,
+      "abia": true,
+      "founded": null,
+      "price": "Free Singles Network; Gold £2,000 and Platinum £3,800 (12 months)",
+      "consultation": "Private consultation before any paid membership",
+      "contractLength": "12 months for Gold and Platinum",
+      "areas": "London, with events across the UK",
+      "suits": "Matchmaking agency with private introductions, events and coaching.",
+      "group": "featured",
+      "rank": 3,
+      "freeList": "Free Singles Network (Bronze)",
+      "sources": [
+        "https://sparkedconnection.com/plans/",
+        "https://abia.org.uk/agencies/sparked-connections/"
+      ],
+      "checked": "2026-11-08",
+      "track": []
+    },
+    {
+      "slug": "macbeth-matchmaking",
+      "name": "Macbeth Matchmaking",
+      "url": "https://macbeth-matchmaking.com/",
+      "logo": null,
+      "abia": false,
+      "founded": null,
+      "price": "Not published",
+      "consultation": "No-commitment first discussion",
+      "contractLength": null,
+      "areas": "Europe, Switzerland and the UK, with a London page",
+      "suits": "Matchmaking for professionals aged 25+: interviews, background checks and coaching.",
+      "group": "free",
+      "freeList": "Free candidate list by application",
+      "sources": [
+        "https://macbeth-matchmaking.com/"
+      ],
+      "checked": "2026-11-08",
+      "track": []
+    },
+    {
+      "slug": "cinqe-matchmaking",
+      "name": "Cinqe Matchmaking",
+      "url": "https://www.cinqe.com/",
+      "logo": null,
+      "abia": false,
+      "founded": 2010,
+      "price": "Not published",
+      "consultation": null,
+      "contractLength": null,
+      "areas": "London, plus US and international cities",
+      "suits": "One-on-one matchmaking for accomplished singles: intro call, video review of matches, then a contract.",
+      "group": "free",
+      "freeList": "Complimentary membership by application",
+      "sources": [
+        "https://www.cinqe.com/"
+      ],
+      "checked": "2026-11-08",
+      "track": []
+    },
+    {
+      "slug": "kelleher-international",
+      "name": "Kelleher International",
+      "url": "https://kelleher-international.com/",
+      "logo": null,
+      "abia": false,
+      "founded": null,
+      "price": "Not published",
+      "consultation": null,
+      "contractLength": null,
+      "areas": "London office; US headquarters",
+      "suits": "Global matchmaking with a London office.",
+      "group": "free",
+      "freeList": "Free participating-member list",
+      "sources": [
+        "https://kelleher-international.com/"
+      ],
+      "checked": "2026-11-08",
+      "track": []
+    },
+    {
+      "slug": "mutual-attraction",
+      "name": "Mutual Attraction",
+      "url": "https://www.mutualattraction.co.uk/",
+      "logo": null,
+      "abia": false,
+      "founded": null,
+      "price": "Not published",
+      "consultation": "Free",
+      "contractLength": null,
+      "areas": "London and international",
+      "suits": "Dating agency with video interviews, background checks, in-person meetings and singles events.",
+      "group": "paid",
+      "sortPrice": 150,
+      "sources": [
+        "https://www.mutualattraction.co.uk/"
+      ],
+      "checked": "2026-11-08",
+      "track": []
     }
   ]
 };
