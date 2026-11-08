@@ -37,6 +37,18 @@
     return isLowStock(apiEvent) ? 'limited' : 'plenty';
   }
 
+  // Card facts the API only sends while their show_* switch is on: copied across when present, never invented.
+  const EXTRA_KEYS = ['ageMin', 'ageMax', 'priceMin', 'priceMax', 'priceNote', 'guests', 'included', 'lastEntry'];
+  const EXTRA_META_KEYS = { tiers: 'tiers', menTicketsLeft: 'menLeft', womenTicketsLeft: 'womenLeft' };
+
+  function extraFields(apiEvent) {
+    const fields = {};
+    EXTRA_KEYS.forEach((key) => { if (isPresent(apiEvent[key])) fields[key] = apiEvent[key]; });
+    Object.entries(EXTRA_META_KEYS).forEach(([metaKey, key]) => { if (isPresent(apiEvent.meta?.[metaKey])) fields[key] = apiEvent.meta[metaKey]; });
+    if (apiEvent.status && apiEvent.status !== 'scheduled') fields.eventStatus = apiEvent.status;
+    return fields;
+  }
+
   // Optional legacy fields are left off rather than set to null, so the UI's `== null` and truthiness checks hold.
   function optionalFields(apiEvent) {
     const fields = {};
@@ -50,7 +62,7 @@
     if (isPresent(apiEvent.spacesTaken)) fields.attending = apiEvent.spacesTaken;
     const spacesLeft = apiEvent.meta?.spacesLeft;
     if (isPresent(spacesLeft)) fields.spotsLeft = spacesLeft;
-    return fields;
+    return { ...fields, ...extraFields(apiEvent) };
   }
 
   function mapEvent(apiEvent) {

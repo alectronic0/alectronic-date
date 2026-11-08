@@ -1087,3 +1087,18 @@
     padding: var(--space-2) var(--space-3);
   }
 }
+
+/* Optional card facts. They only render when the API sends them (its show_* switches). */
+.guide-chip { white-space: nowrap; }
+.guide-tiers, .guide-gender { margin-top: 4px; font-size: 0.78rem; color: var(--muted-2); }
+.guide-status {
+  display: inline-block;
+  margin-bottom: 4px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text);
+  background: rgba(229, 72, 77, 0.18);
+  border: 1px solid rgba(229, 72, 77, 0.6);
+  border-radius: 999px;
+}

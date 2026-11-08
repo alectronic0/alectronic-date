@@ -42,6 +42,7 @@
   const $ = (id) => document.getElementById(id);
   const { esc, safeUrl, safeAsset, monogram, logoHtml, bindLogoFallback } = window.LabsUI;
   const { platformChip, freshestAgeHours, ageText } = window.SourceStatus;
+  const extras = window.EventExtras;
 
   function todayISO() {
     const now = new Date();
@@ -207,12 +208,16 @@
       <article class="guide-event${spotlight ? ' is-spotlight' : ''}${url ? ' is-link' : ''}">
         <div class="guide-time">${esc(event.startTime || 'TBC')}</div>
         <div class="guide-main">
+          ${extras.statusLabel(event) ? `<span class="guide-status">⚠ ${esc(extras.statusLabel(event))}</span>` : ''}
           <h3 class="guide-title">${title}</h3>
           <div class="guide-meta">
             <span class="host-badge${spotlight ? ' spotlight' : ''}">${logoHtml(hostLabel(event), logoUrl(event), 'logo-sm')}${esc(hostLabel(event))}</span>
             ${event.venue || event.location ? `<span>📍 ${mapLink ? `<a class="guide-inner-link" href="${esc(mapLink)}" target="_blank" rel="noopener noreferrer">${esc(event.venue || event.location)}</a>` : esc(event.venue || event.location)}</span>` : ''}
-            ${event.price ? `<span>🎟️ ${esc(event.price)}</span>` : ''}
+            ${extras.priceLabel(event) ? `<span>🎟️ ${esc(extras.priceLabel(event))}</span>` : ''}
+            ${extras.chips(event).map((chip) => `<span class="guide-chip guide-chip-${chip.kind}">${esc(chip.text)}</span>`).join('')}
           </div>
+          ${extras.tiersLabel(event) ? `<div class="guide-tiers">${esc(extras.tiersLabel(event))}</div>` : ''}
+          ${extras.genderLabel(event) ? `<div class="guide-gender">${esc(extras.genderLabel(event))}</div>` : ''}
           ${attendanceBar(event)}
         </div>
         <div class="guide-side">
