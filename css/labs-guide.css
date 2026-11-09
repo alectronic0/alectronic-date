@@ -1109,3 +1109,25 @@
   margin: var(--space-4) 0 0;
   color: var(--gold);
 }
+
+/* Short note under the events page header: what this list is for and who to email. */
+.guide-notice {
+  margin: 0 0 var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.guide-notice p {
+  margin: 0;
+}
+
+.guide-notice a {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
