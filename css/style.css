@@ -1546,6 +1546,7 @@ img.img-missing { object-fit: contain !important; background: #f6eef3; }
 
 /* ─── Footer ────────────────────────────────── */
 footer { background: var(--aubergine); border-top: 1px solid var(--border); padding: 48px 24px; text-align: center; }
+footer p { max-width: none; }
 .footer-emoji { font-size: 2rem; margin-bottom: var(--space-4); }
 .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: var(--space-4); }
 .footer-links a, .footer-links .footer-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--muted-2); }
