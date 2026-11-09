@@ -34,6 +34,15 @@ test('missing lists are fine', () => {
   assert.deepEqual(mergePlatforms(undefined, undefined), []);
 });
 
+test('logoFor finds the platform logo on the same website', () => {
+  const platforms = [{ url: 'https://truedating.co.uk/events/search/city/london', logo: '../img/logos/platforms/true-dating.png' }, { url: 'https://a.com/' }];
+  const { logoFor } = require('../js/platform-hosts.js');
+  assert.equal(logoFor('https://www.truedating.co.uk/events/mini-golf-singles-party-24-nov-2026', platforms), '../img/logos/platforms/true-dating.png');
+  assert.equal(logoFor('https://a.com/x', platforms), '');
+  assert.equal(logoFor('nonsense', platforms), '');
+  assert.equal(logoFor('https://other.org/', undefined), '');
+});
+
 test('socialLinks leaves out the website', () => {
   const host = site('h', 'https://h.com/', [{ label: 'Instagram', url: 'https://www.instagram.com/h/' }, { label: 'Home', url: 'https://www.h.com/about' }]);
   assert.deepEqual(socialLinks(host).map((l) => l.label), ['Instagram']);

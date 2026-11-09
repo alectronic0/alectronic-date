@@ -52,7 +52,15 @@
     return (host.links || []).filter((link) => hostnameOf(link.url) && hostnameOf(link.url) !== site);
   }
 
-  const api = { HOST_CATEGORY, hostnameOf, mergePlatforms, socialLinks };
+  // Logo of the platform card on the same website, for hosts that have no spotlight of their own.
+  function logoFor(url, platforms) {
+    const name = hostnameOf(url);
+    if (!name) return '';
+    const match = (platforms || []).find((item) => item.logo && hostnameOf(item.url) === name);
+    return match ? match.logo : '';
+  }
+
+  const api = { HOST_CATEGORY, hostnameOf, mergePlatforms, socialLinks, logoFor };
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.PlatformHosts = api;
 })(typeof window !== 'undefined' ? window : globalThis);

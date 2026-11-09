@@ -79,7 +79,9 @@
 
   function logoUrl(event) {
     const host = hostsById[event.hostId];
-    return safeAsset(host ? host.logo : event.hostLogo);
+    if (host) return safeAsset(host.logo);
+    const platforms = (window.CONTENT && window.CONTENT.singlesEvents && window.CONTENT.singlesEvents.items) || [];
+    return safeAsset(event.hostLogo || PlatformHosts.logoFor(event.url, platforms));
   }
 
   function dayLabel(iso, opts) {

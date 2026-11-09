@@ -1131,3 +1131,11 @@
   color: var(--accent-light);
   text-decoration: underline;
 }
+
+/* Host logo on a schedule row: big enough to read a wordmark, uncropped. */
+.guide-meta .host-badge .logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border: 1px solid var(--border);
+}
