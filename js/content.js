@@ -104,8 +104,8 @@ window.CONTENT = {
     "evolvingNote": "🚧 Like me, this site is a work in progress. It continues to evolve and won't always be perfect. The odd bug, glitch, or typo might sneak through, but it's trying its best anyway. 💜",
     "intro": [
       "Hi, I'm Alec! 👋 A few years ago, after focusing on my career and buying a house 🏠, I decided it was time to start dating. But let's face it: <strong style=\"color: var(--rose-light);\">dating apps suck</strong> 💔.",
-      "I also noticed that some people I talked to seemed to lose sight of who they were in and out of a relationship, so to stay grounded, I wrote a list of the thing I liked and valued that list became the <a href=\"https://docs.google.com/presentation/d/18JFwBTN1VRsoGH6tOqM4yJ1veaQtP5MZ8SpdJPSWVTE/edit?usp=sharing\" target=\"_blank\" style=\"color: #80c0ff; text-decoration: underline;\">\"boyfriend application\"</a>, which eventually became this interactive webstie you are now reading.",
-      "This site is a direct extension of me, quirks and nerdy info-dumps 🤓 included. I'm not perfect, but I put real effort into what matters (hopefully you! 😉). If you aren't overwhelmed by the absurdity of this site, you might be the kind of person I'm looking for: a <strong style=\"color: var(--rose-light);\">life partner</strong> 💖 to share in the fun bits, the challenging bits, and everything in between. If you're <strong style=\"color: var(--gold);\">nerdy</strong>, want a family, and enjoy both <strong style=\"color: #80c0ff;\">quiet days at home</strong> ☕ and <strong style=\"color: var(--mint);\">exciting adventures</strong> 🗺️, you might just be it.",
+      "I also noticed that some people I talked to seemed to lose sight of who they were in and out of a relationship, so to stay grounded, I wrote a list of the things I liked and valued that list became the <a href=\"https://docs.google.com/presentation/d/18JFwBTN1VRsoGH6tOqM4yJ1veaQtP5MZ8SpdJPSWVTE/edit?usp=sharing\" target=\"_blank\" style=\"color: var(--gold); text-decoration: underline;\">\"boyfriend application\"</a>, which eventually became this interactive website you are now reading.",
+      "This site is a direct extension of me, quirks and nerdy info-dumps 🤓 included. I'm not perfect, but I put real effort into what matters (hopefully you! 😉). If you aren't overwhelmed by the absurdity of this site, you might be the kind of person I'm looking for: a <strong style=\"color: var(--rose-light);\">life partner</strong> 💖 to share in the fun bits, the challenging bits, and everything in between. If you're <strong style=\"color: var(--gold);\">nerdy</strong>, want a family, and enjoy both <strong style=\"color: var(--gold);\">quiet days at home</strong> ☕ and <strong style=\"color: var(--gold);\">exciting adventures</strong> 🗺️, you might just be it.",
       "P.S. If I'm not your type, please share this with someone who is, or just send it to a friend for a 'WTF, look what this person made!' 😂",
       "P.P.S. There are a few easter eggs ✨ hidden around here, see if you can find them! 😉"
     ],
@@ -423,7 +423,7 @@ window.CONTENT = {
       "What's your favourite Pokemon?",
       "Favourite TV show or video game right now?",
       "What did you want to be when you grew up?",
-      "What do you do for work, and do you genuinely enjoy it?",
+      "What do you do for work, and do you actually enjoy it?",
       "Where's the next place you'd love to travel to?",
       "What's a hobby or interest you could talk about for hours?",
       "Tea or coffee, and how do you take it?",
@@ -434,7 +434,7 @@ window.CONTENT = {
       "What's something you're quietly proud of?",
       "What's still left on your bucket list?",
       "Beach holiday or city adventure?",
-      "What's a film or book that genuinely changed how you see things?",
+      "What's a film or book that really changed how you see things?",
       "If money were no object, how would you spend your days?",
       "What's your go-to comfort food after a rough day?"
     ]
@@ -859,7 +859,7 @@ window.CONTENT = {
               "icon": "🎲",
               "label": "TTRPG / Board Games",
               "value": "TTRPG / Board Games",
-              "toast": "Whether rolling d20s in D&D or learning a new board game, count me in 🎲♟️🃏"
+              "toast": "Rolling d20s in D&D or learning a new board game, count me in 🎲♟️🃏"
             },
             {
               "icon": "🛠️",
@@ -1804,7 +1804,7 @@ window.CONTENT = {
               "icon": "🤓",
               "title": "Nerdy",
               "subtitle": "(if you didn't realise already)",
-              "body": "Video games, anime, science, history, sci-fi, fantasy... you name it, I've probably played it or dabbled in it at least once. It's taken a while to fully embrace, but it's who I am, and I like me!"
+              "body": "Video games, anime, science, history, sci-fi, fantasy... you name it, I've probably played it or dabbled in it at least once. It took me a while to be ok with it, but it's who I am, and I like me!"
             },
             {
               "icon": "🔥",
@@ -1935,7 +1935,7 @@ window.CONTENT = {
               "icon": "🧭",
               "title": "Trusted Team player",
               "text": "Alec is great at keeping up with friends and loved ones throughout life's ups and downs. Kind and caring throughout. Plus masterful at logistics, definitely trusted as the team planner!",
-              "signature": "— Matěj, Broski (1 half of the reason I have to travel 🇹🇭 🇺🇦 🇨🇿 🇮🇩)",
+              "signature": "- Matěj, Broski (1 half of the reason I have to travel 🇹🇭 🇺🇦 🇨🇿 🇮🇩)",
               "imagePosition": "left"
             },
             {
@@ -1944,7 +1944,7 @@ window.CONTENT = {
               "icon": "💪",
               "title": "Your No. 1 person to turn to",
               "text": "Alec is a no. 1 person to turn to. I know he will always be there for whatever you need. He's helpful and reliable. Always calm and a problem solver. I love his gentle, caring side. He's a keeper.",
-              "signature": "— Minty aka. \"Final Boss\", Personal Trainer & Friend",
+              "signature": "- Minty aka. \"Final Boss\", Personal Trainer & Friend",
               "socialLink": "https://raminta.coach/",
               "imagePosition": "right"
             },
@@ -1954,7 +1954,7 @@ window.CONTENT = {
               "icon": "🕵️‍♀️",
               "title": "Finding ways to make you smile",
               "text": "Alec is the type of friend that everyone needs. He will show up for you, really listen and always shows his love and care in the most empathetic of ways, while always looking for ways to make you genuinely smile.",
-              "signature": "— Agent L, Friend (photo of her has been redacted to protect her identity on secret mission)",
+              "signature": "- Agent L, Friend (photo of her has been redacted to protect her identity on secret mission)",
               "imagePosition": "left"
             },
             {
@@ -1963,7 +1963,7 @@ window.CONTENT = {
               "icon": "🧸",
               "title": "A small thing they do for people",
               "text": "Bought me some pokemon plushies back from Japan because I told him my favourite pokemon and was having a hard time at work.",
-              "signature": "— Colleague and friend from work (Bribed with plushies)",
+              "signature": "- Colleague and friend from work (Bribed with plushies)",
               "imagePosition": "right"
             },
             {
@@ -1972,7 +1972,7 @@ window.CONTENT = {
               "icon": "😎",
               "title": "Someone you can count on",
               "text": "",
-              "signature": "— Anastasiia, Bestie obvs (the other half of the reason I have to travel 🇹🇭 🇺🇦 🇨🇿 🇮🇩)",
+              "signature": "- Anastasiia, Bestie obvs (the other half of the reason I have to travel 🇹🇭 🇺🇦 🇨🇿 🇮🇩)",
               "socialLink": "https://open.spotify.com/artist/3zTK2QTxmJqOw4umAQzCgN",
               "imagePosition": "left"
             }
@@ -2172,7 +2172,7 @@ window.CONTENT = {
             {
               "year": "2018 - 2021",
               "title": "The Rightmove & Covid-19",
-              "description": "Joined Rightmove and navigated the weirdness of the pandemic years like everyone else.",
+              "description": "Joined Rightmove and got through the weirdness of the pandemic years like everyone else.",
               "icon": "🏠",
               "companies": [
                 {
@@ -2417,7 +2417,7 @@ window.CONTENT = {
             },
             {
               "label": "💼 Workaholic",
-              "hint": "I get deeply passionate about my projects, but learning to disconnect and enjoy life."
+              "hint": "I go all in on my projects, but learning to disconnect and enjoy life."
             },
             {
               "label": "🌱 Active Self-Growth",
@@ -3215,7 +3215,7 @@ window.CONTENT = {
                 },
                 {
                   "label": "👤 Portraits",
-                  "hint": "Capturing genuine moments and natural smiles 📸"
+                  "hint": "Catching real moments and natural smiles 📸"
                 }
               ]
             },
@@ -3881,7 +3881,7 @@ window.CONTENT = {
         {
           "type": "note",
           "variant": "section-intro",
-          "text": "I'm fairly flexible with what I watch and genuinely keen to learn what you love. A few of my comfort-watches:"
+          "text": "I'm fairly flexible with what I watch and keen to learn what you love. A few of my comfort-watches:"
         },
         {
           "type": "link",
@@ -4851,7 +4851,7 @@ window.CONTENT = {
         {
           "type": "note",
           "variant": "section-intro",
-          "text": "I genuinely don't know why I have a GIF section, but some things words just can't capture. It's my life summed up in looping form, and honestly? I love it (and this collection will keep growing!)."
+          "text": "I honestly don't know why I have a GIF section, but some things words just can't capture. It's my life summed up in looping form, and honestly? I love it (and this collection will keep growing!)."
         },
         {
           "type": "gifGrid",
