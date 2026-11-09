@@ -244,14 +244,14 @@
 
                     var iconHTML = '';
                     if (facet.withLogos && facet.icons && facet.icons[name]) {
-                        iconHTML = '<img src="' + facet.icons[name] + '" alt="" style="width:14px;height:14px;object-fit:contain;border-radius:2px;vertical-align:-2px;"> ';
+                        iconHTML = '<img src="' + escapeHTML(facet.icons[name]) + '" alt="" style="width:14px;height:14px;object-fit:contain;border-radius:2px;vertical-align:-2px;"> ';
                     } else if (facet.emoji && facet.emoji[name]) {
                         iconHTML = facet.emoji[name] + ' ';
                     } else if (name === 'All') {
                         iconHTML = facet.allEmoji || '🌟 ';
                     }
 
-                    btn.innerHTML = iconHTML + name + ' <span class="pill-count">' + count + '</span>';
+                    btn.innerHTML = iconHTML + escapeHTML(name) + ' <span class="pill-count">' + count + '</span>';
                     btn.addEventListener('click', function () {
                         facetState[facet.id] = name;
                         currentLimit = RENDER_INC;
