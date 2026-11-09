@@ -4185,9 +4185,11 @@ button.CookiebotWidget-logo::before {
     }
 
 /* ─── Polish pass: tap targets, prose links, mobile fixed-bar clearance ── */
-.powered-by-text a, .wishlist-link {
+.wishlist-link {
   display: inline-flex; align-items: center; min-height: 32px;
 }
+/* Inline (not flex) so the trailing space inside "Powered by " is kept; padding still grows the tap area */
+.powered-by-text a { padding-block: 6px; }
 /* !important: some prose links carry inline blue colour in the markup */
 #about p a {
   color: var(--accent-light) !important; text-decoration: underline;
