@@ -452,12 +452,6 @@ window.CONTENT = {
     "lead": "Yes, I'm the guy in most of them. Tap any photo to enlarge.",
     "photos": [
       {
-        "src": "img/alec/alec-albert-hall-portrait.webp",
-        "alt": "Alec portrait at the Royal Albert Hall",
-        "w": 900,
-        "h": 1198
-      },
-      {
         "src": "img/alec/alec-portrait-terracotta-wall.webp",
         "alt": "Alec portrait terracotta wall",
         "w": 900,
@@ -472,18 +466,6 @@ window.CONTENT = {
       {
         "src": "img/alec/alec-kimono-red-torii-gate.webp",
         "alt": "Alec kimono red torii gate",
-        "w": 900,
-        "h": 1195
-      },
-      {
-        "src": "img/alec/alec-kimono-bamboo-garden.webp",
-        "alt": "Alec in a dark kimono in a Kyoto bamboo garden",
-        "w": 900,
-        "h": 1195
-      },
-      {
-        "src": "img/alec/alec-tea-ceremony-kyoto.webp",
-        "alt": "Alec whisking matcha at a Kyoto tea ceremony",
         "w": 900,
         "h": 1195
       },
@@ -524,22 +506,10 @@ window.CONTENT = {
         "h": 1195
       },
       {
-        "src": "img/alec/alec-mario-warp-pipes.webp",
-        "alt": "Alec beside life-size Mario warp pipes in Japan",
-        "w": 900,
-        "h": 1195
-      },
-      {
         "src": "img/alec/alec-cherry-blossom-park.webp",
         "alt": "Alec cherry blossom park",
         "w": 900,
         "h": 1200
-      },
-      {
-        "src": "img/alec/alec-wisteria-pergola.webp",
-        "alt": "Alec walking under a wisteria pergola",
-        "w": 900,
-        "h": 1195
       },
       {
         "src": "img/alec/alec-napping-headphones-pikachu-shirt.webp",
@@ -612,12 +582,6 @@ window.CONTENT = {
         "alt": "Alec sandwich lunch cafe",
         "w": 900,
         "h": 1199
-      },
-      {
-        "src": "img/alec/alec-albert-hall-full-body.webp",
-        "alt": "Alec full-length on the Royal Albert Hall steps",
-        "w": 900,
-        "h": 1198
       }
     ]
   },
