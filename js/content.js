@@ -81,7 +81,7 @@ window.CONTENT = {
         "src": "img/alec/alec-los-mochis-city.webp",
         "alt": "Alec in Los Mochis",
         "w": 900,
-        "h": 1200
+        "h": 1195
       },
       {
         "src": "img/alec/alec-pokemon-plushies-pokeball.webp",
@@ -93,7 +93,7 @@ window.CONTENT = {
         "src": "img/alec/alec-portrait-garden-archway.webp",
         "alt": "Alec portrait garden archway",
         "w": 900,
-        "h": 1200
+        "h": 1195
       }
     ]
   },
@@ -452,6 +452,12 @@ window.CONTENT = {
     "lead": "Yes, I'm the guy in most of them. Tap any photo to enlarge.",
     "photos": [
       {
+        "src": "img/alec/alec-albert-hall-portrait.webp",
+        "alt": "Alec portrait at the Royal Albert Hall",
+        "w": 900,
+        "h": 1198
+      },
+      {
         "src": "img/alec/alec-portrait-terracotta-wall.webp",
         "alt": "Alec portrait terracotta wall",
         "w": 900,
@@ -466,14 +472,26 @@ window.CONTENT = {
       {
         "src": "img/alec/alec-kimono-red-torii-gate.webp",
         "alt": "Alec kimono red torii gate",
-        "w": 903,
-        "h": 1200
+        "w": 900,
+        "h": 1195
+      },
+      {
+        "src": "img/alec/alec-kimono-bamboo-garden.webp",
+        "alt": "Alec in a dark kimono in a Kyoto bamboo garden",
+        "w": 900,
+        "h": 1195
+      },
+      {
+        "src": "img/alec/alec-tea-ceremony-kyoto.webp",
+        "alt": "Alec whisking matcha at a Kyoto tea ceremony",
+        "w": 900,
+        "h": 1195
       },
       {
         "src": "img/alec/alec-portrait-garden-archway.webp",
         "alt": "Alec portrait garden archway",
-        "w": 903,
-        "h": 1200
+        "w": 900,
+        "h": 1195
       },
       {
         "src": "img/alec/alec-japanese-onsen-curtain.webp",
@@ -491,19 +509,25 @@ window.CONTENT = {
         "src": "img/alec/alec-los-mochis-city.webp",
         "alt": "Alec in Los Mochis",
         "w": 900,
-        "h": 1200
+        "h": 1195
       },
       {
         "src": "img/alec/alec-pokemon-cyndaquil-statue.webp",
         "alt": "Alec pokemon cyndaquil statue",
-        "w": 903,
-        "h": 1200
+        "w": 900,
+        "h": 1195
       },
       {
         "src": "img/alec/alec-super-mario-bros-40th-statue.webp",
         "alt": "Alec super mario bros 40th statue",
-        "w": 903,
-        "h": 1200
+        "w": 900,
+        "h": 1195
+      },
+      {
+        "src": "img/alec/alec-mario-warp-pipes.webp",
+        "alt": "Alec beside life-size Mario warp pipes in Japan",
+        "w": 900,
+        "h": 1195
       },
       {
         "src": "img/alec/alec-cherry-blossom-park.webp",
@@ -512,10 +536,16 @@ window.CONTENT = {
         "h": 1200
       },
       {
+        "src": "img/alec/alec-wisteria-pergola.webp",
+        "alt": "Alec walking under a wisteria pergola",
+        "w": 900,
+        "h": 1195
+      },
+      {
         "src": "img/alec/alec-napping-headphones-pikachu-shirt.webp",
         "alt": "Alec napping headphones pikachu shirt",
-        "w": 1200,
-        "h": 1200
+        "w": 900,
+        "h": 900
       },
       {
         "src": "img/alec/alec-rope-knot-tying.webp",
@@ -538,26 +568,26 @@ window.CONTENT = {
       {
         "src": "img/alec/alec-mt-batur-sunrise-hike-bali.webp",
         "alt": "Alec mt batur sunrise hike bali",
-        "w": 903,
-        "h": 1200
+        "w": 900,
+        "h": 1195
       },
       {
         "src": "img/alec/alec-mt-batur-sunrise-silly-selfie-bali.webp",
         "alt": "Alec mt batur sunrise silly selfie bali",
-        "w": 900,
-        "h": 1200
+        "w": 450,
+        "h": 600
       },
       {
         "src": "img/alec/alec-portrait-sunny-garden.webp",
         "alt": "Alec portrait sunny garden",
-        "w": 900,
-        "h": 1200
+        "w": 450,
+        "h": 600
       },
       {
         "src": "img/alec/alec-mad-scientist-lab-coat-costume.webp",
         "alt": "Alec mad scientist lab coat costume",
-        "w": 745,
-        "h": 744
+        "w": 600,
+        "h": 599
       },
       {
         "src": "img/alec/alec-holding-pineapple-supermarket.webp",
@@ -568,20 +598,26 @@ window.CONTENT = {
       {
         "src": "img/alec/alec-fire-staff-spinning-night.webp",
         "alt": "Alec fire staff spinning night",
-        "w": 1080,
-        "h": 1080
+        "w": 600,
+        "h": 600
       },
       {
         "src": "img/alec/alec-exhausted-after-gym-workout.webp",
         "alt": "Alec exhausted after gym workout",
-        "w": 1200,
-        "h": 900
+        "w": 600,
+        "h": 450
       },
       {
         "src": "img/alec/alec-sandwich-lunch-cafe.webp",
         "alt": "Alec sandwich lunch cafe",
-        "w": 684,
-        "h": 911
+        "w": 900,
+        "h": 1199
+      },
+      {
+        "src": "img/alec/alec-albert-hall-full-body.webp",
+        "alt": "Alec full-length on the Royal Albert Hall steps",
+        "w": 900,
+        "h": 1198
       }
     ]
   },
@@ -1640,7 +1676,7 @@ window.CONTENT = {
                       "hint": "I am 80–90% sure I want to build a family! If that's not something you envision in your future, then we're likely not a long-term match."
                     },
                     {
-                      "label": "🎂 ~24 to ~35",
+                      "label": "🎂 ~25 to ~35",
                       "hint": "I prefer dating someone near my age or a little younger, where we share similar life stages and long-term goals."
                     }
                   ]

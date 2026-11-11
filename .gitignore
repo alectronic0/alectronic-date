@@ -6,3 +6,4 @@ node_modules/
 dist/
 .aider.tags.cache.v4/
 __pycache__/
+outputs/

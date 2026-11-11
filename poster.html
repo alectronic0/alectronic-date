@@ -95,6 +95,66 @@
       display: none !important;
     }
 
+    /* Billboard formats: few seconds of attention at distance —
+       oversized type, huge QR, nothing else */
+    body[data-format="billboard-portrait"] .hero-inner,
+    body[data-format="billboard-landscape"] .hero-inner {
+      flex-direction: column;
+    }
+    body[data-format="billboard-landscape"] .hero-inner {
+      flex-direction: row;
+      gap: 80px;
+    }
+    body[data-format="billboard-portrait"] .qr-container,
+    body[data-format="billboard-landscape"] .qr-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    body[data-format="billboard-portrait"] .hero-text,
+    body[data-format="billboard-landscape"] .hero-text {
+      text-align: center;
+    }
+    body[data-format="billboard-portrait"] .hero-text h1 {
+      font-size: 4.5rem;
+      line-height: 1.1;
+    }
+    body[data-format="billboard-landscape"] .hero-text h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+    }
+    body[data-format="billboard-portrait"] .hero-sub,
+    body[data-format="billboard-landscape"] .hero-sub {
+      font-size: 1.9rem;
+    }
+    body[data-format="billboard-portrait"] .hero-tagline,
+    body[data-format="billboard-landscape"] .hero-tagline {
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+    body[data-format="billboard-portrait"] .qr-container img,
+    body[data-format="billboard-landscape"] .qr-container img {
+      width: 420px;
+      height: 420px;
+    }
+    body[data-format="billboard-portrait"] .qr-text,
+    body[data-format="billboard-landscape"] .qr-text {
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+    body[data-format="billboard-landscape"] .qr-container {
+      padding: 0 80px 0 0;
+      margin-top: 0;
+    }
+    body[data-format="billboard-landscape"] .poster-container {
+      flex-direction: row;
+      align-items: center;
+    }
+    body[data-format="billboard-portrait"] .hero-media img,
+    body[data-format="billboard-landscape"] .hero-media img {
+      max-height: 560px;
+    }
+
     .hero-emoji {
       font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", sans-serif;
     }
@@ -129,11 +189,15 @@
     const format = params.get('format') || 'og'; // og, tiktok, ig, print
     document.body.setAttribute('data-format', format);
 
-    const hero = window.SITE_CONTENT.hero;
+    const content = window.CONTENT;
+    const hero = content.hero;
     document.getElementById('hero-emoji').textContent = hero.emoji;
     document.getElementById('hero-headline').innerHTML = hero.headline;
     document.getElementById('hero-sub').innerHTML = hero.subheading;
-    document.getElementById('hero-tagline').innerHTML = hero.tagline || window.SITE_CONTENT.meta.tagline;
+    const tagline = hero.taglineSlots
+      ? hero.taglineStart + hero.taglineSlots[0] + (hero.taglineEnd || '')
+      : content.meta.tagline;
+    document.getElementById('hero-tagline').innerHTML = tagline;
 
     // Build the photo collage
     const mediaDiv = document.getElementById('hero-media');

@@ -17,7 +17,9 @@ const formats = [
   { name: 'og-image', format: 'og', width: 1200, height: 630 },
   { name: 'tiktok-reels', format: 'tiktok', width: 1080, height: 1920 },
   { name: 'instagram-post', format: 'ig', width: 1080, height: 1350 },
-  { name: 'print-poster', format: 'print', width: 2480, height: 3508 } // A4 at 300dpi
+  { name: 'print-poster', format: 'print', width: 2480, height: 3508 }, // A4 at 300dpi
+  { name: 'billboard-portrait', format: 'billboard-portrait', width: 1080, height: 1920 },
+  { name: 'billboard-landscape', format: 'billboard-landscape', width: 1920, height: 1080 }
 ];
 
 async function generate() {
