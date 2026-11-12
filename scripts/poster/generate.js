@@ -23,27 +23,38 @@ const formats = [
   { name: 'billboard-landscape', format: 'billboard-landscape', width: 960, height: 540, scale: 2 }
 ];
 
+const conceptsHtmlUrl = `file://${path.join(repoRoot, 'poster-concepts.html')}`;
+const conceptVariants = ['vacancy', 'player2', 'editorial'];
+const conceptFormats = [
+  { name: 'screen', format: 'billboard-portrait', width: 540, height: 960, scale: 2 },
+  { name: 'a4', format: 'print', width: 620, height: 877, scale: 4 }
+];
+
+async function render(browser, url, fmt, name) {
+  console.log(`Generating ${name} (${fmt.width * fmt.scale}x${fmt.height * fmt.scale})...`);
+  const context = await browser.newContext({
+    viewport: { width: fmt.width, height: fmt.height },
+    deviceScaleFactor: fmt.scale
+  });
+  const page = await context.newPage();
+  await page.goto(url);
+  await page.waitForLoadState('networkidle');
+  await page.evaluate(() => document.fonts.ready);
+  await page.screenshot({ path: path.join(outputsDir, `${name}.jpg`), type: 'jpeg', quality: 95 });
+  await context.close();
+}
+
 async function generate() {
   console.log('Launching browser...');
   const browser = await chromium.launch();
 
   for (const fmt of formats) {
-    console.log(`Generating ${fmt.name} (${fmt.width * fmt.scale}x${fmt.height * fmt.scale})...`);
-    const context = await browser.newContext({
-      viewport: { width: fmt.width, height: fmt.height },
-      deviceScaleFactor: fmt.scale
-    });
-    const page = await context.newPage();
-    await page.goto(`${posterHtmlUrl}?format=${fmt.format}`);
-    await page.waitForLoadState('networkidle');
-    await page.evaluate(() => document.fonts.ready);
-
-    await page.screenshot({
-      path: path.join(outputsDir, `${fmt.name}.jpg`),
-      type: 'jpeg',
-      quality: 95
-    });
-    await context.close();
+    await render(browser, `${posterHtmlUrl}?format=${fmt.format}`, fmt, fmt.name);
+  }
+  for (const variant of conceptVariants) {
+    for (const fmt of conceptFormats) {
+      await render(browser, `${conceptsHtmlUrl}?variant=${variant}&format=${fmt.format}`, fmt, `concept-${variant}-${fmt.name}`);
+    }
   }
 
   await browser.close();

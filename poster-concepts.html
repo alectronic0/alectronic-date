@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <title>Alec's Dating Application - Poster Concepts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Archivo+Black&family=DM+Sans:wght@500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Portrait-only concepts (9:16 screens and A4). Sizes are vh/vw of the poster, which is the viewport. */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100vw; height: 100vh; overflow: hidden; }
+    .poster { width: 100%; height: 100%; display: none; flex-direction: column; }
+    body[data-variant="vacancy"] .vacancy,
+    body[data-variant="player2"] .player2,
+    body[data-variant="editorial"] .editorial { display: flex; }
+
+    .shot { overflow: hidden; }
+    .shot img {
+      width: 100%; height: 100%; display: block;
+      object-fit: cover; object-position: 50% 30%;
+      transform: scale(var(--zoom, 1.5)); transform-origin: 50% 30%;
+    }
+    .qr { flex: none; width: var(--qr, 34vw); aspect-ratio: 1; background: #fff; padding: 1vw; border-radius: 2vw; }
+    .qr img { width: 100%; height: 100%; display: block; }
+    body[data-format="print"] { --qr: 24vw; }
+    h1, .tagline { text-wrap: balance; }
+
+    /* A. Vacancy: job advert */
+    .vacancy { background: #fff4d6; color: #1b1b2f; font-family: 'Archivo', system-ui, sans-serif; }
+    .vacancy .strip {
+      background: #ffd23f; font-family: 'Space Mono', monospace; font-weight: 700;
+      font-size: 1.7vh; letter-spacing: 0.06em; text-align: center; padding: 1.5vh 2vw; white-space: nowrap;
+    }
+    .vacancy .body { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 3vh 6vw 2vh; gap: 2.2vh; }
+    .vacancy h1 { font-family: 'Archivo Black', sans-serif; font-size: 8.4vh; line-height: 0.98; letter-spacing: -0.02em; text-transform: uppercase; }
+    .vacancy h1 mark { background: #ffd23f; color: inherit; padding: 0 1.5vw; margin-left: -1.5vw; }
+    .vacancy .tagline { font-weight: 700; font-size: 2.7vh; line-height: 1.2; }
+    .vacancy .role { flex: 1; min-height: 0; display: flex; gap: 4vw; align-items: stretch; }
+    .vacancy ul { flex: 1.5; list-style: none; display: flex; flex-direction: column; justify-content: center; gap: 1.1vh; font-family: 'Space Mono', monospace; font-size: 1.75vh; line-height: 1.22; }
+    body[data-format="print"] .vacancy ul { font-size: 2.1vh; gap: 1.5vh; }
+    .vacancy li { padding-left: 5.5vw; position: relative; }
+    .vacancy li::before { content: "✓"; position: absolute; left: 0; font-weight: 700; color: #c2185b; }
+    .vacancy .badge { flex: 1; display: flex; flex-direction: column; border: 0.5vh solid #1b1b2f; background: #fff; }
+    .vacancy .badge .shot { flex: 1; min-height: 0; }
+    .vacancy .badge figcaption { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1.45vh; white-space: nowrap; text-align: center; padding: 0.8vh 1vw; border-top: 0.5vh solid #1b1b2f; }
+    .vacancy .cta { display: flex; align-items: center; gap: 5vw; }
+    .vacancy .qr { border: 0.5vh solid #1b1b2f; border-radius: 0; }
+    .vacancy .apply { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 2.1vh; }
+    .vacancy .url { font-family: 'Archivo Black', sans-serif; font-size: 3.5vh; line-height: 1.05; white-space: nowrap; }
+    .vacancy { --qr: 30vw; }
+    body[data-format="print"] .vacancy .url { font-size: 4.2vh; }
+    .vacancy .perk { font-size: 2vh; font-weight: 500; margin-top: 1vh; }
+    .vacancy footer { border-top: 0.4vh solid #1b1b2f; font-family: 'Space Mono', monospace; font-size: 1.5vh; text-align: center; padding: 1.2vh 2vw; white-space: nowrap; }
+
+    /* B. Player 2: title screen and character select */
+    .player2 { background: #0f0e2a; color: #f7eef4; font-family: 'DM Sans', system-ui, sans-serif; padding: 3vh 6vw; gap: 2.4vh; }
+    .player2 .hud { display: flex; justify-content: space-between; font-family: 'Silkscreen', monospace; font-size: 2.2vh; color: #00e5a0; }
+    .player2 .hud span:last-child { color: #ff4fa3; }
+    .player2 h1 { font-family: 'Press Start 2P', monospace; font-size: 5.3vh; line-height: 1.35; color: #ffd23f; text-shadow: 0.5vh 0.5vh 0 #ff4fa3; }
+    .player2 .card { flex: 1; min-height: 0; display: flex; flex-direction: column; border: 0.6vh solid #f7eef4; box-shadow: 1vh 1vh 0 #00e5a0; background: #1a1840; }
+    .player2 .card .shot { flex: 1; min-height: 0; }
+    .player2 .stats { padding: 1.6vh 4vw; display: grid; grid-template-columns: auto 1fr; gap: 1vh 3vw; align-items: center; font-family: 'Silkscreen', monospace; font-size: 2vh; border-top: 0.6vh solid #f7eef4; }
+    .player2 .bar { height: 1.8vh; background: #0f0e2a; border: 0.3vh solid #f7eef4; }
+    .player2 .bar i { display: block; height: 100%; background: #00e5a0; }
+    .player2 .listed { color: #ffd23f; }
+    .player2 .start { font-family: 'Press Start 2P', monospace; font-size: 3vh; text-align: center; color: #f7eef4; }
+    .player2 .cta { display: flex; align-items: center; gap: 5vw; }
+    .player2 .qr { border-radius: 0; box-shadow: 0.8vh 0.8vh 0 #ff4fa3; }
+    .player2 .apply { font-family: 'Silkscreen', monospace; font-size: 2.4vh; color: #00e5a0; }
+    .player2 .url { font-weight: 800; font-size: 3.4vh; line-height: 1.05; white-space: nowrap; }
+    .player2 { --qr: 30vw; }
+    body[data-format="print"] .player2 .url { font-size: 4.2vh; }
+    .player2 .who { font-size: 1.9vh; margin-top: 1vh; color: #cbb6c8; }
+
+    /* C. Editorial: photo-led */
+    .editorial { background: #f4ecdf; color: #2b2118; font-family: 'DM Sans', system-ui, sans-serif; }
+    .editorial .shot { height: 50vh; --zoom: 1.25; }
+    .editorial .body { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 2.6vh 6vw 3vh; gap: 1.6vh; }
+    .editorial .kicker { font-weight: 800; font-size: 1.9vh; letter-spacing: 0.14em; text-transform: uppercase; color: #9c3d2e; }
+    .editorial h1 { font-family: 'Fraunces', serif; font-weight: 800; font-size: 5.3vh; line-height: 1.04; letter-spacing: -0.01em; }
+    .editorial .tagline { font-size: 2.5vh; line-height: 1.3; color: #5a4a3a; font-weight: 500; }
+    .editorial .cta { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 4vw; }
+    .editorial .qr { --qr: 27vw; border: 0.3vh solid #2b2118; }
+    body[data-format="print"] .editorial .qr { --qr: 22vw; }
+    .editorial .apply { font-size: 2.3vh; font-weight: 500; }
+    .editorial .url { font-family: 'Fraunces', serif; font-weight: 800; font-size: 4vh; line-height: 1.1; border-bottom: 0.4vh solid #9c3d2e; display: inline-block; }
+  </style>
+</head>
+<body>
+  <main class="poster vacancy">
+    <div class="strip">NOW HIRING · PLAYER 2 · PERMANENT ROLE</div>
+    <div class="body">
+      <h1>Vacancy:<br><mark>Player 2</mark></h1>
+      <p class="tagline">Cosy co-op, long term. Salary paid in snacks and hugs.</p>
+      <div class="role">
+        <ul>
+          <li>Enjoys co-op, in games and life</li>
+          <li>Wants something long term</li>
+          <li>Likes food and slow nights in</li>
+          <li>Fine with red flags (all listed)</li>
+          <li>Kind. That one is essential</li>
+        </ul>
+        <figure class="badge">
+          <div class="shot"><img class="lead-photo" alt=""></div>
+          <figcaption>ALEC · HIRING</figcaption>
+        </figure>
+      </div>
+      <div class="cta">
+        <div class="qr"><img src="img/qr-code.png" alt="QR code to date.alec.today"></div>
+        <div>
+          <div class="apply">Read the full job spec:</div>
+          <div class="url">date.alec.today</div>
+          <div class="perk">Applications close: never.</div>
+        </div>
+      </div>
+    </div>
+    <footer>Alec's Dating Application · a real person, not an app</footer>
+  </main>
+
+  <main class="poster player2">
+    <div class="hud"><span>1UP ALEC</span><span>2UP ???</span></div>
+    <h1>PLAYER 2<br>WANTED</h1>
+    <figure class="card">
+      <div class="shot"><img class="lead-photo" alt=""></div>
+      <div class="stats">
+        <span>COSINESS</span><div class="bar"><i style="width:92%"></i></div>
+        <span>SNACK SUPPLY</span><div class="bar"><i style="width:85%"></i></div>
+        <span>RED FLAGS</span><span class="listed">ALL LISTED</span>
+      </div>
+    </figure>
+    <div class="start">PRESS START</div>
+    <div class="cta">
+      <div class="qr"><img src="img/qr-code.png" alt="QR code to date.alec.today"></div>
+      <div>
+        <div class="apply">SCAN TO APPLY</div>
+        <div class="url">date.alec.today</div>
+        <div class="who">Alec's Dating Application. A real person looking for a co-op partner for life.</div>
+      </div>
+    </div>
+  </main>
+
+  <main class="poster editorial">
+    <div class="shot"><img class="lead-photo" alt=""></div>
+    <div class="body">
+      <div class="kicker">Alec's Dating Application</div>
+      <h1>Yes, I made a website to find my Player&nbsp;2.</h1>
+      <p class="tagline">It has a spoiler warning and a red flags section. Read it, then decide.</p>
+      <div class="cta">
+        <div>
+          <div class="apply">Scan, or type it in:</div>
+          <div class="url">date.alec.today</div>
+        </div>
+        <div class="qr"><img src="img/qr-code.png" alt="QR code to date.alec.today"></div>
+      </div>
+    </div>
+  </main>
+
+<script src="js/content.js"></script>
+<script>
+  (function () {
+    const params = new URLSearchParams(location.search);
+    document.body.dataset.variant = params.get('variant') || 'vacancy';
+    document.body.dataset.format = params.get('format') || 'billboard-portrait';
+    const lead = window.CONTENT.hero.images[0];
+    document.querySelectorAll('.lead-photo').forEach((img) => { img.src = lead.src; });
+  })();
+</script>
+</body>
+</html>
